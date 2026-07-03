@@ -4,6 +4,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import localizedSdkData from '@/src/generated/wasm-sdk-zh-content.json';
 import localizedPlatformApiData from '@/src/generated/platform-api-zh-content.json';
+import { extractMarkdownHeadings } from '@/src/lib/heading-ids';
 import type { Locale } from '@/src/lib/i18n';
 import type { NavNode, RouteRecord, TocItem } from '@/src/types/docs';
 
@@ -127,7 +128,7 @@ function getManualLocalizedPage(path: string, locale: Locale): LocalizedDocPage 
   const page = {
     body: normalizedBody,
     description: normalizeOpenImZhTerminology(frontmatter.description ?? fallback?.description ?? ''),
-    headings: extractHeadings(normalizedBody),
+    headings: extractMarkdownHeadings(normalizedBody),
     sourcePath: frontmatter.sourcePath ?? path,
     title: normalizeOpenImZhTerminology(frontmatter.title ?? fallback?.title ?? ''),
   };
@@ -169,24 +170,4 @@ function parseMdx(source: string): {
     body: source.slice(match[0].length).trim(),
     frontmatter,
   };
-}
-
-function extractHeadings(body: string): TocItem[] {
-  return body
-    .split(/\r?\n/)
-    .map((line) => line.match(/^(#{2,4})\s+(.+)$/))
-    .filter((match): match is RegExpMatchArray => Boolean(match))
-    .map((match) => ({
-      depth: match[1].length,
-      title: match[2].trim(),
-      url: `#${headingId(match[2])}`,
-    }));
-}
-
-function headingId(value: string): string {
-  return value
-    .replace(/[>#*_`]/g, '')
-    .toLowerCase()
-    .replace(/[^\p{L}\p{N}]+/gu, '-')
-    .replace(/^-+|-+$/g, '');
 }

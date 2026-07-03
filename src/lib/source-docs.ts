@@ -2,6 +2,7 @@ import 'server-only';
 
 import { existsSync, readFileSync } from 'node:fs';
 import { resolve, sep } from 'node:path';
+import { extractMarkdownHeadings } from '@/src/lib/heading-ids';
 import type { TocItem } from '@/src/types/docs';
 
 export type SourceDocPage = {
@@ -28,7 +29,7 @@ export function getSourceDocPage(contentFile: string | undefined): SourceDocPage
   return {
     body,
     description: frontmatter.description ?? '',
-    headings: extractHeadings(body),
+    headings: extractMarkdownHeadings(body),
     sourcePath: frontmatter.sourcePath ?? contentFile,
     title: frontmatter.title ?? '',
   };
@@ -66,24 +67,4 @@ export function parseMdx(source: string): {
     body: source.slice(match[0].length).trim(),
     frontmatter,
   };
-}
-
-function extractHeadings(body: string): TocItem[] {
-  return body
-    .split(/\r?\n/)
-    .map((line) => line.match(/^(#{2,4})\s+(.+)$/))
-    .filter((match): match is RegExpMatchArray => Boolean(match))
-    .map((match) => ({
-      depth: match[1].length,
-      title: match[2].trim(),
-      url: `#${headingId(match[2])}`,
-    }));
-}
-
-function headingId(value: string): string {
-  return value
-    .replace(/[>#*_`]/g, '')
-    .toLowerCase()
-    .replace(/[^\p{L}\p{N}]+/gu, '-')
-    .replace(/^-+|-+$/g, '');
 }

@@ -16,6 +16,23 @@ async function main() {
     const source = await readFile(resolve(root, route.contentFile), 'utf8');
     const { body, frontmatter } = parseMdx(source);
     const title = normalizeOpenImTerminology(translateTitle(route.title, route.path));
+    const manualPage = await readManualWasmPage(route.path);
+
+    if (manualPage) {
+      const manualTitle = normalizeOpenImTerminology(manualPage.frontmatter.title ?? title);
+      const localizedBody = normalizeLocalizedBody(manualPage.body);
+      pages[route.path] = {
+        body: localizedBody,
+        description: normalizeOpenImTerminology(
+          manualPage.frontmatter.description ?? specialDescription(route, manualTitle),
+        ),
+        headings: extractHeadings(localizedBody),
+        sourcePath: manualPage.frontmatter.sourcePath ?? route.path,
+        title: manualTitle,
+      };
+      continue;
+    }
+
     const formalCandidate = isFormalCandidate(source);
     const specialBody = localizeSpecialSdkGuide(route, title);
     const generatedBody =
@@ -78,46 +95,51 @@ function parseMdx(source) {
   return { body: source.slice(match[0].length).trim(), frontmatter };
 }
 
+async function readManualWasmPage(path) {
+  try {
+    const source = await readFile(resolve(root, 'content/zh', `${path.slice(1)}.mdx`), 'utf8');
+    return parseMdx(source);
+  } catch {
+    return undefined;
+  }
+}
+
 function localizeBody(body, route, title) {
   const sections = splitSections(body);
   const parts = [];
 
-  parts.push('## 概览', '', overviewText(route, title), '', sdkVersionNotice(body), '');
-  parts.push('## OpenIM 模型', '', modelText(route, title, body), '', supportStatus(body), '');
-  parts.push('需要明确的核心概念：', '', ...coreConcepts(), '');
+  parts.push(overviewText(route, title), '', sdkVersionNotice(body), '');
+  parts.push('## 能力边界', '', modelText(route, title, body), '', supportStatus(body), '');
+  parts.push('核心对象需要先分清：', '', ...coreConcepts(), '');
   parts.push(
-    '## 前置条件',
+    '## 准备工作',
     '',
     ...translateListSection(sections.get('Prerequisites') ?? '', route),
     '',
   );
+  parts.push('## 使用方式', '', '相关接口：', '');
   parts.push(
-    '## API 签名',
-    '',
     ...translateApiSection(sections.get('API signatures') ?? '', route),
     '',
   );
+  parts.push('调用流程：', '');
   parts.push(
-    '## 实现步骤',
-    '',
     ...translateImplementationSection(sections.get('Implementation') ?? '', route, title),
     '',
   );
   parts.push(
-    '## 返回数据和事件',
+    '## 状态同步',
     '',
     ...translateReturnedDataSection(sections.get('Returned data and events') ?? '', route),
     '',
   );
+  parts.push('## 验证与排查', '', '验证时重点检查：', '');
   parts.push(
-    '## 验证结果',
-    '',
     ...translateVerifySection(sections.get('Verify the result') ?? '', route),
     '',
   );
+  parts.push('常见问题：', '');
   parts.push(
-    '## 故障排查',
-    '',
     ...translateTroubleshootingSection(sections.get('Troubleshooting') ?? ''),
     '',
   );
@@ -133,52 +155,61 @@ function localizeSpecialSdkGuide(route, title) {
   if (route.path.endsWith('/user/retrieving-users/retrieve-a-list-of-users-in-an-application')) {
     return applicationUserListGuide(title);
   }
+  if (route.path.endsWith('/user/retrieving-users/retrieve-a-list-of-friends')) {
+    return friendListGuide(title);
+  }
   return undefined;
 }
 
 function specialDescription(route, title) {
   if (route.path.endsWith('/user/retrieving-users/retrieve-a-list-of-users-in-an-application')) {
-    return '说明 OpenIM WASM SDK 在应用级用户列表查询中的能力边界，以及如何通过已知用户 ID、好友搜索和可信后端实现用户目录。';
+    return '说明 OpenIM WASM SDK 如何按已知用户 ID 查询应用用户公开资料，并用于搜索添加好友和资料卡展示。';
+  }
+  if (route.path.endsWith('/user/retrieving-users/retrieve-a-list-of-friends')) {
+    return '说明如何使用 OpenIM WASM SDK 获取当前登录用户的好友列表、处理 FriendUserItem 返回字段，并通过好友事件保持通讯录同步。';
   }
   return `OpenIM WASM SDK 的${title}指南。`;
 }
 
 function applicationUserListGuide(title) {
   return [
-    `在 OpenIM 中，${title}这类能力不应由浏览器端 WASM SDK 直接执行。WASM SDK 适合在已经知道 ` +
+    `在 OpenIM 中，${title}不对应 Sendbird 的客户端游标查询对象。WASM SDK 适合在已经知道 ` +
       '`userID`' +
-      ' 的情况下读取公开资料，或读取当前用户可见的好友、群成员等关系数据；应用级用户目录、全量分页和跨用户筛选应放在可信后端。',
+      ' 的情况下读取应用用户公开资料，或读取当前用户可见的好友、群成员等关系数据；应用级全量分页、模糊搜索和跨业务字段筛选应放在可信后端。',
     '',
     '如果你已经有一组目标用户 ID，可以在浏览器端调用 `getUsersInfo()` 获取公开资料：',
     '',
     ':::code-tabs',
     '```javascript title="JavaScript"',
-    "const { data: users, errCode, errMsg } = await OpenIM.getUsersInfo(['user_a', 'user_b']);",
-    '',
-    'if (errCode !== 0) {',
-    "  throw new Error(errMsg || 'Failed to retrieve users.');",
+    'try {',
+    "  const response = await OpenIM.getUsersInfo(['user_a', 'user_b']);",
+    '  const users = response.data ?? [];',
+    '  renderUsers(users);',
+    '} catch (error) {',
+    "  console.error('getUsersInfo failed', { error });",
+    '  throw error;',
     '}',
-    '',
-    'renderUsers(users);',
     '```',
     '',
     '```ts title="TypeScript"',
-    'type OpenIMUserSummary = {',
+    'type PublicUserItem = {',
     '  userID: string;',
-    '  nickname?: string;',
-    '  faceURL?: string;',
+    '  nickname: string;',
+    '  faceURL: string;',
+    '  ex: string;',
     '};',
     '',
-    'const { data: users, errCode, errMsg } = await OpenIM.getUsersInfo([',
-    "  'user_a',",
-    "  'user_b',",
-    ']);',
-    '',
-    'if (errCode !== 0) {',
-    "  throw new Error(errMsg || 'Failed to retrieve users.');",
+    'try {',
+    '  const response = await OpenIM.getUsersInfo([',
+    "    'user_a',",
+    "    'user_b',",
+    '  ]);',
+    '  const users = (response.data ?? []) as PublicUserItem[];',
+    '  renderUsers(users);',
+    '} catch (error) {',
+    "  console.error('getUsersInfo failed', { error });",
+    '  throw error;',
     '}',
-    '',
-    'renderUsers(users as OpenIMUserSummary[]);',
     '```',
     ':::',
     '',
@@ -186,47 +217,77 @@ function applicationUserListGuide(title) {
     '',
     '---',
     '',
-    '## ApplicationUserListQuery',
+    '## 查询公开资料',
     '',
-    'Sendbird JavaScript SDK 使用 `ApplicationUserListQuery` 在客户端构造应用级用户查询。OpenIM WASM SDK 没有等价的客户端查询对象；在 OpenIM 中应把这类查询拆成两类：浏览器端读取已知用户资料，后端负责应用级目录查询和筛选。',
+    'Sendbird JavaScript SDK 的 `ApplicationUserListQuery` 是一个客户端查询对象；OpenIM WASM SDK 没有这个对象，也不会在浏览器端返回应用级用户列表游标。OpenIM 对应的客户端能力是 `getUsersInfo(userIDList, operationID?)`，它只按已知用户 ID 批量返回公开资料。',
     '',
-    '#### 参数列表',
+    '#### 请求参数',
     '',
     ...renderMarkdownTable(
-      ['参数名', '类型', '说明', 'OpenIM 对应方式'],
+      ['参数名', '类型', '是否必填', '说明'],
       [
         [
-          '`userIdsFilter`',
+          '`userIDList`',
           '`string[]`',
-          '限定返回指定用户 ID。',
-          '浏览器端使用 `getUsersInfo(userIDList)`，适合已知 ID 的资料补全。',
+          '必填',
+          '要查询的 OpenIM 用户 ID 列表。调用前应去重，并避免一次传入过大的列表。',
         ],
         [
-          '`nicknameStartsWithFilter`',
+          '`operationID`',
           '`string`',
-          '按昵称前缀过滤用户。',
-          '应用级昵称搜索放在后端实现；WASM 的 `searchFriends()` 只适用于当前用户好友范围。',
-        ],
-        [
-          '`metaDataKeyFilter`',
-          '`string`',
-          '按用户元数据键过滤。',
-          'WASM SDK 不提供应用级元数据检索；请在业务用户表或后端索引中实现。',
-        ],
-        [
-          '`metaDataValuesFilter`',
-          '`string[]`',
-          '配合元数据键按多个值过滤。',
-          '由后端根据业务字段过滤，再返回允许当前用户查看的用户列表。',
-        ],
-        [
-          '`limit`',
-          '`number`',
-          '每页返回数量。',
-          'OpenIM Platform API 使用 `pagination.pageNumber` 和 `pagination.showNumber` 分页。',
+          '可选',
+          '链路追踪 ID。建议为关键调用生成并写入日志，便于对应客户端和服务端日志。',
         ],
       ],
     ),
+    '',
+    '#### 返回值',
+    '',
+    '`getUsersInfo()` 成功返回时可以从 `WsResponse<PublicUserItem[]>` 的 `data` 字段读取用户公开资料数组。调用失败时 SDK Promise 会进入 `catch`，业务代码应在 `catch` 中记录错误和 `operationID`。',
+    '',
+    ...renderMarkdownTable(
+      ['字段', '类型', '说明'],
+      [
+        ['`event`', '`string`', 'SDK 返回的事件名或方法标识。'],
+        ['`errCode`', '`number`', '错误码。通常为 `0` 表示成功，非零时应读取 `errMsg` 并进入错误处理。'],
+        ['`errMsg`', '`string`', '错误描述。'],
+        ['`operationID`', '`string`', '本次调用的链路追踪 ID。'],
+        ['`data`', '`PublicUserItem[]`', '按用户 ID 返回的公开用户资料列表。'],
+      ],
+    ),
+    '',
+    '`PublicUserItem` 的字段如下：',
+    '',
+    ...renderMarkdownTable(
+      ['字段', '类型', '说明'],
+      [
+        ['`userID`', '`string`', 'OpenIM 用户 ID。'],
+        ['`nickname`', '`string`', '账号级公开昵称。'],
+        ['`faceURL`', '`string`', '账号级公开头像地址。'],
+        ['`ex`', '`string`', '账号级扩展字段，通常由业务约定 JSON 字符串或普通字符串格式。'],
+      ],
+    ),
+    '',
+    '渲染时建议按 `userID` 归一化保存返回结果。不要把 `PublicUserItem.nickname` 覆盖会话 `showName`、群内昵称、好友备注或业务后端维护的组织名称；这些数据分别来自 `ConversationItem`、`GroupMemberItem`、`FriendUserItem` 或你的业务系统。',
+    '',
+    '```ts',
+    'const operationID = crypto.randomUUID();',
+    "const userIDList = Array.from(new Set(['user_a', 'user_b']));",
+    '',
+    'try {',
+    '  const response = await OpenIM.getUsersInfo(userIDList, operationID);',
+    '  const users = response.data ?? [];',
+    '  const usersByID = new Map(users.map((user) => [user.userID, user]));',
+    '  renderUsers(usersByID);',
+    '} catch (error) {',
+    "  console.error('getUsersInfo failed', {",
+    '    error,',
+    '    operationID,',
+    '    userIDList,',
+    '  });',
+    '  throw error;',
+    '}',
+    '```',
     '',
     '当前用户好友范围内的搜索可以直接使用 WASM SDK：',
     '',
@@ -243,18 +304,19 @@ function applicationUserListGuide(title) {
     '```',
     '',
     '```ts title="TypeScript"',
-    'const { data: friends, errCode, errMsg } = await OpenIM.searchFriends({',
-    '  keywordList: [query],',
-    '  isSearchUserID: true,',
-    '  isSearchNickname: true,',
-    '  isSearchRemark: true,',
-    '});',
+    'try {',
+    '  const { data: friends } = await OpenIM.searchFriends({',
+    '    keywordList: [query],',
+    '    isSearchUserID: true,',
+    '    isSearchNickname: true,',
+    '    isSearchRemark: true,',
+    '  });',
     '',
-    'if (errCode !== 0) {',
-    "  throw new Error(errMsg || 'Failed to search friends.');",
+    '  renderUsers(friends ?? []);',
+    '} catch (error) {',
+    "  console.error('searchFriends failed', { error, query });",
+    '  throw error;',
     '}',
-    '',
-    'renderUsers(friends);',
     '```',
     ':::',
     '',
@@ -282,6 +344,236 @@ function applicationUserListGuide(title) {
   ].join('\n');
 }
 
+function friendListGuide(title) {
+  return [
+    `使用${title}读取当前登录用户已经建立好友关系的用户。好友列表属于当前用户的关系链数据，不是应用内全部用户目录；如果只知道一组 ` +
+      '`userID`' +
+      '，请使用 `getUsersInfo()`；如果需要后台用户目录、分页或运营检索，请通过可信后端调用 Platform API。',
+    '',
+    '最常见的通讯录场景可以调用 `getFriendListPage({ offset, count, filterBlack })`，并用好友备注优先展示联系人名称：',
+    '',
+    ':::code-tabs',
+    '```javascript title="JavaScript"',
+    'try {',
+    '  const { data: friends } = await OpenIM.getFriendListPage({',
+    '    offset: 0,',
+    '    count: 50,',
+    '    filterBlack: true,',
+    '  });',
+    '',
+    '  renderFriends(',
+    '    (friends ?? []).map((friend) => ({',
+    '      userID: friend.userID,',
+    '      displayName: friend.remark || friend.nickname || friend.userID,',
+    '      avatar: friend.faceURL,',
+    '      pinned: friend.isPinned,',
+    '    })),',
+    '  );',
+    '} catch (error) {',
+    "  console.error('getFriendListPage failed', { error });",
+    '  throw error;',
+    '}',
+    '```',
+    '',
+    '```ts title="TypeScript"',
+    'type FriendUserItem = {',
+    '  addSource: number;',
+    '  createTime: number;',
+    '  ex: string;',
+    '  faceURL: string;',
+    '  userID: string;',
+    '  nickname: string;',
+    '  operatorUserID: string;',
+    '  ownerUserID: string;',
+    '  remark: string;',
+    '  isPinned: boolean;',
+    '  attachedInfo: string;',
+    '};',
+    '',
+    'const operationID = crypto.randomUUID();',
+    'try {',
+    '  const { data: friends } = await OpenIM.getFriendListPage(',
+    '    { offset: 0, count: 50, filterBlack: true },',
+    '    operationID,',
+    '  );',
+    '',
+    '  const friendsByID = new Map<string, FriendUserItem>(',
+    '    (friends ?? []).map((friend) => [friend.userID, friend]),',
+    '  );',
+    '  renderFriends([...friendsByID.values()]);',
+    '} catch (error) {',
+    "  console.error('getFriendListPage failed', { error, operationID });",
+    '  throw error;',
+    '}',
+    '```',
+    ':::',
+    '',
+    '---',
+    '',
+    '## 分页读取好友列表',
+    '',
+    '`getFriendListPage()` 返回当前登录用户可见的一页好友关系列表。它不会返回非好友用户，也不会执行应用级全量用户分页。',
+    '',
+    '#### 请求参数',
+    '',
+    ...renderMarkdownTable(
+      ['参数名', '类型', '是否必填', '说明'],
+      [
+        [
+          '`offset`',
+          '`number`',
+          '必填',
+          '分页起始偏移量。第一页传 `0`。',
+        ],
+        [
+          '`count`',
+          '`number`',
+          '必填',
+          '本次读取数量。',
+        ],
+        [
+          '`filterBlack`',
+          '`boolean`',
+          '可选',
+          '是否过滤当前用户黑名单中的用户。通讯录页通常传 `true`，避免已拉黑用户继续出现在普通好友列表中；如果产品需要同时展示黑名单状态，可传 `false` 后自行分组。',
+        ],
+        [
+          '`operationID`',
+          '`string`',
+          '可选',
+          '链路追踪 ID。建议为关键调用生成并写入日志，便于对应客户端和服务端日志。',
+        ],
+      ],
+    ),
+    '',
+    '#### 返回值',
+    '',
+    '`getFriendListPage()` 返回 `WsResponse<FriendUserItem[]>`。外层响应用于判断调用是否成功，`data` 是当前用户的一页好友关系数组。',
+    '',
+    ...renderMarkdownTable(
+      ['字段', '类型', '说明'],
+      [
+        ['`event`', '`string`', 'SDK 返回的事件名或方法标识。'],
+        ['`errCode`', '`number`', '错误码。通常为 `0` 表示成功，非零时应读取 `errMsg` 并进入错误处理。'],
+        ['`errMsg`', '`string`', '错误描述。'],
+        ['`operationID`', '`string`', '本次调用的链路追踪 ID。'],
+        ['`data`', '`FriendUserItem[]`', '当前登录用户的好友关系列表。'],
+      ],
+    ),
+    '',
+    '`FriendUserItem` 的字段如下：',
+    '',
+    ...renderMarkdownTable(
+      ['字段', '类型', '说明'],
+      [
+        ['`userID`', '`string`', '好友用户的 OpenIM 用户 ID。'],
+        ['`nickname`', '`string`', '好友账号级公开昵称。'],
+        ['`faceURL`', '`string`', '好友账号级公开头像地址。'],
+        ['`remark`', '`string`', '当前用户为该好友设置的备注。联系人页展示名称通常优先使用该字段。'],
+        ['`isPinned`', '`boolean`', '该好友是否被当前用户置顶。'],
+        ['`attachedInfo`', '`string`', 'SDK 返回的附加信息，通常由服务端或 SDK 内部写入。'],
+        ['`ex`', '`string`', '好友关系扩展字段，格式由业务约定。'],
+        ['`addSource`', '`number`', '好友关系来源。'],
+        ['`createTime`', '`number`', '好友关系创建时间戳。'],
+        ['`operatorUserID`', '`string`', '最近一次关系操作的操作者用户 ID。'],
+        ['`ownerUserID`', '`string`', '当前好友关系所属用户 ID，通常是当前登录用户。'],
+      ],
+    ),
+    '',
+    '渲染通讯录时建议按 `userID` 归一化保存好友关系，并把展示名称计算逻辑固定在一个地方，避免好友备注、公开昵称和群内昵称互相覆盖。',
+    '',
+    '```ts',
+    'function getFriendDisplayName(friend: FriendUserItem) {',
+    '  return friend.remark || friend.nickname || friend.userID;',
+    '}',
+    '',
+    'const sortedFriends = [...friends].sort((a, b) => {',
+    '  if (a.isPinned !== b.isPinned) return a.isPinned ? -1 : 1;',
+    '  return getFriendDisplayName(a).localeCompare(getFriendDisplayName(b));',
+    '});',
+    '```',
+    '',
+    '#### 搜索好友',
+    '',
+    '如果只需要在当前用户好友范围内搜索，使用 `searchFriends()`。它返回 `SearchedFriendsInfo[]`，字段继承 `FriendUserItem`，并包含关系匹配结果。',
+    '',
+    ':::code-tabs',
+    '```javascript title="JavaScript"',
+    'const { data: matchedFriends } = await OpenIM.searchFriends({',
+    '  keywordList: [keyword],',
+    '  isSearchUserID: true,',
+    '  isSearchNickname: true,',
+    '  isSearchRemark: true,',
+    '});',
+    '```',
+    '',
+    '```ts title="TypeScript"',
+    'try {',
+    '  const { data: matchedFriends } = await OpenIM.searchFriends({',
+    '    keywordList: [keyword.trim()],',
+    '    isSearchUserID: true,',
+    '    isSearchNickname: true,',
+    '    isSearchRemark: true,',
+    '  });',
+    '',
+    '  renderFriends(matchedFriends ?? []);',
+    '} catch (error) {',
+    "  console.error('searchFriends failed', { error, keyword });",
+    '  throw error;',
+    '}',
+    '```',
+    ':::',
+    '',
+    '#### 同步列表变化',
+    '',
+    '好友列表不是一次性静态数据。添加好友、删除好友或修改好友资料后，通讯录页需要更新本地状态；如果事件载荷不足以完成增量更新，可以在事件到达后节流调用 `getFriendListPage()` 重新读取第一页。',
+    '',
+    '```ts',
+    'const refreshFriends = debounce(async () => {',
+    '  const { data } = await OpenIM.getFriendListPage({',
+    '    offset: 0,',
+    '    count: 50,',
+    '    filterBlack: true,',
+    '  });',
+    '  replaceFriendList(data);',
+    '}, 300);',
+    '',
+    'OpenIM.on(CbEvents.OnFriendAdded, refreshFriends);',
+    'OpenIM.on(CbEvents.OnFriendDeleted, refreshFriends);',
+    'OpenIM.on(CbEvents.OnFriendInfoChanged, refreshFriends);',
+    '```',
+    '',
+    '## 常见问题',
+    '',
+    ...renderMarkdownTable(
+      ['问题', '可能原因', '处理方式'],
+      [
+        [
+          '列表为空',
+          '当前用户确实没有好友，或登录后的关系链同步尚未完成。',
+          '确认好友关系已存在；首次登录后可在连接成功、同步完成或页面聚焦时重试读取。',
+        ],
+        [
+          '已拉黑用户仍出现在通讯录',
+          '`filterBlack` 未开启，或页面合并了旧缓存。',
+          '普通通讯录调用 `getFriendListPage({ offset, count, filterBlack: true })`，黑名单变化由黑名单页面单独处理。',
+        ],
+        [
+          '搜索不到好友',
+          '搜索字段未开启，或关键字只匹配备注、昵称、用户 ID 中的某一类。',
+          '根据产品需求开启 `isSearchUserID`、`isSearchNickname` 和 `isSearchRemark`。',
+        ],
+      ],
+    ),
+    '',
+    '## 下一步',
+    '',
+    '- [获取用户公开资料](/docs/chat/sdk/v4/wasm/user/retrieving-users/retrieve-a-list-of-users-in-an-application)',
+    '- [获取用户在线状态](/docs/chat/sdk/v4/wasm/user/retrieving-and-updating-user-information/retrieve-the-online-status-of-a-user)',
+    '- [拉黑和解除拉黑其他成员](/docs/chat/sdk/v4/wasm/user/moderating-a-user/block-and-unblock-other-members)',
+  ].join('\n');
+}
+
 function localizeFormalSdkGuide(body, route, title) {
   const sections = splitSections(body);
   const implementation = sections.get('Implementation') ?? '';
@@ -293,20 +585,18 @@ function localizeFormalSdkGuide(body, route, title) {
   const hasTaskCode = taskCodeBlocks.length > 0;
 
   const parts = [];
-  parts.push('## 概览', '', formalOverview(route, title), '');
-  parts.push('## 与 OpenIM 的对应关系', '', ...formalOpenImMapping(route, title), '');
-  parts.push('## 前置条件', '', ...formalPrerequisites(route), '');
+  parts.push(formalOverview(route, title), '');
+  parts.push('## 能力边界', '', ...formalOpenImMapping(route, title), '');
+  parts.push('## 接入准备', '', ...formalPrerequisites(route), '');
+  parts.push('', ...formalInstallAndConfigure(), '');
+  parts.push('', ...formalInitializeSdk(), '');
+  parts.push('## 使用方式', '', '相关接口：', '');
   parts.push(
-    '## API 签名',
-    '',
     ...translateApiSection(sections.get('API signatures') ?? '', route),
     '',
   );
-  parts.push('## 安装和配置', '', ...formalInstallAndConfigure(), '');
-  parts.push('## 初始化 SDK', '', ...formalInitializeSdk(), '');
+  parts.push('## 实现流程', '');
   parts.push(
-    '## 实现步骤',
-    '',
     `下面的步骤以${title}为目标，代码中的用户、群组、会话和消息 ID 需要替换为你业务中的真实值。`,
     '',
     '### 1. 准备应用状态',
@@ -321,20 +611,15 @@ function localizeFormalSdkGuide(body, route, title) {
     '',
     ...renderCodeBlocks(taskCodeBlocks),
     '',
-    '### 3. 处理结果和事件',
-    '',
-    ...formalHandleResult(route),
-    '',
   );
+  parts.push('## 状态同步', '', ...formalHandleResult(route), '');
+  parts.push('## 验证与排查', '', '验证时重点检查：', '');
   parts.push(
-    '## 验证结果',
-    '',
     ...formalVerify(route, sections.get('Verify the result') ?? ''),
     '',
   );
+  parts.push('常见问题：', '');
   parts.push(
-    '## 故障排查',
-    '',
     ...translateTroubleshootingSection(sections.get('Troubleshooting') ?? ''),
     '',
   );
@@ -395,7 +680,7 @@ function formalOverview(route, title) {
     return 'OpenIM WASM SDK 运行在浏览器环境中，通过 WASM 包连接 OpenIM Server，提供用户登录、会话、群组、消息、事件回调和本地缓存能力。本文面向正式接入场景，说明如何完成最小可用初始化，并把后续功能页串成一条可验证的客户端接入路径。';
   }
   if (route.path.endsWith('/send-first-message')) {
-    return '本页演示从浏览器客户端登录 OpenIM、创建文本消息对象、发送到单聊或群组会话，并通过事件回调确认另一端收到消息的完整流程。';
+    return '本页演示从浏览器客户端登录 OpenIM、创建消息对象 `MessageItem`、发送到单聊或群组会话，并通过事件回调确认另一端收到消息的完整流程。';
   }
   if (route.path.includes('/sending-a-message/send-a-message')) {
     return '本页说明如何创建 OpenIM 消息对象，并通过 `sendMessage()` 发送文本、文件、自定义或富文本消息。示例保留单聊和群聊都需要关注的 `recvID`、`groupID` 与 `MessageItem` 关系。';
@@ -601,7 +886,7 @@ function formalPrepareState(route) {
 
 function formalHandleResult(route) {
   const lines = [
-    '- SDK Promise 成功返回后，仍要检查响应中的 `errCode`、`errMsg` 和 `data`。',
+    '- SDK 调用失败会进入 `catch`；成功分支只处理返回的 `data` 和后续事件。',
     '- UI 状态应以 SDK 返回值和后续事件共同确认，避免只根据按钮点击立即改成最终状态。',
     '- 失败时记录 `operationID`，并把错误提示转换成用户能理解的业务文案。',
   ];
@@ -1012,15 +1297,31 @@ function renderMarkdownTable(headers, rows) {
 }
 
 function extractHeadings(body) {
+  const nextHeadingId = createHeadingIdGenerator();
+
   return body
     .split(/\r?\n/)
     .map((line) => line.match(/^(#{2,4})\s+(.+)$/))
     .filter(Boolean)
-    .map((match) => ({
-      depth: match[1].length,
-      title: match[2].trim(),
-      url: `#${headingId(match[2])}`,
-    }));
+    .map((match) => {
+      const title = match[2].trim();
+      return {
+        depth: match[1].length,
+        title,
+        url: `#${nextHeadingId(title)}`,
+      };
+    });
+}
+
+function createHeadingIdGenerator() {
+  const counts = new Map();
+
+  return (title) => {
+    const base = headingId(title) || 'section';
+    const count = (counts.get(base) ?? 0) + 1;
+    counts.set(base, count);
+    return count === 1 ? base : `${base}-${count}`;
+  };
 }
 
 function headingId(value) {
@@ -1098,6 +1399,7 @@ const titleTranslations = {
   'Collection migration guide': 'Collection 迁移指南',
   'Copy a message': '复制消息',
   'Create a channel': '创建频道',
+  'Create media and rich messages': '创建媒体和富内容消息',
   'Create a message thread': '创建消息线程',
   'Create a poll': '创建投票',
   'Create a scheduled message': '创建定时消息',
@@ -1128,6 +1430,7 @@ const titleTranslations = {
   Logger: '日志',
   'Manage channel metacounters': '管理频道计数器',
   'Manage channel metadata': '管理频道元数据',
+  'Manage friend requests': '管理好友申请',
   'Manage user metadata': '管理用户元数据',
   'Mark messages as delivered': '标记消息已送达',
   'Mark messages as read': '标记消息已读',
@@ -1148,24 +1451,31 @@ const titleTranslations = {
   'Receive messages in an open channel': '接收群组消息',
   'Refresh all data related to a channel': '刷新频道相关全部数据',
   'Register and remove operators': '注册和移除管理员',
+  'Register and remove administrators': '注册和移除管理员',
   'Report a message, user, or channel': '举报消息、用户或频道',
   'Retrieve a channel by URL': '通过 URL 获取频道',
   'Retrieve a list of banned users': '获取被封禁用户列表',
   'Retrieve a list of blocked users': '获取黑名单用户列表',
   'Retrieve a list of channels': '获取频道列表',
-  'Retrieve a list of members and operators in a specific order': '按指定顺序获取成员和管理员列表',
+  'Retrieve a list of friends': '获取好友列表',
+  'Retrieve a list of members and operators in a specific order': '排序展示群成员和管理员',
   'Retrieve a list of messages': '获取消息列表',
   'Retrieve a list of muted users': '获取被禁言用户列表',
-  'Retrieve a list of operators': '获取管理员列表',
+  'Retrieve a list of operators': '获取群主和管理员列表',
   'Retrieve a list of polls': '获取投票列表',
-  'Retrieve a list of users in a channel': '获取频道中的用户列表',
-  'Retrieve a list of users in an application': '获取应用中的用户列表',
+  'Retrieve a list of users in a channel': '获取群成员列表',
+  'Retrieve a list of users in an application': '获取用户公开资料',
+  'Retrieve users in an application': '查询应用用户',
   'Retrieve a list of voters': '获取投票人列表',
+  'Retrieve a paginated list of friends': '分页获取好友列表',
+  'Retrieve friend information': '获取好友资料',
+  'Retrieve specified friend information': '获取指定好友信息',
+  'Retrieve group members': '获取群成员列表',
   'Retrieve a message': '获取消息',
   'Retrieve a poll': '获取投票',
   'Retrieve a poll option': '获取投票选项',
   'Retrieve a scheduled message': '获取定时消息',
-  'Retrieve members who have read a message': '获取已读消息的成员',
+  'Retrieve members who have read a message': '获取消息已读和未读成员',
   'Retrieve number of channels with unread messages': '获取有未读消息的频道数',
   "Retrieve number of members who haven't read a message": '获取未读消息的成员数',
   "Retrieve number of members who haven't received a message": '获取未收到消息的成员数',
@@ -1196,8 +1506,10 @@ const titleTranslations = {
   'Update a message': '更新消息',
   'Update a poll': '更新投票',
   'Update a poll option': '更新投票选项',
+  'Update or delete friends': '更新或删除好友',
   'Update a scheduled message': '更新定时消息',
   'Update user profile': '更新用户资料',
+  'Insert a local message': '插入本地消息',
 };
 
 const navigationLabels = {
@@ -1222,6 +1534,7 @@ const navigationLabels = {
   'managing-channel-metadata': '管理频道元数据',
   'managing-channels': '管理频道',
   'managing-connection-event-handlers': '管理连接事件处理器',
+  'managing-friends': '管理好友',
   'managing-operators': '管理管理员',
   'managing-pinned-messages-in-group-channels': '管理群组频道置顶消息',
   'managing-polls': '管理投票',
@@ -1340,7 +1653,7 @@ const tableTranslations = {
   'A Sendbird method name is missing': '缺少 Sendbird 方法名',
   'Messages do not appear in the UI': '消息没有出现在界面中',
   'The client never connects': '客户端一直无法连接',
-  'The response has an error code': '响应包含错误码',
+  'The SDK call rejects': 'SDK 调用被拒绝',
   'WASM asset requests return 404': 'WASM 资源请求返回 404',
   'The feature is not part of the OpenIM WASM SDK public API.':
     '该能力不是 OpenIM WASM SDK 公开 API 的一部分。',
@@ -1353,8 +1666,8 @@ const tableTranslations = {
     '服务端拒绝请求，或当前用户没有权限。',
   'Copy `openIM.wasm`, `sql-wasm.wasm`, and `wasm_exec.js` from the npm package assets directory.':
     '从 npm 包资源目录复制 `openIM.wasm`、`sql-wasm.wasm` 和 `wasm_exec.js`。',
-  'Log `errCode`, `errMsg`, and `operationID`; verify group role, token, and target IDs.':
-    '记录 `errCode`、`errMsg` 和 `operationID`，并检查群组角色、token 和目标 ID。',
+  'Handle the error in `catch`, log the rejected error with `operationID`, and verify group role, token, and target IDs.':
+    '在 `catch` 中处理错误，记录被拒绝的错误对象和 `operationID`，并检查群组角色、token 和目标 ID。',
   'Register connection events before `login()` and test the API and WebSocket URLs from the same browser.':
     '在 `login()` 前注册连接事件，并在同一个浏览器中测试 API 与 WebSocket 地址。',
   'Register message events before testing and verify the target IDs with a second signed-in user.':
@@ -1369,8 +1682,8 @@ const phraseTranslations = [
     '确认 `login()` 成功，并且在调用目标 API 前触发 `CbEvents.OnConnectSuccess`。',
   ],
   [
-    "Confirm the SDK response has `errCode === 0` or follows your deployment's success convention.",
-    '确认 SDK 响应包含 `errCode === 0`，或符合你部署环境中的成功约定。',
+    "Confirm the OpenIM call resolves and the returned data or follow-up SDK event matches the expected state.",
+    '确认 SDK 调用成功 resolve，并且返回数据或后续事件符合预期。',
   ],
   [
     'Confirm the expected SDK event fires in another signed-in browser session when the action should be visible to other users.',

@@ -35,10 +35,10 @@ export function TableOfContents({ items, locale = 'en' }: { items: TocItem[]; lo
     <nav aria-label="On this page" className="toc-nav">
       <p>{text.docs.onThisPage}</p>
       <ul>
-        {items.map((item) => {
+        {items.map((item, index) => {
           const id = item.url.replace(/^#/, '');
           return (
-            <li data-depth={item.depth} key={`${item.url}-${item.title}`}>
+            <li data-depth={item.depth} key={`${item.url}-${item.title}-${index}`}>
               <a aria-current={activeId === id ? 'location' : undefined} href={item.url}>
                 {item.title}
               </a>

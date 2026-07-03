@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Fragment, type ReactNode } from 'react';
 import { CodeBlock, CodeTabs, type CodeTab } from '@/src/components/docs/code-block';
+import { createHeadingIdGenerator } from '@/src/lib/heading-ids';
 import type { Locale } from '@/src/lib/i18n';
 import { toLocalizedPath } from '@/src/lib/i18n';
 
@@ -8,7 +9,7 @@ type MarkdownBlock =
   | { type: 'blockquote'; lines: string[] }
   | { type: 'code'; code: string; language: string }
   | { type: 'codeTabs'; tabs: CodeTab[] }
-  | { type: 'heading'; depth: number; title: string }
+  | { type: 'heading'; depth: number; id: string; title: string }
   | { type: 'hr' }
   | { type: 'list'; items: string[]; ordered: boolean }
   | { type: 'paragraph'; text: string }
@@ -39,11 +40,10 @@ function MarkdownBlockView({
   locale: Locale;
 }) {
   if (block.type === 'heading') {
-    const id = headingId(block.title);
     const level = Math.min(Math.max(block.depth, 2), 4);
-    if (level === 2) return <h2 id={id}>{renderInlineMarkdown(block.title, locale)}</h2>;
-    if (level === 3) return <h3 id={id}>{renderInlineMarkdown(block.title, locale)}</h3>;
-    return <h4 id={id}>{renderInlineMarkdown(block.title, locale)}</h4>;
+    if (level === 2) return <h2 id={block.id}>{renderInlineMarkdown(block.title, locale)}</h2>;
+    if (level === 3) return <h3 id={block.id}>{renderInlineMarkdown(block.title, locale)}</h3>;
+    return <h4 id={block.id}>{renderInlineMarkdown(block.title, locale)}</h4>;
   }
 
   if (block.type === 'paragraph') return <p>{renderInlineMarkdown(block.text, locale)}</p>;
@@ -116,6 +116,7 @@ function MarkdownBlockView({
 function parseMarkdown(body: string): MarkdownBlock[] {
   const lines = body.replace(/\r\n/g, '\n').split('\n');
   const blocks: MarkdownBlock[] = [];
+  const nextHeadingId = createHeadingIdGenerator();
   let index = 0;
 
   while (index < lines.length) {
@@ -173,6 +174,7 @@ function parseMarkdown(body: string): MarkdownBlock[] {
       blocks.push({
         type: 'heading',
         depth: Math.max(heading[1].length, 2),
+        id: nextHeadingId(heading[2].trim()),
         title: heading[2].trim(),
       });
       index += 1;
@@ -320,12 +322,4 @@ function renderInlineMarkdown(value: string, locale: Locale): ReactNode[] {
 
 function isExternalHref(href: string) {
   return /^(https?:)?\/\//.test(href) || href.startsWith('mailto:');
-}
-
-function headingId(value: string) {
-  return value
-    .replace(/[>#*_`]/g, '')
-    .toLowerCase()
-    .replace(/[^\p{L}\p{N}]+/gu, '-')
-    .replace(/^-+|-+$/g, '');
 }

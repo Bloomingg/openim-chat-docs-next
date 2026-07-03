@@ -28,9 +28,12 @@ for (const route of routes) {
   }
 }
 
+changed += applyWasmRetrievingUsersOrder(routes);
+
 const routeMap = new Map(routes.map((route) => [route.path, route]));
 for (const context of navigation.contexts) {
-  refreshNodes(context.nodes, routeMap);
+  changed += refreshNodes(context.nodes, routeMap);
+  changed += applyWasmRetrievingUsersNavigationOrder(context);
   const overview = routeMap.get(context.overviewPath);
   if (overview && context.title !== overview.contextTitle && overview.contextTitle) {
     context.title = overview.contextTitle;
@@ -44,13 +47,33 @@ await Promise.all([
 console.log(`Synchronized content metadata (${changed.toLocaleString()} changed fields).`);
 
 function refreshNodes(nodes, routeMap) {
+  let changed = 0;
   for (const node of nodes) {
+    if (!Array.isArray(node.children)) {
+      node.children = [];
+      changed += 1;
+    }
+
+    changed += refreshNodes(node.children, routeMap);
+
     if (node.href) {
       const route = routeMap.get(node.href);
-      if (route) node.title = route.title;
+      if (route) {
+        changed += setField(node, 'title', route.title);
+        changed += setField(node, 'type', 'page');
+        changed += setField(node, 'minIndex', route.navOrder);
+      }
+    } else {
+      changed += setField(node, 'type', 'folder');
+      const childIndexes = node.children
+        .map((child) => child.minIndex)
+        .filter((value) => Number.isFinite(value));
+      if (childIndexes.length > 0) {
+        changed += setField(node, 'minIndex', Math.min(...childIndexes));
+      }
     }
-    refreshNodes(node.children ?? [], routeMap);
   }
+  return changed;
 }
 
 function parseFrontmatter(source) {
@@ -70,4 +93,65 @@ function parseFrontmatter(source) {
     }
   }
   return result;
+}
+
+function setField(target, key, value) {
+  if (target[key] === value) return 0;
+  target[key] = value;
+  return 1;
+}
+
+function applyWasmRetrievingUsersOrder(routes) {
+  const order = wasmRetrievingUsersOrder();
+  const overview = routes.find(
+    (route) => route.path === '/docs/chat/sdk/v4/wasm/user/overview-user',
+  );
+  const baseOrder = Number.isFinite(overview?.navOrder) ? overview.navOrder : 506;
+  let changed = 0;
+
+  order.forEach((path, index) => {
+    const route = routes.find((item) => item.path === path);
+    if (!route) return;
+    changed += setField(route, 'navOrder', Number((baseOrder + (index + 1) / 10).toFixed(1)));
+  });
+
+  return changed;
+}
+
+function applyWasmRetrievingUsersNavigationOrder(context) {
+  if (context.key !== 'chat/sdk/v4/wasm') return 0;
+
+  const group = findNode(context.nodes, 'user/retrieving-users');
+  if (!group) return 0;
+
+  const order = new Map(wasmRetrievingUsersOrder().map((path, index) => [path, index]));
+  const before = group.children.map((child) => child.href ?? child.id).join('\n');
+  group.children.sort((a, b) => {
+    const first = order.get(a.href) ?? Number.POSITIVE_INFINITY;
+    const second = order.get(b.href) ?? Number.POSITIVE_INFINITY;
+    return (
+      first - second ||
+      (a.minIndex ?? Number.POSITIVE_INFINITY) - (b.minIndex ?? Number.POSITIVE_INFINITY) ||
+      a.title.localeCompare(b.title)
+    );
+  });
+  const after = group.children.map((child) => child.href ?? child.id).join('\n');
+  return before === after ? 0 : 1;
+}
+
+function findNode(nodes, id) {
+  for (const node of nodes) {
+    if (node.id === id) return node;
+    const found = findNode(node.children ?? [], id);
+    if (found) return found;
+  }
+  return undefined;
+}
+
+function wasmRetrievingUsersOrder() {
+  return [
+    '/docs/chat/sdk/v4/wasm/user/retrieving-users/retrieve-a-list-of-users-in-an-application',
+    '/docs/chat/sdk/v4/wasm/user/retrieving-users/retrieve-a-list-of-friends',
+    '/docs/chat/sdk/v4/wasm/user/retrieving-users/retrieve-friend-information',
+  ];
 }
