@@ -5726,5 +5726,301 @@
     "context": "chat/platform-api/v3",
     "template": "api",
     "contentFile": "content/docs/chat/platform-api/v3/user/search-notification-account.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/auth/get-admin-token",
+    "openimPath": "/docs/chat/platform-api/v3/auth/get-admin-token",
+    "title": "获取管理员 Token",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/auth/get-admin-token.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/auth/get-user-token",
+    "openimPath": "/docs/chat/platform-api/v3/auth/get-user-token",
+    "title": "获取用户 Token",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/auth/get-user-token.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/auth/parse-token",
+    "openimPath": "/docs/chat/platform-api/v3/auth/parse-token",
+    "title": "解析 Token",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/auth/parse-token.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/auth/force-logout",
+    "openimPath": "/docs/chat/platform-api/v3/auth/force-logout",
+    "title": "强制用户下线",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/auth/force-logout.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/third/prometheus",
+    "openimPath": "/docs/chat/platform-api/v3/third/prometheus",
+    "title": "跳转监控面板",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/third/prometheus.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/third/fcm-update-token",
+    "openimPath": "/docs/chat/platform-api/v3/third/fcm-update-token",
+    "title": "更新 FCM Token",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/third/fcm-update-token.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/third/set-app-badge",
+    "openimPath": "/docs/chat/platform-api/v3/third/set-app-badge",
+    "title": "设置应用角标",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/third/set-app-badge.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/third/upload-logs",
+    "openimPath": "/docs/chat/platform-api/v3/third/upload-logs",
+    "title": "上传日志记录",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/third/upload-logs.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/third/delete-logs",
+    "openimPath": "/docs/chat/platform-api/v3/third/delete-logs",
+    "title": "删除日志记录",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/third/delete-logs.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/third/search-logs",
+    "openimPath": "/docs/chat/platform-api/v3/third/search-logs",
+    "title": "搜索日志记录",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/third/search-logs.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/third/part-limit",
+    "openimPath": "/docs/chat/platform-api/v3/third/part-limit",
+    "title": "获取分片上传限制",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/third/part-limit.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/third/part-size",
+    "openimPath": "/docs/chat/platform-api/v3/third/part-size",
+    "title": "计算分片大小",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/third/part-size.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/third/initiate-multipart-upload",
+    "openimPath": "/docs/chat/platform-api/v3/third/initiate-multipart-upload",
+    "title": "初始化分片上传",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/third/initiate-multipart-upload.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/third/auth-sign",
+    "openimPath": "/docs/chat/platform-api/v3/third/auth-sign",
+    "title": "刷新分片上传签名",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/third/auth-sign.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/third/complete-multipart-upload",
+    "openimPath": "/docs/chat/platform-api/v3/third/complete-multipart-upload",
+    "title": "完成分片上传",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/third/complete-multipart-upload.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/third/access-url",
+    "openimPath": "/docs/chat/platform-api/v3/third/access-url",
+    "title": "获取对象访问地址",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/third/access-url.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/third/initiate-form-data",
+    "openimPath": "/docs/chat/platform-api/v3/third/initiate-form-data",
+    "title": "初始化表单直传",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/third/initiate-form-data.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/third/complete-form-data",
+    "openimPath": "/docs/chat/platform-api/v3/third/complete-form-data",
+    "title": "完成表单直传",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/third/complete-form-data.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/third/object-redirect",
+    "openimPath": "/docs/chat/platform-api/v3/third/object-redirect",
+    "title": "对象访问重定向",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/third/object-redirect.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/message/newest-seq",
+    "openimPath": "/docs/chat/platform-api/v3/message/newest-seq",
+    "title": "获取最新序列号",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/message/newest-seq.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/message/search-msg",
+    "openimPath": "/docs/chat/platform-api/v3/message/search-msg",
+    "title": "搜索消息",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/message/search-msg.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/message/send-msg",
+    "openimPath": "/docs/chat/platform-api/v3/message/send-msg",
+    "title": "发送单条消息",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/message/send-msg.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/message/send-business-notification",
+    "openimPath": "/docs/chat/platform-api/v3/message/send-business-notification",
+    "title": "发送业务通知",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/message/send-business-notification.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/message/pull-msg-by-seq",
+    "openimPath": "/docs/chat/platform-api/v3/message/pull-msg-by-seq",
+    "title": "按序列号拉取消息",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/message/pull-msg-by-seq.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/message/revoke-msg",
+    "openimPath": "/docs/chat/platform-api/v3/message/revoke-msg",
+    "title": "撤回消息",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/message/revoke-msg.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/message/mark-msgs-as-read",
+    "openimPath": "/docs/chat/platform-api/v3/message/mark-msgs-as-read",
+    "title": "标记多条消息已读",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/message/mark-msgs-as-read.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/message/mark-conversation-as-read",
+    "openimPath": "/docs/chat/platform-api/v3/message/mark-conversation-as-read",
+    "title": "标记会话已读",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/message/mark-conversation-as-read.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/message/get-conversations-has-read-and-max-seq",
+    "openimPath": "/docs/chat/platform-api/v3/message/get-conversations-has-read-and-max-seq",
+    "title": "获取会话已读和最大序列号",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/message/get-conversations-has-read-and-max-seq.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/message/set-conversation-has-read-seq",
+    "openimPath": "/docs/chat/platform-api/v3/message/set-conversation-has-read-seq",
+    "title": "设置会话已读序列号",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/message/set-conversation-has-read-seq.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/message/clear-conversation-msg",
+    "openimPath": "/docs/chat/platform-api/v3/message/clear-conversation-msg",
+    "title": "清空会话消息",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/message/clear-conversation-msg.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/message/user-clear-all-msg",
+    "openimPath": "/docs/chat/platform-api/v3/message/user-clear-all-msg",
+    "title": "清空用户全部消息",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/message/user-clear-all-msg.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/message/delete-msgs",
+    "openimPath": "/docs/chat/platform-api/v3/message/delete-msgs",
+    "title": "删除指定消息",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/message/delete-msgs.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/message/delete-msg-physical-by-seq",
+    "openimPath": "/docs/chat/platform-api/v3/message/delete-msg-physical-by-seq",
+    "title": "按序列号物理删除消息",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/message/delete-msg-physical-by-seq.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/message/delete-msg-physical",
+    "openimPath": "/docs/chat/platform-api/v3/message/delete-msg-physical",
+    "title": "按时间物理删除消息",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/message/delete-msg-physical.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/message/batch-send-msg",
+    "openimPath": "/docs/chat/platform-api/v3/message/batch-send-msg",
+    "title": "批量发送消息",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/message/batch-send-msg.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/message/check-msg-is-send-success",
+    "openimPath": "/docs/chat/platform-api/v3/message/check-msg-is-send-success",
+    "title": "检查消息发送状态",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/message/check-msg-is-send-success.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/message/get-server-time",
+    "openimPath": "/docs/chat/platform-api/v3/message/get-server-time",
+    "title": "获取服务器时间",
+    "context": "chat/platform-api/v3",
+    "template": "api",
+    "contentFile": "content/docs/chat/platform-api/v3/message/get-server-time.mdx"
   }
 ]

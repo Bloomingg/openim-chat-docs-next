@@ -87,6 +87,8 @@
     "webhook": "Webhook",
     "group": "群组",
     "friend": "好友",
-    "conversation": "会话"
+    "conversation": "会话",
+    "auth": "认证",
+    "third": "第三方服务"
   }
 }

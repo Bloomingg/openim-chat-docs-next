@@ -887,6 +887,197 @@
           "minIndex": 640
         },
         {
+          "id": "auth",
+          "segment": "auth",
+          "title": "认证",
+          "href": null,
+          "type": "folder",
+          "children": [
+            {
+              "id": "auth/get-admin-token",
+              "segment": "get-admin-token",
+              "title": "获取管理员 Token",
+              "href": "/docs/chat/platform-api/v3/auth/get-admin-token",
+              "type": "page",
+              "children": [],
+              "minIndex": 715
+            },
+            {
+              "id": "auth/get-user-token",
+              "segment": "get-user-token",
+              "title": "获取用户 Token",
+              "href": "/docs/chat/platform-api/v3/auth/get-user-token",
+              "type": "page",
+              "children": [],
+              "minIndex": 716
+            },
+            {
+              "id": "auth/parse-token",
+              "segment": "parse-token",
+              "title": "解析 Token",
+              "href": "/docs/chat/platform-api/v3/auth/parse-token",
+              "type": "page",
+              "children": [],
+              "minIndex": 717
+            },
+            {
+              "id": "auth/force-logout",
+              "segment": "force-logout",
+              "title": "强制用户下线",
+              "href": "/docs/chat/platform-api/v3/auth/force-logout",
+              "type": "page",
+              "children": [],
+              "minIndex": 718
+            }
+          ],
+          "minIndex": 715
+        },
+        {
+          "id": "third",
+          "segment": "third",
+          "title": "第三方服务",
+          "href": null,
+          "type": "folder",
+          "children": [
+            {
+              "id": "third/prometheus",
+              "segment": "prometheus",
+              "title": "跳转监控面板",
+              "href": "/docs/chat/platform-api/v3/third/prometheus",
+              "type": "page",
+              "children": [],
+              "minIndex": 719
+            },
+            {
+              "id": "third/fcm-update-token",
+              "segment": "fcm-update-token",
+              "title": "更新 FCM Token",
+              "href": "/docs/chat/platform-api/v3/third/fcm-update-token",
+              "type": "page",
+              "children": [],
+              "minIndex": 720
+            },
+            {
+              "id": "third/set-app-badge",
+              "segment": "set-app-badge",
+              "title": "设置应用角标",
+              "href": "/docs/chat/platform-api/v3/third/set-app-badge",
+              "type": "page",
+              "children": [],
+              "minIndex": 721
+            },
+            {
+              "id": "third/upload-logs",
+              "segment": "upload-logs",
+              "title": "上传日志记录",
+              "href": "/docs/chat/platform-api/v3/third/upload-logs",
+              "type": "page",
+              "children": [],
+              "minIndex": 722
+            },
+            {
+              "id": "third/delete-logs",
+              "segment": "delete-logs",
+              "title": "删除日志记录",
+              "href": "/docs/chat/platform-api/v3/third/delete-logs",
+              "type": "page",
+              "children": [],
+              "minIndex": 723
+            },
+            {
+              "id": "third/search-logs",
+              "segment": "search-logs",
+              "title": "搜索日志记录",
+              "href": "/docs/chat/platform-api/v3/third/search-logs",
+              "type": "page",
+              "children": [],
+              "minIndex": 724
+            },
+            {
+              "id": "third/part-limit",
+              "segment": "part-limit",
+              "title": "获取分片上传限制",
+              "href": "/docs/chat/platform-api/v3/third/part-limit",
+              "type": "page",
+              "children": [],
+              "minIndex": 725
+            },
+            {
+              "id": "third/part-size",
+              "segment": "part-size",
+              "title": "计算分片大小",
+              "href": "/docs/chat/platform-api/v3/third/part-size",
+              "type": "page",
+              "children": [],
+              "minIndex": 726
+            },
+            {
+              "id": "third/initiate-multipart-upload",
+              "segment": "initiate-multipart-upload",
+              "title": "初始化分片上传",
+              "href": "/docs/chat/platform-api/v3/third/initiate-multipart-upload",
+              "type": "page",
+              "children": [],
+              "minIndex": 727
+            },
+            {
+              "id": "third/auth-sign",
+              "segment": "auth-sign",
+              "title": "刷新分片上传签名",
+              "href": "/docs/chat/platform-api/v3/third/auth-sign",
+              "type": "page",
+              "children": [],
+              "minIndex": 728
+            },
+            {
+              "id": "third/complete-multipart-upload",
+              "segment": "complete-multipart-upload",
+              "title": "完成分片上传",
+              "href": "/docs/chat/platform-api/v3/third/complete-multipart-upload",
+              "type": "page",
+              "children": [],
+              "minIndex": 729
+            },
+            {
+              "id": "third/access-url",
+              "segment": "access-url",
+              "title": "获取对象访问地址",
+              "href": "/docs/chat/platform-api/v3/third/access-url",
+              "type": "page",
+              "children": [],
+              "minIndex": 730
+            },
+            {
+              "id": "third/initiate-form-data",
+              "segment": "initiate-form-data",
+              "title": "初始化表单直传",
+              "href": "/docs/chat/platform-api/v3/third/initiate-form-data",
+              "type": "page",
+              "children": [],
+              "minIndex": 731
+            },
+            {
+              "id": "third/complete-form-data",
+              "segment": "complete-form-data",
+              "title": "完成表单直传",
+              "href": "/docs/chat/platform-api/v3/third/complete-form-data",
+              "type": "page",
+              "children": [],
+              "minIndex": 732
+            },
+            {
+              "id": "third/object-redirect",
+              "segment": "object-redirect",
+              "title": "对象访问重定向",
+              "href": "/docs/chat/platform-api/v3/third/object-redirect",
+              "type": "page",
+              "children": [],
+              "minIndex": 733
+            }
+          ],
+          "minIndex": 719
+        },
+        {
           "id": "message",
           "segment": "message",
           "title": "消息",
@@ -901,6 +1092,168 @@
               "type": "page",
               "children": [],
               "minIndex": 631.5
+            },
+            {
+              "id": "message/newest-seq",
+              "segment": "newest-seq",
+              "title": "获取最新序列号",
+              "href": "/docs/chat/platform-api/v3/message/newest-seq",
+              "type": "page",
+              "children": [],
+              "minIndex": 734
+            },
+            {
+              "id": "message/search-msg",
+              "segment": "search-msg",
+              "title": "搜索消息",
+              "href": "/docs/chat/platform-api/v3/message/search-msg",
+              "type": "page",
+              "children": [],
+              "minIndex": 735
+            },
+            {
+              "id": "message/send-msg",
+              "segment": "send-msg",
+              "title": "发送单条消息",
+              "href": "/docs/chat/platform-api/v3/message/send-msg",
+              "type": "page",
+              "children": [],
+              "minIndex": 736
+            },
+            {
+              "id": "message/send-business-notification",
+              "segment": "send-business-notification",
+              "title": "发送业务通知",
+              "href": "/docs/chat/platform-api/v3/message/send-business-notification",
+              "type": "page",
+              "children": [],
+              "minIndex": 737
+            },
+            {
+              "id": "message/pull-msg-by-seq",
+              "segment": "pull-msg-by-seq",
+              "title": "按序列号拉取消息",
+              "href": "/docs/chat/platform-api/v3/message/pull-msg-by-seq",
+              "type": "page",
+              "children": [],
+              "minIndex": 738
+            },
+            {
+              "id": "message/revoke-msg",
+              "segment": "revoke-msg",
+              "title": "撤回消息",
+              "href": "/docs/chat/platform-api/v3/message/revoke-msg",
+              "type": "page",
+              "children": [],
+              "minIndex": 739
+            },
+            {
+              "id": "message/mark-msgs-as-read",
+              "segment": "mark-msgs-as-read",
+              "title": "标记多条消息已读",
+              "href": "/docs/chat/platform-api/v3/message/mark-msgs-as-read",
+              "type": "page",
+              "children": [],
+              "minIndex": 740
+            },
+            {
+              "id": "message/mark-conversation-as-read",
+              "segment": "mark-conversation-as-read",
+              "title": "标记会话已读",
+              "href": "/docs/chat/platform-api/v3/message/mark-conversation-as-read",
+              "type": "page",
+              "children": [],
+              "minIndex": 741
+            },
+            {
+              "id": "message/get-conversations-has-read-and-max-seq",
+              "segment": "get-conversations-has-read-and-max-seq",
+              "title": "获取会话已读和最大序列号",
+              "href": "/docs/chat/platform-api/v3/message/get-conversations-has-read-and-max-seq",
+              "type": "page",
+              "children": [],
+              "minIndex": 742
+            },
+            {
+              "id": "message/set-conversation-has-read-seq",
+              "segment": "set-conversation-has-read-seq",
+              "title": "设置会话已读序列号",
+              "href": "/docs/chat/platform-api/v3/message/set-conversation-has-read-seq",
+              "type": "page",
+              "children": [],
+              "minIndex": 743
+            },
+            {
+              "id": "message/clear-conversation-msg",
+              "segment": "clear-conversation-msg",
+              "title": "清空会话消息",
+              "href": "/docs/chat/platform-api/v3/message/clear-conversation-msg",
+              "type": "page",
+              "children": [],
+              "minIndex": 744
+            },
+            {
+              "id": "message/user-clear-all-msg",
+              "segment": "user-clear-all-msg",
+              "title": "清空用户全部消息",
+              "href": "/docs/chat/platform-api/v3/message/user-clear-all-msg",
+              "type": "page",
+              "children": [],
+              "minIndex": 745
+            },
+            {
+              "id": "message/delete-msgs",
+              "segment": "delete-msgs",
+              "title": "删除指定消息",
+              "href": "/docs/chat/platform-api/v3/message/delete-msgs",
+              "type": "page",
+              "children": [],
+              "minIndex": 746
+            },
+            {
+              "id": "message/delete-msg-physical-by-seq",
+              "segment": "delete-msg-physical-by-seq",
+              "title": "按序列号物理删除消息",
+              "href": "/docs/chat/platform-api/v3/message/delete-msg-physical-by-seq",
+              "type": "page",
+              "children": [],
+              "minIndex": 747
+            },
+            {
+              "id": "message/delete-msg-physical",
+              "segment": "delete-msg-physical",
+              "title": "按时间物理删除消息",
+              "href": "/docs/chat/platform-api/v3/message/delete-msg-physical",
+              "type": "page",
+              "children": [],
+              "minIndex": 748
+            },
+            {
+              "id": "message/batch-send-msg",
+              "segment": "batch-send-msg",
+              "title": "批量发送消息",
+              "href": "/docs/chat/platform-api/v3/message/batch-send-msg",
+              "type": "page",
+              "children": [],
+              "minIndex": 749
+            },
+            {
+              "id": "message/check-msg-is-send-success",
+              "segment": "check-msg-is-send-success",
+              "title": "检查消息发送状态",
+              "href": "/docs/chat/platform-api/v3/message/check-msg-is-send-success",
+              "type": "page",
+              "children": [],
+              "minIndex": 750
+            },
+            {
+              "id": "message/get-server-time",
+              "segment": "get-server-time",
+              "title": "获取服务器时间",
+              "href": "/docs/chat/platform-api/v3/message/get-server-time",
+              "type": "page",
+              "children": [],
+              "minIndex": 751
             },
             {
               "id": "message/messaging-basics",
@@ -1156,7 +1509,7 @@
           "minIndex": 639
         }
       ],
-      "pageCount": 105
+      "pageCount": 142
     },
     {
       "key": "chat/sdk/v4/ios",
