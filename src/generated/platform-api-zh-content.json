@@ -85,6 +85,8 @@
     "understanding-rate-limits": "理解速率限制",
     "user": "用户",
     "webhook": "Webhook",
-    "group": "群组"
+    "group": "群组",
+    "friend": "好友",
+    "conversation": "会话"
   }
 }

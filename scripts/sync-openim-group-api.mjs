@@ -891,8 +891,11 @@ const groupNode = {
 };
 
 platformContext.nodes = platformContext.nodes.filter((node) => node.id !== 'group');
+const friendIndex = platformContext.nodes.findIndex((node) => node.id === 'friend');
 const channelIndex = platformContext.nodes.findIndex((node) => node.id === 'channel');
-if (channelIndex >= 0) {
+if (friendIndex >= 0) {
+  platformContext.nodes.splice(friendIndex + 1, 0, groupNode);
+} else if (channelIndex >= 0) {
   platformContext.nodes.splice(channelIndex + 1, 0, groupNode);
 } else {
   platformContext.nodes.push(groupNode);

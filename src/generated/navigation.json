@@ -45,6 +45,150 @@
               "minIndex": 616.5
             },
             {
+              "id": "user/user-register",
+              "segment": "user-register",
+              "title": "注册用户",
+              "href": "/docs/chat/platform-api/v3/user/user-register",
+              "type": "page",
+              "children": [],
+              "minIndex": 699
+            },
+            {
+              "id": "user/update-user-info",
+              "segment": "update-user-info",
+              "title": "更新用户信息",
+              "href": "/docs/chat/platform-api/v3/user/update-user-info",
+              "type": "page",
+              "children": [],
+              "minIndex": 700
+            },
+            {
+              "id": "user/update-user-info-ex",
+              "segment": "update-user-info-ex",
+              "title": "更新用户信息扩展",
+              "href": "/docs/chat/platform-api/v3/user/update-user-info-ex",
+              "type": "page",
+              "children": [],
+              "minIndex": 701
+            },
+            {
+              "id": "user/set-global-msg-recv-opt",
+              "segment": "set-global-msg-recv-opt",
+              "title": "设置全局消息接收选项",
+              "href": "/docs/chat/platform-api/v3/user/set-global-msg-recv-opt",
+              "type": "page",
+              "children": [],
+              "minIndex": 702
+            },
+            {
+              "id": "user/get-users-info",
+              "segment": "get-users-info",
+              "title": "获取指定用户信息",
+              "href": "/docs/chat/platform-api/v3/user/get-users-info",
+              "type": "page",
+              "children": [],
+              "minIndex": 703
+            },
+            {
+              "id": "user/get-all-users-uid",
+              "segment": "get-all-users-uid",
+              "title": "获取全部用户 ID",
+              "href": "/docs/chat/platform-api/v3/user/get-all-users-uid",
+              "type": "page",
+              "children": [],
+              "minIndex": 704
+            },
+            {
+              "id": "user/account-check",
+              "segment": "account-check",
+              "title": "检查账号是否存在",
+              "href": "/docs/chat/platform-api/v3/user/account-check",
+              "type": "page",
+              "children": [],
+              "minIndex": 705
+            },
+            {
+              "id": "user/get-users",
+              "segment": "get-users",
+              "title": "分页获取用户列表",
+              "href": "/docs/chat/platform-api/v3/user/get-users",
+              "type": "page",
+              "children": [],
+              "minIndex": 706
+            },
+            {
+              "id": "user/get-users-online-status",
+              "segment": "get-users-online-status",
+              "title": "获取用户在线状态",
+              "href": "/docs/chat/platform-api/v3/user/get-users-online-status",
+              "type": "page",
+              "children": [],
+              "minIndex": 707
+            },
+            {
+              "id": "user/get-users-online-token-detail",
+              "segment": "get-users-online-token-detail",
+              "title": "获取用户在线 Token 详情",
+              "href": "/docs/chat/platform-api/v3/user/get-users-online-token-detail",
+              "type": "page",
+              "children": [],
+              "minIndex": 708
+            },
+            {
+              "id": "user/subscribe-users-status",
+              "segment": "subscribe-users-status",
+              "title": "订阅用户在线状态",
+              "href": "/docs/chat/platform-api/v3/user/subscribe-users-status",
+              "type": "page",
+              "children": [],
+              "minIndex": 709
+            },
+            {
+              "id": "user/get-users-status",
+              "segment": "get-users-status",
+              "title": "获取用户状态",
+              "href": "/docs/chat/platform-api/v3/user/get-users-status",
+              "type": "page",
+              "children": [],
+              "minIndex": 710
+            },
+            {
+              "id": "user/get-subscribe-users-status",
+              "segment": "get-subscribe-users-status",
+              "title": "获取已订阅用户状态",
+              "href": "/docs/chat/platform-api/v3/user/get-subscribe-users-status",
+              "type": "page",
+              "children": [],
+              "minIndex": 711
+            },
+            {
+              "id": "user/add-notification-account",
+              "segment": "add-notification-account",
+              "title": "新增系统通知账号",
+              "href": "/docs/chat/platform-api/v3/user/add-notification-account",
+              "type": "page",
+              "children": [],
+              "minIndex": 712
+            },
+            {
+              "id": "user/update-notification-account",
+              "segment": "update-notification-account",
+              "title": "更新系统通知账号",
+              "href": "/docs/chat/platform-api/v3/user/update-notification-account",
+              "type": "page",
+              "children": [],
+              "minIndex": 713
+            },
+            {
+              "id": "user/search-notification-account",
+              "segment": "search-notification-account",
+              "title": "搜索系统通知账号",
+              "href": "/docs/chat/platform-api/v3/user/search-notification-account",
+              "type": "page",
+              "children": [],
+              "minIndex": 714
+            },
+            {
               "id": "user/listing-users",
               "segment": "listing-users",
               "title": "查询用户",
@@ -280,6 +424,196 @@
             }
           ],
           "minIndex": 622.5
+        },
+        {
+          "id": "friend",
+          "segment": "friend",
+          "title": "好友",
+          "href": null,
+          "type": "folder",
+          "children": [
+            {
+              "id": "friend/delete-friend",
+              "segment": "delete-friend",
+              "title": "删除好友",
+              "href": "/docs/chat/platform-api/v3/friend/delete-friend",
+              "type": "page",
+              "children": [],
+              "minIndex": 669
+            },
+            {
+              "id": "friend/list-received-friend-applications",
+              "segment": "list-received-friend-applications",
+              "title": "查询收到的好友申请",
+              "href": "/docs/chat/platform-api/v3/friend/list-received-friend-applications",
+              "type": "page",
+              "children": [],
+              "minIndex": 670
+            },
+            {
+              "id": "friend/get-designated-friend-application",
+              "segment": "get-designated-friend-application",
+              "title": "查询指定好友申请",
+              "href": "/docs/chat/platform-api/v3/friend/get-designated-friend-application",
+              "type": "page",
+              "children": [],
+              "minIndex": 671
+            },
+            {
+              "id": "friend/list-sent-friend-applications",
+              "segment": "list-sent-friend-applications",
+              "title": "查询发出的好友申请",
+              "href": "/docs/chat/platform-api/v3/friend/list-sent-friend-applications",
+              "type": "page",
+              "children": [],
+              "minIndex": 672
+            },
+            {
+              "id": "friend/get-friend-list",
+              "segment": "get-friend-list",
+              "title": "获取好友列表",
+              "href": "/docs/chat/platform-api/v3/friend/get-friend-list",
+              "type": "page",
+              "children": [],
+              "minIndex": 673
+            },
+            {
+              "id": "friend/get-designated-friends",
+              "segment": "get-designated-friends",
+              "title": "获取指定好友",
+              "href": "/docs/chat/platform-api/v3/friend/get-designated-friends",
+              "type": "page",
+              "children": [],
+              "minIndex": 674
+            },
+            {
+              "id": "friend/add-friend",
+              "segment": "add-friend",
+              "title": "发送好友申请",
+              "href": "/docs/chat/platform-api/v3/friend/add-friend",
+              "type": "page",
+              "children": [],
+              "minIndex": 675
+            },
+            {
+              "id": "friend/respond-friend-application",
+              "segment": "respond-friend-application",
+              "title": "处理好友申请",
+              "href": "/docs/chat/platform-api/v3/friend/respond-friend-application",
+              "type": "page",
+              "children": [],
+              "minIndex": 676
+            },
+            {
+              "id": "friend/set-friend-remark",
+              "segment": "set-friend-remark",
+              "title": "设置好友备注",
+              "href": "/docs/chat/platform-api/v3/friend/set-friend-remark",
+              "type": "page",
+              "children": [],
+              "minIndex": 677
+            },
+            {
+              "id": "friend/add-black",
+              "segment": "add-black",
+              "title": "加入黑名单",
+              "href": "/docs/chat/platform-api/v3/friend/add-black",
+              "type": "page",
+              "children": [],
+              "minIndex": 678
+            },
+            {
+              "id": "friend/get-black-list",
+              "segment": "get-black-list",
+              "title": "获取黑名单列表",
+              "href": "/docs/chat/platform-api/v3/friend/get-black-list",
+              "type": "page",
+              "children": [],
+              "minIndex": 679
+            },
+            {
+              "id": "friend/get-specified-blacks",
+              "segment": "get-specified-blacks",
+              "title": "获取指定黑名单",
+              "href": "/docs/chat/platform-api/v3/friend/get-specified-blacks",
+              "type": "page",
+              "children": [],
+              "minIndex": 680
+            },
+            {
+              "id": "friend/remove-black",
+              "segment": "remove-black",
+              "title": "移除黑名单",
+              "href": "/docs/chat/platform-api/v3/friend/remove-black",
+              "type": "page",
+              "children": [],
+              "minIndex": 681
+            },
+            {
+              "id": "friend/import-friends",
+              "segment": "import-friends",
+              "title": "导入好友关系",
+              "href": "/docs/chat/platform-api/v3/friend/import-friends",
+              "type": "page",
+              "children": [],
+              "minIndex": 682
+            },
+            {
+              "id": "friend/is-friend",
+              "segment": "is-friend",
+              "title": "校验好友关系",
+              "href": "/docs/chat/platform-api/v3/friend/is-friend",
+              "type": "page",
+              "children": [],
+              "minIndex": 683
+            },
+            {
+              "id": "friend/get-friend-ids",
+              "segment": "get-friend-ids",
+              "title": "获取好友 ID 列表",
+              "href": "/docs/chat/platform-api/v3/friend/get-friend-ids",
+              "type": "page",
+              "children": [],
+              "minIndex": 684
+            },
+            {
+              "id": "friend/get-specified-friends-info",
+              "segment": "get-specified-friends-info",
+              "title": "获取指定好友信息",
+              "href": "/docs/chat/platform-api/v3/friend/get-specified-friends-info",
+              "type": "page",
+              "children": [],
+              "minIndex": 685
+            },
+            {
+              "id": "friend/update-friends",
+              "segment": "update-friends",
+              "title": "更新好友信息",
+              "href": "/docs/chat/platform-api/v3/friend/update-friends",
+              "type": "page",
+              "children": [],
+              "minIndex": 686
+            },
+            {
+              "id": "friend/get-full-friend-user-ids",
+              "segment": "get-full-friend-user-ids",
+              "title": "全量获取好友用户 ID",
+              "href": "/docs/chat/platform-api/v3/friend/get-full-friend-user-ids",
+              "type": "page",
+              "children": [],
+              "minIndex": 687
+            },
+            {
+              "id": "friend/get-self-unhandled-apply-count",
+              "segment": "get-self-unhandled-apply-count",
+              "title": "获取未处理好友申请数量",
+              "href": "/docs/chat/platform-api/v3/friend/get-self-unhandled-apply-count",
+              "type": "page",
+              "children": [],
+              "minIndex": 688
+            }
+          ],
+          "minIndex": 669
         },
         {
           "id": "group",
@@ -591,6 +925,106 @@
           "minIndex": 631.5
         },
         {
+          "id": "conversation",
+          "segment": "conversation",
+          "title": "会话",
+          "href": null,
+          "type": "folder",
+          "children": [
+            {
+              "id": "conversation/get-sorted-conversation-list",
+              "segment": "get-sorted-conversation-list",
+              "title": "获取排序会话列表",
+              "href": "/docs/chat/platform-api/v3/conversation/get-sorted-conversation-list",
+              "type": "page",
+              "children": [],
+              "minIndex": 689
+            },
+            {
+              "id": "conversation/get-all-conversations",
+              "segment": "get-all-conversations",
+              "title": "获取全部会话",
+              "href": "/docs/chat/platform-api/v3/conversation/get-all-conversations",
+              "type": "page",
+              "children": [],
+              "minIndex": 690
+            },
+            {
+              "id": "conversation/get-conversation",
+              "segment": "get-conversation",
+              "title": "获取单个会话",
+              "href": "/docs/chat/platform-api/v3/conversation/get-conversation",
+              "type": "page",
+              "children": [],
+              "minIndex": 691
+            },
+            {
+              "id": "conversation/get-conversations",
+              "segment": "get-conversations",
+              "title": "批量获取会话",
+              "href": "/docs/chat/platform-api/v3/conversation/get-conversations",
+              "type": "page",
+              "children": [],
+              "minIndex": 692
+            },
+            {
+              "id": "conversation/set-conversations",
+              "segment": "set-conversations",
+              "title": "批量设置会话",
+              "href": "/docs/chat/platform-api/v3/conversation/set-conversations",
+              "type": "page",
+              "children": [],
+              "minIndex": 693
+            },
+            {
+              "id": "conversation/get-conversation-offline-push-user-ids",
+              "segment": "get-conversation-offline-push-user-ids",
+              "title": "获取会话离线推送用户 ID",
+              "href": "/docs/chat/platform-api/v3/conversation/get-conversation-offline-push-user-ids",
+              "type": "page",
+              "children": [],
+              "minIndex": 694
+            },
+            {
+              "id": "conversation/get-full-conversation-ids",
+              "segment": "get-full-conversation-ids",
+              "title": "全量获取会话 ID",
+              "href": "/docs/chat/platform-api/v3/conversation/get-full-conversation-ids",
+              "type": "page",
+              "children": [],
+              "minIndex": 695
+            },
+            {
+              "id": "conversation/get-owner-conversation",
+              "segment": "get-owner-conversation",
+              "title": "分页获取用户会话",
+              "href": "/docs/chat/platform-api/v3/conversation/get-owner-conversation",
+              "type": "page",
+              "children": [],
+              "minIndex": 696
+            },
+            {
+              "id": "conversation/get-not-notify-conversation-ids",
+              "segment": "get-not-notify-conversation-ids",
+              "title": "获取免打扰会话 ID",
+              "href": "/docs/chat/platform-api/v3/conversation/get-not-notify-conversation-ids",
+              "type": "page",
+              "children": [],
+              "minIndex": 697
+            },
+            {
+              "id": "conversation/get-pinned-conversation-ids",
+              "segment": "get-pinned-conversation-ids",
+              "title": "获取置顶会话 ID",
+              "href": "/docs/chat/platform-api/v3/conversation/get-pinned-conversation-ids",
+              "type": "page",
+              "children": [],
+              "minIndex": 698
+            }
+          ],
+          "minIndex": 689
+        },
+        {
           "id": "migration",
           "segment": "migration",
           "title": "迁移其他项目到 OpenIM",
@@ -722,7 +1156,7 @@
           "minIndex": 639
         }
       ],
-      "pageCount": 59
+      "pageCount": 105
     },
     {
       "key": "chat/sdk/v4/ios",
