@@ -4896,110 +4896,6 @@
     "contentFile": "content/docs/chat/platform-api/v3/prepare-to-use-api.mdx"
   },
   {
-    "sourcePath": "/docs/chat/platform-api/v3/user/listing-users/list-users",
-    "openimPath": "/docs/chat/platform-api/v3/user/listing-users/list-users",
-    "title": "查询用户列表",
-    "context": "chat/platform-api/v3",
-    "template": "api",
-    "contentFile": "content/docs/chat/platform-api/v3/user/listing-users/list-users.mdx"
-  },
-  {
-    "sourcePath": "/docs/chat/platform-api/v3/user/listing-users/get-a-user",
-    "openimPath": "/docs/chat/platform-api/v3/user/listing-users/get-a-user",
-    "title": "获取用户",
-    "context": "chat/platform-api/v3",
-    "template": "api",
-    "contentFile": "content/docs/chat/platform-api/v3/user/listing-users/get-a-user.mdx"
-  },
-  {
-    "sourcePath": "/docs/chat/platform-api/v3/user/creating-users/create-a-user",
-    "openimPath": "/docs/chat/platform-api/v3/user/creating-users/create-a-user",
-    "title": "创建用户",
-    "context": "chat/platform-api/v3",
-    "template": "api",
-    "contentFile": "content/docs/chat/platform-api/v3/user/creating-users/create-a-user.mdx"
-  },
-  {
-    "sourcePath": "/docs/chat/platform-api/v3/user/managing-users/update-a-user",
-    "openimPath": "/docs/chat/platform-api/v3/user/managing-users/update-a-user",
-    "title": "更新用户",
-    "context": "chat/platform-api/v3",
-    "template": "api",
-    "contentFile": "content/docs/chat/platform-api/v3/user/managing-users/update-a-user.mdx"
-  },
-  {
-    "sourcePath": "/docs/chat/platform-api/v3/user/managing-session-tokens/issue-a-session-token",
-    "openimPath": "/docs/chat/platform-api/v3/user/managing-session-tokens/issue-a-session-token",
-    "title": "签发会话 Token",
-    "context": "chat/platform-api/v3",
-    "template": "api",
-    "contentFile": "content/docs/chat/platform-api/v3/user/managing-session-tokens/issue-a-session-token.mdx"
-  },
-  {
-    "sourcePath": "/docs/chat/platform-api/v3/user/managing-session-tokens/revoke-all-session-tokens",
-    "openimPath": "/docs/chat/platform-api/v3/user/managing-session-tokens/revoke-all-session-tokens",
-    "title": "注销全部会话 Token",
-    "context": "chat/platform-api/v3",
-    "template": "api",
-    "contentFile": "content/docs/chat/platform-api/v3/user/managing-session-tokens/revoke-all-session-tokens.mdx"
-  },
-  {
-    "sourcePath": "/docs/chat/platform-api/v3/message/messaging-basics/send-a-message",
-    "openimPath": "/docs/chat/platform-api/v3/message/messaging-basics/send-a-message",
-    "title": "发送消息",
-    "context": "chat/platform-api/v3",
-    "template": "api",
-    "contentFile": "content/docs/chat/platform-api/v3/message/messaging-basics/send-a-message.mdx"
-  },
-  {
-    "sourcePath": "/docs/chat/platform-api/v3/migration/migrate-messages",
-    "openimPath": "/docs/chat/platform-api/v3/migration/migrate-messages",
-    "title": "迁移消息",
-    "context": "chat/platform-api/v3",
-    "template": "api",
-    "contentFile": "content/docs/chat/platform-api/v3/migration/migrate-messages.mdx"
-  },
-  {
-    "sourcePath": "/docs/chat/platform-api/v3/moderation/listing-blocked-and-blocking-users/list-blocked-and-blocking-users",
-    "openimPath": "/docs/chat/platform-api/v3/moderation/listing-blocked-and-blocking-users/list-blocked-and-blocking-users",
-    "title": "查询屏蔽与被屏蔽用户列表",
-    "context": "chat/platform-api/v3",
-    "template": "api",
-    "contentFile": "content/docs/chat/platform-api/v3/moderation/listing-blocked-and-blocking-users/list-blocked-and-blocking-users.mdx"
-  },
-  {
-    "sourcePath": "/docs/chat/platform-api/v3/moderation/blocking-users/block-users",
-    "openimPath": "/docs/chat/platform-api/v3/moderation/blocking-users/block-users",
-    "title": "屏蔽用户",
-    "context": "chat/platform-api/v3",
-    "template": "api",
-    "contentFile": "content/docs/chat/platform-api/v3/moderation/blocking-users/block-users.mdx"
-  },
-  {
-    "sourcePath": "/docs/chat/platform-api/v3/moderation/blocking-users/unblock-a-user",
-    "openimPath": "/docs/chat/platform-api/v3/moderation/blocking-users/unblock-a-user",
-    "title": "取消屏蔽用户",
-    "context": "chat/platform-api/v3",
-    "template": "api",
-    "contentFile": "content/docs/chat/platform-api/v3/moderation/blocking-users/unblock-a-user.mdx"
-  },
-  {
-    "sourcePath": "/docs/chat/platform-api/v3/moderation/muting-a-user/mute-a-member-in-a-group-channel",
-    "openimPath": "/docs/chat/platform-api/v3/moderation/muting-a-user/mute-a-member-in-a-group-channel",
-    "title": "禁言群组频道成员",
-    "context": "chat/platform-api/v3",
-    "template": "api",
-    "contentFile": "content/docs/chat/platform-api/v3/moderation/muting-a-user/mute-a-member-in-a-group-channel.mdx"
-  },
-  {
-    "sourcePath": "/docs/chat/platform-api/v3/moderation/muting-a-user/unmute-a-member-in-a-group-channel",
-    "openimPath": "/docs/chat/platform-api/v3/moderation/muting-a-user/unmute-a-member-in-a-group-channel",
-    "title": "解除群组频道成员禁言",
-    "context": "chat/platform-api/v3",
-    "template": "api",
-    "contentFile": "content/docs/chat/platform-api/v3/moderation/muting-a-user/unmute-a-member-in-a-group-channel.mdx"
-  },
-  {
     "sourcePath": "/docs/chat/platform-api/v3/error-codes",
     "openimPath": "/docs/chat/platform-api/v3/error-codes",
     "title": "错误码",
@@ -5032,20 +4928,12 @@
     "contentFile": "content/docs/chat/platform-api/v3/message/overview.mdx"
   },
   {
-    "sourcePath": "/docs/chat/platform-api/v3/migration/overview",
-    "openimPath": "/docs/chat/platform-api/v3/migration/overview",
-    "title": "迁移概览",
+    "sourcePath": "/docs/chat/platform-api/v3/friend/overview",
+    "openimPath": "/docs/chat/platform-api/v3/friend/overview",
+    "title": "好友概览",
     "context": "chat/platform-api/v3",
     "template": "overview",
-    "contentFile": "content/docs/chat/platform-api/v3/migration/overview.mdx"
-  },
-  {
-    "sourcePath": "/docs/chat/platform-api/v3/moderation/overview",
-    "openimPath": "/docs/chat/platform-api/v3/moderation/overview",
-    "title": "内容审核概览",
-    "context": "chat/platform-api/v3",
-    "template": "overview",
-    "contentFile": "content/docs/chat/platform-api/v3/moderation/overview.mdx"
+    "contentFile": "content/docs/chat/platform-api/v3/friend/overview.mdx"
   },
   {
     "sourcePath": "/docs/chat/platform-api/v3/friend/delete-friend",
@@ -5206,6 +5094,14 @@
     "context": "chat/platform-api/v3",
     "template": "api",
     "contentFile": "content/docs/chat/platform-api/v3/friend/get-self-unhandled-apply-count.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/conversation/overview",
+    "openimPath": "/docs/chat/platform-api/v3/conversation/overview",
+    "title": "会话概览",
+    "context": "chat/platform-api/v3",
+    "template": "overview",
+    "contentFile": "content/docs/chat/platform-api/v3/conversation/overview.mdx"
   },
   {
     "sourcePath": "/docs/chat/platform-api/v3/conversation/get-sorted-conversation-list",
@@ -5416,6 +5312,14 @@
     "contentFile": "content/docs/chat/platform-api/v3/user/search-notification-account.mdx"
   },
   {
+    "sourcePath": "/docs/chat/platform-api/v3/auth/overview",
+    "openimPath": "/docs/chat/platform-api/v3/auth/overview",
+    "title": "认证概览",
+    "context": "chat/platform-api/v3",
+    "template": "overview",
+    "contentFile": "content/docs/chat/platform-api/v3/auth/overview.mdx"
+  },
+  {
     "sourcePath": "/docs/chat/platform-api/v3/auth/get-admin-token",
     "openimPath": "/docs/chat/platform-api/v3/auth/get-admin-token",
     "title": "获取管理员 Token",
@@ -5446,6 +5350,14 @@
     "context": "chat/platform-api/v3",
     "template": "api",
     "contentFile": "content/docs/chat/platform-api/v3/auth/force-logout.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/third/overview",
+    "openimPath": "/docs/chat/platform-api/v3/third/overview",
+    "title": "第三方服务概览",
+    "context": "chat/platform-api/v3",
+    "template": "overview",
+    "contentFile": "content/docs/chat/platform-api/v3/third/overview.mdx"
   },
   {
     "sourcePath": "/docs/chat/platform-api/v3/third/prometheus",
@@ -5710,6 +5622,14 @@
     "context": "chat/platform-api/v3",
     "template": "api",
     "contentFile": "content/docs/chat/platform-api/v3/message/get-server-time.mdx"
+  },
+  {
+    "sourcePath": "/docs/chat/platform-api/v3/group/overview",
+    "openimPath": "/docs/chat/platform-api/v3/group/overview",
+    "title": "群组概览",
+    "context": "chat/platform-api/v3",
+    "template": "overview",
+    "contentFile": "content/docs/chat/platform-api/v3/group/overview.mdx"
   },
   {
     "sourcePath": "/docs/chat/platform-api/v3/group/create-group",

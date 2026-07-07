@@ -28,7 +28,7 @@ OpenIM WASM SDK 运行在浏览器 WebAssembly 环境中。下面的最低版本
 在开始编码前，先准备 OpenIM 服务、用户和浏览器端可用的登录信息。
 
 - 如果还没有可用服务端，先完成 [Docker 部署](/docs/guides/quick-deployment/docker)，并确认 [端口和域名配置](/docs/guides/quick-deployment/ports) 对浏览器可访问。
-- 如果需要通过后端调用 OpenIM REST API 管理用户或签发 token，先阅读 [准备使用 Platform API](/docs/chat/platform-api/v3/prepare-to-use-api) 和 [签发会话 Token](/docs/chat/platform-api/v3/user/managing-session-tokens/issue-a-session-token)。
+- 如果需要通过后端调用 OpenIM REST API 管理用户或签发 token，先阅读 [准备使用 Platform API](/docs/chat/platform-api/v3/prepare-to-use-api) 和 [获取用户 Token](/docs/chat/platform-api/v3/auth/get-user-token)。
 - 如果已经有自有账号体系，浏览器端只接收业务后端返回的 `userID`、用户 token、`apiAddr` 和 `wsAddr`。客户端登录流程见 [用户认证](/docs/chat/sdk/v4/wasm/application/authenticating-a-user/authentication)。
 
 ### 准备 OpenIM 服务

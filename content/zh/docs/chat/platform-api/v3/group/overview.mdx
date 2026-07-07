@@ -1,0 +1,42 @@
+---
+title: "群组概览"
+description: "OpenIM Platform API 群组模块概览，覆盖建群、入群申请、成员管理、禁言和群资料维护。"
+product: "platform-api"
+context: "chat/platform-api/v3"
+template: "overview"
+status: "published"
+lastUpdated: "2026-07-07"
+version: "v3"
+sourcePath: "/docs/chat/platform-api/v3/group/overview"
+---
+
+群组模块用于由后端创建和管理群聊，包括群资料、群成员、入群申请、群主转让、禁言和全量数据读取。
+
+## 能力范围
+
+| 能力 | 说明 |
+| ---- | ---- |
+| 群组管理 | 创建群组、更新群资料、解散群组和转让群主。 |
+| 入群流程 | 申请入群、处理入群申请、查询收到或发出的申请。 |
+| 成员管理 | 邀请成员、移除成员、查询成员资料和成员列表。 |
+| 禁言控制 | 禁言群成员、取消成员禁言、禁言群组和取消群组禁言。 |
+| 全量读取 | 读取群成员用户 ID、用户加入群组 ID 和未处理申请数量。 |
+
+## 常用接口
+
+- [创建群组](/docs/chat/platform-api/v3/group/create-group)
+- [邀请用户进群](/docs/chat/platform-api/v3/group/invite-users-to-group)
+- [获取群成员列表](/docs/chat/platform-api/v3/group/get-group-member-list)
+- [禁言群成员](/docs/chat/platform-api/v3/group/mute-group-member)
+- [获取未处理入群申请数量](/docs/chat/platform-api/v3/group/get-group-application-unhandled-count)
+
+## 接入建议
+
+群组操作通常影响多个用户，建议后端记录 `operationID`、操作人、目标群组和成员列表。
+
+禁言、踢人和解散群组属于高影响操作，应结合业务权限和审计流程使用。
+
+## 相关页面
+
+- [接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)
+- [错误码](/docs/chat/platform-api/v3/error-codes)

@@ -130,7 +130,19 @@ const platformApiOverviewHeadingExpectations = new Map([
     ['## 能力范围', '## 常用接口', '## 接入建议', '## 相关页面'],
   ],
   [
-    '/docs/chat/platform-api/v3/channel/overview',
+    '/docs/chat/platform-api/v3/auth/overview',
+    ['## 能力范围', '## 常用接口', '## 接入建议', '## 相关页面'],
+  ],
+  [
+    '/docs/chat/platform-api/v3/friend/overview',
+    ['## 能力范围', '## 常用接口', '## 接入建议', '## 相关页面'],
+  ],
+  [
+    '/docs/chat/platform-api/v3/group/overview',
+    ['## 能力范围', '## 常用接口', '## 接入建议', '## 相关页面'],
+  ],
+  [
+    '/docs/chat/platform-api/v3/conversation/overview',
     ['## 能力范围', '## 常用接口', '## 接入建议', '## 相关页面'],
   ],
   [
@@ -138,11 +150,7 @@ const platformApiOverviewHeadingExpectations = new Map([
     ['## 能力范围', '## 常用接口', '## 接入建议', '## 相关页面'],
   ],
   [
-    '/docs/chat/platform-api/v3/migration/overview',
-    ['## 能力范围', '## 常用接口', '## 接入建议', '## 相关页面'],
-  ],
-  [
-    '/docs/chat/platform-api/v3/moderation/overview',
+    '/docs/chat/platform-api/v3/third/overview',
     ['## 能力范围', '## 常用接口', '## 接入建议', '## 相关页面'],
   ],
   [

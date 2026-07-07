@@ -187,100 +187,6 @@
               "type": "page",
               "children": [],
               "minIndex": 714
-            },
-            {
-              "id": "user/listing-users",
-              "segment": "listing-users",
-              "title": "查询用户",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "user/listing-users/list-users",
-                  "segment": "list-users",
-                  "title": "查询用户列表",
-                  "href": "/docs/chat/platform-api/v3/user/listing-users/list-users",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 617
-                },
-                {
-                  "id": "user/listing-users/get-a-user",
-                  "segment": "get-a-user",
-                  "title": "获取用户",
-                  "href": "/docs/chat/platform-api/v3/user/listing-users/get-a-user",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 618
-                }
-              ],
-              "minIndex": 617
-            },
-            {
-              "id": "user/creating-users",
-              "segment": "creating-users",
-              "title": "创建用户",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "user/creating-users/create-a-user",
-                  "segment": "create-a-user",
-                  "title": "创建用户",
-                  "href": "/docs/chat/platform-api/v3/user/creating-users/create-a-user",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 619
-                }
-              ],
-              "minIndex": 619
-            },
-            {
-              "id": "user/managing-users",
-              "segment": "managing-users",
-              "title": "管理用户",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "user/managing-users/update-a-user",
-                  "segment": "update-a-user",
-                  "title": "更新用户",
-                  "href": "/docs/chat/platform-api/v3/user/managing-users/update-a-user",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 620
-                }
-              ],
-              "minIndex": 620
-            },
-            {
-              "id": "user/managing-session-tokens",
-              "segment": "managing-session-tokens",
-              "title": "管理会话 Token",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "user/managing-session-tokens/issue-a-session-token",
-                  "segment": "issue-a-session-token",
-                  "title": "签发会话 Token",
-                  "href": "/docs/chat/platform-api/v3/user/managing-session-tokens/issue-a-session-token",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 621
-                },
-                {
-                  "id": "user/managing-session-tokens/revoke-all-session-tokens",
-                  "segment": "revoke-all-session-tokens",
-                  "title": "注销全部会话 Token",
-                  "href": "/docs/chat/platform-api/v3/user/managing-session-tokens/revoke-all-session-tokens",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 622
-                }
-              ],
-              "minIndex": 621
             }
           ],
           "minIndex": 616.5
@@ -292,6 +198,15 @@
           "href": null,
           "type": "folder",
           "children": [
+            {
+              "id": "auth/overview",
+              "segment": "overview",
+              "title": "认证概览",
+              "href": "/docs/chat/platform-api/v3/auth/overview",
+              "type": "page",
+              "children": [],
+              "minIndex": 714.9
+            },
             {
               "id": "auth/get-admin-token",
               "segment": "get-admin-token",
@@ -329,7 +244,7 @@
               "minIndex": 718
             }
           ],
-          "minIndex": 715
+          "minIndex": 714.9
         },
         {
           "id": "friend",
@@ -338,6 +253,15 @@
           "href": null,
           "type": "folder",
           "children": [
+            {
+              "id": "friend/overview",
+              "segment": "overview",
+              "title": "好友概览",
+              "href": "/docs/chat/platform-api/v3/friend/overview",
+              "type": "page",
+              "children": [],
+              "minIndex": 668.9
+            },
             {
               "id": "friend/delete-friend",
               "segment": "delete-friend",
@@ -519,7 +443,7 @@
               "minIndex": 688
             }
           ],
-          "minIndex": 669
+          "minIndex": 668.9
         },
         {
           "id": "group",
@@ -528,6 +452,15 @@
           "href": null,
           "type": "folder",
           "children": [
+            {
+              "id": "group/overview",
+              "segment": "overview",
+              "title": "群组概览",
+              "href": "/docs/chat/platform-api/v3/group/overview",
+              "type": "page",
+              "children": [],
+              "minIndex": 751.9
+            },
             {
               "id": "group/create-group",
               "segment": "create-group",
@@ -790,7 +723,7 @@
               "minIndex": 780
             }
           ],
-          "minIndex": 752
+          "minIndex": 751.9
         },
         {
           "id": "conversation",
@@ -799,6 +732,15 @@
           "href": null,
           "type": "folder",
           "children": [
+            {
+              "id": "conversation/overview",
+              "segment": "overview",
+              "title": "会话概览",
+              "href": "/docs/chat/platform-api/v3/conversation/overview",
+              "type": "page",
+              "children": [],
+              "minIndex": 688.9
+            },
             {
               "id": "conversation/get-sorted-conversation-list",
               "segment": "get-sorted-conversation-list",
@@ -890,7 +832,7 @@
               "minIndex": 698
             }
           ],
-          "minIndex": 689
+          "minIndex": 688.9
         },
         {
           "id": "message",
@@ -1069,25 +1011,6 @@
               "type": "page",
               "children": [],
               "minIndex": 751
-            },
-            {
-              "id": "message/messaging-basics",
-              "segment": "messaging-basics",
-              "title": "消息基础",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/messaging-basics/send-a-message",
-                  "segment": "send-a-message",
-                  "title": "发送消息",
-                  "href": "/docs/chat/platform-api/v3/message/messaging-basics/send-a-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 632
-                }
-              ],
-              "minIndex": 632
             }
           ],
           "minIndex": 631.5
@@ -1099,6 +1022,15 @@
           "href": null,
           "type": "folder",
           "children": [
+            {
+              "id": "third/overview",
+              "segment": "overview",
+              "title": "第三方服务概览",
+              "href": "/docs/chat/platform-api/v3/third/overview",
+              "type": "page",
+              "children": [],
+              "minIndex": 718.9
+            },
             {
               "id": "third/prometheus",
               "segment": "prometheus",
@@ -1235,129 +1167,7 @@
               "minIndex": 733
             }
           ],
-          "minIndex": 719
-        },
-        {
-          "id": "migration",
-          "segment": "migration",
-          "title": "迁移其他项目到 OpenIM",
-          "href": null,
-          "type": "folder",
-          "children": [
-            {
-              "id": "migration/overview",
-              "segment": "overview",
-              "title": "迁移概览",
-              "href": "/docs/chat/platform-api/v3/migration/overview",
-              "type": "page",
-              "children": [],
-              "minIndex": 632.5
-            },
-            {
-              "id": "migration/migrate-messages",
-              "segment": "migrate-messages",
-              "title": "迁移消息",
-              "href": "/docs/chat/platform-api/v3/migration/migrate-messages",
-              "type": "page",
-              "children": [],
-              "minIndex": 633
-            }
-          ],
-          "minIndex": 632.5
-        },
-        {
-          "id": "moderation",
-          "segment": "moderation",
-          "title": "内容审核",
-          "href": null,
-          "type": "folder",
-          "children": [
-            {
-              "id": "moderation/overview",
-              "segment": "overview",
-              "title": "内容审核概览",
-              "href": "/docs/chat/platform-api/v3/moderation/overview",
-              "type": "page",
-              "children": [],
-              "minIndex": 633.5
-            },
-            {
-              "id": "moderation/listing-blocked-and-blocking-users",
-              "segment": "listing-blocked-and-blocking-users",
-              "title": "查询屏蔽与被屏蔽用户",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "moderation/listing-blocked-and-blocking-users/list-blocked-and-blocking-users",
-                  "segment": "list-blocked-and-blocking-users",
-                  "title": "查询屏蔽与被屏蔽用户列表",
-                  "href": "/docs/chat/platform-api/v3/moderation/listing-blocked-and-blocking-users/list-blocked-and-blocking-users",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 634
-                }
-              ],
-              "minIndex": 634
-            },
-            {
-              "id": "moderation/blocking-users",
-              "segment": "blocking-users",
-              "title": "屏蔽用户",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "moderation/blocking-users/block-users",
-                  "segment": "block-users",
-                  "title": "屏蔽用户",
-                  "href": "/docs/chat/platform-api/v3/moderation/blocking-users/block-users",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 635
-                },
-                {
-                  "id": "moderation/blocking-users/unblock-a-user",
-                  "segment": "unblock-a-user",
-                  "title": "取消屏蔽用户",
-                  "href": "/docs/chat/platform-api/v3/moderation/blocking-users/unblock-a-user",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 636
-                }
-              ],
-              "minIndex": 635
-            },
-            {
-              "id": "moderation/muting-a-user",
-              "segment": "muting-a-user",
-              "title": "禁言用户",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "moderation/muting-a-user/mute-a-member-in-a-group-channel",
-                  "segment": "mute-a-member-in-a-group-channel",
-                  "title": "禁言群组频道成员",
-                  "href": "/docs/chat/platform-api/v3/moderation/muting-a-user/mute-a-member-in-a-group-channel",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 637
-                },
-                {
-                  "id": "moderation/muting-a-user/unmute-a-member-in-a-group-channel",
-                  "segment": "unmute-a-member-in-a-group-channel",
-                  "title": "解除群组频道成员禁言",
-                  "href": "/docs/chat/platform-api/v3/moderation/muting-a-user/unmute-a-member-in-a-group-channel",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 638
-                }
-              ],
-              "minIndex": 637
-            }
-          ],
-          "minIndex": 633.5
+          "minIndex": 718.9
         },
         {
           "id": "error-codes",
@@ -1369,7 +1179,7 @@
           "minIndex": 639
         }
       ],
-      "pageCount": 132
+      "pageCount": 122
     },
     {
       "key": "chat/sdk/v4/ios",
