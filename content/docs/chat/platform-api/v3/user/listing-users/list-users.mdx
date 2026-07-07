@@ -1,28 +1,37 @@
 ---
-title: "转让群主"
-description: "OpenIM 群组 REST API：转让群主。"
-sourcePath: "/docs/chat/platform-api/v3/group/transfer-group-owner"
+title: "分页获取用户列表"
+description: "OpenIM 用户 REST API：分页获取用户列表。"
+product: "platform-api"
+context: "chat/platform-api/v3"
+template: "api"
+status: "published"
+lastUpdated: "2026-07-07"
+version: "v3"
+sourcePath: "/docs/chat/platform-api/v3/user/listing-users/list-users"
 ---
 
-使用 **转让群主** 从可信后端调用 OpenIM 群组 REST 接口。把群主身份从原群主转让给另一个群成员。 请先在[接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)中配置 API 地址和管理员 Token；接口参数通过请求头和 JSON 请求体传递。
+使用 **分页获取用户列表** 从可信后端调用 OpenIM 用户 REST 接口。按分页条件获取用户列表，可按用户 ID 或昵称过滤。 请先在[接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)中配置 API 地址和管理员 Token；接口参数通过请求头和 JSON 请求体传递。
 
 ## HTTP 请求
 
 ```bash
-POST {API_ADDRESS}/group/transfer_group
+POST {API_ADDRESS}/user/get_users
 ```
 
 ### 请求示例
 
 ```bash
-curl --request POST "${API_ADDRESS}/group/transfer_group" \
+curl --request POST "${API_ADDRESS}/user/get_users" \
   --header "Content-Type: application/json; charset=utf-8" \
   --header "operationID: ${OPERATION_ID}" \
   --header "token: ${ADMIN_TOKEN}" \
   --data-raw '{
-  "groupID": "group_001",
-  "oldOwnerUserID": "user_owner",
-  "newOwnerUserID": "user_001"
+  "pagination": {
+    "pageNumber": 1,
+    "showNumber": 100
+  },
+  "userID": "",
+  "nickName": ""
 }'
 ```
 
@@ -44,17 +53,22 @@ curl --request POST "${API_ADDRESS}/group/transfer_group" \
 
 ```json
 {
-  "groupID": "group_001",
-  "oldOwnerUserID": "user_owner",
-  "newOwnerUserID": "user_001"
+  "pagination": {
+    "pageNumber": 1,
+    "showNumber": 100
+  },
+  "userID": "",
+  "nickName": ""
 }
 ```
 
 | 参数名 | 是否必填 | 类型 | 说明 |
 | --- | --- | --- | --- |
-| groupID | 是 | string | 目标群 ID。 |
-| oldOwnerUserID | 是 | string | 当前群主用户 ID。 |
-| newOwnerUserID | 是 | string | 新的群主用户 ID。 |
+| pagination | 是 | object | 分页参数。 |
+| pagination.pageNumber | 是 | int | 页码，从 1 开始。 |
+| pagination.showNumber | 是 | int | 每页数量，必须大于 0。 |
+| userID | 否 | string | 按用户 ID 过滤。 |
+| nickName | 否 | string | 按昵称过滤。 |
 
 ## 响应
 
@@ -64,7 +78,21 @@ curl --request POST "${API_ADDRESS}/group/transfer_group" \
 {
   "errCode": 0,
   "errMsg": "",
-  "errDlt": ""
+  "errDlt": "",
+  "data": {
+    "total": 2,
+    "users": [
+      {
+        "userID": "user_001",
+        "nickname": "Tom",
+        "faceURL": "https://example.com/avatar-tom.png",
+        "ex": "",
+        "createTime": 1719800000000,
+        "appMangerLevel": 0,
+        "globalRecvMsgOpt": 0
+      }
+    ]
+  }
 }
 ```
 
@@ -75,6 +103,13 @@ curl --request POST "${API_ADDRESS}/group/transfer_group" \
 | errCode | int | 业务错误码，0 表示成功。 |
 | errMsg | string | 错误简要信息，成功时通常为空。 |
 | errDlt | string | 错误详细信息，成功时通常为空。 |
+| data | object | 接口返回数据。 |
+| data.total | int | 用户总数。 |
+| data.users | array | 用户资料列表。 |
+| data.users[].userID | string | 用户 ID。 |
+| data.users[].nickname | string | 用户昵称。 |
+| data.users[].faceURL | string | 用户头像 URL。 |
+| data.users[].globalRecvMsgOpt | int | 全局消息接收选项。 |
 
 ### 错误
 
@@ -96,14 +131,14 @@ curl --request POST "${API_ADDRESS}/group/transfer_group" \
 
 ## 权限和限制
 
-- 更新群主和成员角色，原群主会变为普通成员，并可能触发群主转让通知。
-- 三个字段均必填。
-- 新群主必须是群成员。
+- 只读查询，不改变用户资料。
+- `pagination` 必填。
+- `pagination.pageNumber` 必须大于等于 1。
 - 所有数组型请求参数建议控制在 1000 个元素以内。
 
 ## 相关页面
 
 - [接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)
-- [群组接口](/docs/chat/platform-api/v3/group/create-group)
-- [禁言群成员](/docs/chat/platform-api/v3/group/mute-group-member)
+- [获取指定用户信息](/docs/chat/platform-api/v3/user/listing-users/get-users-info)
+- [好友管理](/docs/chat/platform-api/v3/friend/listing-friends/list-friends)
 - [错误码](/docs/chat/platform-api/v3/error-codes)

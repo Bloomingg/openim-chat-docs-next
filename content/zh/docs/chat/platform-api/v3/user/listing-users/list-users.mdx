@@ -1,33 +1,31 @@
 ---
-title: "查询发出的好友申请"
-description: "OpenIM 好友 REST API：查询发出的好友申请。"
-sourcePath: "/docs/chat/platform-api/v3/friend/list-sent-friend-applications"
+title: "分页获取用户列表"
+description: "OpenIM 用户 REST API：分页获取用户列表。"
+sourcePath: "/docs/chat/platform-api/v3/user/listing-users/list-users"
 ---
 
-使用 **查询发出的好友申请** 从可信后端调用 OpenIM 好友 REST 接口。分页查询指定用户主动发出的好友申请。 请先在[接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)中配置 API 地址和管理员 Token；接口参数通过请求头和 JSON 请求体传递。
+使用 **分页获取用户列表** 从可信后端调用 OpenIM 用户 REST 接口。按分页条件获取用户列表，可按用户 ID 或昵称过滤。 请先在[接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)中配置 API 地址和管理员 Token；接口参数通过请求头和 JSON 请求体传递。
 
 ## HTTP 请求
 
 ```bash
-POST {API_ADDRESS}/friend/get_self_friend_apply_list
+POST {API_ADDRESS}/user/get_users
 ```
 
 ### 请求示例
 
 ```bash
-curl --request POST "${API_ADDRESS}/friend/get_self_friend_apply_list" \
+curl --request POST "${API_ADDRESS}/user/get_users" \
   --header "Content-Type: application/json; charset=utf-8" \
   --header "operationID: ${OPERATION_ID}" \
   --header "token: ${ADMIN_TOKEN}" \
   --data-raw '{
-  "userID": "user_002",
   "pagination": {
     "pageNumber": 1,
-    "showNumber": 20
+    "showNumber": 100
   },
-  "handleResults": [
-    0
-  ]
+  "userID": "",
+  "nickName": ""
 }'
 ```
 
@@ -49,24 +47,22 @@ curl --request POST "${API_ADDRESS}/friend/get_self_friend_apply_list" \
 
 ```json
 {
-  "userID": "user_002",
   "pagination": {
     "pageNumber": 1,
-    "showNumber": 20
+    "showNumber": 100
   },
-  "handleResults": [
-    0
-  ]
+  "userID": "",
+  "nickName": ""
 }
 ```
 
 | 参数名 | 是否必填 | 类型 | 说明 |
 | --- | --- | --- | --- |
-| userID | 是 | string | 发起好友申请的用户 ID。 |
 | pagination | 是 | object | 分页参数。 |
 | pagination.pageNumber | 是 | int | 页码，从 1 开始。 |
 | pagination.showNumber | 是 | int | 每页数量，必须大于 0。 |
-| handleResults | 否 | array | 按处理状态过滤，例如 0 未处理、1 同意、-1 拒绝。 |
+| userID | 否 | string | 按用户 ID 过滤。 |
+| nickName | 否 | string | 按昵称过滤。 |
 
 ## 响应
 
@@ -78,24 +74,18 @@ curl --request POST "${API_ADDRESS}/friend/get_self_friend_apply_list" \
   "errMsg": "",
   "errDlt": "",
   "data": {
-    "friendRequests": [
+    "total": 2,
+    "users": [
       {
-        "fromUserID": "user_002",
-        "fromNickname": "Jane",
-        "fromFaceURL": "https://example.com/avatar-jane.png",
-        "toUserID": "user_001",
-        "toNickname": "Tom",
-        "toFaceURL": "https://example.com/avatar-tom.png",
-        "handleResult": 0,
-        "reqMsg": "申请添加好友",
+        "userID": "user_001",
+        "nickname": "Tom",
+        "faceURL": "https://example.com/avatar-tom.png",
+        "ex": "",
         "createTime": 1719800000000,
-        "handlerUserID": "",
-        "handleMsg": "",
-        "handleTime": 0,
-        "ex": ""
+        "appMangerLevel": 0,
+        "globalRecvMsgOpt": 0
       }
-    ],
-    "total": 1
+    ]
   }
 }
 ```
@@ -108,8 +98,12 @@ curl --request POST "${API_ADDRESS}/friend/get_self_friend_apply_list" \
 | errMsg | string | 错误简要信息，成功时通常为空。 |
 | errDlt | string | 错误详细信息，成功时通常为空。 |
 | data | object | 接口返回数据。 |
-| data.friendRequests | array | 发出的好友申请列表。 |
-| data.total | int | 符合条件的申请总数。 |
+| data.total | int | 用户总数。 |
+| data.users | array | 用户资料列表。 |
+| data.users[].userID | string | 用户 ID。 |
+| data.users[].nickname | string | 用户昵称。 |
+| data.users[].faceURL | string | 用户头像 URL。 |
+| data.users[].globalRecvMsgOpt | int | 全局消息接收选项。 |
 
 ### 错误
 
@@ -131,14 +125,14 @@ curl --request POST "${API_ADDRESS}/friend/get_self_friend_apply_list" \
 
 ## 权限和限制
 
-- 只读查询，不改变好友申请状态。
-- `userID` 和 `pagination` 必填。
+- 只读查询，不改变用户资料。
+- `pagination` 必填。
 - `pagination.pageNumber` 必须大于等于 1。
 - 所有数组型请求参数建议控制在 1000 个元素以内。
 
 ## 相关页面
 
 - [接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)
-- [分页获取用户列表](/docs/chat/platform-api/v3/user/get-users)
-- [群组概览](/docs/chat/platform-api/v3/group/create-group)
+- [获取指定用户信息](/docs/chat/platform-api/v3/user/listing-users/get-users-info)
+- [好友管理](/docs/chat/platform-api/v3/friend/listing-friends/list-friends)
 - [错误码](/docs/chat/platform-api/v3/error-codes)

@@ -29,13 +29,16 @@ const removedPlatformRoots = [
   'channel',
   'migration',
   'moderation',
-  'user/creating-users',
-  'user/listing-users',
-  'user/managing-users',
   'user/managing-session-tokens',
   'message/messaging-basics',
+  'relation',
 ];
 const removedRoutePrefixes = removedPlatformRoots.map((segment) => `${localRoot}/${segment}`);
+const removedPlatformPages = [
+  'user/creating-users/create-a-user',
+  'user/listing-users/get-a-user',
+  'user/managing-users/update-a-user',
+].map((segment) => `${localRoot}/${segment}`);
 
 const moduleOverviews = [
   {
@@ -221,6 +224,208 @@ const moduleOverviews = [
   },
 ];
 
+const platformCategoryLabels = {
+  user: '用户',
+  auth: '认证',
+  friend: '好友',
+  group: '群组',
+  conversation: '会话',
+  message: '消息',
+  third: '第三方服务',
+  'creating-users': '创建用户',
+  'listing-users': '查询用户',
+  'managing-users': '管理用户',
+  presence: '在线状态',
+  'notification-accounts': '通知账号',
+  tokens: 'Token',
+  sessions: '会话控制',
+  'managing-friend-requests': '好友申请',
+  'listing-friends': '查询好友',
+  'managing-friends': '管理好友',
+  blacklist: '黑名单',
+  'managing-groups': '管理群组',
+  'group-applications': '入群申请',
+  'group-members': '群成员',
+  'group-membership': '用户入群关系',
+  'group-moderation': '群组禁言',
+  'listing-conversations': '查询会话',
+  'managing-conversations': '管理会话',
+  'conversation-state': '会话状态',
+  'sending-messages': '发送消息',
+  'retrieving-messages': '查询消息',
+  'read-status': '已读状态',
+  'managing-messages': '管理消息',
+  'deleting-messages': '删除消息',
+  monitoring: '监控',
+  push: '推送辅助',
+  logs: '日志',
+  'object-storage': '对象存储',
+};
+
+const childOrderByModule = {
+  user: [
+    'user/overview',
+    'user/creating-users',
+    'user/managing-users',
+    'user/listing-users',
+    'user/presence',
+    'user/notification-accounts',
+  ],
+  auth: ['auth/overview', 'auth/tokens', 'auth/sessions'],
+  friend: [
+    'friend/overview',
+    'friend/managing-friends',
+    'friend/managing-friend-requests',
+    'friend/listing-friends',
+    'friend/blacklist',
+  ],
+  group: [
+    'group/overview',
+    'group/managing-groups',
+    'group/group-applications',
+    'group/group-membership',
+    'group/group-members',
+    'group/group-moderation',
+  ],
+  conversation: [
+    'conversation/overview',
+    'conversation/listing-conversations',
+    'conversation/managing-conversations',
+    'conversation/conversation-state',
+  ],
+  message: [
+    'message/overview',
+    'message/retrieving-messages',
+    'message/sending-messages',
+    'message/managing-messages',
+    'message/read-status',
+    'message/deleting-messages',
+  ],
+  third: ['third/overview', 'third/monitoring', 'third/push', 'third/logs', 'third/object-storage'],
+};
+
+const routeRelocations = [
+  ['user/user-register', 'user/creating-users/user-register'],
+  ['user/update-user-info', 'user/managing-users/update-user-info'],
+  ['user/update-user-info-ex', 'user/managing-users/update-user-info-ex'],
+  ['user/set-global-msg-recv-opt', 'user/managing-users/set-global-msg-recv-opt'],
+  ['user/get-users-info', 'user/listing-users/get-users-info'],
+  ['user/get-all-users-uid', 'user/listing-users/list-all-user-ids'],
+  ['user/account-check', 'user/listing-users/check-user-accounts'],
+  ['user/get-users', 'user/listing-users/list-users'],
+  ['user/get-users-online-status', 'user/presence/get-users-online-status'],
+  ['user/get-users-online-token-detail', 'user/presence/get-users-online-token-detail'],
+  ['user/subscribe-users-status', 'user/presence/subscribe-users-status'],
+  ['user/get-users-status', 'user/presence/get-users-status'],
+  ['user/get-subscribe-users-status', 'user/presence/get-subscribe-users-status'],
+  ['user/add-notification-account', 'user/notification-accounts/add-notification-account'],
+  ['user/update-notification-account', 'user/notification-accounts/update-notification-account'],
+  ['user/search-notification-account', 'user/notification-accounts/search-notification-account'],
+
+  ['auth/get-admin-token', 'auth/tokens/get-admin-token'],
+  ['auth/get-user-token', 'auth/tokens/get-user-token'],
+  ['auth/parse-token', 'auth/tokens/parse-token'],
+  ['auth/force-logout', 'auth/sessions/force-logout'],
+
+  ['friend/delete-friend', 'friend/managing-friends/delete-friend'],
+  ['friend/list-received-friend-applications', 'friend/managing-friend-requests/list-received-friend-requests'],
+  ['friend/get-designated-friend-application', 'friend/managing-friend-requests/get-designated-friend-application'],
+  ['friend/list-sent-friend-applications', 'friend/managing-friend-requests/list-sent-friend-requests'],
+  ['friend/get-friend-list', 'friend/listing-friends/list-friends'],
+  ['friend/get-designated-friends', 'friend/listing-friends/get-designated-friends'],
+  ['friend/add-friend', 'friend/managing-friend-requests/apply-to-add-friend'],
+  ['friend/respond-friend-application', 'friend/managing-friend-requests/respond-friend-apply'],
+  ['friend/set-friend-remark', 'friend/managing-friends/set-friend-remark'],
+  ['friend/add-black', 'friend/blacklist/add-black'],
+  ['friend/get-black-list', 'friend/blacklist/list-blacks'],
+  ['friend/get-specified-blacks', 'friend/blacklist/get-specified-blacks'],
+  ['friend/remove-black', 'friend/blacklist/remove-black'],
+  ['friend/import-friends', 'friend/managing-friends/import-friends'],
+  ['friend/is-friend', 'friend/listing-friends/is-friend'],
+  ['friend/get-friend-ids', 'friend/listing-friends/get-friend-ids'],
+  ['friend/get-specified-friends-info', 'friend/listing-friends/get-specified-friends-info'],
+  ['friend/update-friends', 'friend/managing-friends/update-friends'],
+  ['friend/get-full-friend-user-ids', 'friend/listing-friends/get-full-friend-user-ids'],
+  ['friend/get-self-unhandled-apply-count', 'friend/managing-friend-requests/get-self-unhandled-apply-count'],
+
+  ['group/create-group', 'group/managing-groups/create-group'],
+  ['group/set-group-info', 'group/managing-groups/set-group-info'],
+  ['group/set-group-info-ex', 'group/managing-groups/set-group-info-ex'],
+  ['group/join-group', 'group/group-applications/join-group'],
+  ['group/quit-group', 'group/group-membership/quit-group'],
+  ['group/respond-group-application', 'group/group-applications/respond-group-application'],
+  ['group/transfer-group-owner', 'group/managing-groups/transfer-group-owner'],
+  ['group/list-received-group-applications', 'group/group-applications/list-received-group-applications'],
+  ['group/list-user-requested-group-applications', 'group/group-applications/list-user-requested-group-applications'],
+  ['group/list-group-users-request-applications', 'group/group-applications/list-group-users-request-applications'],
+  ['group/get-specified-user-group-request-info', 'group/group-applications/get-specified-user-group-request-info'],
+  ['group/get-groups-info', 'group/managing-groups/get-groups-info'],
+  ['group/kick-group-members', 'group/group-members/kick-group-members'],
+  ['group/get-group-members-info', 'group/group-members/get-group-members-info'],
+  ['group/get-group-member-list', 'group/group-members/get-group-member-list'],
+  ['group/invite-users-to-group', 'group/group-members/invite-users-to-group'],
+  ['group/get-joined-group-list', 'group/group-membership/get-joined-group-list'],
+  ['group/dismiss-group', 'group/managing-groups/dismiss-group'],
+  ['group/mute-group-member', 'group/group-moderation/mute-group-member'],
+  ['group/cancel-mute-group-member', 'group/group-moderation/cancel-mute-group-member'],
+  ['group/mute-group', 'group/group-moderation/mute-group'],
+  ['group/cancel-mute-group', 'group/group-moderation/cancel-mute-group'],
+  ['group/set-group-member-info', 'group/group-members/set-group-member-info'],
+  ['group/get-group-abstract-info', 'group/managing-groups/get-group-abstract-info'],
+  ['group/get-groups', 'group/managing-groups/get-groups'],
+  ['group/get-group-member-user-ids', 'group/group-members/get-group-member-user-ids'],
+  ['group/get-full-group-member-user-ids', 'group/group-members/get-full-group-member-user-ids'],
+  ['group/get-full-join-group-ids', 'group/group-membership/get-full-join-group-ids'],
+  ['group/get-group-application-unhandled-count', 'group/group-applications/get-group-application-unhandled-count'],
+
+  ['conversation/get-sorted-conversation-list', 'conversation/listing-conversations/get-sorted-conversation-list'],
+  ['conversation/get-all-conversations', 'conversation/listing-conversations/get-all-conversations'],
+  ['conversation/get-conversation', 'conversation/listing-conversations/get-conversation'],
+  ['conversation/get-conversations', 'conversation/listing-conversations/get-conversations'],
+  ['conversation/set-conversations', 'conversation/managing-conversations/set-conversations'],
+  ['conversation/get-conversation-offline-push-user-ids', 'conversation/conversation-state/get-conversation-offline-push-user-ids'],
+  ['conversation/get-full-conversation-ids', 'conversation/conversation-state/get-full-conversation-ids'],
+  ['conversation/get-owner-conversation', 'conversation/listing-conversations/get-owner-conversation'],
+  ['conversation/get-not-notify-conversation-ids', 'conversation/conversation-state/get-not-notify-conversation-ids'],
+  ['conversation/get-pinned-conversation-ids', 'conversation/conversation-state/get-pinned-conversation-ids'],
+
+  ['message/newest-seq', 'message/retrieving-messages/newest-seq'],
+  ['message/search-msg', 'message/retrieving-messages/search-msg'],
+  ['message/send-msg', 'message/sending-messages/send-msg'],
+  ['message/send-business-notification', 'message/sending-messages/send-business-notification'],
+  ['message/pull-msg-by-seq', 'message/retrieving-messages/pull-msg-by-seq'],
+  ['message/revoke-msg', 'message/managing-messages/revoke-msg'],
+  ['message/mark-msgs-as-read', 'message/read-status/mark-msgs-as-read'],
+  ['message/mark-conversation-as-read', 'message/read-status/mark-conversation-as-read'],
+  ['message/get-conversations-has-read-and-max-seq', 'message/read-status/get-conversations-has-read-and-max-seq'],
+  ['message/set-conversation-has-read-seq', 'message/read-status/set-conversation-has-read-seq'],
+  ['message/clear-conversation-msg', 'message/deleting-messages/clear-conversation-msg'],
+  ['message/user-clear-all-msg', 'message/deleting-messages/user-clear-all-msg'],
+  ['message/delete-msgs', 'message/deleting-messages/delete-msgs'],
+  ['message/delete-msg-physical-by-seq', 'message/deleting-messages/delete-msg-physical-by-seq'],
+  ['message/delete-msg-physical', 'message/deleting-messages/delete-msg-physical'],
+  ['message/batch-send-msg', 'message/sending-messages/batch-send-msg'],
+  ['message/check-msg-is-send-success', 'message/sending-messages/check-msg-is-send-success'],
+  ['message/get-server-time', 'message/retrieving-messages/get-server-time'],
+
+  ['third/prometheus', 'third/monitoring/prometheus'],
+  ['third/fcm-update-token', 'third/push/fcm-update-token'],
+  ['third/set-app-badge', 'third/push/set-app-badge'],
+  ['third/upload-logs', 'third/logs/upload-logs'],
+  ['third/delete-logs', 'third/logs/delete-logs'],
+  ['third/search-logs', 'third/logs/search-logs'],
+  ['third/part-limit', 'third/object-storage/part-limit'],
+  ['third/part-size', 'third/object-storage/part-size'],
+  ['third/initiate-multipart-upload', 'third/object-storage/initiate-multipart-upload'],
+  ['third/auth-sign', 'third/object-storage/auth-sign'],
+  ['third/complete-multipart-upload', 'third/object-storage/complete-multipart-upload'],
+  ['third/access-url', 'third/object-storage/access-url'],
+  ['third/initiate-form-data', 'third/object-storage/initiate-form-data'],
+  ['third/complete-form-data', 'third/object-storage/complete-form-data'],
+  ['third/object-redirect', 'third/object-storage/object-redirect'],
+].map(([from, to]) => [`${localRoot}/${from}`, `${localRoot}/${to}`]);
+const routeRelocationMap = new Map(routeRelocations);
+
 const linkReplacements = [
   [
     '/docs/chat/platform-api/v3/channel/creating-a-channel/create-a-group-channel',
@@ -308,6 +513,9 @@ const linkReplacements = [
     '/docs/chat/platform-api/v3/group/mute-group-member',
   ],
 ];
+const allLinkReplacements = [...routeRelocations, ...linkReplacements].sort(
+  (a, b) => b[0].length - a[0].length,
+);
 
 const textReplacements = [
   ['### 群组频道', '### 群组'],
@@ -318,6 +526,10 @@ const textReplacements = [
   [
     '[创建群组频道](/docs/chat/platform-api/v3/group/create-group)',
     '[创建群组](/docs/chat/platform-api/v3/group/create-group)',
+  ],
+  [
+    '[创建群组频道](/docs/chat/platform-api/v3/group/managing-groups/create-group)',
+    '[创建群组](/docs/chat/platform-api/v3/group/managing-groups/create-group)',
   ],
   [
     '[频道概览](/docs/chat/platform-api/v3/group/create-group)',
@@ -387,6 +599,10 @@ const textReplacements = [
     '[内容审核概览](/docs/chat/platform-api/v3/group/mute-group-member)',
     '[禁言群成员](/docs/chat/platform-api/v3/group/mute-group-member)',
   ],
+  [
+    '[内容审核概览](/docs/chat/platform-api/v3/group/group-moderation/mute-group-member)',
+    '[禁言群成员](/docs/chat/platform-api/v3/group/group-moderation/mute-group-member)',
+  ],
 ];
 
 await Promise.all([
@@ -396,14 +612,23 @@ await Promise.all([
   ...removedPlatformRoots.map((segment) =>
     rm(resolve(root, `${zhContentRoot}/${segment}`), { force: true, recursive: true }),
   ),
+  ...removedPlatformPages.flatMap((path) => [
+    rm(resolve(root, routeContentFile(path)), { force: true }),
+    rm(resolve(root, localizedContentFile(routeContentFile(path))), { force: true }),
+  ]),
 ]);
+await writeRootOverviewFiles();
 await writeModuleOverviewFiles();
 
 const routes = JSON.parse(await readFile(routesPath, 'utf8'));
 const navigation = JSON.parse(await readFile(navigationPath, 'utf8'));
 const platformApiZh = JSON.parse(await readFile(platformApiZhPath, 'utf8'));
 
-const nextRoutes = upsertModuleOverviewRoutes(routes.filter((route) => !isRemovedPlatformPath(route.path)))
+await applyRouteFileRelocations(routes);
+
+const nextRoutes = upsertModuleOverviewRoutes(
+  dedupeRoutesByPath(routes.filter((route) => !isRemovedPlatformPath(route.path)).map(relocateRoute)),
+)
   .map((route, index) => ({ ...route, id: index + 1 }));
 
 const platformContext = navigation.contexts.find((context) => context.key === contextKey);
@@ -411,9 +636,7 @@ if (!platformContext) {
   throw new Error(`Missing navigation context: ${contextKey}`);
 }
 
-platformContext.nodes = reorderPlatformNodes(
-  ensureModuleOverviewNodes(removeRemovedNodes(platformContext.nodes), nextRoutes),
-);
+platformContext.nodes = reorderPlatformNodes(buildPlatformNavigationNodes(nextRoutes));
 platformContext.pageCount = nextRoutes.filter((route) => route.contextKey === contextKey).length;
 
 platformApiZh.generatedAt = today;
@@ -426,6 +649,10 @@ for (const overview of moduleOverviews) {
     [overview.id]: overview.navLabel,
   };
 }
+platformApiZh.navigationLabels = {
+  ...platformApiZh.navigationLabels,
+  ...platformCategoryLabels,
+};
 
 await Promise.all([
   writeFile(routesPath, `${JSON.stringify(nextRoutes, null, 2)}\n`, 'utf8'),
@@ -455,23 +682,76 @@ await rewritePlatformContent(resolve(root, zhContentRoot));
 console.log('Removed legacy OpenIM Platform API demo pages and reordered platform navigation.');
 
 function isRemovedPlatformPath(path) {
-  return removedRoutePrefixes.some((prefix) => path === prefix || path.startsWith(`${prefix}/`));
-}
-
-function removeRemovedNodes(nodes) {
-  return nodes
-    .filter((node) => !isRemovedNavigationNode(node))
-    .map((node) => ({
-      ...node,
-      children: removeRemovedNodes(node.children ?? []),
-    }));
-}
-
-function isRemovedNavigationNode(node) {
-  if (node.href && isRemovedPlatformPath(node.href)) return true;
-  return removedPlatformRoots.some(
-    (segment) => node.id === segment || node.id.startsWith(`${segment}/`),
+  return (
+    removedPlatformPages.includes(path) ||
+    removedRoutePrefixes.some((prefix) => path === prefix || path.startsWith(`${prefix}/`))
   );
+}
+
+function dedupeRoutesByPath(routes) {
+  const byPath = new Map();
+  for (const route of routes) {
+    byPath.set(route.path, route);
+  }
+  return [...byPath.values()];
+}
+
+async function applyRouteFileRelocations(routes) {
+  const platformRoutes = routes.filter((route) => route.contextKey === contextKey);
+  await Promise.all(
+    platformRoutes.map(async (route) => {
+      const nextPath = routeRelocationMap.get(route.path);
+      if (!nextPath) return;
+      const nextContentFile = routeContentFile(nextPath);
+      await Promise.all([
+        relocateContentFile(route.contentFile, nextContentFile, route.path, nextPath),
+        relocateContentFile(
+          localizedContentFile(route.contentFile),
+          localizedContentFile(nextContentFile),
+          route.path,
+          nextPath,
+        ),
+      ]);
+    }),
+  );
+}
+
+async function relocateContentFile(fromFile, toFile, fromPath, toPath) {
+  if (fromFile === toFile) return;
+  const source = await readOptional(resolve(root, fromFile));
+  if (!source) return;
+  const next = source.split(fromPath).join(toPath);
+  await mkdir(dirname(resolve(root, toFile)), { recursive: true });
+  await writeFile(resolve(root, toFile), next, 'utf8');
+  await rm(resolve(root, fromFile), { force: true });
+}
+
+async function readOptional(file) {
+  try {
+    return await readFile(file, 'utf8');
+  } catch {
+    return undefined;
+  }
+}
+
+function relocateRoute(route) {
+  const path = routeRelocationMap.get(route.path);
+  if (!path) return route;
+  return {
+    ...route,
+    path,
+    relativePath: path.replace(/^\/docs\//, ''),
+    sourcePath: path,
+    contentFile: routeContentFile(path),
+  };
+}
+
+function routeContentFile(path) {
+  return `${contentRoot}/${path.slice(localRoot.length).replace(/^\//, '')}.mdx`;
+}
+
+function localizedContentFile(file) {
+  return file.replace(/^content\/docs\//, 'content/zh/docs/');
 }
 
 async function writeModuleOverviewFiles() {
@@ -481,6 +761,29 @@ async function writeModuleOverviewFiles() {
       writeOverviewMdx(`${zhContentRoot}/${overview.id}/overview.mdx`, overview),
     ]),
   );
+}
+
+async function writeRootOverviewFiles() {
+  await Promise.all([
+    writeFile(resolve(root, `${contentRoot}/overview.mdx`), renderRootOverviewMdx(), 'utf8'),
+    writeFile(resolve(root, `${zhContentRoot}/overview.mdx`), renderRootOverviewMdx(), 'utf8'),
+  ]);
+}
+
+function renderRootOverviewMdx() {
+  const frontmatter = {
+    title: '概述',
+    description: 'OpenIM Platform API 中文概览，覆盖服务端 REST API、Webhook 和后端运营能力。',
+    product: 'platform-api',
+    context: contextKey,
+    template: 'overview',
+    status: 'published',
+    lastUpdated: today,
+    version: 'v3',
+    sourcePath: `${localRoot}/overview`,
+  };
+
+  return `---\n${renderFrontmatter(frontmatter)}\n---\n\nOpenIM Platform API 面向可信后端服务，提供用户、认证、好友、群组、会话、消息、上传、日志和运营管理相关的 REST 接口参考。中文文档保留 Platform API 的导航方式，具体能力、接口路径和请求字段以 OpenIM REST 已覆盖的文档为准。\n\n## 最常用\n\n### 认证\n\n在调用管理端 REST API 前，后端服务需要确认 API 地址、请求头和管理员 Token 的使用方式。客户端登录所需的用户 Token 也应由可信后端签发。\n\n- [接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)\n- [获取管理员 Token](/docs/chat/platform-api/v3/auth/tokens/get-admin-token)\n- [获取用户 Token](/docs/chat/platform-api/v3/auth/tokens/get-user-token)\n\n### 用户管理\n\n通过 OpenIM 用户管理接口创建、更新、查询用户资料，并把注册、注销、权限等业务规则保留在业务系统中。\n\n- [注册用户](/docs/chat/platform-api/v3/user/creating-users/user-register)\n- [分页获取用户列表](/docs/chat/platform-api/v3/user/listing-users/list-users)\n- [获取指定用户信息](/docs/chat/platform-api/v3/user/listing-users/get-users-info)\n\n### 消息\n\n使用 OpenIM 消息接口从后端发送消息、发送业务通知、查询消息和维护消息状态。\n\n- [发送单条消息](/docs/chat/platform-api/v3/message/sending-messages/send-msg)\n- [批量发送消息](/docs/chat/platform-api/v3/message/sending-messages/batch-send-msg)\n- [搜索消息](/docs/chat/platform-api/v3/message/retrieving-messages/search-msg)\n\n## 推荐功能\n\n### 好友\n\nOpenIM 好友接口用于维护好友关系、好友申请和黑名单。\n\n- [申请添加好友](/docs/chat/platform-api/v3/friend/managing-friend-requests/apply-to-add-friend)\n- [查询好友列表](/docs/chat/platform-api/v3/friend/listing-friends/list-friends)\n- [加入黑名单](/docs/chat/platform-api/v3/friend/blacklist/add-black)\n\n### 群组\n\nOpenIM 使用群组能力承载群聊场景。服务端可通过群组接口创建群组、邀请成员和处理入群流程。\n\n- [创建群组](/docs/chat/platform-api/v3/group/managing-groups/create-group)\n- [邀请成员](/docs/chat/platform-api/v3/group/group-members/invite-users-to-group)\n- [禁言群成员](/docs/chat/platform-api/v3/group/group-moderation/mute-group-member)\n\n### 会话\n\n会话接口用于读取、批量设置会话信息，以及维护置顶、免打扰和离线推送关联数据。\n\n- [获取排序会话列表](/docs/chat/platform-api/v3/conversation/listing-conversations/get-sorted-conversation-list)\n- [批量获取会话](/docs/chat/platform-api/v3/conversation/listing-conversations/get-conversations)\n\n### 第三方服务\n\n第三方服务接口覆盖监控跳转、日志上传、对象存储上传签名和访问地址获取。\n\n- [跳转监控面板](/docs/chat/platform-api/v3/third/monitoring/prometheus)\n- [初始化分片上传](/docs/chat/platform-api/v3/third/object-storage/initiate-multipart-upload)\n\n## 资源\n\n| 字段 | 值 |\n| ---- | -- |\n| 支持情况 | OpenIM REST 已提供直接接口 |\n| 产品区域 | OpenIM 服务端 REST API |\n| 请求模型 | 后端到后端的 HTTP JSON 请求，使用 operationID 串联日志 |\n| 鉴权方式 | 管理端 REST API 使用 APP 管理员 Token |\n\n- [OpenIM REST API 介绍](https://docs.openim.io/restapi/apis/introduction)\n- [OpenIM 错误码](https://docs.openim.io/restapi/errCode)\n`;
 }
 
 async function writeOverviewMdx(file, overview) {
@@ -594,56 +897,91 @@ function upsertModuleOverviewRoutes(routes) {
   return next;
 }
 
-function ensureModuleOverviewNodes(nodes, routes) {
-  const routeByPath = new Map(routes.map((route) => [route.path, route]));
-  const next = [...nodes];
-
-  for (const overview of moduleOverviews) {
-    const path = `${localRoot}/${overview.id}/overview`;
-    const route = routeByPath.get(path);
-    if (!route) continue;
-
-    let moduleNode = next.find((node) => node.id === overview.id);
-    if (!moduleNode) {
-      moduleNode = {
-        id: overview.id,
-        segment: overview.id,
-        title: overview.navLabel,
-        href: null,
-        type: 'folder',
-        children: [],
-        minIndex: route.navOrder,
-      };
-      next.push(moduleNode);
-    }
-
-    moduleNode.children = (moduleNode.children ?? []).filter(
-      (node) => node.href !== path && node.id !== `${overview.id}/overview`,
-    );
-    moduleNode.children.unshift({
-      id: `${overview.id}/overview`,
-      segment: 'overview',
-      title: route.title,
-      href: path,
-      type: 'page',
-      children: [],
-      minIndex: route.navOrder,
-    });
-    const childIndexes = moduleNode.children
-      .map((child) => child.minIndex)
-      .filter((value) => Number.isFinite(value));
-    moduleNode.minIndex = childIndexes.length > 0 ? Math.min(...childIndexes) : route.navOrder;
-  }
-
-  return next;
-}
-
 function reorderPlatformNodes(nodes) {
   const byId = new Map(nodes.map((node) => [node.id, node]));
   const ordered = desiredPlatformOrder.map((id) => byId.get(id)).filter(Boolean);
   const orderedIDs = new Set(desiredPlatformOrder);
   const remainder = nodes.filter((node) => !orderedIDs.has(node.id));
   return [...ordered, ...remainder];
+}
+
+function buildPlatformNavigationNodes(routes) {
+  const platformRoutes = routes.filter((route) => route.contextKey === contextKey);
+  const rootNode = {
+    id: '',
+    segment: '',
+    title: '',
+    href: null,
+    type: 'folder',
+    children: [],
+    minIndex: Number.POSITIVE_INFINITY,
+  };
+
+  for (const route of platformRoutes) {
+    const rest = route.path.slice(localRoot.length).replace(/^\//, '');
+    if (!rest) continue;
+    const segments = rest.split('/');
+    let cursor = rootNode;
+    let currentID = '';
+
+    for (const [index, segment] of segments.entries()) {
+      currentID = currentID ? `${currentID}/${segment}` : segment;
+      const isLeaf = index === segments.length - 1;
+      let child = cursor.children.find((node) => node.id === currentID);
+      if (!child) {
+        child = {
+          id: currentID,
+          segment,
+          title: isLeaf ? route.title : navigationLabel(segment),
+          href: isLeaf ? route.path : null,
+          type: isLeaf ? 'page' : 'folder',
+          children: [],
+          minIndex: route.navOrder,
+        };
+        cursor.children.push(child);
+      }
+      child.minIndex = Math.min(child.minIndex ?? route.navOrder, route.navOrder);
+      if (isLeaf) {
+        child.title = route.title;
+        child.href = route.path;
+        child.type = 'page';
+      }
+      cursor = child;
+    }
+  }
+
+  sortNavigationNodes(rootNode.children);
+  return rootNode.children;
+}
+
+function navigationLabel(segment) {
+  return platformCategoryLabels[segment] ?? humanizeSegment(segment);
+}
+
+function sortNavigationNodes(nodes, parentID = '') {
+  const explicitOrder = parentID ? (childOrderByModule[parentID] ?? []) : desiredPlatformOrder;
+  const order = new Map(explicitOrder.map((id, index) => [id, index]));
+  nodes.sort((a, b) => {
+    const first = order.get(a.id) ?? Number.POSITIVE_INFINITY;
+    const second = order.get(b.id) ?? Number.POSITIVE_INFINITY;
+    return (
+      first - second ||
+      (a.minIndex ?? Number.POSITIVE_INFINITY) - (b.minIndex ?? Number.POSITIVE_INFINITY) ||
+      a.title.localeCompare(b.title)
+    );
+  });
+  for (const node of nodes) {
+    sortNavigationNodes(node.children ?? [], node.id);
+  }
+}
+
+function humanizeSegment(segment) {
+  return segment
+    .replace(/[_-]+/g, ' ')
+    .replace(/\b\w/g, (letter) => letter.toUpperCase())
+    .replace(/\bApi\b/g, 'API')
+    .replace(/\bFcm\b/g, 'FCM')
+    .replace(/\bId\b/g, 'ID');
 }
 
 async function rewritePlatformContent(dir) {
@@ -665,7 +1003,7 @@ async function rewritePlatformContent(dir) {
 
       const original = await readFile(file, 'utf8');
       let next = original;
-      for (const [from, to] of linkReplacements) {
+      for (const [from, to] of allLinkReplacements) {
         next = next.split(from).join(to);
       }
       for (const [from, to] of textReplacements) {

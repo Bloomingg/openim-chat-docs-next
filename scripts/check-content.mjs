@@ -102,23 +102,21 @@ const platformApiForbiddenApiHeadings = [
   /^## OpenIM 实现说明$/m,
   /^## 资源$/m,
 ];
-const platformApiSendbirdHeadingExpectations = new Map([
-  [
-    '/docs/chat/platform-api/v3/user/listing-users/list-users',
-    [
-      '## HTTP 请求',
-      '### 请求示例',
-      '## 参数',
-      '### 请求头',
-      '### 请求体参数',
-      '## 响应',
-      '#### 响应属性列表',
-      '#### users[] 属性',
-      '### 分页读取建议',
-      '### 错误',
-    ],
-  ],
-]);
+const platformApiListUsersPath = '/docs/chat/platform-api/v3/user/listing-users/list-users';
+const platformApiListUsersExpectedSnippets = [
+  'POST {API_ADDRESS}/user/get_users',
+  'curl --request POST',
+  '安全提示',
+  '200 OK',
+  'errCode === 0',
+  'users[].userID',
+  'pagination.pageNumber',
+  'APP 管理员 Token',
+  '## 权限和限制',
+  '## 相关页面',
+  '"showNumber": 100',
+];
+const platformApiListUsersForbiddenSnippets = ['123.321.1.1', '203.56.175.233'];
 const platformApiOverviewHeadingExpectations = new Map([
   ['/docs/chat/platform-api/v3/overview', ['## 最常用', '## 推荐功能', '## 资源']],
   [
@@ -296,42 +294,8 @@ for (const route of routes) {
           );
         }
       }
-      const expectedHeadings = platformApiSendbirdHeadingExpectations.get(route.path);
-      if (expectedHeadings) {
-        const actualHeadings = extractPlatformApiHeadings(bodyWithoutFrontmatter);
-        if (actualHeadings.join('\n') !== expectedHeadings.join('\n')) {
-          errors.push(
-            `${route.contentFile}: heading structure differs from Sendbird source; expected ${JSON.stringify(
-              expectedHeadings,
-            )}, got ${JSON.stringify(actualHeadings)}`,
-          );
-        }
-      }
-      if (route.path === '/docs/chat/platform-api/v3/user/listing-users/list-users') {
-        for (const expected of [
-          'curl --request POST',
-          'process.env.OPENIM_API_ADDRESS',
-          'http.NewRequest',
-          '安全提示',
-          '200 OK',
-          'errCode === 0',
-          'users[].userID',
-          'pagination.pageNumber',
-          '### 分页读取建议',
-          '常见错误场景',
-          '"showNumber": 100',
-        ]) {
-          if (!bodyWithoutFrontmatter.includes(expected)) {
-            errors.push(`${route.contentFile}: list-users page is missing "${expected}"`);
-          }
-        }
-        for (const forbidden of ['123.321.1.1', '203.56.175.233']) {
-          if (bodyWithoutFrontmatter.includes(forbidden)) {
-            errors.push(
-              `${route.contentFile}: list-users page contains raw sample host ${forbidden}`,
-            );
-          }
-        }
+      if (route.path === platformApiListUsersPath) {
+        checkPlatformApiListUsersPage(bodyWithoutFrontmatter, route.contentFile);
       }
     }
 
@@ -413,48 +377,8 @@ for (const route of routes) {
             );
           }
         }
-        const expectedHeadings = platformApiSendbirdHeadingExpectations.get(route.path);
-        if (expectedHeadings) {
-          const actualHeadings = extractPlatformApiHeadings(localizedBody);
-          if (actualHeadings.join('\n') !== expectedHeadings.join('\n')) {
-            errors.push(
-              `content/zh/${route.path.slice(
-                1,
-              )}.mdx: heading structure differs from Sendbird source; expected ${JSON.stringify(
-                expectedHeadings,
-              )}, got ${JSON.stringify(actualHeadings)}`,
-            );
-          }
-        }
-        if (route.path === '/docs/chat/platform-api/v3/user/listing-users/list-users') {
-          for (const expected of [
-            'curl --request POST',
-            'process.env.OPENIM_API_ADDRESS',
-            'http.NewRequest',
-            '安全提示',
-            '200 OK',
-            'errCode === 0',
-            'users[].userID',
-            'pagination.pageNumber',
-            '### 分页读取建议',
-            '常见错误场景',
-            '"showNumber": 100',
-          ]) {
-            if (!localizedBody.includes(expected)) {
-              errors.push(
-                `content/zh/${route.path.slice(1)}.mdx: list-users page is missing "${expected}"`,
-              );
-            }
-          }
-          for (const forbidden of ['123.321.1.1', '203.56.175.233']) {
-            if (localizedBody.includes(forbidden)) {
-              errors.push(
-                `content/zh/${route.path.slice(
-                  1,
-                )}.mdx: list-users page contains raw sample host ${forbidden}`,
-              );
-            }
-          }
+        if (route.path === platformApiListUsersPath) {
+          checkPlatformApiListUsersPage(localizedBody, `content/zh/${route.path.slice(1)}.mdx`);
         }
       }
     }
@@ -578,20 +502,31 @@ function containsUnexpectedEnglish(value) {
   return /[A-Za-z]{2,}/.test(allowed);
 }
 
-function extractPlatformApiHeadings(body) {
-  return body
-    .split(/\r?\n/)
-    .map((line) => line.match(/^(#{2,4})\s+(.+)$/))
-    .filter((match) => Boolean(match))
-    .map((match) => `${match[1]} ${match[2].trim()}`);
-}
-
 function extractPlatformApiSecondLevelHeadings(body) {
   return body
     .split(/\r?\n/)
     .map((line) => line.match(/^(##)\s+(.+)$/))
     .filter((match) => Boolean(match))
     .map((match) => `${match[1]} ${match[2].trim()}`);
+}
+
+function checkPlatformApiListUsersPage(body, label) {
+  const actualHeadings = extractPlatformApiSecondLevelHeadings(body);
+  for (const heading of ['## HTTP 请求', '## 参数', '## 响应', '## 权限和限制', '## 相关页面']) {
+    if (!actualHeadings.includes(heading)) {
+      errors.push(`${label}: list-users page is missing heading "${heading}"`);
+    }
+  }
+  for (const expected of platformApiListUsersExpectedSnippets) {
+    if (!body.includes(expected)) {
+      errors.push(`${label}: list-users page is missing "${expected}"`);
+    }
+  }
+  for (const forbidden of platformApiListUsersForbiddenSnippets) {
+    if (body.includes(forbidden)) {
+      errors.push(`${label}: list-users page contains raw sample host ${forbidden}`);
+    }
+  }
 }
 
 function checkPlatformApiErrorCodesPage(body, label) {
