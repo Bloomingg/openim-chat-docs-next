@@ -1,0 +1,61 @@
+---
+title: '日志'
+description: '逐个说明 Android SDK 初始化日志配置、主动写日志和上传日志的当前导出方法。'
+product: 'sdk'
+context: 'chat/sdk/v4/android'
+template: 'guide'
+status: 'draft'
+lastUpdated: '2026-07-08'
+version: 'v4'
+platform: 'android'
+sourcePath: '/docs/chat/sdk/v4/android/logger'
+---
+
+Android core 的日志能力分为初始化配置、主动写日志和日志上传。
+
+## 初始化日志配置
+
+`InitSDK` 会读取 `IMConfig` 中的日志字段：
+
+| 字段                  | 说明                                |
+| --------------------- | ----------------------------------- |
+| `logLevel`            | 日志等级。                          |
+| `isLogStandardOutput` | 是否输出到标准输出。                |
+| `logFilePath`         | 日志文件目录。                      |
+| `systemType`          | 系统类型，会写入日志上下文。        |
+| `platformID`          | 平台 ID，会映射为日志中的平台名称。 |
+
+## 方法列表
+
+### UploadLogs
+
+| 项目       | 说明                                                                                             |
+| ---------- | ------------------------------------------------------------------------------------------------ |
+| 方法签名   | `UploadLogs(callback Base, operationID string, line int, ex string, progress UploadLogProgress)` |
+| 作用       | 上传 SDK 日志，适合用户反馈、故障排查或线上问题定位。                                            |
+| 关键参数   | `line` 和 `ex` 作为上传附加信息；`progress` 接收上传进度。                                       |
+| 结果或事件 | 成功返回上传结果，进度走 `UploadLogProgress`。                                                   |
+
+### Logs
+
+| 项目       | 说明                                                                                                                        |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------- |
+| 方法签名   | `Logs(callback Base, operationID string, logLevel int, file string, line int, msgs string, err string, keyAndValue string)` |
+| 作用       | 主动写入一条客户端日志，适合业务层把关键 IM 操作写入 SDK 日志链路。                                                         |
+| 关键参数   | `logLevel` 是日志等级；`file` 和 `line` 标识调用位置；`msgs`、`err`、`keyAndValue` 保存日志内容。                           |
+| 结果或事件 | 成功返回写入结果；SDK 未初始化时通过 `OnError` 返回 `sdk not init`。                                                        |
+
+## 日志排查字段
+
+| 字段                 | 建议                                                  |
+| -------------------- | ----------------------------------------------------- |
+| `operationID`        | 每次 API 调用都传非空值，便于串联客户端和服务端日志。 |
+| `errCode` / `errMsg` | 失败回调必须记录。                                    |
+| SDK version          | 可通过 `GetSdkVersion()` 获取。                       |
+| login user           | 可通过 `GetLoginUserID()` 获取，注意脱敏。            |
+
+## 注意事项
+
+- 生产环境日志等级应按合规和性能要求控制。
+- 上传日志前应征得用户授权或遵守产品隐私策略。
+- `Logs` 在 SDK 未初始化时会返回错误。

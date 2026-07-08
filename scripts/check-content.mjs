@@ -223,10 +223,7 @@ for (const route of routes) {
         errors.push(`${route.path}: unsupported Sendbird-only Platform API path was generated`);
       }
     }
-    if (
-      route.template === 'overview' &&
-      !platformApiAllowedOverviewPaths.has(route.path)
-    ) {
+    if (route.template === 'overview' && !platformApiAllowedOverviewPaths.has(route.path)) {
       errors.push(
         `${route.contentFile}: non-root Platform API overview page is outside current OpenIM coverage scope`,
       );
@@ -405,7 +402,8 @@ for (const context of navigation.contexts) {
   for (const path of flattenNavigation(context.nodes)) {
     if (navigatedPaths.has(path)) warnings.push(`Navigation path appears more than once: ${path}`);
     navigatedPaths.add(path);
-    if (!routeByPath.has(path)) errors.push(`Navigation points to unknown route: ${path}`);
+    const routePath = path.split(/[?#]/, 1)[0];
+    if (!routeByPath.has(routePath)) errors.push(`Navigation points to unknown route: ${path}`);
   }
 }
 
@@ -439,7 +437,7 @@ if (routeSdkPlatforms.join('\n') !== expectedSdkPlatforms.join('\n')) {
 
 for (const route of routes) {
   if (route.path === '/docs/chat') continue;
-  if (!navigatedPaths.has(route.path))
+  if (![...navigatedPaths].some((path) => path.split(/[?#]/, 1)[0] === route.path))
     warnings.push(`Route is not represented in sidebar navigation: ${route.path}`);
 }
 

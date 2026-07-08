@@ -1,0 +1,35 @@
+---
+title: '未支持或未暴露能力'
+description: '说明旧生成 Android 文档中存在但当前 open_im_sdk 未导出的能力，避免继续使用不真实示例。'
+product: 'sdk'
+context: 'chat/sdk/v4/android'
+template: 'guide'
+status: 'draft'
+lastUpdated: '2026-07-08'
+version: 'v4'
+platform: 'android'
+sourcePath: '/docs/chat/sdk/v4/android/deprecated'
+---
+
+当前 Android 中文文档只保留 `open_im_sdk` 已导出的能力。旧生成结构中的部分页面来自其他聊天产品模型或跨平台模板，不应作为当前 OpenIM Android SDK 能力使用。
+
+## 当前未作为 Android core API 暴露的能力
+
+| 旧生成主题                                           | 当前处理                                                                                            |
+| ---------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| open channel、enter/exit open channel                | 当前 core 没有独立 open channel 导出方法；多人聊天使用 OpenIM 群组。                                |
+| channel metadata、metacounter、custom type           | 当前 core 未导出独立方法；如需扩展信息，优先使用 OpenIM 已有群组、会话、消息扩展字段。              |
+| poll、scheduled message、message thread、translation | 当前 core 未导出独立 Android 方法。                                                                 |
+| report message/user/channel                          | 当前 core 未导出独立举报方法。                                                                      |
+| push notification tester、template、HMS 多设备配置   | 当前 core 只导出 `UpdateFcmToken` 和 `SetAppBadge`；其余通常由应用或服务端配置完成。                |
+| operator 注册/移除                                   | 当前 core 没有单独 operator API；群主、管理员和成员能力以群组接口为准。                             |
+| freeze/unfreeze channel                              | 当前 core 对应可用能力是群禁言 `ChangeGroupMute` 和成员禁言 `ChangeGroupMemberMute`，不是频道冻结。 |
+
+## 文档处理原则
+
+| 原则         | 说明                                                 |
+| ------------ | ---------------------------------------------------- |
+| 以源码为准   | 只记录 `open_im_sdk/*.go` 已导出的包级方法。         |
+| 删除示例代码 | 不保留旧文档中与当前 SDK 不一致的示例代码。          |
+| 保留真实签名 | API 页保留方法名、参数、返回和回调说明。             |
+| 后续增量补充 | 如果 SDK core 新增导出方法，再按源码补充页面和侧栏。 |

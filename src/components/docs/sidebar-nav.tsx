@@ -30,6 +30,10 @@ export function SidebarNav({
   );
 }
 
+function hrefPath(href: string | null | undefined): string | undefined {
+  return href?.split(/[?#]/, 1)[0];
+}
+
 function SidebarNode({
   node,
   currentPath,
@@ -61,7 +65,10 @@ function SidebarNode({
   }
 
   return (
-    <details className="sidebar-group" open={containsActive || depth === 0}>
+    <details
+      className="sidebar-group"
+      open={containsActive || hrefPath(node.href) === currentPath || depth === 0}
+    >
       <summary style={{ '--nav-depth': depth } as CSSProperties}>
         {node.href ? (
           <Link

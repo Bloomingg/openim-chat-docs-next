@@ -3075,1686 +3075,1571 @@
       "platform": "android",
       "nodes": [
         {
-          "id": "getting-started",
-          "segment": "getting-started",
-          "title": "Getting started",
-          "href": null,
-          "type": "folder",
-          "children": [
-            {
-              "id": "getting-started/kotlin-extension",
-              "segment": "kotlin-extension",
-              "title": "Kotlin extension (KTX)",
-              "href": "/docs/chat/sdk/v4/android/getting-started/kotlin-extension",
-              "type": "page",
-              "children": [],
-              "minIndex": 186
-            },
-            {
-              "id": "getting-started/migration-guide",
-              "segment": "migration-guide",
-              "title": "Migration guide",
-              "href": "/docs/chat/sdk/v4/android/getting-started/migration-guide",
-              "type": "page",
-              "children": [],
-              "minIndex": 187
-            },
-            {
-              "id": "getting-started/collection-migration-guide",
-              "segment": "collection-migration-guide",
-              "title": "Collection migration guide",
-              "href": "/docs/chat/sdk/v4/android/getting-started/collection-migration-guide",
-              "type": "page",
-              "children": [],
-              "minIndex": 185
-            },
-            {
-              "id": "getting-started/send-first-message",
-              "segment": "send-first-message",
-              "title": "Send your first message",
-              "href": "/docs/chat/sdk/v4/android/getting-started/send-first-message",
-              "type": "page",
-              "children": [],
-              "minIndex": 131
-            }
-          ],
+          "id": "overview",
+          "segment": "overview",
+          "title": "OpenIM SDK for Android",
+          "href": "/docs/chat/sdk/v4/android/overview",
+          "type": "page",
+          "children": [],
+          "minIndex": 149
+        },
+        {
+          "id": "getting-started/send-first-message",
+          "segment": "send-first-message",
+          "title": "Send your first message",
+          "href": "/docs/chat/sdk/v4/android/getting-started/send-first-message",
+          "type": "page",
+          "children": [],
           "minIndex": 131
         },
         {
-          "id": "user",
-          "segment": "user",
-          "title": "User",
-          "href": null,
-          "type": "folder",
+          "id": "application/overview-application",
+          "segment": "overview-application",
+          "title": "Initialization and login",
+          "href": "/docs/chat/sdk/v4/android/application/overview-application",
+          "type": "page",
           "children": [
             {
-              "id": "user/overview-user",
-              "segment": "overview-user",
-              "title": "Overview",
-              "href": "/docs/chat/sdk/v4/android/user/overview-user",
+              "id": "application/overview-application/getsdkversion",
+              "segment": "getsdkversion",
+              "title": "GetSdkVersion",
+              "href": "/docs/chat/sdk/v4/android/application/overview-application#getsdkversion",
               "type": "page",
               "children": [],
-              "minIndex": 252
+              "minIndex": 0
             },
             {
-              "id": "user/retrieving-users",
-              "segment": "retrieving-users",
-              "title": "Retrieving users",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "user/retrieving-users/retrieve-a-list-of-users-in-an-application",
-                  "segment": "retrieve-a-list-of-users-in-an-application",
-                  "title": "Retrieve a list of users in an application",
-                  "href": "/docs/chat/sdk/v4/android/user/retrieving-users/retrieve-a-list-of-users-in-an-application",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 258
-                },
-                {
-                  "id": "user/retrieving-users/retrieve-a-list-of-users-in-a-channel",
-                  "segment": "retrieve-a-list-of-users-in-a-channel",
-                  "title": "Retrieve a list of users in a channel",
-                  "href": "/docs/chat/sdk/v4/android/user/retrieving-users/retrieve-a-list-of-users-in-a-channel",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 257
-                },
-                {
-                  "id": "user/retrieving-users/retrieve-a-list-of-members-and-operators-in-a-specific-order",
-                  "segment": "retrieve-a-list-of-members-and-operators-in-a-specific-order",
-                  "title": "Retrieve a list of members and operators in a specific order",
-                  "href": "/docs/chat/sdk/v4/android/user/retrieving-users/retrieve-a-list-of-members-and-operators-in-a-specific-order",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 255
-                },
-                {
-                  "id": "user/retrieving-users/retrieve-members-who-have-read-a-message",
-                  "segment": "retrieve-members-who-have-read-a-message",
-                  "title": "Retrieve members who have read a message",
-                  "href": "/docs/chat/sdk/v4/android/user/retrieving-users/retrieve-members-who-have-read-a-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 158
-                },
-                {
-                  "id": "user/retrieving-users/retrieve-a-list-of-operators",
-                  "segment": "retrieve-a-list-of-operators",
-                  "title": "Retrieve a list of operators",
-                  "href": "/docs/chat/sdk/v4/android/user/retrieving-users/retrieve-a-list-of-operators",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 256
-                }
-              ],
-              "minIndex": 158
+              "id": "application/overview-application/initsdk",
+              "segment": "initsdk",
+              "title": "InitSDK",
+              "href": "/docs/chat/sdk/v4/android/application/overview-application#initsdk",
+              "type": "page",
+              "children": [],
+              "minIndex": 1
             },
             {
-              "id": "user/moderating-a-user",
-              "segment": "moderating-a-user",
-              "title": "Moderating a user",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "user/moderating-a-user/retrieve-a-list-of-blocked-users",
-                  "segment": "retrieve-a-list-of-blocked-users",
-                  "title": "Retrieve a list of blocked users",
-                  "href": "/docs/chat/sdk/v4/android/user/moderating-a-user/retrieve-a-list-of-blocked-users",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 250
-                },
-                {
-                  "id": "user/moderating-a-user/retrieve-a-list-of-banned-users",
-                  "segment": "retrieve-a-list-of-banned-users",
-                  "title": "Retrieve a list of banned users",
-                  "href": "/docs/chat/sdk/v4/android/user/moderating-a-user/retrieve-a-list-of-banned-users",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 249
-                },
-                {
-                  "id": "user/moderating-a-user/retrieve-a-list-of-muted-users",
-                  "segment": "retrieve-a-list-of-muted-users",
-                  "title": "Retrieve a list of muted users",
-                  "href": "/docs/chat/sdk/v4/android/user/moderating-a-user/retrieve-a-list-of-muted-users",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 251
-                },
-                {
-                  "id": "user/moderating-a-user/block-and-unblock-other-members",
-                  "segment": "block-and-unblock-other-members",
-                  "title": "Block and unblock other members",
-                  "href": "/docs/chat/sdk/v4/android/user/moderating-a-user/block-and-unblock-other-members",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 155
-                },
-                {
-                  "id": "user/moderating-a-user/ban-and-unban-a-user",
-                  "segment": "ban-and-unban-a-user",
-                  "title": "Ban and unban a user",
-                  "href": "/docs/chat/sdk/v4/android/user/moderating-a-user/ban-and-unban-a-user",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 154
-                },
-                {
-                  "id": "user/moderating-a-user/mute-and-unmute-a-user",
-                  "segment": "mute-and-unmute-a-user",
-                  "title": "Mute and unmute a user",
-                  "href": "/docs/chat/sdk/v4/android/user/moderating-a-user/mute-and-unmute-a-user",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 156
-                }
-              ],
-              "minIndex": 154
+              "id": "application/overview-application/uninitsdk",
+              "segment": "uninitsdk",
+              "title": "UnInitSDK",
+              "href": "/docs/chat/sdk/v4/android/application/overview-application#uninitsdk",
+              "type": "page",
+              "children": [],
+              "minIndex": 2
             },
             {
-              "id": "user/retrieving-and-updating-user-information",
-              "segment": "retrieving-and-updating-user-information",
-              "title": "Retrieving and updating user information",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "user/retrieving-and-updating-user-information/retrieve-the-online-status-of-a-user",
-                  "segment": "retrieve-the-online-status-of-a-user",
-                  "title": "Retrieve the online status of a user",
-                  "href": "/docs/chat/sdk/v4/android/user/retrieving-and-updating-user-information/retrieve-the-online-status-of-a-user",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 157
-                },
-                {
-                  "id": "user/retrieving-and-updating-user-information/update-user-profile",
-                  "segment": "update-user-profile",
-                  "title": "Update user profile",
-                  "href": "/docs/chat/sdk/v4/android/user/retrieving-and-updating-user-information/update-user-profile",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 254
-                },
-                {
-                  "id": "user/retrieving-and-updating-user-information/retrieve-the-latest-information-on-participants",
-                  "segment": "retrieve-the-latest-information-on-participants",
-                  "title": "Retrieve the latest information on participants",
-                  "href": "/docs/chat/sdk/v4/android/user/retrieving-and-updating-user-information/retrieve-the-latest-information-on-participants",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 253
-                }
-              ],
-              "minIndex": 157
+              "id": "application/overview-application/login",
+              "segment": "login",
+              "title": "Login",
+              "href": "/docs/chat/sdk/v4/android/application/overview-application#login",
+              "type": "page",
+              "children": [],
+              "minIndex": 3
             },
             {
-              "id": "user/managing-user-metadata",
-              "segment": "managing-user-metadata",
-              "title": "Managing user metadata",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "user/managing-user-metadata/manage-user-metadata",
-                  "segment": "manage-user-metadata",
-                  "title": "Manage user metadata",
-                  "href": "/docs/chat/sdk/v4/android/user/managing-user-metadata/manage-user-metadata",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 248
-                }
-              ],
-              "minIndex": 248
+              "id": "application/overview-application/logout",
+              "segment": "logout",
+              "title": "Logout",
+              "href": "/docs/chat/sdk/v4/android/application/overview-application#logout",
+              "type": "page",
+              "children": [],
+              "minIndex": 4
+            },
+            {
+              "id": "application/overview-application/setappbackgroundstatus",
+              "segment": "setappbackgroundstatus",
+              "title": "SetAppBackgroundStatus",
+              "href": "/docs/chat/sdk/v4/android/application/overview-application#setappbackgroundstatus",
+              "type": "page",
+              "children": [],
+              "minIndex": 5
+            },
+            {
+              "id": "application/overview-application/networkstatuschanged",
+              "segment": "networkstatuschanged",
+              "title": "NetworkStatusChanged",
+              "href": "/docs/chat/sdk/v4/android/application/overview-application#networkstatuschanged",
+              "type": "page",
+              "children": [],
+              "minIndex": 6
+            },
+            {
+              "id": "application/overview-application/getloginstatus",
+              "segment": "getloginstatus",
+              "title": "GetLoginStatus",
+              "href": "/docs/chat/sdk/v4/android/application/overview-application#getloginstatus",
+              "type": "page",
+              "children": [],
+              "minIndex": 7
+            },
+            {
+              "id": "application/overview-application/getloginuserid",
+              "segment": "getloginuserid",
+              "title": "GetLoginUserID",
+              "href": "/docs/chat/sdk/v4/android/application/overview-application#getloginuserid",
+              "type": "page",
+              "children": [],
+              "minIndex": 8
             }
           ],
-          "minIndex": 154
+          "minIndex": 160
         },
         {
-          "id": "channel",
-          "segment": "channel",
-          "title": "Channel",
-          "href": null,
-          "type": "folder",
-          "children": [
-            {
-              "id": "channel/overview-channel",
-              "segment": "overview-channel",
-              "title": "Overview",
-              "href": "/docs/chat/sdk/v4/android/channel/overview-channel",
-              "type": "page",
-              "children": [],
-              "minIndex": 130
-            },
-            {
-              "id": "channel/creating-a-channel",
-              "segment": "creating-a-channel",
-              "title": "Creating a channel",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "channel/creating-a-channel/create-a-channel",
-                  "segment": "create-a-channel",
-                  "title": "Create a channel",
-                  "href": "/docs/chat/sdk/v4/android/channel/creating-a-channel/create-a-channel",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 163
-                }
-              ],
-              "minIndex": 163
-            },
-            {
-              "id": "channel/managing-operators",
-              "segment": "managing-operators",
-              "title": "Managing operators",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "channel/managing-operators/register-and-remove-operators",
-                  "segment": "register-and-remove-operators",
-                  "title": "Register and remove operators",
-                  "href": "/docs/chat/sdk/v4/android/channel/managing-operators/register-and-remove-operators",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 173
-                }
-              ],
-              "minIndex": 173
-            },
-            {
-              "id": "channel/joining-and-leaving-a-channel",
-              "segment": "joining-and-leaving-a-channel",
-              "title": "Joining and leaving a channel",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "channel/joining-and-leaving-a-channel/enter-and-exit-an-open-channel",
-                  "segment": "enter-and-exit-an-open-channel",
-                  "title": "Enter and exit an open channel",
-                  "href": "/docs/chat/sdk/v4/android/channel/joining-and-leaving-a-channel/enter-and-exit-an-open-channel",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 166
-                },
-                {
-                  "id": "channel/joining-and-leaving-a-channel/join-and-leave-a-group-channel",
-                  "segment": "join-and-leave-a-group-channel",
-                  "title": "Join and leave a group channel",
-                  "href": "/docs/chat/sdk/v4/android/channel/joining-and-leaving-a-channel/join-and-leave-a-group-channel",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 167
-                }
-              ],
-              "minIndex": 166
-            },
-            {
-              "id": "channel/retrieving-channels",
-              "segment": "retrieving-channels",
-              "title": "Retrieving channels",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "channel/retrieving-channels/retrieve-a-list-of-channels",
-                  "segment": "retrieve-a-list-of-channels",
-                  "title": "Retrieve a list of channels",
-                  "href": "/docs/chat/sdk/v4/android/channel/retrieving-channels/retrieve-a-list-of-channels",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 175
-                },
-                {
-                  "id": "channel/retrieving-channels/retrieve-a-channel-by-url",
-                  "segment": "retrieve-a-channel-by-url",
-                  "title": "Retrieve a channel by URL",
-                  "href": "/docs/chat/sdk/v4/android/channel/retrieving-channels/retrieve-a-channel-by-url",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 174
-                }
-              ],
-              "minIndex": 174
-            },
-            {
-              "id": "channel/inviting-users-to-a-group-channel",
-              "segment": "inviting-users-to-a-group-channel",
-              "title": "Inviting users to a group channel",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "channel/inviting-users-to-a-group-channel/invite-users-as-members",
-                  "segment": "invite-users-as-members",
-                  "title": "Invite users as members",
-                  "href": "/docs/chat/sdk/v4/android/channel/inviting-users-to-a-group-channel/invite-users-as-members",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 165
-                },
-                {
-                  "id": "channel/inviting-users-to-a-group-channel/accept-or-decline-an-invitation",
-                  "segment": "accept-or-decline-an-invitation",
-                  "title": "Accept or decline an invitation",
-                  "href": "/docs/chat/sdk/v4/android/channel/inviting-users-to-a-group-channel/accept-or-decline-an-invitation",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 164
-                }
-              ],
-              "minIndex": 164
-            },
-            {
-              "id": "channel/searching-channels",
-              "segment": "searching-channels",
-              "title": "Searching channels",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "channel/searching-channels/search-group-channels-by-name-url-or-other-filters",
-                  "segment": "search-group-channels-by-name-url-or-other-filters",
-                  "title": "Search group channels by name, URL, or other filters",
-                  "href": "/docs/chat/sdk/v4/android/channel/searching-channels/search-group-channels-by-name-url-or-other-filters",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 177
-                },
-                {
-                  "id": "channel/searching-channels/filter-group-channels-by-user-ids",
-                  "segment": "filter-group-channels-by-user-ids",
-                  "title": "Filter group channels by user IDs",
-                  "href": "/docs/chat/sdk/v4/android/channel/searching-channels/filter-group-channels-by-user-ids",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 176
-                },
-                {
-                  "id": "channel/searching-channels/search-open-channels-by-name-url-or-custom-types",
-                  "segment": "search-open-channels-by-name-url-or-custom-types",
-                  "title": "Search open channels by name, URL, or custom type",
-                  "href": "/docs/chat/sdk/v4/android/channel/searching-channels/search-open-channels-by-name-url-or-custom-types",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 178
-                }
-              ],
-              "minIndex": 176
-            },
-            {
-              "id": "channel/categorizing-channels",
-              "segment": "categorizing-channels",
-              "title": "Categorizing channels",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "channel/categorizing-channels/categorize-channels-by-custom-type",
-                  "segment": "categorize-channels-by-custom-type",
-                  "title": "Categorize channels by custom type",
-                  "href": "/docs/chat/sdk/v4/android/channel/categorizing-channels/categorize-channels-by-custom-type",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 162
-                }
-              ],
-              "minIndex": 162
-            },
-            {
-              "id": "channel/managing-channels",
-              "segment": "managing-channels",
-              "title": "Managing channels",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "channel/managing-channels/delete-a-channel",
-                  "segment": "delete-a-channel",
-                  "title": "Delete a channel",
-                  "href": "/docs/chat/sdk/v4/android/channel/managing-channels/delete-a-channel",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 170
-                },
-                {
-                  "id": "channel/managing-channels/hide-or-archive-a-group-channel",
-                  "segment": "hide-or-archive-a-group-channel",
-                  "title": "Hide or archive a group channel",
-                  "href": "/docs/chat/sdk/v4/android/channel/managing-channels/hide-or-archive-a-group-channel",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 171
-                },
-                {
-                  "id": "channel/managing-channels/refresh-all-data-related-to-a-group-channel",
-                  "segment": "refresh-all-data-related-to-a-group-channel",
-                  "title": "Refresh all data related to a group channel",
-                  "href": "/docs/chat/sdk/v4/android/channel/managing-channels/refresh-all-data-related-to-a-group-channel",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 172
-                }
-              ],
-              "minIndex": 170
-            },
-            {
-              "id": "channel/moderating-a-channel",
-              "segment": "moderating-a-channel",
-              "title": "Moderating a channel",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "channel/moderating-a-channel/freeze-and-unfreeze-a-channel",
-                  "segment": "freeze-and-unfreeze-a-channel",
-                  "title": "Freeze and unfreeze a channel",
-                  "href": "/docs/chat/sdk/v4/android/channel/moderating-a-channel/freeze-and-unfreeze-a-channel",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 129
-                }
-              ],
-              "minIndex": 129
-            },
-            {
-              "id": "channel/managing-channel-metadata",
-              "segment": "managing-channel-metadata",
-              "title": "Managing channel metadata",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "channel/managing-channel-metadata/manage-channel-metadata",
-                  "segment": "manage-channel-metadata",
-                  "title": "Manage channel metadata",
-                  "href": "/docs/chat/sdk/v4/android/channel/managing-channel-metadata/manage-channel-metadata",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 169
-                }
-              ],
-              "minIndex": 169
-            },
-            {
-              "id": "channel/managing-channel-metacounters",
-              "segment": "managing-channel-metacounters",
-              "title": "Managing channel metacounters",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "channel/managing-channel-metacounters/manage-channel-metacounters",
-                  "segment": "manage-channel-metacounters",
-                  "title": "Manage channel metacounters",
-                  "href": "/docs/chat/sdk/v4/android/channel/managing-channel-metacounters/manage-channel-metacounters",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 168
-                }
-              ],
-              "minIndex": 168
-            }
-          ],
-          "minIndex": 129
-        },
-        {
-          "id": "message",
-          "segment": "message",
-          "title": "Message",
-          "href": null,
-          "type": "folder",
-          "children": [
-            {
-              "id": "message/overview-message",
-              "segment": "overview-message",
-              "title": "Overview",
-              "href": "/docs/chat/sdk/v4/android/message/overview-message",
-              "type": "page",
-              "children": [],
-              "minIndex": 141
-            },
-            {
-              "id": "message/sending-a-message",
-              "segment": "sending-a-message",
-              "title": "Sending a message",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/sending-a-message/send-a-message",
-                  "segment": "send-a-message",
-                  "title": "Send a message",
-                  "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 233
-                },
-                {
-                  "id": "message/sending-a-message/send-a-critical-alert-message-to-ios-device-users",
-                  "segment": "send-a-critical-alert-message-to-ios-device-users",
-                  "title": "Send a critical alert message to iOS device users",
-                  "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-critical-alert-message-to-ios-device-users",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 232
-                },
-                {
-                  "id": "message/sending-a-message/send-an-admin-message",
-                  "segment": "send-an-admin-message",
-                  "title": "Send an admin message",
-                  "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-an-admin-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 234
-                },
-                {
-                  "id": "message/sending-a-message/track-file-upload-progress-using-a-handler",
-                  "segment": "track-file-upload-progress-using-a-handler",
-                  "title": "Track file upload progress using a handler",
-                  "href": "/docs/chat/sdk/v4/android/message/sending-a-message/track-file-upload-progress-using-a-handler",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 236
-                },
-                {
-                  "id": "message/sending-a-message/cancel-an-in-progress-file-upload",
-                  "segment": "cancel-an-in-progress-file-upload",
-                  "title": "Cancel an in-progress file upload",
-                  "href": "/docs/chat/sdk/v4/android/message/sending-a-message/cancel-an-in-progress-file-upload",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 231
-                },
-                {
-                  "id": "message/sending-a-message/share-an-encrypted-file",
-                  "segment": "share-an-encrypted-file",
-                  "title": "Share an encrypted file",
-                  "href": "/docs/chat/sdk/v4/android/message/sending-a-message/share-an-encrypted-file",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 144
-                },
-                {
-                  "id": "message/sending-a-message/spam-flood-protection",
-                  "segment": "spam-flood-protection",
-                  "title": "Spam flood protection",
-                  "href": "/docs/chat/sdk/v4/android/message/sending-a-message/spam-flood-protection",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 235
-                },
-                {
-                  "id": "message/sending-a-message/smart-throttling",
-                  "segment": "smart-throttling",
-                  "title": "Smart throttling",
-                  "href": "/docs/chat/sdk/v4/android/message/sending-a-message/smart-throttling",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 145
-                }
-              ],
-              "minIndex": 144
-            },
-            {
-              "id": "message/receiving-messages-through-event-handler",
-              "segment": "receiving-messages-through-event-handler",
-              "title": "Receiving messages through event handler",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/receiving-messages-through-event-handler/receive-messages-in-an-open-channel",
-                  "segment": "receive-messages-in-an-open-channel",
-                  "title": "Receive messages in an open channel",
-                  "href": "/docs/chat/sdk/v4/android/message/receiving-messages-through-event-handler/receive-messages-in-an-open-channel",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 223
-                },
-                {
-                  "id": "message/receiving-messages-through-event-handler/receive-messages-in-a-group-channel",
-                  "segment": "receive-messages-in-a-group-channel",
-                  "title": "Receive messages in a group channel",
-                  "href": "/docs/chat/sdk/v4/android/message/receiving-messages-through-event-handler/receive-messages-in-a-group-channel",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 222
-                }
-              ],
-              "minIndex": 222
-            },
-            {
-              "id": "message/using-message-threading",
-              "segment": "using-message-threading",
-              "title": "Using message threading",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/using-message-threading/create-a-message-thread",
-                  "segment": "create-a-message-thread",
-                  "title": "Create a message thread",
-                  "href": "/docs/chat/sdk/v4/android/message/using-message-threading/create-a-message-thread",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 148
-                },
-                {
-                  "id": "message/using-message-threading/list-replies-in-a-message-thread",
-                  "segment": "list-replies-in-a-message-thread",
-                  "title": "List replies in a message thread",
-                  "href": "/docs/chat/sdk/v4/android/message/using-message-threading/list-replies-in-a-message-thread",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 238
-                }
-              ],
-              "minIndex": 148
-            },
-            {
-              "id": "message/retrieving-messages",
-              "segment": "retrieving-messages",
-              "title": "Retrieving messages",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/retrieving-messages/retrieve-a-list-of-messages",
-                  "segment": "retrieve-a-list-of-messages",
-                  "title": "Retrieve a list of messages",
-                  "href": "/docs/chat/sdk/v4/android/message/retrieving-messages/retrieve-a-list-of-messages",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 224
-                },
-                {
-                  "id": "message/retrieving-messages/retrieve-a-message",
-                  "segment": "retrieve-a-message",
-                  "title": "Retrieve a message",
-                  "href": "/docs/chat/sdk/v4/android/message/retrieving-messages/retrieve-a-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 142
-                }
-              ],
-              "minIndex": 142
-            },
-            {
-              "id": "message/searching-messages-in-a-group-channel",
-              "segment": "searching-messages-in-a-group-channel",
-              "title": "Searching messages in a group channel",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/searching-messages-in-a-group-channel/search-messages-by-a-keyword",
-                  "segment": "search-messages-by-a-keyword",
-                  "title": "Search messages by a keyword",
-                  "href": "/docs/chat/sdk/v4/android/message/searching-messages-in-a-group-channel/search-messages-by-a-keyword",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 143
-                }
-              ],
-              "minIndex": 143
-            },
-            {
-              "id": "message/managing-a-message",
-              "segment": "managing-a-message",
-              "title": "Managing a message",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/managing-a-message/copy-a-message",
-                  "segment": "copy-a-message",
-                  "title": "Copy a message",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-a-message/copy-a-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 195
-                },
-                {
-                  "id": "message/managing-a-message/update-a-message",
-                  "segment": "update-a-message",
-                  "title": "Update a message",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-a-message/update-a-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 198
-                },
-                {
-                  "id": "message/managing-a-message/delete-a-message",
-                  "segment": "delete-a-message",
-                  "title": "Delete a message",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-a-message/delete-a-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 196
-                },
-                {
-                  "id": "message/managing-a-message/react-to-a-message-in-a-group-channel",
-                  "segment": "react-to-a-message-in-a-group-channel",
-                  "title": "React to a message in a group channel",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-a-message/react-to-a-message-in-a-group-channel",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 134
-                },
-                {
-                  "id": "message/managing-a-message/clear-the-chat-history-in-a-group-channel",
-                  "segment": "clear-the-chat-history-in-a-group-channel",
-                  "title": "Clear the chat history in a group channel",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-a-message/clear-the-chat-history-in-a-group-channel",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 194
-                },
-                {
-                  "id": "message/managing-a-message/send-typing-indicators-to-other-members",
-                  "segment": "send-typing-indicators-to-other-members",
-                  "title": "Send typing indicators to other members",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-a-message/send-typing-indicators-to-other-members",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 135
-                },
-                {
-                  "id": "message/managing-a-message/display-open-graph-tags-in-a-message",
-                  "segment": "display-open-graph-tags-in-a-message",
-                  "title": "Display Open Graph tags in a message",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-a-message/display-open-graph-tags-in-a-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 197
-                },
-                {
-                  "id": "message/managing-a-message/generate-thumbnails-of-a-file-message",
-                  "segment": "generate-thumbnails-of-a-file-message",
-                  "title": "Generate thumbnails of a file message",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-a-message/generate-thumbnails-of-a-file-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 133
-                }
-              ],
-              "minIndex": 133
-            },
-            {
-              "id": "message/managing-scheduled-messages-in-group-channel",
-              "segment": "managing-scheduled-messages-in-group-channel",
-              "title": "Managing scheduled messages in group channel",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/managing-scheduled-messages-in-group-channel/create-a-scheduled-message",
-                  "segment": "create-a-scheduled-message",
-                  "title": "Create a scheduled message",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-scheduled-messages-in-group-channel/create-a-scheduled-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 138
-                },
-                {
-                  "id": "message/managing-scheduled-messages-in-group-channel/retrieve-a-scheduled-message",
-                  "segment": "retrieve-a-scheduled-message",
-                  "title": "Retrieve a scheduled message",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-scheduled-messages-in-group-channel/retrieve-a-scheduled-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 218
-                },
-                {
-                  "id": "message/managing-scheduled-messages-in-group-channel/update-a-scheduled-message",
-                  "segment": "update-a-scheduled-message",
-                  "title": "Update a scheduled message",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-scheduled-messages-in-group-channel/update-a-scheduled-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 221
-                },
-                {
-                  "id": "message/managing-scheduled-messages-in-group-channel/cancel-a-scheduled-message",
-                  "segment": "cancel-a-scheduled-message",
-                  "title": "Cancel a scheduled message",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-scheduled-messages-in-group-channel/cancel-a-scheduled-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 216
-                },
-                {
-                  "id": "message/managing-scheduled-messages-in-group-channel/list-all-scheduled-messages",
-                  "segment": "list-all-scheduled-messages",
-                  "title": "List all scheduled messages",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-scheduled-messages-in-group-channel/list-all-scheduled-messages",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 217
-                },
-                {
-                  "id": "message/managing-scheduled-messages-in-group-channel/retrieve-the-total-number-of-scheduled-messages",
-                  "segment": "retrieve-the-total-number-of-scheduled-messages",
-                  "title": "Retrieve the total number of scheduled messages",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-scheduled-messages-in-group-channel/retrieve-the-total-number-of-scheduled-messages",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 219
-                },
-                {
-                  "id": "message/managing-scheduled-messages-in-group-channel/send-a-scheduled-message-immediately",
-                  "segment": "send-a-scheduled-message-immediately",
-                  "title": "Send scheduled message immediately",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-scheduled-messages-in-group-channel/send-a-scheduled-message-immediately",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 220
-                }
-              ],
-              "minIndex": 138
-            },
-            {
-              "id": "message/managing-pinned-messages-in-group-channels",
-              "segment": "managing-pinned-messages-in-group-channels",
-              "title": "Managing pinned messages in group channels",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/managing-pinned-messages-in-group-channels/pin-a-message",
-                  "segment": "pin-a-message",
-                  "title": "Pin a message",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-pinned-messages-in-group-channels/pin-a-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 136
-                },
-                {
-                  "id": "message/managing-pinned-messages-in-group-channels/unpin-a-message",
-                  "segment": "unpin-a-message",
-                  "title": "Unpin a message",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-pinned-messages-in-group-channels/unpin-a-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 200
-                },
-                {
-                  "id": "message/managing-pinned-messages-in-group-channels/list-pinned-messages",
-                  "segment": "list-pinned-messages",
-                  "title": "List pinned messages",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-pinned-messages-in-group-channels/list-pinned-messages",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 199
-                }
-              ],
-              "minIndex": 136
-            },
-            {
-              "id": "message/listing-changelogs",
-              "segment": "listing-changelogs",
-              "title": "Listing changelogs",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/listing-changelogs/list-changelogs-of-messages",
-                  "segment": "list-changelogs-of-messages",
-                  "title": "List changelogs of messages",
-                  "href": "/docs/chat/sdk/v4/android/message/listing-changelogs/list-changelogs-of-messages",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 193
-                }
-              ],
-              "minIndex": 193
-            },
-            {
-              "id": "message/managing-read-status-in-a-group-channel",
-              "segment": "managing-read-status-in-a-group-channel",
-              "title": "Managing read status in a group channel",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/managing-read-status-in-a-group-channel/mark-messages-as-read",
-                  "segment": "mark-messages-as-read",
-                  "title": "Mark messages as read",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-read-status-in-a-group-channel/mark-messages-as-read",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 214
-                },
-                {
-                  "id": "message/managing-read-status-in-a-group-channel/mark-messages-as-unread",
-                  "segment": "mark-messages-as-unread",
-                  "title": "Mark messages as unread",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-read-status-in-a-group-channel/mark-messages-as-unread",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 215
-                },
-                {
-                  "id": "message/managing-read-status-in-a-group-channel/get-read-status",
-                  "segment": "get-read-status",
-                  "title": "Get read status of a message",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-read-status-in-a-group-channel/get-read-status",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 213
-                }
-              ],
-              "minIndex": 213
-            },
-            {
-              "id": "message/marking-messages-as-delivered-in-a-group-channel",
-              "segment": "marking-messages-as-delivered-in-a-group-channel",
-              "title": "Marking messages as delivered in a group channel",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/marking-messages-as-delivered-in-a-group-channel/mark-messages-as-delivered",
-                  "segment": "mark-messages-as-delivered",
-                  "title": "Mark messages as delivered",
-                  "href": "/docs/chat/sdk/v4/android/message/marking-messages-as-delivered-in-a-group-channel/mark-messages-as-delivered",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 139
-                }
-              ],
-              "minIndex": 139
-            },
-            {
-              "id": "message/mentioning-other-users-in-a-message",
-              "segment": "mentioning-other-users-in-a-message",
-              "title": "Mentioning other users in a message",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/mentioning-other-users-in-a-message/mention-other-users-in-a-message",
-                  "segment": "mention-other-users-in-a-message",
-                  "title": "Mention other users in a message",
-                  "href": "/docs/chat/sdk/v4/android/message/mentioning-other-users-in-a-message/mention-other-users-in-a-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 140
-                }
-              ],
-              "minIndex": 140
-            },
-            {
-              "id": "message/managing-polls",
-              "segment": "managing-polls",
-              "title": "Managing polls",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/managing-polls/create-a-poll",
-                  "segment": "create-a-poll",
-                  "title": "Create a poll",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-polls/create-a-poll",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 137
-                },
-                {
-                  "id": "message/managing-polls/retrieve-a-poll",
-                  "segment": "retrieve-a-poll",
-                  "title": "Retrieve a poll",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-polls/retrieve-a-poll",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 209
-                },
-                {
-                  "id": "message/managing-polls/update-a-poll",
-                  "segment": "update-a-poll",
-                  "title": "Update a poll",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-polls/update-a-poll",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 211
-                },
-                {
-                  "id": "message/managing-polls/delete-a-poll",
-                  "segment": "delete-a-poll",
-                  "title": "Delete a poll",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-polls/delete-a-poll",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 204
-                },
-                {
-                  "id": "message/managing-polls/close-a-poll",
-                  "segment": "close-a-poll",
-                  "title": "Close a poll",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-polls/close-a-poll",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 203
-                },
-                {
-                  "id": "message/managing-polls/add-a-poll-option",
-                  "segment": "add-a-poll-option",
-                  "title": "Add a poll option",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-polls/add-a-poll-option",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 201
-                },
-                {
-                  "id": "message/managing-polls/retrieve-a-poll-option",
-                  "segment": "retrieve-a-poll-option",
-                  "title": "Retrieve a poll option",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-polls/retrieve-a-poll-option",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 210
-                },
-                {
-                  "id": "message/managing-polls/update-a-poll-option",
-                  "segment": "update-a-poll-option",
-                  "title": "Update a poll option",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-polls/update-a-poll-option",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 212
-                },
-                {
-                  "id": "message/managing-polls/delete-a-poll-option",
-                  "segment": "delete-a-poll-option",
-                  "title": "Delete a poll option",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-polls/delete-a-poll-option",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 205
-                },
-                {
-                  "id": "message/managing-polls/cast-or-cancel-a-vote",
-                  "segment": "cast-or-cancel-a-vote",
-                  "title": "Cast or cancel a vote",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-polls/cast-or-cancel-a-vote",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 202
-                },
-                {
-                  "id": "message/managing-polls/retrieve-a-list-of-polls",
-                  "segment": "retrieve-a-list-of-polls",
-                  "title": "Retrieve a list of polls",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-polls/retrieve-a-list-of-polls",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 207
-                },
-                {
-                  "id": "message/managing-polls/retrieve-a-list-of-voters",
-                  "segment": "retrieve-a-list-of-voters",
-                  "title": "Retrieve a list of voters",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-polls/retrieve-a-list-of-voters",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 208
-                },
-                {
-                  "id": "message/managing-polls/list-changelogs-of-polls",
-                  "segment": "list-changelogs-of-polls",
-                  "title": "List changelogs of polls",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-polls/list-changelogs-of-polls",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 206
-                }
-              ],
-              "minIndex": 137
-            },
-            {
-              "id": "message/retrieving-unread-count-in-a-group-channel",
-              "segment": "retrieving-unread-count-in-a-group-channel",
-              "title": "Retrieving unread count in a group channel",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/retrieving-unread-count-in-a-group-channel/members-who-havent-read-a-message",
-                  "segment": "members-who-havent-read-a-message",
-                  "title": "Retrieve number of members who haven't read a message",
-                  "href": "/docs/chat/sdk/v4/android/message/retrieving-unread-count-in-a-group-channel/members-who-havent-read-a-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 225
-                },
-                {
-                  "id": "message/retrieving-unread-count-in-a-group-channel/members-who-havent-received-a-message",
-                  "segment": "members-who-havent-received-a-message",
-                  "title": "Retrieve number of members who haven't received a message",
-                  "href": "/docs/chat/sdk/v4/android/message/retrieving-unread-count-in-a-group-channel/members-who-havent-received-a-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 226
-                },
-                {
-                  "id": "message/retrieving-unread-count-in-a-group-channel/unread-channels",
-                  "segment": "unread-channels",
-                  "title": "Retrieve number of channels with unread messages",
-                  "href": "/docs/chat/sdk/v4/android/message/retrieving-unread-count-in-a-group-channel/unread-channels",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 227
-                },
-                {
-                  "id": "message/retrieving-unread-count-in-a-group-channel/unread-items",
-                  "segment": "unread-items",
-                  "title": "Retrieve number of unread items",
-                  "href": "/docs/chat/sdk/v4/android/message/retrieving-unread-count-in-a-group-channel/unread-items",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 228
-                },
-                {
-                  "id": "message/retrieving-unread-count-in-a-group-channel/unread-messages-in-a-channel",
-                  "segment": "unread-messages-in-a-channel",
-                  "title": "Retrieve number of unread messages in a channel",
-                  "href": "/docs/chat/sdk/v4/android/message/retrieving-unread-count-in-a-group-channel/unread-messages-in-a-channel",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 229
-                },
-                {
-                  "id": "message/retrieving-unread-count-in-a-group-channel/unread-messages-in-all-channels",
-                  "segment": "unread-messages-in-all-channels",
-                  "title": "Retrieve number of unread messages in all channels",
-                  "href": "/docs/chat/sdk/v4/android/message/retrieving-unread-count-in-a-group-channel/unread-messages-in-all-channels",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 230
-                }
-              ],
-              "minIndex": 225
-            },
-            {
-              "id": "message/categorizing-messages",
-              "segment": "categorizing-messages",
-              "title": "Categorizing messages",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/categorizing-messages/categorize-messages-by-custom-type",
-                  "segment": "categorize-messages-by-custom-type",
-                  "title": "Categorize messages by custom type",
-                  "href": "/docs/chat/sdk/v4/android/message/categorizing-messages/categorize-messages-by-custom-type",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 192
-                }
-              ],
-              "minIndex": 192
-            },
-            {
-              "id": "message/adding-extra-data-to-a-message",
-              "segment": "adding-extra-data-to-a-message",
-              "title": "Adding extra data to a message",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/adding-extra-data-to-a-message/add-extra-data-to-a-message",
-                  "segment": "add-extra-data-to-a-message",
-                  "title": "Add extra data to a message",
-                  "href": "/docs/chat/sdk/v4/android/message/adding-extra-data-to-a-message/add-extra-data-to-a-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 132
-                }
-              ],
-              "minIndex": 132
-            },
-            {
-              "id": "message/translating-messages",
-              "segment": "translating-messages",
-              "title": "Translating messages",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/translating-messages/auto-translate-messages",
-                  "segment": "auto-translate-messages",
-                  "title": "Auto-translate messages",
-                  "href": "/docs/chat/sdk/v4/android/message/translating-messages/auto-translate-messages",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 146
-                },
-                {
-                  "id": "message/translating-messages/translate-messages-on-demand",
-                  "segment": "translate-messages-on-demand",
-                  "title": "Translate messages on-demand",
-                  "href": "/docs/chat/sdk/v4/android/message/translating-messages/translate-messages-on-demand",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 147
-                },
-                {
-                  "id": "message/translating-messages/translation-engine",
-                  "segment": "translation-engine",
-                  "title": "Translation engine",
-                  "href": "/docs/chat/sdk/v4/android/message/translating-messages/translation-engine",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 237
-                }
-              ],
-              "minIndex": 146
-            },
-            {
-              "id": "message/marking-messages-as-read-in-a-group-channel",
-              "segment": "marking-messages-as-read-in-a-group-channel",
-              "title": "Marking messages as read in a group channel",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/marking-messages-as-read-in-a-group-channel/mark-messages-as-read",
-                  "segment": "mark-messages-as-read",
-                  "title": "Mark messages as read",
-                  "href": "/docs/chat/sdk/v4/android/message/marking-messages-as-read-in-a-group-channel/mark-messages-as-read",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 259
-                }
-              ],
-              "minIndex": 259
-            }
-          ],
-          "minIndex": 132
-        },
-        {
-          "id": "application",
-          "segment": "application",
-          "title": "Application",
-          "href": null,
-          "type": "folder",
-          "children": [
-            {
-              "id": "application/overview-application",
-              "segment": "overview-application",
-              "title": "Overview",
-              "href": "/docs/chat/sdk/v4/android/application/overview-application",
-              "type": "page",
-              "children": [],
-              "minIndex": 160
-            },
-            {
-              "id": "application/authenticating-a-user",
-              "segment": "authenticating-a-user",
-              "title": "Authenticating a user",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "application/authenticating-a-user/authentication",
-                  "segment": "authentication",
-                  "title": "Authentication",
-                  "href": "/docs/chat/sdk/v4/android/application/authenticating-a-user/authentication",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 159
-                }
-              ],
-              "minIndex": 159
-            },
-            {
-              "id": "application/understanding-rate-limits",
-              "segment": "understanding-rate-limits",
-              "title": "Understanding rate limits",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "application/understanding-rate-limits/rate-limits",
-                  "segment": "rate-limits",
-                  "title": "Rate limits",
-                  "href": "/docs/chat/sdk/v4/android/application/understanding-rate-limits/rate-limits",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 161
-                }
-              ],
-              "minIndex": 161
-            }
-          ],
+          "id": "application/authenticating-a-user/authentication",
+          "segment": "authentication",
+          "title": "Authentication",
+          "href": "/docs/chat/sdk/v4/android/application/authenticating-a-user/authentication",
+          "type": "page",
+          "children": [],
           "minIndex": 159
         },
         {
-          "id": "event-handler",
-          "segment": "event-handler",
+          "id": "event-handler/overview-event-handler",
+          "segment": "overview-event-handler",
           "title": "Event handler",
-          "href": null,
-          "type": "folder",
-          "children": [
-            {
-              "id": "event-handler/overview-event-handler",
-              "segment": "overview-event-handler",
-              "title": "Event handler",
-              "href": "/docs/chat/sdk/v4/android/event-handler/overview-event-handler",
-              "type": "page",
-              "children": [],
-              "minIndex": 184
-            },
-            {
-              "id": "event-handler/managing-channel-event-handlers",
-              "segment": "managing-channel-event-handlers",
-              "title": "Managing channel event handlers",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "event-handler/managing-channel-event-handlers/add-or-remove-a-channel-event-handler",
-                  "segment": "add-or-remove-a-channel-event-handler",
-                  "title": "Add or remove a channel event handler",
-                  "href": "/docs/chat/sdk/v4/android/event-handler/managing-channel-event-handlers/add-or-remove-a-channel-event-handler",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 181
-                }
-              ],
-              "minIndex": 181
-            },
-            {
-              "id": "event-handler/managing-connection-event-handlers",
-              "segment": "managing-connection-event-handlers",
-              "title": "Managing connection event handlers",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "event-handler/managing-connection-event-handlers/add-or-remove-a-connection-event-handler",
-                  "segment": "add-or-remove-a-connection-event-handler",
-                  "title": "Add or remove a connection event handler",
-                  "href": "/docs/chat/sdk/v4/android/event-handler/managing-connection-event-handlers/add-or-remove-a-connection-event-handler",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 182
-                }
-              ],
-              "minIndex": 182
-            },
-            {
-              "id": "event-handler/managing-user-event-handlers",
-              "segment": "managing-user-event-handlers",
-              "title": "Managing user event handlers",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "event-handler/managing-user-event-handlers/add-or-remove-a-user-event-handler",
-                  "segment": "add-or-remove-a-user-event-handler",
-                  "title": "Add or remove a user event handler",
-                  "href": "/docs/chat/sdk/v4/android/event-handler/managing-user-event-handlers/add-or-remove-a-user-event-handler",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 183
-                }
-              ],
-              "minIndex": 183
-            }
-          ],
-          "minIndex": 181
-        },
-        {
-          "id": "push-notifications",
-          "segment": "push-notifications",
-          "title": "Push notifications",
-          "href": null,
-          "type": "folder",
-          "children": [
-            {
-              "id": "push-notifications/overview-push-notifications",
-              "segment": "overview-push-notifications",
-              "title": "Overview",
-              "href": "/docs/chat/sdk/v4/android/push-notifications/overview-push-notifications",
-              "type": "page",
-              "children": [],
-              "minIndex": 152
-            },
-            {
-              "id": "push-notifications/managing-push-notifications",
-              "segment": "managing-push-notifications",
-              "title": "Managing push notifications",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "push-notifications/managing-push-notifications/set-up-push-notifications-for-fcm",
-                  "segment": "set-up-push-notifications-for-fcm",
-                  "title": "Set up push notifications for FCM",
-                  "href": "/docs/chat/sdk/v4/android/push-notifications/managing-push-notifications/set-up-push-notifications-for-fcm",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 242
-                },
-                {
-                  "id": "push-notifications/managing-push-notifications/set-up-push-notifications-for-hms",
-                  "segment": "set-up-push-notifications-for-hms",
-                  "title": "Set up push notifications for HMS",
-                  "href": "/docs/chat/sdk/v4/android/push-notifications/managing-push-notifications/set-up-push-notifications-for-hms",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 243
-                },
-                {
-                  "id": "push-notifications/managing-push-notifications/configure-push-notification-preferences",
-                  "segment": "configure-push-notification-preferences",
-                  "title": "Configure push notification preferences",
-                  "href": "/docs/chat/sdk/v4/android/push-notifications/managing-push-notifications/configure-push-notification-preferences",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 150
-                },
-                {
-                  "id": "push-notifications/managing-push-notifications/push-notification-content-templates",
-                  "segment": "push-notification-content-templates",
-                  "title": "Push notification content templates",
-                  "href": "/docs/chat/sdk/v4/android/push-notifications/managing-push-notifications/push-notification-content-templates",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 240
-                },
-                {
-                  "id": "push-notifications/managing-push-notifications/push-notification-tester",
-                  "segment": "push-notification-tester",
-                  "title": "Push notification tester",
-                  "href": "/docs/chat/sdk/v4/android/push-notifications/managing-push-notifications/push-notification-tester",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 241
-                },
-                {
-                  "id": "push-notifications/managing-push-notifications/push-notification-translation",
-                  "segment": "push-notification-translation",
-                  "title": "Push notification translation",
-                  "href": "/docs/chat/sdk/v4/android/push-notifications/managing-push-notifications/push-notification-translation",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 151
-                }
-              ],
-              "minIndex": 150
-            },
-            {
-              "id": "push-notifications/marking-push-notifications-as-delivered",
-              "segment": "marking-push-notifications-as-delivered",
-              "title": "Marking push notifications as delivered",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "push-notifications/marking-push-notifications-as-delivered/mark-push-notifications-as-delivered",
-                  "segment": "mark-push-notifications-as-delivered",
-                  "title": "Mark push notifications as delivered",
-                  "href": "/docs/chat/sdk/v4/android/push-notifications/marking-push-notifications-as-delivered/mark-push-notifications-as-delivered",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 244
-                }
-              ],
-              "minIndex": 244
-            },
-            {
-              "id": "push-notifications/multi-device-support",
-              "segment": "multi-device-support",
-              "title": "Multi device support",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "push-notifications/multi-device-support/set-up-push-notifications-for-fcm",
-                  "segment": "set-up-push-notifications-for-fcm",
-                  "title": "Set up push notifications for FCM",
-                  "href": "/docs/chat/sdk/v4/android/push-notifications/multi-device-support/set-up-push-notifications-for-fcm",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 245
-                },
-                {
-                  "id": "push-notifications/multi-device-support/set-up-push-notifications-for-hms",
-                  "segment": "set-up-push-notifications-for-hms",
-                  "title": "Set up push notifications for HMS",
-                  "href": "/docs/chat/sdk/v4/android/push-notifications/multi-device-support/set-up-push-notifications-for-hms",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 246
-                }
-              ],
-              "minIndex": 245
-            }
-          ],
-          "minIndex": 150
-        },
-        {
-          "id": "report",
-          "segment": "report",
-          "title": "Report",
-          "href": null,
-          "type": "folder",
-          "children": [
-            {
-              "id": "report/overview-report",
-              "segment": "overview-report",
-              "title": "Overview",
-              "href": "/docs/chat/sdk/v4/android/report/overview-report",
-              "type": "page",
-              "children": [],
-              "minIndex": 153
-            },
-            {
-              "id": "report/creating-a-report",
-              "segment": "creating-a-report",
-              "title": "Creating a report",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "report/creating-a-report/report-a-message-user-or-channel",
-                  "segment": "report-a-message-user-or-channel",
-                  "title": "Report a message, user, or channel",
-                  "href": "/docs/chat/sdk/v4/android/report/creating-a-report/report-a-message-user-or-channel",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 247
-                }
-              ],
-              "minIndex": 247
-            }
-          ],
-          "minIndex": 153
-        },
-        {
-          "id": "local-caching",
-          "segment": "local-caching",
-          "title": "Local caching",
-          "href": null,
-          "type": "folder",
-          "children": [
-            {
-              "id": "local-caching/overview-local-caching",
-              "segment": "overview-local-caching",
-              "title": "Local caching",
-              "href": "/docs/chat/sdk/v4/android/local-caching/overview-local-caching",
-              "type": "page",
-              "children": [],
-              "minIndex": 188
-            },
-            {
-              "id": "local-caching/using-group-channel-collection",
-              "segment": "using-group-channel-collection",
-              "title": "Using group channel collection",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "local-caching/using-group-channel-collection/group-channel-collection",
-                  "segment": "group-channel-collection",
-                  "title": "Group channel collection",
-                  "href": "/docs/chat/sdk/v4/android/local-caching/using-group-channel-collection/group-channel-collection",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 189
-                }
-              ],
-              "minIndex": 189
-            },
-            {
-              "id": "local-caching/using-message-collection",
-              "segment": "using-message-collection",
-              "title": "Using message collection",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "local-caching/using-message-collection/message-collection",
-                  "segment": "message-collection",
-                  "title": "Message collection",
-                  "href": "/docs/chat/sdk/v4/android/local-caching/using-message-collection/message-collection",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 190
-                }
-              ],
-              "minIndex": 190
-            }
-          ],
-          "minIndex": 188
-        },
-        {
-          "id": "migrating-to-openim",
-          "segment": "migrating-to-openim",
-          "title": "Migrating to OpenIM",
-          "href": "/docs/chat/sdk/v4/android/migrating-to-openim",
+          "href": "/docs/chat/sdk/v4/android/event-handler/overview-event-handler",
           "type": "page",
-          "children": [],
-          "minIndex": 239
+          "children": [
+            {
+              "id": "event-handler/overview-event-handler/setgrouplistener",
+              "segment": "setgrouplistener",
+              "title": "SetGroupListener",
+              "href": "/docs/chat/sdk/v4/android/event-handler/overview-event-handler#setgrouplistener",
+              "type": "page",
+              "children": [],
+              "minIndex": 0
+            },
+            {
+              "id": "event-handler/overview-event-handler/setconversationlistener",
+              "segment": "setconversationlistener",
+              "title": "SetConversationListener",
+              "href": "/docs/chat/sdk/v4/android/event-handler/overview-event-handler#setconversationlistener",
+              "type": "page",
+              "children": [],
+              "minIndex": 1
+            },
+            {
+              "id": "event-handler/overview-event-handler/setadvancedmsglistener",
+              "segment": "setadvancedmsglistener",
+              "title": "SetAdvancedMsgListener",
+              "href": "/docs/chat/sdk/v4/android/event-handler/overview-event-handler#setadvancedmsglistener",
+              "type": "page",
+              "children": [],
+              "minIndex": 2
+            },
+            {
+              "id": "event-handler/overview-event-handler/setbatchmsglistener",
+              "segment": "setbatchmsglistener",
+              "title": "SetBatchMsgListener",
+              "href": "/docs/chat/sdk/v4/android/event-handler/overview-event-handler#setbatchmsglistener",
+              "type": "page",
+              "children": [],
+              "minIndex": 3
+            },
+            {
+              "id": "event-handler/overview-event-handler/setuserlistener",
+              "segment": "setuserlistener",
+              "title": "SetUserListener",
+              "href": "/docs/chat/sdk/v4/android/event-handler/overview-event-handler#setuserlistener",
+              "type": "page",
+              "children": [],
+              "minIndex": 4
+            },
+            {
+              "id": "event-handler/overview-event-handler/setfriendlistener",
+              "segment": "setfriendlistener",
+              "title": "SetFriendListener",
+              "href": "/docs/chat/sdk/v4/android/event-handler/overview-event-handler#setfriendlistener",
+              "type": "page",
+              "children": [],
+              "minIndex": 5
+            },
+            {
+              "id": "event-handler/overview-event-handler/setcustombusinesslistener",
+              "segment": "setcustombusinesslistener",
+              "title": "SetCustomBusinessListener",
+              "href": "/docs/chat/sdk/v4/android/event-handler/overview-event-handler#setcustombusinesslistener",
+              "type": "page",
+              "children": [],
+              "minIndex": 6
+            },
+            {
+              "id": "event-handler/overview-event-handler/setmessagekvinfolistener",
+              "segment": "setmessagekvinfolistener",
+              "title": "SetMessageKvInfoListener",
+              "href": "/docs/chat/sdk/v4/android/event-handler/overview-event-handler#setmessagekvinfolistener",
+              "type": "page",
+              "children": [],
+              "minIndex": 7
+            }
+          ],
+          "minIndex": 184
         },
         {
-          "id": "deprecated",
-          "segment": "deprecated",
-          "title": "Deprecated",
-          "href": "/docs/chat/sdk/v4/android/deprecated",
+          "id": "user/overview-user",
+          "segment": "overview-user",
+          "title": "User",
+          "href": "/docs/chat/sdk/v4/android/user/overview-user",
           "type": "page",
-          "children": [],
-          "minIndex": 179
+          "children": [
+            {
+              "id": "user/overview-user/getselfuserinfo",
+              "segment": "getselfuserinfo",
+              "title": "GetSelfUserInfo",
+              "href": "/docs/chat/sdk/v4/android/user/overview-user#getselfuserinfo",
+              "type": "page",
+              "children": [],
+              "minIndex": 0
+            },
+            {
+              "id": "user/overview-user/setselfinfo",
+              "segment": "setselfinfo",
+              "title": "SetSelfInfo",
+              "href": "/docs/chat/sdk/v4/android/user/overview-user#setselfinfo",
+              "type": "page",
+              "children": [],
+              "minIndex": 1
+            },
+            {
+              "id": "user/overview-user/getusersinfo",
+              "segment": "getusersinfo",
+              "title": "GetUsersInfo",
+              "href": "/docs/chat/sdk/v4/android/user/overview-user#getusersinfo",
+              "type": "page",
+              "children": [],
+              "minIndex": 2
+            },
+            {
+              "id": "user/overview-user/addusercommand",
+              "segment": "addusercommand",
+              "title": "AddUserCommand",
+              "href": "/docs/chat/sdk/v4/android/user/overview-user#addusercommand",
+              "type": "page",
+              "children": [],
+              "minIndex": 3
+            },
+            {
+              "id": "user/overview-user/deleteusercommand",
+              "segment": "deleteusercommand",
+              "title": "DeleteUserCommand",
+              "href": "/docs/chat/sdk/v4/android/user/overview-user#deleteusercommand",
+              "type": "page",
+              "children": [],
+              "minIndex": 4
+            },
+            {
+              "id": "user/overview-user/getallusercommands",
+              "segment": "getallusercommands",
+              "title": "GetAllUserCommands",
+              "href": "/docs/chat/sdk/v4/android/user/overview-user#getallusercommands",
+              "type": "page",
+              "children": [],
+              "minIndex": 5
+            },
+            {
+              "id": "user/overview-user/subscribeusersstatus",
+              "segment": "subscribeusersstatus",
+              "title": "SubscribeUsersStatus",
+              "href": "/docs/chat/sdk/v4/android/user/overview-user#subscribeusersstatus",
+              "type": "page",
+              "children": [],
+              "minIndex": 6
+            },
+            {
+              "id": "user/overview-user/unsubscribeusersstatus",
+              "segment": "unsubscribeusersstatus",
+              "title": "UnsubscribeUsersStatus",
+              "href": "/docs/chat/sdk/v4/android/user/overview-user#unsubscribeusersstatus",
+              "type": "page",
+              "children": [],
+              "minIndex": 7
+            },
+            {
+              "id": "user/overview-user/getsubscribeusersstatus",
+              "segment": "getsubscribeusersstatus",
+              "title": "GetSubscribeUsersStatus",
+              "href": "/docs/chat/sdk/v4/android/user/overview-user#getsubscribeusersstatus",
+              "type": "page",
+              "children": [],
+              "minIndex": 8
+            },
+            {
+              "id": "user/overview-user/getuserstatus",
+              "segment": "getuserstatus",
+              "title": "GetUserStatus",
+              "href": "/docs/chat/sdk/v4/android/user/overview-user#getuserstatus",
+              "type": "page",
+              "children": [],
+              "minIndex": 9
+            }
+          ],
+          "minIndex": 252
+        },
+        {
+          "id": "user/retrieving-users/retrieve-a-list-of-users-in-an-application",
+          "segment": "retrieve-a-list-of-users-in-an-application",
+          "title": "Friend",
+          "href": "/docs/chat/sdk/v4/android/user/retrieving-users/retrieve-a-list-of-users-in-an-application",
+          "type": "page",
+          "children": [
+            {
+              "id": "user/retrieving-users/retrieve-a-list-of-users-in-an-application/getspecifiedfriendsinfo",
+              "segment": "getspecifiedfriendsinfo",
+              "title": "GetSpecifiedFriendsInfo",
+              "href": "/docs/chat/sdk/v4/android/user/retrieving-users/retrieve-a-list-of-users-in-an-application#getspecifiedfriendsinfo",
+              "type": "page",
+              "children": [],
+              "minIndex": 0
+            },
+            {
+              "id": "user/retrieving-users/retrieve-a-list-of-users-in-an-application/getfriendlist",
+              "segment": "getfriendlist",
+              "title": "GetFriendList",
+              "href": "/docs/chat/sdk/v4/android/user/retrieving-users/retrieve-a-list-of-users-in-an-application#getfriendlist",
+              "type": "page",
+              "children": [],
+              "minIndex": 1
+            },
+            {
+              "id": "user/retrieving-users/retrieve-a-list-of-users-in-an-application/getfriendlistpage",
+              "segment": "getfriendlistpage",
+              "title": "GetFriendListPage",
+              "href": "/docs/chat/sdk/v4/android/user/retrieving-users/retrieve-a-list-of-users-in-an-application#getfriendlistpage",
+              "type": "page",
+              "children": [],
+              "minIndex": 2
+            },
+            {
+              "id": "user/retrieving-users/retrieve-a-list-of-users-in-an-application/searchfriends",
+              "segment": "searchfriends",
+              "title": "SearchFriends",
+              "href": "/docs/chat/sdk/v4/android/user/retrieving-users/retrieve-a-list-of-users-in-an-application#searchfriends",
+              "type": "page",
+              "children": [],
+              "minIndex": 3
+            },
+            {
+              "id": "user/retrieving-users/retrieve-a-list-of-users-in-an-application/checkfriend",
+              "segment": "checkfriend",
+              "title": "CheckFriend",
+              "href": "/docs/chat/sdk/v4/android/user/retrieving-users/retrieve-a-list-of-users-in-an-application#checkfriend",
+              "type": "page",
+              "children": [],
+              "minIndex": 4
+            },
+            {
+              "id": "user/retrieving-users/retrieve-a-list-of-users-in-an-application/addfriend",
+              "segment": "addfriend",
+              "title": "AddFriend",
+              "href": "/docs/chat/sdk/v4/android/user/retrieving-users/retrieve-a-list-of-users-in-an-application#addfriend",
+              "type": "page",
+              "children": [],
+              "minIndex": 5
+            },
+            {
+              "id": "user/retrieving-users/retrieve-a-list-of-users-in-an-application/updatefriends",
+              "segment": "updatefriends",
+              "title": "UpdateFriends",
+              "href": "/docs/chat/sdk/v4/android/user/retrieving-users/retrieve-a-list-of-users-in-an-application#updatefriends",
+              "type": "page",
+              "children": [],
+              "minIndex": 6
+            },
+            {
+              "id": "user/retrieving-users/retrieve-a-list-of-users-in-an-application/deletefriend",
+              "segment": "deletefriend",
+              "title": "DeleteFriend",
+              "href": "/docs/chat/sdk/v4/android/user/retrieving-users/retrieve-a-list-of-users-in-an-application#deletefriend",
+              "type": "page",
+              "children": [],
+              "minIndex": 7
+            },
+            {
+              "id": "user/retrieving-users/retrieve-a-list-of-users-in-an-application/getfriendapplicationlistasrecipient",
+              "segment": "getfriendapplicationlistasrecipient",
+              "title": "GetFriendApplicationListAsRecipient",
+              "href": "/docs/chat/sdk/v4/android/user/retrieving-users/retrieve-a-list-of-users-in-an-application#getfriendapplicationlistasrecipient",
+              "type": "page",
+              "children": [],
+              "minIndex": 8
+            },
+            {
+              "id": "user/retrieving-users/retrieve-a-list-of-users-in-an-application/getfriendapplicationlistasapplicant",
+              "segment": "getfriendapplicationlistasapplicant",
+              "title": "GetFriendApplicationListAsApplicant",
+              "href": "/docs/chat/sdk/v4/android/user/retrieving-users/retrieve-a-list-of-users-in-an-application#getfriendapplicationlistasapplicant",
+              "type": "page",
+              "children": [],
+              "minIndex": 9
+            },
+            {
+              "id": "user/retrieving-users/retrieve-a-list-of-users-in-an-application/acceptfriendapplication",
+              "segment": "acceptfriendapplication",
+              "title": "AcceptFriendApplication",
+              "href": "/docs/chat/sdk/v4/android/user/retrieving-users/retrieve-a-list-of-users-in-an-application#acceptfriendapplication",
+              "type": "page",
+              "children": [],
+              "minIndex": 10
+            },
+            {
+              "id": "user/retrieving-users/retrieve-a-list-of-users-in-an-application/refusefriendapplication",
+              "segment": "refusefriendapplication",
+              "title": "RefuseFriendApplication",
+              "href": "/docs/chat/sdk/v4/android/user/retrieving-users/retrieve-a-list-of-users-in-an-application#refusefriendapplication",
+              "type": "page",
+              "children": [],
+              "minIndex": 11
+            },
+            {
+              "id": "user/retrieving-users/retrieve-a-list-of-users-in-an-application/getfriendapplicationunhandledcount",
+              "segment": "getfriendapplicationunhandledcount",
+              "title": "GetFriendApplicationUnhandledCount",
+              "href": "/docs/chat/sdk/v4/android/user/retrieving-users/retrieve-a-list-of-users-in-an-application#getfriendapplicationunhandledcount",
+              "type": "page",
+              "children": [],
+              "minIndex": 12
+            }
+          ],
+          "minIndex": 253
+        },
+        {
+          "id": "user/moderating-a-user/block-and-unblock-other-members",
+          "segment": "block-and-unblock-other-members",
+          "title": "Blacklist",
+          "href": "/docs/chat/sdk/v4/android/user/moderating-a-user/block-and-unblock-other-members",
+          "type": "page",
+          "children": [
+            {
+              "id": "user/moderating-a-user/block-and-unblock-other-members/addblack",
+              "segment": "addblack",
+              "title": "AddBlack",
+              "href": "/docs/chat/sdk/v4/android/user/moderating-a-user/block-and-unblock-other-members#addblack",
+              "type": "page",
+              "children": [],
+              "minIndex": 0
+            },
+            {
+              "id": "user/moderating-a-user/block-and-unblock-other-members/getblacklist",
+              "segment": "getblacklist",
+              "title": "GetBlackList",
+              "href": "/docs/chat/sdk/v4/android/user/moderating-a-user/block-and-unblock-other-members#getblacklist",
+              "type": "page",
+              "children": [],
+              "minIndex": 1
+            },
+            {
+              "id": "user/moderating-a-user/block-and-unblock-other-members/removeblack",
+              "segment": "removeblack",
+              "title": "RemoveBlack",
+              "href": "/docs/chat/sdk/v4/android/user/moderating-a-user/block-and-unblock-other-members#removeblack",
+              "type": "page",
+              "children": [],
+              "minIndex": 2
+            }
+          ],
+          "minIndex": 254
+        },
+        {
+          "id": "channel/overview-channel",
+          "segment": "overview-channel",
+          "title": "Group",
+          "href": "/docs/chat/sdk/v4/android/channel/overview-channel",
+          "type": "page",
+          "children": [
+            {
+              "id": "channel/overview-channel/creategroup",
+              "segment": "creategroup",
+              "title": "CreateGroup",
+              "href": "/docs/chat/sdk/v4/android/channel/overview-channel#creategroup",
+              "type": "page",
+              "children": [],
+              "minIndex": 0
+            },
+            {
+              "id": "channel/overview-channel/joingroup",
+              "segment": "joingroup",
+              "title": "JoinGroup",
+              "href": "/docs/chat/sdk/v4/android/channel/overview-channel#joingroup",
+              "type": "page",
+              "children": [],
+              "minIndex": 1
+            },
+            {
+              "id": "channel/overview-channel/quitgroup",
+              "segment": "quitgroup",
+              "title": "QuitGroup",
+              "href": "/docs/chat/sdk/v4/android/channel/overview-channel#quitgroup",
+              "type": "page",
+              "children": [],
+              "minIndex": 2
+            },
+            {
+              "id": "channel/overview-channel/dismissgroup",
+              "segment": "dismissgroup",
+              "title": "DismissGroup",
+              "href": "/docs/chat/sdk/v4/android/channel/overview-channel#dismissgroup",
+              "type": "page",
+              "children": [],
+              "minIndex": 3
+            },
+            {
+              "id": "channel/overview-channel/changegroupmute",
+              "segment": "changegroupmute",
+              "title": "ChangeGroupMute",
+              "href": "/docs/chat/sdk/v4/android/channel/overview-channel#changegroupmute",
+              "type": "page",
+              "children": [],
+              "minIndex": 4
+            },
+            {
+              "id": "channel/overview-channel/changegroupmembermute",
+              "segment": "changegroupmembermute",
+              "title": "ChangeGroupMemberMute",
+              "href": "/docs/chat/sdk/v4/android/channel/overview-channel#changegroupmembermute",
+              "type": "page",
+              "children": [],
+              "minIndex": 5
+            },
+            {
+              "id": "channel/overview-channel/transfergroupowner",
+              "segment": "transfergroupowner",
+              "title": "TransferGroupOwner",
+              "href": "/docs/chat/sdk/v4/android/channel/overview-channel#transfergroupowner",
+              "type": "page",
+              "children": [],
+              "minIndex": 6
+            },
+            {
+              "id": "channel/overview-channel/kickgroupmember",
+              "segment": "kickgroupmember",
+              "title": "KickGroupMember",
+              "href": "/docs/chat/sdk/v4/android/channel/overview-channel#kickgroupmember",
+              "type": "page",
+              "children": [],
+              "minIndex": 7
+            },
+            {
+              "id": "channel/overview-channel/setgroupinfo",
+              "segment": "setgroupinfo",
+              "title": "SetGroupInfo",
+              "href": "/docs/chat/sdk/v4/android/channel/overview-channel#setgroupinfo",
+              "type": "page",
+              "children": [],
+              "minIndex": 8
+            },
+            {
+              "id": "channel/overview-channel/setgroupmemberinfo",
+              "segment": "setgroupmemberinfo",
+              "title": "SetGroupMemberInfo",
+              "href": "/docs/chat/sdk/v4/android/channel/overview-channel#setgroupmemberinfo",
+              "type": "page",
+              "children": [],
+              "minIndex": 9
+            },
+            {
+              "id": "channel/overview-channel/getjoinedgrouplist",
+              "segment": "getjoinedgrouplist",
+              "title": "GetJoinedGroupList",
+              "href": "/docs/chat/sdk/v4/android/channel/overview-channel#getjoinedgrouplist",
+              "type": "page",
+              "children": [],
+              "minIndex": 10
+            },
+            {
+              "id": "channel/overview-channel/getjoinedgrouplistpage",
+              "segment": "getjoinedgrouplistpage",
+              "title": "GetJoinedGroupListPage",
+              "href": "/docs/chat/sdk/v4/android/channel/overview-channel#getjoinedgrouplistpage",
+              "type": "page",
+              "children": [],
+              "minIndex": 11
+            },
+            {
+              "id": "channel/overview-channel/getspecifiedgroupsinfo",
+              "segment": "getspecifiedgroupsinfo",
+              "title": "GetSpecifiedGroupsInfo",
+              "href": "/docs/chat/sdk/v4/android/channel/overview-channel#getspecifiedgroupsinfo",
+              "type": "page",
+              "children": [],
+              "minIndex": 12
+            },
+            {
+              "id": "channel/overview-channel/searchgroups",
+              "segment": "searchgroups",
+              "title": "SearchGroups",
+              "href": "/docs/chat/sdk/v4/android/channel/overview-channel#searchgroups",
+              "type": "page",
+              "children": [],
+              "minIndex": 13
+            },
+            {
+              "id": "channel/overview-channel/getgroupmemberownerandadmin",
+              "segment": "getgroupmemberownerandadmin",
+              "title": "GetGroupMemberOwnerAndAdmin",
+              "href": "/docs/chat/sdk/v4/android/channel/overview-channel#getgroupmemberownerandadmin",
+              "type": "page",
+              "children": [],
+              "minIndex": 14
+            },
+            {
+              "id": "channel/overview-channel/getgroupmemberlistbyjointimefilter",
+              "segment": "getgroupmemberlistbyjointimefilter",
+              "title": "GetGroupMemberListByJoinTimeFilter",
+              "href": "/docs/chat/sdk/v4/android/channel/overview-channel#getgroupmemberlistbyjointimefilter",
+              "type": "page",
+              "children": [],
+              "minIndex": 15
+            },
+            {
+              "id": "channel/overview-channel/getspecifiedgroupmembersinfo",
+              "segment": "getspecifiedgroupmembersinfo",
+              "title": "GetSpecifiedGroupMembersInfo",
+              "href": "/docs/chat/sdk/v4/android/channel/overview-channel#getspecifiedgroupmembersinfo",
+              "type": "page",
+              "children": [],
+              "minIndex": 16
+            },
+            {
+              "id": "channel/overview-channel/getgroupmemberlist",
+              "segment": "getgroupmemberlist",
+              "title": "GetGroupMemberList",
+              "href": "/docs/chat/sdk/v4/android/channel/overview-channel#getgroupmemberlist",
+              "type": "page",
+              "children": [],
+              "minIndex": 17
+            },
+            {
+              "id": "channel/overview-channel/getgroupapplicationlistasrecipient",
+              "segment": "getgroupapplicationlistasrecipient",
+              "title": "GetGroupApplicationListAsRecipient",
+              "href": "/docs/chat/sdk/v4/android/channel/overview-channel#getgroupapplicationlistasrecipient",
+              "type": "page",
+              "children": [],
+              "minIndex": 18
+            },
+            {
+              "id": "channel/overview-channel/getgroupapplicationlistasapplicant",
+              "segment": "getgroupapplicationlistasapplicant",
+              "title": "GetGroupApplicationListAsApplicant",
+              "href": "/docs/chat/sdk/v4/android/channel/overview-channel#getgroupapplicationlistasapplicant",
+              "type": "page",
+              "children": [],
+              "minIndex": 19
+            },
+            {
+              "id": "channel/overview-channel/searchgroupmembers",
+              "segment": "searchgroupmembers",
+              "title": "SearchGroupMembers",
+              "href": "/docs/chat/sdk/v4/android/channel/overview-channel#searchgroupmembers",
+              "type": "page",
+              "children": [],
+              "minIndex": 20
+            },
+            {
+              "id": "channel/overview-channel/isjoingroup",
+              "segment": "isjoingroup",
+              "title": "IsJoinGroup",
+              "href": "/docs/chat/sdk/v4/android/channel/overview-channel#isjoingroup",
+              "type": "page",
+              "children": [],
+              "minIndex": 21
+            },
+            {
+              "id": "channel/overview-channel/getusersingroup",
+              "segment": "getusersingroup",
+              "title": "GetUsersInGroup",
+              "href": "/docs/chat/sdk/v4/android/channel/overview-channel#getusersingroup",
+              "type": "page",
+              "children": [],
+              "minIndex": 22
+            },
+            {
+              "id": "channel/overview-channel/inviteusertogroup",
+              "segment": "inviteusertogroup",
+              "title": "InviteUserToGroup",
+              "href": "/docs/chat/sdk/v4/android/channel/overview-channel#inviteusertogroup",
+              "type": "page",
+              "children": [],
+              "minIndex": 23
+            },
+            {
+              "id": "channel/overview-channel/acceptgroupapplication",
+              "segment": "acceptgroupapplication",
+              "title": "AcceptGroupApplication",
+              "href": "/docs/chat/sdk/v4/android/channel/overview-channel#acceptgroupapplication",
+              "type": "page",
+              "children": [],
+              "minIndex": 24
+            },
+            {
+              "id": "channel/overview-channel/refusegroupapplication",
+              "segment": "refusegroupapplication",
+              "title": "RefuseGroupApplication",
+              "href": "/docs/chat/sdk/v4/android/channel/overview-channel#refusegroupapplication",
+              "type": "page",
+              "children": [],
+              "minIndex": 25
+            },
+            {
+              "id": "channel/overview-channel/getgroupapplicationunhandledcount",
+              "segment": "getgroupapplicationunhandledcount",
+              "title": "GetGroupApplicationUnhandledCount",
+              "href": "/docs/chat/sdk/v4/android/channel/overview-channel#getgroupapplicationunhandledcount",
+              "type": "page",
+              "children": [],
+              "minIndex": 26
+            }
+          ],
+          "minIndex": 130
+        },
+        {
+          "id": "message/overview-message",
+          "segment": "overview-message",
+          "title": "Conversation and message",
+          "href": "/docs/chat/sdk/v4/android/message/overview-message",
+          "type": "page",
+          "children": [
+            {
+              "id": "message/overview-message/getallconversationlist",
+              "segment": "getallconversationlist",
+              "title": "GetAllConversationList",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#getallconversationlist",
+              "type": "page",
+              "children": [],
+              "minIndex": 0
+            },
+            {
+              "id": "message/overview-message/getconversationlistsplit",
+              "segment": "getconversationlistsplit",
+              "title": "GetConversationListSplit",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#getconversationlistsplit",
+              "type": "page",
+              "children": [],
+              "minIndex": 1
+            },
+            {
+              "id": "message/overview-message/getoneconversation",
+              "segment": "getoneconversation",
+              "title": "GetOneConversation",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#getoneconversation",
+              "type": "page",
+              "children": [],
+              "minIndex": 2
+            },
+            {
+              "id": "message/overview-message/getmultipleconversation",
+              "segment": "getmultipleconversation",
+              "title": "GetMultipleConversation",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#getmultipleconversation",
+              "type": "page",
+              "children": [],
+              "minIndex": 3
+            },
+            {
+              "id": "message/overview-message/setconversation",
+              "segment": "setconversation",
+              "title": "SetConversation",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#setconversation",
+              "type": "page",
+              "children": [],
+              "minIndex": 4
+            },
+            {
+              "id": "message/overview-message/hideconversation",
+              "segment": "hideconversation",
+              "title": "HideConversation",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#hideconversation",
+              "type": "page",
+              "children": [],
+              "minIndex": 5
+            },
+            {
+              "id": "message/overview-message/setconversationdraft",
+              "segment": "setconversationdraft",
+              "title": "SetConversationDraft",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#setconversationdraft",
+              "type": "page",
+              "children": [],
+              "minIndex": 6
+            },
+            {
+              "id": "message/overview-message/gettotalunreadmsgcount",
+              "segment": "gettotalunreadmsgcount",
+              "title": "GetTotalUnreadMsgCount",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#gettotalunreadmsgcount",
+              "type": "page",
+              "children": [],
+              "minIndex": 7
+            },
+            {
+              "id": "message/overview-message/hideallconversations",
+              "segment": "hideallconversations",
+              "title": "HideAllConversations",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#hideallconversations",
+              "type": "page",
+              "children": [],
+              "minIndex": 8
+            },
+            {
+              "id": "message/overview-message/searchconversation",
+              "segment": "searchconversation",
+              "title": "SearchConversation",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#searchconversation",
+              "type": "page",
+              "children": [],
+              "minIndex": 9
+            },
+            {
+              "id": "message/overview-message/changeinputstates",
+              "segment": "changeinputstates",
+              "title": "ChangeInputStates",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#changeinputstates",
+              "type": "page",
+              "children": [],
+              "minIndex": 10
+            },
+            {
+              "id": "message/overview-message/getinputstates",
+              "segment": "getinputstates",
+              "title": "GetInputStates",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#getinputstates",
+              "type": "page",
+              "children": [],
+              "minIndex": 11
+            },
+            {
+              "id": "message/overview-message/getconversationidbysessiontype",
+              "segment": "getconversationidbysessiontype",
+              "title": "GetConversationIDBySessionType",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#getconversationidbysessiontype",
+              "type": "page",
+              "children": [],
+              "minIndex": 12
+            },
+            {
+              "id": "message/overview-message/getatalltag",
+              "segment": "getatalltag",
+              "title": "GetAtAllTag",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#getatalltag",
+              "type": "page",
+              "children": [],
+              "minIndex": 13
+            },
+            {
+              "id": "message/overview-message/createtextmessage",
+              "segment": "createtextmessage",
+              "title": "CreateTextMessage",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#createtextmessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 14
+            },
+            {
+              "id": "message/overview-message/createadvancedtextmessage",
+              "segment": "createadvancedtextmessage",
+              "title": "CreateAdvancedTextMessage",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#createadvancedtextmessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 15
+            },
+            {
+              "id": "message/overview-message/createtextatmessage",
+              "segment": "createtextatmessage",
+              "title": "CreateTextAtMessage",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#createtextatmessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 16
+            },
+            {
+              "id": "message/overview-message/createlocationmessage",
+              "segment": "createlocationmessage",
+              "title": "CreateLocationMessage",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#createlocationmessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 17
+            },
+            {
+              "id": "message/overview-message/createcustommessage",
+              "segment": "createcustommessage",
+              "title": "CreateCustomMessage",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#createcustommessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 18
+            },
+            {
+              "id": "message/overview-message/createquotemessage",
+              "segment": "createquotemessage",
+              "title": "CreateQuoteMessage",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#createquotemessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 19
+            },
+            {
+              "id": "message/overview-message/createadvancedquotemessage",
+              "segment": "createadvancedquotemessage",
+              "title": "CreateAdvancedQuoteMessage",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#createadvancedquotemessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 20
+            },
+            {
+              "id": "message/overview-message/createcardmessage",
+              "segment": "createcardmessage",
+              "title": "CreateCardMessage",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#createcardmessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 21
+            },
+            {
+              "id": "message/overview-message/createfacemessage",
+              "segment": "createfacemessage",
+              "title": "CreateFaceMessage",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#createfacemessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 22
+            },
+            {
+              "id": "message/overview-message/createforwardmessage",
+              "segment": "createforwardmessage",
+              "title": "CreateForwardMessage",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#createforwardmessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 23
+            },
+            {
+              "id": "message/overview-message/createmergermessage",
+              "segment": "createmergermessage",
+              "title": "CreateMergerMessage",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#createmergermessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 24
+            },
+            {
+              "id": "message/overview-message/createimagemessage",
+              "segment": "createimagemessage",
+              "title": "CreateImageMessage",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#createimagemessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 25
+            },
+            {
+              "id": "message/overview-message/createimagemessagefromfullpath",
+              "segment": "createimagemessagefromfullpath",
+              "title": "CreateImageMessageFromFullPath",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#createimagemessagefromfullpath",
+              "type": "page",
+              "children": [],
+              "minIndex": 26
+            },
+            {
+              "id": "message/overview-message/createimagemessagebyurl",
+              "segment": "createimagemessagebyurl",
+              "title": "CreateImageMessageByURL",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#createimagemessagebyurl",
+              "type": "page",
+              "children": [],
+              "minIndex": 27
+            },
+            {
+              "id": "message/overview-message/createsoundmessage",
+              "segment": "createsoundmessage",
+              "title": "CreateSoundMessage",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#createsoundmessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 28
+            },
+            {
+              "id": "message/overview-message/createsoundmessagefromfullpath",
+              "segment": "createsoundmessagefromfullpath",
+              "title": "CreateSoundMessageFromFullPath",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#createsoundmessagefromfullpath",
+              "type": "page",
+              "children": [],
+              "minIndex": 29
+            },
+            {
+              "id": "message/overview-message/createsoundmessagebyurl",
+              "segment": "createsoundmessagebyurl",
+              "title": "CreateSoundMessageByURL",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#createsoundmessagebyurl",
+              "type": "page",
+              "children": [],
+              "minIndex": 30
+            },
+            {
+              "id": "message/overview-message/createvideomessage",
+              "segment": "createvideomessage",
+              "title": "CreateVideoMessage",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#createvideomessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 31
+            },
+            {
+              "id": "message/overview-message/createvideomessagefromfullpath",
+              "segment": "createvideomessagefromfullpath",
+              "title": "CreateVideoMessageFromFullPath",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#createvideomessagefromfullpath",
+              "type": "page",
+              "children": [],
+              "minIndex": 32
+            },
+            {
+              "id": "message/overview-message/createvideomessagebyurl",
+              "segment": "createvideomessagebyurl",
+              "title": "CreateVideoMessageByURL",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#createvideomessagebyurl",
+              "type": "page",
+              "children": [],
+              "minIndex": 33
+            },
+            {
+              "id": "message/overview-message/createfilemessage",
+              "segment": "createfilemessage",
+              "title": "CreateFileMessage",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#createfilemessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 34
+            },
+            {
+              "id": "message/overview-message/createfilemessagefromfullpath",
+              "segment": "createfilemessagefromfullpath",
+              "title": "CreateFileMessageFromFullPath",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#createfilemessagefromfullpath",
+              "type": "page",
+              "children": [],
+              "minIndex": 35
+            },
+            {
+              "id": "message/overview-message/createfilemessagebyurl",
+              "segment": "createfilemessagebyurl",
+              "title": "CreateFileMessageByURL",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#createfilemessagebyurl",
+              "type": "page",
+              "children": [],
+              "minIndex": 36
+            },
+            {
+              "id": "message/overview-message/sendmessage",
+              "segment": "sendmessage",
+              "title": "SendMessage",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#sendmessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 37
+            },
+            {
+              "id": "message/overview-message/sendmessagenotoss",
+              "segment": "sendmessagenotoss",
+              "title": "SendMessageNotOss",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#sendmessagenotoss",
+              "type": "page",
+              "children": [],
+              "minIndex": 38
+            },
+            {
+              "id": "message/overview-message/findmessagelist",
+              "segment": "findmessagelist",
+              "title": "FindMessageList",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#findmessagelist",
+              "type": "page",
+              "children": [],
+              "minIndex": 39
+            },
+            {
+              "id": "message/overview-message/getadvancedhistorymessagelist",
+              "segment": "getadvancedhistorymessagelist",
+              "title": "GetAdvancedHistoryMessageList",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#getadvancedhistorymessagelist",
+              "type": "page",
+              "children": [],
+              "minIndex": 40
+            },
+            {
+              "id": "message/overview-message/getadvancedhistorymessagelistreverse",
+              "segment": "getadvancedhistorymessagelistreverse",
+              "title": "GetAdvancedHistoryMessageListReverse",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#getadvancedhistorymessagelistreverse",
+              "type": "page",
+              "children": [],
+              "minIndex": 41
+            },
+            {
+              "id": "message/overview-message/revokemessage",
+              "segment": "revokemessage",
+              "title": "RevokeMessage",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#revokemessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 42
+            },
+            {
+              "id": "message/overview-message/typingstatusupdate",
+              "segment": "typingstatusupdate",
+              "title": "TypingStatusUpdate",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#typingstatusupdate",
+              "type": "page",
+              "children": [],
+              "minIndex": 43
+            },
+            {
+              "id": "message/overview-message/markconversationmessageasread",
+              "segment": "markconversationmessageasread",
+              "title": "MarkConversationMessageAsRead",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#markconversationmessageasread",
+              "type": "page",
+              "children": [],
+              "minIndex": 44
+            },
+            {
+              "id": "message/overview-message/markallconversationmessageasread",
+              "segment": "markallconversationmessageasread",
+              "title": "MarkAllConversationMessageAsRead",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#markallconversationmessageasread",
+              "type": "page",
+              "children": [],
+              "minIndex": 45
+            },
+            {
+              "id": "message/overview-message/markmessagesasreadbymsgid",
+              "segment": "markmessagesasreadbymsgid",
+              "title": "MarkMessagesAsReadByMsgID",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#markmessagesasreadbymsgid",
+              "type": "page",
+              "children": [],
+              "minIndex": 46
+            },
+            {
+              "id": "message/overview-message/deletemessagefromlocalstorage",
+              "segment": "deletemessagefromlocalstorage",
+              "title": "DeleteMessageFromLocalStorage",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#deletemessagefromlocalstorage",
+              "type": "page",
+              "children": [],
+              "minIndex": 47
+            },
+            {
+              "id": "message/overview-message/deletemessage",
+              "segment": "deletemessage",
+              "title": "DeleteMessage",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#deletemessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 48
+            },
+            {
+              "id": "message/overview-message/deleteallmsgfromlocalandsvr",
+              "segment": "deleteallmsgfromlocalandsvr",
+              "title": "DeleteAllMsgFromLocalAndSvr",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#deleteallmsgfromlocalandsvr",
+              "type": "page",
+              "children": [],
+              "minIndex": 49
+            },
+            {
+              "id": "message/overview-message/deleteallmsgfromlocal",
+              "segment": "deleteallmsgfromlocal",
+              "title": "DeleteAllMsgFromLocal",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#deleteallmsgfromlocal",
+              "type": "page",
+              "children": [],
+              "minIndex": 50
+            },
+            {
+              "id": "message/overview-message/clearconversationanddeleteallmsg",
+              "segment": "clearconversationanddeleteallmsg",
+              "title": "ClearConversationAndDeleteAllMsg",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#clearconversationanddeleteallmsg",
+              "type": "page",
+              "children": [],
+              "minIndex": 51
+            },
+            {
+              "id": "message/overview-message/deleteconversationanddeleteallmsg",
+              "segment": "deleteconversationanddeleteallmsg",
+              "title": "DeleteConversationAndDeleteAllMsg",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#deleteconversationanddeleteallmsg",
+              "type": "page",
+              "children": [],
+              "minIndex": 52
+            },
+            {
+              "id": "message/overview-message/insertsinglemessagetolocalstorage",
+              "segment": "insertsinglemessagetolocalstorage",
+              "title": "InsertSingleMessageToLocalStorage",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#insertsinglemessagetolocalstorage",
+              "type": "page",
+              "children": [],
+              "minIndex": 53
+            },
+            {
+              "id": "message/overview-message/insertgroupmessagetolocalstorage",
+              "segment": "insertgroupmessagetolocalstorage",
+              "title": "InsertGroupMessageToLocalStorage",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#insertgroupmessagetolocalstorage",
+              "type": "page",
+              "children": [],
+              "minIndex": 54
+            },
+            {
+              "id": "message/overview-message/searchlocalmessages",
+              "segment": "searchlocalmessages",
+              "title": "SearchLocalMessages",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#searchlocalmessages",
+              "type": "page",
+              "children": [],
+              "minIndex": 55
+            },
+            {
+              "id": "message/overview-message/setmessagelocalex",
+              "segment": "setmessagelocalex",
+              "title": "SetMessageLocalEx",
+              "href": "/docs/chat/sdk/v4/android/message/overview-message#setmessagelocalex",
+              "type": "page",
+              "children": [],
+              "minIndex": 56
+            }
+          ],
+          "minIndex": 141
+        },
+        {
+          "id": "message/sending-a-message/send-a-message",
+          "segment": "send-a-message",
+          "title": "Send a message",
+          "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message",
+          "type": "page",
+          "children": [
+            {
+              "id": "message/sending-a-message/send-a-message/sendmessage",
+              "segment": "sendmessage",
+              "title": "SendMessage",
+              "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message#sendmessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 0
+            },
+            {
+              "id": "message/sending-a-message/send-a-message/sendmessagenotoss",
+              "segment": "sendmessagenotoss",
+              "title": "SendMessageNotOss",
+              "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message#sendmessagenotoss",
+              "type": "page",
+              "children": [],
+              "minIndex": 1
+            },
+            {
+              "id": "message/sending-a-message/send-a-message/getatalltag",
+              "segment": "getatalltag",
+              "title": "GetAtAllTag",
+              "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message#getatalltag",
+              "type": "page",
+              "children": [],
+              "minIndex": 2
+            },
+            {
+              "id": "message/sending-a-message/send-a-message/createtextmessage",
+              "segment": "createtextmessage",
+              "title": "CreateTextMessage",
+              "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message#createtextmessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 3
+            },
+            {
+              "id": "message/sending-a-message/send-a-message/createadvancedtextmessage",
+              "segment": "createadvancedtextmessage",
+              "title": "CreateAdvancedTextMessage",
+              "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message#createadvancedtextmessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 4
+            },
+            {
+              "id": "message/sending-a-message/send-a-message/createtextatmessage",
+              "segment": "createtextatmessage",
+              "title": "CreateTextAtMessage",
+              "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message#createtextatmessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 5
+            },
+            {
+              "id": "message/sending-a-message/send-a-message/createlocationmessage",
+              "segment": "createlocationmessage",
+              "title": "CreateLocationMessage",
+              "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message#createlocationmessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 6
+            },
+            {
+              "id": "message/sending-a-message/send-a-message/createcustommessage",
+              "segment": "createcustommessage",
+              "title": "CreateCustomMessage",
+              "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message#createcustommessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 7
+            },
+            {
+              "id": "message/sending-a-message/send-a-message/createquotemessage",
+              "segment": "createquotemessage",
+              "title": "CreateQuoteMessage",
+              "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message#createquotemessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 8
+            },
+            {
+              "id": "message/sending-a-message/send-a-message/createadvancedquotemessage",
+              "segment": "createadvancedquotemessage",
+              "title": "CreateAdvancedQuoteMessage",
+              "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message#createadvancedquotemessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 9
+            },
+            {
+              "id": "message/sending-a-message/send-a-message/createcardmessage",
+              "segment": "createcardmessage",
+              "title": "CreateCardMessage",
+              "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message#createcardmessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 10
+            },
+            {
+              "id": "message/sending-a-message/send-a-message/createfacemessage",
+              "segment": "createfacemessage",
+              "title": "CreateFaceMessage",
+              "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message#createfacemessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 11
+            },
+            {
+              "id": "message/sending-a-message/send-a-message/createforwardmessage",
+              "segment": "createforwardmessage",
+              "title": "CreateForwardMessage",
+              "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message#createforwardmessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 12
+            },
+            {
+              "id": "message/sending-a-message/send-a-message/createmergermessage",
+              "segment": "createmergermessage",
+              "title": "CreateMergerMessage",
+              "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message#createmergermessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 13
+            },
+            {
+              "id": "message/sending-a-message/send-a-message/createimagemessage",
+              "segment": "createimagemessage",
+              "title": "CreateImageMessage",
+              "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message#createimagemessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 14
+            },
+            {
+              "id": "message/sending-a-message/send-a-message/createimagemessagefromfullpath",
+              "segment": "createimagemessagefromfullpath",
+              "title": "CreateImageMessageFromFullPath",
+              "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message#createimagemessagefromfullpath",
+              "type": "page",
+              "children": [],
+              "minIndex": 15
+            },
+            {
+              "id": "message/sending-a-message/send-a-message/createimagemessagebyurl",
+              "segment": "createimagemessagebyurl",
+              "title": "CreateImageMessageByURL",
+              "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message#createimagemessagebyurl",
+              "type": "page",
+              "children": [],
+              "minIndex": 16
+            },
+            {
+              "id": "message/sending-a-message/send-a-message/createsoundmessage",
+              "segment": "createsoundmessage",
+              "title": "CreateSoundMessage",
+              "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message#createsoundmessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 17
+            },
+            {
+              "id": "message/sending-a-message/send-a-message/createsoundmessagefromfullpath",
+              "segment": "createsoundmessagefromfullpath",
+              "title": "CreateSoundMessageFromFullPath",
+              "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message#createsoundmessagefromfullpath",
+              "type": "page",
+              "children": [],
+              "minIndex": 18
+            },
+            {
+              "id": "message/sending-a-message/send-a-message/createsoundmessagebyurl",
+              "segment": "createsoundmessagebyurl",
+              "title": "CreateSoundMessageByURL",
+              "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message#createsoundmessagebyurl",
+              "type": "page",
+              "children": [],
+              "minIndex": 19
+            },
+            {
+              "id": "message/sending-a-message/send-a-message/createvideomessage",
+              "segment": "createvideomessage",
+              "title": "CreateVideoMessage",
+              "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message#createvideomessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 20
+            },
+            {
+              "id": "message/sending-a-message/send-a-message/createvideomessagefromfullpath",
+              "segment": "createvideomessagefromfullpath",
+              "title": "CreateVideoMessageFromFullPath",
+              "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message#createvideomessagefromfullpath",
+              "type": "page",
+              "children": [],
+              "minIndex": 21
+            },
+            {
+              "id": "message/sending-a-message/send-a-message/createvideomessagebyurl",
+              "segment": "createvideomessagebyurl",
+              "title": "CreateVideoMessageByURL",
+              "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message#createvideomessagebyurl",
+              "type": "page",
+              "children": [],
+              "minIndex": 22
+            },
+            {
+              "id": "message/sending-a-message/send-a-message/createfilemessage",
+              "segment": "createfilemessage",
+              "title": "CreateFileMessage",
+              "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message#createfilemessage",
+              "type": "page",
+              "children": [],
+              "minIndex": 23
+            },
+            {
+              "id": "message/sending-a-message/send-a-message/createfilemessagefromfullpath",
+              "segment": "createfilemessagefromfullpath",
+              "title": "CreateFileMessageFromFullPath",
+              "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message#createfilemessagefromfullpath",
+              "type": "page",
+              "children": [],
+              "minIndex": 24
+            },
+            {
+              "id": "message/sending-a-message/send-a-message/createfilemessagebyurl",
+              "segment": "createfilemessagebyurl",
+              "title": "CreateFileMessageByURL",
+              "href": "/docs/chat/sdk/v4/android/message/sending-a-message/send-a-message#createfilemessagebyurl",
+              "type": "page",
+              "children": [],
+              "minIndex": 25
+            }
+          ],
+          "minIndex": 233
+        },
+        {
+          "id": "push-notifications/overview-push-notifications",
+          "segment": "overview-push-notifications",
+          "title": "Push, logs, and files",
+          "href": "/docs/chat/sdk/v4/android/push-notifications/overview-push-notifications",
+          "type": "page",
+          "children": [
+            {
+              "id": "push-notifications/overview-push-notifications/updatefcmtoken",
+              "segment": "updatefcmtoken",
+              "title": "UpdateFcmToken",
+              "href": "/docs/chat/sdk/v4/android/push-notifications/overview-push-notifications#updatefcmtoken",
+              "type": "page",
+              "children": [],
+              "minIndex": 0
+            },
+            {
+              "id": "push-notifications/overview-push-notifications/setappbadge",
+              "segment": "setappbadge",
+              "title": "SetAppBadge",
+              "href": "/docs/chat/sdk/v4/android/push-notifications/overview-push-notifications#setappbadge",
+              "type": "page",
+              "children": [],
+              "minIndex": 1
+            },
+            {
+              "id": "push-notifications/overview-push-notifications/uploadlogs",
+              "segment": "uploadlogs",
+              "title": "UploadLogs",
+              "href": "/docs/chat/sdk/v4/android/push-notifications/overview-push-notifications#uploadlogs",
+              "type": "page",
+              "children": [],
+              "minIndex": 2
+            },
+            {
+              "id": "push-notifications/overview-push-notifications/logs",
+              "segment": "logs",
+              "title": "Logs",
+              "href": "/docs/chat/sdk/v4/android/push-notifications/overview-push-notifications#logs",
+              "type": "page",
+              "children": [],
+              "minIndex": 3
+            },
+            {
+              "id": "push-notifications/overview-push-notifications/uploadfile",
+              "segment": "uploadfile",
+              "title": "UploadFile",
+              "href": "/docs/chat/sdk/v4/android/push-notifications/overview-push-notifications#uploadfile",
+              "type": "page",
+              "children": [],
+              "minIndex": 4
+            }
+          ],
+          "minIndex": 152
+        },
+        {
+          "id": "logger",
+          "segment": "logger",
+          "title": "Logger",
+          "href": "/docs/chat/sdk/v4/android/logger",
+          "type": "page",
+          "children": [
+            {
+              "id": "logger/uploadlogs",
+              "segment": "uploadlogs",
+              "title": "UploadLogs",
+              "href": "/docs/chat/sdk/v4/android/logger#uploadlogs",
+              "type": "page",
+              "children": [],
+              "minIndex": 0
+            },
+            {
+              "id": "logger/logs",
+              "segment": "logs",
+              "title": "Logs",
+              "href": "/docs/chat/sdk/v4/android/logger#logs",
+              "type": "page",
+              "children": [],
+              "minIndex": 1
+            }
+          ],
+          "minIndex": 191
         },
         {
           "id": "error-codes",
@@ -4766,22 +4651,13 @@
           "minIndex": 180
         },
         {
-          "id": "logger",
-          "segment": "logger",
-          "title": "Logger",
-          "href": "/docs/chat/sdk/v4/android/logger",
+          "id": "deprecated",
+          "segment": "deprecated",
+          "title": "Unsupported APIs",
+          "href": "/docs/chat/sdk/v4/android/deprecated",
           "type": "page",
           "children": [],
-          "minIndex": 191
-        },
-        {
-          "id": "overview",
-          "segment": "overview",
-          "title": "OpenIM SDK for Android",
-          "href": "/docs/chat/sdk/v4/android/overview",
-          "type": "page",
-          "children": [],
-          "minIndex": 149
+          "minIndex": 179
         }
       ],
       "pageCount": 131
