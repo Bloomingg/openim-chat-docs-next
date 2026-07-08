@@ -33,6 +33,7 @@ const zhLabelOverrides: Record<string, string> = {
   Home: '首页',
   Methods: '方法',
   'OpenIM Platform API': 'OpenIM 平台 API',
+  Overview: '概述',
   'Platform API': '平台 API',
   'Push, logs, and files': '推送、日志与文件',
   'Server API': '服务端 API',
@@ -64,13 +65,18 @@ export function localizeRouteRecord(route: RouteRecord, locale: Locale): RouteRe
 }
 
 export function localizeNavNodeTitle(node: NavNode, locale: Locale): string {
+  const isOverviewNode = /^overview(?:-|$)/.test(node.segment);
   const isNestedOverview = node.segment === 'overview' && node.id.includes('/');
+  const isAndroidSdkOverview =
+    node.href?.startsWith('/docs/chat/sdk/v4/android/') && isOverviewNode;
   const isPlatformApiRootOverview = node.href === '/docs/chat/platform-api/v3/overview';
   const isPlatformApiNode = node.href?.startsWith('/docs/chat/platform-api/v3/');
+  if (node.title === '概述') return '概述';
+  if (isAndroidSdkOverview) return '概述';
+  if (locale !== 'zh') return isOverviewNode ? 'Overview' : node.title;
   if (isPlatformApiRootOverview) return '概述';
   if (isNestedOverview && isPlatformApiNode) return node.title;
-  if (locale !== 'zh') return isNestedOverview ? 'Overview' : node.title;
-  if (isNestedOverview) return '概述';
+  if (isOverviewNode) return '概述';
   if (node.href)
     return getLocalizedDocTitle(node.href, locale) ?? localizeDocLabel(node.title, locale);
   const label =
