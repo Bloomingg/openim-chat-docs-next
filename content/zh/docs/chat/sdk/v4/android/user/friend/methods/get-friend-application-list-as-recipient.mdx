@@ -11,31 +11,47 @@ platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/user/friend/methods/get-friend-application-list-as-recipient'
 ---
 
-`GetFriendApplicationListAsRecipient` 来自 `open_im_sdk/relation.go`。本页只说明当前 Android core binding 暴露的真实方法，不包含示例代码。
+获取当前用户收到的好友申请列表，适合好友申请入口和审核页。
 
-## 方法签名
-
-| 项目     | 说明                                                                                 |
-| -------- | ------------------------------------------------------------------------------------ |
-| 方法     | `GetFriendApplicationListAsRecipient(callback Base, operationID string, req string)` |
-| 所属能力 | 好友                                                                                 |
-| 源码位置 | `open_im_sdk/relation.go`                                                            |
-
-## 作用
+## 功能介绍
 
 获取当前用户收到的好友申请列表，适合好友申请入口和审核页。
 
-## 参数说明
-
-`req` 是申请列表分页或筛选请求 JSON。
-
-## 返回与事件
-
-成功返回收到的好友申请列表 JSON。
-
-## 使用边界
-
 好友关系变化通过 `SetFriendListener` 设置的 `OnFriendshipListener` 接收；涉及列表和请求对象的字符串参数应传入对应结构的 JSON。
+
+## Core Binding 方法
+
+| 项目     | 说明                                                                          |
+| -------- | ----------------------------------------------------------------------------- |
+| 方法签名 | `GetFriendApplicationListAsRecipient(callback Base, operationID, req string)` |
+| 所属能力 | 好友                                                                          |
+| 源码位置 | `open_im_sdk/relation.go`                                                     |
+
+## Android 调用参考
+
+当前 Android SDK 的方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+
+```java showLineNumbers
+public void getRecvFriendApplicationList(OnBase<List<FriendApplicationInfo>> callBack)
+```
+
+## 输入参数
+
+| 参数名称 | 参数类型                            | 是否必填 | 描述     |
+| -------- | ----------------------------------- | -------- | -------- |
+| callBack | OnBase<List<FriendApplicationInfo>> | 是       | 回调接口 |
+
+## 返回结果
+
+通过回调返回结果：成功走 `OnSuccess`，失败走 `OnError`；发送或上传类方法还可能通过进度回调返回进度。
+
+## 代码示例
+
+以下示例展示当前 Android SDK 的调用方式。
+
+```java showLineNumbers
+OpenIMClient.getInstance().friendshipManager.getRecvFriendApplicationList(new OnBase<List<FriendApplicationInfo>>(){...})
+```
 
 ## 相关页面
 

@@ -11,31 +11,42 @@ platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/user/methods/delete-user-command'
 ---
 
-`DeleteUserCommand` 来自 `open_im_sdk/user.go、open_im_sdk/online.go`。本页只说明当前 Android core binding 暴露的真实方法，不包含示例代码。
+删除指定类型和 UUID 的用户命令数据，用于撤销收藏、移除用户侧命令或清理本地同步数据。
 
-## 方法签名
-
-| 项目     | 说明                                                                            |
-| -------- | ------------------------------------------------------------------------------- |
-| 方法     | `DeleteUserCommand(callback Base, operationID string, Type int32, uuid string)` |
-| 所属能力 | 用户                                                                            |
-| 源码位置 | `open_im_sdk/user.go、open_im_sdk/online.go`                                    |
-
-## 作用
+## 功能介绍
 
 删除指定类型和 UUID 的用户命令数据，用于撤销收藏、移除用户侧命令或清理本地同步数据。
 
-## 参数说明
-
-`Type` 和 `uuid` 共同定位要删除的命令。
-
-## 返回与事件
-
-成功返回删除处理结果。
-
-## 使用边界
-
 用户资料和在线状态方法通常要求当前用户已登录；在线状态变化通过 `SetUserListener` 设置的监听器接收。
+
+## Core Binding 方法
+
+| 项目     | 说明                                                                            |
+| -------- | ------------------------------------------------------------------------------- |
+| 方法签名 | `DeleteUserCommand(callback Base, operationID string, Type int32, uuid string)` |
+| 所属能力 | 用户                                                                            |
+| 源码位置 | `open_im_sdk/user.go`                                                           |
+
+## Android 调用参考
+
+TODO: 补充当前 Android SDK 的函数原型。
+
+## 输入参数
+
+| 参数名称      | 类型     | 描述                       |
+| ------------- | -------- | -------------------------- |
+| `callback`    | `Base`   | 异步结果回调。             |
+| `operationID` | `string` | 本次操作的追踪 ID。        |
+| `Type`        | `int32`  | 按 core binding 签名传入。 |
+| `uuid`        | `string` | 按 core binding 签名传入。 |
+
+## 返回结果
+
+通过回调返回结果：成功走 `OnSuccess`，失败走 `OnError`；发送或上传类方法还可能通过进度回调返回进度。
+
+## 代码示例
+
+TODO: 补充该方法的 Android 调用示例。
 
 ## 相关页面
 

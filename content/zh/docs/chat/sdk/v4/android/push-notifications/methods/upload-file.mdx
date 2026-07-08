@@ -11,31 +11,91 @@ platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/push-notifications/methods/upload-file'
 ---
 
-`UploadFile` 来自 `open_im_sdk/third.go`。本页只说明当前 Android core binding 暴露的真实方法，不包含示例代码。
+上传文件到 SDK 配置的对象存储链路，适合发送文件、图片、音视频前先完成资源上传。
 
-## 方法签名
-
-| 项目     | 说明                                                                                     |
-| -------- | ---------------------------------------------------------------------------------------- |
-| 方法     | `UploadFile(callback Base, operationID string, req string, progress UploadFileCallback)` |
-| 所属能力 | 推送、日志与文件                                                                         |
-| 源码位置 | `open_im_sdk/third.go`                                                                   |
-
-## 作用
+## 功能介绍
 
 上传文件到 SDK 配置的对象存储链路，适合发送文件、图片、音视频前先完成资源上传。
 
-## 参数说明
-
-`req` 是上传请求 JSON；`progress` 接收打开、分片、哈希、上传和完成事件。
-
-## 返回与事件
-
-成功返回文件上传结果，详细过程走 `UploadFileCallback`。
-
-## 使用边界
-
 第三方能力至少要求 SDK 已初始化；日志和文件上传的进度通过对应 progress callback 返回。
+
+## Core Binding 方法
+
+| 项目     | 说明                                                                                     |
+| -------- | ---------------------------------------------------------------------------------------- |
+| 方法签名 | `UploadFile(callback Base, operationID string, req string, progress UploadFileCallback)` |
+| 所属能力 | 推送、日志与文件                                                                         |
+| 源码位置 | `open_im_sdk/third.go`                                                                   |
+
+## Android 调用参考
+
+当前 Android SDK 的方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+
+```java showLineNumbers
+public void uploadFile(OnBase<String> base, OnPutFileListener listener,
+                           PutArgs putArgs)
+```
+
+## 输入参数
+
+PutArgs 实体必传下面两个参数
+
+| 参数名称 | 参数类型 | 是否必填 | 描述                 |
+| -------- | -------- | -------- | -------------------- |
+| fullPath | String   | 是       | 文件在本机的完整路径 |
+| putID    | String   | 否       | 上传的唯一ID         |
+
+## 返回结果
+
+通过回调返回结果：成功走 `OnSuccess`，失败走 `OnError`；发送或上传类方法还可能通过进度回调返回进度。
+
+## 代码示例
+
+以下示例展示当前 Android SDK 的调用方式。
+
+```java showLineNumbers
+OpenIMClient.getInstance().uploadFile(new OnBase<String>() {
+            @Override
+            public void onError(int code, String error) {
+
+            }
+
+            @Override
+            public void onSuccess(String data) {
+
+            }
+        }, new OnPutFileListener() {
+            @Override
+            public void hashComplete(String hash, long total) {
+
+            }
+
+            @Override
+            public void hashProgress(long current, long total) {
+
+            }
+
+            @Override
+            public void open(long size) {
+
+            }
+
+            @Override
+            public void putComplete(long total, long putType) {
+
+            }
+
+            @Override
+            public void putProgress(long save, long current, long total) {
+
+            }
+
+            @Override
+            public void putStart(long current, long total) {
+
+            }
+        },putArgs);
+```
 
 ## 相关页面
 

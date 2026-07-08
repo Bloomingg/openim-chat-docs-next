@@ -11,31 +11,48 @@ platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/user/blacklist/methods/add-black'
 ---
 
-`AddBlack` 来自 `open_im_sdk/relation.go`。本页只说明当前 Android core binding 暴露的真实方法，不包含示例代码。
+将指定用户加入黑名单，适合屏蔽对方消息或限制关系互动。具体业务影响由 SDK 和服务端策略决定。
 
-## 方法签名
-
-| 项目     | 说明                                                                         |
-| -------- | ---------------------------------------------------------------------------- |
-| 方法     | `AddBlack(callback Base, operationID string, blackUserID string, ex string)` |
-| 所属能力 | 黑名单                                                                       |
-| 源码位置 | `open_im_sdk/relation.go`                                                    |
-
-## 作用
+## 功能介绍
 
 将指定用户加入黑名单，适合屏蔽对方消息或限制关系互动。具体业务影响由 SDK 和服务端策略决定。
 
-## 参数说明
-
-`blackUserID` 是要加入黑名单的用户 ID；`ex` 是扩展信息。
-
-## 返回与事件
-
-成功返回处理结果，并触发黑名单新增事件。
-
-## 使用边界
-
 黑名单新增和移除通过 `SetFriendListener` 设置的 `OnFriendshipListener` 接收；屏蔽后的业务效果以当前服务端策略为准。
+
+## Core Binding 方法
+
+| 项目     | 说明                                                                         |
+| -------- | ---------------------------------------------------------------------------- |
+| 方法签名 | `AddBlack(callback Base, operationID string, blackUserID string, ex string)` |
+| 所属能力 | 黑名单                                                                       |
+| 源码位置 | `open_im_sdk/relation.go`                                                    |
+
+## Android 调用参考
+
+当前 Android SDK 的方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+
+```java showLineNumbers
+public void addBlacklist(OnBase<String> callBack, String uid)
+```
+
+## 输入参数
+
+| 参数名称 | 参数类型 | 是否必填 | 描述     |
+| -------- | -------- | -------- | -------- |
+| callBack | OnBase   | 是       | 回调接口 |
+| uid      | String   | 是       | 用户 ID  |
+
+## 返回结果
+
+通过回调返回结果：成功走 `OnSuccess`，失败走 `OnError`；发送或上传类方法还可能通过进度回调返回进度。
+
+## 代码示例
+
+以下示例展示当前 Android SDK 的调用方式。
+
+```java showLineNumbers
+OpenIMClient.getInstance().friendshipManager.addBlacklist(new OnBase<String>(){...},uid)
+```
 
 ## 相关页面
 

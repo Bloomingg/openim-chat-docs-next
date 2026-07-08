@@ -3095,7 +3095,7 @@
         {
           "id": "application/overview-application",
           "segment": "overview-application",
-          "title": "Initialization and login",
+          "title": "Overview",
           "href": "/docs/chat/sdk/v4/android/application/overview-application",
           "type": "page",
           "children": [
@@ -3106,7 +3106,7 @@
               "href": "/docs/chat/sdk/v4/android/application/methods/get-sdk-version",
               "type": "page",
               "children": [],
-              "minIndex": 0
+              "minIndex": 160.001
             },
             {
               "id": "application/methods/init-sdk",
@@ -3115,7 +3115,7 @@
               "href": "/docs/chat/sdk/v4/android/application/methods/init-sdk",
               "type": "page",
               "children": [],
-              "minIndex": 1
+              "minIndex": 160.002
             },
             {
               "id": "application/methods/un-init-sdk",
@@ -3124,7 +3124,7 @@
               "href": "/docs/chat/sdk/v4/android/application/methods/un-init-sdk",
               "type": "page",
               "children": [],
-              "minIndex": 2
+              "minIndex": 160.003
             },
             {
               "id": "application/methods/login",
@@ -3133,7 +3133,7 @@
               "href": "/docs/chat/sdk/v4/android/application/methods/login",
               "type": "page",
               "children": [],
-              "minIndex": 3
+              "minIndex": 160.004
             },
             {
               "id": "application/methods/logout",
@@ -3142,7 +3142,7 @@
               "href": "/docs/chat/sdk/v4/android/application/methods/logout",
               "type": "page",
               "children": [],
-              "minIndex": 4
+              "minIndex": 160.005
             },
             {
               "id": "application/methods/set-app-background-status",
@@ -3151,7 +3151,7 @@
               "href": "/docs/chat/sdk/v4/android/application/methods/set-app-background-status",
               "type": "page",
               "children": [],
-              "minIndex": 5
+              "minIndex": 160.006
             },
             {
               "id": "application/methods/network-status-changed",
@@ -3160,7 +3160,7 @@
               "href": "/docs/chat/sdk/v4/android/application/methods/network-status-changed",
               "type": "page",
               "children": [],
-              "minIndex": 6
+              "minIndex": 160.007
             },
             {
               "id": "application/methods/get-login-status",
@@ -3169,7 +3169,7 @@
               "href": "/docs/chat/sdk/v4/android/application/methods/get-login-status",
               "type": "page",
               "children": [],
-              "minIndex": 7
+              "minIndex": 160.008
             },
             {
               "id": "application/methods/get-login-user-id",
@@ -3178,7 +3178,7 @@
               "href": "/docs/chat/sdk/v4/android/application/methods/get-login-user-id",
               "type": "page",
               "children": [],
-              "minIndex": 8
+              "minIndex": 160.009
             }
           ],
           "minIndex": 160
@@ -3206,7 +3206,7 @@
               "href": "/docs/chat/sdk/v4/android/event-handler/methods/set-group-listener",
               "type": "page",
               "children": [],
-              "minIndex": 0
+              "minIndex": 184.001
             },
             {
               "id": "event-handler/methods/set-conversation-listener",
@@ -3215,7 +3215,7 @@
               "href": "/docs/chat/sdk/v4/android/event-handler/methods/set-conversation-listener",
               "type": "page",
               "children": [],
-              "minIndex": 1
+              "minIndex": 184.002
             },
             {
               "id": "event-handler/methods/set-advanced-msg-listener",
@@ -3224,7 +3224,7 @@
               "href": "/docs/chat/sdk/v4/android/event-handler/methods/set-advanced-msg-listener",
               "type": "page",
               "children": [],
-              "minIndex": 2
+              "minIndex": 184.003
             },
             {
               "id": "event-handler/methods/set-batch-msg-listener",
@@ -3233,7 +3233,7 @@
               "href": "/docs/chat/sdk/v4/android/event-handler/methods/set-batch-msg-listener",
               "type": "page",
               "children": [],
-              "minIndex": 3
+              "minIndex": 184.004
             },
             {
               "id": "event-handler/methods/set-user-listener",
@@ -3242,7 +3242,7 @@
               "href": "/docs/chat/sdk/v4/android/event-handler/methods/set-user-listener",
               "type": "page",
               "children": [],
-              "minIndex": 4
+              "minIndex": 184.005
             },
             {
               "id": "event-handler/methods/set-friend-listener",
@@ -3251,7 +3251,7 @@
               "href": "/docs/chat/sdk/v4/android/event-handler/methods/set-friend-listener",
               "type": "page",
               "children": [],
-              "minIndex": 5
+              "minIndex": 184.006
             },
             {
               "id": "event-handler/methods/set-custom-business-listener",
@@ -3260,7 +3260,7 @@
               "href": "/docs/chat/sdk/v4/android/event-handler/methods/set-custom-business-listener",
               "type": "page",
               "children": [],
-              "minIndex": 6
+              "minIndex": 184.007
             },
             {
               "id": "event-handler/methods/set-message-kv-info-listener",
@@ -3269,7 +3269,7 @@
               "href": "/docs/chat/sdk/v4/android/event-handler/methods/set-message-kv-info-listener",
               "type": "page",
               "children": [],
-              "minIndex": 7
+              "minIndex": 184.008
             }
           ],
           "minIndex": 184
@@ -3277,7 +3277,7 @@
         {
           "id": "user/overview-user",
           "segment": "overview-user",
-          "title": "User",
+          "title": "Overview",
           "href": "/docs/chat/sdk/v4/android/user/overview-user",
           "type": "page",
           "children": [
@@ -3288,7 +3288,7 @@
               "href": "/docs/chat/sdk/v4/android/user/methods/get-self-user-info",
               "type": "page",
               "children": [],
-              "minIndex": 0
+              "minIndex": 252.001
             },
             {
               "id": "user/methods/set-self-info",
@@ -3297,7 +3297,7 @@
               "href": "/docs/chat/sdk/v4/android/user/methods/set-self-info",
               "type": "page",
               "children": [],
-              "minIndex": 1
+              "minIndex": 252.002
             },
             {
               "id": "user/methods/get-users-info",
@@ -3306,7 +3306,7 @@
               "href": "/docs/chat/sdk/v4/android/user/methods/get-users-info",
               "type": "page",
               "children": [],
-              "minIndex": 2
+              "minIndex": 252.003
             },
             {
               "id": "user/methods/add-user-command",
@@ -3315,7 +3315,7 @@
               "href": "/docs/chat/sdk/v4/android/user/methods/add-user-command",
               "type": "page",
               "children": [],
-              "minIndex": 3
+              "minIndex": 252.004
             },
             {
               "id": "user/methods/delete-user-command",
@@ -3324,7 +3324,7 @@
               "href": "/docs/chat/sdk/v4/android/user/methods/delete-user-command",
               "type": "page",
               "children": [],
-              "minIndex": 4
+              "minIndex": 252.005
             },
             {
               "id": "user/methods/get-all-user-commands",
@@ -3333,7 +3333,7 @@
               "href": "/docs/chat/sdk/v4/android/user/methods/get-all-user-commands",
               "type": "page",
               "children": [],
-              "minIndex": 5
+              "minIndex": 252.006
             },
             {
               "id": "user/methods/subscribe-users-status",
@@ -3342,7 +3342,7 @@
               "href": "/docs/chat/sdk/v4/android/user/methods/subscribe-users-status",
               "type": "page",
               "children": [],
-              "minIndex": 6
+              "minIndex": 252.007
             },
             {
               "id": "user/methods/unsubscribe-users-status",
@@ -3351,7 +3351,7 @@
               "href": "/docs/chat/sdk/v4/android/user/methods/unsubscribe-users-status",
               "type": "page",
               "children": [],
-              "minIndex": 7
+              "minIndex": 252.008
             },
             {
               "id": "user/methods/get-subscribe-users-status",
@@ -3360,7 +3360,7 @@
               "href": "/docs/chat/sdk/v4/android/user/methods/get-subscribe-users-status",
               "type": "page",
               "children": [],
-              "minIndex": 8
+              "minIndex": 252.009
             },
             {
               "id": "user/methods/get-user-status",
@@ -3369,7 +3369,7 @@
               "href": "/docs/chat/sdk/v4/android/user/methods/get-user-status",
               "type": "page",
               "children": [],
-              "minIndex": 9
+              "minIndex": 252.01
             }
           ],
           "minIndex": 252
@@ -3377,7 +3377,7 @@
         {
           "id": "user/retrieving-users/retrieve-a-list-of-users-in-an-application",
           "segment": "retrieve-a-list-of-users-in-an-application",
-          "title": "Friend",
+          "title": "Retrieve a list of users in an application",
           "href": "/docs/chat/sdk/v4/android/user/retrieving-users/retrieve-a-list-of-users-in-an-application",
           "type": "page",
           "children": [
@@ -3388,7 +3388,7 @@
               "href": "/docs/chat/sdk/v4/android/user/friend/methods/get-specified-friends-info",
               "type": "page",
               "children": [],
-              "minIndex": 0
+              "minIndex": 253.001
             },
             {
               "id": "user/friend/methods/get-friend-list",
@@ -3397,7 +3397,7 @@
               "href": "/docs/chat/sdk/v4/android/user/friend/methods/get-friend-list",
               "type": "page",
               "children": [],
-              "minIndex": 1
+              "minIndex": 253.002
             },
             {
               "id": "user/friend/methods/get-friend-list-page",
@@ -3406,7 +3406,7 @@
               "href": "/docs/chat/sdk/v4/android/user/friend/methods/get-friend-list-page",
               "type": "page",
               "children": [],
-              "minIndex": 2
+              "minIndex": 253.003
             },
             {
               "id": "user/friend/methods/search-friends",
@@ -3415,7 +3415,7 @@
               "href": "/docs/chat/sdk/v4/android/user/friend/methods/search-friends",
               "type": "page",
               "children": [],
-              "minIndex": 3
+              "minIndex": 253.004
             },
             {
               "id": "user/friend/methods/check-friend",
@@ -3424,7 +3424,7 @@
               "href": "/docs/chat/sdk/v4/android/user/friend/methods/check-friend",
               "type": "page",
               "children": [],
-              "minIndex": 4
+              "minIndex": 253.005
             },
             {
               "id": "user/friend/methods/add-friend",
@@ -3433,7 +3433,7 @@
               "href": "/docs/chat/sdk/v4/android/user/friend/methods/add-friend",
               "type": "page",
               "children": [],
-              "minIndex": 5
+              "minIndex": 253.006
             },
             {
               "id": "user/friend/methods/update-friends",
@@ -3442,7 +3442,7 @@
               "href": "/docs/chat/sdk/v4/android/user/friend/methods/update-friends",
               "type": "page",
               "children": [],
-              "minIndex": 6
+              "minIndex": 253.007
             },
             {
               "id": "user/friend/methods/delete-friend",
@@ -3451,7 +3451,7 @@
               "href": "/docs/chat/sdk/v4/android/user/friend/methods/delete-friend",
               "type": "page",
               "children": [],
-              "minIndex": 7
+              "minIndex": 253.008
             },
             {
               "id": "user/friend/methods/get-friend-application-list-as-recipient",
@@ -3460,7 +3460,7 @@
               "href": "/docs/chat/sdk/v4/android/user/friend/methods/get-friend-application-list-as-recipient",
               "type": "page",
               "children": [],
-              "minIndex": 8
+              "minIndex": 253.009
             },
             {
               "id": "user/friend/methods/get-friend-application-list-as-applicant",
@@ -3469,7 +3469,7 @@
               "href": "/docs/chat/sdk/v4/android/user/friend/methods/get-friend-application-list-as-applicant",
               "type": "page",
               "children": [],
-              "minIndex": 9
+              "minIndex": 253.01
             },
             {
               "id": "user/friend/methods/accept-friend-application",
@@ -3478,7 +3478,7 @@
               "href": "/docs/chat/sdk/v4/android/user/friend/methods/accept-friend-application",
               "type": "page",
               "children": [],
-              "minIndex": 10
+              "minIndex": 253.011
             },
             {
               "id": "user/friend/methods/refuse-friend-application",
@@ -3487,7 +3487,7 @@
               "href": "/docs/chat/sdk/v4/android/user/friend/methods/refuse-friend-application",
               "type": "page",
               "children": [],
-              "minIndex": 11
+              "minIndex": 253.012
             },
             {
               "id": "user/friend/methods/get-friend-application-unhandled-count",
@@ -3496,15 +3496,15 @@
               "href": "/docs/chat/sdk/v4/android/user/friend/methods/get-friend-application-unhandled-count",
               "type": "page",
               "children": [],
-              "minIndex": 12
+              "minIndex": 253.013
             }
           ],
-          "minIndex": 253
+          "minIndex": 258
         },
         {
           "id": "user/moderating-a-user/block-and-unblock-other-members",
           "segment": "block-and-unblock-other-members",
-          "title": "Blacklist",
+          "title": "Block and unblock other members",
           "href": "/docs/chat/sdk/v4/android/user/moderating-a-user/block-and-unblock-other-members",
           "type": "page",
           "children": [
@@ -3515,7 +3515,7 @@
               "href": "/docs/chat/sdk/v4/android/user/blacklist/methods/add-black",
               "type": "page",
               "children": [],
-              "minIndex": 0
+              "minIndex": 254.001
             },
             {
               "id": "user/blacklist/methods/get-black-list",
@@ -3524,7 +3524,7 @@
               "href": "/docs/chat/sdk/v4/android/user/blacklist/methods/get-black-list",
               "type": "page",
               "children": [],
-              "minIndex": 1
+              "minIndex": 254.002
             },
             {
               "id": "user/blacklist/methods/remove-black",
@@ -3533,15 +3533,15 @@
               "href": "/docs/chat/sdk/v4/android/user/blacklist/methods/remove-black",
               "type": "page",
               "children": [],
-              "minIndex": 2
+              "minIndex": 254.003
             }
           ],
-          "minIndex": 254
+          "minIndex": 155
         },
         {
           "id": "channel/overview-channel",
           "segment": "overview-channel",
-          "title": "Group",
+          "title": "Overview",
           "href": "/docs/chat/sdk/v4/android/channel/overview-channel",
           "type": "page",
           "children": [
@@ -3552,7 +3552,7 @@
               "href": "/docs/chat/sdk/v4/android/channel/methods/create-group",
               "type": "page",
               "children": [],
-              "minIndex": 0
+              "minIndex": 130.001
             },
             {
               "id": "channel/methods/join-group",
@@ -3561,7 +3561,7 @@
               "href": "/docs/chat/sdk/v4/android/channel/methods/join-group",
               "type": "page",
               "children": [],
-              "minIndex": 1
+              "minIndex": 130.002
             },
             {
               "id": "channel/methods/quit-group",
@@ -3570,7 +3570,7 @@
               "href": "/docs/chat/sdk/v4/android/channel/methods/quit-group",
               "type": "page",
               "children": [],
-              "minIndex": 2
+              "minIndex": 130.003
             },
             {
               "id": "channel/methods/dismiss-group",
@@ -3579,7 +3579,7 @@
               "href": "/docs/chat/sdk/v4/android/channel/methods/dismiss-group",
               "type": "page",
               "children": [],
-              "minIndex": 3
+              "minIndex": 130.004
             },
             {
               "id": "channel/methods/change-group-mute",
@@ -3588,7 +3588,7 @@
               "href": "/docs/chat/sdk/v4/android/channel/methods/change-group-mute",
               "type": "page",
               "children": [],
-              "minIndex": 4
+              "minIndex": 130.005
             },
             {
               "id": "channel/methods/change-group-member-mute",
@@ -3597,7 +3597,7 @@
               "href": "/docs/chat/sdk/v4/android/channel/methods/change-group-member-mute",
               "type": "page",
               "children": [],
-              "minIndex": 5
+              "minIndex": 130.006
             },
             {
               "id": "channel/methods/transfer-group-owner",
@@ -3606,7 +3606,7 @@
               "href": "/docs/chat/sdk/v4/android/channel/methods/transfer-group-owner",
               "type": "page",
               "children": [],
-              "minIndex": 6
+              "minIndex": 130.007
             },
             {
               "id": "channel/methods/kick-group-member",
@@ -3615,7 +3615,7 @@
               "href": "/docs/chat/sdk/v4/android/channel/methods/kick-group-member",
               "type": "page",
               "children": [],
-              "minIndex": 7
+              "minIndex": 130.008
             },
             {
               "id": "channel/methods/set-group-info",
@@ -3624,7 +3624,7 @@
               "href": "/docs/chat/sdk/v4/android/channel/methods/set-group-info",
               "type": "page",
               "children": [],
-              "minIndex": 8
+              "minIndex": 130.009
             },
             {
               "id": "channel/methods/set-group-member-info",
@@ -3633,7 +3633,7 @@
               "href": "/docs/chat/sdk/v4/android/channel/methods/set-group-member-info",
               "type": "page",
               "children": [],
-              "minIndex": 9
+              "minIndex": 130.01
             },
             {
               "id": "channel/methods/get-joined-group-list",
@@ -3642,7 +3642,7 @@
               "href": "/docs/chat/sdk/v4/android/channel/methods/get-joined-group-list",
               "type": "page",
               "children": [],
-              "minIndex": 10
+              "minIndex": 130.011
             },
             {
               "id": "channel/methods/get-joined-group-list-page",
@@ -3651,7 +3651,7 @@
               "href": "/docs/chat/sdk/v4/android/channel/methods/get-joined-group-list-page",
               "type": "page",
               "children": [],
-              "minIndex": 11
+              "minIndex": 130.012
             },
             {
               "id": "channel/methods/get-specified-groups-info",
@@ -3660,7 +3660,7 @@
               "href": "/docs/chat/sdk/v4/android/channel/methods/get-specified-groups-info",
               "type": "page",
               "children": [],
-              "minIndex": 12
+              "minIndex": 130.013
             },
             {
               "id": "channel/methods/search-groups",
@@ -3669,7 +3669,7 @@
               "href": "/docs/chat/sdk/v4/android/channel/methods/search-groups",
               "type": "page",
               "children": [],
-              "minIndex": 13
+              "minIndex": 130.014
             },
             {
               "id": "channel/methods/get-group-member-owner-and-admin",
@@ -3678,7 +3678,7 @@
               "href": "/docs/chat/sdk/v4/android/channel/methods/get-group-member-owner-and-admin",
               "type": "page",
               "children": [],
-              "minIndex": 14
+              "minIndex": 130.015
             },
             {
               "id": "channel/methods/get-group-member-list-by-join-time-filter",
@@ -3687,7 +3687,7 @@
               "href": "/docs/chat/sdk/v4/android/channel/methods/get-group-member-list-by-join-time-filter",
               "type": "page",
               "children": [],
-              "minIndex": 15
+              "minIndex": 130.016
             },
             {
               "id": "channel/methods/get-specified-group-members-info",
@@ -3696,7 +3696,7 @@
               "href": "/docs/chat/sdk/v4/android/channel/methods/get-specified-group-members-info",
               "type": "page",
               "children": [],
-              "minIndex": 16
+              "minIndex": 130.017
             },
             {
               "id": "channel/methods/get-group-member-list",
@@ -3705,7 +3705,7 @@
               "href": "/docs/chat/sdk/v4/android/channel/methods/get-group-member-list",
               "type": "page",
               "children": [],
-              "minIndex": 17
+              "minIndex": 130.018
             },
             {
               "id": "channel/methods/get-group-application-list-as-recipient",
@@ -3714,7 +3714,7 @@
               "href": "/docs/chat/sdk/v4/android/channel/methods/get-group-application-list-as-recipient",
               "type": "page",
               "children": [],
-              "minIndex": 18
+              "minIndex": 130.019
             },
             {
               "id": "channel/methods/get-group-application-list-as-applicant",
@@ -3723,7 +3723,7 @@
               "href": "/docs/chat/sdk/v4/android/channel/methods/get-group-application-list-as-applicant",
               "type": "page",
               "children": [],
-              "minIndex": 19
+              "minIndex": 130.02
             },
             {
               "id": "channel/methods/search-group-members",
@@ -3732,7 +3732,7 @@
               "href": "/docs/chat/sdk/v4/android/channel/methods/search-group-members",
               "type": "page",
               "children": [],
-              "minIndex": 20
+              "minIndex": 130.021
             },
             {
               "id": "channel/methods/is-join-group",
@@ -3741,7 +3741,7 @@
               "href": "/docs/chat/sdk/v4/android/channel/methods/is-join-group",
               "type": "page",
               "children": [],
-              "minIndex": 21
+              "minIndex": 130.022
             },
             {
               "id": "channel/methods/get-users-in-group",
@@ -3750,7 +3750,7 @@
               "href": "/docs/chat/sdk/v4/android/channel/methods/get-users-in-group",
               "type": "page",
               "children": [],
-              "minIndex": 22
+              "minIndex": 130.023
             },
             {
               "id": "channel/methods/invite-user-to-group",
@@ -3759,7 +3759,7 @@
               "href": "/docs/chat/sdk/v4/android/channel/methods/invite-user-to-group",
               "type": "page",
               "children": [],
-              "minIndex": 23
+              "minIndex": 130.024
             },
             {
               "id": "channel/methods/accept-group-application",
@@ -3768,7 +3768,7 @@
               "href": "/docs/chat/sdk/v4/android/channel/methods/accept-group-application",
               "type": "page",
               "children": [],
-              "minIndex": 24
+              "minIndex": 130.025
             },
             {
               "id": "channel/methods/refuse-group-application",
@@ -3777,7 +3777,7 @@
               "href": "/docs/chat/sdk/v4/android/channel/methods/refuse-group-application",
               "type": "page",
               "children": [],
-              "minIndex": 25
+              "minIndex": 130.026
             },
             {
               "id": "channel/methods/get-group-application-unhandled-count",
@@ -3786,7 +3786,7 @@
               "href": "/docs/chat/sdk/v4/android/channel/methods/get-group-application-unhandled-count",
               "type": "page",
               "children": [],
-              "minIndex": 26
+              "minIndex": 130.027
             }
           ],
           "minIndex": 130
@@ -3794,7 +3794,7 @@
         {
           "id": "message/overview-message",
           "segment": "overview-message",
-          "title": "Conversation and message",
+          "title": "Overview",
           "href": "/docs/chat/sdk/v4/android/message/overview-message",
           "type": "page",
           "children": [
@@ -3805,7 +3805,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/get-all-conversation-list",
               "type": "page",
               "children": [],
-              "minIndex": 0
+              "minIndex": 141.001
             },
             {
               "id": "message/methods/get-conversation-list-split",
@@ -3814,7 +3814,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/get-conversation-list-split",
               "type": "page",
               "children": [],
-              "minIndex": 1
+              "minIndex": 141.002
             },
             {
               "id": "message/methods/get-one-conversation",
@@ -3823,7 +3823,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/get-one-conversation",
               "type": "page",
               "children": [],
-              "minIndex": 2
+              "minIndex": 141.003
             },
             {
               "id": "message/methods/get-multiple-conversation",
@@ -3832,7 +3832,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/get-multiple-conversation",
               "type": "page",
               "children": [],
-              "minIndex": 3
+              "minIndex": 141.004
             },
             {
               "id": "message/methods/set-conversation",
@@ -3841,7 +3841,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/set-conversation",
               "type": "page",
               "children": [],
-              "minIndex": 4
+              "minIndex": 141.005
             },
             {
               "id": "message/methods/hide-conversation",
@@ -3850,7 +3850,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/hide-conversation",
               "type": "page",
               "children": [],
-              "minIndex": 5
+              "minIndex": 141.006
             },
             {
               "id": "message/methods/set-conversation-draft",
@@ -3859,7 +3859,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/set-conversation-draft",
               "type": "page",
               "children": [],
-              "minIndex": 6
+              "minIndex": 141.007
             },
             {
               "id": "message/methods/get-total-unread-msg-count",
@@ -3868,7 +3868,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/get-total-unread-msg-count",
               "type": "page",
               "children": [],
-              "minIndex": 7
+              "minIndex": 141.008
             },
             {
               "id": "message/methods/hide-all-conversations",
@@ -3877,7 +3877,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/hide-all-conversations",
               "type": "page",
               "children": [],
-              "minIndex": 8
+              "minIndex": 141.009
             },
             {
               "id": "message/methods/search-conversation",
@@ -3886,7 +3886,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/search-conversation",
               "type": "page",
               "children": [],
-              "minIndex": 9
+              "minIndex": 141.01
             },
             {
               "id": "message/methods/change-input-states",
@@ -3895,7 +3895,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/change-input-states",
               "type": "page",
               "children": [],
-              "minIndex": 10
+              "minIndex": 141.011
             },
             {
               "id": "message/methods/get-input-states",
@@ -3904,7 +3904,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/get-input-states",
               "type": "page",
               "children": [],
-              "minIndex": 11
+              "minIndex": 141.012
             },
             {
               "id": "message/methods/get-conversation-id-by-session-type",
@@ -3913,7 +3913,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/get-conversation-id-by-session-type",
               "type": "page",
               "children": [],
-              "minIndex": 12
+              "minIndex": 141.013
             },
             {
               "id": "message/methods/get-at-all-tag",
@@ -3922,7 +3922,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/get-at-all-tag",
               "type": "page",
               "children": [],
-              "minIndex": 13
+              "minIndex": 141.014
             },
             {
               "id": "message/methods/create-text-message",
@@ -3931,7 +3931,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/create-text-message",
               "type": "page",
               "children": [],
-              "minIndex": 14
+              "minIndex": 141.015
             },
             {
               "id": "message/methods/create-advanced-text-message",
@@ -3940,7 +3940,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/create-advanced-text-message",
               "type": "page",
               "children": [],
-              "minIndex": 15
+              "minIndex": 141.016
             },
             {
               "id": "message/methods/create-text-at-message",
@@ -3949,7 +3949,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/create-text-at-message",
               "type": "page",
               "children": [],
-              "minIndex": 16
+              "minIndex": 141.017
             },
             {
               "id": "message/methods/create-location-message",
@@ -3958,7 +3958,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/create-location-message",
               "type": "page",
               "children": [],
-              "minIndex": 17
+              "minIndex": 141.018
             },
             {
               "id": "message/methods/create-custom-message",
@@ -3967,7 +3967,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/create-custom-message",
               "type": "page",
               "children": [],
-              "minIndex": 18
+              "minIndex": 141.019
             },
             {
               "id": "message/methods/create-quote-message",
@@ -3976,7 +3976,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/create-quote-message",
               "type": "page",
               "children": [],
-              "minIndex": 19
+              "minIndex": 141.02
             },
             {
               "id": "message/methods/create-advanced-quote-message",
@@ -3985,7 +3985,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/create-advanced-quote-message",
               "type": "page",
               "children": [],
-              "minIndex": 20
+              "minIndex": 141.021
             },
             {
               "id": "message/methods/create-card-message",
@@ -3994,7 +3994,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/create-card-message",
               "type": "page",
               "children": [],
-              "minIndex": 21
+              "minIndex": 141.022
             },
             {
               "id": "message/methods/create-face-message",
@@ -4003,7 +4003,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/create-face-message",
               "type": "page",
               "children": [],
-              "minIndex": 22
+              "minIndex": 141.023
             },
             {
               "id": "message/methods/create-forward-message",
@@ -4012,7 +4012,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/create-forward-message",
               "type": "page",
               "children": [],
-              "minIndex": 23
+              "minIndex": 141.024
             },
             {
               "id": "message/methods/create-merger-message",
@@ -4021,7 +4021,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/create-merger-message",
               "type": "page",
               "children": [],
-              "minIndex": 24
+              "minIndex": 141.025
             },
             {
               "id": "message/methods/create-image-message",
@@ -4030,7 +4030,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/create-image-message",
               "type": "page",
               "children": [],
-              "minIndex": 25
+              "minIndex": 141.026
             },
             {
               "id": "message/methods/create-image-message-from-full-path",
@@ -4039,7 +4039,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/create-image-message-from-full-path",
               "type": "page",
               "children": [],
-              "minIndex": 26
+              "minIndex": 141.027
             },
             {
               "id": "message/methods/create-image-message-by-url",
@@ -4048,7 +4048,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/create-image-message-by-url",
               "type": "page",
               "children": [],
-              "minIndex": 27
+              "minIndex": 141.028
             },
             {
               "id": "message/methods/create-sound-message",
@@ -4057,7 +4057,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/create-sound-message",
               "type": "page",
               "children": [],
-              "minIndex": 28
+              "minIndex": 141.029
             },
             {
               "id": "message/methods/create-sound-message-from-full-path",
@@ -4066,7 +4066,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/create-sound-message-from-full-path",
               "type": "page",
               "children": [],
-              "minIndex": 29
+              "minIndex": 141.03
             },
             {
               "id": "message/methods/create-sound-message-by-url",
@@ -4075,7 +4075,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/create-sound-message-by-url",
               "type": "page",
               "children": [],
-              "minIndex": 30
+              "minIndex": 141.031
             },
             {
               "id": "message/methods/create-video-message",
@@ -4084,7 +4084,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/create-video-message",
               "type": "page",
               "children": [],
-              "minIndex": 31
+              "minIndex": 141.032
             },
             {
               "id": "message/methods/create-video-message-from-full-path",
@@ -4093,7 +4093,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/create-video-message-from-full-path",
               "type": "page",
               "children": [],
-              "minIndex": 32
+              "minIndex": 141.033
             },
             {
               "id": "message/methods/create-video-message-by-url",
@@ -4102,7 +4102,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/create-video-message-by-url",
               "type": "page",
               "children": [],
-              "minIndex": 33
+              "minIndex": 141.034
             },
             {
               "id": "message/methods/create-file-message",
@@ -4111,7 +4111,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/create-file-message",
               "type": "page",
               "children": [],
-              "minIndex": 34
+              "minIndex": 141.035
             },
             {
               "id": "message/methods/create-file-message-from-full-path",
@@ -4120,7 +4120,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/create-file-message-from-full-path",
               "type": "page",
               "children": [],
-              "minIndex": 35
+              "minIndex": 141.036
             },
             {
               "id": "message/methods/create-file-message-by-url",
@@ -4129,7 +4129,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/create-file-message-by-url",
               "type": "page",
               "children": [],
-              "minIndex": 36
+              "minIndex": 141.037
             },
             {
               "id": "message/methods/send-message",
@@ -4138,7 +4138,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/send-message",
               "type": "page",
               "children": [],
-              "minIndex": 37
+              "minIndex": 141.038
             },
             {
               "id": "message/methods/send-message-not-oss",
@@ -4147,7 +4147,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/send-message-not-oss",
               "type": "page",
               "children": [],
-              "minIndex": 38
+              "minIndex": 141.039
             },
             {
               "id": "message/methods/find-message-list",
@@ -4156,7 +4156,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/find-message-list",
               "type": "page",
               "children": [],
-              "minIndex": 39
+              "minIndex": 141.04
             },
             {
               "id": "message/methods/get-advanced-history-message-list",
@@ -4165,7 +4165,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/get-advanced-history-message-list",
               "type": "page",
               "children": [],
-              "minIndex": 40
+              "minIndex": 141.041
             },
             {
               "id": "message/methods/get-advanced-history-message-list-reverse",
@@ -4174,7 +4174,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/get-advanced-history-message-list-reverse",
               "type": "page",
               "children": [],
-              "minIndex": 41
+              "minIndex": 141.042
             },
             {
               "id": "message/methods/revoke-message",
@@ -4183,7 +4183,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/revoke-message",
               "type": "page",
               "children": [],
-              "minIndex": 42
+              "minIndex": 141.043
             },
             {
               "id": "message/methods/typing-status-update",
@@ -4192,7 +4192,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/typing-status-update",
               "type": "page",
               "children": [],
-              "minIndex": 43
+              "minIndex": 141.044
             },
             {
               "id": "message/methods/mark-conversation-message-as-read",
@@ -4201,7 +4201,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/mark-conversation-message-as-read",
               "type": "page",
               "children": [],
-              "minIndex": 44
+              "minIndex": 141.045
             },
             {
               "id": "message/methods/mark-all-conversation-message-as-read",
@@ -4210,7 +4210,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/mark-all-conversation-message-as-read",
               "type": "page",
               "children": [],
-              "minIndex": 45
+              "minIndex": 141.046
             },
             {
               "id": "message/methods/mark-messages-as-read-by-msg-id",
@@ -4219,7 +4219,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/mark-messages-as-read-by-msg-id",
               "type": "page",
               "children": [],
-              "minIndex": 46
+              "minIndex": 141.047
             },
             {
               "id": "message/methods/delete-message-from-local-storage",
@@ -4228,7 +4228,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/delete-message-from-local-storage",
               "type": "page",
               "children": [],
-              "minIndex": 47
+              "minIndex": 141.048
             },
             {
               "id": "message/methods/delete-message",
@@ -4237,7 +4237,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/delete-message",
               "type": "page",
               "children": [],
-              "minIndex": 48
+              "minIndex": 141.049
             },
             {
               "id": "message/methods/delete-all-msg-from-local-and-svr",
@@ -4246,7 +4246,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/delete-all-msg-from-local-and-svr",
               "type": "page",
               "children": [],
-              "minIndex": 49
+              "minIndex": 141.05
             },
             {
               "id": "message/methods/delete-all-msg-from-local",
@@ -4255,7 +4255,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/delete-all-msg-from-local",
               "type": "page",
               "children": [],
-              "minIndex": 50
+              "minIndex": 141.051
             },
             {
               "id": "message/methods/clear-conversation-and-delete-all-msg",
@@ -4264,7 +4264,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/clear-conversation-and-delete-all-msg",
               "type": "page",
               "children": [],
-              "minIndex": 51
+              "minIndex": 141.052
             },
             {
               "id": "message/methods/delete-conversation-and-delete-all-msg",
@@ -4273,7 +4273,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/delete-conversation-and-delete-all-msg",
               "type": "page",
               "children": [],
-              "minIndex": 52
+              "minIndex": 141.053
             },
             {
               "id": "message/methods/insert-single-message-to-local-storage",
@@ -4282,7 +4282,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/insert-single-message-to-local-storage",
               "type": "page",
               "children": [],
-              "minIndex": 53
+              "minIndex": 141.054
             },
             {
               "id": "message/methods/insert-group-message-to-local-storage",
@@ -4291,7 +4291,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/insert-group-message-to-local-storage",
               "type": "page",
               "children": [],
-              "minIndex": 54
+              "minIndex": 141.055
             },
             {
               "id": "message/methods/search-local-messages",
@@ -4300,7 +4300,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/search-local-messages",
               "type": "page",
               "children": [],
-              "minIndex": 55
+              "minIndex": 141.056
             },
             {
               "id": "message/methods/set-message-local-ex",
@@ -4309,7 +4309,7 @@
               "href": "/docs/chat/sdk/v4/android/message/methods/set-message-local-ex",
               "type": "page",
               "children": [],
-              "minIndex": 56
+              "minIndex": 141.057
             }
           ],
           "minIndex": 141
@@ -4326,7 +4326,7 @@
         {
           "id": "push-notifications/overview-push-notifications",
           "segment": "overview-push-notifications",
-          "title": "Push, logs, and files",
+          "title": "Overview",
           "href": "/docs/chat/sdk/v4/android/push-notifications/overview-push-notifications",
           "type": "page",
           "children": [
@@ -4337,7 +4337,7 @@
               "href": "/docs/chat/sdk/v4/android/push-notifications/methods/update-fcm-token",
               "type": "page",
               "children": [],
-              "minIndex": 0
+              "minIndex": 152.001
             },
             {
               "id": "push-notifications/methods/set-app-badge",
@@ -4346,7 +4346,7 @@
               "href": "/docs/chat/sdk/v4/android/push-notifications/methods/set-app-badge",
               "type": "page",
               "children": [],
-              "minIndex": 1
+              "minIndex": 152.002
             },
             {
               "id": "push-notifications/methods/upload-logs",
@@ -4355,7 +4355,7 @@
               "href": "/docs/chat/sdk/v4/android/push-notifications/methods/upload-logs",
               "type": "page",
               "children": [],
-              "minIndex": 2
+              "minIndex": 152.003
             },
             {
               "id": "push-notifications/methods/logs",
@@ -4364,7 +4364,7 @@
               "href": "/docs/chat/sdk/v4/android/push-notifications/methods/logs",
               "type": "page",
               "children": [],
-              "minIndex": 3
+              "minIndex": 152.004
             },
             {
               "id": "push-notifications/methods/upload-file",
@@ -4373,7 +4373,7 @@
               "href": "/docs/chat/sdk/v4/android/push-notifications/methods/upload-file",
               "type": "page",
               "children": [],
-              "minIndex": 4
+              "minIndex": 152.005
             }
           ],
           "minIndex": 152
@@ -4399,7 +4399,7 @@
         {
           "id": "deprecated",
           "segment": "deprecated",
-          "title": "Unsupported APIs",
+          "title": "Deprecated",
           "href": "/docs/chat/sdk/v4/android/deprecated",
           "type": "page",
           "children": [],

@@ -11,31 +11,41 @@ platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/push-notifications/methods/set-app-badge'
 ---
 
-`SetAppBadge` 来自 `open_im_sdk/third.go`。本页只说明当前 Android core binding 暴露的真实方法，不包含示例代码。
+设置应用角标未读数，适合未读数变化后同步系统角标。
 
-## 方法签名
-
-| 项目     | 说明                                                                   |
-| -------- | ---------------------------------------------------------------------- |
-| 方法     | `SetAppBadge(callback Base, operationID string, appUnreadCount int32)` |
-| 所属能力 | 推送、日志与文件                                                       |
-| 源码位置 | `open_im_sdk/third.go`                                                 |
-
-## 作用
+## 功能介绍
 
 设置应用角标未读数，适合未读数变化后同步系统角标。
 
-## 参数说明
-
-`appUnreadCount` 是要展示的未读数量。
-
-## 返回与事件
-
-成功返回设置结果。
-
-## 使用边界
-
 第三方能力至少要求 SDK 已初始化；日志和文件上传的进度通过对应 progress callback 返回。
+
+## Core Binding 方法
+
+| 项目     | 说明                                                                   |
+| -------- | ---------------------------------------------------------------------- |
+| 方法签名 | `SetAppBadge(callback Base, operationID string, appUnreadCount int32)` |
+| 所属能力 | 推送、日志与文件                                                       |
+| 源码位置 | `open_im_sdk/third.go`                                                 |
+
+## Android 调用参考
+
+TODO: 补充当前 Android SDK 的函数原型。
+
+## 输入参数
+
+| 参数名称         | 类型     | 描述                       |
+| ---------------- | -------- | -------------------------- |
+| `callback`       | `Base`   | 异步结果回调。             |
+| `operationID`    | `string` | 本次操作的追踪 ID。        |
+| `appUnreadCount` | `int32`  | 按 core binding 签名传入。 |
+
+## 返回结果
+
+通过回调返回结果：成功走 `OnSuccess`，失败走 `OnError`；发送或上传类方法还可能通过进度回调返回进度。
+
+## 代码示例
+
+TODO: 补充该方法的 Android 调用示例。
 
 ## 相关页面
 

@@ -11,31 +11,77 @@ platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/application/methods/init-sdk'
 ---
 
-`InitSDK` 来自 `open_im_sdk/init_login.go`。本页只说明当前 Android core binding 暴露的真实方法，不包含示例代码。
+初始化 SDK 全局实例、日志、长连接管理、本地数据目录和基础资源。应用进程内通常只调用一次。
 
-## 方法签名
-
-| 项目     | 说明                                                                       |
-| -------- | -------------------------------------------------------------------------- |
-| 方法     | `InitSDK(listener OnConnListener, operationID string, config string) bool` |
-| 所属能力 | 初始化与登录                                                               |
-| 源码位置 | `open_im_sdk/init_login.go`                                                |
-
-## 作用
+## 功能介绍
 
 初始化 SDK 全局实例、日志、长连接管理、本地数据目录和基础资源。应用进程内通常只调用一次。
 
-## 参数说明
-
-`listener` 接收连接生命周期事件；`operationID` 用于日志追踪；`config` 是 `IMConfig` JSON。
-
-## 返回与事件
-
-同步返回 `true` 或 `false`，失败通常表示配置 JSON、平台 ID、地址格式或 listener 不合法。
-
-## 使用边界
-
 初始化类方法应在应用进程内按需调用；用户态方法通常要求 `InitSDK` 已成功执行，并通过 `operationID` 串联日志。
+
+## Core Binding 方法
+
+| 项目     | 说明                                                                       |
+| -------- | -------------------------------------------------------------------------- |
+| 方法签名 | `InitSDK(listener OnConnListener, operationID string, config string) bool` |
+| 所属能力 | 初始化与登录                                                               |
+| 源码位置 | `open_im_sdk/init_login.go`                                                |
+
+## Android 调用参考
+
+TODO: 补充当前 Android SDK 的函数原型。
+
+## 输入参数
+
+| 参数名称      | 类型             | 描述                       |
+| ------------- | ---------------- | -------------------------- |
+| `listener`    | `OnConnListener` | 事件监听器实例。           |
+| `operationID` | `string`         | 本次操作的追踪 ID。        |
+| `config`      | `string`         | 按 core binding 签名传入。 |
+
+## 返回结果
+
+同步返回 `bool`。
+
+## 代码示例
+
+以下示例展示当前 Android SDK 的调用方式。
+
+```java showLineNumbers
+InitConfig initConfig=new InitConfig(
+            Constant.getImApiUrl(),//SDK api地址
+            Constant.getImWsUrl(),//SDK WebSocket地址
+            getStorageDir(),//SDK数据库存储目录
+            );
+     OpenIMClient.getInstance().initSDK(application,
+          initConfig,
+          new OnConnListener() {
+                 @Override
+                public void onConnectFailed(long code, String error) {
+                    //连接服务器失败
+                }
+
+                @Override
+                public void onConnectSuccess() {
+                    //连接服务器成功
+                }
+
+                @Override
+                public void onConnecting() {
+                    //连接服务器中...
+                }
+
+                @Override
+                public void onKickedOffline() {
+                    //当前用户被踢下线
+                }
+
+                @Override
+                public void onUserTokenExpired() {
+                    //登录票据已经过期
+                }
+            });
+```
 
 ## 相关页面
 

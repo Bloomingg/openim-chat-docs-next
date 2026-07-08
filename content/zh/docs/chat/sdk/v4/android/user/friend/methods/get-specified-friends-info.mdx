@@ -11,31 +11,57 @@ platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/user/friend/methods/get-specified-friends-info'
 ---
 
-`GetSpecifiedFriendsInfo` 来自 `open_im_sdk/relation.go`。本页只说明当前 Android core binding 暴露的真实方法，不包含示例代码。
+批量获取指定好友的关系资料，适合好友详情页、会话资料补齐或局部刷新好友信息。
 
-## 方法签名
-
-| 项目     | 说明                                                                                              |
-| -------- | ------------------------------------------------------------------------------------------------- |
-| 方法     | `GetSpecifiedFriendsInfo(callback Base, operationID string, userIDList string, filterBlack bool)` |
-| 所属能力 | 好友                                                                                              |
-| 源码位置 | `open_im_sdk/relation.go`                                                                         |
-
-## 作用
+## 功能介绍
 
 批量获取指定好友的关系资料，适合好友详情页、会话资料补齐或局部刷新好友信息。
 
-## 参数说明
-
-`userIDList` 是用户 ID 列表 JSON；`filterBlack` 为 `true` 时过滤黑名单用户。
-
-## 返回与事件
-
-成功返回好友资料列表 JSON。
-
-## 使用边界
-
 好友关系变化通过 `SetFriendListener` 设置的 `OnFriendshipListener` 接收；涉及列表和请求对象的字符串参数应传入对应结构的 JSON。
+
+## Core Binding 方法
+
+| 项目     | 说明                                                                                              |
+| -------- | ------------------------------------------------------------------------------------------------- |
+| 方法签名 | `GetSpecifiedFriendsInfo(callback Base, operationID string, userIDList string, filterBlack bool)` |
+| 所属能力 | 好友                                                                                              |
+| 源码位置 | `open_im_sdk/relation.go`                                                                         |
+
+## Android 调用参考
+
+当前 Android SDK 的方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+
+```java showLineNumbers
+public void getFriendsInfo(OnBase<List<UserInfo>> base, List<String> uidList, Boolean filterBlack)
+```
+
+## 输入参数
+
+| 参数名称    | 参数类型      | 是否必填 | 描述             |
+| ----------- | ------------- | -------- | ---------------- |
+| userIDList  | List\<String> | 是       | 用户 ID 列表     |
+| filterBlack | Boolean       | 否       | 是否过滤掉黑名单 |
+
+## 返回结果
+
+通过回调返回结果：成功走 `OnSuccess`，失败走 `OnError`；发送或上传类方法还可能通过进度回调返回进度。
+
+## 代码示例
+
+以下示例展示当前 Android SDK 的调用方式。
+
+```java showLineNumbers
+OpenIMClient.getInstance().friendshipManager.getFriendsInfo(new OnBase<List<UserInfo>>() {
+    @Override
+    public void onError(int code, String error) {
+        // todo: 处理错误信息
+    }
+    @Override
+    public void onSuccess(List<UserInfo> data) {
+        // todo: 请求成功，返回List<UserInfo>
+    }
+}, uidList, filterBlack);
+```
 
 ## 相关页面
 

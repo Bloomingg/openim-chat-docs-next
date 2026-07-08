@@ -11,31 +11,79 @@ platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/event-handler/methods/set-conversation-listener'
 ---
 
-`SetConversationListener` 来自 `open_im_sdk/listener.go`。本页只说明当前 Android core binding 暴露的真实方法，不包含示例代码。
+设置会话事件监听器，用于接收服务端同步进度、新会话、会话变更、总未读数和输入状态变化。
 
-## 方法签名
-
-| 项目     | 说明                                                       |
-| -------- | ---------------------------------------------------------- |
-| 方法     | `SetConversationListener(listener OnConversationListener)` |
-| 所属能力 | 监听器                                                     |
-| 源码位置 | `open_im_sdk/listener.go`                                  |
-
-## 作用
+## 功能介绍
 
 设置会话事件监听器，用于接收服务端同步进度、新会话、会话变更、总未读数和输入状态变化。
 
-## 参数说明
-
-`listener` 实现 `OnConversationListener`。
-
-## 返回与事件
-
-会话列表和状态变化以 JSON 字符串或基础类型回调。
-
-## 使用边界
-
 `Set*Listener` 会替换当前 SDK 保存的同类监听器；如果多个模块都要消费事件，应在业务层封装统一分发。
+
+## Core Binding 方法
+
+| 项目     | 说明                                                       |
+| -------- | ---------------------------------------------------------- |
+| 方法签名 | `SetConversationListener(listener OnConversationListener)` |
+| 所属能力 | 监听器                                                     |
+| 源码位置 | `open_im_sdk/listener.go`                                  |
+
+## Android 调用参考
+
+当前 Android SDK 的方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+
+```java
+public void setOnConversationListener(OnConversationListener listener)
+```
+
+## 输入参数
+
+| 参数名称   | 类型                     | 描述             |
+| ---------- | ------------------------ | ---------------- |
+| `listener` | `OnConversationListener` | 事件监听器实例。 |
+
+## 返回结果
+
+| 参数名称 | 参数类型             | 描述 |
+| -------- | -------------------- | ---- |
+| listener | ConversationListener | 是   |
+
+## 代码示例
+
+以下示例展示当前 Android SDK 的调用方式。
+
+```java showLineNumbers
+OpenIMClient.getInstance().conversationManager.setOnConversationListener(new OnConversationListener() {
+            @Override
+            public void onConversationChanged(List<ConversationInfo> list) {
+
+            }
+
+            @Override
+            public void onNewConversation(List<ConversationInfo> list) {
+
+            }
+
+            @Override
+            public void onSyncServerFailed() {
+
+            }
+
+            @Override
+            public void onSyncServerFinish() {
+
+            }
+
+            @Override
+            public void onSyncServerStart() {
+
+            }
+
+            @Override
+            public void onTotalUnreadMessageCountChanged(int i) {
+
+            }
+        });
+```
 
 ## 相关页面
 

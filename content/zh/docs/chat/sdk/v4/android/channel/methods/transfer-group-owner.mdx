@@ -11,31 +11,59 @@ platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/channel/methods/transfer-group-owner'
 ---
 
-`TransferGroupOwner` 来自 `open_im_sdk/group.go`。本页只说明当前 Android core binding 暴露的真实方法，不包含示例代码。
+将群主转让给指定成员，通常只允许当前群主执行。
 
-## 方法签名
-
-| 项目     | 说明                                                                                           |
-| -------- | ---------------------------------------------------------------------------------------------- |
-| 方法     | `TransferGroupOwner(callback Base, operationID string, groupID string, newOwnerUserID string)` |
-| 所属能力 | 群组                                                                                           |
-| 源码位置 | `open_im_sdk/group.go`                                                                         |
-
-## 作用
+## 功能介绍
 
 将群主转让给指定成员，通常只允许当前群主执行。
 
-## 参数说明
-
-`groupID` 是目标群 ID；`newOwnerUserID` 是新群主用户 ID。
-
-## 返回与事件
-
-成功返回转让结果，并触发群资料或成员资料变化事件。
-
-## 使用边界
-
 群组方法通常要求当前用户已登录，且群主、管理员、成员权限由服务端校验；群组变化通过 `SetGroupListener` 接收。
+
+## Core Binding 方法
+
+| 项目     | 说明                                                                                           |
+| -------- | ---------------------------------------------------------------------------------------------- |
+| 方法签名 | `TransferGroupOwner(callback Base, operationID string, groupID string, newOwnerUserID string)` |
+| 所属能力 | 群组                                                                                           |
+| 源码位置 | `open_im_sdk/group.go`                                                                         |
+
+## Android 调用参考
+
+当前 Android SDK 的方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+
+```java showLineNumbers
+public void transferGroupOwner(OnBase<String> base, String gid, String uid)
+```
+
+## 输入参数
+
+| 参数名称 | 参数类型 | 是否必填 | 描述     |
+| -------- | -------- | -------- | -------- |
+| callBack | OnBase   | 是       | 回调接口 |
+| gid      | String   | 是       | 群ID     |
+| uid      | Sting    | 否       | 用户 ID  |
+
+## 返回结果
+
+通过回调返回结果：成功走 `OnSuccess`，失败走 `OnError`；发送或上传类方法还可能通过进度回调返回进度。
+
+## 代码示例
+
+以下示例展示当前 Android SDK 的调用方式。
+
+```java showLineNumbers
+OpenIMClient.getInstance().groupManager.transferGroupOwner(new OnBase<String>() {
+            @Override
+            public void onError(int code, String error) {
+
+            }
+
+            @Override
+            public void onSuccess(String data) {
+
+            }
+        }, gid,  uid);
+```
 
 ## 相关页面
 

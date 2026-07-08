@@ -11,31 +11,50 @@ platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/message/methods/create-file-message-from-full-path'
 ---
 
-`CreateFileMessageFromFullPath` 来自 `open_im_sdk/conversation_msg.go`。本页只说明当前 Android core binding 暴露的真实方法，不包含示例代码。
+通过完整文件路径创建普通文件消息。
 
-## 方法签名
-
-| 项目     | 说明                                                                                             |
-| -------- | ------------------------------------------------------------------------------------------------ |
-| 方法     | `CreateFileMessageFromFullPath(operationID string, fileFullPath string, fileName string) string` |
-| 所属能力 | 会话与消息                                                                                       |
-| 源码位置 | `open_im_sdk/conversation_msg.go`                                                                |
-
-## 作用
+## 功能介绍
 
 通过完整文件路径创建普通文件消息。
 
-## 参数说明
-
-`fileFullPath` 是完整文件路径；`fileName` 是展示文件名。
-
-## 返回与事件
-
-同步返回消息 JSON 字符串。
-
-## 使用边界
-
 创建消息类方法同步返回消息 JSON；发送、查询、删除、已读和本地写入方法通过回调返回。消息与会话事件分别通过消息监听器和会话监听器接收。
+
+## Core Binding 方法
+
+| 项目     | 说明                                                                                      |
+| -------- | ----------------------------------------------------------------------------------------- |
+| 方法签名 | `CreateFileMessageFromFullPath(operationID string, fileFullPath, fileName string) string` |
+| 所属能力 | 会话与消息                                                                                |
+| 源码位置 | `open_im_sdk/conversation_msg.go`                                                         |
+
+## Android 调用参考
+
+当前 Android SDK 的方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+
+```java showLineNumbers
+public Message createFileMessageFromFullPath(String filePath, String fileName)
+```
+
+## 输入参数
+
+| 参数名称 | 参数类型 | 是否必填 | 描述     |
+| -------- | -------- | -------- | -------- |
+| filePath | String   | 是       | 绝对路径 |
+| fileName | String   | 是       | 文件名字 |
+
+## 返回结果
+
+| 名称 | 类型    | 描述     |
+| ---- | ------- | -------- |
+| ~    | Message | 成功返回 |
+
+## 代码示例
+
+以下示例展示当前 Android SDK 的调用方式。
+
+```java showLineNumbers
+Message Message= OpenIMClient.getInstance().messageManager. createFileMessageFromFullPath( filePath,  fileName)
+```
 
 ## 相关页面
 

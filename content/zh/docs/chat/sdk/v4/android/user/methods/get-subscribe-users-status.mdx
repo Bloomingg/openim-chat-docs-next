@@ -11,31 +11,58 @@ platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/user/methods/get-subscribe-users-status'
 ---
 
-`GetSubscribeUsersStatus` 来自 `open_im_sdk/user.go、open_im_sdk/online.go`。本页只说明当前 Android core binding 暴露的真实方法，不包含示例代码。
+获取当前已订阅用户的在线状态快照，适合页面进入时先拉一次状态，再等待事件更新。
 
-## 方法签名
-
-| 项目     | 说明                                                         |
-| -------- | ------------------------------------------------------------ |
-| 方法     | `GetSubscribeUsersStatus(callback Base, operationID string)` |
-| 所属能力 | 用户                                                         |
-| 源码位置 | `open_im_sdk/user.go、open_im_sdk/online.go`                 |
-
-## 作用
+## 功能介绍
 
 获取当前已订阅用户的在线状态快照，适合页面进入时先拉一次状态，再等待事件更新。
 
-## 参数说明
-
-不需要用户列表，读取当前订阅集合。
-
-## 返回与事件
-
-成功返回在线状态 JSON。
-
-## 使用边界
-
 用户资料和在线状态方法通常要求当前用户已登录；在线状态变化通过 `SetUserListener` 设置的监听器接收。
+
+## Core Binding 方法
+
+| 项目     | 说明                                                         |
+| -------- | ------------------------------------------------------------ |
+| 方法签名 | `GetSubscribeUsersStatus(callback Base, operationID string)` |
+| 所属能力 | 用户                                                         |
+| 源码位置 | `open_im_sdk/online.go`                                      |
+
+## Android 调用参考
+
+当前 Android SDK 的方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+
+```java showLineNumbers
+public void getSubscribeOnlineUsersStatus(OnBase<List<UsersOnlineStatus>> callBack)
+```
+
+## 输入参数
+
+无
+
+## 返回结果
+
+| 参数名称 | 参数类型                        | 描述         |
+| -------- | ------------------------------- | ------------ |
+| callBack | OnBase<List<UsersOnlineStatus>> | 调用成功回调 |
+
+## 代码示例
+
+以下示例展示当前 Android SDK 的调用方式。
+
+```java showLineNumbers
+OpenIMClient.getInstance()
+            .userInfoManager.getSubscribeOnlineUsersStatus(new OnBase<List<UsersOnlineStatus>>() {
+                @Override
+                public void onError(int code, String error) {
+
+                }
+
+                @Override
+                public void onSuccess(List<UsersOnlineStatus> data) {
+                // todo
+                }
+            });
+```
 
 ## 相关页面
 

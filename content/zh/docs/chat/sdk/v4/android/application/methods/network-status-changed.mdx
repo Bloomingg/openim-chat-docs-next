@@ -11,31 +11,40 @@ platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/application/methods/network-status-changed'
 ---
 
-`NetworkStatusChanged` 来自 `open_im_sdk/init_login.go`。本页只说明当前 Android core binding 暴露的真实方法，不包含示例代码。
+通知 SDK 网络状态已变化，当前实现会触发长连接关闭并进入后续重连处理。
 
-## 方法签名
-
-| 项目     | 说明                                                      |
-| -------- | --------------------------------------------------------- |
-| 方法     | `NetworkStatusChanged(callback Base, operationID string)` |
-| 所属能力 | 初始化与登录                                              |
-| 源码位置 | `open_im_sdk/init_login.go`                               |
-
-## 作用
+## 功能介绍
 
 通知 SDK 网络状态已变化，当前实现会触发长连接关闭并进入后续重连处理。
 
-## 参数说明
-
-`operationID` 用于定位网络切换链路。
-
-## 返回与事件
-
-通过 `Base` 回调返回调用结果，连接最终状态仍以 `OnConnListener` 为准。
-
-## 使用边界
-
 初始化类方法应在应用进程内按需调用；用户态方法通常要求 `InitSDK` 已成功执行，并通过 `operationID` 串联日志。
+
+## Core Binding 方法
+
+| 项目     | 说明                                                      |
+| -------- | --------------------------------------------------------- |
+| 方法签名 | `NetworkStatusChanged(callback Base, operationID string)` |
+| 所属能力 | 初始化与登录                                              |
+| 源码位置 | `open_im_sdk/init_login.go`                               |
+
+## Android 调用参考
+
+TODO: 补充当前 Android SDK 的函数原型。
+
+## 输入参数
+
+| 参数名称      | 类型     | 描述                |
+| ------------- | -------- | ------------------- |
+| `callback`    | `Base`   | 异步结果回调。      |
+| `operationID` | `string` | 本次操作的追踪 ID。 |
+
+## 返回结果
+
+通过回调返回结果：成功走 `OnSuccess`，失败走 `OnError`；发送或上传类方法还可能通过进度回调返回进度。
+
+## 代码示例
+
+TODO: 补充该方法的 Android 调用示例。
 
 ## 相关页面
 

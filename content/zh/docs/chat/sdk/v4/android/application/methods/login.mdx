@@ -11,31 +11,60 @@ platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/application/methods/login'
 ---
 
-`Login` 来自 `open_im_sdk/init_login.go`。本页只说明当前 Android core binding 暴露的真实方法，不包含示例代码。
+使用业务服务端签发的 token 登录指定用户。登录成功后才能可靠调用会话、消息、群组、好友等用户态接口。
 
-## 方法签名
-
-| 项目     | 说明                                                                    |
-| -------- | ----------------------------------------------------------------------- |
-| 方法     | `Login(callback Base, operationID string, userID string, token string)` |
-| 所属能力 | 初始化与登录                                                            |
-| 源码位置 | `open_im_sdk/init_login.go`                                             |
-
-## 作用
+## 功能介绍
 
 使用业务服务端签发的 token 登录指定用户。登录成功后才能可靠调用会话、消息、群组、好友等用户态接口。
 
-## 参数说明
-
-`userID` 是 OpenIM 用户 ID；`token` 必须与该用户匹配；`operationID` 建议每次登录唯一。
-
-## 返回与事件
-
-成功或失败通过 `Base` 回调返回。
-
-## 使用边界
-
 初始化类方法应在应用进程内按需调用；用户态方法通常要求 `InitSDK` 已成功执行，并通过 `operationID` 串联日志。
+
+## Core Binding 方法
+
+| 项目     | 说明                                                             |
+| -------- | ---------------------------------------------------------------- |
+| 方法签名 | `Login(callback Base, operationID string, userID, token string)` |
+| 所属能力 | 初始化与登录                                                     |
+| 源码位置 | `open_im_sdk/init_login.go`                                      |
+
+## Android 调用参考
+
+当前 Android SDK 的方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+
+```java showLineNumbers
+public void login(@NotNull final OnBase<String> callBack, String uid, String token)
+```
+
+## 输入参数
+
+| 参数名称      | 类型     | 描述                       |
+| ------------- | -------- | -------------------------- |
+| `callback`    | `Base`   | 异步结果回调。             |
+| `operationID` | `string` | 本次操作的追踪 ID。        |
+| `userID`      | `string` | 业务标识参数。             |
+| `token`       | `string` | 按 core binding 签名传入。 |
+
+## 返回结果
+
+通过回调返回结果：成功走 `OnSuccess`，失败走 `OnError`；发送或上传类方法还可能通过进度回调返回进度。
+
+## 代码示例
+
+以下示例展示当前 Android SDK 的调用方式。
+
+```java showLineNumbers
+OpenIMClient.getInstance().login(new OnBase<String>() {
+                        @Override
+                        public void onError(int code, String error) {
+
+                        }
+
+                        @Override
+                        public void onSuccess(String data) {
+
+                        }
+                    }, userID, imToken);
+```
 
 ## 相关页面
 

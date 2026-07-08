@@ -11,31 +11,62 @@ platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/user/methods/set-self-info'
 ---
 
-`SetSelfInfo` 来自 `open_im_sdk/user.go、open_im_sdk/online.go`。本页只说明当前 Android core binding 暴露的真实方法，不包含示例代码。
+更新当前登录用户资料，例如昵称、头像或扩展字段。只应修改当前账号允许自行修改的字段。
 
-## 方法签名
-
-| 项目     | 说明                                                              |
-| -------- | ----------------------------------------------------------------- |
-| 方法     | `SetSelfInfo(callback Base, operationID string, userInfo string)` |
-| 所属能力 | 用户                                                              |
-| 源码位置 | `open_im_sdk/user.go、open_im_sdk/online.go`                      |
-
-## 作用
+## 功能介绍
 
 更新当前登录用户资料，例如昵称、头像或扩展字段。只应修改当前账号允许自行修改的字段。
 
-## 参数说明
-
-`userInfo` 是用户资料 JSON；字段以当前 SDK 用户结构为准。
-
-## 返回与事件
-
-成功返回更新结果，相关变更会触发用户监听。
-
-## 使用边界
-
 用户资料和在线状态方法通常要求当前用户已登录；在线状态变化通过 `SetUserListener` 设置的监听器接收。
+
+## Core Binding 方法
+
+| 项目     | 说明                                                              |
+| -------- | ----------------------------------------------------------------- |
+| 方法签名 | `SetSelfInfo(callback Base, operationID string, userInfo string)` |
+| 所属能力 | 用户                                                              |
+| 源码位置 | `open_im_sdk/user.go`                                             |
+
+## Android 调用参考
+
+当前 Android SDK 的方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+
+```java showLineNumbers
+public void setSelfInfo(OnBase<String> base, UserInfoReq userInfoReq)
+```
+
+## 输入参数
+
+请求结构体UserInfoReq属性如下所示：
+
+| 参数名称         | 参数类型 | 是否必填 | 描述                                               |
+| ---------------- | -------- | -------- | -------------------------------------------------- |
+| userID           | String   | 是       | 用户id                                             |
+| nickname         | String   | 否       | 用户昵称                                           |
+| faceURL          | String   | 否       | 用户头像                                           |
+| ex               | String   | 否       | 扩展参数                                           |
+| globalRecvMsgOpt | Integer  | 否       | 全局免打扰，1:屏蔽消息; 2:接收消息但不提示; 0:正常 |
+
+## 返回结果
+
+通过回调返回结果：成功走 `OnSuccess`，失败走 `OnError`；发送或上传类方法还可能通过进度回调返回进度。
+
+## 代码示例
+
+以下示例展示当前 Android SDK 的调用方式。
+
+```java showLineNumbers
+OpenIMClient.getInstance().userInfoManager.setSelfInfo(new OnBase<String>(){
+    @Override
+    public void onError(int code, String error) {
+      // todo: 处理错误信息
+    }
+    @Override
+    public void onSuccess(String data) {
+      // todo: 请求成功
+    }
+},userInfoReq);
+```
 
 ## 相关页面
 

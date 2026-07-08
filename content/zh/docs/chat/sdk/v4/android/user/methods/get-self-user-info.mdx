@@ -11,31 +11,47 @@ platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/user/methods/get-self-user-info'
 ---
 
-`GetSelfUserInfo` 来自 `open_im_sdk/user.go、open_im_sdk/online.go`。本页只说明当前 Android core binding 暴露的真实方法，不包含示例代码。
+获取当前登录用户自己的资料，适合进入个人资料页、启动后刷新当前用户信息或账号切换后校验本地缓存。
 
-## 方法签名
-
-| 项目     | 说明                                                 |
-| -------- | ---------------------------------------------------- |
-| 方法     | `GetSelfUserInfo(callback Base, operationID string)` |
-| 所属能力 | 用户                                                 |
-| 源码位置 | `open_im_sdk/user.go、open_im_sdk/online.go`         |
-
-## 作用
+## 功能介绍
 
 获取当前登录用户自己的资料，适合进入个人资料页、启动后刷新当前用户信息或账号切换后校验本地缓存。
 
-## 参数说明
-
-`operationID` 用于追踪；不需要传用户 ID，SDK 使用当前登录用户。
-
-## 返回与事件
-
-成功返回当前用户资料 JSON。
-
-## 使用边界
-
 用户资料和在线状态方法通常要求当前用户已登录；在线状态变化通过 `SetUserListener` 设置的监听器接收。
+
+## Core Binding 方法
+
+| 项目     | 说明                                                 |
+| -------- | ---------------------------------------------------- |
+| 方法签名 | `GetSelfUserInfo(callback Base, operationID string)` |
+| 所属能力 | 用户                                                 |
+| 源码位置 | `open_im_sdk/user.go`                                |
+
+## Android 调用参考
+
+当前 Android SDK 的方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+
+```java showLineNumbers
+public void getSelfUserInfo(OnBase<UserInfo> callBack)
+```
+
+## 输入参数
+
+| 参数名称 | 参数类型         | 是否必填 | 描述     |
+| -------- | ---------------- | -------- | -------- |
+| callBack | OnBase<UserInfo> | 是       | 回调接口 |
+
+## 返回结果
+
+通过回调返回结果：成功走 `OnSuccess`，失败走 `OnError`；发送或上传类方法还可能通过进度回调返回进度。
+
+## 代码示例
+
+以下示例展示当前 Android SDK 的调用方式。
+
+```java showLineNumbers
+OpenIMClient.getInstance().friendshipManager.getSelfUserInfo(new OnBase<UserInfo>(){…})
+```
 
 ## 相关页面
 

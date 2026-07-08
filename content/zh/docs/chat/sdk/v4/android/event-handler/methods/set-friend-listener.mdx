@@ -11,31 +11,47 @@ platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/event-handler/methods/set-friend-listener'
 ---
 
-`SetFriendListener` 来自 `open_im_sdk/listener.go`。本页只说明当前 Android core binding 暴露的真实方法，不包含示例代码。
+设置好友关系监听器，用于接收好友申请、好友新增或删除、好友资料变化以及黑名单变化。
 
-## 方法签名
-
-| 项目     | 说明                                               |
-| -------- | -------------------------------------------------- |
-| 方法     | `SetFriendListener(listener OnFriendshipListener)` |
-| 所属能力 | 监听器                                             |
-| 源码位置 | `open_im_sdk/listener.go`                          |
-
-## 作用
+## 功能介绍
 
 设置好友关系监听器，用于接收好友申请、好友新增或删除、好友资料变化以及黑名单变化。
 
-## 参数说明
-
-`listener` 实现 `OnFriendshipListener`。
-
-## 返回与事件
-
-好友和黑名单事件以 JSON 字符串回调。
-
-## 使用边界
-
 `Set*Listener` 会替换当前 SDK 保存的同类监听器；如果多个模块都要消费事件，应在业务层封装统一分发。
+
+## Core Binding 方法
+
+| 项目     | 说明                                               |
+| -------- | -------------------------------------------------- |
+| 方法签名 | `SetFriendListener(listener OnFriendshipListener)` |
+| 所属能力 | 监听器                                             |
+| 源码位置 | `open_im_sdk/listener.go`                          |
+
+## Android 调用参考
+
+当前 Android SDK 的方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+
+```Java
+public void setOnFriendshipListener(OnFriendshipListener listener)
+```
+
+## 输入参数
+
+| 参数名称 | 参数类型                  | 是否必填 | 描述 |
+| -------- | ------------------------- | -------- | ---- |
+| listener | id <OnFriendshipListener> | 是       |      |
+
+## 返回结果
+
+无
+
+## 代码示例
+
+以下示例展示当前 Android SDK 的调用方式。
+
+```Java showLineNumbers
+OpenIMClient.getInstance().friendshipManager.setOnFriendshipListener(new OnFriendshipListener{...} )
+```
 
 ## 相关页面
 

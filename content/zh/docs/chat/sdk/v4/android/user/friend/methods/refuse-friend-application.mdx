@@ -11,31 +11,49 @@ platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/user/friend/methods/refuse-friend-application'
 ---
 
-`RefuseFriendApplication` 来自 `open_im_sdk/relation.go`。本页只说明当前 Android core binding 暴露的真实方法，不包含示例代码。
+拒绝指定好友申请。
 
-## 方法签名
-
-| 项目     | 说明                                                                                 |
-| -------- | ------------------------------------------------------------------------------------ |
-| 方法     | `RefuseFriendApplication(callback Base, operationID string, userIDHandleMsg string)` |
-| 所属能力 | 好友                                                                                 |
-| 源码位置 | `open_im_sdk/relation.go`                                                            |
-
-## 作用
+## 功能介绍
 
 拒绝指定好友申请。
 
-## 参数说明
-
-`userIDHandleMsg` 是好友申请处理请求 JSON。
-
-## 返回与事件
-
-成功返回处理结果，并触发申请拒绝事件。
-
-## 使用边界
-
 好友关系变化通过 `SetFriendListener` 设置的 `OnFriendshipListener` 接收；涉及列表和请求对象的字符串参数应传入对应结构的 JSON。
+
+## Core Binding 方法
+
+| 项目     | 说明                                                                                 |
+| -------- | ------------------------------------------------------------------------------------ |
+| 方法签名 | `RefuseFriendApplication(callback Base, operationID string, userIDHandleMsg string)` |
+| 所属能力 | 好友                                                                                 |
+| 源码位置 | `open_im_sdk/relation.go`                                                            |
+
+## Android 调用参考
+
+当前 Android SDK 的方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+
+```java showLineNumbers
+public void refuseFriendApplication(OnBase<String> callBack, String uid, String handleMsg)
+```
+
+## 输入参数
+
+| 参数名称  | 参数类型 | 是否必填 | 描述       |
+| --------- | -------- | -------- | ---------- |
+| callBack  | OnBase   | 是       | 回调接口   |
+| uid       | String   | 是       | 用户 ID    |
+| handleMsg | String   | 是       | 发送的信息 |
+
+## 返回结果
+
+通过回调返回结果：成功走 `OnSuccess`，失败走 `OnError`；发送或上传类方法还可能通过进度回调返回进度。
+
+## 代码示例
+
+以下示例展示当前 Android SDK 的调用方式。
+
+```java showLineNumbers
+OpenIMClient.getInstance().friendshipManager.refuseFriendApplication(new OnBase<String>(){…},uid,handleMsg)
+```
 
 ## 相关页面
 

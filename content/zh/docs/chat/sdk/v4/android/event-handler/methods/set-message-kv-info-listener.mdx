@@ -11,31 +11,39 @@ platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/event-handler/methods/set-message-kv-info-listener'
 ---
 
-`SetMessageKvInfoListener` 来自 `open_im_sdk/listener.go`。本页只说明当前 Android core binding 暴露的真实方法，不包含示例代码。
+设置消息 KV 信息变化监听器，用于接收消息扩展键值信息变化。
 
-## 方法签名
-
-| 项目     | 说明                                                         |
-| -------- | ------------------------------------------------------------ |
-| 方法     | `SetMessageKvInfoListener(listener OnMessageKvInfoListener)` |
-| 所属能力 | 监听器                                                       |
-| 源码位置 | `open_im_sdk/listener.go`                                    |
-
-## 作用
+## 功能介绍
 
 设置消息 KV 信息变化监听器，用于接收消息扩展键值信息变化。
 
-## 参数说明
-
-`listener` 实现 `OnMessageKvInfoListener`。
-
-## 返回与事件
-
-变更列表以 JSON 字符串回调。
-
-## 使用边界
-
 `Set*Listener` 会替换当前 SDK 保存的同类监听器；如果多个模块都要消费事件，应在业务层封装统一分发。
+
+## Core Binding 方法
+
+| 项目     | 说明                                                         |
+| -------- | ------------------------------------------------------------ |
+| 方法签名 | `SetMessageKvInfoListener(listener OnMessageKvInfoListener)` |
+| 所属能力 | 监听器                                                       |
+| 源码位置 | `open_im_sdk/listener.go`                                    |
+
+## Android 调用参考
+
+TODO: 补充当前 Android SDK 的函数原型。
+
+## 输入参数
+
+| 参数名称   | 类型                      | 描述             |
+| ---------- | ------------------------- | ---------------- |
+| `listener` | `OnMessageKvInfoListener` | 事件监听器实例。 |
+
+## 返回结果
+
+无直接返回值。
+
+## 代码示例
+
+TODO: 补充该方法的 Android 调用示例。
 
 ## 相关页面
 

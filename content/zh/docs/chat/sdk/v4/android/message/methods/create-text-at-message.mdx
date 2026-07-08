@@ -11,31 +11,52 @@ platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/message/methods/create-text-at-message'
 ---
 
-`CreateTextAtMessage` 来自 `open_im_sdk/conversation_msg.go`。本页只说明当前 Android core binding 暴露的真实方法，不包含示例代码。
+创建群聊 @ 文本消息。可提醒指定成员，也可以配合引用消息展示上下文。
 
-## 方法签名
-
-| 项目     | 说明                                                                                                                 |
-| -------- | -------------------------------------------------------------------------------------------------------------------- |
-| 方法     | `CreateTextAtMessage(operationID string, text string, atUserList string, atUsersInfo string, message string) string` |
-| 所属能力 | 会话与消息                                                                                                           |
-| 源码位置 | `open_im_sdk/conversation_msg.go`                                                                                    |
-
-## 作用
+## 功能介绍
 
 创建群聊 @ 文本消息。可提醒指定成员，也可以配合引用消息展示上下文。
 
-## 参数说明
-
-`atUserList` 是被 @ 用户 ID 列表 JSON；`atUsersInfo` 是 @ 用户资料 JSON；`message` 可传被引用消息 JSON。
-
-## 返回与事件
-
-同步返回消息 JSON 字符串。
-
-## 使用边界
-
 创建消息类方法同步返回消息 JSON；发送、查询、删除、已读和本地写入方法通过回调返回。消息与会话事件分别通过消息监听器和会话监听器接收。
+
+## Core Binding 方法
+
+| 项目     | 说明                                                                                            |
+| -------- | ----------------------------------------------------------------------------------------------- |
+| 方法签名 | `CreateTextAtMessage(operationID string, text, atUserList, atUsersInfo, message string) string` |
+| 所属能力 | 会话与消息                                                                                      |
+| 源码位置 | `open_im_sdk/conversation_msg.go`                                                               |
+
+## Android 调用参考
+
+当前 Android SDK 的方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+
+```java showLineNumbers
+public Message createTextAtMessage(String text, List<String> atUserIDList, List<AtUserInfo> atUserInfoList, Message quoteMessage)
+```
+
+## 输入参数
+
+| 参数名称       | 参数类型         | 是否必填 | 描述              |
+| -------------- | ---------------- | -------- | ----------------- |
+| text           | String           | 是       | 内容              |
+| atUserIDList   | List<String>     | 是       | @人的 userID 列表 |
+| atUserInfoList | List<AtUserInfo> | 是       | @人的用户信息列表 |
+| quoteMessage   | Message          | 是       | 引用的消息        |
+
+## 返回结果
+
+| 名称 | 类型    | 描述     |
+| ---- | ------- | -------- |
+| ~    | Message | 成功返回 |
+
+## 代码示例
+
+以下示例展示当前 Android SDK 的调用方式。
+
+```java showLineNumbers
+Message Message= OpenIMClient.getInstance().messageManager.createTextAtMessage( text, atUserIDList, atUserInfoList,  quoteMessage)
+```
 
 ## 相关页面
 

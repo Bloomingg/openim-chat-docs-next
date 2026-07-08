@@ -11,31 +11,52 @@ platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/user/friend/methods/update-friends'
 ---
 
-`UpdateFriends` 来自 `open_im_sdk/relation.go`。本页只说明当前 Android core binding 暴露的真实方法，不包含示例代码。
+更新好友关系资料，例如备注、扩展字段或其他好友关系字段。
 
-## 方法签名
-
-| 项目     | 说明                                                           |
-| -------- | -------------------------------------------------------------- |
-| 方法     | `UpdateFriends(callback Base, operationID string, req string)` |
-| 所属能力 | 好友                                                           |
-| 源码位置 | `open_im_sdk/relation.go`                                      |
-
-## 作用
+## 功能介绍
 
 更新好友关系资料，例如备注、扩展字段或其他好友关系字段。
 
-## 参数说明
-
-`req` 是好友更新请求 JSON；字段以当前关系结构为准。
-
-## 返回与事件
-
-成功返回更新结果，并触发好友资料变化事件。
-
-## 使用边界
-
 好友关系变化通过 `SetFriendListener` 设置的 `OnFriendshipListener` 接收；涉及列表和请求对象的字符串参数应传入对应结构的 JSON。
+
+## Core Binding 方法
+
+| 项目     | 说明                                                           |
+| -------- | -------------------------------------------------------------- |
+| 方法签名 | `UpdateFriends(callback Base, operationID string, req string)` |
+| 所属能力 | 好友                                                           |
+| 源码位置 | `open_im_sdk/relation.go`                                      |
+
+## Android 调用参考
+
+TODO: 补充当前 Android SDK 的函数原型。
+
+## 输入参数
+
+| 参数名称         | 参数类型         | 是否必填 | 描述         |
+| ---------------- | ---------------- | -------- | ------------ |
+| updateFriendsReq | UpdateFriendsReq | 是       | 变更的结构体 |
+
+## 返回结果
+
+通过回调返回结果：成功走 `OnSuccess`，失败走 `OnError`；发送或上传类方法还可能通过进度回调返回进度。
+
+## 代码示例
+
+以下示例展示当前 Android SDK 的调用方式。
+
+```java showLineNumbers
+OpenIMClient.getInstance().friendshipManager.updateFriendsReq(new OnBase<String>() {
+    @Override
+    public void onError(int code, String error) {
+      // todo: 处理错误信息
+    }
+    @Override
+    public void onSuccess(String data) {
+      // todo: 请求成功
+    }
+}, updateFriendsReq);
+```
 
 ## 相关页面
 

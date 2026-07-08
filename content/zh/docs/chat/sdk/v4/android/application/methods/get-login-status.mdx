@@ -11,31 +11,49 @@ platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/application/methods/get-login-status'
 ---
 
-`GetLoginStatus` 来自 `open_im_sdk/init_login.go`。本页只说明当前 Android core binding 暴露的真实方法，不包含示例代码。
+查询 SDK 当前登录状态，用于业务层判断是否可以继续调用用户态 API。
 
-## 方法签名
-
-| 项目     | 说明                                     |
-| -------- | ---------------------------------------- |
-| 方法     | `GetLoginStatus(operationID string) int` |
-| 所属能力 | 初始化与登录                             |
-| 源码位置 | `open_im_sdk/init_login.go`              |
-
-## 作用
+## 功能介绍
 
 查询 SDK 当前登录状态，用于业务层判断是否可以继续调用用户态 API。
 
-## 参数说明
-
-`operationID` 用于日志追踪；SDK 未初始化时会直接返回未初始化状态。
-
-## 返回与事件
-
-同步返回登录状态枚举值。
-
-## 使用边界
-
 初始化类方法应在应用进程内按需调用；用户态方法通常要求 `InitSDK` 已成功执行，并通过 `operationID` 串联日志。
+
+## Core Binding 方法
+
+| 项目     | 说明                                     |
+| -------- | ---------------------------------------- |
+| 方法签名 | `GetLoginStatus(operationID string) int` |
+| 所属能力 | 初始化与登录                             |
+| 源码位置 | `open_im_sdk/init_login.go`              |
+
+## Android 调用参考
+
+当前 Android SDK 的方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+
+```java showLineNumbers
+public int getLoginStatus()
+```
+
+## 输入参数
+
+| 参数名称      | 类型     | 描述                |
+| ------------- | -------- | ------------------- |
+| `operationID` | `string` | 本次操作的追踪 ID。 |
+
+## 返回结果
+
+| 参数名称 | 参数类型 | 描述                 |
+| -------- | -------- | -------------------- |
+| ~        | int      | LoginStatus 登录状态 |
+
+## 代码示例
+
+以下示例展示当前 Android SDK 的调用方式。
+
+```java showLineNumbers
+int status = OpenIMClient.getInstance().getLoginStatus();
+```
 
 ## 相关页面
 

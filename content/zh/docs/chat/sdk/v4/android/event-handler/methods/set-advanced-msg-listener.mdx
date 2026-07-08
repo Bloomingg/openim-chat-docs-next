@@ -11,31 +11,97 @@ platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/event-handler/methods/set-advanced-msg-listener'
 ---
 
-`SetAdvancedMsgListener` 来自 `open_im_sdk/listener.go`。本页只说明当前 Android core binding 暴露的真实方法，不包含示例代码。
+设置单条消息高级监听器，用于处理新消息、离线消息、已读回执、消息撤回、消息删除和在线消息。
 
-## 方法签名
-
-| 项目     | 说明                                                     |
-| -------- | -------------------------------------------------------- |
-| 方法     | `SetAdvancedMsgListener(listener OnAdvancedMsgListener)` |
-| 所属能力 | 监听器                                                   |
-| 源码位置 | `open_im_sdk/listener.go`                                |
-
-## 作用
+## 功能介绍
 
 设置单条消息高级监听器，用于处理新消息、离线消息、已读回执、消息撤回、消息删除和在线消息。
 
-## 参数说明
-
-`listener` 实现 `OnAdvancedMsgListener`。
-
-## 返回与事件
-
-消息和回执事件以 JSON 字符串回调。
-
-## 使用边界
-
 `Set*Listener` 会替换当前 SDK 保存的同类监听器；如果多个模块都要消费事件，应在业务层封装统一分发。
+
+## Core Binding 方法
+
+| 项目     | 说明                                                     |
+| -------- | -------------------------------------------------------- |
+| 方法签名 | `SetAdvancedMsgListener(listener OnAdvancedMsgListener)` |
+| 所属能力 | 监听器                                                   |
+| 源码位置 | `open_im_sdk/listener.go`                                |
+
+## Android 调用参考
+
+当前 Android SDK 的方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+
+```java showLineNumbers
+public void setAdvancedMsgListener(OnAdvanceMsgListener listener)
+```
+
+## 输入参数
+
+| 参数名称 | 参数类型              | 描述 |
+| -------- | --------------------- | ---- |
+| listener | OnAdvancedMsgListener | 是   |
+
+## 返回结果
+
+无直接返回值。
+
+## 代码示例
+
+以下示例展示当前 Android SDK 的调用方式。
+
+```java showLineNumbers
+OpenIMClient.getInstance().messageManager.setAdvancedMsgListener(new OnAdvanceMsgListener() {
+            @Override
+            public void onRecvNewMessage(Message msg) {
+
+            }
+
+            @Override
+            public void onRecvC2CReadReceipt(List<ReadReceiptInfo> list) {
+
+            }
+
+            @Override
+            public void onRecvGroupMessageReadReceipt(List<ReadReceiptInfo> list) {
+
+            }
+
+            @Override
+            public void onRecvMessageRevoked(String msgId) {
+
+            }
+
+            @Override
+            public void onRecvMessageRevokedV2(RevokedInfo info) {
+
+            }
+
+            @Override
+            public void onRecvMessageExtensionsChanged(String msgID, List<KeyValue> list) {
+
+            }
+
+            @Override
+            public void onRecvMessageExtensionsDeleted(String msgID, List<String> list) {
+
+            }
+
+            @Override
+            public void onRecvMessageExtensionsAdded(String msgID, List<KeyValue> list) {
+
+            }
+
+            @Override
+            public void onMsgDeleted(Message message) {
+
+            }
+
+            @Override
+            public void onRecvOfflineNewMessages(List<Message> list) {
+
+            }
+        });
+```
 
 ## 相关页面
 

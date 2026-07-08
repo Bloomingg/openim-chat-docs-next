@@ -11,31 +11,47 @@ platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/application/methods/get-login-user-id'
 ---
 
-`GetLoginUserID` 来自 `open_im_sdk/init_login.go`。本页只说明当前 Android core binding 暴露的真实方法，不包含示例代码。
+获取当前 SDK 实例记录的登录用户 ID，常用于日志、会话归属和账号切换判断。
 
-## 方法签名
-
-| 项目     | 说明                        |
-| -------- | --------------------------- |
-| 方法     | `GetLoginUserID() string`   |
-| 所属能力 | 初始化与登录                |
-| 源码位置 | `open_im_sdk/init_login.go` |
-
-## 作用
+## 功能介绍
 
 获取当前 SDK 实例记录的登录用户 ID，常用于日志、会话归属和账号切换判断。
 
-## 参数说明
-
-无入参。
-
-## 返回与事件
-
-同步返回用户 ID；SDK 未初始化时返回空字符串。
-
-## 使用边界
-
 初始化类方法应在应用进程内按需调用；用户态方法通常要求 `InitSDK` 已成功执行，并通过 `operationID` 串联日志。
+
+## Core Binding 方法
+
+| 项目     | 说明                        |
+| -------- | --------------------------- |
+| 方法签名 | `GetLoginUserID() string`   |
+| 所属能力 | 初始化与登录                |
+| 源码位置 | `open_im_sdk/init_login.go` |
+
+## Android 调用参考
+
+当前 Android SDK 的方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+
+```java showLineNumbers
+public String getLoginUserID()
+```
+
+## 输入参数
+
+无输入参数。
+
+## 返回结果
+
+| 参数名称 | 参数类型 | 描述    |
+| -------- | -------- | ------- |
+| String   | userID   | 用户 ID |
+
+## 代码示例
+
+以下示例展示当前 Android SDK 的调用方式。
+
+```java showLineNumbers
+String userID = OpenIMClient.getInstance().getLoginUserID();
+```
 
 ## 相关页面
 
