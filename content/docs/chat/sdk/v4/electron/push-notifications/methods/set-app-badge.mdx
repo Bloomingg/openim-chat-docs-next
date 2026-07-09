@@ -1,6 +1,6 @@
 ---
 title: 'Set app badge'
-description: 'Explains the Set app badge method in Electron SDK v3.8.3-patch.10, including purpose, parameters, return value, and usage boundaries.'
+description: 'Explains the Set app badge method in Electron SDK v3.8.3, including purpose, parameters, return value, and usage boundaries.'
 product: 'sdk'
 context: 'chat/sdk/v4/electron'
 template: 'guide'
@@ -11,7 +11,7 @@ platform: 'electron'
 sourcePath: '/docs/chat/sdk/v4/electron/push-notifications/methods/set-app-badge'
 ---
 
-Use **Set app badge** when your application needs this OpenIM capability from Electron SDK v3.8.3-patch.10. This page follows the platform SDK reference and keeps the platform call signature visible next to the underlying OpenIM core.
+Use **Set app badge** when your application needs this OpenIM capability from Electron SDK v3.8.3. This page follows the platform SDK reference and keeps the platform call signature visible next to the underlying OpenIM core.
 
 ## Overview
 
@@ -22,12 +22,12 @@ Call `SetAppBadge` through the platform wrapper to set app badge. The current us
 | Item             | Description                                                            |
 | ---------------- | ---------------------------------------------------------------------- |
 | Method signature | `SetAppBadge(callback Base, operationID string, appUnreadCount int32)` |
-| Capability       | Push, logs, and files                                                  |
+| Capability       | Push notifications                                                  |
 | Source location  | `open_im_sdk/third.go`                                                 |
 
 ## Electron Call Reference
 
-Electron SDK v3.8.3-patch.10 does not expose an independent `setAppBadge` platform method. This page keeps the underlying capability notes without presenting another platform wrapper as the current Electron API.
+Electron SDK v3.8.3 does not expose an independent `setAppBadge` platform method. This page keeps the underlying capability notes without presenting another platform wrapper as the current Electron API.
 
 ## Parameters
 
@@ -39,7 +39,7 @@ No platform return value is available because this SDK does not expose an indepe
 
 ## Code Example
 
-Electron SDK v3.8.3-patch.10 does not expose an independent `setAppBadge` method, so there is no platform code example for this page.
+Electron SDK v3.8.3 does not expose an independent `setAppBadge` method, so there is no platform code example for this page.
 
 ## Related types
 
@@ -47,4 +47,4 @@ Electron SDK v3.8.3-patch.10 does not expose an independent `setAppBadge` method
 
 ## Related pages
 
-- [Push, logs, and files](/docs/chat/sdk/v4/electron/push-notifications/overview)
+- [Push notifications](/docs/chat/sdk/v4/electron/push-notifications/overview)

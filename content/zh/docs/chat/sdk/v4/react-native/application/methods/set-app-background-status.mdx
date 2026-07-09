@@ -24,12 +24,12 @@ sourcePath: '/docs/chat/sdk/v4/react-native/application/methods/set-app-backgrou
 | 项目     | 说明                                                                           |
 | -------- | ------------------------------------------------------------------------------ |
 | 方法签名 | `SetAppBackgroundStatus(callback Base, operationID string, isBackground bool)` |
-| 所属能力 | 初始化与登录                                                                   |
+| 所属能力 | SDK 生命周期                                                                   |
 | 源码位置 | `open_im_sdk/init_login.go`                                                    |
 
 ## React Native 调用参考
 
-React Native SDK v3.8.3-patch.12.4 的 TypeScript 方法原型如下。Core binding 方法签名用于说明底层能力和参数映射。
+React Native SDK v3.8.3 的 TypeScript 方法原型如下。Core binding 方法签名用于说明底层能力和参数映射。
 
 源码位置：`src/sdk.ts`。
 
@@ -49,7 +49,7 @@ setAppBackgroundStatus(isBackground: boolean, operationID: string = id())
 
 ## 代码示例
 
-以下示例展示 React Native SDK v3.8.3-patch.12.4 的调用骨架，请按业务上下文补充真实参数、错误处理和 UI 状态更新。
+以下示例展示 React Native SDK v3.8.3 的调用骨架，请按业务上下文补充真实参数、错误处理和 UI 状态更新。
 
 ```ts showLineNumbers
 import OpenIMSDK from '@openim/rn-client-sdk';
@@ -63,4 +63,4 @@ const result = await OpenIMSDK.setAppBackgroundStatus(false);
 
 ## 相关页面
 
-- [初始化与登录](/docs/chat/sdk/v4/react-native/application/overview)
+- [SDK 生命周期](/docs/chat/sdk/v4/react-native/application/overview)

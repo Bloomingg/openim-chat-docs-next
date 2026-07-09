@@ -1,70 +1,49 @@
 ---
 title: '认证流程'
-description: '说明 Android SDK 登录认证、token 生命周期、连接监听和退出登录的真实方法边界。'
+description: '说明 SDK 登录认证流程、token 边界和登录状态处理。'
 product: 'sdk'
 context: 'chat/sdk/v4/android'
 template: 'guide'
 status: 'draft'
-lastUpdated: '2026-07-08'
+lastUpdated: '2026-07-09'
 version: 'v4'
 platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/application/authenticating-a-user/authentication'
 ---
+认证流程围绕业务服务端签发的用户 token 展开。客户端负责初始化 SDK、注册监听器、携带 userID 和 token 登录，并根据连接事件与登录状态维护 UI 状态。
 
-Android SDK 不在客户端生成 token。应用应从业务服务端获取当前用户的 OpenIM token，再调用 `Login`。
+## 认证顺序
 
-## 推荐流程
+| 步骤 | 操作 | 说明 |
+| ---- | ---- | ---- |
+| 1 | 获取 userID 和 token | 从业务服务端获取当前用户的 OpenIM userID 和 token。 |
+| 2 | 初始化 SDK | 调用 [初始化 SDK](/docs/chat/sdk/v4/android/application/methods/init-sdk)，传入 API 地址、WebSocket 地址、平台信息和日志配置。 |
+| 3 | 注册监听器 | 至少注册连接监听器；需要会话、消息、好友、群组和用户事件时，也应在登录前注册。 |
+| 4 | 登录用户 | 调用 [登录用户](/docs/chat/sdk/v4/android/application/methods/login)，传入 userID 和 token。 |
+| 5 | 处理状态 | 通过连接监听器、[获取登录状态](/docs/chat/sdk/v4/android/application/methods/get-login-status) 和 API 回调判断是否进入用户态。 |
+| 6 | 退出或刷新 token | token 过期、被踢或主动退出时，调用 [退出登录](/docs/chat/sdk/v4/android/application/methods/logout)，必要时刷新 token 后重新登录。 |
 
-| 步骤 | 业务动作                                     | SDK 动作                                                                 |
-| ---- | -------------------------------------------- | ------------------------------------------------------------------------ |
-| 1    | 用户完成业务账号登录                         | 业务服务端校验身份，并为该用户签发 OpenIM token。                        |
-| 2    | 客户端准备 SDK 配置                          | 调用 `InitSDK`，传入 API、WS、日志、平台和连接监听配置。                 |
-| 3    | 客户端注册事件监听                           | 登录前注册连接、会话、消息、群组、好友和用户监听器。                    |
-| 4    | 客户端进入 IM 登录                           | 调用 `Login`，传入业务用户 ID 和服务端签发的 token。                     |
-| 5    | 登录成功后进入业务页面                       | 拉取会话、同步消息、补齐用户或群组资料。                                 |
-| 6    | token 过期、无效或账号被踢下线时进入恢复流程 | 重新取 token、重新登录，或清理本地登录态并提示用户重新认证。             |
+## token 边界
 
-## 认证边界
+| 场景 | 处理建议 |
+| ---- | -------- |
+| token 过期 | 从业务服务端刷新 token，再重新调用登录。 |
+| token 无效 | 校验 userID、平台、签发环境和服务端时间。 |
+| 被踢下线 | 通过连接或登录状态事件提示用户，并按业务策略重新登录或切换账号。 |
+| 主动退出 | 调用 `Logout` 后清理业务层用户态缓存和页面状态。 |
 
-| 阶段           | 方法或回调                                    | 说明                                                   |
-| -------------- | --------------------------------------------- | ------------------------------------------------------ |
-| 初始化连接监听 | `InitSDK(listener, operationID, config)`      | `listener` 负责连接、踢下线和 token 状态。             |
-| 用户登录       | `Login(callback, operationID, userID, token)` | token 必须与 `userID` 匹配。                           |
-| 查询登录态     | `GetLoginStatus(operationID)`                 | 用于决定是否允许业务层继续调用消息、群组、用户等接口。 |
-| 查询当前用户   | `GetLoginUserID()`                            | 返回当前登录用户 ID，未初始化时为空字符串。            |
-| token 过期     | `OnUserTokenExpired()`                        | 应重新获取 token 并重新登录。                          |
-| token 无效     | `OnUserTokenInvalid(errMsg)`                  | 应停止当前会话，提示用户重新认证。                     |
-| 被踢下线       | `OnKickedOffline()`                           | 当前账号在其他端或后台策略下被踢出。                   |
-| 退出登录       | `Logout(callback, operationID)`               | 退出当前用户，但不等同于销毁 SDK。                     |
+## 相关错误码
 
-## 登录前置条件
-
-| 条件               | 说明                                                 |
-| ------------------ | ---------------------------------------------------- |
-| SDK 已初始化       | `InitSDK` 返回成功后再登录。                         |
-| 监听器已设置       | 建议在登录前设置会话、消息、群组、好友和用户监听器。 |
-| token 由服务端签发 | 客户端不应持有生成 token 的密钥。                    |
-| 网络地址有效       | `apiAddr` 和 `wsAddr` 必须来自同一套 OpenIM 服务。   |
-
-## token 处理
-
-| 事件                     | 建议处理                                                                 |
-| ------------------------ | ------------------------------------------------------------------------ |
-| token 即将或已经过期     | 向业务服务端重新申请 token，拿到新 token 后重新调用登录流程。            |
-| token 无效               | 不要在客户端本地修补 token，清理当前 IM 登录态并要求用户重新认证。       |
-| userID 与 token 不匹配   | 视为认证错误，停止后续 IM 调用，重新向服务端确认当前业务账号。           |
-| 业务账号切换             | 先退出当前 IM 用户，再使用新账号的 userID 和 token 登录。                |
-
-## 错误处理
-
-| 场景                 | 处理建议                                                            |
-| -------------------- | ------------------------------------------------------------------- |
-| `OnConnectFailed`    | 记录 `errCode`、`errMsg`、`operationID`，检查网络、网关和 ws 地址。 |
-| `OnUserTokenExpired` | 向业务服务端刷新 token，再调用登录流程。                            |
-| `OnUserTokenInvalid` | 清理本地登录态，要求用户重新认证。                                  |
-| `Login` 失败         | 不继续调用会话、消息、群组接口，先处理认证错误。                    |
+| 错误码 | 含义 |
+| ------ | ---- |
+| `1501` | token 已过期。 |
+| `1502` | token 无效。 |
+| `1503` | token 格式错误。 |
+| `1506` | token 对应账号被踢下线。 |
+| `1507` | token 不存在。 |
 
 ## 相关页面
 
 - [SDK 生命周期](/docs/chat/sdk/v4/android/application/overview)
+- [监听器](/docs/chat/sdk/v4/android/event-handler/overview)
 - [错误码](/docs/chat/sdk/v4/android/error-codes)

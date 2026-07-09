@@ -1,6 +1,6 @@
 ---
 title: 'Get login user ID'
-description: 'Explains the Get login user ID method in Flutter SDK 3.8.3+hotfix.12, including purpose, parameters, return value, and usage boundaries.'
+description: 'Explains the Get login user ID method in Flutter SDK v3.8.3, including purpose, parameters, return value, and usage boundaries.'
 product: 'sdk'
 context: 'chat/sdk/v4/flutter'
 template: 'guide'
@@ -11,7 +11,7 @@ platform: 'flutter'
 sourcePath: '/docs/chat/sdk/v4/flutter/application/methods/get-login-user-id'
 ---
 
-Use **Get login user ID** when your application needs this OpenIM capability from Flutter SDK 3.8.3+hotfix.12. This page follows the platform SDK reference and keeps the platform call signature visible next to the underlying core binding.
+Use **Get login user ID** when your application needs this OpenIM capability from Flutter SDK v3.8.3. This page follows the platform SDK reference and keeps the platform call signature visible next to the underlying core binding.
 
 ## Overview
 
@@ -22,12 +22,12 @@ Call `GetLoginUserID` through the platform wrapper to get login user id. The cur
 | Item             | Description                 |
 | ---------------- | --------------------------- |
 | Method signature | `GetLoginUserID() string`   |
-| Capability       | Initialization and login    |
+| Capability       | SDK lifecycle    |
 | Source location  | `open_im_sdk/init_login.go` |
 
 ## Flutter Call Reference
 
-Flutter SDK 3.8.3+hotfix.12 exposes the following platform method signature. The core binding signature above explains the underlying capability and parameter mapping.
+Flutter SDK v3.8.3 exposes the following platform method signature. The core binding signature above explains the underlying capability and parameter mapping.
 
 Source:`lib/src/manager/im_manager.dart`.
 
@@ -47,7 +47,7 @@ Returns `Future<String>`. If the call fails, the Future throws an exception. Cat
 
 ## Code Example
 
-The following example shows the Flutter SDK 3.8.3+hotfix.12 call shape. Replace placeholder values with real business data and add production error handling.
+The following example shows the Flutter SDK v3.8.3 call shape. Replace placeholder values with real business data and add production error handling.
 
 ```java showLineNumbers
 String loginUserID = OpenIMClient.getInstance().getLoginUserID();
@@ -59,4 +59,4 @@ String loginUserID = OpenIMClient.getInstance().getLoginUserID();
 
 ## Related pages
 
-- [Initialization and login](/docs/chat/sdk/v4/flutter/application/overview)
+- [SDK lifecycle](/docs/chat/sdk/v4/flutter/application/overview)

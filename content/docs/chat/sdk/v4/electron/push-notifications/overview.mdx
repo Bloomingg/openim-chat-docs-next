@@ -1,6 +1,6 @@
 ---
 title: 'Overview'
-description: 'Overview methods and related types for Electron SDK v3.8.3-patch.10.'
+description: 'Push notification method index for Electron SDK v3.8.3, limited to FCM token and app badge capabilities.'
 product: 'sdk'
 context: 'chat/sdk/v4/electron'
 template: 'overview'
@@ -10,19 +10,16 @@ version: 'v4'
 platform: 'electron'
 sourcePath: '/docs/chat/sdk/v4/electron/push-notifications/overview'
 ---
-
-This section covers **Overview** for Electron SDK v3.8.3-patch.10. It follows the same capability split as the Chinese documentation, with one page per method and separate pages for common data types.
+Push notifications only covers offline push related capabilities. Client log writing, log upload, and file upload are documented in separate modules.
 
 ## Method Index
 
-| Page     | Description                |
-| -------- | -------------------------- |
-| No pages | No child pages are listed. |
-
-## Related Types
-
-- See [Models](/docs/chat/sdk/v4/electron/models/overview).
+| Method | Description |
+| ------ | ----------- |
+| [Update FCM token](/docs/chat/sdk/v4/electron/push-notifications/methods/update-fcm-token) | Update the current device FCM token so the server can send offline push notifications. |
+| [Set app badge](/docs/chat/sdk/v4/electron/push-notifications/methods/set-app-badge) | Set the application badge unread count after unread state changes. |
 
 ## Related Pages
 
-- [Electron SDK overview](/docs/chat/sdk/v4/electron/overview)
+- [Logger](/docs/chat/sdk/v4/electron/logger/overview)
+- [File upload](/docs/chat/sdk/v4/electron/file/overview)

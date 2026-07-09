@@ -1,6 +1,6 @@
 ---
 title: 'Get login status'
-description: 'Explains the Get login status method in Electron SDK v3.8.3-patch.10, including purpose, parameters, return value, and usage boundaries.'
+description: 'Explains the Get login status method in Electron SDK v3.8.3, including purpose, parameters, return value, and usage boundaries.'
 product: 'sdk'
 context: 'chat/sdk/v4/electron'
 template: 'guide'
@@ -11,7 +11,7 @@ platform: 'electron'
 sourcePath: '/docs/chat/sdk/v4/electron/application/methods/get-login-status'
 ---
 
-Use **Get login status** when your application needs this OpenIM capability from Electron SDK v3.8.3-patch.10. This page follows the platform SDK reference and keeps the platform call signature visible next to the underlying OpenIM core.
+Use **Get login status** when your application needs this OpenIM capability from Electron SDK v3.8.3. This page follows the platform SDK reference and keeps the platform call signature visible next to the underlying OpenIM core.
 
 ## Overview
 
@@ -22,12 +22,12 @@ Call `GetLoginStatus` through the platform wrapper to get login status. The curr
 | Item             | Description                              |
 | ---------------- | ---------------------------------------- |
 | Method signature | `GetLoginStatus(operationID string) int` |
-| Capability       | Initialization and login                 |
+| Capability       | SDK lifecycle                 |
 | Source location  | `open_im_sdk/init_login.go`              |
 
 ## Electron Call Reference
 
-Electron SDK v3.8.3-patch.10 exposes the following platform method signature. The underlying capability table above explains the OpenIM core capability and parameter mapping.
+Electron SDK v3.8.3 exposes the following platform method signature. The underlying capability table above explains the OpenIM core capability and parameter mapping.
 
 Source: `src/core/index.ts`.
 
@@ -47,7 +47,7 @@ Returns a `Promise` or registers a callback result. If the call fails, the Promi
 
 ## Code Example
 
-The following example shows the Electron SDK v3.8.3-patch.10 call shape. Replace placeholder values with real business data and add production error handling.
+The following example shows the Electron SDK v3.8.3 call shape. Replace placeholder values with real business data and add production error handling.
 
 ```ts showLineNumbers
 import { getWithRenderProcess } from '@openim/electron-client-sdk/lib/render';
@@ -63,4 +63,4 @@ const result = await openIM.getLoginStatus();
 
 ## Related pages
 
-- [Initialization and login](/docs/chat/sdk/v4/electron/application/overview)
+- [SDK lifecycle](/docs/chat/sdk/v4/electron/application/overview)

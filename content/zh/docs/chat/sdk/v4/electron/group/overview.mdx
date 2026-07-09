@@ -1,6 +1,6 @@
 ---
 title: '概述'
-description: '群组方法目录，按管理群组、入群申请、用户入群关系、群成员和群组禁言拆分。'
+description: '群组方法目录，汇总管理群组、入群申请、用户入群关系、群成员和群组禁言能力。'
 product: 'sdk'
 context: 'chat/sdk/v4/electron'
 template: 'overview'
@@ -13,35 +13,35 @@ sourcePath: '/docs/chat/sdk/v4/electron/group/overview'
 
 OpenIM Electron SDK 使用群组承载多人聊天能力。本节说明群组创建、资料维护、入群申请、成员管理、入群关系和禁言等能力。
 
-本页是群组方法目录。每个子模块都有独立概述页，每个方法都有独立说明页。
+本页是群组能力的统一概述。二级功能目录不再单独保留概述页，具体接口直接查看对应方法页。
 
 ## 模块索引
 
-| 模块                                                                       | 说明                                                                                     | 方法数 |
-| -------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ------ |
-| [管理群组](/docs/chat/sdk/v4/electron/group/managing-groups/overview)      | 管理群组用于创建群组、维护群资料、查询群资料、搜索群组、转让群主和解散群组。             | 6      |
-| [入群申请](/docs/chat/sdk/v4/electron/group/group-applications/overview)   | 入群申请用于处理用户主动申请加入群组，以及群主或管理员审核申请的流程。                   | 6      |
-| [用户入群关系](/docs/chat/sdk/v4/electron/group/group-membership/overview) | 用户入群关系用于判断当前用户或指定用户与群组之间的加入关系，并查询当前用户已加入的群组。 | 5      |
-| [群成员](/docs/chat/sdk/v4/electron/group/group-members/overview)          | 群成员用于邀请或移出成员、维护成员资料，以及按条件查询和搜索群成员。                     | 8      |
-| [群组禁言](/docs/chat/sdk/v4/electron/group/group-moderation/overview)     | 群组禁言用于控制群内发言状态，包括开启或关闭全群禁言，以及为指定成员设置禁言时长。       | 2      |
+| 模块                         | 说明                                                                                     | 方法数 |
+| ---------------------------- | ---------------------------------------------------------------------------------------- | ------ |
+| [管理群组](#管理群组)        | 管理群组用于创建群组、维护群资料、查询群资料、搜索群组、转让群主和解散群组。             | 6      |
+| [入群申请](#入群申请)        | 入群申请用于处理用户主动申请加入群组，以及群主或管理员审核申请的流程。                   | 6      |
+| [用户入群关系](#用户入群关系) | 用户入群关系用于判断当前用户或指定用户与群组之间的加入关系，并查询当前用户已加入的群组。 | 5      |
+| [群成员](#群成员)            | 群成员用于邀请或移出成员、维护成员资料，以及按条件查询和搜索群成员。                     | 8      |
+| [群组禁言](#群组禁言)        | 群组禁言用于控制群内发言状态，包括开启或关闭全群禁言，以及为指定成员设置禁言时长。       | 2      |
 
 ## 方法索引
 
 ### 管理群组
 
-| 方法                                                                                           | 说明                                                                   |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| 方法                                                                                          | 说明                                                                   |
+| --------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
 | [创建群组](/docs/chat/sdk/v4/electron/group/managing-groups/create-group)                      | 创建一个 OpenIM 群组。适合发起群聊、创建项目群或从业务组织关系生成群。 |
 | [更新群资料](/docs/chat/sdk/v4/electron/group/managing-groups/set-group-info)                  | 更新群资料，例如群名称、头像、公告或扩展字段。                         |
-| [获取指定群组资料](/docs/chat/sdk/v4/electron/group/managing-groups/get-specified-groups-info) | 批量获取指定群组资料，适合会话列表补齐群信息或刷新部分群资料。         |
+| [获取群信息](/docs/chat/sdk/v4/electron/group/managing-groups/get-specified-groups-info)       | 批量获取群信息，适合会话列表补齐群资料或刷新部分群资料。               |
 | [搜索群组](/docs/chat/sdk/v4/electron/group/managing-groups/search-groups)                     | 按关键字搜索群组，可按群 ID、群名称等字段搜索。                        |
 | [转让群主](/docs/chat/sdk/v4/electron/group/managing-groups/transfer-group-owner)              | 将群主转让给指定成员，通常只允许当前群主执行。                         |
 | [解散群组](/docs/chat/sdk/v4/electron/group/managing-groups/dismiss-group)                     | 解散指定群组，通常要求当前用户具备群主或管理权限。                     |
 
 ### 入群申请
 
-| 方法                                                                                                              | 说明                                                         |
-| ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| 方法                                                                                                             | 说明                                                         |
+| ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
 | [申请加入群组](/docs/chat/sdk/v4/electron/group/group-applications/join-group)                                    | 申请加入指定群组。是否直接入群取决于群设置和服务端审核策略。 |
 | [获取收到的入群申请](/docs/chat/sdk/v4/electron/group/group-applications/get-group-application-list-as-recipient) | 获取当前用户作为群管理者收到的入群申请列表。                 |
 | [获取发出的入群申请](/docs/chat/sdk/v4/electron/group/group-applications/get-group-application-list-as-applicant) | 获取当前用户自己提交的入群申请列表。                         |
@@ -51,8 +51,8 @@ OpenIM Electron SDK 使用群组承载多人聊天能力。本节说明群组创
 
 ### 用户入群关系
 
-| 方法                                                                                               | 说明                                                                   |
-| -------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| 方法                                                                                              | 说明                                                                   |
+| ------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
 | [获取已加入群组](/docs/chat/sdk/v4/electron/group/group-membership/get-joined-group-list)          | 获取当前用户已加入的全部群组，适合群列表首屏加载或登录后同步。         |
 | [分页获取已加入群组](/docs/chat/sdk/v4/electron/group/group-membership/get-joined-group-list-page) | 分页获取当前用户已加入群组，适合群数量较多的账号。                     |
 | [判断是否已入群](/docs/chat/sdk/v4/electron/group/group-membership/is-join-group)                  | 判断当前用户是否已经加入指定群组，适合展示入群按钮或发送群消息前校验。 |
@@ -61,8 +61,8 @@ OpenIM Electron SDK 使用群组承载多人聊天能力。本节说明群组创
 
 ### 群成员
 
-| 方法                                                                                                           | 说明                                                                     |
-| -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| 方法                                                                                                          | 说明                                                                     |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
 | [邀请用户入群](/docs/chat/sdk/v4/electron/group/group-members/invite-user-to-group)                            | 邀请一批用户加入群组。是否直接加入取决于群设置和服务端策略。             |
 | [移出群成员](/docs/chat/sdk/v4/electron/group/group-members/kick-group-member)                                 | 将一批成员移出群组，通常要求操作者具备管理权限。                         |
 | [更新群成员资料](/docs/chat/sdk/v4/electron/group/group-members/set-group-member-info)                         | 更新群成员资料，例如群昵称、角色相关扩展或其他成员字段。                 |
@@ -74,8 +74,8 @@ OpenIM Electron SDK 使用群组承载多人聊天能力。本节说明群组创
 
 ### 群组禁言
 
-| 方法                                                                                       | 说明                                               |
-| ------------------------------------------------------------------------------------------ | -------------------------------------------------- |
+| 方法                                                                                      | 说明                                               |
+| ----------------------------------------------------------------------------------------- | -------------------------------------------------- |
 | [设置群禁言](/docs/chat/sdk/v4/electron/group/group-moderation/change-group-mute)          | 开启或关闭全群禁言。适合群管理者控制群内发言状态。 |
 | [设置成员禁言](/docs/chat/sdk/v4/electron/group/group-moderation/change-group-member-mute) | 设置指定群成员禁言时长。适合临时限制单个成员发言。 |
 
@@ -88,4 +88,10 @@ OpenIM Electron SDK 使用群组承载多人聊天能力。本节说明群组创
 - [群组信息](/docs/chat/sdk/v4/electron/models/group-info)（`GroupInfo`）：群组资料对象，包含群名、公告、群主、成员数和入群设置。
 - [群成员信息](/docs/chat/sdk/v4/electron/models/group-members-info)（`GroupMembersInfo`）：群成员资料对象，包含角色、入群时间和群昵称等信息。
 - [群申请信息](/docs/chat/sdk/v4/electron/models/group-application-info)（`GroupApplicationInfo`）：入群申请记录，用于申请列表和审核流程。
+- [收到的群申请查询条件](/docs/chat/sdk/v4/electron/models/get-group-application-list-as-recipient-req)（`GetGroupApplicationListAsRecipientReq`）：查询收到的入群申请时使用的分页条件。
+- [发出的群申请查询条件](/docs/chat/sdk/v4/electron/models/get-group-application-list-as-applicant-req)（`GetGroupApplicationListAsApplicantReq`）：查询当前用户发出的入群申请时使用的分页条件。
+- [入群来源](/docs/chat/sdk/v4/electron/models/join-source)（`JoinSource`）：描述用户进入群组的来源。
+- [群成员设置请求](/docs/chat/sdk/v4/electron/models/set-group-member-info)（`SetGroupMemberInfo`）：更新群成员资料时使用的请求对象。
+- [群成员筛选类型](/docs/chat/sdk/v4/electron/models/group-member-filter)（`GroupMemberFilter`）：获取群成员列表时使用的成员筛选类型。
 - [群组监听器](/docs/chat/sdk/v4/electron/models/on-group-listener)（`OnGroupListener`）：群组、入群申请和群成员变化监听器。
+- [通用回调](/docs/chat/sdk/v4/electron/models/on-base)（`OnBase`）：Electron SDK 异步方法的通用成功和失败回调。

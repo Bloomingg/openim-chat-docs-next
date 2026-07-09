@@ -1,6 +1,6 @@
 ---
 title: 'Delete Conversation And Delete All Msg'
-description: 'Explains the Delete Conversation And Delete All Msg method in iOS Core SDK 3.8.3-hotfix.14-dynamic.1, including purpose, parameters, return value, and usage boundaries.'
+description: 'Explains the Delete Conversation And Delete All Msg method in iOS Core SDK v3.8.3, including purpose, parameters, return value, and usage boundaries.'
 product: 'sdk'
 context: 'chat/sdk/v4/ios'
 template: 'guide'
@@ -11,7 +11,7 @@ platform: 'ios'
 sourcePath: '/docs/chat/sdk/v4/ios/message/deleting-messages/delete-conversation-and-delete-all-msg'
 ---
 
-Use **Delete Conversation And Delete All Msg** when your application needs this OpenIM capability from iOS Core SDK 3.8.3-hotfix.14-dynamic.1. This page follows the platform SDK reference and keeps the platform call signature visible next to the underlying core binding.
+Use **Delete Conversation And Delete All Msg** when your application needs this OpenIM capability from iOS Core SDK v3.8.3. This page follows the platform SDK reference and keeps the platform call signature visible next to the underlying core binding.
 
 ## Overview
 
@@ -27,7 +27,7 @@ Call `DeleteConversationAndDeleteAllMsg` through the platform wrapper to delete 
 
 ## iOS Call Reference
 
-iOS Core SDK 3.8.3-hotfix.14-dynamic.1 exposes the following platform method signature. The core binding signature above explains the underlying capability and parameter mapping.
+iOS Core SDK v3.8.3 exposes the following platform method signature. The core binding signature above explains the underlying capability and parameter mapping.
 
 Source:`Framework/OpenIMCore.xcframework/.../Open_im_sdk.objc.h`.
 
@@ -39,7 +39,7 @@ FOUNDATION_EXPORT void Open_im_sdkDeleteConversationAndDeleteAllMsg(id<Open_im_s
 
 | Parameter      | Type                               | Required   | Description                                  |
 | -------------- | ---------------------------------- | ---------- | -------------------------------------------- |
-| callback       | id&lt;Open_im_sdk_callbackBase&gt; | Yes        | Callback or listener.                        |
+| callback       | `id<Open_im_sdk_callbackBase>` | Yes        | Callback or listener.                        |
 | conversationID | NSString\*                         | As defined | Conversation ID or list of conversation IDs. |
 
 ## Return Value
@@ -48,7 +48,7 @@ Synchronous creation methods return a value directly. Asynchronous methods repor
 
 ## Code Example
 
-The following example shows the iOS Core SDK 3.8.3-hotfix.14-dynamic.1 call shape. Replace placeholder values with real business data and add production error handling.
+The following example shows the iOS Core SDK v3.8.3 call shape. Replace placeholder values with real business data and add production error handling.
 
 ```objective-c showLineNumbers
 Open_im_sdkDeleteConversationAndDeleteAllMsg(callback, @"operationID", @"conversationID");

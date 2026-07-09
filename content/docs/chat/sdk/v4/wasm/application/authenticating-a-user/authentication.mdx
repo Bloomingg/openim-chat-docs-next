@@ -1,151 +1,49 @@
 ---
-title: 'Authentication'
-description: 'OpenIM WASM SDK guide for Authentication, with API signatures, usage details, and verification steps.'
+title: 'Authentication flow'
+description: 'Explains the authentication flow, token boundaries, and login-state handling for WASM SDK v3.8.3.'
 product: 'sdk'
 context: 'chat/sdk/v4/wasm'
 template: 'guide'
 status: 'draft'
-lastUpdated: '2026-06-26'
+lastUpdated: '2026-07-09'
 version: 'v4'
 platform: 'wasm'
 sourcePath: '/docs/chat/sdk/v4/wasm/application/authenticating-a-user/authentication'
 ---
+Authentication uses a user token issued by your backend service. The client initializes the SDK, registers listeners, logs in with userID and token, and keeps UI state in sync with connection events and login status.
 
-## Overview
+## Authentication Order
 
-Authenticate a WASM user by creating the SDK instance, registering connection listeners, calling `login()`, and handling token lifecycle events.
+| Step | Action | Description |
+| ---- | ------ | ----------- |
+| 1 | Get userID and token | Request the current user's OpenIM userID and token from your backend service. |
+| 2 | Initialize the SDK | Call [Initialize the SDK](/docs/chat/sdk/v4/wasm/application/methods/init-sdk) with API address, WebSocket address, platform information, and log settings. |
+| 3 | Register listeners | Register at least the connection listener. Register conversation, message, friend, group, and user listeners before login when those events are needed. |
+| 4 | Log in | Call [Login](/docs/chat/sdk/v4/wasm/application/methods/login) with userID and token. |
+| 5 | Handle state | Use connection callbacks, [Get login status](/docs/chat/sdk/v4/wasm/application/methods/get-login-status), and API results to decide when user-scoped APIs are available. |
+| 6 | Logout or refresh token | When the token expires, becomes invalid, or the user is kicked offline, call [Log out](/docs/chat/sdk/v4/wasm/application/methods/logout) and refresh the token before logging in again if needed. |
 
-This guide uses public OpenIM WASM SDK signatures and assumes the SDK version is compatible with OpenIM Server.
+## Token Boundaries
 
-## OpenIM model
+| Scenario | Handling |
+| -------- | -------- |
+| Token expired | Refresh the token through your backend, then call login again. |
+| Token invalid | Check userID, platform, issuing environment, and server time. |
+| Kicked offline | Notify the user through connection or login-state events, then follow your account-switch or re-login policy. |
+| User logs out | Call `Logout`, then clear app-level user state and page state. |
 
-Browser clients should receive `userID` and token from a trusted backend. `login()` starts the session; the connection callbacks tell the UI when the WebSocket is actually ready.
+## Related Error Codes
 
-Support status: public WASM SDK APIs cover this workflow.
+| Code | Meaning |
+| ---- | ------- |
+| `1501` | Token expired. |
+| `1502` | Token invalid. |
+| `1503` | Token malformed. |
+| `1506` | Token account was kicked offline. |
+| `1507` | Token does not exist. |
 
-Key concepts to keep straight:
+## Related Pages
 
-- `userID` identifies an OpenIM user.
-- `conversationID` identifies a local conversation row.
-- `recvID` sends a direct message to one user.
-- `groupID` sends to or operates on a group conversation.
-- `operationID` is optional on most methods and is useful for tracing client/server logs.
-
-## Prerequisites
-
-- Install an OpenIM WASM SDK version that is compatible with OpenIM Server.
-- Serve `openIM.wasm`, `sql-wasm.wasm`, and `wasm_exec.js` from the browser app public path.
-- Create one SDK instance with `getSDK()` and call `login()` with `userID`, token, `platformID: 5`, `apiAddr`, and `wsAddr`.
-
-## API signatures
-
-Relevant public signatures:
-
-```ts
-function getSDK(config?: WasmPathConfig): SDK;
-login: (params: InitAndLoginConfig, operationID?: string) => Promise<any>;
-logout: <T>(operationID?: string) => Promise<WsResponse<T>>;
-getLoginStatus: (operationID?: string) => Promise<WsResponse<LoginStatus>>;
-getLoginUserID: (operationID?: string) => Promise<WsResponse<string>>;
-```
-
-Relevant events:
-
-```ts
-on<E extends CbEvents>(event: E, fn: Cbfn<E>): this;
-off<E extends CbEvents>(event: E, fn: Cbfn<E>): this | undefined;
-CbEvents.OnConnecting
-CbEvents.OnConnectSuccess
-CbEvents.OnConnectFailed
-CbEvents.OnKickedOffline
-CbEvents.OnUserTokenExpired
-CbEvents.OnUserTokenInvalid
-```
-
-Response and event payloads use these common shapes:
-
-```ts
-type WsResponse<T> = {
-  event: string;
-  errCode: number;
-  errMsg: string;
-  data: T;
-  operationID: string;
-};
-type WSEvent<T = unknown> = {
-  event: CbEvents;
-  data: T;
-  errCode: number;
-  errMsg: string;
-  operationID: string;
-};
-```
-
-## Implementation
-
-Create and reuse one SDK instance in the browser session.
-
-```ts
-import { CbEvents, getSDK } from '@openim/wasm-client-sdk';
-
-const OpenIM = getSDK({
-  coreWasmPath: '/openIM.wasm',
-  sqlWasmPath: '/sql-wasm.wasm',
-});
-
-OpenIM.on(CbEvents.OnConnectSuccess, () => {
-  console.info('OpenIM connected');
-});
-
-await OpenIM.login({
-  userID,
-  token,
-  platformID: 5,
-  apiAddr,
-  wsAddr,
-});
-```
-
-Register token and kick-offline handlers before calling `login()`.
-
-```ts
-OpenIM.on(CbEvents.OnUserTokenExpired, requestFreshToken);
-OpenIM.on(CbEvents.OnUserTokenInvalid, forceSignOut);
-OpenIM.on(CbEvents.OnKickedOffline, showSignedInElsewhereDialog);
-
-await OpenIM.login({ userID, token, platformID: 5, apiAddr, wsAddr });
-
-const { data: loginStatus } = await OpenIM.getLoginStatus();
-```
-
-Call `logout()` before switching accounts in the same browser session.
-
-## Returned data and events
-
-The SDK response `data` field contains the updated OpenIM object or operation result. Persist IDs such as `conversationID`, `groupID`, and `clientMsgID` in your application state.
-
-Watch these callbacks while testing: `CbEvents.OnConnecting`, `CbEvents.OnConnectSuccess`, `CbEvents.OnConnectFailed`, `CbEvents.OnKickedOffline`, `CbEvents.OnUserTokenExpired`, `CbEvents.OnUserTokenInvalid`.
-
-Always log `operationID` with failures. It is the fastest way to match browser behavior with OpenIM server logs.
-
-## Verify the result
-
-- Confirm `login()` succeeds and `CbEvents.OnConnectSuccess` fires before calling the task API.
-- Confirm the OpenIM call resolves and the returned data or follow-up SDK event matches the expected state.
-- Confirm the expected SDK event fires in another signed-in browser session when the action should be visible to other users.
-
-## Troubleshooting
-
-| Case                           | Cause                                                                 | Handling                                                                                               |
-| ------------------------------ | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| WASM asset requests return 404 | The SDK assets were not copied to the app public path.                | Copy `openIM.wasm`, `sql-wasm.wasm`, and `wasm_exec.js` from the npm package assets directory.         |
-| The client never connects      | `apiAddr`, `wsAddr`, token, platform ID, or network routing is wrong. | Register connection events before `login()` and test the API and WebSocket URLs from the same browser. |
-| The SDK call rejects | The server rejected the request or the current user lacks permission. | Handle the error in `catch`, log the rejected error with `operationID`, and verify group role, token, and target IDs. |
-
-## Next steps
-
-- [WASM SDK overview](/docs/chat/sdk/v4/wasm/overview)
-- [Authentication](/docs/chat/sdk/v4/wasm/application/authenticating-a-user/authentication)
-- [Send your first message](/docs/chat/sdk/v4/wasm/getting-started/send-first-message)
-- [Send a message](/docs/chat/sdk/v4/wasm/message/sending-messages/send-message)
-- [Message listeners](/docs/chat/sdk/v4/wasm/event-handler/methods/set-advanced-msg-listener)
+- [SDK lifecycle](/docs/chat/sdk/v4/wasm/application/overview)
+- [Event handlers](/docs/chat/sdk/v4/wasm/event-handler/overview)
+- [Error codes](/docs/chat/sdk/v4/wasm/error-codes)

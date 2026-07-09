@@ -24,12 +24,12 @@ sourcePath: '/docs/chat/sdk/v4/electron/application/methods/get-login-user-id'
 | 项目     | 说明                        |
 | -------- | --------------------------- |
 | 方法签名 | `GetLoginUserID() string`   |
-| 所属能力 | 初始化与登录                |
+| 所属能力 | SDK 生命周期                |
 | 源码位置 | `open_im_sdk/init_login.go` |
 
 ## Electron 调用参考
 
-Electron SDK v3.8.3-patch.10 暴露以下平台方法原型。底层能力表用于说明 OpenIM core 能力和参数映射。
+Electron SDK v3.8.3 暴露以下平台方法原型。底层能力表用于说明 OpenIM core 能力和参数映射。
 
 源码位置：`src/core/index.ts`。
 
@@ -49,7 +49,7 @@ getLoginUser((opid = uuidV4()));
 
 ## 代码示例
 
-以下示例展示 Electron SDK v3.8.3-patch.10 的调用骨架，请按业务上下文补充真实参数、错误处理和 UI 状态更新。
+以下示例展示 Electron SDK v3.8.3 的调用骨架，请按业务上下文补充真实参数、错误处理和 UI 状态更新。
 
 ```ts showLineNumbers
 import { getWithRenderProcess } from '@openim/electron-client-sdk/lib/render';
@@ -61,4 +61,4 @@ const result = await openIM.getLoginUser();
 
 ## 相关页面
 
-- [初始化与登录](/docs/chat/sdk/v4/electron/application/overview)
+- [SDK 生命周期](/docs/chat/sdk/v4/electron/application/overview)

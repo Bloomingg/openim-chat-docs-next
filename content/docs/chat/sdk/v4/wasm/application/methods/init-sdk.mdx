@@ -1,6 +1,6 @@
 ---
 title: 'Initialize the SDK'
-description: 'Explains the Initialize the SDK method in WASM SDK v3.8.3-patch.10, including purpose, parameters, return value, and usage boundaries.'
+description: 'Explains the Initialize the SDK method in WASM SDK v3.8.3, including purpose, parameters, return value, and usage boundaries.'
 product: 'sdk'
 context: 'chat/sdk/v4/wasm'
 template: 'guide'
@@ -11,7 +11,7 @@ platform: 'wasm'
 sourcePath: '/docs/chat/sdk/v4/wasm/application/methods/init-sdk'
 ---
 
-Use **Initialize the SDK** when your application needs this OpenIM capability from WASM SDK v3.8.3-patch.10. This page follows the platform SDK reference and keeps the platform call signature visible next to the underlying OpenIM core.
+Use **Initialize the SDK** when your application needs this OpenIM capability from WASM SDK v3.8.3. This page follows the platform SDK reference and keeps the platform call signature visible next to the underlying OpenIM core.
 
 ## Overview
 
@@ -22,12 +22,12 @@ Call `InitSDK` through the platform wrapper to initialize the sdk. The current u
 | Item             | Description                                                                |
 | ---------------- | -------------------------------------------------------------------------- |
 | Method signature | `InitSDK(listener OnConnListener, operationID string, config string) bool` |
-| Capability       | Initialization and login                                                   |
+| Capability       | SDK lifecycle                                                   |
 | Source location  | `open_im_sdk/init_login.go`                                                |
 
 ## WASM Call Reference
 
-WASM SDK v3.8.3-patch.10 initializes the browser SDK instance with `getSDK(config)`. This creates or returns the singleton SDK instance and configures the WASM asset paths used by the browser runtime.
+WASM SDK v3.8.3 initializes the browser SDK instance with `getSDK(config)`. This creates or returns the singleton SDK instance and configures the WASM asset paths used by the browser runtime.
 
 Source: `src/sdk/index.ts`.
 
@@ -47,7 +47,7 @@ Returns the SDK instance. Repeated calls return the same instance in the current
 
 ## Code Example
 
-The following example shows the WASM SDK v3.8.3-patch.10 initialization shape. Publish the WASM assets in your web app before calling `getSDK()`.
+The following example shows the WASM SDK v3.8.3 initialization shape. Publish the WASM assets in your web app before calling `getSDK()`.
 
 ```ts showLineNumbers
 import { getSDK } from '@openim/wasm-client-sdk';
@@ -66,4 +66,4 @@ const openIM = getSDK({
 
 ## Related pages
 
-- [Initialization and login](/docs/chat/sdk/v4/wasm/application/overview)
+- [SDK lifecycle](/docs/chat/sdk/v4/wasm/application/overview)

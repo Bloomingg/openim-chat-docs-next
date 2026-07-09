@@ -1,26 +1,23 @@
 ---
 title: '概述'
-description: '推送通知方法目录，所有方法均拆分到独立页面说明。'
+description: '推送通知方法目录，只保留 FCM token 和应用角标能力。'
 product: 'sdk'
 context: 'chat/sdk/v4/android'
 template: 'overview'
 status: 'draft'
-lastUpdated: '2026-07-08'
+lastUpdated: '2026-07-09'
 version: 'v4'
 platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/push-notifications/overview'
 ---
-
-推送通知能力来自 `open_im_sdk/third.go`。当前 Android core 只暴露 FCM token 更新和应用角标设置；HMS、多设备推送模板和推送测试器当前不是 core 的独立导出方法。
-
-本页是推送通知方法目录。日志和文件上传能力已拆到独立分类。
+推送通知页面只保留离线推送相关能力。日志写入、日志上传和文件上传已拆分到独立模块。
 
 ## 方法索引
 
-| 方法                                                                                    | 说明                                                                            |
-| --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| [更新 FCM Token](/docs/chat/sdk/v4/android/push-notifications/methods/update-fcm-token) | 更新当前设备的 FCM token，用于服务端向 Android 设备发送离线推送。               |
-| [设置应用角标](/docs/chat/sdk/v4/android/push-notifications/methods/set-app-badge)      | 设置应用角标未读数，适合未读数变化后同步系统角标。                              |
+| 方法 | 说明 |
+| ---- | ---- |
+| [更新 FCM Token](/docs/chat/sdk/v4/android/push-notifications/methods/update-fcm-token) | 更新当前设备的 FCM token，用于服务端向设备发送离线推送。 |
+| [设置应用角标](/docs/chat/sdk/v4/android/push-notifications/methods/set-app-badge) | 设置应用角标未读数，适合未读数变化后同步系统角标。 |
 
 ## 相关页面
 

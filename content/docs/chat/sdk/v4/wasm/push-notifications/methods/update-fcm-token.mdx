@@ -1,6 +1,6 @@
 ---
 title: 'Update FCM token'
-description: 'Explains the Update FCM token method in WASM SDK v3.8.3-patch.10, including purpose, parameters, return value, and usage boundaries.'
+description: 'Explains the Update FCM token method in WASM SDK v3.8.3, including purpose, parameters, return value, and usage boundaries.'
 product: 'sdk'
 context: 'chat/sdk/v4/wasm'
 template: 'guide'
@@ -11,7 +11,7 @@ platform: 'wasm'
 sourcePath: '/docs/chat/sdk/v4/wasm/push-notifications/methods/update-fcm-token'
 ---
 
-Use **Update FCM token** when your application needs this OpenIM capability from WASM SDK v3.8.3-patch.10. This page follows the platform SDK reference and keeps the platform call signature visible next to the underlying OpenIM core.
+Use **Update FCM token** when your application needs this OpenIM capability from WASM SDK v3.8.3. This page follows the platform SDK reference and keeps the platform call signature visible next to the underlying OpenIM core.
 
 ## Overview
 
@@ -22,12 +22,12 @@ Call `UpdateFcmToken` through the platform wrapper to update fcm token. The curr
 | Item             | Description                                                                     |
 | ---------------- | ------------------------------------------------------------------------------- |
 | Method signature | `UpdateFcmToken(callback Base, operationID, fcmToken string, expireTime int64)` |
-| Capability       | Push, logs, and files                                                           |
+| Capability       | Push notifications                                                           |
 | Source location  | `open_im_sdk/third.go`                                                          |
 
 ## WASM Call Reference
 
-WASM SDK v3.8.3-patch.10 does not expose an independent `updateFcmToken` platform method. This page keeps the underlying capability notes without presenting another platform wrapper as the current WASM API.
+WASM SDK v3.8.3 does not expose an independent `updateFcmToken` platform method. This page keeps the underlying capability notes without presenting another platform wrapper as the current WASM API.
 
 ## Parameters
 
@@ -39,7 +39,7 @@ No platform return value is available because this SDK does not expose an indepe
 
 ## Code Example
 
-WASM SDK v3.8.3-patch.10 does not expose an independent `updateFcmToken` method, so there is no platform code example for this page.
+WASM SDK v3.8.3 does not expose an independent `updateFcmToken` method, so there is no platform code example for this page.
 
 ## Related types
 
@@ -47,4 +47,4 @@ WASM SDK v3.8.3-patch.10 does not expose an independent `updateFcmToken` method,
 
 ## Related pages
 
-- [Push, logs, and files](/docs/chat/sdk/v4/wasm/push-notifications/overview)
+- [Push notifications](/docs/chat/sdk/v4/wasm/push-notifications/overview)

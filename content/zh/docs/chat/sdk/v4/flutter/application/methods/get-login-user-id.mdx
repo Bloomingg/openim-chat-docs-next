@@ -24,12 +24,12 @@ sourcePath: '/docs/chat/sdk/v4/flutter/application/methods/get-login-user-id'
 | 项目     | 说明                        |
 | -------- | --------------------------- |
 | 方法签名 | `GetLoginUserID() string`   |
-| 所属能力 | 初始化与登录                |
+| 所属能力 | SDK 生命周期                |
 | 源码位置 | `open_im_sdk/init_login.go` |
 
 ## Flutter 调用参考
 
-Flutter SDK 3.8.3+hotfix.12 的 Dart 方法原型如下。Core binding 方法签名用于说明底层能力和参数映射。
+Flutter SDK v3.8.3 的 Dart 方法原型如下。Core binding 方法签名用于说明底层能力和参数映射。
 
 源码位置：`lib/src/manager/im_manager.dart`。
 
@@ -49,7 +49,7 @@ Future<String> getLoginUserID()
 
 ## 代码示例
 
-以下示例展示 Flutter SDK 3.8.3+hotfix.12 的调用方式。
+以下示例展示 Flutter SDK v3.8.3 的调用方式。
 
 ```java showLineNumbers
 String loginUserID = OpenIMClient.getInstance().getLoginUserID();
@@ -57,4 +57,4 @@ String loginUserID = OpenIMClient.getInstance().getLoginUserID();
 
 ## 相关页面
 
-- [初始化与登录](/docs/chat/sdk/v4/flutter/application/overview)
+- [SDK 生命周期](/docs/chat/sdk/v4/flutter/application/overview)

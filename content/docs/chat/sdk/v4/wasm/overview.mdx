@@ -1,6 +1,6 @@
 ---
 title: 'OpenIM WASM SDK overview'
-description: 'WASM SDK v3.8.3-patch.10 documentation organized by OpenIM SDK capabilities.'
+description: 'WASM SDK v3.8.3 documentation organized by OpenIM SDK capabilities.'
 product: 'sdk'
 context: 'chat/sdk/v4/wasm'
 template: 'overview'
@@ -10,36 +10,40 @@ version: 'v4'
 platform: 'wasm'
 sourcePath: '/docs/chat/sdk/v4/wasm/overview'
 ---
+This documentation set follows the current OpenIM SDK capability model and the public methods exposed by WASM SDK v3.8.3. Each method page covers the platform call shape, parameters, return value, and usage boundaries.
 
-This documentation set describes WASM SDK v3.8.3-patch.10. It is organized by OpenIM SDK capabilities: initialization, login, event handlers, users, friends, blacklist, groups, conversations, messages, push, logs, files, and common models.
-
-Each exported method has its own page with the platform method signature, parameters, return value, example shape, related types, and related pages.
+The pages describe how the platform wrapper maps to OpenIM core capabilities. Platform method names and parameter wrappers can differ; when the wrapper differs from the core export, follow the platform SDK v3.8.3 signature shown on the method page.
 
 ## Integration Model
 
-| Model            | Description                                                                                           |
-| ---------------- | ----------------------------------------------------------------------------------------------------- |
-| Initialization   | Configure API address, WebSocket address, local data directory, logging, and the connection listener. |
-| Login state      | Register listeners before login when possible, then call the login API with a backend-issued token.   |
-| Async result     | Use the platform result model: Future, Promise, or callback depending on the SDK.                     |
-| Message creation | Create local message objects first, then pass them to the send APIs.                                  |
-| operationID      | Generate a traceable operationID for each business operation.                                         |
+| Model | Description |
+| ----- | ----------- |
+| Initialization | Configure the API address, WebSocket address, local data directory, logging, and connection listener. |
+| Login state | Register listeners before login when possible, then call the login API with a backend-issued token. |
+| Async result | Platform methods return results through Promise, Future, or callback patterns depending on the SDK. |
+| Message creation | Create local message objects with `Create*Message` methods before sending them. |
+| operationID | Generate a traceable operationID for each business operation so client and server logs can be correlated. |
 
 ## Capability Pages
 
-| Page                                                                          | Scope                                                                                                    |
-| ----------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [Integration flow](/docs/chat/sdk/v4/wasm/getting-started/send-first-message) | Initialization, listeners, login, and the first-message sequence.                                        |
-| [Initialization and login](/docs/chat/sdk/v4/wasm/application/overview)       | SDK lifecycle, login, logout, and login status.                                                          |
-| [Event handlers](/docs/chat/sdk/v4/wasm/event-handler/overview)               | Connection, user, friend, group, conversation, message, and custom business callbacks.                   |
-| [User](/docs/chat/sdk/v4/wasm/user/overview)                                  | User profile, user commands, and presence subscription.                                                  |
-| [Friends](/docs/chat/sdk/v4/wasm/user/friend/overview)                        | Friend list, friend info, friend search, friend applications, and relationship updates.                  |
-| [Blacklist](/docs/chat/sdk/v4/wasm/user/blacklist/overview)                   | Add, list, and remove blacklist entries.                                                                 |
-| [Group](/docs/chat/sdk/v4/wasm/group/overview)                                | Group creation, applications, membership, members, moderation, and ownership.                            |
-| [Conversations and messages](/docs/chat/sdk/v4/wasm/message/overview)         | Conversation lists, message creation, sending, history, read status, deletion, search, and typing state. |
-| [Push, logs, and files](/docs/chat/sdk/v4/wasm/push-notifications/overview)   | Push token, badge, log upload, client logs, and file upload.                                             |
-| [Models](/docs/chat/sdk/v4/wasm/models/overview)                              | Common data models, enums, listeners, and callbacks.                                                     |
+| Page | Scope |
+| ---- | ----- |
+| [Integration flow](/docs/chat/sdk/v4/wasm/getting-started/send-first-message) | Initialization, listeners, login, and the first-message sequence. |
+| [SDK lifecycle](/docs/chat/sdk/v4/wasm/application/overview) | SDK initialization, login, logout, login status, and foreground/background state. |
+| [Authentication flow](/docs/chat/sdk/v4/wasm/application/authenticating-a-user/authentication) | Token handling, connection listener behavior, login status, and logout boundaries. |
+| [Event handlers](/docs/chat/sdk/v4/wasm/event-handler/overview) | Connection, user, friend, group, conversation, message, custom business, and message KV callbacks. |
+| [User](/docs/chat/sdk/v4/wasm/user/overview) | User profiles, user commands, and presence subscription. |
+| [Friends](/docs/chat/sdk/v4/wasm/user/overview#friends) | Friend list, friend info, friend search, friend applications, and relationship updates. |
+| [Blacklist](/docs/chat/sdk/v4/wasm/user/overview#blacklist) | Add, list, and remove blacklist entries. |
+| [Group](/docs/chat/sdk/v4/wasm/group/overview) | Group creation, applications, membership, members, moderation, and ownership. |
+| [Conversations and messages](/docs/chat/sdk/v4/wasm/message/overview) | Conversation lists, message creation, sending, history, read status, deletion, search, and typing state. |
+| [Push notifications](/docs/chat/sdk/v4/wasm/push-notifications/overview) | FCM token and application badge updates. |
+| [Logger](/docs/chat/sdk/v4/wasm/logger/overview) | SDK log configuration, writing client logs, and uploading logs. |
+| [File upload](/docs/chat/sdk/v4/wasm/file/overview) | Upload files through the object storage path configured for the SDK. |
+| [Models](/docs/chat/sdk/v4/wasm/models/overview) | Common models, enums, listeners, and callbacks. |
+| [Error codes](/docs/chat/sdk/v4/wasm/error-codes) | SDK core, server, and WebSocket protocol marker error-code enumeration. |
+| [Unsupported or unexposed capabilities](/docs/chat/sdk/v4/wasm/deprecated) | Capability boundaries that are not exposed by the current SDK. |
 
 ## Currently Unavailable Capabilities
 
-WASM SDK v3.8.3-patch.10 does not expose standalone methods for public group variants, polls, scheduled messages, message threads, translation, independent reports, group metadata, or metacounters. Add these pages only after the platform SDK exposes corresponding methods.
+WASM SDK v3.8.3 does not expose standalone methods for public group variants, polls, scheduled messages, message threads, translation, independent reports, group metadata, or metacounters. Add these pages only after the platform SDK exposes corresponding methods.

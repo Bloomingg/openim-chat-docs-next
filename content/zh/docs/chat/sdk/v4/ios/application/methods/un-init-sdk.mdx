@@ -24,12 +24,12 @@ sourcePath: '/docs/chat/sdk/v4/ios/application/methods/un-init-sdk'
 | 项目     | 说明                            |
 | -------- | ------------------------------- |
 | 方法签名 | `UnInitSDK(operationID string)` |
-| 所属能力 | 初始化与登录                    |
+| 所属能力 | SDK 生命周期                    |
 | 源码位置 | `open_im_sdk/init_login.go`     |
 
 ## iOS 调用参考
 
-iOS Core SDK 3.8.3-hotfix.14-dynamic.1 的 Objective-C 方法原型如下。Core binding 方法签名用于说明底层能力和参数映射。
+iOS Core SDK v3.8.3 的 Objective-C 方法原型如下。Core binding 方法签名用于说明底层能力和参数映射。
 
 源码位置：`Framework/OpenIMCore.xcframework/.../Open_im_sdk.objc.h`。
 
@@ -49,7 +49,7 @@ FOUNDATION_EXPORT void Open_im_sdkUnInitSDK(NSString* _Nullable operationID);
 
 ## 代码示例
 
-以下示例展示 iOS Core SDK 3.8.3-hotfix.14-dynamic.1 的调用方式。
+以下示例展示 iOS Core SDK v3.8.3 的调用方式。
 
 ```java showLineNumbers
 OpenIMClient.getInstance().unInit();
@@ -57,4 +57,4 @@ OpenIMClient.getInstance().unInit();
 
 ## 相关页面
 
-- [初始化与登录](/docs/chat/sdk/v4/ios/application/overview)
+- [SDK 生命周期](/docs/chat/sdk/v4/ios/application/overview)

@@ -5,12 +5,11 @@ product: 'sdk'
 context: 'chat/sdk/v4/android'
 template: 'guide'
 status: 'draft'
-lastUpdated: '2026-07-08'
+lastUpdated: '2026-07-09'
 version: 'v4'
 platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/error-codes'
 ---
-
 ## SDK core 错误码
 
 ### 通用错误
@@ -169,8 +168,6 @@ sourcePath: '/docs/chat/sdk/v4/android/error-codes'
 | `1701` | `FileUploadedExpiredError` | `FileUploadedExpiredError` | 文件上传已过期。 |
 
 ## WebSocket 协议标识
-
-Server 网关还在 `internal/msggateway/constant.go` 中定义了下面的协议标识。它属于 WebSocket 协议消息标识，不是 `Base.OnError` / API 响应中的通用 `errCode`，因此不要和上面的业务错误码混用。
 
 | 标识值 | 常量 | 说明 |
 | ------ | ---- | ---- |

@@ -1,30 +1,55 @@
 ---
 title: '概述'
-description: '初始化与登录方法目录，所有方法均拆分到独立页面说明。'
+description: '说明 SDK 生命周期，包括初始化、登录、退出、登录状态和运行态边界。'
 product: 'sdk'
 context: 'chat/sdk/v4/react-native'
 template: 'overview'
 status: 'draft'
-lastUpdated: '2026-07-08'
+lastUpdated: '2026-07-09'
 version: 'v4'
 platform: 'react-native'
 sourcePath: '/docs/chat/sdk/v4/react-native/application/overview'
 ---
+SDK 生命周期覆盖初始化、登录、退出、登录状态、前后台状态和网络变化通知。业务层应先完成初始化并注册必要监听器，再进入登录和用户态 API 调用。
 
-初始化与登录方法来自 `open_im_sdk/init_login.go`。初始化成功后，SDK 会创建全局 `UserForSDK`；后续用户、群组、会话、消息和第三方能力都依赖这个实例。
+## 生命周期顺序
 
-本页是初始化与登录能力的方法目录。每个方法的签名、参数、返回和使用边界都放在独立页面中。
+| 阶段 | 方法 | 说明 |
+| ---- | ---- | ---- |
+| 版本记录 | [获取 SDK 版本](/docs/chat/sdk/v4/react-native/application/methods/get-sdk-version) | 在启动日志、反馈信息和兼容性判断中记录当前 SDK 版本。 |
+| 初始化 | [初始化 SDK](/docs/chat/sdk/v4/react-native/application/methods/init-sdk) | 创建 SDK 全局实例、日志、长连接管理、本地数据目录和基础资源。 |
+| 监听器 | [监听器](/docs/chat/sdk/v4/react-native/event-handler/overview) | 登录前注册连接、消息、会话、好友、群组和用户监听器，减少事件遗漏。 |
+| 登录 | [登录用户](/docs/chat/sdk/v4/react-native/application/methods/login) | 使用业务服务端签发的 token 登录指定用户。 |
+| 状态查询 | [获取登录状态](/docs/chat/sdk/v4/react-native/application/methods/get-login-status) / [获取登录用户 ID](/docs/chat/sdk/v4/react-native/application/methods/get-login-user-id) | 判断当前用户态是否可继续调用会话、消息、群组和好友 API。 |
+| 运行态 | [设置前后台状态](/docs/chat/sdk/v4/react-native/application/methods/set-app-background-status) / [通知网络变化](/docs/chat/sdk/v4/react-native/application/methods/network-status-changed) | 通知 SDK 应用状态和网络状态变化。 |
+| 退出 | [退出登录](/docs/chat/sdk/v4/react-native/application/methods/logout) | 退出当前用户态会话，不等同于销毁 SDK。 |
+| 释放 | [释放 SDK](/docs/chat/sdk/v4/react-native/application/methods/un-init-sdk) | 应用完全退出 IM 能力或测试环境重建实例时释放全局资源。 |
+
+## 调用边界
+
+| 边界 | 说明 |
+| ---- | ---- |
+| 初始化只负责创建 SDK 运行环境 | 初始化成功不代表用户已登录。用户资料、好友、群组、会话和消息 API 通常需要登录后调用。 |
+| 登录依赖业务服务端 token | 客户端不应自行生成 token。token 过期或失效后，应从业务服务端刷新再重新登录。 |
+| 退出登录不等于释放 SDK | `Logout` 退出当前用户，`UnInitSDK` 才释放 SDK 全局资源。 |
+| operationID 应可追踪 | 每次关键调用都应生成可关联客户端日志、服务端日志和问题反馈的 operationID。 |
 
 ## 方法索引
 
-| 方法                                                                                           | 说明                                                                                                |
-| ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| [获取 SDK 版本](/docs/chat/sdk/v4/react-native/application/methods/get-sdk-version)            | 获取当前 core SDK 的版本号，适合在启动日志、问题反馈和兼容性判断中记录。                            |
-| [初始化 SDK](/docs/chat/sdk/v4/react-native/application/methods/init-sdk)                      | 初始化 SDK 全局实例、日志、长连接管理、本地数据目录和基础资源。应用进程内通常只调用一次。           |
-| [释放 SDK](/docs/chat/sdk/v4/react-native/application/methods/un-init-sdk)                     | 释放当前 SDK 全局实例，适合应用完全退出 IM 能力或测试环境重建实例时使用。                           |
-| [登录用户](/docs/chat/sdk/v4/react-native/application/methods/login)                           | 使用业务服务端签发的 token 登录指定用户。登录成功后才能可靠调用会话、消息、群组、好友等用户态接口。 |
-| [退出登录](/docs/chat/sdk/v4/react-native/application/methods/logout)                          | 退出当前登录用户，断开当前用户态会话并清理登录相关状态。它不等同于销毁 SDK 全局实例。               |
-| [设置前后台状态](/docs/chat/sdk/v4/react-native/application/methods/set-app-background-status) | 通知 SDK 应用进入前台或后台，便于 SDK 调整连接、同步和推送相关行为。                                |
-| [通知网络变化](/docs/chat/sdk/v4/react-native/application/methods/network-status-changed)      | 通知 SDK 网络状态已变化，当前实现会触发长连接关闭并进入后续重连处理。                               |
-| [获取登录状态](/docs/chat/sdk/v4/react-native/application/methods/get-login-status)            | 查询 SDK 当前登录状态，用于业务层判断是否可以继续调用用户态 API。                                   |
-| [获取登录用户 ID](/docs/chat/sdk/v4/react-native/application/methods/get-login-user-id)        | 获取当前 SDK 实例记录的登录用户 ID，常用于日志、会话归属和账号切换判断。                            |
+| 方法 | 说明 |
+| ---- | ---- |
+| [获取 SDK 版本](/docs/chat/sdk/v4/react-native/application/methods/get-sdk-version) | 获取当前 core SDK 的版本号。 |
+| [初始化 SDK](/docs/chat/sdk/v4/react-native/application/methods/init-sdk) | 初始化 SDK 全局实例和基础资源。 |
+| [释放 SDK](/docs/chat/sdk/v4/react-native/application/methods/un-init-sdk) | 释放当前 SDK 全局实例。 |
+| [登录用户](/docs/chat/sdk/v4/react-native/application/methods/login) | 使用业务服务端签发的 token 登录指定用户。 |
+| [退出登录](/docs/chat/sdk/v4/react-native/application/methods/logout) | 退出当前登录用户。 |
+| [设置前后台状态](/docs/chat/sdk/v4/react-native/application/methods/set-app-background-status) | 通知 SDK 应用进入前台或后台。 |
+| [通知网络变化](/docs/chat/sdk/v4/react-native/application/methods/network-status-changed) | 通知 SDK 网络状态已变化。 |
+| [获取登录状态](/docs/chat/sdk/v4/react-native/application/methods/get-login-status) | 查询 SDK 当前登录状态。 |
+| [获取登录用户 ID](/docs/chat/sdk/v4/react-native/application/methods/get-login-user-id) | 获取当前 SDK 实例记录的登录用户 ID。 |
+
+## 相关页面
+
+- [认证流程](/docs/chat/sdk/v4/react-native/application/authenticating-a-user/authentication)
+- [监听器](/docs/chat/sdk/v4/react-native/event-handler/overview)
+- [错误码](/docs/chat/sdk/v4/react-native/error-codes)
