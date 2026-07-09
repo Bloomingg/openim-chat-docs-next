@@ -19,7 +19,6 @@ const expectedSdkPlatforms = [
   'electron',
   'miniprogram',
   'react-native',
-  'unity',
 ];
 
 const errors = [];

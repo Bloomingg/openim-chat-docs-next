@@ -21,7 +21,6 @@ export const platformLabels: Record<string, string> = {
   electron: 'Electron',
   miniprogram: 'Mini Program',
   'react-native': 'React Native',
-  unity: 'Unity',
 };
 
 export const webCompatibleSdkPlatforms = ['wasm', 'electron', 'miniprogram'] as const;
@@ -71,7 +70,6 @@ export const sdkPlatformSections: SdkPlatformSection[] = [
         platform: 'react-native',
         href: '/docs/chat/sdk/v4/react-native/overview',
       },
-      { label: 'Unity', platform: 'unity', href: '/docs/chat/sdk/v4/unity/overview' },
     ],
   },
 ];

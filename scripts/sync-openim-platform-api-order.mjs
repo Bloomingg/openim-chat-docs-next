@@ -36,9 +36,9 @@ const removedPlatformRoots = [
 ];
 const removedRoutePrefixes = removedPlatformRoots.map((segment) => `${localRoot}/${segment}`);
 const removedPlatformPages = [
-  'user/creating-users/create-a-user',
-  'user/listing-users/get-a-user',
-  'user/managing-users/update-a-user',
+  'user/creating-users/user-register',
+  'user/listing-users/get-users-info',
+  'user/managing-users/update-user-info',
 ].map((segment) => `${localRoot}/${segment}`);
 
 const moduleOverviews = [
@@ -58,11 +58,14 @@ const moduleOverviews = [
       ['通知账号', '创建、更新和搜索系统通知账号。'],
     ],
     commonLinks: [
-      ['注册用户', '/docs/chat/platform-api/v3/user/user-register'],
-      ['更新用户信息', '/docs/chat/platform-api/v3/user/update-user-info'],
-      ['分页获取用户列表', '/docs/chat/platform-api/v3/user/get-users'],
-      ['获取用户在线状态', '/docs/chat/platform-api/v3/user/get-users-online-status'],
-      ['新增系统通知账号', '/docs/chat/platform-api/v3/user/add-notification-account'],
+      ['注册用户', '/docs/chat/platform-api/v3/user/creating-users/create-a-user'],
+      ['更新用户信息', '/docs/chat/platform-api/v3/user/managing-users/update-a-user'],
+      ['分页获取用户列表', '/docs/chat/platform-api/v3/user/listing-users/list-users'],
+      ['获取用户在线状态', '/docs/chat/platform-api/v3/user/presence/get-users-online-status'],
+      [
+        '新增系统通知账号',
+        '/docs/chat/platform-api/v3/user/notification-accounts/add-notification-account',
+      ],
     ],
     advice: [
       '用户 ID 应以业务系统为权威来源。创建 OpenIM 用户前，先确认业务账号已经完成注册、风控和权限校验。',
@@ -82,9 +85,9 @@ const moduleOverviews = [
       ['强制下线', '让指定用户端会话失效，适用于封禁、改密和风险处置。'],
     ],
     commonLinks: [
-      ['获取管理员 Token', '/docs/chat/platform-api/v3/auth/get-admin-token'],
-      ['获取用户 Token', '/docs/chat/platform-api/v3/auth/get-user-token'],
-      ['强制用户下线', '/docs/chat/platform-api/v3/auth/force-logout'],
+      ['获取管理员 Token', '/docs/chat/platform-api/v3/auth/tokens/get-admin-token'],
+      ['获取用户 Token', '/docs/chat/platform-api/v3/auth/tokens/get-user-token'],
+      ['强制用户下线', '/docs/chat/platform-api/v3/auth/sessions/force-logout'],
     ],
     advice: [
       '管理员 Token 只应保存在可信后端服务中，不要写入前端环境变量、移动端包体或浏览器代码。',
@@ -97,20 +100,26 @@ const moduleOverviews = [
     navLabel: '关系',
     description: 'OpenIM Platform API 关系模块概览，覆盖好友申请、好友列表、好友关系管理和黑名单。',
     intro:
-      '好友模块用于维护用户之间的好友关系、好友申请流程和黑名单数据。所有接口都应由可信后端根据业务规则调用。',
+      '关系模块用于维护用户之间的好友关系、好友申请流程和黑名单数据。所有接口都应由可信后端根据业务规则调用。',
     capabilities: [
       ['好友关系', '添加、删除、导入、校验好友关系，并读取好友 ID 或好友资料。'],
       ['好友申请', '查询收到或发出的申请，处理好友申请和查询指定申请。'],
-      ['黑名单', '加入黑名单、移除黑名单，以及分页或批量查询黑名单数据。'],
+      ['黑名单', '加入黑名单、移出黑名单，以及分页查询黑名单数据。'],
       ['资料维护', '设置好友备注、更新好友扩展信息。'],
       ['未处理计数', '获取当前用户未处理好友申请数量。'],
     ],
     commonLinks: [
-      ['发送好友申请', '/docs/chat/platform-api/v3/friend/add-friend'],
-      ['处理好友申请', '/docs/chat/platform-api/v3/friend/respond-friend-application'],
-      ['获取好友列表', '/docs/chat/platform-api/v3/friend/get-friend-list'],
-      ['加入黑名单', '/docs/chat/platform-api/v3/friend/add-black'],
-      ['获取未处理好友申请数量', '/docs/chat/platform-api/v3/friend/get-self-unhandled-apply-count'],
+      [
+        '发送好友申请',
+        '/docs/chat/platform-api/v3/relation/managing-friend-requests/apply-to-add-friend',
+      ],
+      [
+        '处理好友申请',
+        '/docs/chat/platform-api/v3/relation/managing-friend-requests/respond-friend-apply',
+      ],
+      ['获取好友列表', '/docs/chat/platform-api/v3/relation/listing-friends/list-friends'],
+      ['加入黑名单', '/docs/chat/platform-api/v3/relation/blacklist/add-black'],
+      ['删除好友', '/docs/chat/platform-api/v3/relation/managing-friends/delete-friend'],
     ],
     advice: [
       '好友关系通常需要结合业务侧隐私、风控和通知策略处理，后端应在调用前完成权限校验。',
@@ -132,11 +141,14 @@ const moduleOverviews = [
       ['全量读取', '读取群成员用户 ID、用户加入群组 ID 和未处理申请数量。'],
     ],
     commonLinks: [
-      ['创建群组', '/docs/chat/platform-api/v3/group/create-group'],
-      ['邀请用户进群', '/docs/chat/platform-api/v3/group/invite-users-to-group'],
-      ['获取群成员列表', '/docs/chat/platform-api/v3/group/get-group-member-list'],
-      ['禁言群成员', '/docs/chat/platform-api/v3/group/mute-group-member'],
-      ['获取未处理入群申请数量', '/docs/chat/platform-api/v3/group/get-group-application-unhandled-count'],
+      ['创建群组', '/docs/chat/platform-api/v3/group/managing-groups/create-group'],
+      ['邀请用户进群', '/docs/chat/platform-api/v3/group/group-members/invite-users-to-group'],
+      ['获取群成员列表', '/docs/chat/platform-api/v3/group/group-members/get-group-member-list'],
+      ['禁言群成员', '/docs/chat/platform-api/v3/group/group-moderation/mute-group-member'],
+      [
+        '获取未处理入群申请数量',
+        '/docs/chat/platform-api/v3/group/group-applications/get-group-application-unhandled-count',
+      ],
     ],
     advice: [
       '群组操作通常影响多个用户，建议后端记录 `operationID`、操作人、目标群组和成员列表。',
@@ -158,11 +170,26 @@ const moduleOverviews = [
       ['状态筛选', '读取置顶会话 ID 和免打扰会话 ID。'],
     ],
     commonLinks: [
-      ['获取排序会话列表', '/docs/chat/platform-api/v3/conversation/get-sorted-conversation-list'],
-      ['获取全部会话', '/docs/chat/platform-api/v3/conversation/get-all-conversations'],
-      ['批量获取会话', '/docs/chat/platform-api/v3/conversation/get-conversations'],
-      ['批量设置会话', '/docs/chat/platform-api/v3/conversation/set-conversations'],
-      ['获取置顶会话 ID', '/docs/chat/platform-api/v3/conversation/get-pinned-conversation-ids'],
+      [
+        '获取排序会话列表',
+        '/docs/chat/platform-api/v3/conversation/listing-conversations/get-sorted-conversation-list',
+      ],
+      [
+        '获取全部会话',
+        '/docs/chat/platform-api/v3/conversation/listing-conversations/get-all-conversations',
+      ],
+      [
+        '批量获取会话',
+        '/docs/chat/platform-api/v3/conversation/listing-conversations/get-conversations',
+      ],
+      [
+        '批量设置会话',
+        '/docs/chat/platform-api/v3/conversation/managing-conversations/set-conversations',
+      ],
+      [
+        '获取置顶会话 ID',
+        '/docs/chat/platform-api/v3/conversation/conversation-state/get-pinned-conversation-ids',
+      ],
     ],
     advice: [
       '会话数据通常用于后台管理、数据修复和多端同步辅助，不建议由客户端直接调用管理端接口。',
@@ -184,11 +211,11 @@ const moduleOverviews = [
       ['状态辅助', '获取最新序列号、检查发送结果和获取服务器时间。'],
     ],
     commonLinks: [
-      ['发送单条消息', '/docs/chat/platform-api/v3/message/send-msg'],
-      ['批量发送消息', '/docs/chat/platform-api/v3/message/batch-send-msg'],
-      ['搜索消息', '/docs/chat/platform-api/v3/message/search-msg'],
-      ['撤回消息', '/docs/chat/platform-api/v3/message/revoke-msg'],
-      ['获取服务器时间', '/docs/chat/platform-api/v3/message/get-server-time'],
+      ['发送单条消息', '/docs/chat/platform-api/v3/message/sending-messages/send-msg'],
+      ['批量发送消息', '/docs/chat/platform-api/v3/message/sending-messages/batch-send-msg'],
+      ['搜索消息', '/docs/chat/platform-api/v3/message/retrieving-messages/search-msg'],
+      ['撤回消息', '/docs/chat/platform-api/v3/message/managing-messages/revoke-msg'],
+      ['获取服务器时间', '/docs/chat/platform-api/v3/message/retrieving-messages/get-server-time'],
     ],
     advice: [
       '后端发送消息前，应确认发送身份、目标会话和消息内容都来自可信业务流程。',
@@ -210,11 +237,14 @@ const moduleOverviews = [
       ['访问地址', '获取对象访问 URL 或通过对象路径重定向访问。'],
     ],
     commonLinks: [
-      ['跳转监控面板', '/docs/chat/platform-api/v3/third/prometheus'],
-      ['更新 FCM Token', '/docs/chat/platform-api/v3/third/fcm-update-token'],
-      ['上传日志记录', '/docs/chat/platform-api/v3/third/upload-logs'],
-      ['初始化分片上传', '/docs/chat/platform-api/v3/third/initiate-multipart-upload'],
-      ['获取对象访问地址', '/docs/chat/platform-api/v3/third/access-url'],
+      ['跳转监控面板', '/docs/chat/platform-api/v3/third/monitoring/prometheus'],
+      ['更新 FCM Token', '/docs/chat/platform-api/v3/third/push/fcm-update-token'],
+      ['上传日志记录', '/docs/chat/platform-api/v3/third/logs/upload-logs'],
+      [
+        '初始化分片上传',
+        '/docs/chat/platform-api/v3/third/object-storage/initiate-multipart-upload',
+      ],
+      ['获取对象访问地址', '/docs/chat/platform-api/v3/third/object-storage/access-url'],
     ],
     advice: [
       '对象存储签名和日志接口通常需要结合业务侧权限校验，避免任意用户上传或读取非授权资源。',
@@ -308,11 +338,11 @@ const childOrderByModule = {
 };
 
 const routeRelocations = [
-  ['user/user-register', 'user/creating-users/user-register'],
-  ['user/update-user-info', 'user/managing-users/update-user-info'],
+  ['user/user-register', 'user/creating-users/create-a-user'],
+  ['user/update-user-info', 'user/managing-users/update-a-user'],
   ['user/update-user-info-ex', 'user/managing-users/update-user-info-ex'],
   ['user/set-global-msg-recv-opt', 'user/managing-users/set-global-msg-recv-opt'],
-  ['user/get-users-info', 'user/listing-users/get-users-info'],
+  ['user/get-users-info', 'user/listing-users/get-a-user'],
   ['user/get-all-users-uid', 'user/listing-users/list-all-user-ids'],
   ['user/account-check', 'user/listing-users/check-user-accounts'],
   ['user/get-users', 'user/listing-users/list-users'],
@@ -329,26 +359,24 @@ const routeRelocations = [
   ['auth/get-user-token', 'auth/tokens/get-user-token'],
   ['auth/force-logout', 'auth/sessions/force-logout'],
 
-  ['friend/delete-friend', 'friend/managing-friends/delete-friend'],
-  ['friend/list-received-friend-applications', 'friend/managing-friend-requests/list-received-friend-requests'],
-  ['friend/get-designated-friend-application', 'friend/managing-friend-requests/get-designated-friend-application'],
-  ['friend/list-sent-friend-applications', 'friend/managing-friend-requests/list-sent-friend-requests'],
-  ['friend/get-friend-list', 'friend/listing-friends/list-friends'],
-  ['friend/get-designated-friends', 'friend/listing-friends/get-designated-friends'],
-  ['friend/add-friend', 'friend/managing-friend-requests/apply-to-add-friend'],
-  ['friend/respond-friend-application', 'friend/managing-friend-requests/respond-friend-apply'],
-  ['friend/set-friend-remark', 'friend/managing-friends/set-friend-remark'],
-  ['friend/add-black', 'friend/blacklist/add-black'],
-  ['friend/get-black-list', 'friend/blacklist/list-blacks'],
-  ['friend/get-specified-blacks', 'friend/blacklist/get-specified-blacks'],
-  ['friend/remove-black', 'friend/blacklist/remove-black'],
-  ['friend/import-friends', 'friend/managing-friends/import-friends'],
-  ['friend/is-friend', 'friend/listing-friends/is-friend'],
-  ['friend/get-friend-ids', 'friend/listing-friends/get-friend-ids'],
-  ['friend/get-specified-friends-info', 'friend/listing-friends/get-specified-friends-info'],
-  ['friend/update-friends', 'friend/managing-friends/update-friends'],
-  ['friend/get-full-friend-user-ids', 'friend/listing-friends/get-full-friend-user-ids'],
-  ['friend/get-self-unhandled-apply-count', 'friend/managing-friend-requests/get-self-unhandled-apply-count'],
+  ['friend/delete-friend', 'relation/managing-friends/delete-friend'],
+  [
+    'friend/list-received-friend-applications',
+    'relation/managing-friend-requests/list-received-friend-requests',
+  ],
+  [
+    'friend/list-sent-friend-applications',
+    'relation/managing-friend-requests/list-sent-friend-requests',
+  ],
+  ['friend/get-friend-list', 'relation/listing-friends/list-friends'],
+  ['friend/get-designated-friends', 'relation/listing-friends/get-designated-friends'],
+  ['friend/add-friend', 'relation/managing-friend-requests/apply-to-add-friend'],
+  ['friend/respond-friend-application', 'relation/managing-friend-requests/respond-friend-apply'],
+  ['friend/add-black', 'relation/blacklist/add-black'],
+  ['friend/get-black-list', 'relation/blacklist/list-blacks'],
+  ['friend/remove-black', 'relation/blacklist/remove-black'],
+  ['friend/import-friends', 'relation/managing-friends/import-friends'],
+  ['friend/update-friends', 'relation/managing-friends/update-friends'],
 
   ['group/create-group', 'group/managing-groups/create-group'],
   ['group/set-group-info', 'group/managing-groups/set-group-info'],
@@ -431,88 +459,75 @@ const routeRelocationMap = new Map(routeRelocations);
 const linkReplacements = [
   [
     '/docs/chat/platform-api/v3/channel/creating-a-channel/create-a-group-channel',
-    '/docs/chat/platform-api/v3/group/create-group',
+    '/docs/chat/platform-api/v3/group/managing-groups/create-group',
   ],
   [
     '/docs/chat/platform-api/v3/channel/inviting-a-user/invite-as-members-channel',
-    '/docs/chat/platform-api/v3/group/invite-users-to-group',
+    '/docs/chat/platform-api/v3/group/group-members/invite-users-to-group',
   ],
   [
     '/docs/chat/platform-api/v3/channel/managing-a-channel/update-a-group-channel',
-    '/docs/chat/platform-api/v3/group/set-group-info',
+    '/docs/chat/platform-api/v3/group/managing-groups/set-group-info',
   ],
   [
     '/docs/chat/platform-api/v3/channel/managing-a-channel/delete-a-group-channel',
-    '/docs/chat/platform-api/v3/group/dismiss-group',
+    '/docs/chat/platform-api/v3/group/managing-groups/dismiss-group',
   ],
   [
     '/docs/chat/platform-api/v3/channel/managing-a-channel/join-a-channel',
-    '/docs/chat/platform-api/v3/group/join-group',
+    '/docs/chat/platform-api/v3/group/group-applications/join-group',
   ],
   [
     '/docs/chat/platform-api/v3/channel/managing-a-channel/leave-a-channel',
-    '/docs/chat/platform-api/v3/group/quit-group',
+    '/docs/chat/platform-api/v3/group/group-membership/quit-group',
   ],
   [
     '/docs/chat/platform-api/v3/channel/listing-users/list-members-of-a-group-channel',
-    '/docs/chat/platform-api/v3/group/get-group-member-list',
-  ],
-  ['/docs/chat/platform-api/v3/channel/overview', '/docs/chat/platform-api/v3/group/create-group'],
-  [
-    '/docs/chat/platform-api/v3/user/creating-users/create-a-user',
-    '/docs/chat/platform-api/v3/user/user-register',
+    '/docs/chat/platform-api/v3/group/group-members/get-group-member-list',
   ],
   [
-    '/docs/chat/platform-api/v3/user/listing-users/list-users',
-    '/docs/chat/platform-api/v3/user/get-users',
-  ],
-  [
-    '/docs/chat/platform-api/v3/user/listing-users/get-a-user',
-    '/docs/chat/platform-api/v3/user/get-users-info',
-  ],
-  [
-    '/docs/chat/platform-api/v3/user/managing-users/update-a-user',
-    '/docs/chat/platform-api/v3/user/update-user-info',
+    '/docs/chat/platform-api/v3/channel/overview',
+    '/docs/chat/platform-api/v3/group/overview',
   ],
   [
     '/docs/chat/platform-api/v3/user/managing-session-tokens/issue-a-session-token',
-    '/docs/chat/platform-api/v3/auth/get-user-token',
+    '/docs/chat/platform-api/v3/auth/tokens/get-user-token',
   ],
   [
     '/docs/chat/platform-api/v3/user/managing-session-tokens/revoke-all-session-tokens',
-    '/docs/chat/platform-api/v3/auth/force-logout',
+    '/docs/chat/platform-api/v3/auth/sessions/force-logout',
   ],
   [
     '/docs/chat/platform-api/v3/message/messaging-basics/send-a-message',
-    '/docs/chat/platform-api/v3/message/send-msg',
+    '/docs/chat/platform-api/v3/message/sending-messages/send-msg',
   ],
   [
     '/docs/chat/platform-api/v3/migration/migrate-messages',
-    '/docs/chat/platform-api/v3/message/send-msg',
+    '/docs/chat/platform-api/v3/migration-to-openim',
   ],
   [
     '/docs/chat/platform-api/v3/migration/overview',
-    '/docs/chat/platform-api/v3/message/overview',
+    '/docs/chat/platform-api/v3/migration-to-openim',
   ],
   [
     '/docs/chat/platform-api/v3/moderation/blocking-users/block-users',
-    '/docs/chat/platform-api/v3/friend/add-black',
+    '/docs/chat/platform-api/v3/relation/blacklist/add-black',
   ],
   [
     '/docs/chat/platform-api/v3/moderation/blocking-users/unblock-a-user',
-    '/docs/chat/platform-api/v3/friend/remove-black',
+    '/docs/chat/platform-api/v3/relation/blacklist/remove-black',
   ],
   [
     '/docs/chat/platform-api/v3/moderation/muting-a-user/mute-a-member-in-a-group-channel',
-    '/docs/chat/platform-api/v3/group/mute-group-member',
+    '/docs/chat/platform-api/v3/group/group-moderation/mute-group-member',
   ],
   [
     '/docs/chat/platform-api/v3/moderation/muting-a-user/unmute-a-member-in-a-group-channel',
-    '/docs/chat/platform-api/v3/group/cancel-mute-group-member',
+    '/docs/chat/platform-api/v3/group/group-moderation/cancel-mute-group-member',
   ],
   [
     '/docs/chat/platform-api/v3/moderation/overview',
-    '/docs/chat/platform-api/v3/group/mute-group-member',
+    '/docs/chat/platform-api/v3/relation/overview',
   ],
 ];
 const allLinkReplacements = [...routeRelocations, ...linkReplacements].sort(
@@ -526,80 +541,80 @@ const textReplacements = [
     'OpenIM 使用群组能力承载群聊场景。服务端可通过群组接口创建群组、邀请成员和处理入群流程。',
   ],
   [
-    '[创建群组频道](/docs/chat/platform-api/v3/group/create-group)',
-    '[创建群组](/docs/chat/platform-api/v3/group/create-group)',
+    '[创建群组频道](/docs/chat/platform-api/v3/group/managing-groups/create-group)',
+    '[创建群组](/docs/chat/platform-api/v3/group/managing-groups/create-group)',
   ],
   [
     '[创建群组频道](/docs/chat/platform-api/v3/group/managing-groups/create-group)',
     '[创建群组](/docs/chat/platform-api/v3/group/managing-groups/create-group)',
   ],
   [
-    '[频道概览](/docs/chat/platform-api/v3/group/create-group)',
-    '[群组接口](/docs/chat/platform-api/v3/group/create-group)',
+    '[频道概览](/docs/chat/platform-api/v3/group/overview)',
+    '[群组接口](/docs/chat/platform-api/v3/group/overview)',
   ],
   [
-    '[创建用户](/docs/chat/platform-api/v3/user/user-register)',
-    '[注册用户](/docs/chat/platform-api/v3/user/user-register)',
+    '[创建用户](/docs/chat/platform-api/v3/user/creating-users/create-a-user)',
+    '[注册用户](/docs/chat/platform-api/v3/user/creating-users/create-a-user)',
   ],
   [
-    '[查询用户列表](/docs/chat/platform-api/v3/user/get-users)',
-    '[分页获取用户列表](/docs/chat/platform-api/v3/user/get-users)',
+    '[查询用户列表](/docs/chat/platform-api/v3/user/listing-users/list-users)',
+    '[分页获取用户列表](/docs/chat/platform-api/v3/user/listing-users/list-users)',
   ],
   [
-    '[获取用户](/docs/chat/platform-api/v3/user/get-users-info)',
-    '[获取指定用户信息](/docs/chat/platform-api/v3/user/get-users-info)',
+    '[获取用户](/docs/chat/platform-api/v3/user/listing-users/get-a-user)',
+    '[获取指定用户信息](/docs/chat/platform-api/v3/user/listing-users/get-a-user)',
   ],
   [
-    '[更新用户](/docs/chat/platform-api/v3/user/update-user-info)',
-    '[更新用户信息](/docs/chat/platform-api/v3/user/update-user-info)',
+    '[更新用户](/docs/chat/platform-api/v3/user/managing-users/update-a-user)',
+    '[更新用户信息](/docs/chat/platform-api/v3/user/managing-users/update-a-user)',
   ],
   [
-    '[签发会话 Token](/docs/chat/platform-api/v3/auth/get-user-token)',
-    '[获取用户 Token](/docs/chat/platform-api/v3/auth/get-user-token)',
+    '[签发会话 Token](/docs/chat/platform-api/v3/auth/tokens/get-user-token)',
+    '[获取用户 Token](/docs/chat/platform-api/v3/auth/tokens/get-user-token)',
   ],
   [
-    '[注销全部会话 Token](/docs/chat/platform-api/v3/auth/force-logout)',
-    '[强制用户下线](/docs/chat/platform-api/v3/auth/force-logout)',
+    '[注销全部会话 Token](/docs/chat/platform-api/v3/auth/sessions/force-logout)',
+    '[强制用户下线](/docs/chat/platform-api/v3/auth/sessions/force-logout)',
   ],
   [
-    '[发送消息](/docs/chat/platform-api/v3/message/send-msg)',
-    '[发送单条消息](/docs/chat/platform-api/v3/message/send-msg)',
+    '[发送消息](/docs/chat/platform-api/v3/message/sending-messages/send-msg)',
+    '[发送单条消息](/docs/chat/platform-api/v3/message/sending-messages/send-msg)',
   ],
   [
-    '[迁移消息](/docs/chat/platform-api/v3/message/send-msg)',
-    '[发送单条消息](/docs/chat/platform-api/v3/message/send-msg)',
+    '[迁移消息](/docs/chat/platform-api/v3/migration-to-openim)',
+    '[迁移到 OpenIM](/docs/chat/platform-api/v3/migration-to-openim)',
   ],
   [
-    '[迁移概览](/docs/chat/platform-api/v3/message/overview)',
-    '[消息概览](/docs/chat/platform-api/v3/message/overview)',
+    '[迁移概览](/docs/chat/platform-api/v3/migration-to-openim)',
+    '[迁移到 OpenIM](/docs/chat/platform-api/v3/migration-to-openim)',
   ],
   [
-    '[屏蔽用户](/docs/chat/platform-api/v3/friend/add-black)',
-    '[加入黑名单](/docs/chat/platform-api/v3/friend/add-black)',
+    '[屏蔽用户](/docs/chat/platform-api/v3/relation/blacklist/add-black)',
+    '[加入黑名单](/docs/chat/platform-api/v3/relation/blacklist/add-black)',
   ],
   [
-    '[取消屏蔽用户](/docs/chat/platform-api/v3/friend/remove-black)',
-    '[移除黑名单](/docs/chat/platform-api/v3/friend/remove-black)',
+    '[取消屏蔽用户](/docs/chat/platform-api/v3/relation/blacklist/remove-black)',
+    '[移出黑名单](/docs/chat/platform-api/v3/relation/blacklist/remove-black)',
   ],
   [
-    '[禁言群组成员](/docs/chat/platform-api/v3/group/mute-group-member)',
-    '[禁言群成员](/docs/chat/platform-api/v3/group/mute-group-member)',
+    '[禁言群组成员](/docs/chat/platform-api/v3/group/group-moderation/mute-group-member)',
+    '[禁言群成员](/docs/chat/platform-api/v3/group/group-moderation/mute-group-member)',
   ],
   [
-    '[禁言群组频道成员](/docs/chat/platform-api/v3/group/mute-group-member)',
-    '[禁言群成员](/docs/chat/platform-api/v3/group/mute-group-member)',
+    '[禁言群组频道成员](/docs/chat/platform-api/v3/group/group-moderation/mute-group-member)',
+    '[禁言群成员](/docs/chat/platform-api/v3/group/group-moderation/mute-group-member)',
   ],
   [
-    '[解除群组成员禁言](/docs/chat/platform-api/v3/group/cancel-mute-group-member)',
-    '[取消禁言群成员](/docs/chat/platform-api/v3/group/cancel-mute-group-member)',
+    '[解除群组成员禁言](/docs/chat/platform-api/v3/group/group-moderation/cancel-mute-group-member)',
+    '[取消禁言群成员](/docs/chat/platform-api/v3/group/group-moderation/cancel-mute-group-member)',
   ],
   [
-    '[解除群组频道成员禁言](/docs/chat/platform-api/v3/group/cancel-mute-group-member)',
-    '[取消禁言群成员](/docs/chat/platform-api/v3/group/cancel-mute-group-member)',
+    '[解除群组频道成员禁言](/docs/chat/platform-api/v3/group/group-moderation/cancel-mute-group-member)',
+    '[取消禁言群成员](/docs/chat/platform-api/v3/group/group-moderation/cancel-mute-group-member)',
   ],
   [
-    '[内容审核概览](/docs/chat/platform-api/v3/group/mute-group-member)',
-    '[禁言群成员](/docs/chat/platform-api/v3/group/mute-group-member)',
+    '[内容审核概览](/docs/chat/platform-api/v3/relation/overview)',
+    '[关系概述](/docs/chat/platform-api/v3/relation/overview)',
   ],
   [
     '[内容审核概览](/docs/chat/platform-api/v3/group/group-moderation/mute-group-member)',
@@ -785,7 +800,7 @@ function renderRootOverviewMdx() {
     sourcePath: `${localRoot}/overview`,
   };
 
-  return `---\n${renderFrontmatter(frontmatter)}\n---\n\nOpenIM Platform API 面向可信后端服务，提供用户、认证、好友、群组、会话、消息、上传、日志和运营管理相关的 REST 接口参考。中文文档保留 Platform API 的导航方式，具体能力、接口路径和请求字段以 OpenIM REST 已覆盖的文档为准。\n\n## 最常用\n\n### 认证\n\n在调用管理端 REST API 前，后端服务需要确认 API 地址、请求头和管理员 Token 的使用方式。客户端登录所需的用户 Token 也应由可信后端签发。\n\n- [接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)\n- [获取管理员 Token](/docs/chat/platform-api/v3/auth/tokens/get-admin-token)\n- [获取用户 Token](/docs/chat/platform-api/v3/auth/tokens/get-user-token)\n\n### 用户管理\n\n通过 OpenIM 用户管理接口创建、更新、查询用户资料，并把注册、注销、权限等业务规则保留在业务系统中。\n\n- [注册用户](/docs/chat/platform-api/v3/user/creating-users/user-register)\n- [分页获取用户列表](/docs/chat/platform-api/v3/user/listing-users/list-users)\n- [获取指定用户信息](/docs/chat/platform-api/v3/user/listing-users/get-users-info)\n\n### 消息\n\n使用 OpenIM 消息接口从后端发送消息、发送业务通知、查询消息和维护消息状态。\n\n- [发送单条消息](/docs/chat/platform-api/v3/message/sending-messages/send-msg)\n- [批量发送消息](/docs/chat/platform-api/v3/message/sending-messages/batch-send-msg)\n- [搜索消息](/docs/chat/platform-api/v3/message/retrieving-messages/search-msg)\n\n## 推荐功能\n\n### 好友\n\nOpenIM 好友接口用于维护好友关系、好友申请和黑名单。\n\n- [申请添加好友](/docs/chat/platform-api/v3/friend/managing-friend-requests/apply-to-add-friend)\n- [查询好友列表](/docs/chat/platform-api/v3/friend/listing-friends/list-friends)\n- [加入黑名单](/docs/chat/platform-api/v3/friend/blacklist/add-black)\n\n### 群组\n\nOpenIM 使用群组能力承载群聊场景。服务端可通过群组接口创建群组、邀请成员和处理入群流程。\n\n- [创建群组](/docs/chat/platform-api/v3/group/managing-groups/create-group)\n- [邀请成员](/docs/chat/platform-api/v3/group/group-members/invite-users-to-group)\n- [禁言群成员](/docs/chat/platform-api/v3/group/group-moderation/mute-group-member)\n\n### 会话\n\n会话接口用于读取、批量设置会话信息，以及维护置顶、免打扰和离线推送关联数据。\n\n- [获取排序会话列表](/docs/chat/platform-api/v3/conversation/listing-conversations/get-sorted-conversation-list)\n- [批量获取会话](/docs/chat/platform-api/v3/conversation/listing-conversations/get-conversations)\n\n### 第三方服务\n\n第三方服务接口覆盖监控跳转、日志上传、对象存储上传签名和访问地址获取。\n\n- [跳转监控面板](/docs/chat/platform-api/v3/third/monitoring/prometheus)\n- [初始化分片上传](/docs/chat/platform-api/v3/third/object-storage/initiate-multipart-upload)\n\n## 资源\n\n| 字段 | 值 |\n| ---- | -- |\n| 支持情况 | OpenIM REST 已提供直接接口 |\n| 产品区域 | OpenIM 服务端 REST API |\n| 请求模型 | 后端到后端的 HTTP JSON 请求，使用 operationID 串联日志 |\n| 鉴权方式 | 管理端 REST API 使用 APP 管理员 Token |\n\n- [OpenIM REST API 介绍](https://docs.openim.io/restapi/apis/introduction)\n- [OpenIM 错误码](https://docs.openim.io/restapi/errCode)\n`;
+  return `---\n${renderFrontmatter(frontmatter)}\n---\n\nOpenIM Platform API 面向可信后端服务，提供认证、用户、关系、群组、会话、消息、第三方服务、迁移和错误码相关的 REST 接口参考。中文文档保留 Platform API 的导航方式，具体能力、接口路径和请求字段以 OpenIM REST 已覆盖的文档为准。\n\n## 最常用\n\n### 认证\n\n在调用管理端 REST API 前，后端服务需要确认 API 地址、请求头和管理员 Token 的使用方式。客户端登录所需的用户 Token 也应由可信后端签发。\n\n- [接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)\n- [获取管理员 Token](/docs/chat/platform-api/v3/auth/tokens/get-admin-token)\n- [获取用户 Token](/docs/chat/platform-api/v3/auth/tokens/get-user-token)\n\n### 用户管理\n\n通过 OpenIM 用户管理接口创建、更新、查询用户资料，并把注册、注销、权限等业务规则保留在业务系统中。\n\n- [注册用户](/docs/chat/platform-api/v3/user/creating-users/create-a-user)\n- [分页获取用户列表](/docs/chat/platform-api/v3/user/listing-users/list-users)\n- [获取指定用户信息](/docs/chat/platform-api/v3/user/listing-users/get-a-user)\n\n### 消息\n\n使用 OpenIM 消息接口从后端发送消息、发送业务通知、查询消息和维护消息状态。\n\n- [发送单条消息](/docs/chat/platform-api/v3/message/sending-messages/send-msg)\n- [批量发送消息](/docs/chat/platform-api/v3/message/sending-messages/batch-send-msg)\n- [搜索消息](/docs/chat/platform-api/v3/message/retrieving-messages/search-msg)\n\n## 推荐功能\n\n### 关系\n\nOpenIM 关系接口用于维护好友关系、好友申请和黑名单。\n\n- [申请添加好友](/docs/chat/platform-api/v3/relation/managing-friend-requests/apply-to-add-friend)\n- [查询好友列表](/docs/chat/platform-api/v3/relation/listing-friends/list-friends)\n- [加入黑名单](/docs/chat/platform-api/v3/relation/blacklist/add-black)\n\n### 群组\n\nOpenIM 使用群组能力承载群聊场景。服务端可通过群组接口创建群组、邀请成员和处理入群流程。\n\n- [创建群组](/docs/chat/platform-api/v3/group/managing-groups/create-group)\n- [邀请成员](/docs/chat/platform-api/v3/group/group-members/invite-users-to-group)\n- [禁言群成员](/docs/chat/platform-api/v3/group/group-moderation/mute-group-member)\n\n### 会话\n\n会话接口用于读取、批量设置会话信息，以及维护置顶、免打扰和离线推送关联数据。\n\n- [获取排序会话列表](/docs/chat/platform-api/v3/conversation/listing-conversations/get-sorted-conversation-list)\n- [批量获取会话](/docs/chat/platform-api/v3/conversation/listing-conversations/get-conversations)\n\n### 第三方服务\n\n第三方服务接口覆盖监控跳转、日志上传、对象存储上传签名和访问地址获取。\n\n- [跳转监控面板](/docs/chat/platform-api/v3/third/monitoring/prometheus)\n- [初始化分片上传](/docs/chat/platform-api/v3/third/object-storage/initiate-multipart-upload)\n\n## 资源\n\n| 字段 | 值 |\n| ---- | -- |\n| 支持情况 | OpenIM REST 已提供直接接口 |\n| 产品区域 | OpenIM 服务端 REST API |\n| 请求模型 | 后端到后端的 HTTP JSON 请求，使用 operationID 串联日志 |\n| 鉴权方式 | 管理端 REST API 使用 APP 管理员 Token |\n\n- [OpenIM REST API 介绍](https://docs.openim.io/restapi/apis/introduction)\n- [OpenIM 错误码](https://docs.openim.io/restapi/errCode)\n`;
 }
 
 async function writeOverviewMdx(file, overview) {

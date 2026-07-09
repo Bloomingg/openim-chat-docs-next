@@ -27,7 +27,7 @@ type ResourceLink = {
 const copy = {
   en: {
     intro:
-      'OpenIM Platform API is organized for trusted backend services. Use these REST endpoints to manage users, groups, messages, session tokens, moderation, and operational workflows that are already covered by OpenIM REST documentation.',
+      'OpenIM Platform API is organized for trusted backend services. Use these REST endpoints to manage authentication, users, relationships, groups, conversations, messages, third-party services, migration, and operational workflows.',
     mostPopular: 'Most popular',
     recommended: 'Recommended features',
     resources: 'Resources',
@@ -55,40 +55,40 @@ const copy = {
         title: 'Create a group',
         description:
           'Provision an OpenIM group for conversations, membership, and server-side operations.',
-        href: '/docs/chat/platform-api/v3/group/create-group',
+        href: '/docs/chat/platform-api/v3/group/managing-groups/create-group',
         visual: 'group',
       },
       {
         title: 'Send a message',
         description:
           'Send server-side text, custom, and notification messages through OpenIM message APIs.',
-        href: '/docs/chat/platform-api/v3/message/messaging-basics/send-a-message',
+        href: '/docs/chat/platform-api/v3/message/sending-messages/send-msg',
         visual: 'message',
       },
       {
-        title: 'Migrate messages',
+        title: 'Migrate to OpenIM',
         description:
           'Import historical messages into OpenIM while preserving sender and conversation context.',
-        href: '/docs/chat/platform-api/v3/migration/migrate-messages',
+        href: '/docs/chat/platform-api/v3/migration-to-openim',
         visual: 'migration',
       },
     ],
     features: [
       {
         title: 'User lifecycle',
-        description: 'Create users, update profiles, query user records, and issue session tokens.',
+        description: 'Create users, update profiles, query user records, and issue user tokens.',
         href: '/docs/chat/platform-api/v3/user/listing-users/list-users',
       },
       {
         title: 'Groups',
         description:
           'Create groups, update group information, invite members, and manage membership changes.',
-        href: '/docs/chat/platform-api/v3/group/create-group',
+        href: '/docs/chat/platform-api/v3/group/managing-groups/create-group',
       },
       {
-        title: 'Moderation',
-        description: 'Block users, list block relationships, and mute or unmute group members.',
-        href: '/docs/chat/platform-api/v3/moderation/blocking-users/block-users',
+        title: 'Relationships',
+        description: 'Manage friend relationships, friend requests, and user blacklists.',
+        href: '/docs/chat/platform-api/v3/relation/overview',
       },
     ],
     links: [
@@ -98,9 +98,9 @@ const copy = {
         href: '/docs/chat/platform-api/v3/error-codes',
       },
       {
-        title: 'Issue a session token',
+        title: 'Issue a user token',
         description: 'Generate login tokens for clients from a trusted backend.',
-        href: '/docs/chat/platform-api/v3/user/managing-session-tokens/issue-a-session-token',
+        href: '/docs/chat/platform-api/v3/auth/tokens/get-user-token',
       },
       {
         title: 'OpenIM REST API introduction',
@@ -111,7 +111,7 @@ const copy = {
   },
   zh: {
     intro:
-      'OpenIM Platform API 面向服务端集成场景，提供用户、好友、群组、消息、内容治理等管理能力。',
+      'OpenIM Platform API 面向服务端集成场景，提供认证、用户、关系、群组、会话、消息和第三方服务等管理能力。',
     mostPopular: '最常用',
     recommended: '推荐功能',
     resources: '资源',
@@ -137,37 +137,37 @@ const copy = {
       {
         title: '创建群组',
         description: '创建 OpenIM 群组，用于承载会话、成员管理和服务端运营动作。',
-        href: '/docs/chat/platform-api/v3/group/create-group',
+        href: '/docs/chat/platform-api/v3/group/managing-groups/create-group',
         visual: 'group',
       },
       {
         title: '发送消息',
         description: '通过 OpenIM 消息接口从服务端发送文本、自定义或通知类消息。',
-        href: '/docs/chat/platform-api/v3/message/messaging-basics/send-a-message',
+        href: '/docs/chat/platform-api/v3/message/sending-messages/send-msg',
         visual: 'message',
       },
       {
-        title: '迁移消息',
-        description: '把历史消息导入 OpenIM，并保留发送者、会话和消息上下文。',
-        href: '/docs/chat/platform-api/v3/migration/migrate-messages',
+        title: '迁移到 OpenIM',
+        description: '从现有系统迁移到 OpenIM，并保留用户、会话和消息上下文。',
+        href: '/docs/chat/platform-api/v3/migration-to-openim',
         visual: 'migration',
       },
     ],
     features: [
       {
         title: '用户生命周期',
-        description: '创建用户、更新资料、查询用户记录，并为客户端签发会话 Token。',
+        description: '创建用户、更新资料、查询用户记录，并为客户端签发用户 Token。',
         href: '/docs/chat/platform-api/v3/user/listing-users/list-users',
       },
       {
         title: '群组',
         description: '创建群组、更新群资料、邀请成员，并处理入群、退群和解散流程。',
-        href: '/docs/chat/platform-api/v3/group/create-group',
+        href: '/docs/chat/platform-api/v3/group/managing-groups/create-group',
       },
       {
-        title: '内容治理',
-        description: '屏蔽用户、查询屏蔽关系，并对群组或群成员执行禁言与解除禁言。',
-        href: '/docs/chat/platform-api/v3/moderation/blocking-users/block-users',
+        title: '关系',
+        description: '维护好友关系、好友申请和黑名单数据。',
+        href: '/docs/chat/platform-api/v3/relation/overview',
       },
     ],
     links: [
@@ -177,9 +177,9 @@ const copy = {
         href: '/docs/chat/platform-api/v3/error-codes',
       },
       {
-        title: '签发会话 Token',
+        title: '获取用户 Token',
         description: '由可信后端为客户端生成登录 Token。',
-        href: '/docs/chat/platform-api/v3/user/managing-session-tokens/issue-a-session-token',
+        href: '/docs/chat/platform-api/v3/auth/tokens/get-user-token',
       },
       {
         title: 'OpenIM REST API 介绍',

@@ -25,7 +25,7 @@ const landingCopy = {
   en: {
     apiAction: 'Open API overview',
     apiDescription:
-      'Use server-side APIs for application control, user lifecycle, channel administration, message workflows, webhooks, and operations.',
+      'Use server-side APIs for authentication, user lifecycle, relationships, group administration, message workflows, third-party services, and operations.',
     apiEyebrow: 'SERVER',
     apiHeroCta: 'Start with the API overview',
     apiHeroDescription:
@@ -42,7 +42,7 @@ const landingCopy = {
     featuredEyebrow: 'COMMON PATHS',
     featuredTitle: 'Featured samples',
     heroDescription:
-      'Start with the client platform, move into server-side control, or jump straight to sample-driven workflows for messages, channels, users, moderation, and notifications.',
+      'Start with the client platform, move into server-side control, or jump straight to sample-driven workflows for messages, groups, users, relationships, and notifications.',
     heroEyebrow: 'OPENIM CHAT',
     heroPrimary: 'Explore SDKs',
     heroSecondary: 'Open Platform API',
@@ -60,7 +60,7 @@ const landingCopy = {
   zh: {
     apiAction: '查看 API 概览',
     apiDescription:
-      '通过服务端 API 管理应用、用户生命周期、频道管理、消息工作流、Webhook 和运营能力。',
+      '通过服务端 API 管理认证、用户生命周期、关系、群组、消息工作流、第三方服务和运营能力。',
     apiEyebrow: '服务端',
     apiHeroCta: '从 API 概览开始',
     apiHeroDescription:
@@ -76,7 +76,7 @@ const landingCopy = {
     featuredEyebrow: '常用示例',
     featuredTitle: '精选示例',
     heroDescription:
-      '从客户端平台开始，进入服务端控制，或直接查看围绕消息、频道、用户、审核和通知的示例路径。',
+      '从客户端平台开始，进入服务端控制，或直接查看围绕消息、群组、用户、关系和通知的示例路径。',
     heroEyebrow: 'OPENIM CHAT',
     heroPrimary: '查看 SDKs',
     heroSecondary: '查看 Platform API',
@@ -96,8 +96,7 @@ const sdkCards: HomeCard[] = [
   {
     title: 'iOS',
     href: '/docs/chat/sdk/v4/ios/overview',
-    description:
-      'Ship native chat on Apple platforms with channel, message, and notification guides.',
+    description: 'Ship native chat on Apple platforms with group, message, and notification guides.',
     meta: 'Swift',
   },
   {
@@ -136,13 +135,6 @@ const sdkCards: HomeCard[] = [
     description: 'Add OpenIM messaging to React Native apps with native mobile runtime guidance.',
     meta: 'RN',
   },
-  {
-    title: 'Unity',
-    href: '/docs/chat/sdk/v4/unity/overview',
-    description:
-      'Connect in-game communities with channels, real-time messages, and user profiles.',
-    meta: 'C#',
-  },
 ];
 
 const apiTopics: HomeCard[] = [
@@ -154,16 +146,21 @@ const apiTopics: HomeCard[] = [
   {
     title: 'Users',
     href: '/docs/chat/platform-api/v3/user/creating-users/create-a-user',
-    description: 'Create users, query user records, update profiles, and issue session tokens.',
+    description: 'Create users, query user records, update profiles, and issue user tokens.',
   },
   {
-    title: 'Channels',
-    href: '/docs/chat/platform-api/v3/channel/creating-a-channel/create-a-group-channel',
+    title: 'Relations',
+    href: '/docs/chat/platform-api/v3/relation/overview',
+    description: 'Manage friend requests, friend lists, relationship metadata, and blacklists.',
+  },
+  {
+    title: 'Groups',
+    href: '/docs/chat/platform-api/v3/group/managing-groups/create-group',
     description: 'Create group conversations, update group data, manage members, and invite users.',
   },
   {
     title: 'Messages',
-    href: '/docs/chat/platform-api/v3/message/messaging-basics/send-a-message',
+    href: '/docs/chat/platform-api/v3/message/sending-messages/send-msg',
     description: 'Send messages from trusted services and migrate historical message data.',
   },
 ];
@@ -217,12 +214,6 @@ const sampleApps: HomeCard[] = [
     description: 'Use the React Native demo to validate mobile runtime integration.',
     meta: 'GitHub / RN',
   },
-  {
-    title: 'Unity demo',
-    href: 'https://github.com/openimsdk/open-im-unity-demo',
-    description: 'Review the Unity demo for game and interactive app chat scenarios.',
-    meta: 'GitHub / Unity',
-  },
 ];
 
 const featuredSamples: HomeCard[] = [
@@ -233,22 +224,22 @@ const featuredSamples: HomeCard[] = [
     meta: 'SDK',
   },
   {
-    title: 'Create a group channel',
-    href: '/docs/chat/platform-api/v3/channel/creating-a-channel/create-a-group-channel',
-    description: 'Provision a group channel from the server side and prepare it for members.',
+    title: 'Create a group',
+    href: '/docs/chat/platform-api/v3/group/managing-groups/create-group',
+    description: 'Provision a group from the server side and prepare it for members.',
     meta: 'API',
   },
   {
-    title: 'Issue a session token',
-    href: '/docs/chat/platform-api/v3/user/managing-session-tokens/issue-a-session-token',
+    title: 'Issue a user token',
+    href: '/docs/chat/platform-api/v3/auth/tokens/get-user-token',
     description: 'Generate user login credentials from a trusted backend service.',
     meta: 'Auth',
   },
   {
-    title: 'Block a user',
-    href: '/docs/chat/platform-api/v3/moderation/blocking-users/block-users',
-    description: 'Apply moderation controls from the server side when safety rules require it.',
-    meta: 'Moderation',
+    title: 'Add to blacklist',
+    href: '/docs/chat/platform-api/v3/relation/blacklist/add-black',
+    description: 'Add users to a blacklist when relationship rules require it.',
+    meta: 'Relation',
   },
 ];
 
@@ -291,25 +282,25 @@ const featureGroups: FeatureGroup[] = [
     links: [
       {
         title: 'Create group conversations',
-        href: '/docs/chat/platform-api/v3/channel/creating-a-channel/create-a-group-channel',
+        href: '/docs/chat/platform-api/v3/group/managing-groups/create-group',
         description: 'Create group conversations from the Platform API.',
         meta: 'Groups',
       },
       {
         title: 'Group profile and lifecycle',
-        href: '/docs/chat/platform-api/v3/channel/managing-a-channel/update-a-group-channel',
+        href: '/docs/chat/platform-api/v3/group/managing-groups/set-group-info',
         description: 'Update or delete group conversation records as product state changes.',
         meta: 'Groups',
       },
       {
         title: 'List group members',
-        href: '/docs/chat/platform-api/v3/channel/listing-users/list-members-of-a-group-channel',
+        href: '/docs/chat/platform-api/v3/group/group-members/get-group-member-list',
         description: 'Read group membership from the backend for admin tools and sync jobs.',
         meta: 'Members',
       },
       {
         title: 'Join and leave flows',
-        href: '/docs/chat/platform-api/v3/channel/managing-a-channel/join-a-channel',
+        href: '/docs/chat/platform-api/v3/group/group-applications/join-group',
         description: 'Let users join or leave group conversations from trusted services.',
         meta: 'Members',
       },
@@ -322,25 +313,25 @@ const featureGroups: FeatureGroup[] = [
     links: [
       {
         title: 'Send messages',
-        href: '/docs/chat/platform-api/v3/message/messaging-basics/send-a-message',
+        href: '/docs/chat/platform-api/v3/message/sending-messages/send-msg',
         description: 'Send server-side text and custom messages into one-to-one or group sessions.',
         meta: 'Message',
       },
       {
         title: 'Message history',
-        href: '/docs/chat/sdk/v4/wasm/message/retrieving-messages/retrieve-a-list-of-messages',
+        href: '/docs/chat/sdk/v4/wasm/message/retrieving-messages/get-advanced-history-message-list',
         description: 'Load conversation history and page through older messages from the SDK.',
         meta: 'History',
       },
       {
         title: 'Receive realtime messages',
-        href: '/docs/chat/sdk/v4/wasm/message/receiving-messages-through-event-handler/receive-messages-in-a-group-channel',
+        href: '/docs/chat/sdk/v4/wasm/event-handler/methods/set-advanced-msg-listener',
         description: 'Subscribe to SDK message events and merge updates into the UI.',
         meta: 'Realtime',
       },
       {
         title: 'Search message history',
-        href: '/docs/chat/sdk/v4/wasm/message/searching-messages-in-a-group-channel/search-messages-by-a-keyword',
+        href: '/docs/chat/sdk/v4/wasm/message/retrieving-messages/search-local-messages',
         description: 'Search historical messages by keyword for in-app search and support tools.',
         meta: 'Search',
       },
@@ -353,58 +344,58 @@ const featureGroups: FeatureGroup[] = [
     links: [
       {
         title: 'Unread counts',
-        href: '/docs/chat/sdk/v4/wasm/message/retrieving-unread-counts-in-a-group-channel/unread-messages',
+        href: '/docs/chat/sdk/v4/wasm/message/conversation-state/get-total-unread-msg-count',
         description: 'Power conversation badges and global unread summaries.',
         meta: 'Unread',
       },
       {
-        title: 'Read receipts',
-        href: '/docs/chat/sdk/v4/wasm/message/managing-read-status-in-a-group-channel/get-read-status',
-        description: 'Show read state and inspect who has read group messages.',
+        title: 'Read status',
+        href: '/docs/chat/sdk/v4/wasm/message/read-status/mark-conversation-message-as-read',
+        description: 'Mark conversations or selected messages as read.',
         meta: 'Read',
       },
       {
         title: 'Typing indicators',
-        href: '/docs/chat/sdk/v4/wasm/message/managing-a-message/send-typing-indicators-to-other-members',
+        href: '/docs/chat/sdk/v4/wasm/message/conversation-state/typing-status-update',
         description: 'Display active typing state in the current conversation.',
         meta: 'Typing',
       },
       {
         title: 'Message metadata',
-        href: '/docs/chat/sdk/v4/wasm/message/adding-extra-data-to-a-message/add-extra-data-to-a-message',
+        href: '/docs/chat/sdk/v4/wasm/message/managing-messages/set-message-local-ex',
         description: 'Attach extra data to messages for product-specific rendering.',
         meta: 'Data',
       },
     ],
   },
   {
-    title: 'Moderation and governance',
+    title: 'Relationships and governance',
     description:
-      'Apply user-level and conversation-level controls when product policy or operations require them.',
+      'Apply relationship and group controls when product policy or operations require them.',
     links: [
       {
-        title: 'Block users',
-        href: '/docs/chat/platform-api/v3/moderation/blocking-users/block-users',
-        description: 'Block unwanted users and remove blocks when policy allows.',
-        meta: 'Block',
+        title: 'Add users to blacklist',
+        href: '/docs/chat/platform-api/v3/relation/blacklist/add-black',
+        description: 'Add users to a blacklist and remove them when policy allows.',
+        meta: 'Blacklist',
       },
       {
         title: 'Mute group members',
-        href: '/docs/chat/platform-api/v3/moderation/muting-a-user/mute-a-member-in-a-group-channel',
+        href: '/docs/chat/platform-api/v3/group/group-moderation/mute-group-member',
         description: 'Mute or unmute members inside a group conversation.',
         meta: 'Mute',
       },
       {
-        title: 'List blocked users',
-        href: '/docs/chat/platform-api/v3/moderation/listing-blocked-and-blocking-users/list-blocked-and-blocking-users',
-        description: 'Review block relationships for support, safety, and admin workflows.',
+        title: 'List blacklist',
+        href: '/docs/chat/platform-api/v3/relation/blacklist/list-blacks',
+        description: 'Review blacklist relationships for support, safety, and admin workflows.',
         meta: 'Audit',
       },
       {
-        title: 'Freeze group conversations',
-        href: '/docs/chat/sdk/v4/wasm/channel/moderating-a-channel/freeze-and-unfreeze-a-channel',
-        description: 'Control whether a group conversation can accept new messages.',
-        meta: 'Freeze',
+        title: 'Mute groups',
+        href: '/docs/chat/platform-api/v3/group/group-moderation/mute-group',
+        description: 'Control whether group conversations can accept new member messages.',
+        meta: 'Groups',
       },
     ],
   },
@@ -467,28 +458,17 @@ const zhCardText: Record<string, Pick<HomeCard, 'title' | 'description'> & { met
     title: '应用',
     description: '管理应用设置、令牌、速率限制和 Webhook 投递状态。',
   },
-  Bots: {
-    title: '机器人',
-    description: '创建机器人、加入频道，并发送机器人消息或流式消息。',
-    meta: '机器人',
+  Relations: {
+    title: '关系',
+    description: '管理好友申请、好友列表、关系资料和黑名单。',
   },
-  'Channel membership': {
-    title: '频道成员',
-    description: '支持邀请、成员、参与者、管理员、加入、离开和隐藏流程。',
-    meta: '成员',
+  Groups: {
+    title: '群组',
+    description: '创建群组会话、维护群资料、管理成员并邀请用户。',
   },
-  'Channel metadata': {
-    title: '频道元数据',
-    description: '为频道添加自定义数据和计数器，承载产品状态。',
-    meta: '数据',
-  },
-  Channels: {
-    title: '频道',
-    description: '创建、列出、邀请、隐藏和审核群组频道或开放频道。',
-  },
-  'Create a group channel': {
-    title: '创建群组频道',
-    description: '通过服务端创建群组频道，并为成员加入做好准备。',
+  'Create a group': {
+    title: '创建群组',
+    description: '通过服务端创建群组，并为成员加入做好准备。',
     meta: 'API',
   },
   'Data export': {
@@ -508,7 +488,7 @@ const zhCardText: Record<string, Pick<HomeCard, 'title' | 'description'> & { met
   },
   'Event handlers': {
     title: '事件处理器',
-    description: '响应客户端侧的用户、频道和消息事件。',
+    description: '响应客户端侧的用户、关系、群组和消息事件。',
     meta: '事件',
   },
   Flutter: {
@@ -521,35 +501,25 @@ const zhCardText: Record<string, Pick<HomeCard, 'title' | 'description'> & { met
     description: '跟踪媒体和其他文件消息附件的上传状态。',
     meta: '文件',
   },
-  'Game chat starter': {
-    title: '游戏聊天示例',
-    description: '围绕连接、用户和第一条频道消息构建 Unity 示例。',
-    meta: 'Unity',
-  },
-  'Group channels': {
-    title: '群组频道',
-    description: '用于一对一或多人聊天的私有成员制会话。',
-    meta: '频道',
-  },
   iOS: {
     title: 'iOS',
-    description: '在 Apple 平台交付原生聊天，覆盖频道、消息和通知指南。',
+    description: '在 Apple 平台交付原生聊天，覆盖群组、消息和通知指南。',
     meta: 'Swift',
   },
   Invitations: {
     title: '邀请',
-    description: '在客户端邀请用户并管理群组频道成员关系。',
+    description: '在客户端邀请用户并管理群组成员关系。',
     meta: 'SDK',
   },
-  'Issue a session token': {
-    title: '签发会话 Token',
+  'Issue a user token': {
+    title: '获取用户 Token',
     description: '从可信后端服务生成用户登录凭证。',
     meta: '认证',
   },
-  'Block a user': {
-    title: '屏蔽用户',
-    description: '当安全策略要求时，从服务端执行管控操作。',
-    meta: '管控',
+  'Add to blacklist': {
+    title: '加入黑名单',
+    description: '当关系策略要求时，将用户加入黑名单。',
+    meta: '关系',
   },
   Electron: {
     title: 'Electron',
@@ -585,20 +555,10 @@ const zhCardText: Record<string, Pick<HomeCard, 'title' | 'description'> & { met
     description: '当示例需要同时覆盖 iOS 和 Android 时，可从 Flutter 路径开始。',
     meta: 'Flutter',
   },
-  Moderation: {
-    title: '审核与管控',
-    description: '控制封禁、禁言、冻结、运营者和受限行为。',
-    meta: '安全',
-  },
   'Native Android starter': {
     title: 'Android 原生示例',
-    description: '先走通 Android 设置流程，再补充生产级频道能力。',
+    description: '先走通 Android 设置流程，再补充生产级群组和消息能力。',
     meta: 'Android',
-  },
-  'Open channels': {
-    title: '开放频道',
-    description: '适合社区、直播活动和广播的大型公开会话空间。',
-    meta: '频道',
   },
   'Pinned messages': {
     title: '置顶消息',
@@ -657,23 +617,18 @@ const zhCardText: Record<string, Pick<HomeCard, 'title' | 'description'> & { met
   },
   'Subscribe to webhook events': {
     title: '订阅 Webhook 事件',
-    description: '使用事件投递同步消息、审核事件和频道变化。',
+    description: '使用事件投递同步消息、关系和群组变化。',
     meta: 'Webhook',
   },
   'Text and file messages': {
     title: '文本和文件消息',
-    description: '在支持的频道类型中发送文本消息和文件消息。',
+    description: '在支持的会话中发送文本消息和文件消息。',
     meta: '消息',
   },
   'Typing indicators': {
     title: '输入状态',
     description: '在活跃会话中显示实时输入状态。',
     meta: '输入中',
-  },
-  Unity: {
-    title: 'Unity',
-    description: '用频道、实时消息和用户资料连接游戏社区。',
-    meta: 'C#',
   },
   'Mini Program': {
     title: '小程序',
@@ -687,7 +642,7 @@ const zhCardText: Record<string, Pick<HomeCard, 'title' | 'description'> & { met
   },
   'Unread counts': {
     title: '未读数',
-    description: '驱动角标、收件箱计数和单频道未读摘要。',
+    description: '驱动角标、收件箱计数和会话未读摘要。',
     meta: '未读',
   },
   'User metadata': {
@@ -739,10 +694,10 @@ const zhCardText: Record<string, Pick<HomeCard, 'title' | 'description'> & { met
     description: '配置基础地址、请求头、管理员 token 和请求约定。',
     meta: 'API',
   },
-  'Block users': {
-    title: '屏蔽用户',
-    description: '屏蔽不受欢迎的用户，并在策略允许时解除屏蔽。',
-    meta: '屏蔽',
+  'Add users to blacklist': {
+    title: '加入黑名单',
+    description: '将用户加入黑名单，并在策略允许时移出黑名单。',
+    meta: '黑名单',
   },
   'Client authentication': {
     title: '客户端认证',
@@ -764,11 +719,6 @@ const zhCardText: Record<string, Pick<HomeCard, 'title' | 'description'> & { met
     description: '当一套代码需要覆盖移动端时，可以从 Flutter Demo 开始。',
     meta: 'GitHub / Flutter',
   },
-  'Freeze group conversations': {
-    title: '冻结群组会话',
-    description: '控制群组会话是否允许继续发送新消息。',
-    meta: '冻结',
-  },
   'Group profile and lifecycle': {
     title: '群组资料与生命周期',
     description: '在产品状态变化时更新或删除群组会话记录。',
@@ -789,9 +739,9 @@ const zhCardText: Record<string, Pick<HomeCard, 'title' | 'description'> & { met
     description: '从可信服务中处理用户加入或退出群组会话。',
     meta: '成员',
   },
-  'List blocked users': {
-    title: '查询屏蔽关系',
-    description: '为客服、安全和后台管理流程查看用户屏蔽关系。',
+  'List blacklist': {
+    title: '查询黑名单',
+    description: '为客服、安全和后台管理流程查看黑名单关系。',
     meta: '审计',
   },
   'List group members': {
@@ -834,6 +784,11 @@ const zhCardText: Record<string, Pick<HomeCard, 'title' | 'description'> & { met
     description: '在群组会话中禁言或解除禁言成员。',
     meta: '禁言',
   },
+  'Mute groups': {
+    title: '禁言群组',
+    description: '控制群组是否允许成员继续发送消息。',
+    meta: '群组',
+  },
   'Receive realtime messages': {
     title: '接收实时消息',
     description: '订阅 SDK 消息事件，并把增量消息合并到界面状态。',
@@ -849,15 +804,15 @@ const zhCardText: Record<string, Pick<HomeCard, 'title' | 'description'> & { met
     description: '从可信服务端流程发送文本消息和自定义消息。',
     meta: '消息',
   },
-  'Session tokens': {
-    title: '会话 Token',
-    description: '从服务端为用户签发 token，并在需要时注销会话。',
-    meta: '认证',
+  'Read status': {
+    title: '已读状态',
+    description: '将会话或指定消息标记为已读。',
+    meta: '已读',
   },
-  'Unity demo': {
-    title: 'Unity Demo',
-    description: '查看 Unity Demo，适用于游戏和互动应用聊天场景。',
-    meta: 'GitHub / Unity',
+  'User tokens': {
+    title: '用户 Token',
+    description: '从服务端为用户签发 Token，并在需要时强制下线。',
+    meta: '认证',
   },
   'uni-app demo': {
     title: 'uni-app Demo',
@@ -898,9 +853,9 @@ const zhFeatureGroupText: Record<string, Pick<FeatureGroup, 'title' | 'descripti
     title: '消息状态与体验',
     description: '同步未读数、已读回执、输入状态和消息附加数据。',
   },
-  'Moderation and governance': {
-    title: '安全与管控',
-    description: '在产品策略或运营需要时，执行用户级和会话级控制。',
+  'Relationships and governance': {
+    title: '关系与治理',
+    description: '在产品策略或运营需要时，执行关系和群组控制。',
   },
   'Cross-platform SDKs and operations': {
     title: '跨端 SDK 与接入',

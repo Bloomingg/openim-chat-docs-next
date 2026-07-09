@@ -304,7 +304,7 @@ async function renderZhOverviewPage(route, mapping, allRoutes) {
   const childRows = renderZhChildRows(sectionChildren);
 
   if (route.title === 'OpenIM Platform API') {
-    return `OpenIM Platform API 面向可信后端服务，提供用户、群组、消息、上传、Webhook 和运营管理相关的 REST 接口参考。中文文档保留 Platform API 的导航方式，具体能力、接口路径和请求字段以 OpenIM REST 已覆盖的文档为准。
+    return `OpenIM Platform API 面向可信后端服务，提供认证、用户、关系、群组、会话、消息、第三方服务、迁移和错误码相关的 REST 接口参考。中文文档保留 Platform API 的导航方式，具体能力、接口路径和请求字段以 OpenIM REST 已覆盖的文档为准。
 
 ## 最常用
 
@@ -313,7 +313,7 @@ async function renderZhOverviewPage(route, mapping, allRoutes) {
 在调用管理端 REST API 前，后端服务需要确认 API 地址、请求头和管理员 Token 的使用方式。客户端登录所需的用户 Token 也应由可信后端签发。
 
 - [接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)
-- [签发会话 Token](/docs/chat/platform-api/v3/user/managing-session-tokens/issue-a-session-token)
+- [获取用户 Token](/docs/chat/platform-api/v3/auth/tokens/get-user-token)
 
 ### 用户管理
 
@@ -327,31 +327,31 @@ async function renderZhOverviewPage(route, mapping, allRoutes) {
 
 使用 OpenIM 消息接口从后端发送消息，并结合 Webhook 或业务后端处理审核、通知和扩展行为。
 
-- [发送消息](/docs/chat/platform-api/v3/message/messaging-basics/send-a-message)
+- [发送消息](/docs/chat/platform-api/v3/message/sending-messages/send-msg)
 
 ### 迁移其他项目到 OpenIM
 
 将历史消息或其他 IM 项目中的消息数据导入 OpenIM 时，后端可以使用 OpenIM 消息接口写入带原始发送时间的消息记录。
 
-- [迁移消息](/docs/chat/platform-api/v3/migration/migrate-messages)
+- [迁移到 OpenIM](/docs/chat/platform-api/v3/migration-to-openim)
 
 ## 推荐功能
 
-### 群组频道
+### 群组
 
-OpenIM 使用群组能力承载群聊场景。文档中的“群组频道”概念在这里映射为 OpenIM 群组、群成员和入群申请。
+OpenIM 使用群组能力承载群聊场景。服务端可通过群组接口创建群组、邀请成员和处理入群流程。
 
-- [创建群组频道](/docs/chat/platform-api/v3/channel/creating-a-channel/create-a-group-channel)
-- [邀请成员](/docs/chat/platform-api/v3/channel/inviting-a-user/invite-as-members-channel)
+- [创建群组](/docs/chat/platform-api/v3/group/managing-groups/create-group)
+- [邀请成员](/docs/chat/platform-api/v3/group/group-members/invite-users-to-group)
 
-### 内容审核
+### 关系与群组治理
 
-OpenIM 提供群禁言、成员禁言等可直接调用的管理能力，适合由可信后端执行。
+OpenIM 将好友关系和黑名单归入关系模块，将群禁言归入群组模块，适合由可信后端按业务规则执行。
 
-- [屏蔽用户](/docs/chat/platform-api/v3/moderation/blocking-users/block-users)
-- [取消屏蔽用户](/docs/chat/platform-api/v3/moderation/blocking-users/unblock-a-user)
-- [禁言群组成员](/docs/chat/platform-api/v3/moderation/muting-a-user/mute-a-member-in-a-group-channel)
-- [解除群组成员禁言](/docs/chat/platform-api/v3/moderation/muting-a-user/unmute-a-member-in-a-group-channel)
+- [加入黑名单](/docs/chat/platform-api/v3/relation/blacklist/add-black)
+- [移出黑名单](/docs/chat/platform-api/v3/relation/blacklist/remove-black)
+- [禁言群成员](/docs/chat/platform-api/v3/group/group-moderation/mute-group-member)
+- [取消禁言群成员](/docs/chat/platform-api/v3/group/group-moderation/cancel-mute-group-member)
 
 ## 资源
 
@@ -404,7 +404,7 @@ OpenIM 管理端 REST API 以 JSON 请求为主。除具体接口另有说明外
 3. 使用管理员 Token 调用用户、群组、消息等管理端接口。
 4. 当客户端需要登录 OpenIM 时，由服务端调用用户 Token 接口签发会话 Token。
 
-- [签发会话 Token](/docs/chat/platform-api/v3/user/managing-session-tokens/issue-a-session-token)
+- [获取用户 Token](/docs/chat/platform-api/v3/auth/tokens/get-user-token)
 - [OpenIM 管理员 Token 文档](${sourceUrl(openimSources.adminToken)})
 
 ## 请求体

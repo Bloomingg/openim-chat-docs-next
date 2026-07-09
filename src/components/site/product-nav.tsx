@@ -16,13 +16,13 @@ export function ProductNav() {
         </Link>
         <Dropdown active={pathname.includes('/sdk/')} sections={sdkPlatformSections} label="SDKs" />
         <Link
-          className={active(pathname, '/docs/chat/platform-api/')}
+          className={active(pathname, '/docs/chat/platform-api/v3/')}
           href="/docs/chat/platform-api/v3/overview"
         >
           Server API
         </Link>
         <Link
-          className={active(pathname, '/docs/chat/sdk/v4/wasm/getting-started/')}
+          className={active(pathname, '/docs/chat/sdk/v4/wasm/getting-started/send-first-message', true)}
           href="/docs/chat/sdk/v4/wasm/getting-started/send-first-message"
         >
           SDK Tour

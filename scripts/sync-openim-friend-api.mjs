@@ -3,9 +3,9 @@ import { dirname, resolve } from 'node:path';
 
 const root = process.cwd();
 const today = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Taipei' });
-const localRoot = '/docs/chat/platform-api/v3/friend';
-const contentRoot = 'content/docs/chat/platform-api/v3/friend';
-const zhContentRoot = 'content/zh/docs/chat/platform-api/v3/friend';
+const localRoot = '/docs/chat/platform-api/v3/relation';
+const contentRoot = 'content/docs/chat/platform-api/v3/relation';
+const zhContentRoot = 'content/zh/docs/chat/platform-api/v3/relation';
 const contextKey = 'chat/platform-api/v3';
 const contextTitle = 'Platform API';
 
@@ -472,7 +472,32 @@ const friendApis = [
   },
 ];
 
-const internalFriendApiSlugs = new Set(['get-incremental-blacks', 'get-incremental-friends']);
+const relationRouteSegments = new Map([
+  ['delete-friend', 'managing-friends/delete-friend'],
+  ['list-received-friend-applications', 'managing-friend-requests/list-received-friend-requests'],
+  ['list-sent-friend-applications', 'managing-friend-requests/list-sent-friend-requests'],
+  ['get-friend-list', 'listing-friends/list-friends'],
+  ['get-designated-friends', 'listing-friends/get-designated-friends'],
+  ['add-friend', 'managing-friend-requests/apply-to-add-friend'],
+  ['respond-friend-application', 'managing-friend-requests/respond-friend-apply'],
+  ['add-black', 'blacklist/add-black'],
+  ['get-black-list', 'blacklist/list-blacks'],
+  ['remove-black', 'blacklist/remove-black'],
+  ['import-friends', 'managing-friends/import-friends'],
+  ['update-friends', 'managing-friends/update-friends'],
+]);
+const internalFriendApiSlugs = new Set([
+  'get-designated-friend-application',
+  'set-friend-remark',
+  'get-specified-blacks',
+  'get-incremental-blacks',
+  'is-friend',
+  'get-friend-ids',
+  'get-specified-friends-info',
+  'get-incremental-friends',
+  'get-full-friend-user-ids',
+  'get-self-unhandled-apply-count',
+]);
 
 validateGoFriendApiOrder();
 
@@ -501,16 +526,20 @@ const maxNavOrder = Math.max(...routesWithoutFriend.map((route) => route.navOrde
 
 const newRoutes = [];
 for (const [index, spec] of externalFriendApis.entries()) {
-  const path = `${localRoot}/${spec.slug}`;
+  const routeSegment = relationRouteSegments.get(spec.slug);
+  if (!routeSegment) {
+    throw new Error(`Missing relation route segment for friend API slug: ${spec.slug}`);
+  }
+  const path = `${localRoot}/${routeSegment}`;
   const relativePath = path.replace(/^\/docs\//, '');
-  const contentFile = `${contentRoot}/${spec.slug}.mdx`;
+  const contentFile = `${contentRoot}/${routeSegment}.mdx`;
   const record = {
     id: 0,
     path,
     relativePath,
     sourcePath: path,
     title: spec.title,
-    description: `OpenIM 好友 REST API：${spec.title}。`,
+    description: `OpenIM 关系 REST API：${spec.title}。`,
     product: 'platform-api',
     version: 'v3',
     platform: null,
@@ -525,7 +554,7 @@ for (const [index, spec] of externalFriendApis.entries()) {
   newRoutes.push(record);
 
   await writeMdx(contentFile, renderMdx(record, spec, false));
-  await writeMdx(`${zhContentRoot}/${spec.slug}.mdx`, renderMdx(record, spec, true));
+  await writeMdx(`${zhContentRoot}/${routeSegment}.mdx`, renderMdx(record, spec, true));
 }
 
 const nextRoutes = [...routesWithoutFriend, ...newRoutes].map((route, index) => ({
@@ -539,13 +568,13 @@ if (!platformContext) {
 }
 
 const friendNode = {
-  id: 'friend',
-  segment: 'friend',
-  title: '好友',
+  id: 'relation',
+  segment: 'relation',
+  title: '关系',
   href: null,
   type: 'folder',
   children: newRoutes.map((route) => ({
-    id: `friend/${route.path.split('/').at(-1)}`,
+    id: `relation/${route.path.split('/').slice(5).join('/')}`,
     segment: route.path.split('/').at(-1),
     title: route.title,
     href: route.path,
@@ -556,13 +585,13 @@ const friendNode = {
   minIndex: newRoutes[0]?.navOrder ?? maxNavOrder + 1,
 };
 
-platformContext.nodes = platformContext.nodes.filter((node) => node.id !== 'friend');
+platformContext.nodes = platformContext.nodes.filter((node) => node.id !== 'relation');
 const groupIndex = platformContext.nodes.findIndex((node) => node.id === 'group');
-const channelIndex = platformContext.nodes.findIndex((node) => node.id === 'channel');
-if (groupIndex >= 0) {
+const userIndex = platformContext.nodes.findIndex((node) => node.id === 'user');
+if (userIndex >= 0) {
+  platformContext.nodes.splice(userIndex + 1, 0, friendNode);
+} else if (groupIndex >= 0) {
   platformContext.nodes.splice(groupIndex, 0, friendNode);
-} else if (channelIndex >= 0) {
-  platformContext.nodes.splice(channelIndex + 1, 0, friendNode);
 } else {
   platformContext.nodes.push(friendNode);
 }
@@ -571,7 +600,7 @@ platformContext.pageCount = nextRoutes.filter((route) => route.contextKey === co
 platformApiZh.generatedAt = today;
 platformApiZh.navigationLabels = {
   ...platformApiZh.navigationLabels,
-  friend: '好友',
+  relation: '关系',
 };
 
 await Promise.all([
@@ -597,7 +626,7 @@ await Promise.all([
 ]);
 
 console.log(
-  `Wrote ${externalFriendApis.length} external OpenIM friend API page(s); omitted ${omittedFriendApis.length} internal route(s).`,
+  `Wrote ${externalFriendApis.length} external OpenIM relation API page(s); omitted ${omittedFriendApis.length} internal route(s).`,
 );
 
 async function writeMdx(file, body) {
@@ -642,7 +671,7 @@ function renderBody(spec) {
     ...(spec.responseFields ?? []),
   ];
 
-  return `使用 **${spec.title}** 从可信后端调用 OpenIM 好友 REST 接口。${spec.summary} 请先在[接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)中配置 API 地址和管理员 Token；接口参数通过请求头和 JSON 请求体传递。\n\n## HTTP 请求\n\n\`\`\`bash\nPOST {API_ADDRESS}${spec.endpoint}\n\`\`\`\n\n### 请求示例\n\n\`\`\`bash\ncurl --request POST "\${API_ADDRESS}${spec.endpoint}" \\\n  --header "Content-Type: application/json; charset=utf-8" \\\n  --header "operationID: \${OPERATION_ID}" \\\n  --header "token: \${ADMIN_TOKEN}" \\\n  --data-raw '${json(spec.sample)}'\n\`\`\`\n\n> 安全提示：管理员 Token 只能保存在可信后端服务中，不能下发到客户端或写入前端代码。客户端登录应使用服务端签发的用户 Token。\n\n## 参数\n\n此接口通过请求头传入链路追踪信息和鉴权凭证，通过 JSON 请求体传递业务参数。\n\n### 请求头\n\n${renderTable(['Header', '是否必填', '类型', '说明'], commonHeaders)}\n\n## 请求体\n\n\`\`\`json\n${json(spec.sample)}\n\`\`\`\n\n${renderTable(['参数名', '是否必填', '类型', '说明'], spec.fields)}\n\n## 响应\n\n请求被 OpenIM 正常处理时通常返回 \`200 OK\`。业务是否成功以响应体中的 \`errCode\` 为准；\`errCode === 0\` 表示成功，非 0 表示业务错误。\n\n\`\`\`json\n${json(success)}\n\`\`\`\n\n### 响应参数\n\n${renderTable(['参数名', '类型', '说明'], responseFields)}\n\n### 错误\n\n如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/docs/chat/platform-api/v3/error-codes)。\n\n\`\`\`json\n${json({ errCode: 1004, errMsg: 'RecordNotFoundError', errDlt: ': [1004]RecordNotFoundError' })}\n\`\`\`\n\n| 错误场景 | 可能原因 | 处理方式 |\n| -------- | -------- | -------- |\n| 鉴权失败 | \`token\` 缺失、过期，或不是可调用管理端接口的管理员 Token。 | 重新获取 APP 管理员 Token，并只在可信后端保存。 |\n| 链路追踪困难 | \`operationID\` 缺失或在大量请求中重复使用。 | 为每次请求生成独立 \`operationID\`，并在服务端日志中保留。 |\n| 参数校验失败 | 请求体字段类型、必填字段或枚举值不符合接口要求。 | 对照请求体参数表和限制说明检查字段。 |\n\n## 权限和限制\n\n- ${spec.sideEffects}\n${spec.limits.map((item) => `- ${item}`).join('\n')}\n- 所有数组型请求参数建议控制在 1000 个元素以内。\n\n## 相关页面\n\n- [接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)\n- [查询用户列表](/docs/chat/platform-api/v3/user/listing-users/list-users)\n- [群组概览](/docs/chat/platform-api/v3/group/create-group)\n- [错误码](/docs/chat/platform-api/v3/error-codes)`;
+  return `使用 **${spec.title}** 从可信后端调用 OpenIM 关系 REST 接口。${spec.summary} 请先在[接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)中配置 API 地址和管理员 Token；接口参数通过请求头和 JSON 请求体传递。\n\n## HTTP 请求\n\n\`\`\`bash\nPOST {API_ADDRESS}${spec.endpoint}\n\`\`\`\n\n### 请求示例\n\n\`\`\`bash\ncurl --request POST "\${API_ADDRESS}${spec.endpoint}" \\\n  --header "Content-Type: application/json; charset=utf-8" \\\n  --header "operationID: \${OPERATION_ID}" \\\n  --header "token: \${ADMIN_TOKEN}" \\\n  --data-raw '${json(spec.sample)}'\n\`\`\`\n\n> 安全提示：管理员 Token 只能保存在可信后端服务中，不能下发到客户端或写入前端代码。客户端登录应使用服务端签发的用户 Token。\n\n## 参数\n\n此接口通过请求头传入链路追踪信息和鉴权凭证，通过 JSON 请求体传递业务参数。\n\n### 请求头\n\n${renderTable(['Header', '是否必填', '类型', '说明'], commonHeaders)}\n\n## 请求体\n\n\`\`\`json\n${json(spec.sample)}\n\`\`\`\n\n${renderTable(['参数名', '是否必填', '类型', '说明'], spec.fields)}\n\n## 响应\n\n请求被 OpenIM 正常处理时通常返回 \`200 OK\`。业务是否成功以响应体中的 \`errCode\` 为准；\`errCode === 0\` 表示成功，非 0 表示业务错误。\n\n\`\`\`json\n${json(success)}\n\`\`\`\n\n### 响应参数\n\n${renderTable(['参数名', '类型', '说明'], responseFields)}\n\n### 错误\n\n如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/docs/chat/platform-api/v3/error-codes)。\n\n\`\`\`json\n${json({ errCode: 1004, errMsg: 'RecordNotFoundError', errDlt: ': [1004]RecordNotFoundError' })}\n\`\`\`\n\n| 错误场景 | 可能原因 | 处理方式 |\n| -------- | -------- | -------- |\n| 鉴权失败 | \`token\` 缺失、过期，或不是可调用管理端接口的管理员 Token。 | 重新获取 APP 管理员 Token，并只在可信后端保存。 |\n| 链路追踪困难 | \`operationID\` 缺失或在大量请求中重复使用。 | 为每次请求生成独立 \`operationID\`，并在服务端日志中保留。 |\n| 参数校验失败 | 请求体字段类型、必填字段或枚举值不符合接口要求。 | 对照请求体参数表和限制说明检查字段。 |\n\n## 权限和限制\n\n- ${spec.sideEffects}\n${spec.limits.map((item) => `- ${item}`).join('\n')}\n- 所有数组型请求参数建议控制在 1000 个元素以内。\n\n## 相关页面\n\n- [接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)\n- [查询用户列表](/docs/chat/platform-api/v3/user/listing-users/list-users)\n- [群组概览](/docs/chat/platform-api/v3/group/overview)\n- [错误码](/docs/chat/platform-api/v3/error-codes)`;
 }
 
 function renderFrontmatter(values) {
