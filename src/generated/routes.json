@@ -8735,7 +8735,7 @@
     "relativePath": "chat/sdk/v4/android/error-codes",
     "sourcePath": "/docs/chat/sdk/v4/android/error-codes",
     "title": "错误码",
-    "description": "说明 Android core binding 的回调错误、登录状态错误和排查流程。",
+    "description": "枚举 Android SDK v3.8.3 对应 SDK core 和 server 源码中定义的错误码。",
     "product": "sdk",
     "version": "v4",
     "platform": "android",
