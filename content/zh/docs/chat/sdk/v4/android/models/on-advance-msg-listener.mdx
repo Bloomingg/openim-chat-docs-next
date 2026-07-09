@@ -22,14 +22,14 @@ sourcePath: '/docs/chat/sdk/v4/android/models/on-advance-msg-listener'
 | 方法                           | 参数                                    | 描述                                                                                                                                 |
 | ------------------------------ | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | onRecvNewMessage               | Message msg                             | 收到新消息 需要添加到列表，然后刷新界面                                                                                              |
-| onRecvC2CReadReceipt           | List<C2CReadReceiptInfo> list           | 对方已阅读消息回执 需更新界面已读状态                                                                                                |
+| onRecvC2CReadReceipt           | `List<C2CReadReceiptInfo>list` | 对方已阅读消息回执 需更新界面已读状态                                                                                                |
 | onRecvGroupMessageReadReceipt  | GroupMessageReceipt groupMessageReceipt | 群成员已阅读消息回执 需更新界面已读状态                                                                                              |
 | onRecvMessageRevokedV2         | RevokedInfo info                        | 对方撤回了消息 单聊撤回，群聊测回以及群组管理员撤回其他人消息 新版本只会通过此回调回传被撤回的详细信息，不会触发onRecvNewMessage回调 |
-| onRecvMessageExtensionsChanged | String msgID；List<KeyValue> list       | 事件触发时回调。                                                                                                                     |
-| onRecvMessageExtensionsDeleted | String msgID；List<String> list         | 事件触发时回调。                                                                                                                     |
-| onRecvMessageExtensionsAdded   | String msgID；List<KeyValue> list       | 事件触发时回调。                                                                                                                     |
+| onRecvMessageExtensionsChanged | `String msgID；List<KeyValue>list` | 事件触发时回调。                                                                                                                     |
+| onRecvMessageExtensionsDeleted | `String msgID；List<String>list` | 事件触发时回调。                                                                                                                     |
+| onRecvMessageExtensionsAdded   | `String msgID；List<KeyValue>list` | 事件触发时回调。                                                                                                                     |
 | onMsgDeleted                   | Message message                         | 消息被删除                                                                                                                           |
-| onRecvOfflineNewMessage        | List<Message> msg                       | 事件触发时回调。                                                                                                                     |
+| onRecvOfflineNewMessage        | `List<Message>msg` | 事件触发时回调。                                                                                                                     |
 | onRecvOnlineOnlyMessage        | String s                                | 事件触发时回调。                                                                                                                     |
 
 ## 关联类型

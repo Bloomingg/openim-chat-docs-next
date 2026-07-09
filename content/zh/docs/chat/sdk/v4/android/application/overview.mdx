@@ -1,6 +1,6 @@
 ---
 title: '概述'
-description: '初始化与登录方法目录，所有方法均拆分到独立页面说明。'
+description: '说明 Android SDK 从初始化、监听器注册、登录、运行态维护到退出和释放的生命周期。'
 product: 'sdk'
 context: 'chat/sdk/v4/android'
 template: 'overview'
@@ -11,9 +11,37 @@ platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/application/overview'
 ---
 
-初始化与登录方法来自 `open_im_sdk/init_login.go`。初始化成功后，SDK 会创建全局 `UserForSDK`；后续用户、群组、会话、消息和第三方能力都依赖这个实例。
+SDK 生命周期方法来自 `open_im_sdk/init_login.go`。初始化成功后，SDK 会创建全局 `UserForSDK`；后续用户、群组、会话、消息、推送、日志和文件上传能力都依赖这个实例。
 
-本页是初始化与登录能力的方法目录。每个方法的签名、参数、返回和使用边界都放在独立页面中。
+本页说明 Android SDK 在应用内的推荐调用顺序和状态边界。每个方法的签名、参数、返回和使用边界都放在独立页面中。
+
+## 生命周期顺序
+
+| 阶段       | 推荐动作                                                                                      | 说明                                                                                 |
+| ---------- | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| 启动前检查 | 可先读取 [获取 SDK 版本](/docs/chat/sdk/v4/android/application/methods/get-sdk-version)        | 便于在启动日志、问题反馈和兼容性判断中记录当前 SDK 版本。                            |
+| 初始化     | 调用 [初始化 SDK](/docs/chat/sdk/v4/android/application/methods/init-sdk)                      | 应用进程内通常只初始化一次；初始化配置中包含 API、WS、日志路径和平台信息。           |
+| 注册监听器 | 在登录前注册连接、会话、消息、群组、好友和用户监听器                                          | 避免登录后服务端同步事件先到达，但业务层还没有监听入口。                             |
+| 登录用户   | 调用 [登录用户](/docs/chat/sdk/v4/android/application/methods/login)                           | token 必须由业务服务端签发，并且与登录的 userID 匹配。                               |
+| 运行维护   | 按应用状态调用 [设置前后台状态](/docs/chat/sdk/v4/android/application/methods/set-app-background-status) 和 [通知网络变化](/docs/chat/sdk/v4/android/application/methods/network-status-changed) | 帮助 SDK 调整连接、同步、推送和重连行为。                                             |
+| 状态判断   | 通过 [获取登录状态](/docs/chat/sdk/v4/android/application/methods/get-login-status) 和 [获取登录用户 ID](/docs/chat/sdk/v4/android/application/methods/get-login-user-id) 判断当前账号 | 常用于启动恢复、账号切换、页面进入前的能力开关和日志排查。                           |
+| 退出账号   | 调用 [退出登录](/docs/chat/sdk/v4/android/application/methods/logout)                          | 退出当前登录用户，不等同于释放 SDK 全局实例。                                        |
+| 释放资源   | 调用 [释放 SDK](/docs/chat/sdk/v4/android/application/methods/un-init-sdk)                     | 仅在应用完全退出 IM 能力、测试环境重建实例或需要销毁全局资源时使用。                 |
+
+## 状态边界
+
+| 状态             | 可以做什么                                         | 不建议做什么                                             |
+| ---------------- | -------------------------------------------------- | -------------------------------------------------------- |
+| 未初始化         | 读取静态信息，例如 SDK 版本。                      | 调用用户态接口、消息接口、群组接口或依赖连接的能力。     |
+| 已初始化未登录   | 注册监听器、检查配置、准备登录参数。               | 拉取会话、发送消息、维护好友或群组关系。                 |
+| 已登录           | 正常使用会话、消息、用户、好友、群组和第三方能力。 | 在没有业务判断的情况下重复登录同一账号。                 |
+| 退出登录后       | 清理当前账号 UI 状态，等待下次登录。               | 继续使用旧账号的会话、消息和关系数据作为实时状态。       |
+| 释放 SDK 后      | 重新初始化后再进入 IM 流程。                       | 继续复用释放前保存的 SDK 全局实例或监听器引用。          |
+
+## 相关流程
+
+- [认证流程](/docs/chat/sdk/v4/android/application/authenticating-a-user/authentication)：说明 token 来源、登录前置条件、token 过期和退出登录处理。
+- [监听器](/docs/chat/sdk/v4/android/event-handler/overview)：说明登录前应注册的事件监听能力。
 
 ## 方法索引
 

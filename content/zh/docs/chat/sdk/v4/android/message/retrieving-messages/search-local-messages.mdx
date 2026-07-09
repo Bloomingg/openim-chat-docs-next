@@ -29,7 +29,7 @@ sourcePath: '/docs/chat/sdk/v4/android/message/retrieving-messages/search-local-
 
 ## Android 调用参考
 
-Android SDK v3.8.3.5 的 Java 方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+Android SDK v3.8.3 的 Java 方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
 
 ```java showLineNumbers
 public void searchLocalMessages(OnBase<SearchResult> base, String conversationID,
@@ -43,12 +43,12 @@ public void searchLocalMessages(OnBase<SearchResult> base, String conversationID
 
 | 参数名称             | 参数类型                                                                                                                     | 是否必填 | 描述                                                                                            |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------------------- | -------- | ----------------------------------------------------------------------------------------------- |
-| callBack             | [`OnBase`](/docs/chat/sdk/v4/android/models/on-base)&lt;[`SearchResult`](/docs/chat/sdk/v4/android/models/search-result)&gt; | 是       | 回调接口                                                                                        |
+| callBack             | `OnBase<SearchResult>` | 是       | 回调接口                                                                                        |
 | conversationID       | String                                                                                                                       | 否       | 根据会话查询，如果是全局搜索传 null                                                             |
-| keywordList          | List<String>                                                                                                                 | 是       | 搜索关键词列表，目前仅支持一个关键词搜索                                                        |
+| keywordList          | `List<String>` | 是       | 搜索关键词列表，目前仅支持一个关键词搜索                                                        |
 | keywordListMatchType | int                                                                                                                          | 否       | 关键词匹配模式，1 代表与，2 代表或，暂时未用                                                    |
-| senderUserIDList     | List<String>                                                                                                                 | 否       | 指定消息发送的 uid 列表 暂时未用                                                                |
-| messageTypeList      | List<Integer>                                                                                                                | 是       | [`MessageType`](/docs/chat/sdk/v4/android/models/message-type) 消息类型列表                     |
+| senderUserIDList     | `List<String>` | 否       | 指定消息发送的 uid 列表 暂时未用                                                                |
+| messageTypeList      | `List<Integer>` | 是       | [`MessageType`](/docs/chat/sdk/v4/android/models/message-type) 消息类型列表                     |
 | searchTimePosition   | int                                                                                                                          | 是       | 搜索的起始时间点。默认为 0 即代表从现在开始搜索。UTC 时间戳，单位：秒                           |
 | searchTimePeriod     | int                                                                                                                          | 是       | 从起始时间点开始的过去时间范围，单位秒。默认为 0 即代表不限制时间范围，传 24x60x60 代表过去一天 |
 | pageIndex            | int                                                                                                                          | 是       | 当前页数                                                                                        |
@@ -65,11 +65,11 @@ public void searchLocalMessages(OnBase<SearchResult> base, String conversationID
 | 字段名称          | 字段类型                                                                              | 描述                             |
 | ----------------- | ------------------------------------------------------------------------------------- | -------------------------------- |
 | totalCount        | int                                                                                   | 获取到的总的消息数量             |
-| searchResultItems | List&lt;[`SearchResultItem`](/docs/chat/sdk/v4/android/models/search-result-item)&gt; | 搜索结果 调用 searchXXX 方法返回 |
+| searchResultItems | `List<SearchResultItem>` | 搜索结果 调用 searchXXX 方法返回 |
 
 ## 代码示例
 
-以下示例展示 Android SDK v3.8.3.5 的调用方式。
+以下示例展示 Android SDK v3.8.3 的调用方式。
 
 ```java showLineNumbers
 OpenIMClient.getInstance().messageManager.searchLocalMessages(

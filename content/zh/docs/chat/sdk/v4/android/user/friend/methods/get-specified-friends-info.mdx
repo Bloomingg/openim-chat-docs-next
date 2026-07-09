@@ -29,7 +29,7 @@ sourcePath: '/docs/chat/sdk/v4/android/user/friend/methods/get-specified-friends
 
 ## Android 调用参考
 
-Android SDK v3.8.3.5 的 Java 方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+Android SDK v3.8.3 的 Java 方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
 
 ```java showLineNumbers
 public void getFriendsInfo(OnBase<List<UserInfo>> base, List<String> uidList, Boolean filterBlack)
@@ -39,7 +39,7 @@ public void getFriendsInfo(OnBase<List<UserInfo>> base, List<String> uidList, Bo
 
 | 参数名称    | 参数类型      | 是否必填 | 描述             |
 | ----------- | ------------- | -------- | ---------------- |
-| userIDList  | List\<String> | 是       | 用户 ID 列表     |
+| userIDList  | `List\<String>` | 是       | 用户 ID 列表     |
 | filterBlack | Boolean       | 否       | 是否过滤掉黑名单 |
 
 ## 返回结果
@@ -48,7 +48,7 @@ public void getFriendsInfo(OnBase<List<UserInfo>> base, List<String> uidList, Bo
 
 ## 代码示例
 
-以下示例展示 Android SDK v3.8.3.5 的调用方式。
+以下示例展示 Android SDK v3.8.3 的调用方式。
 
 ```java showLineNumbers
 OpenIMClient.getInstance().friendshipManager.getFriendsInfo(new OnBase<List<UserInfo>>() {
@@ -73,4 +73,4 @@ OpenIMClient.getInstance().friendshipManager.getFriendsInfo(new OnBase<List<User
 
 ## 相关页面
 
-- [好友](/docs/chat/sdk/v4/android/user/friend/overview)
+- [好友](/docs/chat/sdk/v4/android/user/overview#好友)

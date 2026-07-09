@@ -17,19 +17,19 @@ sourcePath: '/docs/chat/sdk/v4/android/push-notifications/methods/update-fcm-tok
 
 更新当前设备的 FCM token，用于服务端向 Android 设备发送离线推送。
 
-第三方能力至少要求 SDK 已初始化；日志和文件上传的进度通过对应 progress callback 返回。
+推送通知能力至少要求 SDK 已初始化。
 
 ## Core Binding 方法
 
 | 项目     | 说明                                                                            |
 | -------- | ------------------------------------------------------------------------------- |
 | 方法签名 | `UpdateFcmToken(callback Base, operationID, fcmToken string, expireTime int64)` |
-| 所属能力 | 推送、日志与文件                                                                |
+| 所属能力 | 推送通知                                                                        |
 | 源码位置 | `open_im_sdk/third.go`                                                          |
 
 ## Android 调用参考
 
-Android SDK v3.8.3.5 的 Java 方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+Android SDK v3.8.3 的 Java 方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
 
 ```java showLineNumbers
 public void updateFcmToken(OnBase<String> base, String fcmToken, long expireTime)
@@ -50,7 +50,7 @@ public void updateFcmToken(OnBase<String> base, String fcmToken, long expireTime
 
 ## 代码示例
 
-以下示例展示 Android SDK v3.8.3.5 的调用方式。
+以下示例展示 Android SDK v3.8.3 的调用方式。
 
 ```java showLineNumbers
 OpenIMClient.getInstance().updateFcmToken(new OnBase<String>() {
@@ -73,4 +73,4 @@ OpenIMClient.getInstance().updateFcmToken(new OnBase<String>() {
 
 ## 相关页面
 
-- [推送、日志与文件](/docs/chat/sdk/v4/android/push-notifications/overview)
+- [推送通知](/docs/chat/sdk/v4/android/push-notifications/overview)

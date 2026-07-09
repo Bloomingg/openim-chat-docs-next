@@ -24,12 +24,12 @@ sourcePath: '/docs/chat/sdk/v4/android/application/methods/init-sdk'
 | 项目     | 说明                                                                       |
 | -------- | -------------------------------------------------------------------------- |
 | 方法签名 | `InitSDK(listener OnConnListener, operationID string, config string) bool` |
-| 所属能力 | 初始化与登录                                                               |
+| 所属能力 | SDK 生命周期                                                               |
 | 源码位置 | `open_im_sdk/init_login.go`                                                |
 
 ## Android 调用参考
 
-Android SDK v3.8.3.5 的 Java 方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+Android SDK v3.8.3 的 Java 方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
 
 ```java showLineNumbers
 public boolean initSDK(Application application, InitConfig initConfig, @NotNull OnConnListener listener)
@@ -49,7 +49,7 @@ public boolean initSDK(Application application, InitConfig initConfig, @NotNull 
 
 ## 代码示例
 
-以下示例展示 Android SDK v3.8.3.5 的调用方式。
+以下示例展示 Android SDK v3.8.3 的调用方式。
 
 ```java showLineNumbers
 boolean initialized = OpenIMClient.getInstance().initSDK(application, initConfig, new OnConnListener() {
@@ -77,4 +77,4 @@ boolean initialized = OpenIMClient.getInstance().initSDK(application, initConfig
 
 ## 相关页面
 
-- [初始化与登录](/docs/chat/sdk/v4/android/application/overview)
+- [SDK 生命周期](/docs/chat/sdk/v4/android/application/overview)

@@ -1,5 +1,5 @@
 ---
-title: '获取指定群组资料'
+title: '获取群信息'
 description: '说明 Android core binding 方法 GetSpecifiedGroupsInfo 的用途、参数、返回和使用边界。'
 product: 'sdk'
 context: 'chat/sdk/v4/android'
@@ -11,11 +11,11 @@ platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/group/managing-groups/get-specified-groups-info'
 ---
 
-批量获取指定群组资料，适合会话列表补齐群信息或刷新部分群资料。
+批量获取群信息，适合会话列表补齐群资料或刷新部分群资料。
 
 ## 功能介绍
 
-批量获取指定群组资料，适合会话列表补齐群信息或刷新部分群资料。
+批量获取群信息，适合会话列表补齐群资料或刷新部分群资料。
 
 群组方法通常要求当前用户已登录，且群主、管理员、成员权限由服务端校验；群组变化通过 `SetGroupListener` 接收。
 
@@ -29,7 +29,7 @@ sourcePath: '/docs/chat/sdk/v4/android/group/managing-groups/get-specified-group
 
 ## Android 调用参考
 
-Android SDK v3.8.3.5 的 Java 方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+Android SDK v3.8.3 的 Java 方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
 
 ```java showLineNumbers
 public void getGroupsInfo(OnBase<List<GroupInfo>> base, List<String> gidList)
@@ -39,8 +39,8 @@ public void getGroupsInfo(OnBase<List<GroupInfo>> base, List<String> gidList)
 
 | 参数名称 | 参数类型                                                                                                                           | 是否必填 | 描述      |
 | -------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------- | --------- |
-| callBack | [`OnBase`](/docs/chat/sdk/v4/android/models/on-base)&lt;List&lt;[`GroupInfo`](/docs/chat/sdk/v4/android/models/group-info)&gt;&gt; | 是       | 回调接口  |
-| gidList  | List<String>                                                                                                                       | 是       | 群ID 列表 |
+| callBack | `OnBase<List<GroupInfo>>` | 是       | 回调接口  |
+| gidList  | `List<String>` | 是       | 群ID 列表 |
 
 ## 返回结果
 
@@ -48,7 +48,7 @@ public void getGroupsInfo(OnBase<List<GroupInfo>> base, List<String> gidList)
 
 ## 代码示例
 
-以下示例展示 Android SDK v3.8.3.5 的调用方式。
+以下示例展示 Android SDK v3.8.3 的调用方式。
 
 ```java showLineNumbers
 OpenIMClient.getInstance().groupManager.getGroupsInfo(new OnBase<List<GroupInfo>>() {

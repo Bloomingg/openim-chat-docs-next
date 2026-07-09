@@ -11,13 +11,13 @@ platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/event-handler/methods/set-advanced-msg-listener'
 ---
 
-设置单条消息高级监听器，用于处理新消息、离线消息、已读回执、消息撤回、消息删除和在线消息。
+接收单条消息相关事件，用于驱动聊天页消息流、会话未读数、已读回执、撤回提示和在线消息处理。
 
 ## 功能介绍
 
-设置单条消息高级监听器，用于处理新消息、离线消息、已读回执、消息撤回、消息删除和在线消息。
+单条消息事件适合处理需要逐条更新 UI 或本地状态的场景，例如当前会话收到新消息、离线消息补偿、单聊或群聊已读回执、消息撤回和消息删除。
 
-`Set*Listener` 会替换当前 SDK 保存的同类监听器；如果多个模块都要消费事件，应在业务层封装统一分发。
+该监听器是单实例替换式注册。多个页面都需要消费消息事件时，建议在业务层做统一分发，避免后注册的页面覆盖全局消息处理。
 
 ## Core Binding 方法
 
@@ -29,7 +29,7 @@ sourcePath: '/docs/chat/sdk/v4/android/event-handler/methods/set-advanced-msg-li
 
 ## Android 调用参考
 
-Android SDK v3.8.3.5 的 Java 方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+Android SDK v3.8.3 的 Java 方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
 
 ```java showLineNumbers
 public void setAdvancedMsgListener(OnAdvanceMsgListener listener)
@@ -37,9 +37,9 @@ public void setAdvancedMsgListener(OnAdvanceMsgListener listener)
 
 ## 输入参数
 
-| 参数名称 | 参数类型                                                                             | 描述 |
-| -------- | ------------------------------------------------------------------------------------ | ---- |
-| listener | [`OnAdvancedMsgListener`](/docs/chat/sdk/v4/android/models/on-advanced-msg-listener) | 是   |
+| 参数名称 | 参数类型                                                                         | 是否必填 | 描述           |
+| -------- | -------------------------------------------------------------------------------- | -------- | -------------- |
+| listener | [`OnAdvanceMsgListener`](/docs/chat/sdk/v4/android/models/on-advance-msg-listener) | 是       | 事件监听器实例。 |
 
 ## 返回结果
 
@@ -47,7 +47,7 @@ public void setAdvancedMsgListener(OnAdvanceMsgListener listener)
 
 ## 代码示例
 
-以下示例展示 Android SDK v3.8.3.5 的调用方式。
+以下示例展示 Android SDK v3.8.3 的调用方式。
 
 ```java showLineNumbers
 OpenIMClient.getInstance().messageManager.setAdvancedMsgListener(new OnAdvanceMsgListener() {

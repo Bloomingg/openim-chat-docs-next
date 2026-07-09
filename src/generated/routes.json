@@ -4505,7 +4505,7 @@
     "relativePath": "chat/sdk/v4/android/group/overview",
     "sourcePath": "/docs/chat/sdk/v4/android/group/overview",
     "title": "概述",
-    "description": "群组方法目录，按管理群组、入群申请、用户入群关系、群成员和群组禁言拆分。",
+    "description": "群组方法目录，汇总管理群组、入群申请、用户入群关系、群成员和群组禁言能力。",
     "product": "sdk",
     "version": "v4",
     "platform": "android",
@@ -4515,25 +4515,7 @@
     "status": "draft",
     "sourceIndex": 130,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/overview.mdx",
-    "navOrder": 130
-  },
-  {
-    "id": 943,
-    "path": "/docs/chat/sdk/v4/android/group/managing-groups/overview",
-    "relativePath": "chat/sdk/v4/android/group/managing-groups/overview",
-    "sourcePath": "/docs/chat/sdk/v4/android/group/managing-groups/overview",
-    "title": "概述",
-    "description": "创建、查询、搜索、更新、转让和解散群组的 Android SDK 方法。",
-    "product": "sdk",
-    "version": "v4",
-    "platform": "android",
-    "contextKey": "chat/sdk/v4/android",
-    "contextTitle": "SDKs · Android · v4",
-    "template": "overview",
-    "status": "draft",
-    "sourceIndex": 902.7,
-    "contentFile": "content/zh/docs/chat/sdk/v4/android/group/managing-groups/overview.mdx",
-    "navOrder": 130.001
+    "navOrder": 50
   },
   {
     "id": 767,
@@ -4551,7 +4533,7 @@
     "status": "draft",
     "sourceIndex": 804.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/managing-groups/create-group.mdx",
-    "navOrder": 130.002
+    "navOrder": 51
   },
   {
     "id": 775,
@@ -4569,14 +4551,14 @@
     "status": "draft",
     "sourceIndex": 812.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/managing-groups/set-group-info.mdx",
-    "navOrder": 130.003
+    "navOrder": 52
   },
   {
     "id": 779,
     "path": "/docs/chat/sdk/v4/android/group/managing-groups/get-specified-groups-info",
     "relativePath": "chat/sdk/v4/android/group/managing-groups/get-specified-groups-info",
     "sourcePath": "/docs/chat/sdk/v4/android/group/managing-groups/get-specified-groups-info",
-    "title": "获取指定群组资料",
+    "title": "获取群信息",
     "description": "说明 Android core binding 方法 GetSpecifiedGroupsInfo 的用途、参数、返回和使用边界。",
     "product": "sdk",
     "version": "v4",
@@ -4587,7 +4569,7 @@
     "status": "draft",
     "sourceIndex": 816.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/managing-groups/get-specified-groups-info.mdx",
-    "navOrder": 130.004
+    "navOrder": 53
   },
   {
     "id": 780,
@@ -4605,7 +4587,7 @@
     "status": "draft",
     "sourceIndex": 817.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/managing-groups/search-groups.mdx",
-    "navOrder": 130.005
+    "navOrder": 54
   },
   {
     "id": 773,
@@ -4623,7 +4605,7 @@
     "status": "draft",
     "sourceIndex": 810.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/managing-groups/transfer-group-owner.mdx",
-    "navOrder": 130.006
+    "navOrder": 55
   },
   {
     "id": 770,
@@ -4641,25 +4623,7 @@
     "status": "draft",
     "sourceIndex": 807.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/managing-groups/dismiss-group.mdx",
-    "navOrder": 130.007
-  },
-  {
-    "id": 944,
-    "path": "/docs/chat/sdk/v4/android/group/group-applications/overview",
-    "relativePath": "chat/sdk/v4/android/group/group-applications/overview",
-    "sourcePath": "/docs/chat/sdk/v4/android/group/group-applications/overview",
-    "title": "概述",
-    "description": "提交、查询、同意、拒绝和统计入群申请的 Android SDK 方法。",
-    "product": "sdk",
-    "version": "v4",
-    "platform": "android",
-    "contextKey": "chat/sdk/v4/android",
-    "contextTitle": "SDKs · Android · v4",
-    "template": "overview",
-    "status": "draft",
-    "sourceIndex": 903.7,
-    "contentFile": "content/zh/docs/chat/sdk/v4/android/group/group-applications/overview.mdx",
-    "navOrder": 130.01
+    "navOrder": 56
   },
   {
     "id": 768,
@@ -4677,7 +4641,7 @@
     "status": "draft",
     "sourceIndex": 805.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/group-applications/join-group.mdx",
-    "navOrder": 130.011
+    "navOrder": 57
   },
   {
     "id": 785,
@@ -4695,7 +4659,7 @@
     "status": "draft",
     "sourceIndex": 822.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/group-applications/get-group-application-list-as-recipient.mdx",
-    "navOrder": 130.012
+    "navOrder": 58
   },
   {
     "id": 786,
@@ -4713,7 +4677,7 @@
     "status": "draft",
     "sourceIndex": 823.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/group-applications/get-group-application-list-as-applicant.mdx",
-    "navOrder": 130.013
+    "navOrder": 59
   },
   {
     "id": 791,
@@ -4731,7 +4695,7 @@
     "status": "draft",
     "sourceIndex": 828.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/group-applications/accept-group-application.mdx",
-    "navOrder": 130.014
+    "navOrder": 60
   },
   {
     "id": 792,
@@ -4749,7 +4713,7 @@
     "status": "draft",
     "sourceIndex": 829.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/group-applications/refuse-group-application.mdx",
-    "navOrder": 130.015
+    "navOrder": 61
   },
   {
     "id": 793,
@@ -4767,25 +4731,7 @@
     "status": "draft",
     "sourceIndex": 830.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/group-applications/get-group-application-unhandled-count.mdx",
-    "navOrder": 130.016
-  },
-  {
-    "id": 945,
-    "path": "/docs/chat/sdk/v4/android/group/group-membership/overview",
-    "relativePath": "chat/sdk/v4/android/group/group-membership/overview",
-    "sourcePath": "/docs/chat/sdk/v4/android/group/group-membership/overview",
-    "title": "概述",
-    "description": "查询当前用户入群状态、已加入群组和指定用户是否在群内的 Android SDK 方法。",
-    "product": "sdk",
-    "version": "v4",
-    "platform": "android",
-    "contextKey": "chat/sdk/v4/android",
-    "contextTitle": "SDKs · Android · v4",
-    "template": "overview",
-    "status": "draft",
-    "sourceIndex": 904.7,
-    "contentFile": "content/zh/docs/chat/sdk/v4/android/group/group-membership/overview.mdx",
-    "navOrder": 130.02
+    "navOrder": 62
   },
   {
     "id": 777,
@@ -4803,7 +4749,7 @@
     "status": "draft",
     "sourceIndex": 814.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/group-membership/get-joined-group-list.mdx",
-    "navOrder": 130.021
+    "navOrder": 63
   },
   {
     "id": 778,
@@ -4821,7 +4767,7 @@
     "status": "draft",
     "sourceIndex": 815.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/group-membership/get-joined-group-list-page.mdx",
-    "navOrder": 130.022
+    "navOrder": 64
   },
   {
     "id": 788,
@@ -4839,7 +4785,7 @@
     "status": "draft",
     "sourceIndex": 825.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/group-membership/is-join-group.mdx",
-    "navOrder": 130.023
+    "navOrder": 65
   },
   {
     "id": 789,
@@ -4857,7 +4803,7 @@
     "status": "draft",
     "sourceIndex": 826.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/group-membership/get-users-in-group.mdx",
-    "navOrder": 130.024
+    "navOrder": 66
   },
   {
     "id": 769,
@@ -4875,25 +4821,7 @@
     "status": "draft",
     "sourceIndex": 806.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/group-membership/quit-group.mdx",
-    "navOrder": 130.025
-  },
-  {
-    "id": 946,
-    "path": "/docs/chat/sdk/v4/android/group/group-members/overview",
-    "relativePath": "chat/sdk/v4/android/group/group-members/overview",
-    "sourcePath": "/docs/chat/sdk/v4/android/group/group-members/overview",
-    "title": "概述",
-    "description": "邀请、移除、查询、搜索和更新群成员资料的 Android SDK 方法。",
-    "product": "sdk",
-    "version": "v4",
-    "platform": "android",
-    "contextKey": "chat/sdk/v4/android",
-    "contextTitle": "SDKs · Android · v4",
-    "template": "overview",
-    "status": "draft",
-    "sourceIndex": 905.7,
-    "contentFile": "content/zh/docs/chat/sdk/v4/android/group/group-members/overview.mdx",
-    "navOrder": 130.03
+    "navOrder": 67
   },
   {
     "id": 790,
@@ -4911,7 +4839,7 @@
     "status": "draft",
     "sourceIndex": 827.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/group-members/invite-user-to-group.mdx",
-    "navOrder": 130.031
+    "navOrder": 68
   },
   {
     "id": 774,
@@ -4929,7 +4857,7 @@
     "status": "draft",
     "sourceIndex": 811.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/group-members/kick-group-member.mdx",
-    "navOrder": 130.032
+    "navOrder": 69
   },
   {
     "id": 776,
@@ -4947,7 +4875,7 @@
     "status": "draft",
     "sourceIndex": 813.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/group-members/set-group-member-info.mdx",
-    "navOrder": 130.033
+    "navOrder": 70
   },
   {
     "id": 784,
@@ -4965,7 +4893,7 @@
     "status": "draft",
     "sourceIndex": 821.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/group-members/get-group-member-list.mdx",
-    "navOrder": 130.034
+    "navOrder": 71
   },
   {
     "id": 782,
@@ -4983,7 +4911,7 @@
     "status": "draft",
     "sourceIndex": 819.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/group-members/get-group-member-list-by-join-time-filter.mdx",
-    "navOrder": 130.035
+    "navOrder": 72
   },
   {
     "id": 781,
@@ -5001,7 +4929,7 @@
     "status": "draft",
     "sourceIndex": 818.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/group-members/get-group-member-owner-and-admin.mdx",
-    "navOrder": 130.036
+    "navOrder": 73
   },
   {
     "id": 783,
@@ -5019,7 +4947,7 @@
     "status": "draft",
     "sourceIndex": 820.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/group-members/get-specified-group-members-info.mdx",
-    "navOrder": 130.037
+    "navOrder": 74
   },
   {
     "id": 787,
@@ -5037,25 +4965,7 @@
     "status": "draft",
     "sourceIndex": 824.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/group-members/search-group-members.mdx",
-    "navOrder": 130.038
-  },
-  {
-    "id": 947,
-    "path": "/docs/chat/sdk/v4/android/group/group-moderation/overview",
-    "relativePath": "chat/sdk/v4/android/group/group-moderation/overview",
-    "sourcePath": "/docs/chat/sdk/v4/android/group/group-moderation/overview",
-    "title": "概述",
-    "description": "设置全群禁言和单个成员禁言的 Android SDK 方法。",
-    "product": "sdk",
-    "version": "v4",
-    "platform": "android",
-    "contextKey": "chat/sdk/v4/android",
-    "contextTitle": "SDKs · Android · v4",
-    "template": "overview",
-    "status": "draft",
-    "sourceIndex": 906.7,
-    "contentFile": "content/zh/docs/chat/sdk/v4/android/group/group-moderation/overview.mdx",
-    "navOrder": 130.04
+    "navOrder": 75
   },
   {
     "id": 771,
@@ -5073,7 +4983,7 @@
     "status": "draft",
     "sourceIndex": 808.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/group-moderation/change-group-mute.mdx",
-    "navOrder": 130.041
+    "navOrder": 76
   },
   {
     "id": 772,
@@ -5091,7 +5001,7 @@
     "status": "draft",
     "sourceIndex": 809.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/group/group-moderation/change-group-member-mute.mdx",
-    "navOrder": 130.042
+    "navOrder": 77
   },
   {
     "id": 132,
@@ -5109,7 +5019,7 @@
     "status": "draft",
     "sourceIndex": 131,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/getting-started/send-first-message.mdx",
-    "navOrder": 131
+    "navOrder": 2
   },
   {
     "id": 133,
@@ -5279,7 +5189,7 @@
     "relativePath": "chat/sdk/v4/android/message/overview",
     "sourcePath": "/docs/chat/sdk/v4/android/message/overview",
     "title": "概述",
-    "description": "会话与消息方法目录，按会话、消息创建、发送、查询、已读、删除和本地消息拆分。",
+    "description": "会话与消息方法目录，汇总会话、消息创建、发送、查询、已读、删除和本地消息能力。",
     "product": "sdk",
     "version": "v4",
     "platform": "android",
@@ -5289,25 +5199,7 @@
     "status": "draft",
     "sourceIndex": 141,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/overview.mdx",
-    "navOrder": 141
-  },
-  {
-    "id": 948,
-    "path": "/docs/chat/sdk/v4/android/message/listing-conversations/overview",
-    "relativePath": "chat/sdk/v4/android/message/listing-conversations/overview",
-    "sourcePath": "/docs/chat/sdk/v4/android/message/listing-conversations/overview",
-    "title": "概述",
-    "description": "获取、分页、批量查询和搜索会话的 Android SDK 方法。",
-    "product": "sdk",
-    "version": "v4",
-    "platform": "android",
-    "contextKey": "chat/sdk/v4/android",
-    "contextTitle": "SDKs · Android · v4",
-    "template": "overview",
-    "status": "draft",
-    "sourceIndex": 907.7,
-    "contentFile": "content/zh/docs/chat/sdk/v4/android/message/listing-conversations/overview.mdx",
-    "navOrder": 141.001
+    "navOrder": 78
   },
   {
     "id": 794,
@@ -5325,7 +5217,7 @@
     "status": "draft",
     "sourceIndex": 831.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/listing-conversations/get-all-conversation-list.mdx",
-    "navOrder": 141.002
+    "navOrder": 79
   },
   {
     "id": 795,
@@ -5343,7 +5235,7 @@
     "status": "draft",
     "sourceIndex": 832.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/listing-conversations/get-conversation-list-split.mdx",
-    "navOrder": 141.003
+    "navOrder": 80
   },
   {
     "id": 796,
@@ -5361,7 +5253,7 @@
     "status": "draft",
     "sourceIndex": 833.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/listing-conversations/get-one-conversation.mdx",
-    "navOrder": 141.004
+    "navOrder": 81
   },
   {
     "id": 797,
@@ -5379,7 +5271,7 @@
     "status": "draft",
     "sourceIndex": 834.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/listing-conversations/get-multiple-conversation.mdx",
-    "navOrder": 141.005
+    "navOrder": 82
   },
   {
     "id": 803,
@@ -5397,7 +5289,7 @@
     "status": "draft",
     "sourceIndex": 840.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/listing-conversations/search-conversation.mdx",
-    "navOrder": 141.006
+    "navOrder": 83
   },
   {
     "id": 806,
@@ -5415,25 +5307,7 @@
     "status": "draft",
     "sourceIndex": 843.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/listing-conversations/get-conversation-id-by-session-type.mdx",
-    "navOrder": 141.007
-  },
-  {
-    "id": 949,
-    "path": "/docs/chat/sdk/v4/android/message/managing-conversations/overview",
-    "relativePath": "chat/sdk/v4/android/message/managing-conversations/overview",
-    "sourcePath": "/docs/chat/sdk/v4/android/message/managing-conversations/overview",
-    "title": "概述",
-    "description": "设置、隐藏和维护会话展示状态的 Android SDK 方法。",
-    "product": "sdk",
-    "version": "v4",
-    "platform": "android",
-    "contextKey": "chat/sdk/v4/android",
-    "contextTitle": "SDKs · Android · v4",
-    "template": "overview",
-    "status": "draft",
-    "sourceIndex": 908.7,
-    "contentFile": "content/zh/docs/chat/sdk/v4/android/message/managing-conversations/overview.mdx",
-    "navOrder": 141.01
+    "navOrder": 84
   },
   {
     "id": 798,
@@ -5451,7 +5325,7 @@
     "status": "draft",
     "sourceIndex": 835.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/managing-conversations/set-conversation.mdx",
-    "navOrder": 141.011
+    "navOrder": 85
   },
   {
     "id": 799,
@@ -5469,7 +5343,7 @@
     "status": "draft",
     "sourceIndex": 836.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/managing-conversations/hide-conversation.mdx",
-    "navOrder": 141.012
+    "navOrder": 86
   },
   {
     "id": 800,
@@ -5487,7 +5361,7 @@
     "status": "draft",
     "sourceIndex": 837.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/managing-conversations/set-conversation-draft.mdx",
-    "navOrder": 141.013
+    "navOrder": 87
   },
   {
     "id": 802,
@@ -5505,25 +5379,7 @@
     "status": "draft",
     "sourceIndex": 839.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/managing-conversations/hide-all-conversations.mdx",
-    "navOrder": 141.014
-  },
-  {
-    "id": 950,
-    "path": "/docs/chat/sdk/v4/android/message/conversation-state/overview",
-    "relativePath": "chat/sdk/v4/android/message/conversation-state/overview",
-    "sourcePath": "/docs/chat/sdk/v4/android/message/conversation-state/overview",
-    "title": "概述",
-    "description": "获取未读数、输入状态和发送输入提示的 Android SDK 方法。",
-    "product": "sdk",
-    "version": "v4",
-    "platform": "android",
-    "contextKey": "chat/sdk/v4/android",
-    "contextTitle": "SDKs · Android · v4",
-    "template": "overview",
-    "status": "draft",
-    "sourceIndex": 909.7,
-    "contentFile": "content/zh/docs/chat/sdk/v4/android/message/conversation-state/overview.mdx",
-    "navOrder": 141.02
+    "navOrder": 88
   },
   {
     "id": 801,
@@ -5541,7 +5397,7 @@
     "status": "draft",
     "sourceIndex": 838.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/conversation-state/get-total-unread-msg-count.mdx",
-    "navOrder": 141.021
+    "navOrder": 89
   },
   {
     "id": 804,
@@ -5559,7 +5415,7 @@
     "status": "draft",
     "sourceIndex": 841.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/conversation-state/change-input-states.mdx",
-    "navOrder": 141.022
+    "navOrder": 90
   },
   {
     "id": 805,
@@ -5577,7 +5433,7 @@
     "status": "draft",
     "sourceIndex": 842.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/conversation-state/get-input-states.mdx",
-    "navOrder": 141.023
+    "navOrder": 91
   },
   {
     "id": 837,
@@ -5595,25 +5451,7 @@
     "status": "draft",
     "sourceIndex": 874.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/conversation-state/typing-status-update.mdx",
-    "navOrder": 141.024
-  },
-  {
-    "id": 951,
-    "path": "/docs/chat/sdk/v4/android/message/creating-messages/overview",
-    "relativePath": "chat/sdk/v4/android/message/creating-messages/overview",
-    "sourcePath": "/docs/chat/sdk/v4/android/message/creating-messages/overview",
-    "title": "概述",
-    "description": "创建文本、图片、语音、视频、文件和业务消息体的 Android SDK 方法。",
-    "product": "sdk",
-    "version": "v4",
-    "platform": "android",
-    "contextKey": "chat/sdk/v4/android",
-    "contextTitle": "SDKs · Android · v4",
-    "template": "overview",
-    "status": "draft",
-    "sourceIndex": 910.7,
-    "contentFile": "content/zh/docs/chat/sdk/v4/android/message/creating-messages/overview.mdx",
-    "navOrder": 141.03
+    "navOrder": 92
   },
   {
     "id": 807,
@@ -5631,7 +5469,7 @@
     "status": "draft",
     "sourceIndex": 844.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/creating-messages/get-at-all-tag.mdx",
-    "navOrder": 141.031
+    "navOrder": 93
   },
   {
     "id": 808,
@@ -5649,7 +5487,7 @@
     "status": "draft",
     "sourceIndex": 845.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/creating-messages/create-text-message.mdx",
-    "navOrder": 141.032
+    "navOrder": 94
   },
   {
     "id": 809,
@@ -5667,7 +5505,7 @@
     "status": "draft",
     "sourceIndex": 846.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/creating-messages/create-advanced-text-message.mdx",
-    "navOrder": 141.033
+    "navOrder": 95
   },
   {
     "id": 810,
@@ -5685,7 +5523,7 @@
     "status": "draft",
     "sourceIndex": 847.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/creating-messages/create-text-at-message.mdx",
-    "navOrder": 141.034
+    "navOrder": 96
   },
   {
     "id": 811,
@@ -5703,7 +5541,7 @@
     "status": "draft",
     "sourceIndex": 848.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/creating-messages/create-location-message.mdx",
-    "navOrder": 141.035
+    "navOrder": 97
   },
   {
     "id": 812,
@@ -5721,7 +5559,7 @@
     "status": "draft",
     "sourceIndex": 849.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/creating-messages/create-custom-message.mdx",
-    "navOrder": 141.036
+    "navOrder": 98
   },
   {
     "id": 813,
@@ -5739,7 +5577,7 @@
     "status": "draft",
     "sourceIndex": 850.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/creating-messages/create-quote-message.mdx",
-    "navOrder": 141.037
+    "navOrder": 99
   },
   {
     "id": 814,
@@ -5757,7 +5595,7 @@
     "status": "draft",
     "sourceIndex": 851.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/creating-messages/create-advanced-quote-message.mdx",
-    "navOrder": 141.038
+    "navOrder": 100
   },
   {
     "id": 815,
@@ -5775,7 +5613,7 @@
     "status": "draft",
     "sourceIndex": 852.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/creating-messages/create-card-message.mdx",
-    "navOrder": 141.039
+    "navOrder": 101
   },
   {
     "id": 816,
@@ -5793,7 +5631,7 @@
     "status": "draft",
     "sourceIndex": 853.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/creating-messages/create-face-message.mdx",
-    "navOrder": 141.04
+    "navOrder": 102
   },
   {
     "id": 817,
@@ -5811,7 +5649,7 @@
     "status": "draft",
     "sourceIndex": 854.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/creating-messages/create-forward-message.mdx",
-    "navOrder": 141.041
+    "navOrder": 103
   },
   {
     "id": 818,
@@ -5829,7 +5667,7 @@
     "status": "draft",
     "sourceIndex": 855.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/creating-messages/create-merger-message.mdx",
-    "navOrder": 141.042
+    "navOrder": 104
   },
   {
     "id": 819,
@@ -5847,7 +5685,7 @@
     "status": "draft",
     "sourceIndex": 856.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/creating-messages/create-image-message.mdx",
-    "navOrder": 141.043
+    "navOrder": 105
   },
   {
     "id": 820,
@@ -5865,7 +5703,7 @@
     "status": "draft",
     "sourceIndex": 857.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/creating-messages/create-image-message-from-full-path.mdx",
-    "navOrder": 141.044
+    "navOrder": 106
   },
   {
     "id": 821,
@@ -5883,7 +5721,7 @@
     "status": "draft",
     "sourceIndex": 858.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/creating-messages/create-image-message-by-url.mdx",
-    "navOrder": 141.045
+    "navOrder": 107
   },
   {
     "id": 822,
@@ -5901,7 +5739,7 @@
     "status": "draft",
     "sourceIndex": 859.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/creating-messages/create-sound-message.mdx",
-    "navOrder": 141.046
+    "navOrder": 108
   },
   {
     "id": 823,
@@ -5919,7 +5757,7 @@
     "status": "draft",
     "sourceIndex": 860.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/creating-messages/create-sound-message-from-full-path.mdx",
-    "navOrder": 141.047
+    "navOrder": 109
   },
   {
     "id": 824,
@@ -5937,7 +5775,7 @@
     "status": "draft",
     "sourceIndex": 861.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/creating-messages/create-sound-message-by-url.mdx",
-    "navOrder": 141.048
+    "navOrder": 110
   },
   {
     "id": 825,
@@ -5955,7 +5793,7 @@
     "status": "draft",
     "sourceIndex": 862.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/creating-messages/create-video-message.mdx",
-    "navOrder": 141.049
+    "navOrder": 111
   },
   {
     "id": 826,
@@ -5973,7 +5811,7 @@
     "status": "draft",
     "sourceIndex": 863.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/creating-messages/create-video-message-from-full-path.mdx",
-    "navOrder": 141.05
+    "navOrder": 112
   },
   {
     "id": 827,
@@ -5991,7 +5829,7 @@
     "status": "draft",
     "sourceIndex": 864.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/creating-messages/create-video-message-by-url.mdx",
-    "navOrder": 141.051
+    "navOrder": 113
   },
   {
     "id": 828,
@@ -6009,7 +5847,7 @@
     "status": "draft",
     "sourceIndex": 865.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/creating-messages/create-file-message.mdx",
-    "navOrder": 141.052
+    "navOrder": 114
   },
   {
     "id": 829,
@@ -6027,7 +5865,7 @@
     "status": "draft",
     "sourceIndex": 866.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/creating-messages/create-file-message-from-full-path.mdx",
-    "navOrder": 141.053
+    "navOrder": 115
   },
   {
     "id": 830,
@@ -6045,25 +5883,7 @@
     "status": "draft",
     "sourceIndex": 867.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/creating-messages/create-file-message-by-url.mdx",
-    "navOrder": 141.054
-  },
-  {
-    "id": 234,
-    "path": "/docs/chat/sdk/v4/android/message/sending-messages/overview",
-    "relativePath": "chat/sdk/v4/android/message/sending-messages/overview",
-    "sourcePath": "/docs/chat/sdk/v4/android/message/sending-messages/overview",
-    "title": "概述",
-    "description": "发送 SDK 消息对象和非 OSS 消息的 Android SDK 方法。",
-    "product": "sdk",
-    "version": "v4",
-    "platform": "android",
-    "contextKey": "chat/sdk/v4/android",
-    "contextTitle": "SDKs · Android · v4",
-    "template": "overview",
-    "status": "draft",
-    "sourceIndex": 233,
-    "contentFile": "content/zh/docs/chat/sdk/v4/android/message/sending-messages/overview.mdx",
-    "navOrder": 141.06
+    "navOrder": 116
   },
   {
     "id": 831,
@@ -6081,7 +5901,7 @@
     "status": "draft",
     "sourceIndex": 868.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/sending-messages/send-message.mdx",
-    "navOrder": 141.061
+    "navOrder": 117
   },
   {
     "id": 832,
@@ -6099,25 +5919,7 @@
     "status": "draft",
     "sourceIndex": 869.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/sending-messages/send-message-not-oss.mdx",
-    "navOrder": 141.062
-  },
-  {
-    "id": 952,
-    "path": "/docs/chat/sdk/v4/android/message/retrieving-messages/overview",
-    "relativePath": "chat/sdk/v4/android/message/retrieving-messages/overview",
-    "sourcePath": "/docs/chat/sdk/v4/android/message/retrieving-messages/overview",
-    "title": "概述",
-    "description": "查找、拉取历史消息和搜索本地消息的 Android SDK 方法。",
-    "product": "sdk",
-    "version": "v4",
-    "platform": "android",
-    "contextKey": "chat/sdk/v4/android",
-    "contextTitle": "SDKs · Android · v4",
-    "template": "overview",
-    "status": "draft",
-    "sourceIndex": 911.7,
-    "contentFile": "content/zh/docs/chat/sdk/v4/android/message/retrieving-messages/overview.mdx",
-    "navOrder": 141.07
+    "navOrder": 118
   },
   {
     "id": 833,
@@ -6135,7 +5937,7 @@
     "status": "draft",
     "sourceIndex": 870.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/retrieving-messages/find-message-list.mdx",
-    "navOrder": 141.071
+    "navOrder": 119
   },
   {
     "id": 834,
@@ -6153,7 +5955,7 @@
     "status": "draft",
     "sourceIndex": 871.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/retrieving-messages/get-advanced-history-message-list.mdx",
-    "navOrder": 141.072
+    "navOrder": 120
   },
   {
     "id": 835,
@@ -6171,7 +5973,7 @@
     "status": "draft",
     "sourceIndex": 872.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/retrieving-messages/get-advanced-history-message-list-reverse.mdx",
-    "navOrder": 141.073
+    "navOrder": 121
   },
   {
     "id": 849,
@@ -6189,25 +5991,7 @@
     "status": "draft",
     "sourceIndex": 886.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/retrieving-messages/search-local-messages.mdx",
-    "navOrder": 141.074
-  },
-  {
-    "id": 953,
-    "path": "/docs/chat/sdk/v4/android/message/managing-messages/overview",
-    "relativePath": "chat/sdk/v4/android/message/managing-messages/overview",
-    "sourcePath": "/docs/chat/sdk/v4/android/message/managing-messages/overview",
-    "title": "概述",
-    "description": "撤回消息和维护消息本地业务状态的 Android SDK 方法。",
-    "product": "sdk",
-    "version": "v4",
-    "platform": "android",
-    "contextKey": "chat/sdk/v4/android",
-    "contextTitle": "SDKs · Android · v4",
-    "template": "overview",
-    "status": "draft",
-    "sourceIndex": 912.7,
-    "contentFile": "content/zh/docs/chat/sdk/v4/android/message/managing-messages/overview.mdx",
-    "navOrder": 141.08
+    "navOrder": 122
   },
   {
     "id": 836,
@@ -6225,7 +6009,7 @@
     "status": "draft",
     "sourceIndex": 873.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/managing-messages/revoke-message.mdx",
-    "navOrder": 141.081
+    "navOrder": 123
   },
   {
     "id": 850,
@@ -6243,25 +6027,7 @@
     "status": "draft",
     "sourceIndex": 887.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/managing-messages/set-message-local-ex.mdx",
-    "navOrder": 141.082
-  },
-  {
-    "id": 954,
-    "path": "/docs/chat/sdk/v4/android/message/read-status/overview",
-    "relativePath": "chat/sdk/v4/android/message/read-status/overview",
-    "sourcePath": "/docs/chat/sdk/v4/android/message/read-status/overview",
-    "title": "概述",
-    "description": "标记会话或指定消息为已读的 Android SDK 方法。",
-    "product": "sdk",
-    "version": "v4",
-    "platform": "android",
-    "contextKey": "chat/sdk/v4/android",
-    "contextTitle": "SDKs · Android · v4",
-    "template": "overview",
-    "status": "draft",
-    "sourceIndex": 913.7,
-    "contentFile": "content/zh/docs/chat/sdk/v4/android/message/read-status/overview.mdx",
-    "navOrder": 141.09
+    "navOrder": 124
   },
   {
     "id": 838,
@@ -6279,7 +6045,7 @@
     "status": "draft",
     "sourceIndex": 875.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/read-status/mark-conversation-message-as-read.mdx",
-    "navOrder": 141.091
+    "navOrder": 125
   },
   {
     "id": 839,
@@ -6297,7 +6063,7 @@
     "status": "draft",
     "sourceIndex": 876.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/read-status/mark-all-conversation-message-as-read.mdx",
-    "navOrder": 141.092
+    "navOrder": 126
   },
   {
     "id": 840,
@@ -6315,25 +6081,7 @@
     "status": "draft",
     "sourceIndex": 877.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/read-status/mark-messages-as-read-by-msg-id.mdx",
-    "navOrder": 141.093
-  },
-  {
-    "id": 955,
-    "path": "/docs/chat/sdk/v4/android/message/deleting-messages/overview",
-    "relativePath": "chat/sdk/v4/android/message/deleting-messages/overview",
-    "sourcePath": "/docs/chat/sdk/v4/android/message/deleting-messages/overview",
-    "title": "概述",
-    "description": "删除单条消息、清空消息和删除会话消息的 Android SDK 方法。",
-    "product": "sdk",
-    "version": "v4",
-    "platform": "android",
-    "contextKey": "chat/sdk/v4/android",
-    "contextTitle": "SDKs · Android · v4",
-    "template": "overview",
-    "status": "draft",
-    "sourceIndex": 914.7,
-    "contentFile": "content/zh/docs/chat/sdk/v4/android/message/deleting-messages/overview.mdx",
-    "navOrder": 141.1
+    "navOrder": 127
   },
   {
     "id": 841,
@@ -6351,7 +6099,7 @@
     "status": "draft",
     "sourceIndex": 878.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/deleting-messages/delete-message-from-local-storage.mdx",
-    "navOrder": 141.101
+    "navOrder": 128
   },
   {
     "id": 842,
@@ -6369,7 +6117,7 @@
     "status": "draft",
     "sourceIndex": 879.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/deleting-messages/delete-message.mdx",
-    "navOrder": 141.102
+    "navOrder": 129
   },
   {
     "id": 843,
@@ -6387,7 +6135,7 @@
     "status": "draft",
     "sourceIndex": 880.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/deleting-messages/delete-all-msg-from-local-and-svr.mdx",
-    "navOrder": 141.103
+    "navOrder": 130
   },
   {
     "id": 844,
@@ -6405,7 +6153,7 @@
     "status": "draft",
     "sourceIndex": 881.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/deleting-messages/delete-all-msg-from-local.mdx",
-    "navOrder": 141.104
+    "navOrder": 131
   },
   {
     "id": 845,
@@ -6423,7 +6171,7 @@
     "status": "draft",
     "sourceIndex": 882.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/deleting-messages/clear-conversation-and-delete-all-msg.mdx",
-    "navOrder": 141.105
+    "navOrder": 132
   },
   {
     "id": 846,
@@ -6441,25 +6189,7 @@
     "status": "draft",
     "sourceIndex": 883.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/deleting-messages/delete-conversation-and-delete-all-msg.mdx",
-    "navOrder": 141.106
-  },
-  {
-    "id": 956,
-    "path": "/docs/chat/sdk/v4/android/message/local-messages/overview",
-    "relativePath": "chat/sdk/v4/android/message/local-messages/overview",
-    "sourcePath": "/docs/chat/sdk/v4/android/message/local-messages/overview",
-    "title": "概述",
-    "description": "向本地会话插入单聊或群聊消息的 Android SDK 方法。",
-    "product": "sdk",
-    "version": "v4",
-    "platform": "android",
-    "contextKey": "chat/sdk/v4/android",
-    "contextTitle": "SDKs · Android · v4",
-    "template": "overview",
-    "status": "draft",
-    "sourceIndex": 915.7,
-    "contentFile": "content/zh/docs/chat/sdk/v4/android/message/local-messages/overview.mdx",
-    "navOrder": 141.11
+    "navOrder": 133
   },
   {
     "id": 847,
@@ -6477,7 +6207,7 @@
     "status": "draft",
     "sourceIndex": 884.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/local-messages/insert-single-message-to-local-storage.mdx",
-    "navOrder": 141.111
+    "navOrder": 134
   },
   {
     "id": 848,
@@ -6495,7 +6225,7 @@
     "status": "draft",
     "sourceIndex": 885.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/message/local-messages/insert-group-message-to-local-storage.mdx",
-    "navOrder": 141.112
+    "navOrder": 135
   },
   {
     "id": 143,
@@ -6629,7 +6359,7 @@
     "relativePath": "chat/sdk/v4/android/overview",
     "sourcePath": "/docs/chat/sdk/v4/android/overview",
     "title": "OpenIM Android SDK 概览",
-    "description": "基于 open_im_sdk 当前导出方法整理 Android SDK 的初始化、登录、监听器、用户、好友、黑名单、群组、会话、消息和第三方能力。",
+    "description": "基于 open_im_sdk 当前导出方法整理 Android SDK 的初始化、登录、监听器、用户、好友、黑名单、群组、会话、消息、推送、日志和文件上传能力。",
     "product": "sdk",
     "version": "v4",
     "platform": "android",
@@ -6639,7 +6369,7 @@
     "status": "draft",
     "sourceIndex": 149,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/overview.mdx",
-    "navOrder": 149
+    "navOrder": 1
   },
   {
     "id": 151,
@@ -6683,7 +6413,7 @@
     "relativePath": "chat/sdk/v4/android/push-notifications/overview",
     "sourcePath": "/docs/chat/sdk/v4/android/push-notifications/overview",
     "title": "概述",
-    "description": "推送、日志与文件方法目录，所有方法均拆分到独立页面说明。",
+    "description": "推送通知方法目录，所有方法均拆分到独立页面说明。",
     "product": "sdk",
     "version": "v4",
     "platform": "android",
@@ -6693,7 +6423,7 @@
     "status": "draft",
     "sourceIndex": 152,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/push-notifications/overview.mdx",
-    "navOrder": 152
+    "navOrder": 136
   },
   {
     "id": 851,
@@ -6711,7 +6441,7 @@
     "status": "draft",
     "sourceIndex": 888.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/push-notifications/methods/update-fcm-token.mdx",
-    "navOrder": 152.001
+    "navOrder": 137
   },
   {
     "id": 852,
@@ -6729,13 +6459,13 @@
     "status": "draft",
     "sourceIndex": 889.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/push-notifications/methods/set-app-badge.mdx",
-    "navOrder": 152.002
+    "navOrder": 138
   },
   {
     "id": 853,
-    "path": "/docs/chat/sdk/v4/android/push-notifications/methods/upload-logs",
-    "relativePath": "chat/sdk/v4/android/push-notifications/methods/upload-logs",
-    "sourcePath": "/docs/chat/sdk/v4/android/push-notifications/methods/upload-logs",
+    "path": "/docs/chat/sdk/v4/android/logger/methods/upload-logs",
+    "relativePath": "chat/sdk/v4/android/logger/methods/upload-logs",
+    "sourcePath": "/docs/chat/sdk/v4/android/logger/methods/upload-logs",
     "title": "上传日志",
     "description": "说明 Android core binding 方法 UploadLogs 的用途、参数、返回和使用边界。",
     "product": "sdk",
@@ -6746,14 +6476,14 @@
     "template": "guide",
     "status": "draft",
     "sourceIndex": 890.9,
-    "contentFile": "content/zh/docs/chat/sdk/v4/android/push-notifications/methods/upload-logs.mdx",
-    "navOrder": 152.003
+    "contentFile": "content/zh/docs/chat/sdk/v4/android/logger/methods/upload-logs.mdx",
+    "navOrder": 141
   },
   {
     "id": 854,
-    "path": "/docs/chat/sdk/v4/android/push-notifications/methods/logs",
-    "relativePath": "chat/sdk/v4/android/push-notifications/methods/logs",
-    "sourcePath": "/docs/chat/sdk/v4/android/push-notifications/methods/logs",
+    "path": "/docs/chat/sdk/v4/android/logger/methods/logs",
+    "relativePath": "chat/sdk/v4/android/logger/methods/logs",
+    "sourcePath": "/docs/chat/sdk/v4/android/logger/methods/logs",
     "title": "写入客户端日志",
     "description": "说明 Android core binding 方法 Logs 的用途、参数、返回和使用边界。",
     "product": "sdk",
@@ -6764,14 +6494,32 @@
     "template": "guide",
     "status": "draft",
     "sourceIndex": 891.9,
-    "contentFile": "content/zh/docs/chat/sdk/v4/android/push-notifications/methods/logs.mdx",
-    "navOrder": 152.004
+    "contentFile": "content/zh/docs/chat/sdk/v4/android/logger/methods/logs.mdx",
+    "navOrder": 140
+  },
+  {
+    "id": 2445,
+    "path": "/docs/chat/sdk/v4/android/file/overview",
+    "relativePath": "chat/sdk/v4/android/file/overview",
+    "sourcePath": "/docs/chat/sdk/v4/android/file/overview",
+    "title": "概述",
+    "description": "文件上传方法目录，说明 Android SDK 当前导出的文件上传能力。",
+    "product": "sdk",
+    "version": "v4",
+    "platform": "android",
+    "contextKey": "chat/sdk/v4/android",
+    "contextTitle": "SDKs · Android · v4",
+    "template": "overview",
+    "status": "draft",
+    "sourceIndex": 892.8,
+    "contentFile": "content/zh/docs/chat/sdk/v4/android/file/overview.mdx",
+    "navOrder": 142.1
   },
   {
     "id": 855,
-    "path": "/docs/chat/sdk/v4/android/push-notifications/methods/upload-file",
-    "relativePath": "chat/sdk/v4/android/push-notifications/methods/upload-file",
-    "sourcePath": "/docs/chat/sdk/v4/android/push-notifications/methods/upload-file",
+    "path": "/docs/chat/sdk/v4/android/file/methods/upload-file",
+    "relativePath": "chat/sdk/v4/android/file/methods/upload-file",
+    "sourcePath": "/docs/chat/sdk/v4/android/file/methods/upload-file",
     "title": "上传文件",
     "description": "说明 Android core binding 方法 UploadFile 的用途、参数、返回和使用边界。",
     "product": "sdk",
@@ -6782,8 +6530,8 @@
     "template": "guide",
     "status": "draft",
     "sourceIndex": 892.9,
-    "contentFile": "content/zh/docs/chat/sdk/v4/android/push-notifications/methods/upload-file.mdx",
-    "navOrder": 152.005
+    "contentFile": "content/zh/docs/chat/sdk/v4/android/file/methods/upload-file.mdx",
+    "navOrder": 142.2
   },
   {
     "id": 856,
@@ -6801,7 +6549,7 @@
     "status": "draft",
     "sourceIndex": 893.1,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/overview.mdx",
-    "navOrder": 152.9
+    "navOrder": 143
   },
   {
     "id": 858,
@@ -6819,7 +6567,7 @@
     "status": "draft",
     "sourceIndex": 893.2,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/at-user-info.mdx",
-    "navOrder": 152.901
+    "navOrder": 144
   },
   {
     "id": 859,
@@ -6837,7 +6585,7 @@
     "status": "draft",
     "sourceIndex": 893.3,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/face-elem.mdx",
-    "navOrder": 152.902
+    "navOrder": 145
   },
   {
     "id": 860,
@@ -6855,7 +6603,7 @@
     "status": "draft",
     "sourceIndex": 893.4,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/init-config.mdx",
-    "navOrder": 152.903
+    "navOrder": 146
   },
   {
     "id": 861,
@@ -6873,7 +6621,7 @@
     "status": "draft",
     "sourceIndex": 893.5,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/single-type-key-info-sum.mdx",
-    "navOrder": 152.904
+    "navOrder": 147
   },
   {
     "id": 862,
@@ -6891,7 +6639,7 @@
     "status": "draft",
     "sourceIndex": 893.6,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/c2c-read-receipt-info.mdx",
-    "navOrder": 152.905
+    "navOrder": 148
   },
   {
     "id": 863,
@@ -6909,7 +6657,7 @@
     "status": "draft",
     "sourceIndex": 893.7,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/get-friend-application-list-as-applicant-req.mdx",
-    "navOrder": 152.906
+    "navOrder": 149
   },
   {
     "id": 864,
@@ -6927,7 +6675,7 @@
     "status": "draft",
     "sourceIndex": 893.8,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/get-group-application-list-as-applicant-req.mdx",
-    "navOrder": 152.907
+    "navOrder": 150
   },
   {
     "id": 865,
@@ -6945,7 +6693,7 @@
     "status": "draft",
     "sourceIndex": 893.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/attached-info-elem.mdx",
-    "navOrder": 152.908
+    "navOrder": 151
   },
   {
     "id": 866,
@@ -6963,7 +6711,7 @@
     "status": "draft",
     "sourceIndex": 894,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/rich-message.mdx",
-    "navOrder": 152.909
+    "navOrder": 152
   },
   {
     "id": 867,
@@ -6981,7 +6729,7 @@
     "status": "draft",
     "sourceIndex": 894.1,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/advanced-message.mdx",
-    "navOrder": 152.91
+    "navOrder": 153
   },
   {
     "id": 868,
@@ -6999,7 +6747,7 @@
     "status": "draft",
     "sourceIndex": 894.2,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/advanced-text-elem.mdx",
-    "navOrder": 152.911
+    "navOrder": 154
   },
   {
     "id": 869,
@@ -7017,7 +6765,7 @@
     "status": "draft",
     "sourceIndex": 894.3,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/message-entity.mdx",
-    "navOrder": 152.912
+    "navOrder": 155
   },
   {
     "id": 870,
@@ -7035,7 +6783,7 @@
     "status": "draft",
     "sourceIndex": 894.4,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/card-elem.mdx",
-    "navOrder": 152.913
+    "navOrder": 156
   },
   {
     "id": 871,
@@ -7053,7 +6801,7 @@
     "status": "draft",
     "sourceIndex": 894.5,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/public-user-info.mdx",
-    "navOrder": 152.914
+    "navOrder": 157
   },
   {
     "id": 872,
@@ -7071,7 +6819,7 @@
     "status": "draft",
     "sourceIndex": 894.6,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/friendship-info.mdx",
-    "navOrder": 152.915
+    "navOrder": 158
   },
   {
     "id": 873,
@@ -7089,7 +6837,7 @@
     "status": "draft",
     "sourceIndex": 894.7,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/friend-application-info.mdx",
-    "navOrder": 152.916
+    "navOrder": 159
   },
   {
     "id": 874,
@@ -7107,7 +6855,7 @@
     "status": "draft",
     "sourceIndex": 894.8,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/friend-info.mdx",
-    "navOrder": 152.917
+    "navOrder": 160
   },
   {
     "id": 875,
@@ -7125,7 +6873,7 @@
     "status": "draft",
     "sourceIndex": 894.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/update-friends-req.mdx",
-    "navOrder": 152.918
+    "navOrder": 161
   },
   {
     "id": 876,
@@ -7143,7 +6891,7 @@
     "status": "draft",
     "sourceIndex": 895,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/merge-elem.mdx",
-    "navOrder": 152.919
+    "navOrder": 162
   },
   {
     "id": 877,
@@ -7161,7 +6909,7 @@
     "status": "draft",
     "sourceIndex": 895.1,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/blacklist-info.mdx",
-    "navOrder": 152.92
+    "navOrder": 163
   },
   {
     "id": 878,
@@ -7179,7 +6927,7 @@
     "status": "draft",
     "sourceIndex": 895.2,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/conversation-req.mdx",
-    "navOrder": 152.921
+    "navOrder": 164
   },
   {
     "id": 857,
@@ -7197,7 +6945,7 @@
     "status": "draft",
     "sourceIndex": 895.3,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/conversation-info.mdx",
-    "navOrder": 152.922
+    "navOrder": 165
   },
   {
     "id": 879,
@@ -7215,7 +6963,7 @@
     "status": "draft",
     "sourceIndex": 895.4,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/key-value.mdx",
-    "navOrder": 152.923
+    "navOrder": 166
   },
   {
     "id": 880,
@@ -7233,7 +6981,7 @@
     "status": "draft",
     "sourceIndex": 895.5,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/offline-push-info.mdx",
-    "navOrder": 152.924
+    "navOrder": 167
   },
   {
     "id": 881,
@@ -7251,7 +6999,7 @@
     "status": "draft",
     "sourceIndex": 895.6,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/set-group-member-info.mdx",
-    "navOrder": 152.925
+    "navOrder": 168
   },
   {
     "id": 882,
@@ -7269,7 +7017,7 @@
     "status": "draft",
     "sourceIndex": 895.7,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/group-members-info.mdx",
-    "navOrder": 152.926
+    "navOrder": 169
   },
   {
     "id": 883,
@@ -7287,7 +7035,7 @@
     "status": "draft",
     "sourceIndex": 895.8,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/group-application-info.mdx",
-    "navOrder": 152.927
+    "navOrder": 170
   },
   {
     "id": 884,
@@ -7305,7 +7053,7 @@
     "status": "draft",
     "sourceIndex": 895.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/group-message-receipt.mdx",
-    "navOrder": 152.928
+    "navOrder": 171
   },
   {
     "id": 885,
@@ -7323,7 +7071,7 @@
     "status": "draft",
     "sourceIndex": 896,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/group-message-read-info.mdx",
-    "navOrder": 152.929
+    "navOrder": 172
   },
   {
     "id": 886,
@@ -7341,7 +7089,7 @@
     "status": "draft",
     "sourceIndex": 896.1,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/group-has-read-info.mdx",
-    "navOrder": 152.93
+    "navOrder": 173
   },
   {
     "id": 887,
@@ -7359,7 +7107,7 @@
     "status": "draft",
     "sourceIndex": 896.2,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/group-info.mdx",
-    "navOrder": 152.931
+    "navOrder": 174
   },
   {
     "id": 888,
@@ -7377,7 +7125,7 @@
     "status": "draft",
     "sourceIndex": 896.3,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/put-args.mdx",
-    "navOrder": 152.932
+    "navOrder": 175
   },
   {
     "id": 889,
@@ -7395,7 +7143,7 @@
     "status": "draft",
     "sourceIndex": 896.4,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/video-elem.mdx",
-    "navOrder": 152.933
+    "navOrder": 176
   },
   {
     "id": 890,
@@ -7413,7 +7161,7 @@
     "status": "draft",
     "sourceIndex": 896.5,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/get-friend-application-list-as-recipient-req.mdx",
-    "navOrder": 152.934
+    "navOrder": 177
   },
   {
     "id": 891,
@@ -7431,7 +7179,7 @@
     "status": "draft",
     "sourceIndex": 896.6,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/get-group-application-list-as-recipient-req.mdx",
-    "navOrder": 152.935
+    "navOrder": 178
   },
   {
     "id": 892,
@@ -7449,7 +7197,7 @@
     "status": "draft",
     "sourceIndex": 896.7,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/typing-elem.mdx",
-    "navOrder": 152.936
+    "navOrder": 179
   },
   {
     "id": 893,
@@ -7467,7 +7215,7 @@
     "status": "draft",
     "sourceIndex": 896.8,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/search-params.mdx",
-    "navOrder": 152.937
+    "navOrder": 180
   },
   {
     "id": 894,
@@ -7485,7 +7233,7 @@
     "status": "draft",
     "sourceIndex": 896.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/notification-elem.mdx",
-    "navOrder": 152.938
+    "navOrder": 181
   },
   {
     "id": 895,
@@ -7503,7 +7251,7 @@
     "status": "draft",
     "sourceIndex": 897,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/picture-elem.mdx",
-    "navOrder": 152.939
+    "navOrder": 182
   },
   {
     "id": 896,
@@ -7521,7 +7269,7 @@
     "status": "draft",
     "sourceIndex": 897.1,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/picture-info.mdx",
-    "navOrder": 152.94
+    "navOrder": 183
   },
   {
     "id": 897,
@@ -7539,7 +7287,7 @@
     "status": "draft",
     "sourceIndex": 897.2,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/location-elem.mdx",
-    "navOrder": 152.941
+    "navOrder": 184
   },
   {
     "id": 898,
@@ -7557,7 +7305,7 @@
     "status": "draft",
     "sourceIndex": 897.3,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/text-elem.mdx",
-    "navOrder": 152.942
+    "navOrder": 185
   },
   {
     "id": 899,
@@ -7575,7 +7323,7 @@
     "status": "draft",
     "sourceIndex": 897.4,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/file-elem.mdx",
-    "navOrder": 152.943
+    "navOrder": 186
   },
   {
     "id": 900,
@@ -7593,7 +7341,7 @@
     "status": "draft",
     "sourceIndex": 897.5,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/revoked-info.mdx",
-    "navOrder": 152.944
+    "navOrder": 187
   },
   {
     "id": 901,
@@ -7611,7 +7359,7 @@
     "status": "draft",
     "sourceIndex": 897.6,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/message.mdx",
-    "navOrder": 152.945
+    "navOrder": 188
   },
   {
     "id": 902,
@@ -7629,7 +7377,7 @@
     "status": "draft",
     "sourceIndex": 897.7,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/message-kv.mdx",
-    "navOrder": 152.946
+    "navOrder": 189
   },
   {
     "id": 903,
@@ -7647,7 +7395,7 @@
     "status": "draft",
     "sourceIndex": 897.8,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/type-key-set-result.mdx",
-    "navOrder": 152.947
+    "navOrder": 190
   },
   {
     "id": 904,
@@ -7665,7 +7413,7 @@
     "status": "draft",
     "sourceIndex": 897.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/search-result.mdx",
-    "navOrder": 152.948
+    "navOrder": 191
   },
   {
     "id": 905,
@@ -7683,7 +7431,7 @@
     "status": "draft",
     "sourceIndex": 898,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/search-result-item.mdx",
-    "navOrder": 152.949
+    "navOrder": 192
   },
   {
     "id": 906,
@@ -7701,7 +7449,7 @@
     "status": "draft",
     "sourceIndex": 898.1,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/quote-elem.mdx",
-    "navOrder": 152.95
+    "navOrder": 193
   },
   {
     "id": 907,
@@ -7719,7 +7467,7 @@
     "status": "draft",
     "sourceIndex": 898.2,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/user-ex-info.mdx",
-    "navOrder": 152.951
+    "navOrder": 194
   },
   {
     "id": 908,
@@ -7737,7 +7485,7 @@
     "status": "draft",
     "sourceIndex": 898.3,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/user-info.mdx",
-    "navOrder": 152.952
+    "navOrder": 195
   },
   {
     "id": 909,
@@ -7755,7 +7503,7 @@
     "status": "draft",
     "sourceIndex": 898.4,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/users-online-status.mdx",
-    "navOrder": 152.953
+    "navOrder": 196
   },
   {
     "id": 910,
@@ -7773,7 +7521,7 @@
     "status": "draft",
     "sourceIndex": 898.5,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/user-info-req.mdx",
-    "navOrder": 152.954
+    "navOrder": 197
   },
   {
     "id": 911,
@@ -7791,7 +7539,7 @@
     "status": "draft",
     "sourceIndex": 898.6,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/sound-elem.mdx",
-    "navOrder": 152.955
+    "navOrder": 198
   },
   {
     "id": 912,
@@ -7809,7 +7557,7 @@
     "status": "draft",
     "sourceIndex": 898.7,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/custom-elem.mdx",
-    "navOrder": 152.956
+    "navOrder": 199
   },
   {
     "id": 913,
@@ -7827,7 +7575,7 @@
     "status": "draft",
     "sourceIndex": 898.8,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/at-text-elem.mdx",
-    "navOrder": 152.957
+    "navOrder": 200
   },
   {
     "id": 914,
@@ -7845,7 +7593,7 @@
     "status": "draft",
     "sourceIndex": 898.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/login-status.mdx",
-    "navOrder": 152.958
+    "navOrder": 201
   },
   {
     "id": 915,
@@ -7863,7 +7611,7 @@
     "status": "draft",
     "sourceIndex": 899,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/conversation-type.mdx",
-    "navOrder": 152.959
+    "navOrder": 202
   },
   {
     "id": 916,
@@ -7881,7 +7629,7 @@
     "status": "draft",
     "sourceIndex": 899.1,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/platform.mdx",
-    "navOrder": 152.96
+    "navOrder": 203
   },
   {
     "id": 917,
@@ -7899,7 +7647,7 @@
     "status": "draft",
     "sourceIndex": 899.2,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/group-role.mdx",
-    "navOrder": 152.961
+    "navOrder": 204
   },
   {
     "id": 918,
@@ -7917,7 +7665,7 @@
     "status": "draft",
     "sourceIndex": 899.3,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/group-member-filter.mdx",
-    "navOrder": 152.962
+    "navOrder": 205
   },
   {
     "id": 919,
@@ -7935,7 +7683,7 @@
     "status": "draft",
     "sourceIndex": 899.4,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/group-at-type.mdx",
-    "navOrder": 152.963
+    "navOrder": 206
   },
   {
     "id": 920,
@@ -7953,7 +7701,7 @@
     "status": "draft",
     "sourceIndex": 899.5,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/log-level.mdx",
-    "navOrder": 152.964
+    "navOrder": 207
   },
   {
     "id": 921,
@@ -7971,7 +7719,7 @@
     "status": "draft",
     "sourceIndex": 899.6,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/join-source.mdx",
-    "navOrder": 152.965
+    "navOrder": 208
   },
   {
     "id": 922,
@@ -7989,7 +7737,7 @@
     "status": "draft",
     "sourceIndex": 899.7,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/group-verification.mdx",
-    "navOrder": 152.966
+    "navOrder": 209
   },
   {
     "id": 923,
@@ -8007,7 +7755,7 @@
     "status": "draft",
     "sourceIndex": 899.8,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/message-type.mdx",
-    "navOrder": 152.967
+    "navOrder": 210
   },
   {
     "id": 924,
@@ -8025,7 +7773,7 @@
     "status": "draft",
     "sourceIndex": 899.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/view-type.mdx",
-    "navOrder": 152.968
+    "navOrder": 211
   },
   {
     "id": 925,
@@ -8043,7 +7791,7 @@
     "status": "draft",
     "sourceIndex": 900,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/message-status.mdx",
-    "navOrder": 152.969
+    "navOrder": 212
   },
   {
     "id": 926,
@@ -8061,7 +7809,7 @@
     "status": "draft",
     "sourceIndex": 900.1,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/on-advance-msg-listener.mdx",
-    "navOrder": 152.97
+    "navOrder": 213
   },
   {
     "id": 927,
@@ -8079,7 +7827,7 @@
     "status": "draft",
     "sourceIndex": 900.2,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/on-friendship-listener.mdx",
-    "navOrder": 152.971
+    "navOrder": 214
   },
   {
     "id": 928,
@@ -8097,7 +7845,7 @@
     "status": "draft",
     "sourceIndex": 900.3,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/on-conversation-listener.mdx",
-    "navOrder": 152.972
+    "navOrder": 215
   },
   {
     "id": 929,
@@ -8115,7 +7863,7 @@
     "status": "draft",
     "sourceIndex": 900.4,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/on-conn-listener.mdx",
-    "navOrder": 152.973
+    "navOrder": 216
   },
   {
     "id": 930,
@@ -8133,7 +7881,7 @@
     "status": "draft",
     "sourceIndex": 900.5,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/on-group-listener.mdx",
-    "navOrder": 152.974
+    "navOrder": 217
   },
   {
     "id": 931,
@@ -8151,7 +7899,7 @@
     "status": "draft",
     "sourceIndex": 900.6,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/on-message-kv-info-listener.mdx",
-    "navOrder": 152.975
+    "navOrder": 218
   },
   {
     "id": 932,
@@ -8169,7 +7917,7 @@
     "status": "draft",
     "sourceIndex": 900.7,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/on-user-listener.mdx",
-    "navOrder": 152.976
+    "navOrder": 219
   },
   {
     "id": 933,
@@ -8187,7 +7935,7 @@
     "status": "draft",
     "sourceIndex": 900.8,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/on-custom-business-listener.mdx",
-    "navOrder": 152.977
+    "navOrder": 220
   },
   {
     "id": 934,
@@ -8205,7 +7953,7 @@
     "status": "draft",
     "sourceIndex": 900.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/upload-log-progress.mdx",
-    "navOrder": 152.978
+    "navOrder": 221
   },
   {
     "id": 935,
@@ -8223,7 +7971,7 @@
     "status": "draft",
     "sourceIndex": 901,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/on-base.mdx",
-    "navOrder": 152.979
+    "navOrder": 222
   },
   {
     "id": 936,
@@ -8241,7 +7989,7 @@
     "status": "draft",
     "sourceIndex": 901.1,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/on-put-file-listener.mdx",
-    "navOrder": 152.98
+    "navOrder": 223
   },
   {
     "id": 937,
@@ -8259,7 +8007,7 @@
     "status": "draft",
     "sourceIndex": 901.2,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/on-msg-send-callback.mdx",
-    "navOrder": 152.981
+    "navOrder": 224
   },
   {
     "id": 938,
@@ -8277,7 +8025,7 @@
     "status": "draft",
     "sourceIndex": 901.3,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/base.mdx",
-    "navOrder": 152.982
+    "navOrder": 225
   },
   {
     "id": 939,
@@ -8295,7 +8043,7 @@
     "status": "draft",
     "sourceIndex": 901.4,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/send-msg-call-back.mdx",
-    "navOrder": 152.983
+    "navOrder": 226
   },
   {
     "id": 940,
@@ -8313,7 +8061,7 @@
     "status": "draft",
     "sourceIndex": 901.5,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/on-advanced-msg-listener.mdx",
-    "navOrder": 152.984
+    "navOrder": 227
   },
   {
     "id": 941,
@@ -8331,7 +8079,7 @@
     "status": "draft",
     "sourceIndex": 901.6,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/on-batch-msg-listener.mdx",
-    "navOrder": 152.985
+    "navOrder": 228
   },
   {
     "id": 942,
@@ -8349,7 +8097,7 @@
     "status": "draft",
     "sourceIndex": 901.7,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/models/upload-file-callback.mdx",
-    "navOrder": 152.986
+    "navOrder": 229
   },
   {
     "id": 154,
@@ -8457,7 +8205,7 @@
     "status": "draft",
     "sourceIndex": 159,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/application/authenticating-a-user/authentication.mdx",
-    "navOrder": 159
+    "navOrder": 4
   },
   {
     "id": 161,
@@ -8465,7 +8213,7 @@
     "relativePath": "chat/sdk/v4/android/application/overview",
     "sourcePath": "/docs/chat/sdk/v4/android/application/overview",
     "title": "概述",
-    "description": "初始化与登录方法目录，所有方法均拆分到独立页面说明。",
+    "description": "说明 Android SDK 从初始化、监听器注册、登录、运行态维护到退出和释放的生命周期。",
     "product": "sdk",
     "version": "v4",
     "platform": "android",
@@ -8475,7 +8223,7 @@
     "status": "draft",
     "sourceIndex": 160,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/application/overview.mdx",
-    "navOrder": 160
+    "navOrder": 3
   },
   {
     "id": 724,
@@ -8493,7 +8241,7 @@
     "status": "draft",
     "sourceIndex": 761.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/application/methods/get-sdk-version.mdx",
-    "navOrder": 160.001
+    "navOrder": 5
   },
   {
     "id": 725,
@@ -8511,7 +8259,7 @@
     "status": "draft",
     "sourceIndex": 762.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/application/methods/init-sdk.mdx",
-    "navOrder": 160.002
+    "navOrder": 6
   },
   {
     "id": 726,
@@ -8529,7 +8277,7 @@
     "status": "draft",
     "sourceIndex": 763.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/application/methods/un-init-sdk.mdx",
-    "navOrder": 160.003
+    "navOrder": 7
   },
   {
     "id": 727,
@@ -8547,7 +8295,7 @@
     "status": "draft",
     "sourceIndex": 764.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/application/methods/login.mdx",
-    "navOrder": 160.004
+    "navOrder": 8
   },
   {
     "id": 728,
@@ -8565,7 +8313,7 @@
     "status": "draft",
     "sourceIndex": 765.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/application/methods/logout.mdx",
-    "navOrder": 160.005
+    "navOrder": 9
   },
   {
     "id": 729,
@@ -8583,7 +8331,7 @@
     "status": "draft",
     "sourceIndex": 766.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/application/methods/set-app-background-status.mdx",
-    "navOrder": 160.006
+    "navOrder": 10
   },
   {
     "id": 730,
@@ -8601,7 +8349,7 @@
     "status": "draft",
     "sourceIndex": 767.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/application/methods/network-status-changed.mdx",
-    "navOrder": 160.007
+    "navOrder": 11
   },
   {
     "id": 731,
@@ -8619,7 +8367,7 @@
     "status": "draft",
     "sourceIndex": 768.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/application/methods/get-login-status.mdx",
-    "navOrder": 160.008
+    "navOrder": 12
   },
   {
     "id": 732,
@@ -8637,7 +8385,7 @@
     "status": "draft",
     "sourceIndex": 769.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/application/methods/get-login-user-id.mdx",
-    "navOrder": 160.009
+    "navOrder": 13
   },
   {
     "id": 162,
@@ -8979,7 +8727,7 @@
     "status": "draft",
     "sourceIndex": 179,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/deprecated.mdx",
-    "navOrder": 179
+    "navOrder": 231
   },
   {
     "id": 181,
@@ -8997,7 +8745,7 @@
     "status": "draft",
     "sourceIndex": 180,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/error-codes.mdx",
-    "navOrder": 180
+    "navOrder": 230
   },
   {
     "id": 182,
@@ -9069,7 +8817,7 @@
     "status": "draft",
     "sourceIndex": 184,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/event-handler/overview.mdx",
-    "navOrder": 184
+    "navOrder": 14
   },
   {
     "id": 733,
@@ -9087,7 +8835,7 @@
     "status": "draft",
     "sourceIndex": 770.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/event-handler/methods/set-group-listener.mdx",
-    "navOrder": 184.001
+    "navOrder": 15
   },
   {
     "id": 734,
@@ -9105,7 +8853,7 @@
     "status": "draft",
     "sourceIndex": 771.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/event-handler/methods/set-conversation-listener.mdx",
-    "navOrder": 184.002
+    "navOrder": 16
   },
   {
     "id": 735,
@@ -9123,7 +8871,7 @@
     "status": "draft",
     "sourceIndex": 772.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/event-handler/methods/set-advanced-msg-listener.mdx",
-    "navOrder": 184.003
+    "navOrder": 17
   },
   {
     "id": 736,
@@ -9141,7 +8889,7 @@
     "status": "draft",
     "sourceIndex": 773.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/event-handler/methods/set-batch-msg-listener.mdx",
-    "navOrder": 184.004
+    "navOrder": 18
   },
   {
     "id": 737,
@@ -9159,7 +8907,7 @@
     "status": "draft",
     "sourceIndex": 774.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/event-handler/methods/set-user-listener.mdx",
-    "navOrder": 184.005
+    "navOrder": 19
   },
   {
     "id": 738,
@@ -9177,7 +8925,7 @@
     "status": "draft",
     "sourceIndex": 775.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/event-handler/methods/set-friend-listener.mdx",
-    "navOrder": 184.006
+    "navOrder": 20
   },
   {
     "id": 739,
@@ -9195,7 +8943,7 @@
     "status": "draft",
     "sourceIndex": 776.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/event-handler/methods/set-custom-business-listener.mdx",
-    "navOrder": 184.007
+    "navOrder": 21
   },
   {
     "id": 740,
@@ -9213,7 +8961,7 @@
     "status": "draft",
     "sourceIndex": 777.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/event-handler/methods/set-message-kv-info-listener.mdx",
-    "navOrder": 184.008
+    "navOrder": 22
   },
   {
     "id": 186,
@@ -9325,11 +9073,11 @@
   },
   {
     "id": 192,
-    "path": "/docs/chat/sdk/v4/android/logger",
-    "relativePath": "chat/sdk/v4/android/logger",
-    "sourcePath": "/docs/chat/sdk/v4/android/logger",
-    "title": "日志",
-    "description": "说明 Android SDK 初始化日志配置、主动写日志和上传日志的当前导出方法。",
+    "path": "/docs/chat/sdk/v4/android/logger/overview",
+    "relativePath": "chat/sdk/v4/android/logger/overview",
+    "sourcePath": "/docs/chat/sdk/v4/android/logger/overview",
+    "title": "概述",
+    "description": "日志方法目录，说明 Android SDK 初始化日志配置、主动写日志和上传日志的当前导出方法。",
     "product": "sdk",
     "version": "v4",
     "platform": "android",
@@ -9338,8 +9086,8 @@
     "template": "guide",
     "status": "draft",
     "sourceIndex": 191,
-    "contentFile": "content/zh/docs/chat/sdk/v4/android/logger.mdx",
-    "navOrder": 191
+    "contentFile": "content/zh/docs/chat/sdk/v4/android/logger/overview.mdx",
+    "navOrder": 139
   },
   {
     "id": 193,
@@ -10409,7 +10157,7 @@
     "relativePath": "chat/sdk/v4/android/user/overview",
     "sourcePath": "/docs/chat/sdk/v4/android/user/overview",
     "title": "概述",
-    "description": "用户方法目录，所有方法均拆分到独立页面说明。",
+    "description": "用户方法目录，汇总用户资料、用户命令、在线状态、好友和黑名单能力。",
     "product": "sdk",
     "version": "v4",
     "platform": "android",
@@ -10419,7 +10167,7 @@
     "status": "draft",
     "sourceIndex": 252,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/user/overview.mdx",
-    "navOrder": 252
+    "navOrder": 23
   },
   {
     "id": 741,
@@ -10437,7 +10185,7 @@
     "status": "draft",
     "sourceIndex": 778.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/user/methods/get-self-user-info.mdx",
-    "navOrder": 252.001
+    "navOrder": 24
   },
   {
     "id": 742,
@@ -10455,7 +10203,7 @@
     "status": "draft",
     "sourceIndex": 779.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/user/methods/set-self-info.mdx",
-    "navOrder": 252.002
+    "navOrder": 25
   },
   {
     "id": 743,
@@ -10473,7 +10221,7 @@
     "status": "draft",
     "sourceIndex": 780.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/user/methods/get-users-info.mdx",
-    "navOrder": 252.003
+    "navOrder": 26
   },
   {
     "id": 744,
@@ -10491,7 +10239,7 @@
     "status": "draft",
     "sourceIndex": 781.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/user/methods/add-user-command.mdx",
-    "navOrder": 252.004
+    "navOrder": 27
   },
   {
     "id": 745,
@@ -10509,7 +10257,7 @@
     "status": "draft",
     "sourceIndex": 782.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/user/methods/delete-user-command.mdx",
-    "navOrder": 252.005
+    "navOrder": 28
   },
   {
     "id": 746,
@@ -10527,7 +10275,7 @@
     "status": "draft",
     "sourceIndex": 783.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/user/methods/get-all-user-commands.mdx",
-    "navOrder": 252.006
+    "navOrder": 29
   },
   {
     "id": 747,
@@ -10545,7 +10293,7 @@
     "status": "draft",
     "sourceIndex": 784.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/user/methods/subscribe-users-status.mdx",
-    "navOrder": 252.007
+    "navOrder": 30
   },
   {
     "id": 748,
@@ -10563,7 +10311,7 @@
     "status": "draft",
     "sourceIndex": 785.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/user/methods/unsubscribe-users-status.mdx",
-    "navOrder": 252.008
+    "navOrder": 31
   },
   {
     "id": 749,
@@ -10581,7 +10329,7 @@
     "status": "draft",
     "sourceIndex": 786.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/user/methods/get-subscribe-users-status.mdx",
-    "navOrder": 252.009
+    "navOrder": 32
   },
   {
     "id": 750,
@@ -10599,25 +10347,7 @@
     "status": "draft",
     "sourceIndex": 787.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/user/methods/get-user-status.mdx",
-    "navOrder": 252.01
-  },
-  {
-    "id": 259,
-    "path": "/docs/chat/sdk/v4/android/user/friend/overview",
-    "relativePath": "chat/sdk/v4/android/user/friend/overview",
-    "sourcePath": "/docs/chat/sdk/v4/android/user/friend/overview",
-    "title": "概述",
-    "description": "好友方法目录，所有方法均拆分到独立页面说明。",
-    "product": "sdk",
-    "version": "v4",
-    "platform": "android",
-    "contextKey": "chat/sdk/v4/android",
-    "contextTitle": "SDKs · Android · v4",
-    "template": "overview",
-    "status": "draft",
-    "sourceIndex": 787.9,
-    "contentFile": "content/zh/docs/chat/sdk/v4/android/user/friend/overview.mdx",
-    "navOrder": 252.9
+    "navOrder": 33
   },
   {
     "id": 254,
@@ -10653,7 +10383,7 @@
     "status": "draft",
     "sourceIndex": 788.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/user/friend/methods/get-specified-friends-info.mdx",
-    "navOrder": 253.001
+    "navOrder": 34
   },
   {
     "id": 752,
@@ -10671,7 +10401,7 @@
     "status": "draft",
     "sourceIndex": 789.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/user/friend/methods/get-friend-list.mdx",
-    "navOrder": 253.002
+    "navOrder": 35
   },
   {
     "id": 753,
@@ -10689,7 +10419,7 @@
     "status": "draft",
     "sourceIndex": 790.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/user/friend/methods/get-friend-list-page.mdx",
-    "navOrder": 253.003
+    "navOrder": 36
   },
   {
     "id": 754,
@@ -10707,7 +10437,7 @@
     "status": "draft",
     "sourceIndex": 791.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/user/friend/methods/search-friends.mdx",
-    "navOrder": 253.004
+    "navOrder": 37
   },
   {
     "id": 755,
@@ -10725,7 +10455,7 @@
     "status": "draft",
     "sourceIndex": 792.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/user/friend/methods/check-friend.mdx",
-    "navOrder": 253.005
+    "navOrder": 38
   },
   {
     "id": 756,
@@ -10743,7 +10473,7 @@
     "status": "draft",
     "sourceIndex": 793.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/user/friend/methods/add-friend.mdx",
-    "navOrder": 253.006
+    "navOrder": 39
   },
   {
     "id": 757,
@@ -10761,7 +10491,7 @@
     "status": "draft",
     "sourceIndex": 794.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/user/friend/methods/update-friends.mdx",
-    "navOrder": 253.007
+    "navOrder": 40
   },
   {
     "id": 758,
@@ -10779,7 +10509,7 @@
     "status": "draft",
     "sourceIndex": 795.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/user/friend/methods/delete-friend.mdx",
-    "navOrder": 253.008
+    "navOrder": 41
   },
   {
     "id": 759,
@@ -10797,7 +10527,7 @@
     "status": "draft",
     "sourceIndex": 796.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/user/friend/methods/get-friend-application-list-as-recipient.mdx",
-    "navOrder": 253.009
+    "navOrder": 42
   },
   {
     "id": 760,
@@ -10815,7 +10545,7 @@
     "status": "draft",
     "sourceIndex": 797.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/user/friend/methods/get-friend-application-list-as-applicant.mdx",
-    "navOrder": 253.01
+    "navOrder": 43
   },
   {
     "id": 761,
@@ -10833,7 +10563,7 @@
     "status": "draft",
     "sourceIndex": 798.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/user/friend/methods/accept-friend-application.mdx",
-    "navOrder": 253.011
+    "navOrder": 44
   },
   {
     "id": 762,
@@ -10851,7 +10581,7 @@
     "status": "draft",
     "sourceIndex": 799.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/user/friend/methods/refuse-friend-application.mdx",
-    "navOrder": 253.012
+    "navOrder": 45
   },
   {
     "id": 763,
@@ -10869,25 +10599,7 @@
     "status": "draft",
     "sourceIndex": 800.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/user/friend/methods/get-friend-application-unhandled-count.mdx",
-    "navOrder": 253.013
-  },
-  {
-    "id": 156,
-    "path": "/docs/chat/sdk/v4/android/user/blacklist/overview",
-    "relativePath": "chat/sdk/v4/android/user/blacklist/overview",
-    "sourcePath": "/docs/chat/sdk/v4/android/user/blacklist/overview",
-    "title": "概述",
-    "description": "黑名单方法目录，所有方法均拆分到独立页面说明。",
-    "product": "sdk",
-    "version": "v4",
-    "platform": "android",
-    "contextKey": "chat/sdk/v4/android",
-    "contextTitle": "SDKs · Android · v4",
-    "template": "overview",
-    "status": "draft",
-    "sourceIndex": 800.9,
-    "contentFile": "content/zh/docs/chat/sdk/v4/android/user/blacklist/overview.mdx",
-    "navOrder": 253.9
+    "navOrder": 46
   },
   {
     "id": 255,
@@ -10923,7 +10635,7 @@
     "status": "draft",
     "sourceIndex": 801.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/user/blacklist/methods/add-black.mdx",
-    "navOrder": 254.001
+    "navOrder": 47
   },
   {
     "id": 765,
@@ -10941,7 +10653,7 @@
     "status": "draft",
     "sourceIndex": 802.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/user/blacklist/methods/get-black-list.mdx",
-    "navOrder": 254.002
+    "navOrder": 48
   },
   {
     "id": 766,
@@ -10959,7 +10671,7 @@
     "status": "draft",
     "sourceIndex": 803.9,
     "contentFile": "content/zh/docs/chat/sdk/v4/android/user/blacklist/methods/remove-black.mdx",
-    "navOrder": 254.003
+    "navOrder": 49
   },
   {
     "id": 256,

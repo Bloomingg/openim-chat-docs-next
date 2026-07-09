@@ -29,7 +29,7 @@ sourcePath: '/docs/chat/sdk/v4/android/message/deleting-messages/delete-all-msg-
 
 ## Android 调用参考
 
-Android SDK v3.8.3.5 的 Java 方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+Android SDK v3.8.3 的 Java 方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
 
 ```java showLineNumbers
 public void deleteAllMsgFromLocal(OnBase<String> base)
@@ -37,9 +37,9 @@ public void deleteAllMsgFromLocal(OnBase<String> base)
 
 ## 输入参数
 
-| 名称     | 类型                                                               | 描述 |
-| -------- | ------------------------------------------------------------------ | ---- |
-| callBack | [`OnBase`](/docs/chat/sdk/v4/android/models/on-base)&lt;String&gt; | 是   |
+| 名称     | 类型             | 是否必填 | 描述     |
+| -------- | ---------------- | -------- | -------- |
+| callBack | `OnBase<String>` | 是       | 回调接口 |
 
 ## 返回结果
 
@@ -47,7 +47,7 @@ public void deleteAllMsgFromLocal(OnBase<String> base)
 
 ## 代码示例
 
-以下示例展示 Android SDK v3.8.3.5 的调用方式。
+以下示例展示 Android SDK v3.8.3 的调用方式。
 
 ```java showLineNumbers
 OpenIMClient.getInstance().messageManager.deleteAllMsgFromLocal(new OnBase<String>() {

@@ -29,7 +29,7 @@ sourcePath: '/docs/chat/sdk/v4/android/message/creating-messages/create-text-at-
 
 ## Android 调用参考
 
-Android SDK v3.8.3.5 的 Java 方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+Android SDK v3.8.3 的 Java 方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
 
 ```java showLineNumbers
 public Message createTextAtMessage(String text, List<String> atUserIDList, List<AtUserInfo> atUserInfoList, Message quoteMessage)
@@ -40,8 +40,8 @@ public Message createTextAtMessage(String text, List<String> atUserIDList, List<
 | 参数名称       | 参数类型                                                                  | 是否必填 | 描述              |
 | -------------- | ------------------------------------------------------------------------- | -------- | ----------------- |
 | text           | String                                                                    | 是       | 内容              |
-| atUserIDList   | List<String>                                                              | 是       | @人的 userID 列表 |
-| atUserInfoList | List&lt;[`AtUserInfo`](/docs/chat/sdk/v4/android/models/at-user-info)&gt; | 是       | @人的用户信息列表 |
+| atUserIDList   | `List<String>` | 是       | @人的 userID 列表 |
+| atUserInfoList | `List<AtUserInfo>` | 是       | @人的用户信息列表 |
 | quoteMessage   | [`Message`](/docs/chat/sdk/v4/android/models/message)                     | 是       | 引用的消息        |
 
 ## 返回结果
@@ -52,7 +52,7 @@ public Message createTextAtMessage(String text, List<String> atUserIDList, List<
 
 ## 代码示例
 
-以下示例展示 Android SDK v3.8.3.5 的调用方式。
+以下示例展示 Android SDK v3.8.3 的调用方式。
 
 ```java showLineNumbers
 Message atMessage = OpenIMClient.getInstance().messageManager.createTextAtMessage(text, atUserIDList, atUserInfoList, quoteMessage);

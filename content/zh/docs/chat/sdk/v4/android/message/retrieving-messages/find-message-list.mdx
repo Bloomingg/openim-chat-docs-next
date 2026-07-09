@@ -29,7 +29,7 @@ sourcePath: '/docs/chat/sdk/v4/android/message/retrieving-messages/find-message-
 
 ## Android 调用参考
 
-Android SDK v3.8.3.5 的 Java 方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+Android SDK v3.8.3 的 Java 方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
 
 ```java showLineNumbers
 public void findMessageList(OnBase<SearchResult> base, List<SearchParams> searchParams)
@@ -39,8 +39,8 @@ public void findMessageList(OnBase<SearchResult> base, List<SearchParams> search
 
 | 参数名称                                                         | 参数类型                                                                                                                               | 是否必填 | 描述     |
 | ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- |
-| callBack                                                         | [`OnBase`](/docs/chat/sdk/v4/android/models/on-base)&lt;[`TypeKeySetResult`](/docs/chat/sdk/v4/android/models/type-key-set-result)&gt; | 是       | 回调接口 |
-| [`SearchParams`](/docs/chat/sdk/v4/android/models/search-params) | List&lt;[`SearchParams`](/docs/chat/sdk/v4/android/models/search-params)&gt;                                                           | 是       |          |
+| callBack                                                         | `OnBase<TypeKeySetResult>` | 是       | 回调接口 |
+| [`SearchParams`](/docs/chat/sdk/v4/android/models/search-params) | `List<SearchParams>` | 是       |          |
 
 ## 返回结果
 
@@ -50,7 +50,7 @@ public void findMessageList(OnBase<SearchResult> base, List<SearchParams> search
 
 ## 代码示例
 
-以下示例展示 Android SDK v3.8.3.5 的调用方式。
+以下示例展示 Android SDK v3.8.3 的调用方式。
 
 ```java showLineNumbers
 OpenIMClient.getInstance().messageManager.findMessageList(new OnBase<SearchResult>() {

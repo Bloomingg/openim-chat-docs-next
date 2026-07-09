@@ -11,13 +11,13 @@ platform: 'android'
 sourcePath: '/docs/chat/sdk/v4/android/event-handler/methods/set-batch-msg-listener'
 ---
 
-设置批量消息监听器，适合一次处理多条新消息或多条离线消息，减少高频单条事件处理压力。
+接收批量消息事件，适合一次处理多条新消息或多条离线消息，减少高频单条事件处理压力。
 
 ## 功能介绍
 
-设置批量消息监听器，适合一次处理多条新消息或多条离线消息，减少高频单条事件处理压力。
+批量消息事件适合在消息量较大、离线同步较多或需要批量写入本地数据库时使用。相比逐条处理，它更适合集中刷新会话列表、批量更新未读数或做后台消息归档。
 
-`Set*Listener` 会替换当前 SDK 保存的同类监听器；如果多个模块都要消费事件，应在业务层封装统一分发。
+该监听器是单实例替换式注册。业务层应统一接收后再分发给页面或后台任务，避免重复注册导致事件处理链路被覆盖。
 
 ## Core Binding 方法
 
@@ -29,7 +29,7 @@ sourcePath: '/docs/chat/sdk/v4/android/event-handler/methods/set-batch-msg-liste
 
 ## Android 调用参考
 
-当前 Android SDK v3.8.3.5 未提供该 core 方法对应的公开 Java 调用方法。Core binding 方法签名仅用于说明底层 `open_im_sdk` 能力。
+当前 Android SDK v3.8.3 未提供该 core 方法对应的公开 Java 调用方法。Core binding 方法签名仅用于说明底层 `open_im_sdk` 能力。
 
 ## 输入参数
 
@@ -43,7 +43,7 @@ sourcePath: '/docs/chat/sdk/v4/android/event-handler/methods/set-batch-msg-liste
 
 ## 代码示例
 
-TODO: 当前 Android SDK v3.8.3.5 未提供公开 Java 调用示例。
+TODO: 当前 Android SDK v3.8.3 未提供公开 Java 调用示例。
 
 ## 相关类型
 

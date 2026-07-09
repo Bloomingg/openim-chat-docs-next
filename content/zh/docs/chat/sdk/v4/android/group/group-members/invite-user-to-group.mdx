@@ -29,7 +29,7 @@ sourcePath: '/docs/chat/sdk/v4/android/group/group-members/invite-user-to-group'
 
 ## Android 调用参考
 
-Android SDK v3.8.3.5 的 Java 方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+Android SDK v3.8.3 的 Java 方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
 
 ```java showLineNumbers
 public void inviteUserToGroup(OnBase<String> base, String groupId, List<String> uidList, String reason)
@@ -39,10 +39,10 @@ public void inviteUserToGroup(OnBase<String> base, String groupId, List<String> 
 
 | 参数名称 | 参数类型                                                           | 是否必填 | 描述             |
 | -------- | ------------------------------------------------------------------ | -------- | ---------------- |
-| callBack | [`OnBase`](/docs/chat/sdk/v4/android/models/on-base)&lt;String&gt; | 是       | 操作结果回调     |
+| callBack | `OnBase<String>` | 是       | 操作结果回调     |
 | groupId  | String                                                             | 是       | 群ID             |
 | reason   | String                                                             | 是       | 邀请信息         |
-| uidList  | List<String>                                                       | 是       | 被邀请人 ID 集合 |
+| uidList  | `List<String>` | 是       | 被邀请人 ID 集合 |
 
 ## 返回结果
 
@@ -50,7 +50,7 @@ public void inviteUserToGroup(OnBase<String> base, String groupId, List<String> 
 
 ## 代码示例
 
-以下示例展示 Android SDK v3.8.3.5 的调用方式。
+以下示例展示 Android SDK v3.8.3 的调用方式。
 
 ```java showLineNumbers
 OpenIMClient.getInstance().groupManager.inviteUserToGroup(new OnBase<String>() {

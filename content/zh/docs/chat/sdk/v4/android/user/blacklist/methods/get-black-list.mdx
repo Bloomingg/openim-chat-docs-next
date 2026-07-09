@@ -29,7 +29,7 @@ sourcePath: '/docs/chat/sdk/v4/android/user/blacklist/methods/get-black-list'
 
 ## Android 调用参考
 
-Android SDK v3.8.3.5 的 Java 方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+Android SDK v3.8.3 的 Java 方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
 
 ```java showLineNumbers
 public void getBlacklist(OnBase<List<UserInfo>> base)
@@ -39,7 +39,7 @@ public void getBlacklist(OnBase<List<UserInfo>> base)
 
 | 参数名称 | 参数类型                                                                                                                         | 是否必填 | 描述     |
 | -------- | -------------------------------------------------------------------------------------------------------------------------------- | -------- | -------- |
-| callBack | [`OnBase`](/docs/chat/sdk/v4/android/models/on-base)&lt;List&lt;[`UserInfo`](/docs/chat/sdk/v4/android/models/user-info)&gt;&gt; | 是       | 回调接口 |
+| callBack | `OnBase<List<UserInfo>>` | 是       | 回调接口 |
 
 ## 返回结果
 
@@ -47,7 +47,7 @@ public void getBlacklist(OnBase<List<UserInfo>> base)
 
 ## 代码示例
 
-以下示例展示 Android SDK v3.8.3.5 的调用方式。
+以下示例展示 Android SDK v3.8.3 的调用方式。
 
 ```java showLineNumbers
 OpenIMClient.getInstance().friendshipManager.getBlacklist(new OnBase<List<UserInfo>>() {
@@ -72,4 +72,4 @@ OpenIMClient.getInstance().friendshipManager.getBlacklist(new OnBase<List<UserIn
 
 ## 相关页面
 
-- [黑名单](/docs/chat/sdk/v4/android/user/blacklist/overview)
+- [黑名单](/docs/chat/sdk/v4/android/user/overview#黑名单)

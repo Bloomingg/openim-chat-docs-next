@@ -3818,361 +3818,13 @@
       "platform": "android",
       "nodes": [
         {
-          "id": "group",
-          "segment": "group",
-          "title": "群组",
-          "href": null,
-          "type": "folder",
-          "children": [
-            {
-              "id": "group/overview",
-              "segment": "overview",
-              "title": "概述",
-              "href": "/docs/chat/sdk/v4/android/group/overview",
-              "type": "page",
-              "children": [],
-              "minIndex": 130
-            },
-            {
-              "id": "group/managing-groups",
-              "segment": "managing-groups",
-              "title": "管理群组",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "group/managing-groups/overview",
-                  "segment": "overview",
-                  "title": "概述",
-                  "href": "/docs/chat/sdk/v4/android/group/managing-groups/overview",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.001
-                },
-                {
-                  "id": "group/managing-groups/create-group",
-                  "segment": "create-group",
-                  "title": "创建群组",
-                  "href": "/docs/chat/sdk/v4/android/group/managing-groups/create-group",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.002
-                },
-                {
-                  "id": "group/managing-groups/set-group-info",
-                  "segment": "set-group-info",
-                  "title": "更新群资料",
-                  "href": "/docs/chat/sdk/v4/android/group/managing-groups/set-group-info",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.003
-                },
-                {
-                  "id": "group/managing-groups/get-specified-groups-info",
-                  "segment": "get-specified-groups-info",
-                  "title": "获取指定群组资料",
-                  "href": "/docs/chat/sdk/v4/android/group/managing-groups/get-specified-groups-info",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.004
-                },
-                {
-                  "id": "group/managing-groups/search-groups",
-                  "segment": "search-groups",
-                  "title": "搜索群组",
-                  "href": "/docs/chat/sdk/v4/android/group/managing-groups/search-groups",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.005
-                },
-                {
-                  "id": "group/managing-groups/transfer-group-owner",
-                  "segment": "transfer-group-owner",
-                  "title": "转让群主",
-                  "href": "/docs/chat/sdk/v4/android/group/managing-groups/transfer-group-owner",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.006
-                },
-                {
-                  "id": "group/managing-groups/dismiss-group",
-                  "segment": "dismiss-group",
-                  "title": "解散群组",
-                  "href": "/docs/chat/sdk/v4/android/group/managing-groups/dismiss-group",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.007
-                }
-              ],
-              "minIndex": 130.001
-            },
-            {
-              "id": "group/group-applications",
-              "segment": "group-applications",
-              "title": "入群申请",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "group/group-applications/overview",
-                  "segment": "overview",
-                  "title": "概述",
-                  "href": "/docs/chat/sdk/v4/android/group/group-applications/overview",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.01
-                },
-                {
-                  "id": "group/group-applications/join-group",
-                  "segment": "join-group",
-                  "title": "申请加入群组",
-                  "href": "/docs/chat/sdk/v4/android/group/group-applications/join-group",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.011
-                },
-                {
-                  "id": "group/group-applications/get-group-application-list-as-recipient",
-                  "segment": "get-group-application-list-as-recipient",
-                  "title": "获取收到的入群申请",
-                  "href": "/docs/chat/sdk/v4/android/group/group-applications/get-group-application-list-as-recipient",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.012
-                },
-                {
-                  "id": "group/group-applications/get-group-application-list-as-applicant",
-                  "segment": "get-group-application-list-as-applicant",
-                  "title": "获取发出的入群申请",
-                  "href": "/docs/chat/sdk/v4/android/group/group-applications/get-group-application-list-as-applicant",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.013
-                },
-                {
-                  "id": "group/group-applications/accept-group-application",
-                  "segment": "accept-group-application",
-                  "title": "同意入群申请",
-                  "href": "/docs/chat/sdk/v4/android/group/group-applications/accept-group-application",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.014
-                },
-                {
-                  "id": "group/group-applications/refuse-group-application",
-                  "segment": "refuse-group-application",
-                  "title": "拒绝入群申请",
-                  "href": "/docs/chat/sdk/v4/android/group/group-applications/refuse-group-application",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.015
-                },
-                {
-                  "id": "group/group-applications/get-group-application-unhandled-count",
-                  "segment": "get-group-application-unhandled-count",
-                  "title": "获取未处理入群申请数",
-                  "href": "/docs/chat/sdk/v4/android/group/group-applications/get-group-application-unhandled-count",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.016
-                }
-              ],
-              "minIndex": 130.01
-            },
-            {
-              "id": "group/group-membership",
-              "segment": "group-membership",
-              "title": "用户入群关系",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "group/group-membership/overview",
-                  "segment": "overview",
-                  "title": "概述",
-                  "href": "/docs/chat/sdk/v4/android/group/group-membership/overview",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.02
-                },
-                {
-                  "id": "group/group-membership/get-joined-group-list",
-                  "segment": "get-joined-group-list",
-                  "title": "获取已加入群组",
-                  "href": "/docs/chat/sdk/v4/android/group/group-membership/get-joined-group-list",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.021
-                },
-                {
-                  "id": "group/group-membership/get-joined-group-list-page",
-                  "segment": "get-joined-group-list-page",
-                  "title": "分页获取已加入群组",
-                  "href": "/docs/chat/sdk/v4/android/group/group-membership/get-joined-group-list-page",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.022
-                },
-                {
-                  "id": "group/group-membership/is-join-group",
-                  "segment": "is-join-group",
-                  "title": "判断是否已入群",
-                  "href": "/docs/chat/sdk/v4/android/group/group-membership/is-join-group",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.023
-                },
-                {
-                  "id": "group/group-membership/get-users-in-group",
-                  "segment": "get-users-in-group",
-                  "title": "查询用户是否在群内",
-                  "href": "/docs/chat/sdk/v4/android/group/group-membership/get-users-in-group",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.024
-                },
-                {
-                  "id": "group/group-membership/quit-group",
-                  "segment": "quit-group",
-                  "title": "退出群组",
-                  "href": "/docs/chat/sdk/v4/android/group/group-membership/quit-group",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.025
-                }
-              ],
-              "minIndex": 130.02
-            },
-            {
-              "id": "group/group-members",
-              "segment": "group-members",
-              "title": "群成员",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "group/group-members/overview",
-                  "segment": "overview",
-                  "title": "概述",
-                  "href": "/docs/chat/sdk/v4/android/group/group-members/overview",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.03
-                },
-                {
-                  "id": "group/group-members/invite-user-to-group",
-                  "segment": "invite-user-to-group",
-                  "title": "邀请用户入群",
-                  "href": "/docs/chat/sdk/v4/android/group/group-members/invite-user-to-group",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.031
-                },
-                {
-                  "id": "group/group-members/kick-group-member",
-                  "segment": "kick-group-member",
-                  "title": "移出群成员",
-                  "href": "/docs/chat/sdk/v4/android/group/group-members/kick-group-member",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.032
-                },
-                {
-                  "id": "group/group-members/set-group-member-info",
-                  "segment": "set-group-member-info",
-                  "title": "更新群成员资料",
-                  "href": "/docs/chat/sdk/v4/android/group/group-members/set-group-member-info",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.033
-                },
-                {
-                  "id": "group/group-members/get-group-member-list",
-                  "segment": "get-group-member-list",
-                  "title": "获取群成员列表",
-                  "href": "/docs/chat/sdk/v4/android/group/group-members/get-group-member-list",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.034
-                },
-                {
-                  "id": "group/group-members/get-group-member-list-by-join-time-filter",
-                  "segment": "get-group-member-list-by-join-time-filter",
-                  "title": "按入群时间筛选成员",
-                  "href": "/docs/chat/sdk/v4/android/group/group-members/get-group-member-list-by-join-time-filter",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.035
-                },
-                {
-                  "id": "group/group-members/get-group-member-owner-and-admin",
-                  "segment": "get-group-member-owner-and-admin",
-                  "title": "获取群主和管理员",
-                  "href": "/docs/chat/sdk/v4/android/group/group-members/get-group-member-owner-and-admin",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.036
-                },
-                {
-                  "id": "group/group-members/get-specified-group-members-info",
-                  "segment": "get-specified-group-members-info",
-                  "title": "获取指定群成员资料",
-                  "href": "/docs/chat/sdk/v4/android/group/group-members/get-specified-group-members-info",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.037
-                },
-                {
-                  "id": "group/group-members/search-group-members",
-                  "segment": "search-group-members",
-                  "title": "搜索群成员",
-                  "href": "/docs/chat/sdk/v4/android/group/group-members/search-group-members",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.038
-                }
-              ],
-              "minIndex": 130.03
-            },
-            {
-              "id": "group/group-moderation",
-              "segment": "group-moderation",
-              "title": "群组禁言",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "group/group-moderation/overview",
-                  "segment": "overview",
-                  "title": "概述",
-                  "href": "/docs/chat/sdk/v4/android/group/group-moderation/overview",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.04
-                },
-                {
-                  "id": "group/group-moderation/change-group-mute",
-                  "segment": "change-group-mute",
-                  "title": "设置群禁言",
-                  "href": "/docs/chat/sdk/v4/android/group/group-moderation/change-group-mute",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.041
-                },
-                {
-                  "id": "group/group-moderation/change-group-member-mute",
-                  "segment": "change-group-member-mute",
-                  "title": "设置成员禁言",
-                  "href": "/docs/chat/sdk/v4/android/group/group-moderation/change-group-member-mute",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 130.042
-                }
-              ],
-              "minIndex": 130.04
-            }
-          ],
-          "minIndex": 130
+          "id": "overview",
+          "segment": "overview",
+          "title": "OpenIM Android SDK 概览",
+          "href": "/docs/chat/sdk/v4/android/overview",
+          "type": "page",
+          "children": [],
+          "minIndex": 1
         },
         {
           "id": "getting-started/send-first-message",
@@ -4181,1609 +3833,12 @@
           "href": "/docs/chat/sdk/v4/android/getting-started/send-first-message",
           "type": "page",
           "children": [],
-          "minIndex": 131
-        },
-        {
-          "id": "message",
-          "segment": "message",
-          "title": "会话与消息",
-          "href": null,
-          "type": "folder",
-          "children": [
-            {
-              "id": "message/overview",
-              "segment": "overview",
-              "title": "概述",
-              "href": "/docs/chat/sdk/v4/android/message/overview",
-              "type": "page",
-              "children": [],
-              "minIndex": 141
-            },
-            {
-              "id": "message/listing-conversations",
-              "segment": "listing-conversations",
-              "title": "查询会话",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/listing-conversations/overview",
-                  "segment": "overview",
-                  "title": "概述",
-                  "href": "/docs/chat/sdk/v4/android/message/listing-conversations/overview",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.001
-                },
-                {
-                  "id": "message/listing-conversations/get-all-conversation-list",
-                  "segment": "get-all-conversation-list",
-                  "title": "获取全部会话",
-                  "href": "/docs/chat/sdk/v4/android/message/listing-conversations/get-all-conversation-list",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.002
-                },
-                {
-                  "id": "message/listing-conversations/get-conversation-list-split",
-                  "segment": "get-conversation-list-split",
-                  "title": "分页获取会话",
-                  "href": "/docs/chat/sdk/v4/android/message/listing-conversations/get-conversation-list-split",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.003
-                },
-                {
-                  "id": "message/listing-conversations/get-one-conversation",
-                  "segment": "get-one-conversation",
-                  "title": "获取单个会话",
-                  "href": "/docs/chat/sdk/v4/android/message/listing-conversations/get-one-conversation",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.004
-                },
-                {
-                  "id": "message/listing-conversations/get-multiple-conversation",
-                  "segment": "get-multiple-conversation",
-                  "title": "批量获取会话",
-                  "href": "/docs/chat/sdk/v4/android/message/listing-conversations/get-multiple-conversation",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.005
-                },
-                {
-                  "id": "message/listing-conversations/search-conversation",
-                  "segment": "search-conversation",
-                  "title": "搜索会话",
-                  "href": "/docs/chat/sdk/v4/android/message/listing-conversations/search-conversation",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.006
-                },
-                {
-                  "id": "message/listing-conversations/get-conversation-id-by-session-type",
-                  "segment": "get-conversation-id-by-session-type",
-                  "title": "生成会话 ID",
-                  "href": "/docs/chat/sdk/v4/android/message/listing-conversations/get-conversation-id-by-session-type",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.007
-                }
-              ],
-              "minIndex": 141.001
-            },
-            {
-              "id": "message/managing-conversations",
-              "segment": "managing-conversations",
-              "title": "管理会话",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/managing-conversations/overview",
-                  "segment": "overview",
-                  "title": "概述",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-conversations/overview",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.01
-                },
-                {
-                  "id": "message/managing-conversations/set-conversation",
-                  "segment": "set-conversation",
-                  "title": "设置会话",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-conversations/set-conversation",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.011
-                },
-                {
-                  "id": "message/managing-conversations/hide-conversation",
-                  "segment": "hide-conversation",
-                  "title": "隐藏会话",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-conversations/hide-conversation",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.012
-                },
-                {
-                  "id": "message/managing-conversations/set-conversation-draft",
-                  "segment": "set-conversation-draft",
-                  "title": "设置会话草稿",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-conversations/set-conversation-draft",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.013
-                },
-                {
-                  "id": "message/managing-conversations/hide-all-conversations",
-                  "segment": "hide-all-conversations",
-                  "title": "隐藏全部会话",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-conversations/hide-all-conversations",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.014
-                }
-              ],
-              "minIndex": 141.01
-            },
-            {
-              "id": "message/conversation-state",
-              "segment": "conversation-state",
-              "title": "会话状态",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/conversation-state/overview",
-                  "segment": "overview",
-                  "title": "概述",
-                  "href": "/docs/chat/sdk/v4/android/message/conversation-state/overview",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.02
-                },
-                {
-                  "id": "message/conversation-state/get-total-unread-msg-count",
-                  "segment": "get-total-unread-msg-count",
-                  "title": "获取总未读数",
-                  "href": "/docs/chat/sdk/v4/android/message/conversation-state/get-total-unread-msg-count",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.021
-                },
-                {
-                  "id": "message/conversation-state/change-input-states",
-                  "segment": "change-input-states",
-                  "title": "更新输入状态",
-                  "href": "/docs/chat/sdk/v4/android/message/conversation-state/change-input-states",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.022
-                },
-                {
-                  "id": "message/conversation-state/get-input-states",
-                  "segment": "get-input-states",
-                  "title": "获取输入状态",
-                  "href": "/docs/chat/sdk/v4/android/message/conversation-state/get-input-states",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.023
-                },
-                {
-                  "id": "message/conversation-state/typing-status-update",
-                  "segment": "typing-status-update",
-                  "title": "发送输入提示",
-                  "href": "/docs/chat/sdk/v4/android/message/conversation-state/typing-status-update",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.024
-                }
-              ],
-              "minIndex": 141.02
-            },
-            {
-              "id": "message/creating-messages",
-              "segment": "creating-messages",
-              "title": "创建消息",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/creating-messages/overview",
-                  "segment": "overview",
-                  "title": "概述",
-                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/overview",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.03
-                },
-                {
-                  "id": "message/creating-messages/get-at-all-tag",
-                  "segment": "get-at-all-tag",
-                  "title": "获取 @ 所有人标记",
-                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/get-at-all-tag",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.031
-                },
-                {
-                  "id": "message/creating-messages/create-text-message",
-                  "segment": "create-text-message",
-                  "title": "创建文本消息",
-                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-text-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.032
-                },
-                {
-                  "id": "message/creating-messages/create-advanced-text-message",
-                  "segment": "create-advanced-text-message",
-                  "title": "创建高级文本消息",
-                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-advanced-text-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.033
-                },
-                {
-                  "id": "message/creating-messages/create-text-at-message",
-                  "segment": "create-text-at-message",
-                  "title": "创建 @ 文本消息",
-                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-text-at-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.034
-                },
-                {
-                  "id": "message/creating-messages/create-location-message",
-                  "segment": "create-location-message",
-                  "title": "创建位置消息",
-                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-location-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.035
-                },
-                {
-                  "id": "message/creating-messages/create-custom-message",
-                  "segment": "create-custom-message",
-                  "title": "创建自定义消息",
-                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-custom-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.036
-                },
-                {
-                  "id": "message/creating-messages/create-quote-message",
-                  "segment": "create-quote-message",
-                  "title": "创建引用消息",
-                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-quote-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.037
-                },
-                {
-                  "id": "message/creating-messages/create-advanced-quote-message",
-                  "segment": "create-advanced-quote-message",
-                  "title": "创建高级引用消息",
-                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-advanced-quote-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.038
-                },
-                {
-                  "id": "message/creating-messages/create-card-message",
-                  "segment": "create-card-message",
-                  "title": "创建名片消息",
-                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-card-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.039
-                },
-                {
-                  "id": "message/creating-messages/create-face-message",
-                  "segment": "create-face-message",
-                  "title": "创建表情消息",
-                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-face-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.04
-                },
-                {
-                  "id": "message/creating-messages/create-forward-message",
-                  "segment": "create-forward-message",
-                  "title": "创建转发消息",
-                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-forward-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.041
-                },
-                {
-                  "id": "message/creating-messages/create-merger-message",
-                  "segment": "create-merger-message",
-                  "title": "创建合并转发消息",
-                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-merger-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.042
-                },
-                {
-                  "id": "message/creating-messages/create-image-message",
-                  "segment": "create-image-message",
-                  "title": "创建图片消息",
-                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-image-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.043
-                },
-                {
-                  "id": "message/creating-messages/create-image-message-from-full-path",
-                  "segment": "create-image-message-from-full-path",
-                  "title": "通过完整路径创建图片消息",
-                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-image-message-from-full-path",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.044
-                },
-                {
-                  "id": "message/creating-messages/create-image-message-by-url",
-                  "segment": "create-image-message-by-url",
-                  "title": "通过 URL 创建图片消息",
-                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-image-message-by-url",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.045
-                },
-                {
-                  "id": "message/creating-messages/create-sound-message",
-                  "segment": "create-sound-message",
-                  "title": "创建语音消息",
-                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-sound-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.046
-                },
-                {
-                  "id": "message/creating-messages/create-sound-message-from-full-path",
-                  "segment": "create-sound-message-from-full-path",
-                  "title": "通过完整路径创建语音消息",
-                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-sound-message-from-full-path",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.047
-                },
-                {
-                  "id": "message/creating-messages/create-sound-message-by-url",
-                  "segment": "create-sound-message-by-url",
-                  "title": "通过 URL 创建语音消息",
-                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-sound-message-by-url",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.048
-                },
-                {
-                  "id": "message/creating-messages/create-video-message",
-                  "segment": "create-video-message",
-                  "title": "创建视频消息",
-                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-video-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.049
-                },
-                {
-                  "id": "message/creating-messages/create-video-message-from-full-path",
-                  "segment": "create-video-message-from-full-path",
-                  "title": "通过完整路径创建视频消息",
-                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-video-message-from-full-path",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.05
-                },
-                {
-                  "id": "message/creating-messages/create-video-message-by-url",
-                  "segment": "create-video-message-by-url",
-                  "title": "通过 URL 创建视频消息",
-                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-video-message-by-url",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.051
-                },
-                {
-                  "id": "message/creating-messages/create-file-message",
-                  "segment": "create-file-message",
-                  "title": "创建文件消息",
-                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-file-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.052
-                },
-                {
-                  "id": "message/creating-messages/create-file-message-from-full-path",
-                  "segment": "create-file-message-from-full-path",
-                  "title": "通过完整路径创建文件消息",
-                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-file-message-from-full-path",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.053
-                },
-                {
-                  "id": "message/creating-messages/create-file-message-by-url",
-                  "segment": "create-file-message-by-url",
-                  "title": "通过 URL 创建文件消息",
-                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-file-message-by-url",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.054
-                }
-              ],
-              "minIndex": 141.03
-            },
-            {
-              "id": "message/sending-messages",
-              "segment": "sending-messages",
-              "title": "发送消息",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/sending-messages/overview",
-                  "segment": "overview",
-                  "title": "概述",
-                  "href": "/docs/chat/sdk/v4/android/message/sending-messages/overview",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.06
-                },
-                {
-                  "id": "message/sending-messages/send-message",
-                  "segment": "send-message",
-                  "title": "发送消息",
-                  "href": "/docs/chat/sdk/v4/android/message/sending-messages/send-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.061
-                },
-                {
-                  "id": "message/sending-messages/send-message-not-oss",
-                  "segment": "send-message-not-oss",
-                  "title": "发送非 OSS 消息",
-                  "href": "/docs/chat/sdk/v4/android/message/sending-messages/send-message-not-oss",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.062
-                }
-              ],
-              "minIndex": 141.06
-            },
-            {
-              "id": "message/retrieving-messages",
-              "segment": "retrieving-messages",
-              "title": "查询消息",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/retrieving-messages/overview",
-                  "segment": "overview",
-                  "title": "概述",
-                  "href": "/docs/chat/sdk/v4/android/message/retrieving-messages/overview",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.07
-                },
-                {
-                  "id": "message/retrieving-messages/find-message-list",
-                  "segment": "find-message-list",
-                  "title": "查找消息列表",
-                  "href": "/docs/chat/sdk/v4/android/message/retrieving-messages/find-message-list",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.071
-                },
-                {
-                  "id": "message/retrieving-messages/get-advanced-history-message-list",
-                  "segment": "get-advanced-history-message-list",
-                  "title": "获取历史消息",
-                  "href": "/docs/chat/sdk/v4/android/message/retrieving-messages/get-advanced-history-message-list",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.072
-                },
-                {
-                  "id": "message/retrieving-messages/get-advanced-history-message-list-reverse",
-                  "segment": "get-advanced-history-message-list-reverse",
-                  "title": "反向获取历史消息",
-                  "href": "/docs/chat/sdk/v4/android/message/retrieving-messages/get-advanced-history-message-list-reverse",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.073
-                },
-                {
-                  "id": "message/retrieving-messages/search-local-messages",
-                  "segment": "search-local-messages",
-                  "title": "搜索本地消息",
-                  "href": "/docs/chat/sdk/v4/android/message/retrieving-messages/search-local-messages",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.074
-                }
-              ],
-              "minIndex": 141.07
-            },
-            {
-              "id": "message/managing-messages",
-              "segment": "managing-messages",
-              "title": "管理消息",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/managing-messages/overview",
-                  "segment": "overview",
-                  "title": "概述",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-messages/overview",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.08
-                },
-                {
-                  "id": "message/managing-messages/revoke-message",
-                  "segment": "revoke-message",
-                  "title": "撤回消息",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-messages/revoke-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.081
-                },
-                {
-                  "id": "message/managing-messages/set-message-local-ex",
-                  "segment": "set-message-local-ex",
-                  "title": "设置消息本地扩展",
-                  "href": "/docs/chat/sdk/v4/android/message/managing-messages/set-message-local-ex",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.082
-                }
-              ],
-              "minIndex": 141.08
-            },
-            {
-              "id": "message/read-status",
-              "segment": "read-status",
-              "title": "已读状态",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/read-status/overview",
-                  "segment": "overview",
-                  "title": "概述",
-                  "href": "/docs/chat/sdk/v4/android/message/read-status/overview",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.09
-                },
-                {
-                  "id": "message/read-status/mark-conversation-message-as-read",
-                  "segment": "mark-conversation-message-as-read",
-                  "title": "标记会话已读",
-                  "href": "/docs/chat/sdk/v4/android/message/read-status/mark-conversation-message-as-read",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.091
-                },
-                {
-                  "id": "message/read-status/mark-all-conversation-message-as-read",
-                  "segment": "mark-all-conversation-message-as-read",
-                  "title": "标记全部会话已读",
-                  "href": "/docs/chat/sdk/v4/android/message/read-status/mark-all-conversation-message-as-read",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.092
-                },
-                {
-                  "id": "message/read-status/mark-messages-as-read-by-msg-id",
-                  "segment": "mark-messages-as-read-by-msg-id",
-                  "title": "按消息 ID 标记已读",
-                  "href": "/docs/chat/sdk/v4/android/message/read-status/mark-messages-as-read-by-msg-id",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.093
-                }
-              ],
-              "minIndex": 141.09
-            },
-            {
-              "id": "message/deleting-messages",
-              "segment": "deleting-messages",
-              "title": "删除消息",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/deleting-messages/overview",
-                  "segment": "overview",
-                  "title": "概述",
-                  "href": "/docs/chat/sdk/v4/android/message/deleting-messages/overview",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.1
-                },
-                {
-                  "id": "message/deleting-messages/delete-message-from-local-storage",
-                  "segment": "delete-message-from-local-storage",
-                  "title": "删除本地消息",
-                  "href": "/docs/chat/sdk/v4/android/message/deleting-messages/delete-message-from-local-storage",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.101
-                },
-                {
-                  "id": "message/deleting-messages/delete-message",
-                  "segment": "delete-message",
-                  "title": "删除消息",
-                  "href": "/docs/chat/sdk/v4/android/message/deleting-messages/delete-message",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.102
-                },
-                {
-                  "id": "message/deleting-messages/delete-all-msg-from-local-and-svr",
-                  "segment": "delete-all-msg-from-local-and-svr",
-                  "title": "清空本地和服务端消息",
-                  "href": "/docs/chat/sdk/v4/android/message/deleting-messages/delete-all-msg-from-local-and-svr",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.103
-                },
-                {
-                  "id": "message/deleting-messages/delete-all-msg-from-local",
-                  "segment": "delete-all-msg-from-local",
-                  "title": "清空本地消息",
-                  "href": "/docs/chat/sdk/v4/android/message/deleting-messages/delete-all-msg-from-local",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.104
-                },
-                {
-                  "id": "message/deleting-messages/clear-conversation-and-delete-all-msg",
-                  "segment": "clear-conversation-and-delete-all-msg",
-                  "title": "清空会话消息",
-                  "href": "/docs/chat/sdk/v4/android/message/deleting-messages/clear-conversation-and-delete-all-msg",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.105
-                },
-                {
-                  "id": "message/deleting-messages/delete-conversation-and-delete-all-msg",
-                  "segment": "delete-conversation-and-delete-all-msg",
-                  "title": "删除会话及消息",
-                  "href": "/docs/chat/sdk/v4/android/message/deleting-messages/delete-conversation-and-delete-all-msg",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.106
-                }
-              ],
-              "minIndex": 141.1
-            },
-            {
-              "id": "message/local-messages",
-              "segment": "local-messages",
-              "title": "本地消息",
-              "href": null,
-              "type": "folder",
-              "children": [
-                {
-                  "id": "message/local-messages/overview",
-                  "segment": "overview",
-                  "title": "概述",
-                  "href": "/docs/chat/sdk/v4/android/message/local-messages/overview",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.11
-                },
-                {
-                  "id": "message/local-messages/insert-single-message-to-local-storage",
-                  "segment": "insert-single-message-to-local-storage",
-                  "title": "插入单聊本地消息",
-                  "href": "/docs/chat/sdk/v4/android/message/local-messages/insert-single-message-to-local-storage",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.111
-                },
-                {
-                  "id": "message/local-messages/insert-group-message-to-local-storage",
-                  "segment": "insert-group-message-to-local-storage",
-                  "title": "插入群聊本地消息",
-                  "href": "/docs/chat/sdk/v4/android/message/local-messages/insert-group-message-to-local-storage",
-                  "type": "page",
-                  "children": [],
-                  "minIndex": 141.112
-                }
-              ],
-              "minIndex": 141.11
-            }
-          ],
-          "minIndex": 141
-        },
-        {
-          "id": "overview",
-          "segment": "overview",
-          "title": "OpenIM Android SDK 概览",
-          "href": "/docs/chat/sdk/v4/android/overview",
-          "type": "page",
-          "children": [],
-          "minIndex": 149
-        },
-        {
-          "id": "push-notifications",
-          "segment": "push-notifications",
-          "title": "推送、日志与文件",
-          "href": null,
-          "type": "folder",
-          "children": [
-            {
-              "id": "push-notifications/overview",
-              "segment": "overview",
-              "title": "概述",
-              "href": "/docs/chat/sdk/v4/android/push-notifications/overview",
-              "type": "page",
-              "children": [],
-              "minIndex": 152
-            },
-            {
-              "id": "logger",
-              "segment": "logger",
-              "title": "日志",
-              "href": "/docs/chat/sdk/v4/android/logger",
-              "type": "page",
-              "children": [],
-              "minIndex": 191
-            },
-            {
-              "id": "push-notifications/methods/update-fcm-token",
-              "segment": "update-fcm-token",
-              "title": "更新 FCM Token",
-              "href": "/docs/chat/sdk/v4/android/push-notifications/methods/update-fcm-token",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.001
-            },
-            {
-              "id": "push-notifications/methods/set-app-badge",
-              "segment": "set-app-badge",
-              "title": "设置应用角标",
-              "href": "/docs/chat/sdk/v4/android/push-notifications/methods/set-app-badge",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.002
-            },
-            {
-              "id": "push-notifications/methods/upload-logs",
-              "segment": "upload-logs",
-              "title": "上传日志",
-              "href": "/docs/chat/sdk/v4/android/push-notifications/methods/upload-logs",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.003
-            },
-            {
-              "id": "push-notifications/methods/logs",
-              "segment": "logs",
-              "title": "写入客户端日志",
-              "href": "/docs/chat/sdk/v4/android/push-notifications/methods/logs",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.004
-            },
-            {
-              "id": "push-notifications/methods/upload-file",
-              "segment": "upload-file",
-              "title": "上传文件",
-              "href": "/docs/chat/sdk/v4/android/push-notifications/methods/upload-file",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.005
-            }
-          ],
-          "minIndex": 152
-        },
-        {
-          "id": "models",
-          "segment": "models",
-          "title": "类型说明",
-          "href": null,
-          "type": "folder",
-          "children": [
-            {
-              "id": "models/overview",
-              "segment": "overview",
-              "title": "概述",
-              "href": "/docs/chat/sdk/v4/android/models/overview",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.9
-            },
-            {
-              "id": "models/at-user-info",
-              "segment": "at-user-info",
-              "title": "被提及用户信息",
-              "href": "/docs/chat/sdk/v4/android/models/at-user-info",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.901
-            },
-            {
-              "id": "models/face-elem",
-              "segment": "face-elem",
-              "title": "表情消息元素",
-              "href": "/docs/chat/sdk/v4/android/models/face-elem",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.902
-            },
-            {
-              "id": "models/init-config",
-              "segment": "init-config",
-              "title": "初始化配置",
-              "href": "/docs/chat/sdk/v4/android/models/init-config",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.903
-            },
-            {
-              "id": "models/single-type-key-info-sum",
-              "segment": "single-type-key-info-sum",
-              "title": "单类型扩展统计",
-              "href": "/docs/chat/sdk/v4/android/models/single-type-key-info-sum",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.904
-            },
-            {
-              "id": "models/c2c-read-receipt-info",
-              "segment": "c2c-read-receipt-info",
-              "title": "单聊已读回执信息",
-              "href": "/docs/chat/sdk/v4/android/models/c2c-read-receipt-info",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.905
-            },
-            {
-              "id": "models/get-friend-application-list-as-applicant-req",
-              "segment": "get-friend-application-list-as-applicant-req",
-              "title": "发出的好友申请查询条件",
-              "href": "/docs/chat/sdk/v4/android/models/get-friend-application-list-as-applicant-req",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.906
-            },
-            {
-              "id": "models/get-group-application-list-as-applicant-req",
-              "segment": "get-group-application-list-as-applicant-req",
-              "title": "发出的群申请查询条件",
-              "href": "/docs/chat/sdk/v4/android/models/get-group-application-list-as-applicant-req",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.907
-            },
-            {
-              "id": "models/attached-info-elem",
-              "segment": "attached-info-elem",
-              "title": "附加信息元素",
-              "href": "/docs/chat/sdk/v4/android/models/attached-info-elem",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.908
-            },
-            {
-              "id": "models/rich-message",
-              "segment": "rich-message",
-              "title": "富文本消息片段",
-              "href": "/docs/chat/sdk/v4/android/models/rich-message",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.909
-            },
-            {
-              "id": "models/advanced-message",
-              "segment": "advanced-message",
-              "title": "高级历史消息结果",
-              "href": "/docs/chat/sdk/v4/android/models/advanced-message",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.91
-            },
-            {
-              "id": "models/advanced-text-elem",
-              "segment": "advanced-text-elem",
-              "title": "高级文本元素",
-              "href": "/docs/chat/sdk/v4/android/models/advanced-text-elem",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.911
-            },
-            {
-              "id": "models/message-entity",
-              "segment": "message-entity",
-              "title": "高级消息片段",
-              "href": "/docs/chat/sdk/v4/android/models/message-entity",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.912
-            },
-            {
-              "id": "models/card-elem",
-              "segment": "card-elem",
-              "title": "个人名片元素",
-              "href": "/docs/chat/sdk/v4/android/models/card-elem",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.913
-            },
-            {
-              "id": "models/public-user-info",
-              "segment": "public-user-info",
-              "title": "公开用户信息",
-              "href": "/docs/chat/sdk/v4/android/models/public-user-info",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.914
-            },
-            {
-              "id": "models/friendship-info",
-              "segment": "friendship-info",
-              "title": "好友关系校验结果",
-              "href": "/docs/chat/sdk/v4/android/models/friendship-info",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.915
-            },
-            {
-              "id": "models/friend-application-info",
-              "segment": "friend-application-info",
-              "title": "好友申请信息",
-              "href": "/docs/chat/sdk/v4/android/models/friend-application-info",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.916
-            },
-            {
-              "id": "models/friend-info",
-              "segment": "friend-info",
-              "title": "好友信息",
-              "href": "/docs/chat/sdk/v4/android/models/friend-info",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.917
-            },
-            {
-              "id": "models/update-friends-req",
-              "segment": "update-friends-req",
-              "title": "好友资料更新请求",
-              "href": "/docs/chat/sdk/v4/android/models/update-friends-req",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.918
-            },
-            {
-              "id": "models/merge-elem",
-              "segment": "merge-elem",
-              "title": "合并消息元素",
-              "href": "/docs/chat/sdk/v4/android/models/merge-elem",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.919
-            },
-            {
-              "id": "models/blacklist-info",
-              "segment": "blacklist-info",
-              "title": "黑名单用户信息",
-              "href": "/docs/chat/sdk/v4/android/models/blacklist-info",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.92
-            },
-            {
-              "id": "models/conversation-req",
-              "segment": "conversation-req",
-              "title": "会话设置请求",
-              "href": "/docs/chat/sdk/v4/android/models/conversation-req",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.921
-            },
-            {
-              "id": "models/conversation-info",
-              "segment": "conversation-info",
-              "title": "会话信息",
-              "href": "/docs/chat/sdk/v4/android/models/conversation-info",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.922
-            },
-            {
-              "id": "models/key-value",
-              "segment": "key-value",
-              "title": "键值扩展项",
-              "href": "/docs/chat/sdk/v4/android/models/key-value",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.923
-            },
-            {
-              "id": "models/offline-push-info",
-              "segment": "offline-push-info",
-              "title": "离线推送信息",
-              "href": "/docs/chat/sdk/v4/android/models/offline-push-info",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.924
-            },
-            {
-              "id": "models/set-group-member-info",
-              "segment": "set-group-member-info",
-              "title": "群成员设置请求",
-              "href": "/docs/chat/sdk/v4/android/models/set-group-member-info",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.925
-            },
-            {
-              "id": "models/group-members-info",
-              "segment": "group-members-info",
-              "title": "群成员信息",
-              "href": "/docs/chat/sdk/v4/android/models/group-members-info",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.926
-            },
-            {
-              "id": "models/group-application-info",
-              "segment": "group-application-info",
-              "title": "群申请信息",
-              "href": "/docs/chat/sdk/v4/android/models/group-application-info",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.927
-            },
-            {
-              "id": "models/group-message-receipt",
-              "segment": "group-message-receipt",
-              "title": "群消息已读回执",
-              "href": "/docs/chat/sdk/v4/android/models/group-message-receipt",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.928
-            },
-            {
-              "id": "models/group-message-read-info",
-              "segment": "group-message-read-info",
-              "title": "群消息已读信息",
-              "href": "/docs/chat/sdk/v4/android/models/group-message-read-info",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.929
-            },
-            {
-              "id": "models/group-has-read-info",
-              "segment": "group-has-read-info",
-              "title": "群已读用户信息",
-              "href": "/docs/chat/sdk/v4/android/models/group-has-read-info",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.93
-            },
-            {
-              "id": "models/group-info",
-              "segment": "group-info",
-              "title": "群组信息",
-              "href": "/docs/chat/sdk/v4/android/models/group-info",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.931
-            },
-            {
-              "id": "models/put-args",
-              "segment": "put-args",
-              "title": "上传参数",
-              "href": "/docs/chat/sdk/v4/android/models/put-args",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.932
-            },
-            {
-              "id": "models/video-elem",
-              "segment": "video-elem",
-              "title": "视频消息元素",
-              "href": "/docs/chat/sdk/v4/android/models/video-elem",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.933
-            },
-            {
-              "id": "models/get-friend-application-list-as-recipient-req",
-              "segment": "get-friend-application-list-as-recipient-req",
-              "title": "收到的好友申请查询条件",
-              "href": "/docs/chat/sdk/v4/android/models/get-friend-application-list-as-recipient-req",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.934
-            },
-            {
-              "id": "models/get-group-application-list-as-recipient-req",
-              "segment": "get-group-application-list-as-recipient-req",
-              "title": "收到的群申请查询条件",
-              "href": "/docs/chat/sdk/v4/android/models/get-group-application-list-as-recipient-req",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.935
-            },
-            {
-              "id": "models/typing-elem",
-              "segment": "typing-elem",
-              "title": "输入状态元素",
-              "href": "/docs/chat/sdk/v4/android/models/typing-elem",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.936
-            },
-            {
-              "id": "models/search-params",
-              "segment": "search-params",
-              "title": "搜索参数",
-              "href": "/docs/chat/sdk/v4/android/models/search-params",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.937
-            },
-            {
-              "id": "models/notification-elem",
-              "segment": "notification-elem",
-              "title": "通知消息元素",
-              "href": "/docs/chat/sdk/v4/android/models/notification-elem",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.938
-            },
-            {
-              "id": "models/picture-elem",
-              "segment": "picture-elem",
-              "title": "图片消息元素",
-              "href": "/docs/chat/sdk/v4/android/models/picture-elem",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.939
-            },
-            {
-              "id": "models/picture-info",
-              "segment": "picture-info",
-              "title": "图片资源信息",
-              "href": "/docs/chat/sdk/v4/android/models/picture-info",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.94
-            },
-            {
-              "id": "models/location-elem",
-              "segment": "location-elem",
-              "title": "位置消息元素",
-              "href": "/docs/chat/sdk/v4/android/models/location-elem",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.941
-            },
-            {
-              "id": "models/text-elem",
-              "segment": "text-elem",
-              "title": "文本消息元素",
-              "href": "/docs/chat/sdk/v4/android/models/text-elem",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.942
-            },
-            {
-              "id": "models/file-elem",
-              "segment": "file-elem",
-              "title": "文件消息元素",
-              "href": "/docs/chat/sdk/v4/android/models/file-elem",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.943
-            },
-            {
-              "id": "models/revoked-info",
-              "segment": "revoked-info",
-              "title": "消息撤回信息",
-              "href": "/docs/chat/sdk/v4/android/models/revoked-info",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.944
-            },
-            {
-              "id": "models/message",
-              "segment": "message",
-              "title": "消息对象",
-              "href": "/docs/chat/sdk/v4/android/models/message",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.945
-            },
-            {
-              "id": "models/message-kv",
-              "segment": "message-kv",
-              "title": "消息扩展键值",
-              "href": "/docs/chat/sdk/v4/android/models/message-kv",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.946
-            },
-            {
-              "id": "models/type-key-set-result",
-              "segment": "type-key-set-result",
-              "title": "消息扩展设置结果",
-              "href": "/docs/chat/sdk/v4/android/models/type-key-set-result",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.947
-            },
-            {
-              "id": "models/search-result",
-              "segment": "search-result",
-              "title": "消息搜索结果",
-              "href": "/docs/chat/sdk/v4/android/models/search-result",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.948
-            },
-            {
-              "id": "models/search-result-item",
-              "segment": "search-result-item",
-              "title": "消息搜索结果项",
-              "href": "/docs/chat/sdk/v4/android/models/search-result-item",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.949
-            },
-            {
-              "id": "models/quote-elem",
-              "segment": "quote-elem",
-              "title": "引用消息元素",
-              "href": "/docs/chat/sdk/v4/android/models/quote-elem",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.95
-            },
-            {
-              "id": "models/user-ex-info",
-              "segment": "user-ex-info",
-              "title": "用户扩展信息",
-              "href": "/docs/chat/sdk/v4/android/models/user-ex-info",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.951
-            },
-            {
-              "id": "models/user-info",
-              "segment": "user-info",
-              "title": "用户信息",
-              "href": "/docs/chat/sdk/v4/android/models/user-info",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.952
-            },
-            {
-              "id": "models/users-online-status",
-              "segment": "users-online-status",
-              "title": "用户在线状态",
-              "href": "/docs/chat/sdk/v4/android/models/users-online-status",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.953
-            },
-            {
-              "id": "models/user-info-req",
-              "segment": "user-info-req",
-              "title": "用户资料更新请求",
-              "href": "/docs/chat/sdk/v4/android/models/user-info-req",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.954
-            },
-            {
-              "id": "models/sound-elem",
-              "segment": "sound-elem",
-              "title": "语音消息元素",
-              "href": "/docs/chat/sdk/v4/android/models/sound-elem",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.955
-            },
-            {
-              "id": "models/custom-elem",
-              "segment": "custom-elem",
-              "title": "自定义消息元素",
-              "href": "/docs/chat/sdk/v4/android/models/custom-elem",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.956
-            },
-            {
-              "id": "models/at-text-elem",
-              "segment": "at-text-elem",
-              "title": "At 文本元素",
-              "href": "/docs/chat/sdk/v4/android/models/at-text-elem",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.957
-            },
-            {
-              "id": "models/login-status",
-              "segment": "login-status",
-              "title": "登录状态",
-              "href": "/docs/chat/sdk/v4/android/models/login-status",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.958
-            },
-            {
-              "id": "models/conversation-type",
-              "segment": "conversation-type",
-              "title": "会话类型",
-              "href": "/docs/chat/sdk/v4/android/models/conversation-type",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.959
-            },
-            {
-              "id": "models/platform",
-              "segment": "platform",
-              "title": "平台类型",
-              "href": "/docs/chat/sdk/v4/android/models/platform",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.96
-            },
-            {
-              "id": "models/group-role",
-              "segment": "group-role",
-              "title": "群成员角色",
-              "href": "/docs/chat/sdk/v4/android/models/group-role",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.961
-            },
-            {
-              "id": "models/group-member-filter",
-              "segment": "group-member-filter",
-              "title": "群成员筛选类型",
-              "href": "/docs/chat/sdk/v4/android/models/group-member-filter",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.962
-            },
-            {
-              "id": "models/group-at-type",
-              "segment": "group-at-type",
-              "title": "群提醒类型",
-              "href": "/docs/chat/sdk/v4/android/models/group-at-type",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.963
-            },
-            {
-              "id": "models/log-level",
-              "segment": "log-level",
-              "title": "日志等级",
-              "href": "/docs/chat/sdk/v4/android/models/log-level",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.964
-            },
-            {
-              "id": "models/join-source",
-              "segment": "join-source",
-              "title": "入群来源",
-              "href": "/docs/chat/sdk/v4/android/models/join-source",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.965
-            },
-            {
-              "id": "models/group-verification",
-              "segment": "group-verification",
-              "title": "入群验证方式",
-              "href": "/docs/chat/sdk/v4/android/models/group-verification",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.966
-            },
-            {
-              "id": "models/message-type",
-              "segment": "message-type",
-              "title": "消息类型",
-              "href": "/docs/chat/sdk/v4/android/models/message-type",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.967
-            },
-            {
-              "id": "models/view-type",
-              "segment": "view-type",
-              "title": "消息视图类型",
-              "href": "/docs/chat/sdk/v4/android/models/view-type",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.968
-            },
-            {
-              "id": "models/message-status",
-              "segment": "message-status",
-              "title": "消息状态",
-              "href": "/docs/chat/sdk/v4/android/models/message-status",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.969
-            },
-            {
-              "id": "models/on-advance-msg-listener",
-              "segment": "on-advance-msg-listener",
-              "title": "高级消息监听器",
-              "href": "/docs/chat/sdk/v4/android/models/on-advance-msg-listener",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.97
-            },
-            {
-              "id": "models/on-friendship-listener",
-              "segment": "on-friendship-listener",
-              "title": "好友关系监听器",
-              "href": "/docs/chat/sdk/v4/android/models/on-friendship-listener",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.971
-            },
-            {
-              "id": "models/on-conversation-listener",
-              "segment": "on-conversation-listener",
-              "title": "会话监听器",
-              "href": "/docs/chat/sdk/v4/android/models/on-conversation-listener",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.972
-            },
-            {
-              "id": "models/on-conn-listener",
-              "segment": "on-conn-listener",
-              "title": "连接状态监听器",
-              "href": "/docs/chat/sdk/v4/android/models/on-conn-listener",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.973
-            },
-            {
-              "id": "models/on-group-listener",
-              "segment": "on-group-listener",
-              "title": "群组监听器",
-              "href": "/docs/chat/sdk/v4/android/models/on-group-listener",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.974
-            },
-            {
-              "id": "models/on-message-kv-info-listener",
-              "segment": "on-message-kv-info-listener",
-              "title": "消息扩展监听器",
-              "href": "/docs/chat/sdk/v4/android/models/on-message-kv-info-listener",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.975
-            },
-            {
-              "id": "models/on-user-listener",
-              "segment": "on-user-listener",
-              "title": "用户状态监听器",
-              "href": "/docs/chat/sdk/v4/android/models/on-user-listener",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.976
-            },
-            {
-              "id": "models/on-custom-business-listener",
-              "segment": "on-custom-business-listener",
-              "title": "自定义业务监听器",
-              "href": "/docs/chat/sdk/v4/android/models/on-custom-business-listener",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.977
-            },
-            {
-              "id": "models/upload-log-progress",
-              "segment": "upload-log-progress",
-              "title": "日志上传进度回调",
-              "href": "/docs/chat/sdk/v4/android/models/upload-log-progress",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.978
-            },
-            {
-              "id": "models/on-base",
-              "segment": "on-base",
-              "title": "通用回调",
-              "href": "/docs/chat/sdk/v4/android/models/on-base",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.979
-            },
-            {
-              "id": "models/on-put-file-listener",
-              "segment": "on-put-file-listener",
-              "title": "文件上传回调",
-              "href": "/docs/chat/sdk/v4/android/models/on-put-file-listener",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.98
-            },
-            {
-              "id": "models/on-msg-send-callback",
-              "segment": "on-msg-send-callback",
-              "title": "消息发送回调",
-              "href": "/docs/chat/sdk/v4/android/models/on-msg-send-callback",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.981
-            },
-            {
-              "id": "models/base",
-              "segment": "base",
-              "title": "底层通用回调",
-              "href": "/docs/chat/sdk/v4/android/models/base",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.982
-            },
-            {
-              "id": "models/send-msg-call-back",
-              "segment": "send-msg-call-back",
-              "title": "底层消息发送回调",
-              "href": "/docs/chat/sdk/v4/android/models/send-msg-call-back",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.983
-            },
-            {
-              "id": "models/on-advanced-msg-listener",
-              "segment": "on-advanced-msg-listener",
-              "title": "底层高级消息监听器",
-              "href": "/docs/chat/sdk/v4/android/models/on-advanced-msg-listener",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.984
-            },
-            {
-              "id": "models/on-batch-msg-listener",
-              "segment": "on-batch-msg-listener",
-              "title": "批量消息监听器",
-              "href": "/docs/chat/sdk/v4/android/models/on-batch-msg-listener",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.985
-            },
-            {
-              "id": "models/upload-file-callback",
-              "segment": "upload-file-callback",
-              "title": "底层文件上传回调",
-              "href": "/docs/chat/sdk/v4/android/models/upload-file-callback",
-              "type": "page",
-              "children": [],
-              "minIndex": 152.986
-            }
-          ],
-          "minIndex": 152.9
+          "minIndex": 2
         },
         {
           "id": "application",
           "segment": "application",
-          "title": "初始化与登录",
+          "title": "SDK 生命周期",
           "href": null,
           "type": "folder",
           "children": [
@@ -5794,7 +3849,7 @@
               "href": "/docs/chat/sdk/v4/android/application/overview",
               "type": "page",
               "children": [],
-              "minIndex": 160
+              "minIndex": 3
             },
             {
               "id": "application/authenticating-a-user/authentication",
@@ -5803,7 +3858,7 @@
               "href": "/docs/chat/sdk/v4/android/application/authenticating-a-user/authentication",
               "type": "page",
               "children": [],
-              "minIndex": 159
+              "minIndex": 4
             },
             {
               "id": "application/methods/get-sdk-version",
@@ -5812,7 +3867,7 @@
               "href": "/docs/chat/sdk/v4/android/application/methods/get-sdk-version",
               "type": "page",
               "children": [],
-              "minIndex": 160.001
+              "minIndex": 5
             },
             {
               "id": "application/methods/init-sdk",
@@ -5821,7 +3876,7 @@
               "href": "/docs/chat/sdk/v4/android/application/methods/init-sdk",
               "type": "page",
               "children": [],
-              "minIndex": 160.002
+              "minIndex": 6
             },
             {
               "id": "application/methods/un-init-sdk",
@@ -5830,7 +3885,7 @@
               "href": "/docs/chat/sdk/v4/android/application/methods/un-init-sdk",
               "type": "page",
               "children": [],
-              "minIndex": 160.003
+              "minIndex": 7
             },
             {
               "id": "application/methods/login",
@@ -5839,7 +3894,7 @@
               "href": "/docs/chat/sdk/v4/android/application/methods/login",
               "type": "page",
               "children": [],
-              "minIndex": 160.004
+              "minIndex": 8
             },
             {
               "id": "application/methods/logout",
@@ -5848,7 +3903,7 @@
               "href": "/docs/chat/sdk/v4/android/application/methods/logout",
               "type": "page",
               "children": [],
-              "minIndex": 160.005
+              "minIndex": 9
             },
             {
               "id": "application/methods/set-app-background-status",
@@ -5857,7 +3912,7 @@
               "href": "/docs/chat/sdk/v4/android/application/methods/set-app-background-status",
               "type": "page",
               "children": [],
-              "minIndex": 160.006
+              "minIndex": 10
             },
             {
               "id": "application/methods/network-status-changed",
@@ -5866,7 +3921,7 @@
               "href": "/docs/chat/sdk/v4/android/application/methods/network-status-changed",
               "type": "page",
               "children": [],
-              "minIndex": 160.007
+              "minIndex": 11
             },
             {
               "id": "application/methods/get-login-status",
@@ -5875,7 +3930,7 @@
               "href": "/docs/chat/sdk/v4/android/application/methods/get-login-status",
               "type": "page",
               "children": [],
-              "minIndex": 160.008
+              "minIndex": 12
             },
             {
               "id": "application/methods/get-login-user-id",
@@ -5884,28 +3939,10 @@
               "href": "/docs/chat/sdk/v4/android/application/methods/get-login-user-id",
               "type": "page",
               "children": [],
-              "minIndex": 160.009
+              "minIndex": 13
             }
           ],
-          "minIndex": 159
-        },
-        {
-          "id": "deprecated",
-          "segment": "deprecated",
-          "title": "未支持或未暴露能力",
-          "href": "/docs/chat/sdk/v4/android/deprecated",
-          "type": "page",
-          "children": [],
-          "minIndex": 179
-        },
-        {
-          "id": "error-codes",
-          "segment": "error-codes",
-          "title": "错误码",
-          "href": "/docs/chat/sdk/v4/android/error-codes",
-          "type": "page",
-          "children": [],
-          "minIndex": 180
+          "minIndex": 3
         },
         {
           "id": "event-handler",
@@ -5921,7 +3958,7 @@
               "href": "/docs/chat/sdk/v4/android/event-handler/overview",
               "type": "page",
               "children": [],
-              "minIndex": 184
+              "minIndex": 14
             },
             {
               "id": "event-handler/methods/set-group-listener",
@@ -5930,7 +3967,7 @@
               "href": "/docs/chat/sdk/v4/android/event-handler/methods/set-group-listener",
               "type": "page",
               "children": [],
-              "minIndex": 184.001
+              "minIndex": 15
             },
             {
               "id": "event-handler/methods/set-conversation-listener",
@@ -5939,7 +3976,7 @@
               "href": "/docs/chat/sdk/v4/android/event-handler/methods/set-conversation-listener",
               "type": "page",
               "children": [],
-              "minIndex": 184.002
+              "minIndex": 16
             },
             {
               "id": "event-handler/methods/set-advanced-msg-listener",
@@ -5948,7 +3985,7 @@
               "href": "/docs/chat/sdk/v4/android/event-handler/methods/set-advanced-msg-listener",
               "type": "page",
               "children": [],
-              "minIndex": 184.003
+              "minIndex": 17
             },
             {
               "id": "event-handler/methods/set-batch-msg-listener",
@@ -5957,7 +3994,7 @@
               "href": "/docs/chat/sdk/v4/android/event-handler/methods/set-batch-msg-listener",
               "type": "page",
               "children": [],
-              "minIndex": 184.004
+              "minIndex": 18
             },
             {
               "id": "event-handler/methods/set-user-listener",
@@ -5966,7 +4003,7 @@
               "href": "/docs/chat/sdk/v4/android/event-handler/methods/set-user-listener",
               "type": "page",
               "children": [],
-              "minIndex": 184.005
+              "minIndex": 19
             },
             {
               "id": "event-handler/methods/set-friend-listener",
@@ -5975,7 +4012,7 @@
               "href": "/docs/chat/sdk/v4/android/event-handler/methods/set-friend-listener",
               "type": "page",
               "children": [],
-              "minIndex": 184.006
+              "minIndex": 20
             },
             {
               "id": "event-handler/methods/set-custom-business-listener",
@@ -5984,7 +4021,7 @@
               "href": "/docs/chat/sdk/v4/android/event-handler/methods/set-custom-business-listener",
               "type": "page",
               "children": [],
-              "minIndex": 184.007
+              "minIndex": 21
             },
             {
               "id": "event-handler/methods/set-message-kv-info-listener",
@@ -5993,10 +4030,10 @@
               "href": "/docs/chat/sdk/v4/android/event-handler/methods/set-message-kv-info-listener",
               "type": "page",
               "children": [],
-              "minIndex": 184.008
+              "minIndex": 22
             }
           ],
-          "minIndex": 184
+          "minIndex": 14
         },
         {
           "id": "user",
@@ -6012,7 +4049,7 @@
               "href": "/docs/chat/sdk/v4/android/user/overview",
               "type": "page",
               "children": [],
-              "minIndex": 252
+              "minIndex": 23
             },
             {
               "id": "user/methods/get-self-user-info",
@@ -6021,7 +4058,7 @@
               "href": "/docs/chat/sdk/v4/android/user/methods/get-self-user-info",
               "type": "page",
               "children": [],
-              "minIndex": 252.001
+              "minIndex": 24
             },
             {
               "id": "user/methods/set-self-info",
@@ -6030,7 +4067,7 @@
               "href": "/docs/chat/sdk/v4/android/user/methods/set-self-info",
               "type": "page",
               "children": [],
-              "minIndex": 252.002
+              "minIndex": 25
             },
             {
               "id": "user/methods/get-users-info",
@@ -6039,7 +4076,7 @@
               "href": "/docs/chat/sdk/v4/android/user/methods/get-users-info",
               "type": "page",
               "children": [],
-              "minIndex": 252.003
+              "minIndex": 26
             },
             {
               "id": "user/methods/add-user-command",
@@ -6048,7 +4085,7 @@
               "href": "/docs/chat/sdk/v4/android/user/methods/add-user-command",
               "type": "page",
               "children": [],
-              "minIndex": 252.004
+              "minIndex": 27
             },
             {
               "id": "user/methods/delete-user-command",
@@ -6057,7 +4094,7 @@
               "href": "/docs/chat/sdk/v4/android/user/methods/delete-user-command",
               "type": "page",
               "children": [],
-              "minIndex": 252.005
+              "minIndex": 28
             },
             {
               "id": "user/methods/get-all-user-commands",
@@ -6066,7 +4103,7 @@
               "href": "/docs/chat/sdk/v4/android/user/methods/get-all-user-commands",
               "type": "page",
               "children": [],
-              "minIndex": 252.006
+              "minIndex": 29
             },
             {
               "id": "user/methods/subscribe-users-status",
@@ -6075,7 +4112,7 @@
               "href": "/docs/chat/sdk/v4/android/user/methods/subscribe-users-status",
               "type": "page",
               "children": [],
-              "minIndex": 252.007
+              "minIndex": 30
             },
             {
               "id": "user/methods/unsubscribe-users-status",
@@ -6084,7 +4121,7 @@
               "href": "/docs/chat/sdk/v4/android/user/methods/unsubscribe-users-status",
               "type": "page",
               "children": [],
-              "minIndex": 252.008
+              "minIndex": 31
             },
             {
               "id": "user/methods/get-subscribe-users-status",
@@ -6093,7 +4130,7 @@
               "href": "/docs/chat/sdk/v4/android/user/methods/get-subscribe-users-status",
               "type": "page",
               "children": [],
-              "minIndex": 252.009
+              "minIndex": 32
             },
             {
               "id": "user/methods/get-user-status",
@@ -6102,195 +4139,2034 @@
               "href": "/docs/chat/sdk/v4/android/user/methods/get-user-status",
               "type": "page",
               "children": [],
-              "minIndex": 252.01
+              "minIndex": 33
+            },
+            {
+              "id": "user/friend",
+              "segment": "friend",
+              "title": "好友",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "user/friend/methods/get-specified-friends-info",
+                  "segment": "get-specified-friends-info",
+                  "title": "获取指定好友资料",
+                  "href": "/docs/chat/sdk/v4/android/user/friend/methods/get-specified-friends-info",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 34
+                },
+                {
+                  "id": "user/friend/methods/get-friend-list",
+                  "segment": "get-friend-list",
+                  "title": "获取好友列表",
+                  "href": "/docs/chat/sdk/v4/android/user/friend/methods/get-friend-list",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 35
+                },
+                {
+                  "id": "user/friend/methods/get-friend-list-page",
+                  "segment": "get-friend-list-page",
+                  "title": "分页获取好友列表",
+                  "href": "/docs/chat/sdk/v4/android/user/friend/methods/get-friend-list-page",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 36
+                },
+                {
+                  "id": "user/friend/methods/search-friends",
+                  "segment": "search-friends",
+                  "title": "搜索好友",
+                  "href": "/docs/chat/sdk/v4/android/user/friend/methods/search-friends",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 37
+                },
+                {
+                  "id": "user/friend/methods/check-friend",
+                  "segment": "check-friend",
+                  "title": "校验好友关系",
+                  "href": "/docs/chat/sdk/v4/android/user/friend/methods/check-friend",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 38
+                },
+                {
+                  "id": "user/friend/methods/add-friend",
+                  "segment": "add-friend",
+                  "title": "发送好友申请",
+                  "href": "/docs/chat/sdk/v4/android/user/friend/methods/add-friend",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 39
+                },
+                {
+                  "id": "user/friend/methods/update-friends",
+                  "segment": "update-friends",
+                  "title": "更新好友资料",
+                  "href": "/docs/chat/sdk/v4/android/user/friend/methods/update-friends",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 40
+                },
+                {
+                  "id": "user/friend/methods/delete-friend",
+                  "segment": "delete-friend",
+                  "title": "删除好友",
+                  "href": "/docs/chat/sdk/v4/android/user/friend/methods/delete-friend",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 41
+                },
+                {
+                  "id": "user/friend/methods/get-friend-application-list-as-recipient",
+                  "segment": "get-friend-application-list-as-recipient",
+                  "title": "获取收到的好友申请",
+                  "href": "/docs/chat/sdk/v4/android/user/friend/methods/get-friend-application-list-as-recipient",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 42
+                },
+                {
+                  "id": "user/friend/methods/get-friend-application-list-as-applicant",
+                  "segment": "get-friend-application-list-as-applicant",
+                  "title": "获取发出的好友申请",
+                  "href": "/docs/chat/sdk/v4/android/user/friend/methods/get-friend-application-list-as-applicant",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 43
+                },
+                {
+                  "id": "user/friend/methods/accept-friend-application",
+                  "segment": "accept-friend-application",
+                  "title": "同意好友申请",
+                  "href": "/docs/chat/sdk/v4/android/user/friend/methods/accept-friend-application",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 44
+                },
+                {
+                  "id": "user/friend/methods/refuse-friend-application",
+                  "segment": "refuse-friend-application",
+                  "title": "拒绝好友申请",
+                  "href": "/docs/chat/sdk/v4/android/user/friend/methods/refuse-friend-application",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 45
+                },
+                {
+                  "id": "user/friend/methods/get-friend-application-unhandled-count",
+                  "segment": "get-friend-application-unhandled-count",
+                  "title": "获取未处理好友申请数",
+                  "href": "/docs/chat/sdk/v4/android/user/friend/methods/get-friend-application-unhandled-count",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 46
+                }
+              ],
+              "minIndex": 34
+            },
+            {
+              "id": "user/blacklist",
+              "segment": "blacklist",
+              "title": "黑名单",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "user/blacklist/methods/add-black",
+                  "segment": "add-black",
+                  "title": "加入黑名单",
+                  "href": "/docs/chat/sdk/v4/android/user/blacklist/methods/add-black",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 47
+                },
+                {
+                  "id": "user/blacklist/methods/get-black-list",
+                  "segment": "get-black-list",
+                  "title": "获取黑名单列表",
+                  "href": "/docs/chat/sdk/v4/android/user/blacklist/methods/get-black-list",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 48
+                },
+                {
+                  "id": "user/blacklist/methods/remove-black",
+                  "segment": "remove-black",
+                  "title": "移出黑名单",
+                  "href": "/docs/chat/sdk/v4/android/user/blacklist/methods/remove-black",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 49
+                }
+              ],
+              "minIndex": 47
             }
           ],
-          "minIndex": 252
+          "minIndex": 23
         },
         {
-          "id": "user/friend",
-          "segment": "friend",
-          "title": "好友",
+          "id": "group",
+          "segment": "group",
+          "title": "群组",
           "href": null,
           "type": "folder",
           "children": [
             {
-              "id": "user/friend/overview",
+              "id": "group/overview",
               "segment": "overview",
               "title": "概述",
-              "href": "/docs/chat/sdk/v4/android/user/friend/overview",
+              "href": "/docs/chat/sdk/v4/android/group/overview",
               "type": "page",
               "children": [],
-              "minIndex": 252.9
+              "minIndex": 50
             },
             {
-              "id": "user/friend/methods/get-specified-friends-info",
-              "segment": "get-specified-friends-info",
-              "title": "获取指定好友资料",
-              "href": "/docs/chat/sdk/v4/android/user/friend/methods/get-specified-friends-info",
-              "type": "page",
-              "children": [],
-              "minIndex": 253.001
+              "id": "group/managing-groups",
+              "segment": "managing-groups",
+              "title": "管理群组",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "group/managing-groups/create-group",
+                  "segment": "create-group",
+                  "title": "创建群组",
+                  "href": "/docs/chat/sdk/v4/android/group/managing-groups/create-group",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 51
+                },
+                {
+                  "id": "group/managing-groups/set-group-info",
+                  "segment": "set-group-info",
+                  "title": "更新群资料",
+                  "href": "/docs/chat/sdk/v4/android/group/managing-groups/set-group-info",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 52
+                },
+                {
+                  "id": "group/managing-groups/get-specified-groups-info",
+                  "segment": "get-specified-groups-info",
+                  "title": "获取群信息",
+                  "href": "/docs/chat/sdk/v4/android/group/managing-groups/get-specified-groups-info",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 53
+                },
+                {
+                  "id": "group/managing-groups/search-groups",
+                  "segment": "search-groups",
+                  "title": "搜索群组",
+                  "href": "/docs/chat/sdk/v4/android/group/managing-groups/search-groups",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 54
+                },
+                {
+                  "id": "group/managing-groups/transfer-group-owner",
+                  "segment": "transfer-group-owner",
+                  "title": "转让群主",
+                  "href": "/docs/chat/sdk/v4/android/group/managing-groups/transfer-group-owner",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 55
+                },
+                {
+                  "id": "group/managing-groups/dismiss-group",
+                  "segment": "dismiss-group",
+                  "title": "解散群组",
+                  "href": "/docs/chat/sdk/v4/android/group/managing-groups/dismiss-group",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 56
+                }
+              ],
+              "minIndex": 51
             },
             {
-              "id": "user/friend/methods/get-friend-list",
-              "segment": "get-friend-list",
-              "title": "获取好友列表",
-              "href": "/docs/chat/sdk/v4/android/user/friend/methods/get-friend-list",
-              "type": "page",
-              "children": [],
-              "minIndex": 253.002
+              "id": "group/group-applications",
+              "segment": "group-applications",
+              "title": "入群申请",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "group/group-applications/join-group",
+                  "segment": "join-group",
+                  "title": "申请加入群组",
+                  "href": "/docs/chat/sdk/v4/android/group/group-applications/join-group",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 57
+                },
+                {
+                  "id": "group/group-applications/get-group-application-list-as-recipient",
+                  "segment": "get-group-application-list-as-recipient",
+                  "title": "获取收到的入群申请",
+                  "href": "/docs/chat/sdk/v4/android/group/group-applications/get-group-application-list-as-recipient",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 58
+                },
+                {
+                  "id": "group/group-applications/get-group-application-list-as-applicant",
+                  "segment": "get-group-application-list-as-applicant",
+                  "title": "获取发出的入群申请",
+                  "href": "/docs/chat/sdk/v4/android/group/group-applications/get-group-application-list-as-applicant",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 59
+                },
+                {
+                  "id": "group/group-applications/accept-group-application",
+                  "segment": "accept-group-application",
+                  "title": "同意入群申请",
+                  "href": "/docs/chat/sdk/v4/android/group/group-applications/accept-group-application",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 60
+                },
+                {
+                  "id": "group/group-applications/refuse-group-application",
+                  "segment": "refuse-group-application",
+                  "title": "拒绝入群申请",
+                  "href": "/docs/chat/sdk/v4/android/group/group-applications/refuse-group-application",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 61
+                },
+                {
+                  "id": "group/group-applications/get-group-application-unhandled-count",
+                  "segment": "get-group-application-unhandled-count",
+                  "title": "获取未处理入群申请数",
+                  "href": "/docs/chat/sdk/v4/android/group/group-applications/get-group-application-unhandled-count",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 62
+                }
+              ],
+              "minIndex": 57
             },
             {
-              "id": "user/friend/methods/get-friend-list-page",
-              "segment": "get-friend-list-page",
-              "title": "分页获取好友列表",
-              "href": "/docs/chat/sdk/v4/android/user/friend/methods/get-friend-list-page",
-              "type": "page",
-              "children": [],
-              "minIndex": 253.003
+              "id": "group/group-membership",
+              "segment": "group-membership",
+              "title": "用户入群关系",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "group/group-membership/get-joined-group-list",
+                  "segment": "get-joined-group-list",
+                  "title": "获取已加入群组",
+                  "href": "/docs/chat/sdk/v4/android/group/group-membership/get-joined-group-list",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 63
+                },
+                {
+                  "id": "group/group-membership/get-joined-group-list-page",
+                  "segment": "get-joined-group-list-page",
+                  "title": "分页获取已加入群组",
+                  "href": "/docs/chat/sdk/v4/android/group/group-membership/get-joined-group-list-page",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 64
+                },
+                {
+                  "id": "group/group-membership/is-join-group",
+                  "segment": "is-join-group",
+                  "title": "判断是否已入群",
+                  "href": "/docs/chat/sdk/v4/android/group/group-membership/is-join-group",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 65
+                },
+                {
+                  "id": "group/group-membership/get-users-in-group",
+                  "segment": "get-users-in-group",
+                  "title": "查询用户是否在群内",
+                  "href": "/docs/chat/sdk/v4/android/group/group-membership/get-users-in-group",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 66
+                },
+                {
+                  "id": "group/group-membership/quit-group",
+                  "segment": "quit-group",
+                  "title": "退出群组",
+                  "href": "/docs/chat/sdk/v4/android/group/group-membership/quit-group",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 67
+                }
+              ],
+              "minIndex": 63
             },
             {
-              "id": "user/friend/methods/search-friends",
-              "segment": "search-friends",
-              "title": "搜索好友",
-              "href": "/docs/chat/sdk/v4/android/user/friend/methods/search-friends",
-              "type": "page",
-              "children": [],
-              "minIndex": 253.004
+              "id": "group/group-members",
+              "segment": "group-members",
+              "title": "群成员",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "group/group-members/invite-user-to-group",
+                  "segment": "invite-user-to-group",
+                  "title": "邀请用户入群",
+                  "href": "/docs/chat/sdk/v4/android/group/group-members/invite-user-to-group",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 68
+                },
+                {
+                  "id": "group/group-members/kick-group-member",
+                  "segment": "kick-group-member",
+                  "title": "移出群成员",
+                  "href": "/docs/chat/sdk/v4/android/group/group-members/kick-group-member",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 69
+                },
+                {
+                  "id": "group/group-members/set-group-member-info",
+                  "segment": "set-group-member-info",
+                  "title": "更新群成员资料",
+                  "href": "/docs/chat/sdk/v4/android/group/group-members/set-group-member-info",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 70
+                },
+                {
+                  "id": "group/group-members/get-group-member-list",
+                  "segment": "get-group-member-list",
+                  "title": "获取群成员列表",
+                  "href": "/docs/chat/sdk/v4/android/group/group-members/get-group-member-list",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 71
+                },
+                {
+                  "id": "group/group-members/get-group-member-list-by-join-time-filter",
+                  "segment": "get-group-member-list-by-join-time-filter",
+                  "title": "按入群时间筛选成员",
+                  "href": "/docs/chat/sdk/v4/android/group/group-members/get-group-member-list-by-join-time-filter",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 72
+                },
+                {
+                  "id": "group/group-members/get-group-member-owner-and-admin",
+                  "segment": "get-group-member-owner-and-admin",
+                  "title": "获取群主和管理员",
+                  "href": "/docs/chat/sdk/v4/android/group/group-members/get-group-member-owner-and-admin",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 73
+                },
+                {
+                  "id": "group/group-members/get-specified-group-members-info",
+                  "segment": "get-specified-group-members-info",
+                  "title": "获取指定群成员资料",
+                  "href": "/docs/chat/sdk/v4/android/group/group-members/get-specified-group-members-info",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 74
+                },
+                {
+                  "id": "group/group-members/search-group-members",
+                  "segment": "search-group-members",
+                  "title": "搜索群成员",
+                  "href": "/docs/chat/sdk/v4/android/group/group-members/search-group-members",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 75
+                }
+              ],
+              "minIndex": 68
             },
             {
-              "id": "user/friend/methods/check-friend",
-              "segment": "check-friend",
-              "title": "校验好友关系",
-              "href": "/docs/chat/sdk/v4/android/user/friend/methods/check-friend",
-              "type": "page",
-              "children": [],
-              "minIndex": 253.005
-            },
-            {
-              "id": "user/friend/methods/add-friend",
-              "segment": "add-friend",
-              "title": "发送好友申请",
-              "href": "/docs/chat/sdk/v4/android/user/friend/methods/add-friend",
-              "type": "page",
-              "children": [],
-              "minIndex": 253.006
-            },
-            {
-              "id": "user/friend/methods/update-friends",
-              "segment": "update-friends",
-              "title": "更新好友资料",
-              "href": "/docs/chat/sdk/v4/android/user/friend/methods/update-friends",
-              "type": "page",
-              "children": [],
-              "minIndex": 253.007
-            },
-            {
-              "id": "user/friend/methods/delete-friend",
-              "segment": "delete-friend",
-              "title": "删除好友",
-              "href": "/docs/chat/sdk/v4/android/user/friend/methods/delete-friend",
-              "type": "page",
-              "children": [],
-              "minIndex": 253.008
-            },
-            {
-              "id": "user/friend/methods/get-friend-application-list-as-recipient",
-              "segment": "get-friend-application-list-as-recipient",
-              "title": "获取收到的好友申请",
-              "href": "/docs/chat/sdk/v4/android/user/friend/methods/get-friend-application-list-as-recipient",
-              "type": "page",
-              "children": [],
-              "minIndex": 253.009
-            },
-            {
-              "id": "user/friend/methods/get-friend-application-list-as-applicant",
-              "segment": "get-friend-application-list-as-applicant",
-              "title": "获取发出的好友申请",
-              "href": "/docs/chat/sdk/v4/android/user/friend/methods/get-friend-application-list-as-applicant",
-              "type": "page",
-              "children": [],
-              "minIndex": 253.01
-            },
-            {
-              "id": "user/friend/methods/accept-friend-application",
-              "segment": "accept-friend-application",
-              "title": "同意好友申请",
-              "href": "/docs/chat/sdk/v4/android/user/friend/methods/accept-friend-application",
-              "type": "page",
-              "children": [],
-              "minIndex": 253.011
-            },
-            {
-              "id": "user/friend/methods/refuse-friend-application",
-              "segment": "refuse-friend-application",
-              "title": "拒绝好友申请",
-              "href": "/docs/chat/sdk/v4/android/user/friend/methods/refuse-friend-application",
-              "type": "page",
-              "children": [],
-              "minIndex": 253.012
-            },
-            {
-              "id": "user/friend/methods/get-friend-application-unhandled-count",
-              "segment": "get-friend-application-unhandled-count",
-              "title": "获取未处理好友申请数",
-              "href": "/docs/chat/sdk/v4/android/user/friend/methods/get-friend-application-unhandled-count",
-              "type": "page",
-              "children": [],
-              "minIndex": 253.013
+              "id": "group/group-moderation",
+              "segment": "group-moderation",
+              "title": "群组禁言",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "group/group-moderation/change-group-mute",
+                  "segment": "change-group-mute",
+                  "title": "设置群禁言",
+                  "href": "/docs/chat/sdk/v4/android/group/group-moderation/change-group-mute",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 76
+                },
+                {
+                  "id": "group/group-moderation/change-group-member-mute",
+                  "segment": "change-group-member-mute",
+                  "title": "设置成员禁言",
+                  "href": "/docs/chat/sdk/v4/android/group/group-moderation/change-group-member-mute",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 77
+                }
+              ],
+              "minIndex": 76
             }
           ],
-          "minIndex": 252.9
+          "minIndex": 50
         },
         {
-          "id": "user/blacklist",
-          "segment": "blacklist",
-          "title": "黑名单",
+          "id": "message",
+          "segment": "message",
+          "title": "会话与消息",
           "href": null,
           "type": "folder",
           "children": [
             {
-              "id": "user/blacklist/overview",
+              "id": "message/overview",
               "segment": "overview",
               "title": "概述",
-              "href": "/docs/chat/sdk/v4/android/user/blacklist/overview",
+              "href": "/docs/chat/sdk/v4/android/message/overview",
               "type": "page",
               "children": [],
-              "minIndex": 253.9
+              "minIndex": 78
             },
             {
-              "id": "user/blacklist/methods/add-black",
-              "segment": "add-black",
-              "title": "加入黑名单",
-              "href": "/docs/chat/sdk/v4/android/user/blacklist/methods/add-black",
-              "type": "page",
-              "children": [],
-              "minIndex": 254.001
+              "id": "message/listing-conversations",
+              "segment": "listing-conversations",
+              "title": "查询会话",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "message/listing-conversations/get-all-conversation-list",
+                  "segment": "get-all-conversation-list",
+                  "title": "获取全部会话",
+                  "href": "/docs/chat/sdk/v4/android/message/listing-conversations/get-all-conversation-list",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 79
+                },
+                {
+                  "id": "message/listing-conversations/get-conversation-list-split",
+                  "segment": "get-conversation-list-split",
+                  "title": "分页获取会话",
+                  "href": "/docs/chat/sdk/v4/android/message/listing-conversations/get-conversation-list-split",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 80
+                },
+                {
+                  "id": "message/listing-conversations/get-one-conversation",
+                  "segment": "get-one-conversation",
+                  "title": "获取单个会话",
+                  "href": "/docs/chat/sdk/v4/android/message/listing-conversations/get-one-conversation",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 81
+                },
+                {
+                  "id": "message/listing-conversations/get-multiple-conversation",
+                  "segment": "get-multiple-conversation",
+                  "title": "批量获取会话",
+                  "href": "/docs/chat/sdk/v4/android/message/listing-conversations/get-multiple-conversation",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 82
+                },
+                {
+                  "id": "message/listing-conversations/search-conversation",
+                  "segment": "search-conversation",
+                  "title": "搜索会话",
+                  "href": "/docs/chat/sdk/v4/android/message/listing-conversations/search-conversation",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 83
+                },
+                {
+                  "id": "message/listing-conversations/get-conversation-id-by-session-type",
+                  "segment": "get-conversation-id-by-session-type",
+                  "title": "生成会话 ID",
+                  "href": "/docs/chat/sdk/v4/android/message/listing-conversations/get-conversation-id-by-session-type",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 84
+                }
+              ],
+              "minIndex": 79
             },
             {
-              "id": "user/blacklist/methods/get-black-list",
-              "segment": "get-black-list",
-              "title": "获取黑名单列表",
-              "href": "/docs/chat/sdk/v4/android/user/blacklist/methods/get-black-list",
-              "type": "page",
-              "children": [],
-              "minIndex": 254.002
+              "id": "message/managing-conversations",
+              "segment": "managing-conversations",
+              "title": "管理会话",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "message/managing-conversations/set-conversation",
+                  "segment": "set-conversation",
+                  "title": "设置会话",
+                  "href": "/docs/chat/sdk/v4/android/message/managing-conversations/set-conversation",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 85
+                },
+                {
+                  "id": "message/managing-conversations/hide-conversation",
+                  "segment": "hide-conversation",
+                  "title": "隐藏会话",
+                  "href": "/docs/chat/sdk/v4/android/message/managing-conversations/hide-conversation",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 86
+                },
+                {
+                  "id": "message/managing-conversations/set-conversation-draft",
+                  "segment": "set-conversation-draft",
+                  "title": "设置会话草稿",
+                  "href": "/docs/chat/sdk/v4/android/message/managing-conversations/set-conversation-draft",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 87
+                },
+                {
+                  "id": "message/managing-conversations/hide-all-conversations",
+                  "segment": "hide-all-conversations",
+                  "title": "隐藏全部会话",
+                  "href": "/docs/chat/sdk/v4/android/message/managing-conversations/hide-all-conversations",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 88
+                }
+              ],
+              "minIndex": 85
             },
             {
-              "id": "user/blacklist/methods/remove-black",
-              "segment": "remove-black",
-              "title": "移出黑名单",
-              "href": "/docs/chat/sdk/v4/android/user/blacklist/methods/remove-black",
-              "type": "page",
-              "children": [],
-              "minIndex": 254.003
+              "id": "message/conversation-state",
+              "segment": "conversation-state",
+              "title": "会话状态",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "message/conversation-state/get-total-unread-msg-count",
+                  "segment": "get-total-unread-msg-count",
+                  "title": "获取总未读数",
+                  "href": "/docs/chat/sdk/v4/android/message/conversation-state/get-total-unread-msg-count",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 89
+                },
+                {
+                  "id": "message/conversation-state/change-input-states",
+                  "segment": "change-input-states",
+                  "title": "更新输入状态",
+                  "href": "/docs/chat/sdk/v4/android/message/conversation-state/change-input-states",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 90
+                },
+                {
+                  "id": "message/conversation-state/get-input-states",
+                  "segment": "get-input-states",
+                  "title": "获取输入状态",
+                  "href": "/docs/chat/sdk/v4/android/message/conversation-state/get-input-states",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 91
+                },
+                {
+                  "id": "message/conversation-state/typing-status-update",
+                  "segment": "typing-status-update",
+                  "title": "发送输入提示",
+                  "href": "/docs/chat/sdk/v4/android/message/conversation-state/typing-status-update",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 92
+                }
+              ],
+              "minIndex": 89
+            },
+            {
+              "id": "message/creating-messages",
+              "segment": "creating-messages",
+              "title": "创建消息",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "message/creating-messages/get-at-all-tag",
+                  "segment": "get-at-all-tag",
+                  "title": "获取 @ 所有人标记",
+                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/get-at-all-tag",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 93
+                },
+                {
+                  "id": "message/creating-messages/create-text-message",
+                  "segment": "create-text-message",
+                  "title": "创建文本消息",
+                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-text-message",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 94
+                },
+                {
+                  "id": "message/creating-messages/create-advanced-text-message",
+                  "segment": "create-advanced-text-message",
+                  "title": "创建高级文本消息",
+                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-advanced-text-message",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 95
+                },
+                {
+                  "id": "message/creating-messages/create-text-at-message",
+                  "segment": "create-text-at-message",
+                  "title": "创建 @ 文本消息",
+                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-text-at-message",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 96
+                },
+                {
+                  "id": "message/creating-messages/create-location-message",
+                  "segment": "create-location-message",
+                  "title": "创建位置消息",
+                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-location-message",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 97
+                },
+                {
+                  "id": "message/creating-messages/create-custom-message",
+                  "segment": "create-custom-message",
+                  "title": "创建自定义消息",
+                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-custom-message",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 98
+                },
+                {
+                  "id": "message/creating-messages/create-quote-message",
+                  "segment": "create-quote-message",
+                  "title": "创建引用消息",
+                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-quote-message",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 99
+                },
+                {
+                  "id": "message/creating-messages/create-advanced-quote-message",
+                  "segment": "create-advanced-quote-message",
+                  "title": "创建高级引用消息",
+                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-advanced-quote-message",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 100
+                },
+                {
+                  "id": "message/creating-messages/create-card-message",
+                  "segment": "create-card-message",
+                  "title": "创建名片消息",
+                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-card-message",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 101
+                },
+                {
+                  "id": "message/creating-messages/create-face-message",
+                  "segment": "create-face-message",
+                  "title": "创建表情消息",
+                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-face-message",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 102
+                },
+                {
+                  "id": "message/creating-messages/create-forward-message",
+                  "segment": "create-forward-message",
+                  "title": "创建转发消息",
+                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-forward-message",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 103
+                },
+                {
+                  "id": "message/creating-messages/create-merger-message",
+                  "segment": "create-merger-message",
+                  "title": "创建合并转发消息",
+                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-merger-message",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 104
+                },
+                {
+                  "id": "message/creating-messages/create-image-message",
+                  "segment": "create-image-message",
+                  "title": "创建图片消息",
+                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-image-message",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 105
+                },
+                {
+                  "id": "message/creating-messages/create-image-message-from-full-path",
+                  "segment": "create-image-message-from-full-path",
+                  "title": "通过完整路径创建图片消息",
+                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-image-message-from-full-path",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 106
+                },
+                {
+                  "id": "message/creating-messages/create-image-message-by-url",
+                  "segment": "create-image-message-by-url",
+                  "title": "通过 URL 创建图片消息",
+                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-image-message-by-url",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 107
+                },
+                {
+                  "id": "message/creating-messages/create-sound-message",
+                  "segment": "create-sound-message",
+                  "title": "创建语音消息",
+                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-sound-message",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 108
+                },
+                {
+                  "id": "message/creating-messages/create-sound-message-from-full-path",
+                  "segment": "create-sound-message-from-full-path",
+                  "title": "通过完整路径创建语音消息",
+                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-sound-message-from-full-path",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 109
+                },
+                {
+                  "id": "message/creating-messages/create-sound-message-by-url",
+                  "segment": "create-sound-message-by-url",
+                  "title": "通过 URL 创建语音消息",
+                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-sound-message-by-url",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 110
+                },
+                {
+                  "id": "message/creating-messages/create-video-message",
+                  "segment": "create-video-message",
+                  "title": "创建视频消息",
+                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-video-message",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 111
+                },
+                {
+                  "id": "message/creating-messages/create-video-message-from-full-path",
+                  "segment": "create-video-message-from-full-path",
+                  "title": "通过完整路径创建视频消息",
+                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-video-message-from-full-path",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 112
+                },
+                {
+                  "id": "message/creating-messages/create-video-message-by-url",
+                  "segment": "create-video-message-by-url",
+                  "title": "通过 URL 创建视频消息",
+                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-video-message-by-url",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 113
+                },
+                {
+                  "id": "message/creating-messages/create-file-message",
+                  "segment": "create-file-message",
+                  "title": "创建文件消息",
+                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-file-message",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 114
+                },
+                {
+                  "id": "message/creating-messages/create-file-message-from-full-path",
+                  "segment": "create-file-message-from-full-path",
+                  "title": "通过完整路径创建文件消息",
+                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-file-message-from-full-path",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 115
+                },
+                {
+                  "id": "message/creating-messages/create-file-message-by-url",
+                  "segment": "create-file-message-by-url",
+                  "title": "通过 URL 创建文件消息",
+                  "href": "/docs/chat/sdk/v4/android/message/creating-messages/create-file-message-by-url",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 116
+                }
+              ],
+              "minIndex": 93
+            },
+            {
+              "id": "message/sending-messages",
+              "segment": "sending-messages",
+              "title": "发送消息",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "message/sending-messages/send-message",
+                  "segment": "send-message",
+                  "title": "发送消息",
+                  "href": "/docs/chat/sdk/v4/android/message/sending-messages/send-message",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 117
+                },
+                {
+                  "id": "message/sending-messages/send-message-not-oss",
+                  "segment": "send-message-not-oss",
+                  "title": "发送非 OSS 消息",
+                  "href": "/docs/chat/sdk/v4/android/message/sending-messages/send-message-not-oss",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 118
+                }
+              ],
+              "minIndex": 117
+            },
+            {
+              "id": "message/retrieving-messages",
+              "segment": "retrieving-messages",
+              "title": "查询消息",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "message/retrieving-messages/find-message-list",
+                  "segment": "find-message-list",
+                  "title": "查找消息列表",
+                  "href": "/docs/chat/sdk/v4/android/message/retrieving-messages/find-message-list",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 119
+                },
+                {
+                  "id": "message/retrieving-messages/get-advanced-history-message-list",
+                  "segment": "get-advanced-history-message-list",
+                  "title": "获取历史消息",
+                  "href": "/docs/chat/sdk/v4/android/message/retrieving-messages/get-advanced-history-message-list",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 120
+                },
+                {
+                  "id": "message/retrieving-messages/get-advanced-history-message-list-reverse",
+                  "segment": "get-advanced-history-message-list-reverse",
+                  "title": "反向获取历史消息",
+                  "href": "/docs/chat/sdk/v4/android/message/retrieving-messages/get-advanced-history-message-list-reverse",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 121
+                },
+                {
+                  "id": "message/retrieving-messages/search-local-messages",
+                  "segment": "search-local-messages",
+                  "title": "搜索本地消息",
+                  "href": "/docs/chat/sdk/v4/android/message/retrieving-messages/search-local-messages",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 122
+                }
+              ],
+              "minIndex": 119
+            },
+            {
+              "id": "message/managing-messages",
+              "segment": "managing-messages",
+              "title": "管理消息",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "message/managing-messages/revoke-message",
+                  "segment": "revoke-message",
+                  "title": "撤回消息",
+                  "href": "/docs/chat/sdk/v4/android/message/managing-messages/revoke-message",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 123
+                },
+                {
+                  "id": "message/managing-messages/set-message-local-ex",
+                  "segment": "set-message-local-ex",
+                  "title": "设置消息本地扩展",
+                  "href": "/docs/chat/sdk/v4/android/message/managing-messages/set-message-local-ex",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 124
+                }
+              ],
+              "minIndex": 123
+            },
+            {
+              "id": "message/read-status",
+              "segment": "read-status",
+              "title": "已读状态",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "message/read-status/mark-conversation-message-as-read",
+                  "segment": "mark-conversation-message-as-read",
+                  "title": "标记会话已读",
+                  "href": "/docs/chat/sdk/v4/android/message/read-status/mark-conversation-message-as-read",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 125
+                },
+                {
+                  "id": "message/read-status/mark-all-conversation-message-as-read",
+                  "segment": "mark-all-conversation-message-as-read",
+                  "title": "标记全部会话已读",
+                  "href": "/docs/chat/sdk/v4/android/message/read-status/mark-all-conversation-message-as-read",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 126
+                },
+                {
+                  "id": "message/read-status/mark-messages-as-read-by-msg-id",
+                  "segment": "mark-messages-as-read-by-msg-id",
+                  "title": "按消息 ID 标记已读",
+                  "href": "/docs/chat/sdk/v4/android/message/read-status/mark-messages-as-read-by-msg-id",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 127
+                }
+              ],
+              "minIndex": 125
+            },
+            {
+              "id": "message/deleting-messages",
+              "segment": "deleting-messages",
+              "title": "删除消息",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "message/deleting-messages/delete-message-from-local-storage",
+                  "segment": "delete-message-from-local-storage",
+                  "title": "删除本地消息",
+                  "href": "/docs/chat/sdk/v4/android/message/deleting-messages/delete-message-from-local-storage",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 128
+                },
+                {
+                  "id": "message/deleting-messages/delete-message",
+                  "segment": "delete-message",
+                  "title": "删除消息",
+                  "href": "/docs/chat/sdk/v4/android/message/deleting-messages/delete-message",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 129
+                },
+                {
+                  "id": "message/deleting-messages/delete-all-msg-from-local-and-svr",
+                  "segment": "delete-all-msg-from-local-and-svr",
+                  "title": "清空本地和服务端消息",
+                  "href": "/docs/chat/sdk/v4/android/message/deleting-messages/delete-all-msg-from-local-and-svr",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 130
+                },
+                {
+                  "id": "message/deleting-messages/delete-all-msg-from-local",
+                  "segment": "delete-all-msg-from-local",
+                  "title": "清空本地消息",
+                  "href": "/docs/chat/sdk/v4/android/message/deleting-messages/delete-all-msg-from-local",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 131
+                },
+                {
+                  "id": "message/deleting-messages/clear-conversation-and-delete-all-msg",
+                  "segment": "clear-conversation-and-delete-all-msg",
+                  "title": "清空会话消息",
+                  "href": "/docs/chat/sdk/v4/android/message/deleting-messages/clear-conversation-and-delete-all-msg",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 132
+                },
+                {
+                  "id": "message/deleting-messages/delete-conversation-and-delete-all-msg",
+                  "segment": "delete-conversation-and-delete-all-msg",
+                  "title": "删除会话及消息",
+                  "href": "/docs/chat/sdk/v4/android/message/deleting-messages/delete-conversation-and-delete-all-msg",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 133
+                }
+              ],
+              "minIndex": 128
+            },
+            {
+              "id": "message/local-messages",
+              "segment": "local-messages",
+              "title": "本地消息",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "message/local-messages/insert-single-message-to-local-storage",
+                  "segment": "insert-single-message-to-local-storage",
+                  "title": "插入单聊本地消息",
+                  "href": "/docs/chat/sdk/v4/android/message/local-messages/insert-single-message-to-local-storage",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 134
+                },
+                {
+                  "id": "message/local-messages/insert-group-message-to-local-storage",
+                  "segment": "insert-group-message-to-local-storage",
+                  "title": "插入群聊本地消息",
+                  "href": "/docs/chat/sdk/v4/android/message/local-messages/insert-group-message-to-local-storage",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 135
+                }
+              ],
+              "minIndex": 134
             }
           ],
-          "minIndex": 253.9
+          "minIndex": 78
+        },
+        {
+          "id": "push-notifications",
+          "segment": "push-notifications",
+          "title": "推送通知",
+          "href": null,
+          "type": "folder",
+          "children": [
+            {
+              "id": "push-notifications/overview",
+              "segment": "overview",
+              "title": "概述",
+              "href": "/docs/chat/sdk/v4/android/push-notifications/overview",
+              "type": "page",
+              "children": [],
+              "minIndex": 136
+            },
+            {
+              "id": "push-notifications/methods/update-fcm-token",
+              "segment": "update-fcm-token",
+              "title": "更新 FCM Token",
+              "href": "/docs/chat/sdk/v4/android/push-notifications/methods/update-fcm-token",
+              "type": "page",
+              "children": [],
+              "minIndex": 137
+            },
+            {
+              "id": "push-notifications/methods/set-app-badge",
+              "segment": "set-app-badge",
+              "title": "设置应用角标",
+              "href": "/docs/chat/sdk/v4/android/push-notifications/methods/set-app-badge",
+              "type": "page",
+              "children": [],
+              "minIndex": 138
+            }
+          ],
+          "minIndex": 136
+        },
+        {
+          "id": "logger",
+          "segment": "logger",
+          "title": "日志",
+          "href": null,
+          "type": "folder",
+          "children": [
+            {
+              "id": "logger/overview",
+              "segment": "overview",
+              "title": "概述",
+              "href": "/docs/chat/sdk/v4/android/logger/overview",
+              "type": "page",
+              "children": [],
+              "minIndex": 139
+            },
+            {
+              "id": "logger/methods/logs",
+              "segment": "logs",
+              "title": "写入客户端日志",
+              "href": "/docs/chat/sdk/v4/android/logger/methods/logs",
+              "type": "page",
+              "children": [],
+              "minIndex": 140
+            },
+            {
+              "id": "logger/methods/upload-logs",
+              "segment": "upload-logs",
+              "title": "上传日志",
+              "href": "/docs/chat/sdk/v4/android/logger/methods/upload-logs",
+              "type": "page",
+              "children": [],
+              "minIndex": 141
+            }
+          ],
+          "minIndex": 139
+        },
+        {
+          "id": "file",
+          "segment": "file",
+          "title": "文件上传",
+          "href": null,
+          "type": "folder",
+          "children": [
+            {
+              "id": "file/overview",
+              "segment": "overview",
+              "title": "概述",
+              "href": "/docs/chat/sdk/v4/android/file/overview",
+              "type": "page",
+              "children": [],
+              "minIndex": 142.1
+            },
+            {
+              "id": "file/methods/upload-file",
+              "segment": "upload-file",
+              "title": "上传文件",
+              "href": "/docs/chat/sdk/v4/android/file/methods/upload-file",
+              "type": "page",
+              "children": [],
+              "minIndex": 142.2
+            }
+          ],
+          "minIndex": 142.1
+        },
+        {
+          "id": "models",
+          "segment": "models",
+          "title": "类型说明",
+          "href": null,
+          "type": "folder",
+          "children": [
+            {
+              "id": "models/overview",
+              "segment": "overview",
+              "title": "概述",
+              "href": "/docs/chat/sdk/v4/android/models/overview",
+              "type": "page",
+              "children": [],
+              "minIndex": 143
+            },
+            {
+              "id": "models/at-user-info",
+              "segment": "at-user-info",
+              "title": "被提及用户信息",
+              "href": "/docs/chat/sdk/v4/android/models/at-user-info",
+              "type": "page",
+              "children": [],
+              "minIndex": 144
+            },
+            {
+              "id": "models/face-elem",
+              "segment": "face-elem",
+              "title": "表情消息元素",
+              "href": "/docs/chat/sdk/v4/android/models/face-elem",
+              "type": "page",
+              "children": [],
+              "minIndex": 145
+            },
+            {
+              "id": "models/init-config",
+              "segment": "init-config",
+              "title": "初始化配置",
+              "href": "/docs/chat/sdk/v4/android/models/init-config",
+              "type": "page",
+              "children": [],
+              "minIndex": 146
+            },
+            {
+              "id": "models/single-type-key-info-sum",
+              "segment": "single-type-key-info-sum",
+              "title": "单类型扩展统计",
+              "href": "/docs/chat/sdk/v4/android/models/single-type-key-info-sum",
+              "type": "page",
+              "children": [],
+              "minIndex": 147
+            },
+            {
+              "id": "models/c2c-read-receipt-info",
+              "segment": "c2c-read-receipt-info",
+              "title": "单聊已读回执信息",
+              "href": "/docs/chat/sdk/v4/android/models/c2c-read-receipt-info",
+              "type": "page",
+              "children": [],
+              "minIndex": 148
+            },
+            {
+              "id": "models/get-friend-application-list-as-applicant-req",
+              "segment": "get-friend-application-list-as-applicant-req",
+              "title": "发出的好友申请查询条件",
+              "href": "/docs/chat/sdk/v4/android/models/get-friend-application-list-as-applicant-req",
+              "type": "page",
+              "children": [],
+              "minIndex": 149
+            },
+            {
+              "id": "models/get-group-application-list-as-applicant-req",
+              "segment": "get-group-application-list-as-applicant-req",
+              "title": "发出的群申请查询条件",
+              "href": "/docs/chat/sdk/v4/android/models/get-group-application-list-as-applicant-req",
+              "type": "page",
+              "children": [],
+              "minIndex": 150
+            },
+            {
+              "id": "models/attached-info-elem",
+              "segment": "attached-info-elem",
+              "title": "附加信息元素",
+              "href": "/docs/chat/sdk/v4/android/models/attached-info-elem",
+              "type": "page",
+              "children": [],
+              "minIndex": 151
+            },
+            {
+              "id": "models/rich-message",
+              "segment": "rich-message",
+              "title": "富文本消息片段",
+              "href": "/docs/chat/sdk/v4/android/models/rich-message",
+              "type": "page",
+              "children": [],
+              "minIndex": 152
+            },
+            {
+              "id": "models/advanced-message",
+              "segment": "advanced-message",
+              "title": "高级历史消息结果",
+              "href": "/docs/chat/sdk/v4/android/models/advanced-message",
+              "type": "page",
+              "children": [],
+              "minIndex": 153
+            },
+            {
+              "id": "models/advanced-text-elem",
+              "segment": "advanced-text-elem",
+              "title": "高级文本元素",
+              "href": "/docs/chat/sdk/v4/android/models/advanced-text-elem",
+              "type": "page",
+              "children": [],
+              "minIndex": 154
+            },
+            {
+              "id": "models/message-entity",
+              "segment": "message-entity",
+              "title": "高级消息片段",
+              "href": "/docs/chat/sdk/v4/android/models/message-entity",
+              "type": "page",
+              "children": [],
+              "minIndex": 155
+            },
+            {
+              "id": "models/card-elem",
+              "segment": "card-elem",
+              "title": "个人名片元素",
+              "href": "/docs/chat/sdk/v4/android/models/card-elem",
+              "type": "page",
+              "children": [],
+              "minIndex": 156
+            },
+            {
+              "id": "models/public-user-info",
+              "segment": "public-user-info",
+              "title": "公开用户信息",
+              "href": "/docs/chat/sdk/v4/android/models/public-user-info",
+              "type": "page",
+              "children": [],
+              "minIndex": 157
+            },
+            {
+              "id": "models/friendship-info",
+              "segment": "friendship-info",
+              "title": "好友关系校验结果",
+              "href": "/docs/chat/sdk/v4/android/models/friendship-info",
+              "type": "page",
+              "children": [],
+              "minIndex": 158
+            },
+            {
+              "id": "models/friend-application-info",
+              "segment": "friend-application-info",
+              "title": "好友申请信息",
+              "href": "/docs/chat/sdk/v4/android/models/friend-application-info",
+              "type": "page",
+              "children": [],
+              "minIndex": 159
+            },
+            {
+              "id": "models/friend-info",
+              "segment": "friend-info",
+              "title": "好友信息",
+              "href": "/docs/chat/sdk/v4/android/models/friend-info",
+              "type": "page",
+              "children": [],
+              "minIndex": 160
+            },
+            {
+              "id": "models/update-friends-req",
+              "segment": "update-friends-req",
+              "title": "好友资料更新请求",
+              "href": "/docs/chat/sdk/v4/android/models/update-friends-req",
+              "type": "page",
+              "children": [],
+              "minIndex": 161
+            },
+            {
+              "id": "models/merge-elem",
+              "segment": "merge-elem",
+              "title": "合并消息元素",
+              "href": "/docs/chat/sdk/v4/android/models/merge-elem",
+              "type": "page",
+              "children": [],
+              "minIndex": 162
+            },
+            {
+              "id": "models/blacklist-info",
+              "segment": "blacklist-info",
+              "title": "黑名单用户信息",
+              "href": "/docs/chat/sdk/v4/android/models/blacklist-info",
+              "type": "page",
+              "children": [],
+              "minIndex": 163
+            },
+            {
+              "id": "models/conversation-req",
+              "segment": "conversation-req",
+              "title": "会话设置请求",
+              "href": "/docs/chat/sdk/v4/android/models/conversation-req",
+              "type": "page",
+              "children": [],
+              "minIndex": 164
+            },
+            {
+              "id": "models/conversation-info",
+              "segment": "conversation-info",
+              "title": "会话信息",
+              "href": "/docs/chat/sdk/v4/android/models/conversation-info",
+              "type": "page",
+              "children": [],
+              "minIndex": 165
+            },
+            {
+              "id": "models/key-value",
+              "segment": "key-value",
+              "title": "键值扩展项",
+              "href": "/docs/chat/sdk/v4/android/models/key-value",
+              "type": "page",
+              "children": [],
+              "minIndex": 166
+            },
+            {
+              "id": "models/offline-push-info",
+              "segment": "offline-push-info",
+              "title": "离线推送信息",
+              "href": "/docs/chat/sdk/v4/android/models/offline-push-info",
+              "type": "page",
+              "children": [],
+              "minIndex": 167
+            },
+            {
+              "id": "models/set-group-member-info",
+              "segment": "set-group-member-info",
+              "title": "群成员设置请求",
+              "href": "/docs/chat/sdk/v4/android/models/set-group-member-info",
+              "type": "page",
+              "children": [],
+              "minIndex": 168
+            },
+            {
+              "id": "models/group-members-info",
+              "segment": "group-members-info",
+              "title": "群成员信息",
+              "href": "/docs/chat/sdk/v4/android/models/group-members-info",
+              "type": "page",
+              "children": [],
+              "minIndex": 169
+            },
+            {
+              "id": "models/group-application-info",
+              "segment": "group-application-info",
+              "title": "群申请信息",
+              "href": "/docs/chat/sdk/v4/android/models/group-application-info",
+              "type": "page",
+              "children": [],
+              "minIndex": 170
+            },
+            {
+              "id": "models/group-message-receipt",
+              "segment": "group-message-receipt",
+              "title": "群消息已读回执",
+              "href": "/docs/chat/sdk/v4/android/models/group-message-receipt",
+              "type": "page",
+              "children": [],
+              "minIndex": 171
+            },
+            {
+              "id": "models/group-message-read-info",
+              "segment": "group-message-read-info",
+              "title": "群消息已读信息",
+              "href": "/docs/chat/sdk/v4/android/models/group-message-read-info",
+              "type": "page",
+              "children": [],
+              "minIndex": 172
+            },
+            {
+              "id": "models/group-has-read-info",
+              "segment": "group-has-read-info",
+              "title": "群已读用户信息",
+              "href": "/docs/chat/sdk/v4/android/models/group-has-read-info",
+              "type": "page",
+              "children": [],
+              "minIndex": 173
+            },
+            {
+              "id": "models/group-info",
+              "segment": "group-info",
+              "title": "群组信息",
+              "href": "/docs/chat/sdk/v4/android/models/group-info",
+              "type": "page",
+              "children": [],
+              "minIndex": 174
+            },
+            {
+              "id": "models/put-args",
+              "segment": "put-args",
+              "title": "上传参数",
+              "href": "/docs/chat/sdk/v4/android/models/put-args",
+              "type": "page",
+              "children": [],
+              "minIndex": 175
+            },
+            {
+              "id": "models/video-elem",
+              "segment": "video-elem",
+              "title": "视频消息元素",
+              "href": "/docs/chat/sdk/v4/android/models/video-elem",
+              "type": "page",
+              "children": [],
+              "minIndex": 176
+            },
+            {
+              "id": "models/get-friend-application-list-as-recipient-req",
+              "segment": "get-friend-application-list-as-recipient-req",
+              "title": "收到的好友申请查询条件",
+              "href": "/docs/chat/sdk/v4/android/models/get-friend-application-list-as-recipient-req",
+              "type": "page",
+              "children": [],
+              "minIndex": 177
+            },
+            {
+              "id": "models/get-group-application-list-as-recipient-req",
+              "segment": "get-group-application-list-as-recipient-req",
+              "title": "收到的群申请查询条件",
+              "href": "/docs/chat/sdk/v4/android/models/get-group-application-list-as-recipient-req",
+              "type": "page",
+              "children": [],
+              "minIndex": 178
+            },
+            {
+              "id": "models/typing-elem",
+              "segment": "typing-elem",
+              "title": "输入状态元素",
+              "href": "/docs/chat/sdk/v4/android/models/typing-elem",
+              "type": "page",
+              "children": [],
+              "minIndex": 179
+            },
+            {
+              "id": "models/search-params",
+              "segment": "search-params",
+              "title": "搜索参数",
+              "href": "/docs/chat/sdk/v4/android/models/search-params",
+              "type": "page",
+              "children": [],
+              "minIndex": 180
+            },
+            {
+              "id": "models/notification-elem",
+              "segment": "notification-elem",
+              "title": "通知消息元素",
+              "href": "/docs/chat/sdk/v4/android/models/notification-elem",
+              "type": "page",
+              "children": [],
+              "minIndex": 181
+            },
+            {
+              "id": "models/picture-elem",
+              "segment": "picture-elem",
+              "title": "图片消息元素",
+              "href": "/docs/chat/sdk/v4/android/models/picture-elem",
+              "type": "page",
+              "children": [],
+              "minIndex": 182
+            },
+            {
+              "id": "models/picture-info",
+              "segment": "picture-info",
+              "title": "图片资源信息",
+              "href": "/docs/chat/sdk/v4/android/models/picture-info",
+              "type": "page",
+              "children": [],
+              "minIndex": 183
+            },
+            {
+              "id": "models/location-elem",
+              "segment": "location-elem",
+              "title": "位置消息元素",
+              "href": "/docs/chat/sdk/v4/android/models/location-elem",
+              "type": "page",
+              "children": [],
+              "minIndex": 184
+            },
+            {
+              "id": "models/text-elem",
+              "segment": "text-elem",
+              "title": "文本消息元素",
+              "href": "/docs/chat/sdk/v4/android/models/text-elem",
+              "type": "page",
+              "children": [],
+              "minIndex": 185
+            },
+            {
+              "id": "models/file-elem",
+              "segment": "file-elem",
+              "title": "文件消息元素",
+              "href": "/docs/chat/sdk/v4/android/models/file-elem",
+              "type": "page",
+              "children": [],
+              "minIndex": 186
+            },
+            {
+              "id": "models/revoked-info",
+              "segment": "revoked-info",
+              "title": "消息撤回信息",
+              "href": "/docs/chat/sdk/v4/android/models/revoked-info",
+              "type": "page",
+              "children": [],
+              "minIndex": 187
+            },
+            {
+              "id": "models/message",
+              "segment": "message",
+              "title": "消息对象",
+              "href": "/docs/chat/sdk/v4/android/models/message",
+              "type": "page",
+              "children": [],
+              "minIndex": 188
+            },
+            {
+              "id": "models/message-kv",
+              "segment": "message-kv",
+              "title": "消息扩展键值",
+              "href": "/docs/chat/sdk/v4/android/models/message-kv",
+              "type": "page",
+              "children": [],
+              "minIndex": 189
+            },
+            {
+              "id": "models/type-key-set-result",
+              "segment": "type-key-set-result",
+              "title": "消息扩展设置结果",
+              "href": "/docs/chat/sdk/v4/android/models/type-key-set-result",
+              "type": "page",
+              "children": [],
+              "minIndex": 190
+            },
+            {
+              "id": "models/search-result",
+              "segment": "search-result",
+              "title": "消息搜索结果",
+              "href": "/docs/chat/sdk/v4/android/models/search-result",
+              "type": "page",
+              "children": [],
+              "minIndex": 191
+            },
+            {
+              "id": "models/search-result-item",
+              "segment": "search-result-item",
+              "title": "消息搜索结果项",
+              "href": "/docs/chat/sdk/v4/android/models/search-result-item",
+              "type": "page",
+              "children": [],
+              "minIndex": 192
+            },
+            {
+              "id": "models/quote-elem",
+              "segment": "quote-elem",
+              "title": "引用消息元素",
+              "href": "/docs/chat/sdk/v4/android/models/quote-elem",
+              "type": "page",
+              "children": [],
+              "minIndex": 193
+            },
+            {
+              "id": "models/user-ex-info",
+              "segment": "user-ex-info",
+              "title": "用户扩展信息",
+              "href": "/docs/chat/sdk/v4/android/models/user-ex-info",
+              "type": "page",
+              "children": [],
+              "minIndex": 194
+            },
+            {
+              "id": "models/user-info",
+              "segment": "user-info",
+              "title": "用户信息",
+              "href": "/docs/chat/sdk/v4/android/models/user-info",
+              "type": "page",
+              "children": [],
+              "minIndex": 195
+            },
+            {
+              "id": "models/users-online-status",
+              "segment": "users-online-status",
+              "title": "用户在线状态",
+              "href": "/docs/chat/sdk/v4/android/models/users-online-status",
+              "type": "page",
+              "children": [],
+              "minIndex": 196
+            },
+            {
+              "id": "models/user-info-req",
+              "segment": "user-info-req",
+              "title": "用户资料更新请求",
+              "href": "/docs/chat/sdk/v4/android/models/user-info-req",
+              "type": "page",
+              "children": [],
+              "minIndex": 197
+            },
+            {
+              "id": "models/sound-elem",
+              "segment": "sound-elem",
+              "title": "语音消息元素",
+              "href": "/docs/chat/sdk/v4/android/models/sound-elem",
+              "type": "page",
+              "children": [],
+              "minIndex": 198
+            },
+            {
+              "id": "models/custom-elem",
+              "segment": "custom-elem",
+              "title": "自定义消息元素",
+              "href": "/docs/chat/sdk/v4/android/models/custom-elem",
+              "type": "page",
+              "children": [],
+              "minIndex": 199
+            },
+            {
+              "id": "models/at-text-elem",
+              "segment": "at-text-elem",
+              "title": "At 文本元素",
+              "href": "/docs/chat/sdk/v4/android/models/at-text-elem",
+              "type": "page",
+              "children": [],
+              "minIndex": 200
+            },
+            {
+              "id": "models/login-status",
+              "segment": "login-status",
+              "title": "登录状态",
+              "href": "/docs/chat/sdk/v4/android/models/login-status",
+              "type": "page",
+              "children": [],
+              "minIndex": 201
+            },
+            {
+              "id": "models/conversation-type",
+              "segment": "conversation-type",
+              "title": "会话类型",
+              "href": "/docs/chat/sdk/v4/android/models/conversation-type",
+              "type": "page",
+              "children": [],
+              "minIndex": 202
+            },
+            {
+              "id": "models/platform",
+              "segment": "platform",
+              "title": "平台类型",
+              "href": "/docs/chat/sdk/v4/android/models/platform",
+              "type": "page",
+              "children": [],
+              "minIndex": 203
+            },
+            {
+              "id": "models/group-role",
+              "segment": "group-role",
+              "title": "群成员角色",
+              "href": "/docs/chat/sdk/v4/android/models/group-role",
+              "type": "page",
+              "children": [],
+              "minIndex": 204
+            },
+            {
+              "id": "models/group-member-filter",
+              "segment": "group-member-filter",
+              "title": "群成员筛选类型",
+              "href": "/docs/chat/sdk/v4/android/models/group-member-filter",
+              "type": "page",
+              "children": [],
+              "minIndex": 205
+            },
+            {
+              "id": "models/group-at-type",
+              "segment": "group-at-type",
+              "title": "群提醒类型",
+              "href": "/docs/chat/sdk/v4/android/models/group-at-type",
+              "type": "page",
+              "children": [],
+              "minIndex": 206
+            },
+            {
+              "id": "models/log-level",
+              "segment": "log-level",
+              "title": "日志等级",
+              "href": "/docs/chat/sdk/v4/android/models/log-level",
+              "type": "page",
+              "children": [],
+              "minIndex": 207
+            },
+            {
+              "id": "models/join-source",
+              "segment": "join-source",
+              "title": "入群来源",
+              "href": "/docs/chat/sdk/v4/android/models/join-source",
+              "type": "page",
+              "children": [],
+              "minIndex": 208
+            },
+            {
+              "id": "models/group-verification",
+              "segment": "group-verification",
+              "title": "入群验证方式",
+              "href": "/docs/chat/sdk/v4/android/models/group-verification",
+              "type": "page",
+              "children": [],
+              "minIndex": 209
+            },
+            {
+              "id": "models/message-type",
+              "segment": "message-type",
+              "title": "消息类型",
+              "href": "/docs/chat/sdk/v4/android/models/message-type",
+              "type": "page",
+              "children": [],
+              "minIndex": 210
+            },
+            {
+              "id": "models/view-type",
+              "segment": "view-type",
+              "title": "消息视图类型",
+              "href": "/docs/chat/sdk/v4/android/models/view-type",
+              "type": "page",
+              "children": [],
+              "minIndex": 211
+            },
+            {
+              "id": "models/message-status",
+              "segment": "message-status",
+              "title": "消息状态",
+              "href": "/docs/chat/sdk/v4/android/models/message-status",
+              "type": "page",
+              "children": [],
+              "minIndex": 212
+            },
+            {
+              "id": "models/on-advance-msg-listener",
+              "segment": "on-advance-msg-listener",
+              "title": "高级消息监听器",
+              "href": "/docs/chat/sdk/v4/android/models/on-advance-msg-listener",
+              "type": "page",
+              "children": [],
+              "minIndex": 213
+            },
+            {
+              "id": "models/on-friendship-listener",
+              "segment": "on-friendship-listener",
+              "title": "好友关系监听器",
+              "href": "/docs/chat/sdk/v4/android/models/on-friendship-listener",
+              "type": "page",
+              "children": [],
+              "minIndex": 214
+            },
+            {
+              "id": "models/on-conversation-listener",
+              "segment": "on-conversation-listener",
+              "title": "会话监听器",
+              "href": "/docs/chat/sdk/v4/android/models/on-conversation-listener",
+              "type": "page",
+              "children": [],
+              "minIndex": 215
+            },
+            {
+              "id": "models/on-conn-listener",
+              "segment": "on-conn-listener",
+              "title": "连接状态监听器",
+              "href": "/docs/chat/sdk/v4/android/models/on-conn-listener",
+              "type": "page",
+              "children": [],
+              "minIndex": 216
+            },
+            {
+              "id": "models/on-group-listener",
+              "segment": "on-group-listener",
+              "title": "群组监听器",
+              "href": "/docs/chat/sdk/v4/android/models/on-group-listener",
+              "type": "page",
+              "children": [],
+              "minIndex": 217
+            },
+            {
+              "id": "models/on-message-kv-info-listener",
+              "segment": "on-message-kv-info-listener",
+              "title": "消息扩展监听器",
+              "href": "/docs/chat/sdk/v4/android/models/on-message-kv-info-listener",
+              "type": "page",
+              "children": [],
+              "minIndex": 218
+            },
+            {
+              "id": "models/on-user-listener",
+              "segment": "on-user-listener",
+              "title": "用户状态监听器",
+              "href": "/docs/chat/sdk/v4/android/models/on-user-listener",
+              "type": "page",
+              "children": [],
+              "minIndex": 219
+            },
+            {
+              "id": "models/on-custom-business-listener",
+              "segment": "on-custom-business-listener",
+              "title": "自定义业务监听器",
+              "href": "/docs/chat/sdk/v4/android/models/on-custom-business-listener",
+              "type": "page",
+              "children": [],
+              "minIndex": 220
+            },
+            {
+              "id": "models/upload-log-progress",
+              "segment": "upload-log-progress",
+              "title": "日志上传进度回调",
+              "href": "/docs/chat/sdk/v4/android/models/upload-log-progress",
+              "type": "page",
+              "children": [],
+              "minIndex": 221
+            },
+            {
+              "id": "models/on-base",
+              "segment": "on-base",
+              "title": "通用回调",
+              "href": "/docs/chat/sdk/v4/android/models/on-base",
+              "type": "page",
+              "children": [],
+              "minIndex": 222
+            },
+            {
+              "id": "models/on-put-file-listener",
+              "segment": "on-put-file-listener",
+              "title": "文件上传回调",
+              "href": "/docs/chat/sdk/v4/android/models/on-put-file-listener",
+              "type": "page",
+              "children": [],
+              "minIndex": 223
+            },
+            {
+              "id": "models/on-msg-send-callback",
+              "segment": "on-msg-send-callback",
+              "title": "消息发送回调",
+              "href": "/docs/chat/sdk/v4/android/models/on-msg-send-callback",
+              "type": "page",
+              "children": [],
+              "minIndex": 224
+            },
+            {
+              "id": "models/base",
+              "segment": "base",
+              "title": "底层通用回调",
+              "href": "/docs/chat/sdk/v4/android/models/base",
+              "type": "page",
+              "children": [],
+              "minIndex": 225
+            },
+            {
+              "id": "models/send-msg-call-back",
+              "segment": "send-msg-call-back",
+              "title": "底层消息发送回调",
+              "href": "/docs/chat/sdk/v4/android/models/send-msg-call-back",
+              "type": "page",
+              "children": [],
+              "minIndex": 226
+            },
+            {
+              "id": "models/on-advanced-msg-listener",
+              "segment": "on-advanced-msg-listener",
+              "title": "底层高级消息监听器",
+              "href": "/docs/chat/sdk/v4/android/models/on-advanced-msg-listener",
+              "type": "page",
+              "children": [],
+              "minIndex": 227
+            },
+            {
+              "id": "models/on-batch-msg-listener",
+              "segment": "on-batch-msg-listener",
+              "title": "批量消息监听器",
+              "href": "/docs/chat/sdk/v4/android/models/on-batch-msg-listener",
+              "type": "page",
+              "children": [],
+              "minIndex": 228
+            },
+            {
+              "id": "models/upload-file-callback",
+              "segment": "upload-file-callback",
+              "title": "底层文件上传回调",
+              "href": "/docs/chat/sdk/v4/android/models/upload-file-callback",
+              "type": "page",
+              "children": [],
+              "minIndex": 229
+            }
+          ],
+          "minIndex": 143
+        },
+        {
+          "id": "error-codes",
+          "segment": "error-codes",
+          "title": "错误码",
+          "href": "/docs/chat/sdk/v4/android/error-codes",
+          "type": "page",
+          "children": [],
+          "minIndex": 230
+        },
+        {
+          "id": "deprecated",
+          "segment": "deprecated",
+          "title": "未支持或未暴露能力",
+          "href": "/docs/chat/sdk/v4/android/deprecated",
+          "type": "page",
+          "children": [],
+          "minIndex": 231
         }
       ],
-      "pageCount": 364
+      "pageCount": 347
     },
     {
       "key": "chat/sdk/v4/flutter",

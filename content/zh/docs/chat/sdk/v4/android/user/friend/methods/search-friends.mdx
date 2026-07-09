@@ -29,7 +29,7 @@ sourcePath: '/docs/chat/sdk/v4/android/user/friend/methods/search-friends'
 
 ## Android 调用参考
 
-Android SDK v3.8.3.5 的 Java 方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
+Android SDK v3.8.3 的 Java 方法原型如下，示例代码也基于该调用方式。Core binding 方法签名用于说明底层 `open_im_sdk` 能力和参数映射。
 
 ```java showLineNumbers
 public void searchFriends(OnBase<List<FriendInfo>> base, List<String> keywordList, boolean isSearchUserID, boolean isSearchNickname, boolean isSearchRemark)
@@ -39,8 +39,8 @@ public void searchFriends(OnBase<List<FriendInfo>> base, List<String> keywordLis
 
 | 参数名称         | 参数类型                                                                                                                             | 是否必填 | 描述                                           |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------ | -------- | ---------------------------------------------- |
-| callBack         | [`OnBase`](/docs/chat/sdk/v4/android/models/on-base)&lt;List&lt;[`FriendInfo`](/docs/chat/sdk/v4/android/models/friend-info)&gt;&gt; | 是       | 回调接口                                       |
-| keywordList      | List<String>                                                                                                                         | 是       | 搜索关键词，目前仅支持一个关键词搜索，不能为空 |
+| callBack         | `OnBase<List<FriendInfo>>` | 是       | 回调接口                                       |
+| keywordList      | `List<String>` | 是       | 搜索关键词，目前仅支持一个关键词搜索，不能为空 |
 | isSearchUserID   | Boolean                                                                                                                              | 是       | 是否以关键词搜索 UserID                        |
 | isSearchNickname | Boolean                                                                                                                              | 是       | 是否以关键词搜索昵称，默认 false               |
 | isSearchRemark   | Boolean                                                                                                                              | 是       | 是否以关键词搜索备注，默认 false               |
@@ -51,7 +51,7 @@ public void searchFriends(OnBase<List<FriendInfo>> base, List<String> keywordLis
 
 ## 代码示例
 
-以下示例展示 Android SDK v3.8.3.5 的调用方式。
+以下示例展示 Android SDK v3.8.3 的调用方式。
 
 ```java showLineNumbers
 OpenIMClient.getInstance().friendshipManager.searchFriends(
@@ -82,4 +82,4 @@ OpenIMClient.getInstance().friendshipManager.searchFriends(
 
 ## 相关页面
 
-- [好友](/docs/chat/sdk/v4/android/user/friend/overview)
+- [好友](/docs/chat/sdk/v4/android/user/overview#好友)
