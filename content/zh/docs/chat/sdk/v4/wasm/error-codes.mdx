@@ -1,147 +1,49 @@
 ---
 title: '错误码'
-description: '了解 OpenIM WASM SDK 中客户端异常、服务端错误响应、事件错误和 operationID 的处理方式。'
+description: '说明 WASM OpenIM core 的回调错误、登录状态错误和排查流程。'
+product: 'sdk'
+context: 'chat/sdk/v4/wasm'
+template: 'guide'
+status: 'draft'
+lastUpdated: '2026-07-09'
+version: 'v4'
+platform: 'wasm'
 sourcePath: '/docs/chat/sdk/v4/wasm/error-codes'
 ---
 
-OpenIM WASM SDK 的错误信息主要来自两类数据：SDK 方法返回的 `WsResponse<T>`，以及运行时事件回调收到的事件载荷。业务代码应把 `errCode` 作为可判断的错误码，把 `errMsg` 作为诊断文本，并在失败日志中保留 `operationID`，用于把浏览器行为与 OpenIM 服务端日志对应起来。
+WASM OpenIM core 通过 `Base.OnError(errCode int32, errMsg string)` 返回大多数异步错误。同步方法通常直接返回字符串、布尔值或状态值；如果创建消息失败，返回内容应按 wrapper 约定和日志一起判断。
 
-多数业务方法调用失败时会 reject；在 `catch` 中记录错误对象、`operationID` 和相关业务 ID，成功分支只处理返回的 `data` 与后续事件。
+## 错误返回位置
 
-```ts
-type WsResponse<T> = {
-  event: string;
-  errCode: number;
-  errMsg: string;
-  data: T;
-  operationID: string;
-};
+| 来源     | 错误形态                                                                                       | 说明                                                                           |
+| -------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| 异步 API | `OnError(errCode, errMsg)`                                                                     | 用户、好友、群组、会话、消息、第三方能力通用。                                 |
+| 发送消息 | [`SendMsgCallBack`](/docs/chat/sdk/v4/wasm/models/send-msg-call-back).OnError(errCode, errMsg) | 发送失败、上传失败或服务端拒绝。                                               |
+| 初始化   | `InitSDK(...) bool`                                                                            | 配置 JSON 解析失败、平台 ID 缺失、地址格式错误或 listener 为空时返回 `false`。 |
+| 登录状态 | `GetLoginStatus(operationID) int`                                                              | 未初始化时返回未初始化状态。                                                   |
+| 连接监听 | `OnConnectFailed(errCode, errMsg)`                                                             | 长连接失败。                                                                   |
 
-type WSEvent<T = unknown> = {
-  event: CbEvents;
-  data: T;
-  errCode: number;
-  errMsg: string;
-  operationID: string;
-};
-```
+## 常见场景
 
-## 客户端错误码
+| 场景               | 可能原因                                                                                    | 处理建议                                                            |
+| ------------------ | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| 初始化返回 `false` | `config` 不是合法 JSON、`platformID` 为 0、`apiAddr` / `wsAddr` 格式不正确、listener 为空。 | 修正初始化参数后重新初始化。                                        |
+| 调用 API 直接失败  | SDK 未初始化、未登录、`operationID` 为空或资源未加载。                                      | 检查初始化和登录顺序，记录 `operationID`。                          |
+| token 相关失败     | token 过期、无效或与用户 ID 不匹配。                                                        | 从服务端刷新 token 后重新登录。                                     |
+| 消息发送失败       | 会话目标错误、消息 JSON 不合法、上传失败或服务端拒绝。                                      | 检查 `recvID` / `groupID`、消息创建结果、离线推送参数和服务端日志。 |
+| JSON 参数解析失败  | 列表或结构体参数不是目标结构的 JSON。                                                       | 按对应结构重新序列化参数。                                          |
 
-客户端侧问题通常发生在 SDK 请求发出前、WASM 资源加载阶段、浏览器运行时或连接生命周期中。它们可能表现为 Promise 异常、连接失败事件、同步失败事件，或包含非零 `errCode` 的 SDK 响应。
+## 排查流程
 
-| 来源                     | 典型表现                                                           | 处理方式                                                             |
-| ------------------------ | ------------------------------------------------------------------ | -------------------------------------------------------------------- |
-| WASM 资源缺失            | `openIM.wasm`、`sql-wasm.wasm` 或 `wasm_exec.js` 请求 404          | 修正 public 目录和 `coreWasmPath`、`sqlWasmPath`。                   |
-| SDK 在非浏览器环境初始化 | SSR、Node.js 或 Electron 主进程中访问浏览器能力失败                | 只在客户端组件、浏览器生命周期或 Electron 渲染进程中创建 SDK。       |
-| 参数缺失或状态不一致     | `recvID`、`groupID`、`conversationID` 或消息对象不符合当前调用要求 | 在调用前校验目标 ID、登录状态和消息对象来源。                        |
-| 连接失败                 | `CbEvents.OnConnectFailed` 触发                                    | 检查 `apiAddr`、`wsAddr`、token、`platformID: 5` 和网络连通性。      |
-| 同步失败                 | `CbEvents.OnSyncServerFailed` 触发                                 | 保留 `operationID`，避免立即覆盖本地列表，必要时重新拉取会话或消息。 |
+| 步骤 | 操作                                                                          |
+| ---- | ----------------------------------------------------------------------------- |
+| 1    | 确认 `GetSdkVersion()`、`GetLoginStatus(operationID)` 和 `GetLoginUserID()`。 |
+| 2    | 收集失败 API 的 `operationID`、`errCode`、`errMsg`。                          |
+| 3    | 检查初始化配置中的 `apiAddr`、`wsAddr`、`platformID`、日志目录。              |
+| 4    | 对 JSON 字符串参数做反序列化校验。                                            |
+| 5    | 必要时调用 `UploadLogs` 上传日志。                                            |
 
-为关键写操作生成 `operationID`，并把它传给 SDK 方法。Promise 返回后先判断 `errCode`，再使用 `data` 更新本地状态。
+## 相关类型
 
-```ts
-function logOpenIMError(
-  action: string,
-  error: Pick<WsResponse<unknown>, 'errCode' | 'errMsg' | 'operationID'>,
-) {
-  console.error(`OpenIM ${action} failed`, {
-    errCode: error.    errMsg: error.    operationID: error.operationID,
-  });
-}
-
-const operationID = crypto.randomUUID();
-const response = await OpenIM.sendMessage(
-  {
-    recvID,
-    groupID: '',
-    message,
-  },
-  operationID,
-);
-
-appendMessage(response.data);
-```
-
-对读取类 API 也使用同一套检查方式，避免把失败响应误当成空结果。
-
-```ts
-const history = await OpenIM.getAdvancedHistoryMessageList(
-  {
-    conversationID,
-    startClientMsgID: '',
-    count: 20,
-  },
-  operationID,
-);
-
-renderMessages(history.data.messageList);
-```
-
-## 服务端错误码
-
-服务端错误码来自 OpenIM 服务端或你的业务后端策略。前端不应只根据数字猜测业务含义，而应同时记录 `errCode`、`errMsg`、`operationID`、当前用户、目标 ID 和正在执行的动作。
-
-| 来源           | 典型表现                                        | 处理方式                                                        |
-| -------------- | ----------------------------------------------- | --------------------------------------------------------------- |
-| token 过期     | `CbEvents.OnUserTokenExpired` 触发              | 停止依赖当前连接状态，从可信后端刷新 token 或引导用户重新登录。 |
-| token 无效     | `CbEvents.OnUserTokenInvalid` 触发              | 清理当前用户状态，重新走认证流程。                              |
-| 权限不足       | 群组、好友、黑名单或消息 API 返回非零 `errCode` | 检查当前用户角色、群成员状态、好友关系和服务端策略。            |
-| 目标不存在     | 用户、群组、会话或消息 ID 无法匹配服务端状态    | 重新读取目标信息，避免继续使用过期缓存。                        |
-| 频率或策略限制 | 写操作被服务端拒绝，`errMsg` 指向限流或策略原因 | 前端节流按钮和重试频率，最终策略以服务端为准。                  |
-
-连接、token 和同步类失败会通过事件通知业务层。连接事件建议在 `login()` 之前注册，这样登录阶段的失败也能被记录。
-
-```ts
-import { CbEvents } from '@openim/wasm-client-sdk';
-
-OpenIM.on(CbEvents.OnConnectFailed, ({ errCode, errMsg, operationID }) => {
-  logOpenIMError('connect', { errCode, errMsg, operationID });
-  setConnectionState('failed');
-});
-
-OpenIM.on(CbEvents.OnUserTokenExpired, ({ errCode, errMsg, operationID }) => {
-  logOpenIMError('token expired', { errCode, errMsg, operationID });
-  redirectToSignIn();
-});
-
-OpenIM.on(CbEvents.OnUserTokenInvalid, ({ errCode, errMsg, operationID }) => {
-  logOpenIMError('token invalid', { errCode, errMsg, operationID });
-  redirectToSignIn();
-});
-
-OpenIM.on(CbEvents.OnSyncServerFailed, ({ errCode, errMsg, operationID }) => {
-  logOpenIMError('sync server', { errCode, errMsg, operationID });
-});
-```
-
-`login()` 本身的公开签名返回 `Promise<any>`，连接结果应结合连接事件判断。
-
-```ts
-await OpenIM.login(
-  {
-    userID,
-    token,
-    platformID: 5,
-    apiAddr,
-    wsAddr,
-  },
-  operationID,
-);
-```
-
-## 日志字段
-
-| 字段          | 用途                                                           |
-| ------------- | -------------------------------------------------------------- |
-| `errCode`     | SDK 或服务端返回的错误码。业务逻辑应优先判断这个字段。         |
-| `errMsg`      | 错误说明，适合写入诊断日志；面向用户的提示建议转换成业务文案。 |
-| `operationID` | 请求追踪 ID。关键调用建议主动传入，失败时必须随日志记录。      |
-| `data`        | 成功时的业务数据；失败时不要依赖其中内容更新 UI 状态。         |
-| `event`       | 响应或回调对应的事件名称，可用于区分连接、同步和业务操作。     |
-
-## 相关页面
-
-- [用户认证](/docs/chat/sdk/v4/wasm/application/authenticating-a-user/authentication)
-- [日志](/docs/chat/sdk/v4/wasm/logger)
-- [事件处理器](/docs/chat/sdk/v4/wasm/event-handler/overview-event-handler)
+- [底层通用回调](/docs/chat/sdk/v4/wasm/models/base)（`Base`）：OpenIM core 异步结果回调，WASM 调用层通常映射为 Promise。
+- [底层消息发送回调](/docs/chat/sdk/v4/wasm/models/send-msg-call-back)（`SendMsgCallBack`）：OpenIM core 消息发送回调，WASM 调用层通常映射为 OnMsgSendCallback。
