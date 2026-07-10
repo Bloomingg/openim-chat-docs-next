@@ -36,6 +36,35 @@ sourcePath: "/docs/chat/platform-api/v3/user/overview"
 - [更新通知账号](/docs/chat/platform-api/v3/user/notification-accounts/update-notification-account)
 - [搜索通知账号](/docs/chat/platform-api/v3/user/notification-accounts/search-notification-account)
 
+## 资源表示
+
+用户模块中出现的 `Info` 对象都表示 OpenIM 服务端保存或返回的用户资料。接口页会保留本接口需要关注的字段，完整字段语义以这里为准。
+
+### UserInfo
+
+`UserInfo` 表示 OpenIM 用户资料，常用于用户创建、用户查询和用户资料更新。
+
+| 字段 | 类型 | 说明 |
+| ---- | ---- | ---- |
+| userID | string | OpenIM 用户 ID，应与业务系统账号建立稳定映射。 |
+| nickname | string | 用户昵称。 |
+| faceURL | string | 用户头像 URL。 |
+| ex | string | 业务扩展字段，通常由业务服务端写入和解析。 |
+| createTime | int64 | 用户创建时间，通常为 Unix 毫秒时间戳。 |
+| appMangerLevel | int | 应用管理级别字段，字段名以服务端响应为准。 |
+| globalRecvMsgOpt | int | 用户全局消息接收选项。 |
+
+### PublicUserInfo
+
+`PublicUserInfo` 表示可被其他用户或业务场景读取的公开资料。
+
+| 字段 | 类型 | 说明 |
+| ---- | ---- | ---- |
+| userID | string | OpenIM 用户 ID。 |
+| nickname | string | 用户昵称。 |
+| faceURL | string | 用户头像 URL。 |
+| ex | string | 公开扩展字段。 |
+
 ## 接入建议
 
 用户 ID 应以业务系统为权威来源。创建 OpenIM 用户前，先确认业务账号已经完成注册、风控和权限校验；创建完成后，把 OpenIM 用户 ID 与业务账号关系保存在你的后端数据库中。

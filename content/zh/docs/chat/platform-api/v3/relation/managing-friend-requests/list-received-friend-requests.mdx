@@ -94,12 +94,18 @@ curl --request POST "${API_ADDRESS}/friend/get_friend_apply_list" \
     "FriendRequests": [
       {
         "fromUserID": "user_001",
+        "fromNickname": "Alice",
+        "fromFaceURL": "https://example.com/avatar-alice.png",
         "toUserID": "user_002",
+        "toNickname": "Bob",
+        "toFaceURL": "https://example.com/avatar-bob.png",
         "handleResult": 0,
         "reqMsg": "我是 Alice",
-        "handleMsg": "",
         "createTime": 1710000000000,
-        "handlerUserID": ""
+        "handlerUserID": "",
+        "handleMsg": "",
+        "handleTime": 0,
+        "ex": ""
       }
     ],
     "total": 1
@@ -115,8 +121,8 @@ curl --request POST "${API_ADDRESS}/friend/get_friend_apply_list" \
 | errMsg | string | 错误简要信息，成功时为空。 |
 | errDlt | errDlt | 错误详细信息，成功时为空。 |
 | data | object | 通用数据对象，具体结构见下方。 |
-| FriendRequests | array | 收到的好友申请列表。 |
-| total | int | 匹配到的申请总数。 |
+| data.FriendRequests | array | 收到的好友申请列表，结构为[关系模块的 `FriendRequestInfo`](/docs/chat/platform-api/v3/relation/overview#friendrequestinfo)。 |
+| data.total | int | 匹配到的申请总数。 |
 
 ### 错误
 

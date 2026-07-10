@@ -110,7 +110,6 @@ const platformApiListUsersExpectedSnippets = [
   '安全提示',
   '200 OK',
   'errCode === 0',
-  'users[].userID',
   'pagination.pageNumber',
   '### 分页读取建议',
   '常见错误场景',
@@ -148,7 +147,7 @@ const platformApiOverviewHeadingExpectations = new Map([
     ['## 能力范围', '## 常用接口', '## 接入建议', '## 相关页面'],
   ],
   [
-    '/docs/chat/platform-api/v3/third/overview',
+    '/docs/chat/platform-api/v3/logs/overview',
     ['## 能力范围', '## 常用接口', '## 接入建议', '## 相关页面'],
   ],
   [
@@ -158,6 +157,29 @@ const platformApiOverviewHeadingExpectations = new Map([
   [
     '/docs/chat/platform-api/v3/error-codes',
     ['## 响应结构', '## 错误码范围', '## 处理流程', '## 服务端错误码', '## 排查建议'],
+  ],
+]);
+const platformApiZhOverviewHeadingExpectations = new Map([
+  ...platformApiOverviewHeadingExpectations,
+  [
+    '/docs/chat/platform-api/v3/user/overview',
+    ['## 能力范围', '## 常用接口', '## 资源表示', '## 接入建议', '## 相关页面'],
+  ],
+  [
+    '/docs/chat/platform-api/v3/relation/overview',
+    ['## 能力范围', '## 常用接口', '## 资源表示', '## 接入建议', '## 相关页面'],
+  ],
+  [
+    '/docs/chat/platform-api/v3/group/overview',
+    ['## 能力范围', '## 常用接口', '## 资源表示', '## 接入建议', '## 相关页面'],
+  ],
+  [
+    '/docs/chat/platform-api/v3/conversation/overview',
+    ['## 能力范围', '## 常用接口', '## 资源表示', '## 接入建议', '## 相关页面'],
+  ],
+  [
+    '/docs/chat/platform-api/v3/message/overview',
+    ['## 能力范围', '## 常用接口', '## 接入建议', '## 相关页面'],
   ],
 ]);
 const platformApiAllowedOverviewPaths = new Set(platformApiOverviewHeadingExpectations.keys());
@@ -243,7 +265,10 @@ for (const route of routes) {
     if (visibleBrandPattern.test(bodyWithoutFrontmatter)) {
       errors.push(`${route.contentFile}: visible Platform API body must not mention Sendbird`);
     }
-    const expectedOverviewHeadings = platformApiOverviewHeadingExpectations.get(route.path);
+    const sourceOverviewExpectations = route.contentFile.startsWith('content/docs/')
+      ? platformApiOverviewHeadingExpectations
+      : platformApiZhOverviewHeadingExpectations;
+    const expectedOverviewHeadings = sourceOverviewExpectations.get(route.path);
     if (expectedOverviewHeadings) {
       const actualHeadings = extractPlatformApiSecondLevelHeadings(bodyWithoutFrontmatter);
       if (actualHeadings.join('\n') !== expectedOverviewHeadings.join('\n')) {
@@ -324,7 +349,7 @@ for (const route of routes) {
           `content/zh/${route.path.slice(1)}.mdx: visible Chinese page must not mention Sendbird`,
         );
       }
-      const expectedOverviewHeadings = platformApiOverviewHeadingExpectations.get(route.path);
+      const expectedOverviewHeadings = platformApiZhOverviewHeadingExpectations.get(route.path);
       if (expectedOverviewHeadings) {
         const actualHeadings = extractPlatformApiSecondLevelHeadings(localizedBody);
         if (actualHeadings.join('\n') !== expectedOverviewHeadings.join('\n')) {
@@ -379,7 +404,9 @@ for (const route of routes) {
           }
         }
         if (route.path === platformApiListUsersPath) {
-          checkPlatformApiListUsersPage(localizedBody, `content/zh/${route.path.slice(1)}.mdx`);
+          checkPlatformApiListUsersPage(localizedBody, `content/zh/${route.path.slice(1)}.mdx`, {
+            localized: true,
+          });
         }
       }
     }
@@ -512,7 +539,7 @@ function extractPlatformApiSecondLevelHeadings(body) {
     .map((match) => `${match[1]} ${match[2].trim()}`);
 }
 
-function checkPlatformApiListUsersPage(body, label) {
+function checkPlatformApiListUsersPage(body, label, options = {}) {
   const actualHeadings = extractPlatformApiSecondLevelHeadings(body);
   for (const heading of ['## HTTP 请求', '## 参数', '## 响应']) {
     if (!actualHeadings.includes(heading)) {
@@ -523,6 +550,12 @@ function checkPlatformApiListUsersPage(body, label) {
     if (!body.includes(expected)) {
       errors.push(`${label}: list-users page is missing "${expected}"`);
     }
+  }
+  const resourceExpectation = options.localized
+    ? '/docs/chat/platform-api/v3/user/overview#userinfo'
+    : 'users[].userID';
+  if (!body.includes(resourceExpectation)) {
+    errors.push(`${label}: list-users page is missing "${resourceExpectation}"`);
   }
   for (const forbidden of platformApiListUsersForbiddenSnippets) {
     if (body.includes(forbidden)) {

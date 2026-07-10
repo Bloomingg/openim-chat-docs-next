@@ -26,19 +26,15 @@
     "conversation": "会话",
     "listing-conversations": "查询会话",
     "managing-conversations": "管理会话",
-    "conversation-state": "会话状态",
     "message": "消息",
     "sending-messages": "发送消息",
-    "retrieving-messages": "查询消息",
+    "retrieving-messages": "工具",
     "read-status": "已读状态",
     "managing-messages": "管理消息",
     "deleting-messages": "删除消息",
-    "third": "第三方服务",
-    "monitoring": "监控",
-    "push": "推送辅助",
     "logs": "日志",
-    "object-storage": "对象存储",
     "migration-to-openim": "迁移到 OpenIM",
-    "error-codes": "错误码"
+    "error-codes": "错误码",
+    "message-content-types": "消息内容类型"
   }
 }

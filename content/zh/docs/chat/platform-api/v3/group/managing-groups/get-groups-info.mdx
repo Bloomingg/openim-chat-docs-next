@@ -99,7 +99,7 @@ curl --request POST "${API_ADDRESS}/group/get_groups_info" \
 | errMsg | string | 错误简要信息，成功时通常为空。 |
 | errDlt | string | 错误详细信息，成功时通常为空。 |
 | data | object | 接口返回数据。 |
-| data.groupInfos | array | 群资料列表。 |
+| data.groupInfos | array | 群资料列表，结构为[群组模块的 `GroupInfo`](/docs/chat/platform-api/v3/group/overview#groupinfo)。 |
 
 ### 错误
 

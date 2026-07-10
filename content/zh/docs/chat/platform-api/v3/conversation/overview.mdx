@@ -1,6 +1,6 @@
 ---
 title: "概述"
-description: "OpenIM Platform API 会话模块概览，覆盖会话读取、批量设置、置顶、免打扰和离线推送用户。"
+description: "OpenIM Platform API 会话模块概览，覆盖会话读取和批量设置。"
 product: "platform-api"
 context: "chat/platform-api/v3"
 template: "overview"
@@ -10,25 +10,50 @@ version: "v3"
 sourcePath: "/docs/chat/platform-api/v3/conversation/overview"
 ---
 
-会话模块用于后端读取和维护用户会话数据，包括排序会话、批量会话、置顶会话、免打扰会话和离线推送关联用户。
+会话模块用于后端读取和维护用户会话数据，包括排序会话、单个会话、批量会话、分页读取用户会话和批量设置会话。
 
 ## 能力范围
 
 | 能力 | 说明 |
 | ---- | ---- |
-| 会话读取 | 获取排序会话列表、全部会话、单个会话或批量会话。 |
+| 会话读取 | 获取排序会话列表、单个会话、批量会话或分页读取用户会话。 |
 | 会话设置 | 批量设置会话属性和扩展数据。 |
-| 离线推送 | 读取会话离线推送关联的用户 ID。 |
-| 全量同步 | 全量获取用户会话 ID。 |
-| 状态筛选 | 读取置顶会话 ID 和免打扰会话 ID。 |
 
 ## 常用接口
 
 - [获取排序会话列表](/docs/chat/platform-api/v3/conversation/listing-conversations/get-sorted-conversation-list)
-- [获取全部会话](/docs/chat/platform-api/v3/conversation/listing-conversations/get-all-conversations)
+- [获取单个会话](/docs/chat/platform-api/v3/conversation/listing-conversations/get-conversation)
 - [批量获取会话](/docs/chat/platform-api/v3/conversation/listing-conversations/get-conversations)
+- [分页获取用户会话](/docs/chat/platform-api/v3/conversation/listing-conversations/get-owner-conversation)
 - [批量设置会话](/docs/chat/platform-api/v3/conversation/managing-conversations/set-conversations)
-- [获取置顶会话 ID](/docs/chat/platform-api/v3/conversation/conversation-state/get-pinned-conversation-ids)
+
+## 资源表示
+
+会话模块当前只维护会话资料这一类稳定资源对象。排序会话列表中的摘要对象暂不放入概述，等服务端对外结构体命名稳定后再补充。
+
+### ConversationInfo
+
+`ConversationInfo` 表示一个用户侧会话。
+
+| 字段 | 类型 | 说明 |
+| ---- | ---- | ---- |
+| ownerUserID | string | 会话所属用户 ID。 |
+| conversationID | string | 会话 ID。 |
+| conversationType | int | 会话类型，例如单聊或群聊。 |
+| userID | string | 单聊目标用户 ID。 |
+| groupID | string | 群聊目标群 ID。 |
+| recvMsgOpt | int | 收消息选项，例如正常接收或免打扰。 |
+| isPinned | boolean | 是否置顶会话。 |
+| attachedInfo | string | 会话附加信息。 |
+| isPrivateChat | boolean | 是否为私聊会话。 |
+| groupAtType | int | 群会话 @ 状态。 |
+| ex | string | 会话扩展字段。 |
+| burnDuration | int | 阅后即焚时长。 |
+| minSeq | int64 | 当前用户侧会话最小消息序列号。 |
+| maxSeq | int64 | 当前用户侧会话最大消息序列号。 |
+| msgDestructTime | int64 | 消息销毁时间。 |
+| latestMsgDestructTime | int64 | 最新消息销毁时间。 |
+| isMsgDestruct | boolean | 是否开启消息销毁。 |
 
 ## 接入建议
 

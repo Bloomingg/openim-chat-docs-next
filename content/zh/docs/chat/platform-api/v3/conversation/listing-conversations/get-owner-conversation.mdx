@@ -125,15 +125,7 @@ curl --request POST "${API_ADDRESS}/conversation/get_owner_conversation" \
 | errDlt | string | 错误详细信息，成功时通常为空。 |
 | data | object | 接口返回数据。 |
 | data.total | int | 会话总数。 |
-| data.conversations | array | 会话列表。 |
-| data.conversations[].ownerUserID | string | 会话所属用户 ID。 |
-| data.conversations[].conversationID | string | 会话 ID。 |
-| data.conversations[].conversationType | int | 会话类型。 |
-| data.conversations[].userID | string | 单聊目标用户 ID。 |
-| data.conversations[].groupID | string | 群组 ID。 |
-| data.conversations[].isPinned | boolean | 是否置顶会话。 |
-| data.conversations[].recvMsgOpt | int | 收消息选项。 |
-| data.conversations[].ex | string | 会话扩展字段。 |
+| data.conversations | array | 会话列表，结构为[会话模块的 `ConversationInfo`](/docs/chat/platform-api/v3/conversation/overview#conversationinfo)。 |
 
 ### 错误
 

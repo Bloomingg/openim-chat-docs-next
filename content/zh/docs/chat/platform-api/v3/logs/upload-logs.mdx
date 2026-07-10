@@ -1,34 +1,39 @@
 ---
-title: "完成分片上传"
-description: "OpenIM 第三方服务 REST API：完成分片上传。"
-sourcePath: "/docs/chat/platform-api/v3/third/object-storage/complete-multipart-upload"
+title: "上传日志记录"
+description: "OpenIM Platform API 日志模块：登记客户端本地日志记录。"
+product: "platform-api"
+context: "chat/platform-api/v3"
+template: "api"
+status: "published"
+sourcePath: "/docs/chat/platform-api/v3/logs/upload-logs"
 ---
 
-使用 **完成分片上传** 从可信后端调用 OpenIM 第三方服务 REST 接口。在所有分片上传到对象存储后，确认并生成 OpenIM 可访问的对象 URL。 请先在[接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)中配置 API 地址和 Token；接口参数通过请求头和 JSON 请求体传递。
+使用 **上传日志记录** 从可信后端调用 OpenIM 日志接口。业务方可以先在客户端采集本地日志并上传到对象存储或自己的文件服务，再通过此接口登记日志文件 URL、平台、版本和扩展信息，便于后续在后台统一检索。请先在[接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)中配置 API 地址和 Token；接口参数通过请求头和 JSON 请求体传递。
 
 ## HTTP 请求
 
 ```bash
-POST {API_ADDRESS}/object/complete_multipart_upload
+POST {API_ADDRESS}/third/logs/upload
 ```
 
 ### 请求示例
 
 ```bash
-curl --request POST "${API_ADDRESS}/object/complete_multipart_upload" \
+curl --request POST "${API_ADDRESS}/third/logs/upload" \
   --header "Content-Type: application/json; charset=utf-8" \
   --header "operationID: ${OPERATION_ID}" \
   --header "token: ${ADMIN_TOKEN}" \
-  --header "X-Request-Api: ${API_ADDRESS}" \
   --data-raw '{
-  "uploadID": "upload_id_sample",
-  "parts": [
-    "etag_part_1",
-    "etag_part_2"
+  "platform": 2,
+  "fileURLs": [
+    {
+      "filename": "openim.log",
+      "URL": "https://example.com/logs/openim.log"
+    }
   ],
-  "name": "attachments/file.zip",
-  "contentType": "application/zip",
-  "cause": "message"
+  "appFramework": "flutter",
+  "version": "1.0.0",
+  "ex": ""
 }'
 ```
 
@@ -45,31 +50,33 @@ curl --request POST "${API_ADDRESS}/object/complete_multipart_upload" \
 | operationID | 是 | string | 每次请求的唯一链路追踪 ID，建议由后端生成并写入日志。 |
 | token | 是 | string | APP 管理员 Token 或具备对应权限的用户 Token；仅保存在可信后端服务中。 |
 | Content-Type: application/json | 是 | string | 请求体为 JSON 时必须设置。 |
-| X-Request-Api | 否 | string | 生成对象访问 URL 时使用的 API 外部地址；不传时服务端根据当前请求地址推导。 |
 
 ## 请求体
 
 ```json
 {
-  "uploadID": "upload_id_sample",
-  "parts": [
-    "etag_part_1",
-    "etag_part_2"
+  "platform": 2,
+  "fileURLs": [
+    {
+      "filename": "openim.log",
+      "URL": "https://example.com/logs/openim.log"
+    }
   ],
-  "name": "attachments/file.zip",
-  "contentType": "application/zip",
-  "cause": "message"
+  "appFramework": "flutter",
+  "version": "1.0.0",
+  "ex": ""
 }
 ```
 
 | 参数名 | 是否必填 | 类型 | 说明 |
 | --- | --- | --- | --- |
-| uploadID | 是 | string | 初始化分片上传返回的上传任务 ID。 |
-| parts | 是 | array | 对象存储返回的分片完成标识列表。 |
-| name | 是 | string | 对象名称，需与初始化阶段保持一致。 |
-| contentType | 否 | string | 文件 MIME 类型。 |
-| cause | 否 | string | 业务用途或对象分组。 |
-| urlPrefix | 否 | string | 服务端会根据 `X-Request-Api` 或当前请求地址自动补齐，通常不需要在请求体中传。 |
+| platform | 是 | int | 日志来源终端平台 ID。 |
+| fileURLs | 是 | array | 已上传日志文件列表。 |
+| fileURLs[].filename | 是 | string | 日志文件名。 |
+| fileURLs[].URL | 是 | string | 日志文件可访问 URL。 |
+| appFramework | 否 | string | 客户端框架，例如 flutter、react-native。 |
+| version | 否 | string | 客户端或应用版本号。 |
+| ex | 否 | string | 扩展字段。 |
 
 ## 响应
 
@@ -79,10 +86,7 @@ curl --request POST "${API_ADDRESS}/object/complete_multipart_upload" \
 {
   "errCode": 0,
   "errMsg": "",
-  "errDlt": "",
-  "data": {
-    "url": "https://api.example.com/object/attachments/file.zip"
-  }
+  "errDlt": ""
 }
 ```
 
@@ -93,8 +97,6 @@ curl --request POST "${API_ADDRESS}/object/complete_multipart_upload" \
 | errCode | int | 业务错误码，0 表示成功。 |
 | errMsg | string | 错误简要信息，成功时通常为空。 |
 | errDlt | string | 错误详细信息，成功时通常为空。 |
-| data | object | 接口返回数据。 |
-| data.url | string | 完成上传后 OpenIM 返回的对象访问 URL。 |
 
 ### 错误
 
@@ -116,13 +118,14 @@ curl --request POST "${API_ADDRESS}/object/complete_multipart_upload" \
 
 ## 权限和限制
 
-- 完成对象存储分片上传，并写入 OpenIM 对象记录。
-- `uploadID`、`parts` 和 `name` 必填。
-- 必须先完成所有分片上传，再调用此接口。
+- 写入日志索引记录；日志文件本身应先由调用方上传到可访问地址。
+- `platform` 和 `fileURLs` 必填。
+- `fileURLs[].URL` 必须是服务端可访问的日志文件地址。
 - 所有数组型请求参数建议控制在 1000 个元素以内。
 
 ## 相关页面
 
 - [接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)
 - [认证接口](/docs/chat/platform-api/v3/auth/tokens/get-admin-token)
+- [日志概述](/docs/chat/platform-api/v3/logs/overview)
 - [错误码](/docs/chat/platform-api/v3/error-codes)

@@ -87,8 +87,13 @@ curl --request POST "${API_ADDRESS}/friend/get_black_list" \
     "blacks": [
       {
         "ownerUserID": "user_001",
-        "blackUserID": "user_002",
         "createTime": 1710000000000,
+        "blackUserInfo": {
+          "userID": "user_002",
+          "nickname": "Bob",
+          "faceURL": "https://example.com/avatar-bob.png",
+          "ex": ""
+        },
         "addSource": 1,
         "operatorUserID": "user_001",
         "ex": ""
@@ -107,8 +112,8 @@ curl --request POST "${API_ADDRESS}/friend/get_black_list" \
 | errMsg | string | 错误简要信息，成功时为空。 |
 | errDlt | errDlt | 错误详细信息，成功时为空。 |
 | data | object | 通用数据对象，具体结构见下方。 |
-| blacks | array | 黑名单信息列表。 |
-| total | int | 黑名单总数。 |
+| data.blacks | array | 黑名单信息列表，结构为[关系模块的 `BlackInfo`](/docs/chat/platform-api/v3/relation/overview#blackinfo)。 |
+| data.total | int | 黑名单总数。 |
 
 ### 错误
 

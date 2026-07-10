@@ -94,24 +94,7 @@ curl --request POST "${API_ADDRESS}/conversation/get_conversation" \
 | errMsg | string | 错误简要信息，成功时通常为空。 |
 | errDlt | string | 错误详细信息，成功时通常为空。 |
 | data | object | 接口返回数据。 |
-| data.conversation | object | 会话详情。 |
-| data.conversation.ownerUserID | string | 会话所属用户 ID。 |
-| data.conversation.conversationID | string | 会话 ID。 |
-| data.conversation.recvMsgOpt | int | 收消息选项。 |
-| data.conversation.conversationType | int | 会话类型。 |
-| data.conversation.userID | string | 单聊目标用户 ID。 |
-| data.conversation.groupID | string | 群组 ID。 |
-| data.conversation.isPinned | boolean | 是否置顶会话。 |
-| data.conversation.attachedInfo | string | 会话附加信息。 |
-| data.conversation.isPrivateChat | boolean | 是否为私聊/阅后即焚类会话。 |
-| data.conversation.groupAtType | int | 群聊 @ 状态。 |
-| data.conversation.ex | string | 会话扩展字段。 |
-| data.conversation.burnDuration | int | 阅后即焚时长，单位秒。 |
-| data.conversation.minSeq | int | 会话最小消息序列号。 |
-| data.conversation.maxSeq | int | 会话最大消息序列号。 |
-| data.conversation.msgDestructTime | int | 消息销毁时间配置。 |
-| data.conversation.latestMsgDestructTime | int | 最近消息销毁时间。 |
-| data.conversation.isMsgDestruct | boolean | 是否开启消息销毁。 |
+| data.conversation | object | 会话详情，结构为[会话模块的 `ConversationInfo`](/docs/chat/platform-api/v3/conversation/overview#conversationinfo)。 |
 
 ### 错误
 

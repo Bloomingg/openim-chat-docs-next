@@ -89,7 +89,7 @@ curl --request POST "${API_ADDRESS}/conversation/set_conversations" \
 | 参数名 | 是否必填 | 类型 | 说明 |
 | --- | --- | --- | --- |
 | userIDs | 是 | array | 需要设置会话字段的用户 ID 列表。 |
-| conversation | 是 | object | 要设置的会话字段。 |
+| conversation | 是 | object | 要设置的会话字段，结构为[会话模块的 `ConversationInfo`](/docs/chat/platform-api/v3/conversation/overview#conversationinfo)。 |
 | conversation.conversationID | 是 | string | 会话 ID。 |
 | conversation.conversationType | 是 | int | 会话类型，例如 1 单聊、3 群聊。 |
 | conversation.userID | 否 | string | 单聊目标用户 ID；单聊会话必填。 |

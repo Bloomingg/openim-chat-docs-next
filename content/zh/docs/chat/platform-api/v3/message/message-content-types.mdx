@@ -1,0 +1,177 @@
+---
+title: "消息内容类型"
+description: "说明 OpenIM Platform API 发送消息时 contentType 与 content 的对应关系。"
+product: "platform-api"
+context: "chat/platform-api/v3"
+template: "guide"
+status: "published"
+lastUpdated: "2026-07-10"
+version: "v3"
+sourcePath: "/docs/chat/platform-api/v3/message/message-content-types"
+---
+
+发送消息时，`contentType` 决定 `content` 的结构。服务端不会把文件、图片、音视频二进制内容直接写入消息体；媒体类消息通常先通过上传服务得到 URL、快照、大小、时长等信息，再把这些元数据作为消息内容发送。
+
+## 常用类型
+
+| contentType | 类型 | content 结构 | 说明 |
+| ----------- | ---- | ------------ | ---- |
+| `101` | 文本消息 | `{ "content": "hello" }` | 普通文本内容。 |
+| `102` | 图片消息 | `sourcePicture`、`bigPicture`、`snapshotPicture` | 图片资源信息，通常包含 URL、宽高和大小。 |
+| `103` | 语音消息 | `sourceUrl`、`dataSize`、`duration` | 语音文件地址、大小和时长。 |
+| `104` | 视频消息 | `videoUrl`、`videoSize`、`duration`、`snapshotUrl` | 视频文件和封面图信息。 |
+| `105` | 文件消息 | `fileName`、`fileSize`、`sourceUrl` | 普通文件名称、大小和下载地址。 |
+| `106` | 位置消息 | `description`、`longitude`、`latitude` | 地理位置描述和坐标。 |
+| `109` | 自定义消息 | `data`、`description`、`extension` | 业务自定义消息，客户端按业务协议解析。 |
+| `110` | 引用消息 | `text`、`quoteMessage` | 回复或引用另一条消息。 |
+
+## 文本消息
+
+```json
+{
+  "contentType": 101,
+  "content": {
+    "content": "hello"
+  }
+}
+```
+
+## 图片消息
+
+```json
+{
+  "contentType": 102,
+  "content": {
+    "sourcePicture": {
+      "uuid": "image_001",
+      "type": "png",
+      "size": 204800,
+      "width": 1280,
+      "height": 720,
+      "url": "https://example.com/images/source.png"
+    },
+    "bigPicture": {
+      "uuid": "image_001_big",
+      "type": "png",
+      "size": 102400,
+      "width": 640,
+      "height": 360,
+      "url": "https://example.com/images/big.png"
+    },
+    "snapshotPicture": {
+      "uuid": "image_001_snapshot",
+      "type": "png",
+      "size": 20480,
+      "width": 160,
+      "height": 90,
+      "url": "https://example.com/images/snapshot.png"
+    }
+  }
+}
+```
+
+## 语音消息
+
+```json
+{
+  "contentType": 103,
+  "content": {
+    "uuid": "audio_001",
+    "soundPath": "",
+    "sourceUrl": "https://example.com/audio/voice.m4a",
+    "dataSize": 24576,
+    "duration": 12
+  }
+}
+```
+
+## 视频消息
+
+```json
+{
+  "contentType": 104,
+  "content": {
+    "videoPath": "",
+    "videoUrl": "https://example.com/video/demo.mp4",
+    "videoType": "mp4",
+    "videoSize": 5242880,
+    "duration": 30,
+    "snapshotPath": "",
+    "snapshotUrl": "https://example.com/video/demo-cover.jpg",
+    "snapshotSize": 65536,
+    "snapshotWidth": 640,
+    "snapshotHeight": 360
+  }
+}
+```
+
+## 文件消息
+
+```json
+{
+  "contentType": 105,
+  "content": {
+    "fileName": "report.pdf",
+    "filePath": "",
+    "sourceUrl": "https://example.com/files/report.pdf",
+    "fileSize": 1048576
+  }
+}
+```
+
+## 位置消息
+
+```json
+{
+  "contentType": 106,
+  "content": {
+    "description": "OpenIM office",
+    "longitude": 113.93041,
+    "latitude": 22.53332
+  }
+}
+```
+
+## 自定义消息
+
+```json
+{
+  "contentType": 109,
+  "content": {
+    "data": "{\"type\":\"order_paid\",\"orderID\":\"order_001\"}",
+    "description": "Order paid",
+    "extension": "{\"source\":\"backend\"}"
+  }
+}
+```
+
+## 引用消息
+
+```json
+{
+  "contentType": 110,
+  "content": {
+    "text": "收到",
+    "quoteMessage": {
+      "clientMsgID": "client_msg_001",
+      "serverMsgID": "server_msg_001",
+      "sendID": "user_001",
+      "contentType": 101,
+      "content": "{\"content\":\"hello\"}"
+    }
+  }
+}
+```
+
+## 使用建议
+
+- `contentType` 和 `content` 必须匹配，否则客户端可能无法正确渲染消息。
+- 媒体类消息应先上传资源，再把资源 URL 和元数据写入 `content`。
+- 自定义消息需要在客户端和业务服务端之间约定 `data`、`description` 和 `extension` 的协议。
+- 导入历史消息时，保持原始 `contentType` 和 `content` 结构，并在发送接口中传入原始 `sendTime`。
+
+## 相关页面
+
+- [发送单条消息](/docs/chat/platform-api/v3/message/sending-messages/send-msg)
+- [批量发送消息](/docs/chat/platform-api/v3/message/sending-messages/batch-send-msg)
+- [迁移到 OpenIM](/docs/chat/platform-api/v3/migration-to-openim)

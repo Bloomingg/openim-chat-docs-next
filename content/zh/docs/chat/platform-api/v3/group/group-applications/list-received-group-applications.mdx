@@ -137,7 +137,7 @@ curl --request POST "${API_ADDRESS}/group/get_recv_group_applicationList" \
 | errDlt | string | 错误详细信息，成功时通常为空。 |
 | data | object | 接口返回数据。 |
 | data.total | int | 符合条件的申请总数。 |
-| data.groupRequests | array | 入群申请列表。 |
+| data.groupRequests | array | 入群申请列表，结构为[群组模块的 `GroupRequestInfo`](/docs/chat/platform-api/v3/group/overview#grouprequestinfo)。 |
 
 ### 错误
 
