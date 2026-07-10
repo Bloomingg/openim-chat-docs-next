@@ -45,6 +45,7 @@ const zhLabelOverrides: Record<string, string> = {
   'File upload': '文件上传',
   'Listing conversations': '查询会话',
   'Local messages': '本地消息',
+  Logging: '日志',
   'Managing conversations': '管理会话',
   'Managing groups': '管理群组',
   'Managing messages': '管理消息',

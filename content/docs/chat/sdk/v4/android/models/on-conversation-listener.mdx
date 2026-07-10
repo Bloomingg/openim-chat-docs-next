@@ -19,16 +19,16 @@ On Conversation Listener documentation for OpenIM Android SDK v3.8.3.
 
 ## Callback Methods
 
-| Method                                 | Parameters                                                                                                  | Description                                 |
-| -------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------- |
-| `onConversationChanged`                | List<[ConversationInfo](/docs/chat/sdk/v4/android/models/conversation-info)> list                           | Called when conversation data changes.      |
-| `onNewConversation`                    | List<[ConversationInfo](/docs/chat/sdk/v4/android/models/conversation-info)> list                           | Called when a new conversation is created.  |
-| `onSyncServerFailed`                   | `boolean reinstalled`                                                                                       | Called when this event is triggered.        |
-| `onSyncServerFinish`                   | `boolean reinstalled`                                                                                       | Called when this event is triggered.        |
-| `onSyncServerStart`                    | `boolean reinstalled`                                                                                       | Called when this event is triggered.        |
-| `onSyncServerProgress`                 | `long progress`                                                                                             | Called when this event is triggered.        |
-| `onTotalUnreadMessageCountChanged`     | `int totalUnreadCount`                                                                                      | Called when the total unread count changes. |
-| `onConversationUserInputStatusChanged` | String change（JSON，对应 [InputStatesChangedData](/docs/chat/sdk/v4/android/models/input-states-changed-data)） | Called when this event is triggered.        |
+| Method                                 | Parameters                                                                                                 | Description                                 |
+| -------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ------------------------------------------- |
+| `onConversationChanged`                | List<[ConversationInfo](/docs/chat/sdk/v4/android/models/conversation-info)> list                          | Called when conversation data changes.      |
+| `onNewConversation`                    | List<[ConversationInfo](/docs/chat/sdk/v4/android/models/conversation-info)> list                          | Called when a new conversation is created.  |
+| `onSyncServerFailed`                   | `boolean reinstalled`                                                                                      | Called when this event is triggered.        |
+| `onSyncServerFinish`                   | `boolean reinstalled`                                                                                      | Called when this event is triggered.        |
+| `onSyncServerStart`                    | `boolean reinstalled`                                                                                      | Called when this event is triggered.        |
+| `onSyncServerProgress`                 | `long progress`                                                                                            | Called when this event is triggered.        |
+| `onTotalUnreadMessageCountChanged`     | `int totalUnreadCount`                                                                                     | Called when the total unread count changes. |
+| `onConversationUserInputStatusChanged` | String change (JSON); [InputStatesChangedData](/docs/chat/sdk/v4/android/models/input-states-changed-data) | Called when this event is triggered.        |
 
 ## Related Types
 
