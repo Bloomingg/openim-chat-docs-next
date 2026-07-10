@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { CSSProperties } from 'react';
+import { SidebarGroup } from '@/src/components/docs/sidebar-group';
 import type { NavNode } from '@/src/types/docs';
 import { nodeContainsPath } from '@/src/lib/navigation';
 import type { Locale } from '@/src/lib/i18n';
@@ -10,10 +11,12 @@ export function SidebarNav({
   nodes,
   currentPath,
   locale = 'en',
+  stateKey = 'default',
 }: {
   nodes: NavNode[];
   currentPath: string;
   locale?: Locale;
+  stateKey?: string;
 }) {
   return (
     <nav aria-label="Documentation navigation" className="sidebar-tree">
@@ -21,9 +24,10 @@ export function SidebarNav({
         <SidebarNode
           currentPath={currentPath}
           depth={0}
-          key={node.id}
+          key={`${stateKey}:${node.id}`}
           locale={locale}
           node={node}
+          stateKey={stateKey}
         />
       ))}
     </nav>
@@ -39,11 +43,13 @@ function SidebarNode({
   currentPath,
   depth,
   locale,
+  stateKey,
 }: {
   node: NavNode;
   currentPath: string;
   depth: number;
   locale: Locale;
+  stateKey: string;
 }) {
   const active = node.href === currentPath;
   const containsActive = nodeContainsPath(node, currentPath);
@@ -65,33 +71,24 @@ function SidebarNode({
   }
 
   return (
-    <details
-      className="sidebar-group"
-      open={containsActive || hrefPath(node.href) === currentPath || depth === 0}
+    <SidebarGroup
+      active={active}
+      activeOpen={containsActive || hrefPath(node.href) === currentPath}
+      depth={depth}
+      href={node.href ? toLocalizedPath(node.href, locale) : undefined}
+      initialOpen={containsActive || hrefPath(node.href) === currentPath || depth === 0}
+      title={title}
     >
-      <summary style={{ '--nav-depth': depth } as CSSProperties}>
-        {node.href ? (
-          <Link
-            aria-current={active ? 'page' : undefined}
-            href={toLocalizedPath(node.href, locale)}
-          >
-            {title}
-          </Link>
-        ) : (
-          <span>{title}</span>
-        )}
-      </summary>
-      <div>
-        {node.children.map((child) => (
-          <SidebarNode
-            currentPath={currentPath}
-            depth={depth + 1}
-            key={child.id}
-            locale={locale}
-            node={child}
-          />
-        ))}
-      </div>
-    </details>
+      {node.children.map((child) => (
+        <SidebarNode
+          currentPath={currentPath}
+          depth={depth + 1}
+          key={`${stateKey}:${child.id}`}
+          locale={locale}
+          node={child}
+          stateKey={stateKey}
+        />
+      ))}
+    </SidebarGroup>
   );
 }

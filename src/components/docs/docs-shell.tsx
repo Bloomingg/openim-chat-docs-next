@@ -44,7 +44,12 @@ export function DocsShell({
         <PersistentSidebar scrollKey={`${locale}:${context.key}`}>
           {sidebarIntro}
           <ContextPicker currentKey={context.key} locale={locale} options={contextOptions} />
-          <SidebarNav currentPath={currentPath} locale={locale} nodes={context.nodes} />
+          <SidebarNav
+            currentPath={currentPath}
+            locale={locale}
+            nodes={context.nodes}
+            stateKey={`${locale}:${context.key}`}
+          />
         </PersistentSidebar>
         <article className="docs-article">{children}</article>
         <aside className="docs-toc">
