@@ -13,10 +13,6 @@ sourcePath: '/docs/chat/sdk/v4/android/message/creating-messages/create-merger-m
 
 创建合并转发消息。适合转发一组聊天记录，并展示标题和摘要。
 
-## 功能介绍
-
-创建合并转发消息。适合转发一组聊天记录，并展示标题和摘要。
-
 创建消息类方法同步返回消息 JSON；发送、查询、删除、已读和本地写入方法通过回调返回。消息与会话事件分别通过消息监听器和会话监听器接收。
 
 ## Core Binding 方法
@@ -37,11 +33,11 @@ public Message createMergerMessage(List<Message> messageList, String title, List
 
 ## 输入参数
 
-| 参数名称    | 参数类型                                                          | 是否必填 | 描述         |
-| ----------- | ----------------------------------------------------------------- | -------- | ------------ |
-| messageList | `List<Message>` | 是       | 消息列表     |
-| title       | String                                                            | 是       | 标题         |
-| summaryList | `List<String>` | 是       | 消息摘要列表 |
+| 参数名称    | 参数类型                                                        | 是否必填 | 描述         |
+| ----------- | --------------------------------------------------------------- | -------- | ------------ |
+| messageList | `List<`[`Message`](/docs/chat/sdk/v4/android/models/message)`>` | 是       | 消息列表     |
+| title       | String                                                          | 是       | 标题         |
+| summaryList | `List<String>`                                                  | 是       | 消息摘要列表 |
 
 ## 返回结果
 

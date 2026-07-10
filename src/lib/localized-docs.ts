@@ -45,6 +45,7 @@ const zhLabelOverrides: Record<string, string> = {
   'File upload': '文件上传',
   'Listing conversations': '查询会话',
   'Local messages': '本地消息',
+  Logging: '日志',
   'Managing conversations': '管理会话',
   'Managing groups': '管理群组',
   'Managing messages': '管理消息',
@@ -91,16 +92,13 @@ export function localizeRouteRecord(route: RouteRecord, locale: Locale): RouteRe
 
 export function localizeNavNodeTitle(node: NavNode, locale: Locale): string {
   const isOverviewNode = /^overview(?:-|$)/.test(node.segment);
-  const isNestedOverview = node.segment === 'overview' && node.id.includes('/');
   const isAndroidSdkOverview =
     node.href?.startsWith('/docs/chat/sdk/v4/android/') && isOverviewNode;
   const isPlatformApiRootOverview = node.href === '/docs/chat/platform-api/v3/overview';
-  const isPlatformApiNode = node.href?.startsWith('/docs/chat/platform-api/v3/');
+  if (locale !== 'zh') return isOverviewNode ? 'Overview' : node.title;
   if (node.title === '概述') return '概述';
   if (isAndroidSdkOverview) return '概述';
-  if (locale !== 'zh') return isOverviewNode ? 'Overview' : node.title;
   if (isPlatformApiRootOverview) return '概述';
-  if (isNestedOverview && isPlatformApiNode) return node.title;
   if (isOverviewNode) return '概述';
   if (node.href)
     return getLocalizedDocTitle(node.href, locale) ?? localizeDocLabel(node.title, locale);
