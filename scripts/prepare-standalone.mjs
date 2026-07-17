@@ -1,6 +1,11 @@
 import { cp, mkdir, rm } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
+if (process.env.VERCEL) {
+  console.log('Skipping standalone prepare on Vercel.');
+  process.exit(0);
+}
+
 const root = process.cwd();
 const standalone = resolve(root, '.next/standalone');
 await mkdir(resolve(standalone, '.next'), { recursive: true });
