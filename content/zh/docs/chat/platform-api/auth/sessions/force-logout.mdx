@@ -1,10 +1,10 @@
 ---
 title: "强制用户下线"
 description: "OpenIM 认证 REST API：强制用户下线。"
-sourcePath: "/docs/chat/platform-api/v3/auth/sessions/force-logout"
+sourcePath: "/platform-api/auth/sessions/force-logout"
 ---
 
-使用 **强制用户下线** 从可信后端调用 OpenIM 认证 REST 接口。强制指定用户从某个终端退出登录，客户端 SDK 会收到被踢下线回调。 请先在[接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)中配置 API 地址；管理员 Token 只能保存在可信后端服务中，不能下发到客户端或写入前端代码。
+使用 **强制用户下线** 从可信后端调用 OpenIM 认证 REST 接口。强制指定用户从某个终端退出登录，客户端 SDK 会收到被踢下线回调。 请先在[接入准备](/platform-api/prepare-to-use-api)中配置 API 地址；管理员 Token 只能保存在可信后端服务中，不能下发到客户端或写入前端代码。
 
 ## HTTP 请求
 
@@ -73,7 +73,7 @@ curl --request POST "${API_ADDRESS}/auth/force_logout" \
 
 ### 错误
 
-如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/docs/chat/platform-api/v3/error-codes)。
+如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/platform-api/error-codes)。
 
 ```json
 {
@@ -97,6 +97,6 @@ curl --request POST "${API_ADDRESS}/auth/force_logout" \
 
 ## 相关页面
 
-- [接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)
-- [获取用户详情](/docs/chat/platform-api/v3/user/listing-users/get-a-user)
-- [错误码](/docs/chat/platform-api/v3/error-codes)
+- [接入准备](/platform-api/prepare-to-use-api)
+- [获取用户详情](/platform-api/user/listing-users/get-a-user)
+- [错误码](/platform-api/error-codes)

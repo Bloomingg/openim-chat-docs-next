@@ -1,10 +1,10 @@
 ---
 title: "获取群组详情"
 description: "OpenIM 群组 REST API：获取群组详情。"
-sourcePath: "/docs/chat/platform-api/v3/group/managing-groups/get-groups-info"
+sourcePath: "/platform-api/group/managing-groups/get-groups-info"
 ---
 
-使用 **获取群组详情** 从可信后端调用 OpenIM 群组 REST 接口。批量获取指定群组的详细资料。 请先在[接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)中配置 API 地址和管理员 Token；接口参数通过请求头和 JSON 请求体传递。
+使用 **获取群组详情** 从可信后端调用 OpenIM 群组 REST 接口。批量获取指定群组的详细资料。 请先在[接入准备](/platform-api/prepare-to-use-api)中配置 API 地址和管理员 Token；接口参数通过请求头和 JSON 请求体传递。
 
 ## HTTP 请求
 
@@ -99,11 +99,11 @@ curl --request POST "${API_ADDRESS}/group/get_groups_info" \
 | errMsg | string | 错误简要信息，成功时通常为空。 |
 | errDlt | string | 错误详细信息，成功时通常为空。 |
 | data | object | 接口返回数据。 |
-| data.groupInfos | array | 群资料列表，结构为[群组模块的 `GroupInfo`](/docs/chat/platform-api/v3/group/overview#groupinfo)。 |
+| data.groupInfos | array | 群资料列表，结构为[群组模块的 `GroupInfo`](/platform-api/group/overview#groupinfo)。 |
 
 ### 错误
 
-如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/docs/chat/platform-api/v3/error-codes)。
+如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/platform-api/error-codes)。
 
 ```json
 {
@@ -127,7 +127,7 @@ curl --request POST "${API_ADDRESS}/group/get_groups_info" \
 
 ## 相关页面
 
-- [接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)
-- [群组接口](/docs/chat/platform-api/v3/group/managing-groups/create-group)
-- [禁言群成员](/docs/chat/platform-api/v3/group/group-moderation/mute-group-member)
-- [错误码](/docs/chat/platform-api/v3/error-codes)
+- [接入准备](/platform-api/prepare-to-use-api)
+- [群组接口](/platform-api/group/managing-groups/create-group)
+- [禁言群成员](/platform-api/group/group-moderation/mute-group-member)
+- [错误码](/platform-api/error-codes)

@@ -2,12 +2,12 @@
 title: "创建通知账号"
 description: "OpenIM Platform API 中文参考：创建通知账号。说明系统通知发送账号的创建参数和返回结构。"
 product: "platform-api"
-context: "chat/platform-api/v3"
+context: "chat/platform-api"
 template: "api"
 status: "published"
 lastUpdated: "2026-07-06"
 version: "v3"
-sourcePath: "/docs/chat/platform-api/v3/user/notification-accounts/add-notification-account"
+sourcePath: "/platform-api/user/notification-accounts/add-notification-account"
 ---
 
 使用 **创建通知账号** 从可信后端创建可用于发送系统通知或业务通知的 OpenIM 账号。通知账号本质上也是用户账号，但需要设置符合服务端要求的 `appMangerLevel`。
@@ -50,7 +50,7 @@ curl --request POST "${API_ADDRESS}/user/add_notification_account" \
 | 请求头 | 示例值 | 是否必填 | 类型 | 说明 |
 | :--- | :--- | :--- | :--- | :--- |
 | operationID | 1646445464564 | 必填 | string | 用于全局链路追踪，建议每个请求独立生成。 |
-| token | eyJhbxxxx3Xs | 必填 | string | [管理员 token](/docs/chat/platform-api/v3/prepare-to-use-api)。 |
+| token | eyJhbxxxx3Xs | 必填 | string | [管理员 token](/platform-api/prepare-to-use-api)。 |
 
 ### 请求体参数
 
@@ -105,7 +105,7 @@ curl --request POST "${API_ADDRESS}/user/add_notification_account" \
 
 ### 错误
 
-如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/docs/chat/platform-api/v3/error-codes)。
+如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/platform-api/error-codes)。
 
 ```json
 {

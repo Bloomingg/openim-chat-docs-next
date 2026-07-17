@@ -1,10 +1,10 @@
 ---
 title: "邀请用户进群"
 description: "OpenIM 群组 REST API：邀请用户进群。"
-sourcePath: "/docs/chat/platform-api/v3/group/group-members/invite-users-to-group"
+sourcePath: "/platform-api/group/group-members/invite-users-to-group"
 ---
 
-使用 **邀请用户进群** 从可信后端调用 OpenIM 群组 REST 接口。邀请一个或多个用户加入指定群组。 请先在[接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)中配置 API 地址和管理员 Token；接口参数通过请求头和 JSON 请求体传递。
+使用 **邀请用户进群** 从可信后端调用 OpenIM 群组 REST 接口。邀请一个或多个用户加入指定群组。 请先在[接入准备](/platform-api/prepare-to-use-api)中配置 API 地址和管理员 Token；接口参数通过请求头和 JSON 请求体传递。
 
 ## HTTP 请求
 
@@ -87,7 +87,7 @@ curl --request POST "${API_ADDRESS}/group/invite_user_to_group" \
 
 ### 错误
 
-如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/docs/chat/platform-api/v3/error-codes)。
+如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/platform-api/error-codes)。
 
 ```json
 {
@@ -112,7 +112,7 @@ curl --request POST "${API_ADDRESS}/group/invite_user_to_group" \
 
 ## 相关页面
 
-- [接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)
-- [群组接口](/docs/chat/platform-api/v3/group/managing-groups/create-group)
-- [禁言群成员](/docs/chat/platform-api/v3/group/group-moderation/mute-group-member)
-- [错误码](/docs/chat/platform-api/v3/error-codes)
+- [接入准备](/platform-api/prepare-to-use-api)
+- [群组接口](/platform-api/group/managing-groups/create-group)
+- [禁言群成员](/platform-api/group/group-moderation/mute-group-member)
+- [错误码](/platform-api/error-codes)

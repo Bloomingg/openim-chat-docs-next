@@ -1,10 +1,10 @@
 ---
 title: "创建群组"
 description: "OpenIM 群组 REST API：创建群组。"
-sourcePath: "/docs/chat/platform-api/v3/group/managing-groups/create-group"
+sourcePath: "/platform-api/group/managing-groups/create-group"
 ---
 
-使用 **创建群组** 从可信后端调用 OpenIM 群组 REST 接口。创建一个 OpenIM 群组，并设置群主、初始成员、管理员和群资料。 请先在[接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)中配置 API 地址和管理员 Token；接口参数通过请求头和 JSON 请求体传递。
+使用 **创建群组** 从可信后端调用 OpenIM 群组 REST 接口。创建一个 OpenIM 群组，并设置群主、初始成员、管理员和群资料。 请先在[接入准备](/platform-api/prepare-to-use-api)中配置 API 地址和管理员 Token；接口参数通过请求头和 JSON 请求体传递。
 
 ## HTTP 请求
 
@@ -91,7 +91,7 @@ curl --request POST "${API_ADDRESS}/group/create_group" \
 | memberUserIDs | 否 | array | 初始普通成员用户 ID 列表，最多 1000 个。 |
 | adminUserIDs | 否 | array | 初始管理员用户 ID 列表。 |
 | ownerUserID | 是 | string | 群主用户 ID。 |
-| groupInfo | 是 | object | 群资料对象，结构为[群组模块的 `GroupInfo`](/docs/chat/platform-api/v3/group/overview#groupinfo)。 |
+| groupInfo | 是 | object | 群资料对象，结构为[群组模块的 `GroupInfo`](/platform-api/group/overview#groupinfo)。 |
 | groupInfo.groupID | 否 | string | 群 ID；不传时由服务端生成。 |
 | groupInfo.groupName | 是 | string | 群名称。 |
 | groupInfo.notification | 否 | string | 群公告。 |
@@ -145,11 +145,11 @@ curl --request POST "${API_ADDRESS}/group/create_group" \
 | errMsg | string | 错误简要信息，成功时通常为空。 |
 | errDlt | string | 错误详细信息，成功时通常为空。 |
 | data | object | 接口返回数据。 |
-| data.groupInfo | object | 创建后的群资料，结构为[群组模块的 `GroupInfo`](/docs/chat/platform-api/v3/group/overview#groupinfo)。 |
+| data.groupInfo | object | 创建后的群资料，结构为[群组模块的 `GroupInfo`](/platform-api/group/overview#groupinfo)。 |
 
 ### 错误
 
-如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/docs/chat/platform-api/v3/error-codes)。
+如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/platform-api/error-codes)。
 
 ```json
 {
@@ -175,7 +175,7 @@ curl --request POST "${API_ADDRESS}/group/create_group" \
 
 ## 相关页面
 
-- [接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)
-- [群组接口](/docs/chat/platform-api/v3/group/managing-groups/create-group)
-- [禁言群成员](/docs/chat/platform-api/v3/group/group-moderation/mute-group-member)
-- [错误码](/docs/chat/platform-api/v3/error-codes)
+- [接入准备](/platform-api/prepare-to-use-api)
+- [群组接口](/platform-api/group/managing-groups/create-group)
+- [禁言群成员](/platform-api/group/group-moderation/mute-group-member)
+- [错误码](/platform-api/error-codes)

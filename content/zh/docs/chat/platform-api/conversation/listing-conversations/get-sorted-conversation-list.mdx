@@ -1,10 +1,10 @@
 ---
 title: "获取排序会话列表"
 description: "OpenIM 会话 REST API：获取排序会话列表。"
-sourcePath: "/docs/chat/platform-api/v3/conversation/listing-conversations/get-sorted-conversation-list"
+sourcePath: "/platform-api/conversation/listing-conversations/get-sorted-conversation-list"
 ---
 
-使用 **获取排序会话列表** 从可信后端调用 OpenIM 会话 REST 接口。按置顶状态和最新消息时间分页获取用户会话列表，并返回未读数和最新消息摘要。 请先在[接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)中配置 API 地址和管理员 Token；接口参数通过请求头和 JSON 请求体传递。
+使用 **获取排序会话列表** 从可信后端调用 OpenIM 会话 REST 接口。按置顶状态和最新消息时间分页获取用户会话列表，并返回未读数和最新消息摘要。 请先在[接入准备](/platform-api/prepare-to-use-api)中配置 API 地址和管理员 Token；接口参数通过请求头和 JSON 请求体传递。
 
 ## HTTP 请求
 
@@ -125,7 +125,7 @@ curl --request POST "${API_ADDRESS}/conversation/get_sorted_conversation_list" \
 
 ### 错误
 
-如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/docs/chat/platform-api/v3/error-codes)。
+如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/platform-api/error-codes)。
 
 ```json
 {
@@ -150,7 +150,7 @@ curl --request POST "${API_ADDRESS}/conversation/get_sorted_conversation_list" \
 
 ## 相关页面
 
-- [接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)
-- [发送消息](/docs/chat/platform-api/v3/message/sending-messages/send-msg)
-- [群组概览](/docs/chat/platform-api/v3/group/managing-groups/create-group)
-- [错误码](/docs/chat/platform-api/v3/error-codes)
+- [接入准备](/platform-api/prepare-to-use-api)
+- [发送消息](/platform-api/message/sending-messages/send-msg)
+- [群组概览](/platform-api/group/managing-groups/create-group)
+- [错误码](/platform-api/error-codes)

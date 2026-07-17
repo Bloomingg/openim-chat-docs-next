@@ -2,12 +2,12 @@
 title: "查询用户在线状态"
 description: "OpenIM Platform API 中文参考：查询用户在线状态。说明如何批量获取用户在线状态和终端连接信息。"
 product: "platform-api"
-context: "chat/platform-api/v3"
+context: "chat/platform-api"
 template: "api"
 status: "published"
 lastUpdated: "2026-07-06"
 version: "v3"
-sourcePath: "/docs/chat/platform-api/v3/user/presence/get-users-online-status"
+sourcePath: "/platform-api/user/presence/get-users-online-status"
 ---
 
 使用 **查询用户在线状态** 从可信后端批量获取用户当前是否在线，以及在线终端的连接信息。接口会聚合所有消息网关上的长连接状态；未在线的用户也会出现在响应中，`status` 为 `0`。
@@ -47,7 +47,7 @@ curl --request POST "${API_ADDRESS}/user/get_users_online_status" \
 | 请求头 | 示例值 | 是否必填 | 类型 | 说明 |
 | :--- | :--- | :--- | :--- | :--- |
 | operationID | 1646445464564 | 必填 | string | 用于全局链路追踪，建议每个请求独立生成。 |
-| token | eyJhbxxxx3Xs | 必填 | string | [管理员 token](/docs/chat/platform-api/v3/prepare-to-use-api)。 |
+| token | eyJhbxxxx3Xs | 必填 | string | [管理员 token](/platform-api/prepare-to-use-api)。 |
 
 ### 请求体参数
 
@@ -117,7 +117,7 @@ curl --request POST "${API_ADDRESS}/user/get_users_online_status" \
 
 ### 错误
 
-如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/docs/chat/platform-api/v3/error-codes)。
+如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/platform-api/error-codes)。
 
 ```json
 {

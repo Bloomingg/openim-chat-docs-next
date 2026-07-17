@@ -2,17 +2,17 @@
 title: "发送业务通知"
 description: "OpenIM 消息 REST API：发送业务通知。"
 product: "platform-api"
-context: "chat/platform-api/v3"
+context: "chat/platform-api"
 template: "api"
 status: "published"
 lastUpdated: "2026-07-10"
 version: "v3"
-sourcePath: "/docs/chat/platform-api/v3/message/sending-messages/send-business-notification"
+sourcePath: "/platform-api/message/sending-messages/send-business-notification"
 ---
 
 使用 **发送业务通知** 从业务服务端调用 OpenIM 消息 REST 接口，向指定用户发送一条自定义业务通知。客户端通过业务通知回调接收 `key` 和 `data`，再按业务协议处理。
 
-请先在[接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)中配置 API 地址和 Token；接口参数通过请求头和 JSON 请求体传递。
+请先在[接入准备](/platform-api/prepare-to-use-api)中配置 API 地址和 Token；接口参数通过请求头和 JSON 请求体传递。
 
 ## HTTP 请求
 
@@ -100,11 +100,11 @@ curl --request POST "${API_ADDRESS}/msg/send_business_notification" \
 
 ## 使用建议
 
-业务通知适合承载订单状态、审核结果、系统事件等轻量业务信号。如果通知需要在聊天窗口中作为普通消息展示，优先使用[发送单条消息](/docs/chat/platform-api/v3/message/sending-messages/send-msg)并选择合适的 `contentType`。
+业务通知适合承载订单状态、审核结果、系统事件等轻量业务信号。如果通知需要在聊天窗口中作为普通消息展示，优先使用[发送单条消息](/platform-api/message/sending-messages/send-msg)并选择合适的 `contentType`。
 
 ### 错误
 
-如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/docs/chat/platform-api/v3/error-codes)。
+如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/platform-api/error-codes)。
 
 ```json
 {
@@ -129,7 +129,7 @@ curl --request POST "${API_ADDRESS}/msg/send_business_notification" \
 
 ## 相关页面
 
-- [接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)
-- [消息概览](/docs/chat/platform-api/v3/message/overview)
-- [发送单条消息](/docs/chat/platform-api/v3/message/sending-messages/send-msg)
-- [错误码](/docs/chat/platform-api/v3/error-codes)
+- [接入准备](/platform-api/prepare-to-use-api)
+- [消息概览](/platform-api/message/overview)
+- [发送单条消息](/platform-api/message/sending-messages/send-msg)
+- [错误码](/platform-api/error-codes)

@@ -2,17 +2,17 @@
 title: "发送单条消息"
 description: "OpenIM 消息 REST API：由服务端向单聊或群聊发送一条消息。"
 product: "platform-api"
-context: "chat/platform-api/v3"
+context: "chat/platform-api"
 template: "api"
 status: "published"
 lastUpdated: "2026-07-10"
 version: "v3"
-sourcePath: "/docs/chat/platform-api/v3/message/sending-messages/send-msg"
+sourcePath: "/platform-api/message/sending-messages/send-msg"
 ---
 
 使用 **发送单条消息** 从业务服务端调用 OpenIM 消息 REST 接口，由 APP 管理员模拟指定用户或系统账号向单聊或群聊写入一条消息。这个接口适合系统消息、后台运营消息、客服代发，以及历史消息迁移导入。
 
-请先在[接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)中配置 API 地址和 Token；接口参数通过请求头和 JSON 请求体传递。
+请先在[接入准备](/platform-api/prepare-to-use-api)中配置 API 地址和 Token；接口参数通过请求头和 JSON 请求体传递。
 
 ## HTTP 请求
 
@@ -106,7 +106,7 @@ curl --request POST "${API_ADDRESS}/msg/send_msg" \
 | senderNickname | 否 | string | 发送者昵称。 |
 | senderFaceURL | 否 | string | 发送者头像 URL。 |
 | senderPlatformID | 否 | int | 发送者终端平台 ID；管理端模拟发送通常传 10。 |
-| content | 是 | object | 消息内容对象，结构由 `contentType` 决定。见[消息内容类型](/docs/chat/platform-api/v3/message/message-content-types)。 |
+| content | 是 | object | 消息内容对象，结构由 `contentType` 决定。见[消息内容类型](/platform-api/message/message-content-types)。 |
 | content.content | 条件 | string | 文本消息内容；`contentType=101` 时使用。 |
 | contentType | 是 | int | 消息内容类型，例如 `101` 表示文本消息。 |
 | sessionType | 是 | int | 会话类型，例如 `1` 单聊、`3` 群聊。 |
@@ -170,7 +170,7 @@ curl --request POST "${API_ADDRESS}/msg/send_msg" \
 
 ### 错误
 
-如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/docs/chat/platform-api/v3/error-codes)。
+如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/platform-api/error-codes)。
 
 ```json
 {
@@ -196,8 +196,8 @@ curl --request POST "${API_ADDRESS}/msg/send_msg" \
 
 ## 相关页面
 
-- [接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)
-- [消息概览](/docs/chat/platform-api/v3/message/overview)
-- [消息内容类型](/docs/chat/platform-api/v3/message/message-content-types)
-- [会话列表](/docs/chat/platform-api/v3/conversation/listing-conversations/get-conversations)
-- [错误码](/docs/chat/platform-api/v3/error-codes)
+- [接入准备](/platform-api/prepare-to-use-api)
+- [消息概览](/platform-api/message/overview)
+- [消息内容类型](/platform-api/message/message-content-types)
+- [会话列表](/platform-api/conversation/listing-conversations/get-conversations)
+- [错误码](/platform-api/error-codes)

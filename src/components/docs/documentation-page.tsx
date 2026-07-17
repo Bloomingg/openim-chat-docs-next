@@ -188,7 +188,7 @@ export async function renderDocumentationPage(
   const showVersion = shouldShowVersion(effectiveRoute.version, routeVersions);
   const breadcrumbs = localizeBreadcrumbs(getBreadcrumbs(effectiveRoute, { showVersion }), locale);
   const platformApiServerVersion =
-    effectiveRoute.path === '/docs/chat/platform-api/v3/overview'
+    effectiveRoute.path === '/platform-api/overview'
       ? await getOpenIMServerVersionLink()
       : undefined;
   const tocFooter = platformApiServerVersion ? (

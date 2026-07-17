@@ -1,10 +1,10 @@
 ---
 title: "查询收到的入群申请"
 description: "OpenIM 群组 REST API：查询收到的入群申请。"
-sourcePath: "/docs/chat/platform-api/v3/group/group-applications/list-received-group-applications"
+sourcePath: "/platform-api/group/group-applications/list-received-group-applications"
 ---
 
-使用 **查询收到的入群申请** 从可信后端调用 OpenIM 群组 REST 接口。群主或管理员分页查询自己管理范围内收到的入群申请。 请先在[接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)中配置 API 地址和管理员 Token；接口参数通过请求头和 JSON 请求体传递。
+使用 **查询收到的入群申请** 从可信后端调用 OpenIM 群组 REST 接口。群主或管理员分页查询自己管理范围内收到的入群申请。 请先在[接入准备](/platform-api/prepare-to-use-api)中配置 API 地址和管理员 Token；接口参数通过请求头和 JSON 请求体传递。
 
 ## HTTP 请求
 
@@ -137,11 +137,11 @@ curl --request POST "${API_ADDRESS}/group/get_recv_group_applicationList" \
 | errDlt | string | 错误详细信息，成功时通常为空。 |
 | data | object | 接口返回数据。 |
 | data.total | int | 符合条件的申请总数。 |
-| data.groupRequests | array | 入群申请列表，结构为[群组模块的 `GroupRequestInfo`](/docs/chat/platform-api/v3/group/overview#grouprequestinfo)。 |
+| data.groupRequests | array | 入群申请列表，结构为[群组模块的 `GroupRequestInfo`](/platform-api/group/overview#grouprequestinfo)。 |
 
 ### 错误
 
-如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/docs/chat/platform-api/v3/error-codes)。
+如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/platform-api/error-codes)。
 
 ```json
 {
@@ -166,7 +166,7 @@ curl --request POST "${API_ADDRESS}/group/get_recv_group_applicationList" \
 
 ## 相关页面
 
-- [接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)
-- [群组接口](/docs/chat/platform-api/v3/group/managing-groups/create-group)
-- [禁言群成员](/docs/chat/platform-api/v3/group/group-moderation/mute-group-member)
-- [错误码](/docs/chat/platform-api/v3/error-codes)
+- [接入准备](/platform-api/prepare-to-use-api)
+- [群组接口](/platform-api/group/managing-groups/create-group)
+- [禁言群成员](/platform-api/group/group-moderation/mute-group-member)
+- [错误码](/platform-api/error-codes)

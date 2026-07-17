@@ -2,12 +2,12 @@
 title: "导入好友"
 description: "OpenIM Platform API 中文参考：导入好友。说明如何批量导入好友关系。"
 product: "platform-api"
-context: "chat/platform-api/v3"
+context: "chat/platform-api"
 template: "api"
 status: "published"
 lastUpdated: "2026-07-06"
 version: "v3"
-sourcePath: "/docs/chat/platform-api/v3/relation/managing-friends/import-friends"
+sourcePath: "/platform-api/relation/managing-friends/import-friends"
 ---
 
 使用 **导入好友** 从可信后端批量建立好友关系，适合迁移或后台初始化好友数据。
@@ -51,7 +51,7 @@ curl --request POST "${API_ADDRESS}/friend/import_friend" \
 | 请求头 | 示例值 | 是否必填 | 类型 | 说明 |
 | :--- | :--- | :--- | :--- | :--- |
 | operationID | 1646445464564 | 必填 | string | 用于全局链路追踪，建议每个请求独立生成。 |
-| token | eyJhbxxxx3Xs | 必填 | string | [管理员 token](/docs/chat/platform-api/v3/prepare-to-use-api)。 |
+| token | eyJhbxxxx3Xs | 必填 | string | [管理员 token](/platform-api/prepare-to-use-api)。 |
 
 ### 请求体参数
 
@@ -97,7 +97,7 @@ curl --request POST "${API_ADDRESS}/friend/import_friend" \
 
 ### 错误
 
-如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/docs/chat/platform-api/v3/error-codes)。
+如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/platform-api/error-codes)。
 
 ```json
 {

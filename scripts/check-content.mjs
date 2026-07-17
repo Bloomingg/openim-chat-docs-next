@@ -63,16 +63,6 @@ const platformApiPublishedOnlyPatterns = [
   /to call the documented OpenIM REST endpoint/i,
   /This capability is available through the referenced OpenIM endpoint/i,
 ];
-const platformApiLegacyHeadingPatterns = [
-  /^## OpenIM availability$/m,
-  /^## Endpoint$/m,
-  /^## Authentication$/m,
-  /^## Request$/m,
-  /^## Response$/m,
-  /^## Verify$/m,
-  /^## Official OpenIM references$/m,
-  /^### Header$/m,
-];
 const platformApiZhLegacyPatterns = [
   /^## Overview$/m,
   /^## HTTP request$/m,
@@ -103,6 +93,7 @@ const platformApiUncoveredPatterns = [
   /Available through OpenIM primitives/,
   /Not exposed as a Platform API endpoint/,
 ];
+const platformApiEnglishRequiredApiHeadings = ['## HTTP request', '## Request body', '## Response'];
 const platformApiZhRequiredApiHeadings = ['## HTTP 请求', '## 响应'];
 const platformApiForbiddenApiHeadings = [
   /^### 路径参数$/m,
@@ -112,33 +103,115 @@ const platformApiForbiddenApiHeadings = [
   /^## OpenIM 实现说明$/m,
   /^## 资源$/m,
 ];
-const platformApiSendbirdHeadingExpectations = new Map([
+const platformApiListUsersPath = '/platform-api/user/listing-users/list-users';
+const platformApiListUsersExpectedSnippets = [
+  'POST {API_ADDRESS}/user/get_users',
+  'curl --request POST',
+  'process.env.OPENIM_API_ADDRESS',
+  'http.NewRequest',
+  '安全提示',
+  '200 OK',
+  'errCode === 0',
+  'pagination.pageNumber',
+  '### 分页读取建议',
+  '常见错误场景',
+  '"showNumber": 100',
+];
+const platformApiEnglishListUsersExpectedSnippets = [
+  'POST {API_ADDRESS}/user/get_users',
+  'curl --request POST',
+  'Keep administrator tokens on trusted backend services only',
+  '200 OK',
+  'errCode === 0',
+  'pagination.pageNumber',
+  '"showNumber": 100',
+  'Authentication failed',
+];
+const platformApiListUsersForbiddenSnippets = ['123.321.1.1', '203.56.175.233'];
+const platformApiEnglishOverviewHeadingExpectations = new Map([
+  ['/platform-api/overview', ['## Common tasks', '## Recommended modules', '## Resources']],
   [
-    '/platform-api/user/listing-users/list-users',
+    '/platform-api/prepare-to-use-api',
+    ['## Base URL', '## Headers', '## Authentication', '## Request body'],
+  ],
+  [
+    '/platform-api/user/overview',
+    ['## Capability scope', '## Common APIs', '## Integration advice', '## Related pages'],
+  ],
+  [
+    '/platform-api/relation/overview',
+    ['## Capability scope', '## Common APIs', '## Integration advice', '## Related pages'],
+  ],
+  [
+    '/platform-api/auth/overview',
+    ['## Capability scope', '## Common APIs', '## Integration advice', '## Related pages'],
+  ],
+  [
+    '/platform-api/group/overview',
+    ['## Capability scope', '## Common APIs', '## Integration advice', '## Related pages'],
+  ],
+  [
+    '/platform-api/conversation/overview',
+    ['## Capability scope', '## Common APIs', '## Integration advice', '## Related pages'],
+  ],
+  [
+    '/platform-api/migration-to-openim',
+    ['## Capability scope', '## Common APIs', '## Integration advice', '## Related pages'],
+  ],
+  [
+    '/platform-api/error-codes',
     [
-      '## HTTP 请求',
-      '### 请求示例',
-      '## 参数',
-      '### 请求头',
-      '### 请求体参数',
-      '## 响应',
-      '#### 响应属性列表',
-      '#### users[] 属性',
-      '### 分页读取建议',
-      '### 错误',
+      '## Response structure',
+      '## Error code ranges',
+      '## Handling flow',
+      '## Server error codes',
+      '## Troubleshooting',
     ],
   ],
 ]);
-const platformApiOverviewHeadingExpectations = new Map([
+const platformApiZhOverviewHeadingExpectations = new Map([
   ['/platform-api/overview', ['## 最常用', '## 推荐功能', '## 资源']],
+  ['/platform-api/prepare-to-use-api', ['## 基础地址', '## 请求头', '## 鉴权', '## 请求体']],
   [
-    '/platform-api/prepare-to-use-api',
-    ['## 基础地址', '## 请求头', '## Multipart 请求', '## 鉴权', '## 请求体'],
+    '/platform-api/user/overview',
+    ['## 能力范围', '## 常用接口', '## 资源表示', '## 接入建议', '## 相关页面'],
+  ],
+  [
+    '/platform-api/relation/overview',
+    ['## 能力范围', '## 常用接口', '## 资源表示', '## 接入建议', '## 相关页面'],
+  ],
+  [
+    '/platform-api/auth/overview',
+    ['## 能力范围', '## 常用接口', '## 接入建议', '## 相关页面'],
+  ],
+  [
+    '/platform-api/group/overview',
+    ['## 能力范围', '## 常用接口', '## 资源表示', '## 接入建议', '## 相关页面'],
+  ],
+  [
+    '/platform-api/conversation/overview',
+    ['## 能力范围', '## 常用接口', '## 资源表示', '## 接入建议', '## 相关页面'],
+  ],
+  [
+    '/platform-api/message/overview',
+    ['## 能力范围', '## 常用接口', '## 接入建议', '## 相关页面'],
+  ],
+  [
+    '/platform-api/logs/overview',
+    ['## 能力范围', '## 常用接口', '## 接入建议', '## 相关页面'],
+  ],
+  [
+    '/platform-api/migration-to-openim',
+    ['## 能力范围', '## 常用接口', '## 接入建议', '## 相关页面'],
   ],
   [
     '/platform-api/error-codes',
     ['## 响应结构', '## 错误码范围', '## 处理流程', '## 服务端错误码', '## 排查建议'],
   ],
+]);
+const platformApiAllowedOverviewPaths = new Set([
+  ...platformApiEnglishOverviewHeadingExpectations.keys(),
+  ...platformApiZhOverviewHeadingExpectations.keys(),
 ]);
 const visibleBrandPattern = /\bSendbird\b/i;
 const activeSdkPlatforms = scope.products.sdk?.platforms ?? [];
@@ -196,28 +269,21 @@ for (const route of routes) {
   }
 
   if (route.product === 'platform-api') {
+    const bodyWithoutFrontmatter = mdx.replace(/^---\r?\n[\s\S]*?\r?\n---/, '');
+    const isZhOnlyRoute = route.contentFile.startsWith('content/zh/');
+
     for (const pattern of platformApiUnsupportedPathPatterns) {
       if (pattern.test(route.path)) {
         errors.push(`${route.path}: unsupported Sendbird-only Platform API path was generated`);
       }
     }
-    if (
-      route.template === 'overview' &&
-      ![
-        '/platform-api/overview',
-        '/platform-api/prepare-to-use-api',
-        '/platform-api/error-codes',
-      ].includes(route.path)
-    ) {
+    if (route.template === 'overview' && !platformApiAllowedOverviewPaths.has(route.path)) {
       errors.push(
         `${route.contentFile}: non-root Platform API overview page is outside current OpenIM coverage scope`,
       );
     }
     if (route.status !== 'published') {
-      errors.push(`${route.contentFile}: Chinese-only Platform API route must be published`);
-    }
-    if (frontmatter.title && containsUnexpectedEnglish(frontmatter.title)) {
-      errors.push(`${route.contentFile}: Platform API title contains untranslated English text`);
+      errors.push(`${route.contentFile}: Platform API route must be published`);
     }
 
     for (const pattern of platformApiDraftPatterns) {
@@ -225,23 +291,8 @@ for (const route of routes) {
         errors.push(`${route.contentFile}: contains Platform API draft wording (${pattern})`);
       }
     }
-    const bodyWithoutFrontmatter = mdx.replace(/^---\r?\n[\s\S]*?\r?\n---/, '');
     if (visibleBrandPattern.test(bodyWithoutFrontmatter)) {
       errors.push(`${route.contentFile}: visible Platform API body must not mention Sendbird`);
-    }
-    const expectedOverviewHeadings = platformApiOverviewHeadingExpectations.get(route.path);
-    if (expectedOverviewHeadings) {
-      const actualHeadings = extractPlatformApiSecondLevelHeadings(bodyWithoutFrontmatter);
-      if (actualHeadings.join('\n') !== expectedOverviewHeadings.join('\n')) {
-        errors.push(
-          `${route.contentFile}: overview heading structure differs from Sendbird source; expected ${JSON.stringify(
-            expectedOverviewHeadings,
-          )}, got ${JSON.stringify(actualHeadings)}`,
-        );
-      }
-    }
-    if (route.path === '/platform-api/error-codes') {
-      checkPlatformApiErrorCodesPage(bodyWithoutFrontmatter, route.contentFile);
     }
     for (const pattern of platformApiUncoveredPatterns) {
       if (pattern.test(bodyWithoutFrontmatter)) {
@@ -250,7 +301,6 @@ for (const route of routes) {
         );
       }
     }
-
     for (const pattern of platformApiPublishedOnlyPatterns) {
       if (pattern.test(mdx)) {
         errors.push(
@@ -258,172 +308,156 @@ for (const route of routes) {
         );
       }
     }
-    for (const pattern of platformApiLegacyHeadingPatterns) {
-      if (pattern.test(mdx)) {
-        errors.push(
-          `${route.contentFile}: uses legacy Platform API heading instead of Chinese-only structure (${pattern})`,
-        );
+
+    if (isZhOnlyRoute) {
+      if (frontmatter.title && containsUnexpectedEnglish(frontmatter.title)) {
+        errors.push(`${route.contentFile}: localized title contains untranslated English text`);
       }
-    }
-    if (route.template === 'api') {
-      for (const heading of platformApiZhRequiredApiHeadings) {
-        if (!mdx.includes(heading)) {
-          errors.push(`${route.contentFile}: missing Chinese heading "${heading}"`);
-        }
-      }
-      if (!mdx.includes('## 参数') && !mdx.includes('## 请求体')) {
-        errors.push(`${route.contentFile}: missing Sendbird-style parameter/request-body section`);
-      }
-      for (const pattern of platformApiForbiddenApiHeadings) {
-        if (pattern.test(mdx)) {
+      const expectedOverviewHeadings = platformApiZhOverviewHeadingExpectations.get(route.path);
+      if (expectedOverviewHeadings) {
+        const actualHeadings = extractPlatformApiSecondLevelHeadings(bodyWithoutFrontmatter);
+        if (actualHeadings.join('\n') !== expectedOverviewHeadings.join('\n')) {
           errors.push(
-            `${route.contentFile}: contains non-Sendbird Platform API heading ${pattern}`,
-          );
-        }
-      }
-      const expectedHeadings = platformApiSendbirdHeadingExpectations.get(route.path);
-      if (expectedHeadings) {
-        const actualHeadings = extractPlatformApiHeadings(bodyWithoutFrontmatter);
-        if (actualHeadings.join('\n') !== expectedHeadings.join('\n')) {
-          errors.push(
-            `${route.contentFile}: heading structure differs from Sendbird source; expected ${JSON.stringify(
-              expectedHeadings,
+            `${route.contentFile}: overview heading structure differs; expected ${JSON.stringify(
+              expectedOverviewHeadings,
             )}, got ${JSON.stringify(actualHeadings)}`,
           );
         }
       }
-      if (route.path === '/platform-api/user/listing-users/list-users') {
-        for (const expected of [
-          'curl --request POST',
-          'process.env.OPENIM_API_ADDRESS',
-          'http.NewRequest',
-          '安全提示',
-          '200 OK',
-          'errCode === 0',
-          'users[].userID',
-          'pagination.pageNumber',
-          '### 分页读取建议',
-          '常见错误场景',
-          '"showNumber": 100',
-        ]) {
-          if (!bodyWithoutFrontmatter.includes(expected)) {
-            errors.push(`${route.contentFile}: list-users page is missing "${expected}"`);
+      for (const pattern of platformApiZhLegacyPatterns) {
+        if (pattern.test(bodyWithoutFrontmatter)) {
+          errors.push(
+            `${route.contentFile}: contains English Platform API template text (${pattern})`,
+          );
+        }
+      }
+      if (route.template === 'api') {
+        for (const heading of platformApiZhRequiredApiHeadings) {
+          if (!bodyWithoutFrontmatter.includes(heading)) {
+            errors.push(`${route.contentFile}: missing Chinese heading "${heading}"`);
           }
         }
-        for (const forbidden of ['123.321.1.1', '203.56.175.233']) {
-          if (bodyWithoutFrontmatter.includes(forbidden)) {
+        if (
+          !bodyWithoutFrontmatter.includes('## 参数') &&
+          !bodyWithoutFrontmatter.includes('## 请求体')
+        ) {
+          errors.push(
+            `${route.contentFile}: missing Sendbird-style parameter/request-body section`,
+          );
+        }
+        for (const pattern of platformApiForbiddenApiHeadings) {
+          if (pattern.test(bodyWithoutFrontmatter)) {
             errors.push(
-              `${route.contentFile}: list-users page contains raw sample host ${forbidden}`,
+              `${route.contentFile}: contains non-Sendbird Platform API heading ${pattern}`,
             );
           }
         }
       }
-    }
-
-    const localizedFile = localizedContentFile(route.contentFile);
-    const localizedPath = resolve(root, localizedFile);
-    let localizedMdx = '';
-    try {
-      const details = await stat(localizedPath);
-      if (!details.isFile()) errors.push(`Not a file: ${localizedFile}`);
-      localizedMdx = await readFile(localizedPath, 'utf8');
-    } catch {
-      errors.push(`Missing Chinese Platform API MDX file: ${localizedFile}`);
-    }
-    if (localizedMdx) {
-      const localizedFrontmatter = parseFrontmatter(localizedMdx);
-      if (!localizedFrontmatter.title) {
-        errors.push(`${localizedFile}: missing localized title`);
-      } else if (containsUnexpectedEnglish(localizedFrontmatter.title)) {
-        errors.push(`${localizedFile}: localized title contains untranslated English text`);
+    } else {
+      if (containsCjk(frontmatter.title ?? '') || containsCjk(frontmatter.description ?? '')) {
+        errors.push(`${route.contentFile}: English Platform API frontmatter contains Chinese text`);
       }
-      const localizedBody = localizedMdx.replace(/^---\r?\n[\s\S]*?\r?\n---/, '');
-      if (visibleBrandPattern.test(localizedMdx)) {
-        errors.push(`${localizedFile}: visible Chinese page must not mention Sendbird`);
+      if (containsCjk(bodyWithoutFrontmatter)) {
+        errors.push(`${route.contentFile}: English Platform API body contains Chinese text`);
       }
-      const expectedOverviewHeadings = platformApiOverviewHeadingExpectations.get(route.path);
+      const expectedOverviewHeadings = platformApiEnglishOverviewHeadingExpectations.get(
+        route.path,
+      );
       if (expectedOverviewHeadings) {
-        const actualHeadings = extractPlatformApiSecondLevelHeadings(localizedBody);
+        const actualHeadings = extractPlatformApiSecondLevelHeadings(bodyWithoutFrontmatter);
         if (actualHeadings.join('\n') !== expectedOverviewHeadings.join('\n')) {
           errors.push(
-            `${localizedFile}: overview heading structure differs from Sendbird source; expected ${JSON.stringify(
+            `${route.contentFile}: English overview heading structure differs; expected ${JSON.stringify(
               expectedOverviewHeadings,
             )}, got ${JSON.stringify(actualHeadings)}`,
           );
         }
       }
       if (route.path === '/platform-api/error-codes') {
-        checkPlatformApiErrorCodesPage(localizedBody, localizedFile);
-      }
-      for (const pattern of platformApiUncoveredPatterns) {
-        if (pattern.test(localizedBody)) {
-          errors.push(
-            `${localizedFile}: contains uncovered capability wording (${pattern})`,
-          );
-        }
-      }
-      for (const pattern of platformApiZhLegacyPatterns) {
-        if (pattern.test(localizedBody)) {
-          errors.push(
-            `${localizedFile}: contains English Platform API template text (${pattern})`,
-          );
-        }
+        checkPlatformApiEnglishErrorCodesPage(bodyWithoutFrontmatter, route.contentFile);
       }
       if (route.template === 'api') {
-        for (const heading of platformApiZhRequiredApiHeadings) {
-          if (!localizedBody.includes(heading)) {
-            errors.push(`${localizedFile}: missing Chinese heading "${heading}"`);
+        for (const heading of platformApiEnglishRequiredApiHeadings) {
+          if (!mdx.includes(heading)) {
+            errors.push(`${route.contentFile}: missing English heading "${heading}"`);
           }
         }
-        if (!localizedBody.includes('## 参数') && !localizedBody.includes('## 请求体')) {
-          errors.push(
-            `${localizedFile}: missing Sendbird-style parameter/request-body section`,
-          );
+        if (route.path === platformApiListUsersPath) {
+          checkPlatformApiEnglishListUsersPage(bodyWithoutFrontmatter, route.contentFile);
         }
-        for (const pattern of platformApiForbiddenApiHeadings) {
-          if (pattern.test(localizedBody)) {
-            errors.push(
-              `${localizedFile}: contains non-Sendbird Platform API heading ${pattern}`,
-            );
-          }
+      }
+
+      const localizedFile = localizedContentFile(route.contentFile);
+      const localizedPath = resolve(root, localizedFile);
+      let localizedMdx = '';
+      try {
+        const details = await stat(localizedPath);
+        if (!details.isFile()) errors.push(`Not a file: ${localizedFile}`);
+        localizedMdx = await readFile(localizedPath, 'utf8');
+      } catch {
+        errors.push(`Missing Chinese Platform API MDX file: ${localizedFile}`);
+      }
+      if (localizedMdx) {
+        const localizedFrontmatter = parseFrontmatter(localizedMdx);
+        if (!localizedFrontmatter.title) {
+          errors.push(`${localizedFile}: missing localized title`);
+        } else if (containsUnexpectedEnglish(localizedFrontmatter.title)) {
+          errors.push(`${localizedFile}: localized title contains untranslated English text`);
         }
-        const expectedHeadings = platformApiSendbirdHeadingExpectations.get(route.path);
-        if (expectedHeadings) {
-          const actualHeadings = extractPlatformApiHeadings(localizedBody);
-          if (actualHeadings.join('\n') !== expectedHeadings.join('\n')) {
+        const localizedBody = localizedMdx.replace(/^---\r?\n[\s\S]*?\r?\n---/, '');
+        if (visibleBrandPattern.test(localizedMdx)) {
+          errors.push(`${localizedFile}: visible Chinese page must not mention Sendbird`);
+        }
+        const expectedZhOverviewHeadings = platformApiZhOverviewHeadingExpectations.get(
+          route.path,
+        );
+        if (expectedZhOverviewHeadings) {
+          const actualHeadings = extractPlatformApiSecondLevelHeadings(localizedBody);
+          if (actualHeadings.join('\n') !== expectedZhOverviewHeadings.join('\n')) {
             errors.push(
-              `${localizedFile}: heading structure differs from Sendbird source; expected ${JSON.stringify(
-                expectedHeadings,
+              `${localizedFile}: overview heading structure differs; expected ${JSON.stringify(
+                expectedZhOverviewHeadings,
               )}, got ${JSON.stringify(actualHeadings)}`,
             );
           }
         }
-        if (route.path === '/platform-api/user/listing-users/list-users') {
-          for (const expected of [
-            'curl --request POST',
-            'process.env.OPENIM_API_ADDRESS',
-            'http.NewRequest',
-            '安全提示',
-            '200 OK',
-            'errCode === 0',
-            'users[].userID',
-            'pagination.pageNumber',
-            '### 分页读取建议',
-            '常见错误场景',
-            '"showNumber": 100',
-          ]) {
-            if (!localizedBody.includes(expected)) {
+        if (route.path === '/platform-api/error-codes') {
+          checkPlatformApiErrorCodesPage(localizedBody, localizedFile);
+        }
+        for (const pattern of platformApiUncoveredPatterns) {
+          if (pattern.test(localizedBody)) {
+            errors.push(
+              `${localizedFile}: contains uncovered capability wording (${pattern})`,
+            );
+          }
+        }
+        for (const pattern of platformApiZhLegacyPatterns) {
+          if (pattern.test(localizedBody)) {
+            errors.push(
+              `${localizedFile}: contains English Platform API template text (${pattern})`,
+            );
+          }
+        }
+        if (route.template === 'api') {
+          for (const heading of platformApiZhRequiredApiHeadings) {
+            if (!localizedBody.includes(heading)) {
+              errors.push(`${localizedFile}: missing Chinese heading "${heading}"`);
+            }
+          }
+          if (!localizedBody.includes('## 参数') && !localizedBody.includes('## 请求体')) {
+            errors.push(
+              `${localizedFile}: missing Sendbird-style parameter/request-body section`,
+            );
+          }
+          for (const pattern of platformApiForbiddenApiHeadings) {
+            if (pattern.test(localizedBody)) {
               errors.push(
-                `${localizedFile}: list-users page is missing "${expected}"`,
+                `${localizedFile}: contains non-Sendbird Platform API heading ${pattern}`,
               );
             }
           }
-          for (const forbidden of ['123.321.1.1', '203.56.175.233']) {
-            if (localizedBody.includes(forbidden)) {
-              errors.push(
-                `${localizedFile}: list-users page contains raw sample host ${forbidden}`,
-              );
-            }
+          if (route.path === platformApiListUsersPath) {
+            checkPlatformApiListUsersPage(localizedBody, localizedFile, { localized: true });
           }
         }
       }
@@ -555,12 +589,8 @@ function containsUnexpectedEnglish(value) {
   return /[A-Za-z]{2,}/.test(allowed);
 }
 
-function extractPlatformApiHeadings(body) {
-  return body
-    .split(/\r?\n/)
-    .map((line) => line.match(/^(#{2,4})\s+(.+)$/))
-    .filter((match) => Boolean(match))
-    .map((match) => `${match[1]} ${match[2].trim()}`);
+function containsCjk(value) {
+  return /[\u3400-\u9fff]/.test(value);
 }
 
 function extractPlatformApiSecondLevelHeadings(body) {
@@ -569,6 +599,62 @@ function extractPlatformApiSecondLevelHeadings(body) {
     .map((line) => line.match(/^(##)\s+(.+)$/))
     .filter((match) => Boolean(match))
     .map((match) => `${match[1]} ${match[2].trim()}`);
+}
+
+function checkPlatformApiListUsersPage(body, label, options = {}) {
+  const actualHeadings = extractPlatformApiSecondLevelHeadings(body);
+  for (const heading of ['## HTTP 请求', '## 参数', '## 响应']) {
+    if (!actualHeadings.includes(heading)) {
+      errors.push(`${label}: list-users page is missing heading "${heading}"`);
+    }
+  }
+  for (const expected of platformApiListUsersExpectedSnippets) {
+    if (!body.includes(expected)) {
+      errors.push(`${label}: list-users page is missing "${expected}"`);
+    }
+  }
+  const resourceExpectation = options.localized
+    ? '/platform-api/user/overview#userinfo'
+    : 'users[].userID';
+  if (!body.includes(resourceExpectation)) {
+    errors.push(`${label}: list-users page is missing "${resourceExpectation}"`);
+  }
+  for (const forbidden of platformApiListUsersForbiddenSnippets) {
+    if (body.includes(forbidden)) {
+      errors.push(`${label}: list-users page contains raw sample host ${forbidden}`);
+    }
+  }
+}
+
+function checkPlatformApiEnglishListUsersPage(body, label) {
+  for (const expected of platformApiEnglishListUsersExpectedSnippets) {
+    if (!body.includes(expected)) {
+      errors.push(`${label}: list-users page is missing "${expected}"`);
+    }
+  }
+  for (const forbidden of platformApiListUsersForbiddenSnippets) {
+    if (body.includes(forbidden)) {
+      errors.push(`${label}: list-users page contains raw sample host ${forbidden}`);
+    }
+  }
+}
+
+function checkPlatformApiEnglishErrorCodesPage(body, label) {
+  for (const expected of [
+    'errCode === 0',
+    '1-9999',
+    '10000-20000',
+    '20001-29999',
+    '| 1001 | Request | Invalid arguments',
+    '| 1002 | Request | Permission denied',
+    '| 1501 | Token | Token expired',
+    'Convert internal error details into product-safe messages',
+    'Many `1002` or `1501-1507` errors',
+  ]) {
+    if (!body.includes(expected)) {
+      errors.push(`${label}: error-codes page is missing "${expected}"`);
+    }
+  }
 }
 
 function checkPlatformApiErrorCodesPage(body, label) {

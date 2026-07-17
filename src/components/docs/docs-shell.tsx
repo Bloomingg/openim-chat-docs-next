@@ -16,6 +16,7 @@ export function DocsShell({
   overview = false,
   sidebarIntro,
   showVersion,
+  tocFooter,
   toc,
 }: {
   children: ReactNode;
@@ -26,6 +27,7 @@ export function DocsShell({
   overview?: boolean;
   sidebarIntro?: ReactNode;
   showVersion: boolean;
+  tocFooter?: ReactNode;
   toc: TocItem[];
 }) {
   return (
@@ -53,6 +55,7 @@ export function DocsShell({
         <article className="docs-article">{children}</article>
         <aside className="docs-toc">
           <TableOfContents items={toc} locale={locale} />
+          {tocFooter}
         </aside>
       </div>
     </>

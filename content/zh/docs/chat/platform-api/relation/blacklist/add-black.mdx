@@ -2,12 +2,12 @@
 title: "加入黑名单"
 description: "OpenIM Platform API 中文参考：加入黑名单。说明如何将用户加入指定用户的黑名单。"
 product: "platform-api"
-context: "chat/platform-api/v3"
+context: "chat/platform-api"
 template: "api"
 status: "published"
 lastUpdated: "2026-07-06"
 version: "v3"
-sourcePath: "/docs/chat/platform-api/v3/relation/blacklist/add-black"
+sourcePath: "/platform-api/relation/blacklist/add-black"
 ---
 
 使用 **加入黑名单** 将目标用户加入指定用户的黑名单。黑名单属于好友关系模块的数据能力。
@@ -49,7 +49,7 @@ curl --request POST "${API_ADDRESS}/friend/add_black" \
 | 请求头 | 示例值 | 是否必填 | 类型 | 说明 |
 | :--- | :--- | :--- | :--- | :--- |
 | operationID | 1646445464564 | 必填 | string | 用于全局链路追踪，建议每个请求独立生成。 |
-| token | eyJhbxxxx3Xs | 必填 | string | [管理员 token](/docs/chat/platform-api/v3/prepare-to-use-api)。 |
+| token | eyJhbxxxx3Xs | 必填 | string | [管理员 token](/platform-api/prepare-to-use-api)。 |
 
 ### 请求体参数
 
@@ -94,7 +94,7 @@ curl --request POST "${API_ADDRESS}/friend/add_black" \
 
 ### 错误
 
-如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/docs/chat/platform-api/v3/error-codes)。
+如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/platform-api/error-codes)。
 
 ```json
 {

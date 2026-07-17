@@ -2,12 +2,12 @@
 title: "查询用户在线 Token 明细"
 description: "OpenIM Platform API 中文参考：查询用户在线 Token 明细。说明如何按终端聚合在线连接使用的 Token。"
 product: "platform-api"
-context: "chat/platform-api/v3"
+context: "chat/platform-api"
 template: "api"
 status: "published"
 lastUpdated: "2026-07-06"
 version: "v3"
-sourcePath: "/docs/chat/platform-api/v3/user/presence/get-users-online-token-detail"
+sourcePath: "/platform-api/user/presence/get-users-online-token-detail"
 ---
 
 使用 **查询用户在线 Token 明细** 从可信后端获取在线用户在各终端上的 Token 聚合结果。接口只返回在线用户；如果某个用户离线，该用户不会出现在 `data` 数组中。
@@ -47,7 +47,7 @@ curl --request POST "${API_ADDRESS}/user/get_users_online_token_detail" \
 | 请求头 | 示例值 | 是否必填 | 类型 | 说明 |
 | :--- | :--- | :--- | :--- | :--- |
 | operationID | 1646445464564 | 必填 | string | 用于全局链路追踪，建议每个请求独立生成。 |
-| token | eyJhbxxxx3Xs | 必填 | string | [管理员 token](/docs/chat/platform-api/v3/prepare-to-use-api)。 |
+| token | eyJhbxxxx3Xs | 必填 | string | [管理员 token](/platform-api/prepare-to-use-api)。 |
 
 ### 请求体参数
 
@@ -113,7 +113,7 @@ curl --request POST "${API_ADDRESS}/user/get_users_online_token_detail" \
 
 ### 错误
 
-如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/docs/chat/platform-api/v3/error-codes)。
+如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/platform-api/error-codes)。
 
 ```json
 {
@@ -133,5 +133,5 @@ curl --request POST "${API_ADDRESS}/user/get_users_online_token_detail" \
 
 | 错误场景 | 可能原因 | 处理方式 |
 | --- | --- | --- |
-| 用户未返回 | 用户当前离线，接口只返回在线用户。 | 需要离线结果时改用[查询用户在线状态](/docs/chat/platform-api/v3/user/presence/get-users-online-status)。 |
+| 用户未返回 | 用户当前离线，接口只返回在线用户。 | 需要离线结果时改用[查询用户在线状态](/platform-api/user/presence/get-users-online-status)。 |
 | 鉴权失败 | `token` 缺失、过期，或不是管理员 Token。 | 重新获取 APP 管理员 Token，并只在可信后端保存。 |

@@ -2,12 +2,12 @@
 title: "概述"
 description: "OpenIM Platform API 群组模块概览，覆盖建群、入群申请、成员管理、禁言和群资料维护。"
 product: "platform-api"
-context: "chat/platform-api/v3"
+context: "chat/platform-api"
 template: "overview"
 status: "published"
 lastUpdated: "2026-07-07"
 version: "v3"
-sourcePath: "/docs/chat/platform-api/v3/group/overview"
+sourcePath: "/platform-api/group/overview"
 ---
 
 群组模块用于由服务端创建和管理群聊，包括群资料、群成员、入群申请、群主转让、解散群组和禁言控制。
@@ -23,11 +23,11 @@ sourcePath: "/docs/chat/platform-api/v3/group/overview"
 
 ## 常用接口
 
-- [创建群组](/docs/chat/platform-api/v3/group/managing-groups/create-group)
-- [邀请用户进群](/docs/chat/platform-api/v3/group/group-members/invite-users-to-group)
-- [获取群成员列表](/docs/chat/platform-api/v3/group/group-members/get-group-member-list)
-- [禁言群成员](/docs/chat/platform-api/v3/group/group-moderation/mute-group-member)
-- [查询收到的入群申请](/docs/chat/platform-api/v3/group/group-applications/list-received-group-applications)
+- [创建群组](/platform-api/group/managing-groups/create-group)
+- [邀请用户进群](/platform-api/group/group-members/invite-users-to-group)
+- [获取群成员列表](/platform-api/group/group-members/get-group-member-list)
+- [禁言群成员](/platform-api/group/group-moderation/mute-group-member)
+- [查询收到的入群申请](/platform-api/group/group-applications/list-received-group-applications)
 
 ## 资源表示
 
@@ -82,7 +82,7 @@ sourcePath: "/docs/chat/platform-api/v3/group/overview"
 
 | 字段 | 类型 | 说明 |
 | ---- | ---- | ---- |
-| userInfo | object | 申请用户公开资料，结构为[用户模块的 `PublicUserInfo`](/docs/chat/platform-api/v3/user/overview#publicuserinfo)。 |
+| userInfo | object | 申请用户公开资料，结构为[用户模块的 `PublicUserInfo`](/platform-api/user/overview#publicuserinfo)。 |
 | groupInfo | object | 群资料，结构为本页 `GroupInfo`。 |
 | handleResult | int | 处理结果，例如待处理、同意或拒绝。 |
 | reqMsg | string | 入群申请说明。 |
@@ -102,5 +102,5 @@ sourcePath: "/docs/chat/platform-api/v3/group/overview"
 
 ## 相关页面
 
-- [接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)
-- [错误码](/docs/chat/platform-api/v3/error-codes)
+- [接入准备](/platform-api/prepare-to-use-api)
+- [错误码](/platform-api/error-codes)

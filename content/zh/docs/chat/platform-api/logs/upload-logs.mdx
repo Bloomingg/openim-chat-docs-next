@@ -2,13 +2,13 @@
 title: "上传日志记录"
 description: "OpenIM Platform API 日志模块：登记客户端本地日志记录。"
 product: "platform-api"
-context: "chat/platform-api/v3"
+context: "chat/platform-api"
 template: "api"
 status: "published"
-sourcePath: "/docs/chat/platform-api/v3/logs/upload-logs"
+sourcePath: "/platform-api/logs/upload-logs"
 ---
 
-使用 **上传日志记录** 从可信后端调用 OpenIM 日志接口。业务方可以先在客户端采集本地日志并上传到对象存储或自己的文件服务，再通过此接口登记日志文件 URL、平台、版本和扩展信息，便于后续在后台统一检索。请先在[接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)中配置 API 地址和 Token；接口参数通过请求头和 JSON 请求体传递。
+使用 **上传日志记录** 从可信后端调用 OpenIM 日志接口。业务方可以先在客户端采集本地日志并上传到对象存储或自己的文件服务，再通过此接口登记日志文件 URL、平台、版本和扩展信息，便于后续在后台统一检索。请先在[接入准备](/platform-api/prepare-to-use-api)中配置 API 地址和 Token；接口参数通过请求头和 JSON 请求体传递。
 
 ## HTTP 请求
 
@@ -100,7 +100,7 @@ curl --request POST "${API_ADDRESS}/third/logs/upload" \
 
 ### 错误
 
-如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/docs/chat/platform-api/v3/error-codes)。
+如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/platform-api/error-codes)。
 
 ```json
 {
@@ -125,7 +125,7 @@ curl --request POST "${API_ADDRESS}/third/logs/upload" \
 
 ## 相关页面
 
-- [接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)
-- [认证接口](/docs/chat/platform-api/v3/auth/tokens/get-admin-token)
-- [日志概述](/docs/chat/platform-api/v3/logs/overview)
-- [错误码](/docs/chat/platform-api/v3/error-codes)
+- [接入准备](/platform-api/prepare-to-use-api)
+- [认证接口](/platform-api/auth/tokens/get-admin-token)
+- [日志概述](/platform-api/logs/overview)
+- [错误码](/platform-api/error-codes)

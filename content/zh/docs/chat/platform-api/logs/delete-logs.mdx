@@ -2,13 +2,13 @@
 title: "删除日志记录"
 description: "OpenIM Platform API 日志模块：删除客户端本地日志记录。"
 product: "platform-api"
-context: "chat/platform-api/v3"
+context: "chat/platform-api"
 template: "api"
 status: "published"
-sourcePath: "/docs/chat/platform-api/v3/logs/delete-logs"
+sourcePath: "/platform-api/logs/delete-logs"
 ---
 
-使用 **删除日志记录** 从可信后端调用 OpenIM 日志接口。按日志 ID 删除后台保存的客户端本地日志索引记录，适合在日志过期、问题处理完成或业务方主动清理时调用。请先在[接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)中配置 API 地址和 Token；接口参数通过请求头和 JSON 请求体传递。
+使用 **删除日志记录** 从可信后端调用 OpenIM 日志接口。按日志 ID 删除后台保存的客户端本地日志索引记录，适合在日志过期、问题处理完成或业务方主动清理时调用。请先在[接入准备](/platform-api/prepare-to-use-api)中配置 API 地址和 Token；接口参数通过请求头和 JSON 请求体传递。
 
 ## HTTP 请求
 
@@ -80,7 +80,7 @@ curl --request POST "${API_ADDRESS}/third/logs/delete" \
 
 ### 错误
 
-如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/docs/chat/platform-api/v3/error-codes)。
+如果请求失败，OpenIM 返回错误对象。更多错误码说明见[错误码](/platform-api/error-codes)。
 
 ```json
 {
@@ -105,7 +105,7 @@ curl --request POST "${API_ADDRESS}/third/logs/delete" \
 
 ## 相关页面
 
-- [接入准备](/docs/chat/platform-api/v3/prepare-to-use-api)
-- [认证接口](/docs/chat/platform-api/v3/auth/tokens/get-admin-token)
-- [日志概述](/docs/chat/platform-api/v3/logs/overview)
-- [错误码](/docs/chat/platform-api/v3/error-codes)
+- [接入准备](/platform-api/prepare-to-use-api)
+- [认证接口](/platform-api/auth/tokens/get-admin-token)
+- [日志概述](/platform-api/logs/overview)
+- [错误码](/platform-api/error-codes)
