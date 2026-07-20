@@ -136,6 +136,7 @@ const postmanSpecFileListSchema = z
 const postmanSpecRootFileSchema = z
   .object({ id: postmanSpecIdSchema, path: z.string().min(1), type: z.literal('ROOT') })
   .passthrough();
+const postmanSpecFileContentSchema = z.object({ content: z.string() }).passthrough();
 const apifoxImportResultSchema = z.object({
   data: z.object({
     counters: z.record(z.string(), z.number().int().nonnegative()),
@@ -325,6 +326,11 @@ export async function publishPostmanSpec(
     throw new PlatformApiError(
       `Postman updated an unexpected Spec file: ${file.path}; expected ${rootFile.path}.`,
     );
+  const remoteFile = postmanSpecFileContentSchema.parse(
+    await requestJson(`${specUrl}/files/${encodedRootPath}`, { headers: apiKeyHeader }),
+  );
+  if (remoteFile.content !== openApi)
+    throw new PlatformApiError('Postman Spec root content does not match the uploaded OpenAPI.');
   return rootFile.path;
 }
 
