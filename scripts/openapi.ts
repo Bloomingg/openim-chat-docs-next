@@ -2,6 +2,7 @@ import { spawnSync } from 'node:child_process';
 import { appendFile, mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { dirname, join, relative, resolve } from 'node:path';
+import { setTimeout as delay } from 'node:timers/promises';
 import { fileURLToPath } from 'node:url';
 import { z } from 'zod';
 
@@ -98,9 +99,8 @@ const publishConfigSchema = z.object({
 });
 export const postmanPublishConfigSchema = publishConfigSchema.extend({
   POSTMAN_API_KEY: z.string().min(1),
-  POSTMAN_COLLECTION_ID: z
-    .string()
-    .regex(/^(?:\d+-)?[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}$/i),
+  POSTMAN_COLLECTION_ID: z.string().regex(/^\d+-[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}$/i),
+  POSTMAN_SPEC_ID: z.string().regex(/^[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}$/i),
 });
 const postmanSpecIdSchema = z.string().regex(/^[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}$/i);
 export const postmanSpecPublishConfigSchema = publishConfigSchema.extend({
@@ -137,6 +137,16 @@ const postmanSpecRootFileSchema = z
   .object({ id: postmanSpecIdSchema, path: z.string().min(1), type: z.literal('ROOT') })
   .passthrough();
 const postmanSpecFileContentSchema = z.object({ content: z.string() }).passthrough();
+const postmanCollectionStateSchema = z
+  .object({
+    collection: z
+      .object({ info: z.object({ updatedAt: z.string().min(1) }).passthrough() })
+      .passthrough(),
+  })
+  .passthrough();
+const postmanSyncAcceptedSchema = z
+  .object({ taskId: z.string().min(1), url: z.string().min(1) })
+  .passthrough();
 const apifoxImportResultSchema = z.object({
   data: z.object({
     counters: z.record(z.string(), z.number().int().nonnegative()),
@@ -153,6 +163,17 @@ type PostmanCollection = z.infer<typeof postmanCollectionSchema>;
 type PostmanSpecTarget = {
   readonly apiKey: string;
   readonly specId: string;
+};
+type PostmanCollectionSyncTarget = PostmanSpecTarget & {
+  readonly collectionId: string;
+};
+type PostmanSyncPolling = {
+  readonly attempts: number;
+  readonly intervalMs: number;
+};
+type PostmanSyncResult = {
+  readonly taskId: string;
+  readonly updatedAt: string;
 };
 
 export function normalizePostmanCollection(
@@ -249,12 +270,15 @@ export async function convertOpenApiToPostman(openApi: string): Promise<PostmanC
 async function requestJson(
   url: string,
   init: RequestInit,
-  notFoundError?: PlatformApiError,
+  options: { readonly expectedStatus?: number; readonly notFoundError?: PlatformApiError } = {},
 ): Promise<unknown> {
   const response = await fetch(url, { ...init, signal: AbortSignal.timeout(30_000) });
   const body = await response.text();
-  if (response.status === 404 && notFoundError !== undefined) throw notFoundError;
-  if (!response.ok)
+  if (response.status === 404 && options.notFoundError !== undefined) throw options.notFoundError;
+  if (
+    (options.expectedStatus !== undefined && response.status !== options.expectedStatus) ||
+    (options.expectedStatus === undefined && !response.ok)
+  )
     throw new PlatformApiError(
       `${init.method ?? 'GET'} ${url} returned ${response.status}: ${body}`,
     );
@@ -269,23 +293,57 @@ async function requestJson(
 }
 
 export async function publishPostman(
-  apiKey: string,
-  collectionId: string,
-  openApi: string,
-): Promise<void> {
-  const url = `https://api.getpostman.com/collections/${collectionId}`;
-  const apiKeyHeader = { 'X-API-Key': apiKey };
-  await requestJson(
-    url,
-    { headers: apiKeyHeader },
-    new PostmanCollectionUnavailableError(collectionId),
+  target: PostmanCollectionSyncTarget,
+  polling: PostmanSyncPolling = { attempts: 25, intervalMs: 5_000 },
+): Promise<PostmanSyncResult> {
+  if (!Number.isInteger(polling.attempts) || polling.attempts < 1)
+    throw new PlatformApiError('Postman synchronization polling attempts must be positive.');
+  if (!Number.isInteger(polling.intervalMs) || polling.intervalMs < 0)
+    throw new PlatformApiError('Postman synchronization polling interval must not be negative.');
+
+  const origin = 'https://api.getpostman.com';
+  const collectionUrl = `${origin}/collections/${encodeURIComponent(target.collectionId)}`;
+  const apiKeyHeader = { 'X-API-Key': target.apiKey };
+  const baseline = postmanCollectionStateSchema.parse(
+    await requestJson(
+      collectionUrl,
+      { headers: apiKeyHeader },
+      { notFoundError: new PostmanCollectionUnavailableError(target.collectionId) },
+    ),
+  ).collection.info.updatedAt;
+  const synchronizationUrl = new URL(`${collectionUrl}/synchronizations`);
+  synchronizationUrl.searchParams.set('specId', target.specId);
+  const accepted = postmanSyncAcceptedSchema.parse(
+    await requestJson(
+      synchronizationUrl.toString(),
+      { method: 'PUT', headers: apiKeyHeader },
+      { expectedStatus: 202 },
+    ),
   );
-  const collection = await convertOpenApiToPostman(openApi);
-  await requestJson(url, {
-    method: 'PUT',
-    headers: { ...apiKeyHeader, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ collection }),
-  });
+  const reportedTaskUrl = new URL(accepted.url, origin);
+  const expectedTaskPath = `/specs/${encodeURIComponent(target.specId)}/tasks/${encodeURIComponent(accepted.taskId)}`;
+  if (
+    reportedTaskUrl.origin !== origin ||
+    reportedTaskUrl.pathname !== expectedTaskPath ||
+    reportedTaskUrl.search !== '' ||
+    reportedTaskUrl.hash !== ''
+  )
+    throw new PlatformApiError(
+      `Postman returned an unexpected synchronization task URL: ${accepted.url}.`,
+    );
+  const taskUrl = `${origin}${expectedTaskPath}`;
+
+  for (let attempt = 0; attempt < polling.attempts; attempt += 1) {
+    await requestJson(taskUrl, { headers: apiKeyHeader });
+    const updatedAt = postmanCollectionStateSchema.parse(
+      await requestJson(collectionUrl, { headers: apiKeyHeader }),
+    ).collection.info.updatedAt;
+    if (updatedAt !== baseline) return { taskId: accepted.taskId, updatedAt };
+    if (attempt + 1 < polling.attempts) await delay(polling.intervalMs);
+  }
+  throw new PlatformApiError(
+    `Postman synchronization was accepted as task ${accepted.taskId}, but no observable Collection update occurred.`,
+  );
 }
 
 export async function publishPostmanSpec(
@@ -298,7 +356,7 @@ export async function publishPostmanSpec(
     await requestJson(
       specUrl,
       { headers: apiKeyHeader },
-      new PostmanSpecUnavailableError(target.specId),
+      { notFoundError: new PostmanSpecUnavailableError(target.specId) },
     ),
   );
   let cursor: string | null = null;
@@ -363,19 +421,24 @@ async function publishApifox(
   );
 }
 
-async function publishPlatformApiPostman(openApiPath: string): Promise<void> {
+async function publishPlatformApiPostman(): Promise<void> {
   const config = postmanPublishConfigSchema.parse(process.env);
-  const openApi = await readFile(openApiPath, 'utf8');
-  await publishPostman(config.POSTMAN_API_KEY, config.POSTMAN_COLLECTION_ID, openApi);
+  const result = await publishPostman({
+    apiKey: config.POSTMAN_API_KEY,
+    collectionId: config.POSTMAN_COLLECTION_ID,
+    specId: config.POSTMAN_SPEC_ID,
+  });
   const summary = [
-    '### Postman OpenAPI publication completed',
+    '### Postman Collection synchronization observed',
     '',
     `- Source revision: \`${config.GITHUB_SHA ?? 'local'}\``,
-    '- Postman collection updated in place',
+    `- Synchronization accepted: task \`${result.taskId}\``,
+    '- Synchronization task resource observed',
+    `- Collection update observed at: \`${result.updatedAt}\``,
     '',
   ].join('\n');
   if (config.GITHUB_STEP_SUMMARY) await appendFile(config.GITHUB_STEP_SUMMARY, summary);
-  console.log('Published OpenIM Platform API v3 to Postman.');
+  console.log('Synchronized OpenIM Platform API v3 Collection from its Postman Specification.');
 }
 
 async function publishPlatformApiPostmanSpec(openApiPath: string): Promise<void> {
@@ -424,9 +487,7 @@ export function commandArguments(args: readonly string[]): readonly [string, str
 async function runCommand(command: string, inputPath?: string): Promise<void> {
   switch (command) {
     case 'publish-postman':
-      return publishPlatformApiPostman(
-        required(inputPath, 'publish-postman requires an OpenAPI path.'),
-      );
+      return publishPlatformApiPostman();
     case 'publish-postman-spec':
       return publishPlatformApiPostmanSpec(
         required(inputPath, 'publish-postman-spec requires an OpenAPI path.'),
@@ -438,7 +499,7 @@ async function runCommand(command: string, inputPath?: string): Promise<void> {
     case '--help':
     case 'help':
       console.log(
-        'Usage: pnpm run platform-api:<publish-postman|publish-postman-spec|publish-apifox> -- <openapi-path>',
+        'Usage: pnpm run platform-api:publish-postman | pnpm run platform-api:<publish-postman-spec|publish-apifox> -- <openapi-path>',
       );
       return;
     default:
