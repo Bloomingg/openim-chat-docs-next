@@ -3602,18 +3602,18 @@
   {
     "path": "/sdk/electron/overview",
     "title": "OpenIM SDK for Electron",
-    "description": "OpenIM Electron SDK entry point for planning WASM and FFI usage across web-compatible UI and packaged desktop apps.",
+    "description": "Electron hub for WASM shared guides plus FFI-only init, full-path media, and log upload differences.",
     "context": "SDKs · Electron · v4",
     "keywords": "sdk electron v4 sdk electron overview",
-    "content": "Overview OpenIM Electron SDK can use both WASM and FFI integration modes. They are not always an either or choice: if the same product supports a web client and a packaged Electron app, you typically need to plan for both. Use WASM for browser pages, renderer processes, WebViews, or UI layers that should stay aligned with the web client. Use FFI for the desktop application side, packaged app behavior, native runtime integration, and boundaries that should live outside a browser like page. SDK mode responsibilities | Mode | Applies to | Notes | | | | | | WASM | Web pages, Electron renderer processes, WebViews | Initialize like the web SDK and publish openIM.wasm , sql wasm.wasm , and wasm exec.js where the page can load them. | | FFI | Electron application side capabilities and native apps | Follow the Electron FFI SDK installation, packaging, and initialization rules. Do not use browser WASM asset paths for FFI. | | WASM + FFI | Products that support both web and packaged Electron | Wrap IM access behind an app level adapter, select the runtime implementation per environment, and avoid competing logins. | Desktop integration notes If the product supports both web and Electron, define an app level IM adapter before wiring SDK calls into UI code. Use WASM in renderer or web compatible layers, and verify packaged builds can load openIM.wasm , sql wasm.wasm , and wasm exec.js . Use FFI for application side integration, and design installation, permission, packaging, and update behavior around the packaged desktop app. If both the main process and renderer process need IM state, define an IPC boundary and decide which side owns login, connection, message events, and local state. Keep tokens out of preload scripts and main process logs. Validate websocket connectivity in packaged builds, not only in local dev mode. Next steps WASM SDK overview /sdk/wasm/overview Environment specific implementation /sdk/wasm/getting started/environment specific implementation Send your first message /sdk/wasm/getting started/send first message"
+    "content": "Overview The English version of this OpenIM Electron SDK guide is deferred until the reviewed Chinese documentation is complete. Next steps Authenticate and init /sdk/electron/getting started/authenticate and init Create media from full path /sdk/electron/message/create media from full path Upload logs /sdk/electron/logger/upload logs WASM SDK overview /sdk/wasm/overview"
   },
   {
     "path": "/sdk/miniprogram/overview",
     "title": "OpenIM SDK for Mini Program",
-    "description": "OpenIM Mini Program SDK entry point for supported mini program runtimes.",
+    "description": "Mini Program hub for WASM shared guides plus unavailable local search and clear APIs.",
     "context": "SDKs · Mini Program · v4",
     "keywords": "sdk miniprogram v4 sdk miniprogram overview",
-    "content": "Overview Mini Program integrations follow the WASM compatible core API model for user login, conversations, messages, groups, and events, while the runtime adapter must respect each mini program platform's storage, networking, upload, and websocket restrictions. Compatibility with WASM Use the WASM SDK documentation for shared OpenIM concepts and method level behavior. Mini Program pages should document only the runtime differences: initialization entry, asset handling, request domain configuration, file upload limits, and background lifecycle. Runtime notes Configure allowed request and websocket domains before testing login. Verify local storage quota and cleanup behavior for conversation and message cache. Test file messages with the target platform's upload API and file size limits. Keep token issuance on a trusted backend and pass only short lived credentials to the client. Next steps WASM SDK overview /sdk/wasm/overview User authentication /sdk/wasm/application/authenticating a user/authentication Send your first message /sdk/wasm/getting started/send first message"
+    "content": "Overview The English version of this OpenIM Mini Program SDK guide is deferred until the reviewed Chinese documentation is complete. Next steps WASM SDK overview /sdk/wasm/overview Authenticate and manage session /sdk/wasm/getting started/authenticate and manage session Send your first message /sdk/wasm/getting started/send first message"
   },
   {
     "path": "/sdk/react-native/overview",
@@ -3622,5 +3622,29 @@
     "context": "SDKs · React Native · v4",
     "keywords": "sdk react-native v4 sdk react-native overview",
     "content": "Overview Use the React Native SDK when your chat experience is built with React Native and needs mobile runtime behavior for connectivity, local cache, media selection, file upload, and push notification handoff. Integration model The SDK should be initialized after your application has a backend issued token for the current userID . Register connection and message events before login, then keep conversation state in your application store so native lifecycle changes can restore the UI predictably. Mobile considerations Validate login, reconnect, and message receipt after app foreground and background transitions. Test file messages with the media picker and upload permissions required by each platform. Route push notification registration through your trusted backend and platform notification services. Record operationID , errCode , and errMsg when diagnosing mobile only failures. Related SDKs iOS SDK /sdk/ios/overview Android SDK /sdk/android/overview Flutter SDK /sdk/flutter/overview"
+  },
+  {
+    "path": "/sdk/electron/getting-started/authenticate-and-init",
+    "title": "Authenticate and init",
+    "description": "OpenIM Electron SDK guide for Authenticate and init.",
+    "context": "SDKs · Electron · v4",
+    "keywords": "sdk electron v4 sdk electron getting-started authenticate-and-init",
+    "content": "Overview The English version of this OpenIM Electron SDK guide is deferred until the reviewed Chinese documentation is complete."
+  },
+  {
+    "path": "/sdk/electron/message/create-media-from-full-path",
+    "title": "Create media from full path",
+    "description": "OpenIM Electron SDK guide for Create media from full path.",
+    "context": "SDKs · Electron · v4",
+    "keywords": "sdk electron v4 sdk electron message create-media-from-full-path",
+    "content": "Overview The English version of this OpenIM Electron SDK guide is deferred until the reviewed Chinese documentation is complete."
+  },
+  {
+    "path": "/sdk/electron/logger/upload-logs",
+    "title": "Upload logs",
+    "description": "OpenIM Electron SDK guide for Upload logs.",
+    "context": "SDKs · Electron · v4",
+    "keywords": "sdk electron v4 sdk electron logger upload-logs",
+    "content": "Overview The English version of this OpenIM Electron SDK guide is deferred until the reviewed Chinese documentation is complete."
   }
 ]

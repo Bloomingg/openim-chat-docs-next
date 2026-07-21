@@ -1,0 +1,87 @@
+---
+title: '认证与初始化'
+description: '使用 Electron FFI 的 initSDK、login 与 unInitSDK 建立登录会话，并对比 WASM 的一次性 login 参数。'
+sourcePath: '/sdk/electron/getting-started/authenticate-and-init'
+---
+
+Electron FFI 形态把 SDK 初始化与用户登录拆开：先用 `initSDK()` 配置 OpenIMServer 地址和本地运行目录，再用 `login()` 提交 `userID` 与 Token。这与 [WASM 认证与管理登录会话](/sdk/wasm/getting-started/authenticate-and-manage-session) 中一次性传入 `InitAndLoginConfig` 的写法不同。
+
+本页只覆盖 Electron FFI 的生命周期 API。连接成功、Token 失效和踢下线等事件的完整监听与清理，仍以 WASM 认证页为准；方法名与 `CbEvents` 在共享能力上保持一致。
+
+## 与 WASM 的差异
+
+| 步骤 | Electron FFI | WASM |
+| --- | --- | --- |
+| 配置服务地址与运行环境 | `initSDK(InitConfig)` | 包含在 `login(InitAndLoginConfig)` 中 |
+| 提交用户凭据 | `login({ userID, token })` | 同一 `login()` 调用 |
+| 释放原生 SDK | `unInitSDK()` | 无对等的公开卸载 API；退出使用 `logout()` |
+
+Electron 渲染层如果走 WASM 形态，请直接按 WASM 认证页接入，不要调用本页的 `initSDK()`。
+
+## 初始化 SDK
+
+`InitConfig` 在初始化时写入服务地址、平台、本地数据目录和日志选项。
+
+### 参数说明
+
+| 字段 | 类型 | 是否必填 | 说明 |
+| --- | --- | --- | --- |
+| `apiAddr` | `string` | 是 | OpenIMServer 的 HTTP API 地址。 |
+| `wsAddr` | `string` | 是 | OpenIMServer 的 WebSocket 地址。 |
+| `platformID` | `number` | 是 | 当前客户端平台枚举值，需符合 OpenIMServer 的多端登录策略。 |
+| `dataDir` | `string` | 是 | 原生 SDK 本地数据目录的可写绝对路径。 |
+| `systemType` | `string` | 是 | 系统类型标识，按 Electron FFI SDK 约定填写。 |
+| `logLevel` | `LogLevel` | 否 | 日志级别。 |
+| `logFilePath` | `string` | 否 | 日志文件路径。 |
+| `isLogStandardOutput` | `boolean` | 否 | 是否输出到标准输出。 |
+
+```ts
+await openimsdk.initSDK({
+  apiAddr,
+  wsAddr,
+  platformID,
+  dataDir: '/absolute/path/to/openim-data',
+  systemType: 'electron',
+  logLevel: LogLevel.Warn,
+  isLogStandardOutput: false,
+});
+```
+
+`initSDK()` 的 Promise 成功表示原生 SDK 已完成初始化并可以继续登录；它不会建立用户会话，也不等于连接事件已到达。
+
+## 登录当前用户
+
+初始化成功后再调用 `login()`。FFI 登录只接收用户凭据：
+
+### 参数说明
+
+| 字段 | 类型 | 是否必填 | 说明 |
+| --- | --- | --- | --- |
+| `userID` | `string` | 是 | 当前 OpenIMSDK 用户 ID，必须与 Token 对应。 |
+| `token` | `string` | 是 | 由可信后端签发的 OpenIMSDK Token。 |
+
+```ts
+await openimsdk.login({
+  userID,
+  token,
+});
+```
+
+`login()` 的 Promise 成功表示登录请求完成；是否已可调用业务 API，仍应结合 `OnConnectSuccess` 等连接事件判断。事件注册方式见 [WASM 认证页](/sdk/wasm/getting-started/authenticate-and-manage-session)。
+
+## 退出与卸载
+
+用户主动退出或切换账号时，先调用共享的 `logout()` 结束登录会话，再在需要释放原生资源时调用 `unInitSDK()`。
+
+```ts
+await openimsdk.logout();
+await openimsdk.unInitSDK();
+```
+
+`unInitSDK()` 不接收业务参数。切换账号时，先完成旧账号退出与状态清理，再按需重新 `initSDK()` 并 `login()`；不要并发初始化两个原生实例。
+
+## 下一步
+
+- [Electron SDK 概览](/sdk/electron/overview)
+- [WASM 认证与管理登录会话](/sdk/wasm/getting-started/authenticate-and-manage-session)
+- [从完整路径创建媒体消息](/sdk/electron/message/create-media-from-full-path)

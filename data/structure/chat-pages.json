@@ -3024,6 +3024,30 @@
     "contentFile": "content/docs/chat/sdk/electron/overview.mdx"
   },
   {
+    "sourcePath": "/sdk/electron/getting-started/authenticate-and-init",
+    "openimPath": "/sdk/electron/getting-started/authenticate-and-init",
+    "title": "Authenticate and init",
+    "context": "chat/sdk/electron",
+    "template": "guide",
+    "contentFile": "content/docs/chat/sdk/electron/getting-started/authenticate-and-init.mdx"
+  },
+  {
+    "sourcePath": "/sdk/electron/message/create-media-from-full-path",
+    "openimPath": "/sdk/electron/message/create-media-from-full-path",
+    "title": "Create media from full path",
+    "context": "chat/sdk/electron",
+    "template": "guide",
+    "contentFile": "content/docs/chat/sdk/electron/message/create-media-from-full-path.mdx"
+  },
+  {
+    "sourcePath": "/sdk/electron/logger/upload-logs",
+    "openimPath": "/sdk/electron/logger/upload-logs",
+    "title": "Upload logs",
+    "context": "chat/sdk/electron",
+    "template": "guide",
+    "contentFile": "content/docs/chat/sdk/electron/logger/upload-logs.mdx"
+  },
+  {
     "sourcePath": "/sdk/miniprogram/overview",
     "openimPath": "/sdk/miniprogram/overview",
     "title": "OpenIM SDK for Mini Program",

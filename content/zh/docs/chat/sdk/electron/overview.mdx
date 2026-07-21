@@ -1,34 +1,55 @@
 ---
 title: 'OpenIM Electron SDK 概览'
-description: 'OpenIM Electron SDK 入口，说明 WASM 与 FFI 两种接入形态在 Web 复用和桌面应用打包中的分工。'
+description: '以 WASM 文档为共享 API 基线，说明 Electron WASM 与 FFI 形态分工，以及 FFI 专属接入差异。'
 sourcePath: '/sdk/electron/overview'
 ---
 
-## 概览
-
-Electron SDK 同时提供 WASM 和 FFI 两种接入形态。它们不是简单的二选一关系：如果同一套产品既要支持 Web 页面，又要支持 Electron 应用打包，通常需要同时规划 WASM 和 FFI。
-
-WASM 形态适用于浏览器页面、Electron 渲染进程、WebView 或希望与 Web 客户端复用的 UI 层；FFI 形态适用于桌面应用程序侧接入，用于应用打包、原生运行时能力和更明确的桌面端边界。两者在用户、会话、消息、群组和事件模型上保持一致，但运行时、资源加载、打包方式和本地能力不同。
+Electron SDK 同时提供 WASM 和 FFI 两种接入形态。共享的用户、会话、群组、消息、通话和事件能力以 [WASM SDK 文档](/sdk/wasm/overview) 为准；本页只说明形态选择，以及 **FFI 形态相对 WASM 多出的 API 与登录参数差异**。
 
 ## SDK 形态分工
 
-| 接入形态   | 适用场景                                          | 接入要点                                                                                                                             |
-| ---------- | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| WASM       | Web 页面、Electron 渲染进程、WebView、浏览器式 UI | 按 Web SDK 方式初始化，发布 `openIM.wasm`、`sql-wasm.wasm` 和 `wasm_exec.js`，并确保页面可以访问 OpenIMServer 的 HTTP API 与 WebSocket 地址。 |
-| FFI        | Electron 应用程序侧能力、桌面应用打包、原生运行时 | 按 Electron FFI SDK 的安装、打包和初始化要求接入，不使用浏览器 WASM 资源路径。适合桌面端应用进程侧集成。                             |
-| WASM + FFI | 同时支持 Web 客户端和 Electron 桌面应用           | 在业务层封装统一的 IM 能力入口，按运行环境选择 WASM 或 FFI；避免同一用户在同一应用实例中被两个 SDK 实例重复登录或竞争连接状态。      |
+| 接入形态 | 适用场景 | 文档去向 |
+| --- | --- | --- |
+| WASM | 浏览器页面、Electron 渲染进程、WebView、希望与 Web 客户端复用的 UI | 直接使用 [WASM SDK](/sdk/wasm/overview) 的接入与业务指南 |
+| FFI | 桌面应用打包、原生运行时、需要本地文件全路径或独立 `initSDK` 生命周期的场景 | 本 Hub 的专属页 + WASM 共享业务页 |
+| WASM + FFI | 同一产品同时支持 Web 与 Electron 打包 | 在业务层封装统一入口，按运行环境选择实现，避免同一用户被两个 SDK 实例重复登录 |
 
-## 桌面端接入注意事项
+## 接入差异（仅 FFI）
 
-- 如果产品同时覆盖 Web 和 Electron，建议先定义一层应用内 IM 适配器，由适配器根据运行环境选择 WASM 或 FFI。
-- 使用 WASM 形态时，通常将 IM 调用放在渲染进程，并在打包后验证 `openIM.wasm`、`sql-wasm.wasm` 和 `wasm_exec.js` 可访问。
-- 使用 FFI 形态时，应按桌面应用程序侧能力设计初始化、权限、安装包资源和升级策略。
-- 如果主进程与渲染进程都需要 IM 状态，应先设计清晰的 IPC 边界，明确连接、登录、消息事件和本地状态由哪一侧拥有，避免多个 SDK 实例竞争同一用户会话。
-- 不要把用户 token 写入 preload 脚本或主进程日志。
-- WebSocket 连通性需要在打包后的应用中验证，不能只依赖本地开发模式。
+WASM 浏览器包通过一次 `login(InitAndLoginConfig)` 同时传入服务地址、平台和用户凭据。Electron FFI 拆成两步：
 
-## 下一步
+1. `initSDK(InitConfig)`：写入 `apiAddr`、`wsAddr`、`platformID`、`dataDir`、`systemType` 和日志选项。
+2. `login({ userID, token })`：只提交当前用户凭据。
 
-- [WASM SDK 概览](/sdk/wasm/overview)
-- [按运行环境接入](/sdk/wasm/getting-started/environment-specific-implementation)
-- [发送第一条消息](/sdk/wasm/getting-started/send-first-message)
+完整参数、示例和 `unInitSDK()` 见[认证与初始化](/sdk/electron/getting-started/authenticate-and-init)。共享的连接、Token 和踢下线事件监听仍参考 [WASM 认证与管理登录会话](/sdk/wasm/getting-started/authenticate-and-manage-session)。
+
+## Electron 专属 API（FFI）
+
+| 能力 | API | 说明 |
+| --- | --- | --- |
+| 认证与生命周期 | `initSDK` / `login` / `unInitSDK` | [认证与初始化](/sdk/electron/getting-started/authenticate-and-init) |
+| 本地全路径媒体消息 | `createImageMessageFromFullPath` 等 | [从完整路径创建媒体消息](/sdk/electron/message/create-media-from-full-path) |
+| 上传诊断日志 | `uploadLogs` | [上传日志](/sdk/electron/logger/upload-logs) |
+
+浏览器或 Electron WASM 形态不要调用这些 FFI 专用方法；媒体消息应继续使用 WASM 文档中的 `*ByFile` / `*ByURL` 路径。
+
+## 共享能力（链到 WASM）
+
+| 领域 | WASM 入口 |
+| --- | --- |
+| 快速开始 | [按运行环境接入](/sdk/wasm/getting-started/environment-specific-implementation)、[发送第一条消息](/sdk/wasm/getting-started/send-first-message) |
+| 用户 | [用户概览](/sdk/wasm/user/overview-user) |
+| 会话 | [会话概览](/sdk/wasm/conversation/overview-conversation) |
+| 群组 | [群组概览](/sdk/wasm/group/overview-group) |
+| 消息 | [消息概览](/sdk/wasm/message/overview-message) |
+| 音视频通话 | [通话概览](/sdk/wasm/calling/overview-calling) |
+| 事件 | [事件概览](/sdk/wasm/events/overview-events) |
+| 日志级别 | [日志](/sdk/wasm/logger)（上传日志见 Electron 专属页） |
+
+## 桌面端注意事项
+
+- 同时覆盖 Web 与 Electron 时，先定义应用内 IM 适配器，再按环境选择 WASM 或 FFI。
+- 使用 WASM 形态时，打包后仍需验证 `openIM.wasm`、`sql-wasm.wasm` 和 `wasm_exec.js` 可访问。
+- 使用 FFI 形态时，按桌面安装包、权限、`dataDir` 和升级策略接入，不要套用浏览器 WASM 资源路径。
+- 主进程与渲染进程都需要 IM 状态时，先明确 IPC 边界和会话所有权，避免多实例竞争。
+- 不要把用户 Token 写入 preload 脚本或主进程日志。

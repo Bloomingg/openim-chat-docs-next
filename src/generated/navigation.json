@@ -6681,11 +6681,58 @@
           "title": "OpenIM SDK for Electron",
           "href": "/sdk/electron/overview",
           "type": "page",
-          "children": [],
-          "minIndex": 517
+          "children": []
+        },
+        {
+          "id": "getting-started",
+          "segment": "getting-started",
+          "title": "Getting started",
+          "type": "folder",
+          "children": [
+            {
+              "id": "authenticate-and-init",
+              "segment": "authenticate-and-init",
+              "title": "Authenticate and init",
+              "href": "/sdk/electron/getting-started/authenticate-and-init",
+              "type": "page",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "message",
+          "segment": "message",
+          "title": "Message",
+          "type": "folder",
+          "children": [
+            {
+              "id": "create-media-from-full-path",
+              "segment": "create-media-from-full-path",
+              "title": "Create media from full path",
+              "href": "/sdk/electron/message/create-media-from-full-path",
+              "type": "page",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "logger",
+          "segment": "logger",
+          "title": "Logger",
+          "type": "folder",
+          "children": [
+            {
+              "id": "upload-logs",
+              "segment": "upload-logs",
+              "title": "Upload logs",
+              "href": "/sdk/electron/logger/upload-logs",
+              "type": "page",
+              "children": []
+            }
+          ]
         }
       ],
-      "pageCount": 1
+      "pageCount": 4
     },
     {
       "key": "chat/sdk/miniprogram",
