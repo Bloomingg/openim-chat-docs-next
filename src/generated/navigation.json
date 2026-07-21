@@ -238,6 +238,72 @@
                 }
               ],
               "minIndex": 622
+            },
+            {
+              "id": "user/account-governance",
+              "segment": "account-governance",
+              "title": "账号治理",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "user/account-governance/ban-user",
+                  "segment": "ban-user",
+                  "title": "封禁用户",
+                  "href": "/docs/chat/platform-api/v3/user/account-governance/ban-user",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 624.1,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "user/account-governance/unban-user",
+                  "segment": "unban-user",
+                  "title": "解除用户封禁",
+                  "href": "/docs/chat/platform-api/v3/user/account-governance/unban-user",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 624.1,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "user/account-governance/unregister-user",
+                  "segment": "unregister-user",
+                  "title": "注销用户",
+                  "href": "/docs/chat/platform-api/v3/user/account-governance/unregister-user",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 624.1,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "user/account-governance/list-disabled-users",
+                  "segment": "list-disabled-users",
+                  "title": "查询停用用户",
+                  "href": "/docs/chat/platform-api/v3/user/account-governance/list-disabled-users",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 624.1,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                }
+              ],
+              "minIndex": 624.1,
+              "edition": "enterprise",
+              "locales": [
+                "zh"
+              ]
             }
           ],
           "minIndex": 613
@@ -300,6 +366,32 @@
                   "type": "page",
                   "children": [],
                   "minIndex": 631
+                },
+                {
+                  "id": "relation/managing-friend-requests/delete-sent-friend-requests",
+                  "segment": "delete-sent-friend-requests",
+                  "title": "删除发出的好友申请",
+                  "href": "/docs/chat/platform-api/v3/relation/managing-friend-requests/delete-sent-friend-requests",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 639.1,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "relation/managing-friend-requests/delete-received-friend-requests",
+                  "segment": "delete-received-friend-requests",
+                  "title": "删除收到的好友申请",
+                  "href": "/docs/chat/platform-api/v3/relation/managing-friend-requests/delete-received-friend-requests",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 639.1,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
                 }
               ],
               "minIndex": 628
@@ -540,6 +632,58 @@
                   "type": "page",
                   "children": [],
                   "minIndex": 682
+                },
+                {
+                  "id": "group/group-applications/get-group-application-badge-count",
+                  "segment": "get-group-application-badge-count",
+                  "title": "获取入群申请角标数",
+                  "href": "/docs/chat/platform-api/v3/group/group-applications/get-group-application-badge-count",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 694.1,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "group/group-applications/clear-group-application-badge-count",
+                  "segment": "clear-group-application-badge-count",
+                  "title": "清除入群申请角标数",
+                  "href": "/docs/chat/platform-api/v3/group/group-applications/clear-group-application-badge-count",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 694.1,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "group/group-applications/delete-user-group-requests",
+                  "segment": "delete-user-group-requests",
+                  "title": "删除用户发出的入群申请",
+                  "href": "/docs/chat/platform-api/v3/group/group-applications/delete-user-group-requests",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 694.1,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "group/group-applications/delete-group-received-requests",
+                  "segment": "delete-group-received-requests",
+                  "title": "删除群组收到的入群申请",
+                  "href": "/docs/chat/platform-api/v3/group/group-applications/delete-group-received-requests",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 694.1,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
                 }
               ],
               "minIndex": 675
@@ -756,6 +900,111 @@
                 }
               ],
               "minIndex": 742
+            },
+            {
+              "id": "conversation/conversation-groups",
+              "segment": "conversation-groups",
+              "title": "会话分组",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "conversation/conversation-groups/create-conversation-group",
+                  "segment": "create-conversation-group",
+                  "title": "创建会话分组",
+                  "href": "/docs/chat/platform-api/v3/conversation/conversation-groups/create-conversation-group",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 745.1,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "conversation/conversation-groups/update-conversation-group",
+                  "segment": "update-conversation-group",
+                  "title": "更新会话分组",
+                  "href": "/docs/chat/platform-api/v3/conversation/conversation-groups/update-conversation-group",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 745.1,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "conversation/conversation-groups/delete-conversation-group",
+                  "segment": "delete-conversation-group",
+                  "title": "删除会话分组",
+                  "href": "/docs/chat/platform-api/v3/conversation/conversation-groups/delete-conversation-group",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 745.1,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "conversation/conversation-groups/list-conversation-groups",
+                  "segment": "list-conversation-groups",
+                  "title": "查询会话分组",
+                  "href": "/docs/chat/platform-api/v3/conversation/conversation-groups/list-conversation-groups",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 745.1,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "conversation/conversation-groups/set-conversation-group-order",
+                  "segment": "set-conversation-group-order",
+                  "title": "设置会话分组顺序",
+                  "href": "/docs/chat/platform-api/v3/conversation/conversation-groups/set-conversation-group-order",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 745.1,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "conversation/conversation-groups/add-conversations-to-groups",
+                  "segment": "add-conversations-to-groups",
+                  "title": "将会话加入分组",
+                  "href": "/docs/chat/platform-api/v3/conversation/conversation-groups/add-conversations-to-groups",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 745.1,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "conversation/conversation-groups/remove-conversations-from-groups",
+                  "segment": "remove-conversations-from-groups",
+                  "title": "将会话移出分组",
+                  "href": "/docs/chat/platform-api/v3/conversation/conversation-groups/remove-conversations-from-groups",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 745.1,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                }
+              ],
+              "minIndex": 745.1,
+              "edition": "enterprise",
+              "locales": [
+                "zh"
+              ]
             }
           ],
           "minIndex": 737.9
@@ -837,6 +1086,19 @@
                   "type": "page",
                   "children": [],
                   "minIndex": 724
+                },
+                {
+                  "id": "message/managing-messages/modify-message",
+                  "segment": "modify-message",
+                  "title": "修改消息内容",
+                  "href": "/docs/chat/platform-api/v3/message/managing-messages/modify-message",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 725.1,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
                 }
               ],
               "minIndex": 724
@@ -859,9 +1121,262 @@
                 }
               ],
               "minIndex": 725
+            },
+            {
+              "id": "message/content-processing",
+              "segment": "content-processing",
+              "title": "内容处理",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "message/content-processing/translate-text",
+                  "segment": "translate-text",
+                  "title": "翻译文本",
+                  "href": "/docs/chat/platform-api/v3/message/content-processing/translate-text",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 725.1,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                }
+              ],
+              "minIndex": 725.1,
+              "edition": "enterprise",
+              "locales": [
+                "zh"
+              ]
+            },
+            {
+              "id": "message/streaming-messages",
+              "segment": "streaming-messages",
+              "title": "流式消息",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "message/streaming-messages/append-stream-message",
+                  "segment": "append-stream-message",
+                  "title": "追加流式消息分片",
+                  "href": "/docs/chat/platform-api/v3/message/streaming-messages/append-stream-message",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 725.1,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "message/streaming-messages/put-stream-message",
+                  "segment": "put-stream-message",
+                  "title": "上传流式消息分片",
+                  "href": "/docs/chat/platform-api/v3/message/streaming-messages/put-stream-message",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 725.1,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                }
+              ],
+              "minIndex": 725.1,
+              "edition": "enterprise",
+              "locales": [
+                "zh"
+              ]
+            },
+            {
+              "id": "message/unread-count",
+              "segment": "unread-count",
+              "title": "未读数管理",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "message/unread-count/get-conversations-unread-count",
+                  "segment": "get-conversations-unread-count",
+                  "title": "获取会话未读数",
+                  "href": "/docs/chat/platform-api/v3/message/unread-count/get-conversations-unread-count",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 725.1,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "message/unread-count/clear-conversations-unread-count",
+                  "segment": "clear-conversations-unread-count",
+                  "title": "清除会话未读数",
+                  "href": "/docs/chat/platform-api/v3/message/unread-count/clear-conversations-unread-count",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 725.1,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "message/unread-count/reset-conversation-unread",
+                  "segment": "reset-conversation-unread",
+                  "title": "设置会话未读数",
+                  "href": "/docs/chat/platform-api/v3/message/unread-count/reset-conversation-unread",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 725.1,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                }
+              ],
+              "minIndex": 725.1,
+              "edition": "enterprise",
+              "locales": [
+                "zh"
+              ]
+            },
+            {
+              "id": "message/read-status",
+              "segment": "read-status",
+              "title": "已读状态",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "message/read-status/mark-conversation-read",
+                  "segment": "mark-conversation-read",
+                  "title": "标记会话已读位置",
+                  "href": "/docs/chat/platform-api/v3/message/read-status/mark-conversation-read",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 725.1,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                }
+              ],
+              "minIndex": 725.1,
+              "edition": "enterprise",
+              "locales": [
+                "zh"
+              ]
             }
           ],
           "minIndex": 719.9
+        },
+        {
+          "id": "timer",
+          "segment": "timer",
+          "title": "定时任务",
+          "href": null,
+          "type": "folder",
+          "children": [
+            {
+              "id": "timer/overview",
+              "segment": "overview",
+              "title": "概述",
+              "href": "/docs/chat/platform-api/v3/timer/overview",
+              "type": "page",
+              "children": [],
+              "minIndex": 750,
+              "edition": "enterprise",
+              "locales": [
+                "zh"
+              ]
+            },
+            {
+              "id": "timer/managing-tasks",
+              "segment": "managing-tasks",
+              "title": "管理任务",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "timer/managing-tasks/create-timer-task",
+                  "segment": "create-timer-task",
+                  "title": "创建定时任务",
+                  "href": "/docs/chat/platform-api/v3/timer/managing-tasks/create-timer-task",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 750,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "timer/managing-tasks/update-timer-task",
+                  "segment": "update-timer-task",
+                  "title": "更新定时任务",
+                  "href": "/docs/chat/platform-api/v3/timer/managing-tasks/update-timer-task",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 750,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "timer/managing-tasks/delete-timer-task",
+                  "segment": "delete-timer-task",
+                  "title": "删除定时任务",
+                  "href": "/docs/chat/platform-api/v3/timer/managing-tasks/delete-timer-task",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 750,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "timer/managing-tasks/get-timer-task",
+                  "segment": "get-timer-task",
+                  "title": "获取定时任务",
+                  "href": "/docs/chat/platform-api/v3/timer/managing-tasks/get-timer-task",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 750,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "timer/managing-tasks/list-timer-tasks",
+                  "segment": "list-timer-tasks",
+                  "title": "查询定时任务",
+                  "href": "/docs/chat/platform-api/v3/timer/managing-tasks/list-timer-tasks",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 750,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                }
+              ],
+              "minIndex": 750,
+              "edition": "enterprise",
+              "locales": [
+                "zh"
+              ]
+            }
+          ],
+          "minIndex": 750,
+          "edition": "enterprise",
+          "locales": [
+            "zh"
+          ]
         },
         {
           "id": "logs",
@@ -910,6 +1425,598 @@
           "minIndex": 761.9
         },
         {
+          "id": "meeting",
+          "segment": "meeting",
+          "title": "会议",
+          "href": null,
+          "type": "folder",
+          "children": [
+            {
+              "id": "meeting/overview",
+              "segment": "overview",
+              "title": "概述",
+              "href": "/docs/chat/platform-api/v3/meeting/overview",
+              "type": "page",
+              "children": [],
+              "minIndex": 770,
+              "edition": "enterprise",
+              "locales": [
+                "zh"
+              ]
+            },
+            {
+              "id": "meeting/meeting-management",
+              "segment": "meeting-management",
+              "title": "会议管理",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "meeting/meeting-management/book-meeting",
+                  "segment": "book-meeting",
+                  "title": "预约会议",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-management/book-meeting",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/meeting-management/create-immediate-meeting",
+                  "segment": "create-immediate-meeting",
+                  "title": "创建即时会议",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-management/create-immediate-meeting",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/meeting-management/join-meeting",
+                  "segment": "join-meeting",
+                  "title": "加入会议",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-management/join-meeting",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/meeting-management/get-meeting-token",
+                  "segment": "get-meeting-token",
+                  "title": "获取会议 Token",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-management/get-meeting-token",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/meeting-management/update-meeting",
+                  "segment": "update-meeting",
+                  "title": "更新会议",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-management/update-meeting",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/meeting-management/get-meeting",
+                  "segment": "get-meeting",
+                  "title": "获取会议详情",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-management/get-meeting",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/meeting-management/list-meetings",
+                  "segment": "list-meetings",
+                  "title": "查询用户会议",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-management/list-meetings",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/meeting-management/invite-meeting-users",
+                  "segment": "invite-meeting-users",
+                  "title": "邀请用户参加会议",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-management/invite-meeting-users",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/meeting-management/leave-meeting",
+                  "segment": "leave-meeting",
+                  "title": "离开会议",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-management/leave-meeting",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/meeting-management/end-meeting",
+                  "segment": "end-meeting",
+                  "title": "结束会议",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-management/end-meeting",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/meeting-management/get-user-related-meetings",
+                  "segment": "get-user-related-meetings",
+                  "title": "查询用户相关会议",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-management/get-user-related-meetings",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                }
+              ],
+              "minIndex": 770,
+              "edition": "enterprise",
+              "locales": [
+                "zh"
+              ]
+            },
+            {
+              "id": "meeting/meeting-settings",
+              "segment": "meeting-settings",
+              "title": "会议控制",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "meeting/meeting-settings/set-personal-setting",
+                  "segment": "set-personal-setting",
+                  "title": "设置个人会议偏好",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-settings/set-personal-setting",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/meeting-settings/get-personal-setting",
+                  "segment": "get-personal-setting",
+                  "title": "获取个人会议偏好",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-settings/get-personal-setting",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/meeting-settings/operate-all-streams",
+                  "segment": "operate-all-streams",
+                  "title": "控制会议全员音视频",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-settings/operate-all-streams",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/meeting-settings/modify-participant-name",
+                  "segment": "modify-participant-name",
+                  "title": "修改参会者名称",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-settings/modify-participant-name",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/meeting-settings/remove-participants",
+                  "segment": "remove-participants",
+                  "title": "移除参会者",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-settings/remove-participants",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/meeting-settings/set-meeting-host",
+                  "segment": "set-meeting-host",
+                  "title": "设置主持人",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-settings/set-meeting-host",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/meeting-settings/clean-previous-meetings",
+                  "segment": "clean-previous-meetings",
+                  "title": "清理历史会议状态",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-settings/clean-previous-meetings",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                }
+              ],
+              "minIndex": 770,
+              "edition": "enterprise",
+              "locales": [
+                "zh"
+              ]
+            },
+            {
+              "id": "meeting/recurring-meetings",
+              "segment": "recurring-meetings",
+              "title": "重复会议",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "meeting/recurring-meetings/create-repeat-meeting",
+                  "segment": "create-repeat-meeting",
+                  "title": "创建重复会议",
+                  "href": "/docs/chat/platform-api/v3/meeting/recurring-meetings/create-repeat-meeting",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/recurring-meetings/update-repeat-meeting",
+                  "segment": "update-repeat-meeting",
+                  "title": "更新重复会议",
+                  "href": "/docs/chat/platform-api/v3/meeting/recurring-meetings/update-repeat-meeting",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/recurring-meetings/delete-repeat-meeting",
+                  "segment": "delete-repeat-meeting",
+                  "title": "删除重复会议",
+                  "href": "/docs/chat/platform-api/v3/meeting/recurring-meetings/delete-repeat-meeting",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/recurring-meetings/get-repeat-meeting",
+                  "segment": "get-repeat-meeting",
+                  "title": "获取重复会议",
+                  "href": "/docs/chat/platform-api/v3/meeting/recurring-meetings/get-repeat-meeting",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/recurring-meetings/list-repeat-meetings",
+                  "segment": "list-repeat-meetings",
+                  "title": "查询重复会议",
+                  "href": "/docs/chat/platform-api/v3/meeting/recurring-meetings/list-repeat-meetings",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/recurring-meetings/list-repeat-meeting-instances",
+                  "segment": "list-repeat-meeting-instances",
+                  "title": "查询重复会议实例",
+                  "href": "/docs/chat/platform-api/v3/meeting/recurring-meetings/list-repeat-meeting-instances",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                }
+              ],
+              "minIndex": 770,
+              "edition": "enterprise",
+              "locales": [
+                "zh"
+              ]
+            },
+            {
+              "id": "meeting/meeting-records",
+              "segment": "meeting-records",
+              "title": "会议记录",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "meeting/meeting-records/get-user-meeting-histories",
+                  "segment": "get-user-meeting-histories",
+                  "title": "查询用户参会历史",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-records/get-user-meeting-histories",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/meeting-records/get-user-hosted-meetings",
+                  "segment": "get-user-hosted-meetings",
+                  "title": "查询用户主持记录",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-records/get-user-hosted-meetings",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/meeting-records/get-meeting-records",
+                  "segment": "get-meeting-records",
+                  "title": "查询会议录制记录",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-records/get-meeting-records",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/meeting-records/get-records-by-meeting-ids",
+                  "segment": "get-records-by-meeting-ids",
+                  "title": "按会议 ID 查询录制记录",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-records/get-records-by-meeting-ids",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/meeting-records/get-meeting-attendance",
+                  "segment": "get-meeting-attendance",
+                  "title": "获取会议出席情况",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-records/get-meeting-attendance",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/meeting-records/delete-meeting-records",
+                  "segment": "delete-meeting-records",
+                  "title": "删除会议录制记录",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-records/delete-meeting-records",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                }
+              ],
+              "minIndex": 770,
+              "edition": "enterprise",
+              "locales": [
+                "zh"
+              ]
+            },
+            {
+              "id": "meeting/meeting-signaling",
+              "segment": "meeting-signaling",
+              "title": "实时通话",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "meeting/meeting-signaling/get-room-by-group-id",
+                  "segment": "get-room-by-group-id",
+                  "title": "按群组获取通话房间",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-signaling/get-room-by-group-id",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/meeting-signaling/get-signal-rooms",
+                  "segment": "get-signal-rooms",
+                  "title": "批量获取通话房间",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-signaling/get-signal-rooms",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/meeting-signaling/get-signal-invitation",
+                  "segment": "get-signal-invitation",
+                  "title": "获取通话邀请",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-signaling/get-signal-invitation",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/meeting-signaling/get-startup-invitation",
+                  "segment": "get-startup-invitation",
+                  "title": "获取启动时通话邀请",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-signaling/get-startup-invitation",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                }
+              ],
+              "minIndex": 770,
+              "edition": "enterprise",
+              "locales": [
+                "zh"
+              ]
+            },
+            {
+              "id": "meeting/meeting-chat",
+              "segment": "meeting-chat",
+              "title": "会议聊天",
+              "href": null,
+              "type": "folder",
+              "children": [
+                {
+                  "id": "meeting/meeting-chat/send-meeting-chat",
+                  "segment": "send-meeting-chat",
+                  "title": "发送会议聊天消息",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-chat/send-meeting-chat",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/meeting-chat/pull-meeting-chat",
+                  "segment": "pull-meeting-chat",
+                  "title": "拉取会议聊天消息",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-chat/pull-meeting-chat",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                },
+                {
+                  "id": "meeting/meeting-chat/revoke-meeting-chat",
+                  "segment": "revoke-meeting-chat",
+                  "title": "撤回会议聊天消息",
+                  "href": "/docs/chat/platform-api/v3/meeting/meeting-chat/revoke-meeting-chat",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 770,
+                  "edition": "enterprise",
+                  "locales": [
+                    "zh"
+                  ]
+                }
+              ],
+              "minIndex": 770,
+              "edition": "enterprise",
+              "locales": [
+                "zh"
+              ]
+            }
+          ],
+          "minIndex": 770,
+          "edition": "enterprise",
+          "locales": [
+            "zh"
+          ]
+        },
+        {
           "id": "migration-to-openim",
           "segment": "migration-to-openim",
           "title": "Migrate to OpenIM",
@@ -928,7 +2035,7 @@
           "minIndex": 635
         }
       ],
-      "pageCount": 73
+      "pageCount": 142
     },
     {
       "key": "chat/sdk/v4/ios",

@@ -17,6 +17,7 @@ for (const route of routes) {
       .filter(Boolean)
       .join(' '),
     content: normalizeBody(body).slice(0, 12_000),
+    locales: route.locales,
   });
 }
 

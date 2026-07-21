@@ -18,6 +18,8 @@ export interface RouteRecord {
   sourceIndex: number;
   contentFile: string;
   navOrder: number;
+  edition?: 'open-source' | 'enterprise';
+  locales?: Array<'en' | 'zh'>;
 }
 
 export interface NavNode {
@@ -28,6 +30,8 @@ export interface NavNode {
   type: 'folder' | 'page';
   children: NavNode[];
   minIndex: number;
+  edition?: 'open-source' | 'enterprise';
+  locales?: Array<'en' | 'zh'>;
 }
 
 export interface NavContext {
@@ -65,4 +69,5 @@ export interface SearchRecord {
   context: string;
   keywords: string;
   content?: string;
+  locales?: Array<'en' | 'zh'>;
 }

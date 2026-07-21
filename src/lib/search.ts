@@ -1,6 +1,7 @@
 import 'server-only';
 
 import rawIndex from '@/src/generated/search-index.json';
+import type { Locale } from '@/src/lib/i18n';
 import type { SearchRecord } from '@/src/types/docs';
 
 const records = rawIndex as SearchRecord[];
@@ -9,12 +10,13 @@ export interface SearchResult extends SearchRecord {
   score: number;
 }
 
-export function searchDocs(query: string, limit = 20): SearchResult[] {
+export function searchDocs(query: string, limit = 20, locale?: Locale): SearchResult[] {
   const normalizedQuery = normalize(query);
   if (!normalizedQuery) return [];
   const tokens = tokenize(normalizedQuery);
 
   return records
+    .filter((record) => !locale || !record.locales || record.locales.includes(locale))
     .map((record) => ({ ...record, score: scoreRecord(record, normalizedQuery, tokens) }))
     .filter((record) => record.score > 0)
     .sort((a, b) => b.score - a.score || a.title.localeCompare(b.title))

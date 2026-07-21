@@ -27,6 +27,7 @@ export function SidebarNav({
           key={`${stateKey}:${node.id}`}
           locale={locale}
           node={node}
+          parentEdition={undefined}
           stateKey={stateKey}
         />
       ))}
@@ -43,17 +44,27 @@ function SidebarNode({
   currentPath,
   depth,
   locale,
+  parentEdition,
   stateKey,
 }: {
   node: NavNode;
   currentPath: string;
   depth: number;
   locale: Locale;
+  parentEdition?: NavNode['edition'];
   stateKey: string;
 }) {
+  if (node.locales && !node.locales.includes(locale)) return null;
   const active = node.href === currentPath;
   const containsActive = nodeContainsPath(node, currentPath);
   const title = localizeNavNodeTitle(node, locale);
+  const showEnterpriseBadge = node.edition === 'enterprise' && parentEdition !== 'enterprise';
+  const renderedTitle = (
+    <span className="sidebar-label-row">
+      <span className="sidebar-label-text">{title}</span>
+      {showEnterpriseBadge ? <span className="sidebar-enterprise-badge">商业版</span> : null}
+    </span>
+  );
 
   if (node.children.length === 0) {
     if (!node.href) return null;
@@ -65,7 +76,7 @@ function SidebarNode({
         href={toLocalizedPath(node.href, locale)}
         style={{ '--nav-depth': depth } as CSSProperties}
       >
-        {title}
+        {renderedTitle}
       </Link>
     );
   }
@@ -77,7 +88,7 @@ function SidebarNode({
       depth={depth}
       href={node.href ? toLocalizedPath(node.href, locale) : undefined}
       initialOpen={containsActive || hrefPath(node.href) === currentPath || depth === 0}
-      title={title}
+      title={renderedTitle}
     >
       {node.children.map((child) => (
         <SidebarNode
@@ -86,6 +97,7 @@ function SidebarNode({
           key={`${stateKey}:${child.id}`}
           locale={locale}
           node={child}
+          parentEdition={node.edition}
           stateKey={stateKey}
         />
       ))}

@@ -45,7 +45,7 @@ export function SearchDialog({ locale = 'en' }: { locale?: Locale }) {
     const timeout = window.setTimeout(async () => {
       setLoading(true);
       try {
-        const response = await fetch(`/api/search?q=${encodeURIComponent(normalized)}&limit=20`, {
+        const response = await fetch(`/api/search?q=${encodeURIComponent(normalized)}&limit=20&locale=${locale}`, {
           signal: controller.signal,
         });
         if (!response.ok) throw new Error('Search request failed');
@@ -62,7 +62,7 @@ export function SearchDialog({ locale = 'en' }: { locale?: Locale }) {
       controller.abort();
       window.clearTimeout(timeout);
     };
-  }, [query]);
+  }, [locale, query]);
 
   function openDialog() {
     dialogRef.current?.showModal();

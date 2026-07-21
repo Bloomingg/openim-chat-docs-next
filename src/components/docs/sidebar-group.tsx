@@ -10,7 +10,7 @@ type SidebarGroupProps = {
   depth: number;
   href?: string;
   initialOpen: boolean;
-  title: string;
+  title: ReactNode;
 };
 
 type SidebarGroupState = {

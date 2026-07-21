@@ -103,6 +103,7 @@ curl --request POST "${API_ADDRESS}/group/create_group" \
 | groupInfo.lookMemberInfo | 否 | int | 是否允许查看群成员资料。 |
 | groupInfo.applyMemberFriend | 否 | int | 是否允许从群成员处添加好友。 |
 | sendMessage | 否 | boolean | 是否发送群创建通知。 |
+| displayIsRead <span className="enterprise-field-badge">商业版</span> | 否 | boolean | 是否展示群消息已读状态；服务端可能根据群规模自动关闭该能力。 |
 
 ## 响应
 

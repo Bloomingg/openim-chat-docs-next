@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routeEntries: MetadataRoute.Sitemap = getAllRoutes().flatMap((route) => {
     const changeFrequency =
       route.status === 'published' ? ('monthly' as const) : ('weekly' as const);
-    return (['en', 'zh'] as const).map((locale) => ({
+    return (route.locales ?? (['en', 'zh'] as const)).map((locale) => ({
       url: new URL(toLocalizedPath(route.path, locale), siteConfig.siteUrl).toString(),
       lastModified,
       changeFrequency,

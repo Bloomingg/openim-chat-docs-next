@@ -54,6 +54,34 @@ sourcePath: "/docs/chat/platform-api/v3/conversation/overview"
 | msgDestructTime | int64 | 消息销毁时间。 |
 | latestMsgDestructTime | int64 | 最新消息销毁时间。 |
 | isMsgDestruct | boolean | 是否开启消息销毁。 |
+| isMarked <span className="enterprise-field-badge">商业版</span> | boolean | 是否标记该会话。 |
+| remark <span className="enterprise-field-badge">商业版</span> | string | 当前用户为会话设置的备注。 |
+
+### ConversationGroup
+
+`ConversationGroup` 表示商业版中的用户会话分组。会话分组接口均为商业版接口。
+
+| 字段 | 类型 | 说明 |
+| ---- | ---- | ---- |
+| conversationGroupID | string | 会话分组 ID。 |
+| ownerUserID | string | 分组所属用户 ID。 |
+| name | string | 分组名称。 |
+| order | int64 | 分组展示顺序。 |
+| version | int64 | 分组版本号。 |
+| ex | string | 业务扩展字段。 |
+| conversationIDs | string[] | 分组中的会话 ID 列表。 |
+| hidden | boolean | 是否隐藏该分组。 |
+| conversationGroupType | int | 分组类型：`0` 普通分组，`1` 筛选分组。 |
+| createTime | int64 | 创建时间，Unix 毫秒时间戳。 |
+
+### ConversationGroupOrder
+
+`ConversationGroupOrder` 表示商业版会话分组的排序设置。
+
+| 字段 | 类型 | 说明 |
+| ---- | ---- | ---- |
+| conversationGroupID | string | 会话分组 ID。 |
+| order | int64 | 目标展示顺序。 |
 
 ## 接入建议
 

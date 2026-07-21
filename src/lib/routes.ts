@@ -2,6 +2,7 @@ import 'server-only';
 
 import rawRoutes from '@/src/generated/routes.json';
 import { humanizeSlug } from '@/src/config/docs';
+import type { Locale } from '@/src/lib/i18n';
 import type { BreadcrumbItem, RouteRecord } from '@/src/types/docs';
 
 const routes = rawRoutes as RouteRecord[];
@@ -40,11 +41,17 @@ export function getRoutesForContext(contextKey: string): readonly RouteRecord[] 
   return routesByContext.get(contextKey) ?? [];
 }
 
-export function getNeighbors(route: RouteRecord): {
+export function routeSupportsLocale(route: RouteRecord, locale: Locale): boolean {
+  return !route.locales || route.locales.includes(locale);
+}
+
+export function getNeighbors(route: RouteRecord, locale?: Locale): {
   previous?: RouteRecord;
   next?: RouteRecord;
 } {
-  const group = routesByContext.get(route.contextKey) ?? [];
+  const group = (routesByContext.get(route.contextKey) ?? []).filter(
+    (item) => !locale || routeSupportsLocale(item, locale),
+  );
   const index = group.findIndex((item) => item.path === route.path);
   return {
     previous: index > 0 ? group[index - 1] : undefined,

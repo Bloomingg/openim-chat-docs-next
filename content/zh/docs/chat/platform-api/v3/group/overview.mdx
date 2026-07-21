@@ -56,6 +56,8 @@ sourcePath: "/docs/chat/platform-api/v3/group/overview"
 | notificationUpdateTime | int64 | 群公告更新时间。 |
 | notificationUserID | string | 更新群公告的用户 ID。 |
 | ex | string | 群扩展字段。 |
+| displayIsRead <span className="enterprise-field-badge">商业版</span> | boolean | 是否展示群消息已读状态。服务端可能根据群规模自动关闭该能力。 |
+| muteBypassUserIDs <span className="enterprise-field-badge">商业版</span> | string[] | 全群禁言时仍可发送消息的用户 ID 列表。 |
 
 ### GroupMemberInfo
 

@@ -105,6 +105,8 @@ curl --request POST "${API_ADDRESS}/conversation/set_conversations" \
 | conversation.groupAtType | 否 | int | 群聊 @ 状态。 |
 | conversation.msgDestructTime | 否 | int | 消息销毁时间配置。 |
 | conversation.isMsgDestruct | 否 | boolean | 是否开启消息销毁。 |
+| conversation.isMarked <span className="enterprise-field-badge">商业版</span> | 否 | boolean | 是否标记该会话。 |
+| conversation.remark <span className="enterprise-field-badge">商业版</span> | 否 | string | 当前用户为会话设置的备注。 |
 
 ## 响应
 

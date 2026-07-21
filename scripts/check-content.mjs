@@ -201,11 +201,11 @@ const platformApiZhOverviewHeadingExpectations = new Map([
   ],
   [
     '/docs/chat/platform-api/v3/user/overview',
-    ['## 能力范围', '## 常用接口', '## 接入建议', '## 相关页面'],
+    ['## 能力范围', '## 常用接口', '## 资源表示', '## 接入建议', '## 相关页面'],
   ],
   [
     '/docs/chat/platform-api/v3/relation/overview',
-    ['## 能力范围', '## 常用接口', '## 接入建议', '## 相关页面'],
+    ['## 能力范围', '## 常用接口', '## 资源表示', '## 接入建议', '## 相关页面'],
   ],
   [
     '/docs/chat/platform-api/v3/auth/overview',
@@ -213,11 +213,11 @@ const platformApiZhOverviewHeadingExpectations = new Map([
   ],
   [
     '/docs/chat/platform-api/v3/group/overview',
-    ['## 能力范围', '## 常用接口', '## 接入建议', '## 相关页面'],
+    ['## 能力范围', '## 常用接口', '## 资源表示', '## 接入建议', '## 相关页面'],
   ],
   [
     '/docs/chat/platform-api/v3/conversation/overview',
-    ['## 能力范围', '## 常用接口', '## 接入建议', '## 相关页面'],
+    ['## 能力范围', '## 常用接口', '## 资源表示', '## 接入建议', '## 相关页面'],
   ],
   [
     '/docs/chat/platform-api/v3/message/overview',
@@ -227,6 +227,8 @@ const platformApiZhOverviewHeadingExpectations = new Map([
     '/docs/chat/platform-api/v3/logs/overview',
     ['## 能力范围', '## 常用接口', '## 接入建议', '## 相关页面'],
   ],
+  ['/docs/chat/platform-api/v3/timer/overview', ['## 能力范围', '## 资源结构', '## 接入建议']],
+  ['/docs/chat/platform-api/v3/meeting/overview', ['## 能力范围', '## 资源结构', '## 接入建议']],
   [
     '/docs/chat/platform-api/v3/migration-to-openim',
     ['## 能力范围', '## 常用接口', '## 接入建议', '## 相关页面'],
@@ -236,30 +238,10 @@ const platformApiZhOverviewHeadingExpectations = new Map([
     ['## 响应结构', '## 错误码范围', '## 处理流程', '## 服务端错误码', '## 排查建议'],
   ],
 ]);
-const platformApiZhOverviewHeadingExpectations = new Map([
-  ...platformApiOverviewHeadingExpectations,
-  [
-    '/docs/chat/platform-api/v3/user/overview',
-    ['## 能力范围', '## 常用接口', '## 资源表示', '## 接入建议', '## 相关页面'],
-  ],
-  [
-    '/docs/chat/platform-api/v3/relation/overview',
-    ['## 能力范围', '## 常用接口', '## 资源表示', '## 接入建议', '## 相关页面'],
-  ],
-  [
-    '/docs/chat/platform-api/v3/group/overview',
-    ['## 能力范围', '## 常用接口', '## 资源表示', '## 接入建议', '## 相关页面'],
-  ],
-  [
-    '/docs/chat/platform-api/v3/conversation/overview',
-    ['## 能力范围', '## 常用接口', '## 资源表示', '## 接入建议', '## 相关页面'],
-  ],
-  [
-    '/docs/chat/platform-api/v3/message/overview',
-    ['## 能力范围', '## 常用接口', '## 接入建议', '## 相关页面'],
-  ],
+const platformApiAllowedOverviewPaths = new Set([
+  ...platformApiEnglishOverviewHeadingExpectations.keys(),
+  ...platformApiZhOverviewHeadingExpectations.keys(),
 ]);
-const platformApiAllowedOverviewPaths = new Set(platformApiOverviewHeadingExpectations.keys());
 const visibleBrandPattern = /\bSendbird\b/i;
 const activeSdkPlatforms = scope.products.sdk?.platforms ?? [];
 if (activeSdkPlatforms.join('\n') !== expectedSdkPlatforms.join('\n')) {
@@ -271,6 +253,7 @@ if (activeSdkPlatforms.join('\n') !== expectedSdkPlatforms.join('\n')) {
 }
 
 for (const route of routes) {
+  const isZhOnly = route.locales?.length === 1 && route.locales[0] === 'zh';
   if (pathSet.has(route.path)) errors.push(`Duplicate route path: ${route.path}`);
   if (contentSet.has(route.contentFile))
     errors.push(`Duplicate content file: ${route.contentFile}`);
@@ -315,16 +298,16 @@ for (const route of routes) {
   if (frontmatter.title && frontmatter.title !== route.title) {
     warnings.push(`${route.contentFile}: title differs from generated route metadata`);
   }
-  if (route.contentFile.startsWith('content/zh/')) {
+  if (route.contentFile.startsWith('content/zh/') && !isZhOnly) {
     errors.push(
       `${route.path}: English route must not point to Chinese content (${route.contentFile})`,
     );
   }
   if (route.contentFile.startsWith('content/docs/')) {
-    if (containsCjk(frontmatter.title ?? '') || containsCjk(frontmatter.description ?? '')) {
+    if (!isZhOnly && (containsCjk(frontmatter.title ?? '') || containsCjk(frontmatter.description ?? ''))) {
       errors.push(`${route.contentFile}: English frontmatter contains Chinese text`);
     }
-    if (containsCjk(bodyWithoutFrontmatter)) {
+    if (!isZhOnly && containsCjk(bodyWithoutFrontmatter)) {
       errors.push(`${route.contentFile}: English body contains Chinese text`);
     }
   }
@@ -359,7 +342,7 @@ for (const route of routes) {
       errors.push(`${route.contentFile}: visible Platform API body must not mention Sendbird`);
     }
     const sourceOverviewExpectations = route.contentFile.startsWith('content/docs/')
-      ? platformApiOverviewHeadingExpectations
+      ? platformApiEnglishOverviewHeadingExpectations
       : platformApiZhOverviewHeadingExpectations;
     const expectedOverviewHeadings = sourceOverviewExpectations.get(route.path);
     if (expectedOverviewHeadings) {
@@ -391,7 +374,9 @@ for (const route of routes) {
       }
     }
     if (route.template === 'api') {
-      for (const heading of platformApiEnglishRequiredApiHeadings) {
+      for (const heading of isZhOnly
+        ? platformApiZhRequiredApiHeadings
+        : platformApiEnglishRequiredApiHeadings) {
         if (!mdx.includes(heading)) {
           errors.push(`${route.contentFile}: missing English heading "${heading}"`);
         }
@@ -735,6 +720,20 @@ function checkPlatformApiListUsersPage(body, label, options = {}) {
   for (const forbidden of platformApiListUsersForbiddenSnippets) {
     if (body.includes(forbidden)) {
       errors.push(`${label}: list-users page contains raw sample host ${forbidden}`);
+    }
+  }
+}
+
+function checkPlatformApiEnglishListUsersPage(body, label) {
+  const actualHeadings = extractPlatformApiSecondLevelHeadings(body);
+  for (const heading of ['## HTTP request', '## Request body', '## Response']) {
+    if (!actualHeadings.includes(heading)) {
+      errors.push(`${label}: English list-users page is missing heading "${heading}"`);
+    }
+  }
+  for (const expected of platformApiEnglishListUsersExpectedSnippets) {
+    if (!body.includes(expected)) {
+      errors.push(`${label}: English list-users page is missing "${expected}"`);
     }
   }
 }
