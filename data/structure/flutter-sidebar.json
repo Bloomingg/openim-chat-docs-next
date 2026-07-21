@@ -1,0 +1,153 @@
+{
+  "sidebarExpansion": "active-path",
+  "nodes": [
+    {
+      "path": "/sdk/flutter/overview",
+      "navigationTitle": "Overview"
+    },
+    {
+      "id": "getting-started",
+      "title": "Getting started",
+      "children": [
+        "/sdk/flutter/getting-started/before-you-start",
+        "/sdk/flutter/getting-started/environment-specific-implementation",
+        "/sdk/flutter/getting-started/authenticate-and-manage-session",
+        "/sdk/flutter/getting-started/send-first-message"
+      ]
+    },
+    {
+      "id": "user",
+      "title": "User",
+      "children": [
+        "/sdk/flutter/user/overview-user",
+        {
+          "id": "user/user-profile",
+          "title": "User profile",
+          "children": [
+            "/sdk/flutter/user/retrieving-users/retrieve-users",
+            "/sdk/flutter/user/retrieving-and-updating-user-information/retrieve-and-update-self-profile",
+            "/sdk/flutter/user/retrieving-and-updating-user-information/retrieve-the-online-status-of-a-user"
+          ]
+        },
+        {
+          "id": "user/friends",
+          "title": "Friends",
+          "children": [
+            "/sdk/flutter/user/retrieving-users/retrieve-a-list-of-friends",
+            "/sdk/flutter/user/retrieving-users/retrieve-friend-information",
+            "/sdk/flutter/user/managing-friends/manage-friend-requests",
+            "/sdk/flutter/user/managing-friends/update-or-delete-friends"
+          ]
+        },
+        {
+          "id": "user/blacklist",
+          "title": "Blacklist",
+          "children": [
+            "/sdk/flutter/user/moderating-a-user/retrieve-a-list-of-blocked-users",
+            "/sdk/flutter/user/moderating-a-user/block-or-unblock-users"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "conversation",
+      "title": "Conversation",
+      "children": [
+        "/sdk/flutter/conversation/overview-conversation",
+        {
+          "id": "conversation/retrieving-conversations",
+          "title": "Retrieving conversations",
+          "children": [
+            "/sdk/flutter/conversation/retrieving-conversations/retrieve-a-conversation",
+            "/sdk/flutter/conversation/retrieving-conversations/retrieve-conversation-list"
+          ]
+        },
+        {
+          "id": "conversation/managing-conversations",
+          "title": "Managing conversations",
+          "children": [
+            "/sdk/flutter/conversation/managing-conversations/set-conversation-settings",
+            "/sdk/flutter/conversation/managing-conversations/set-conversation-draft",
+            "/sdk/flutter/conversation/managing-conversations/manage-read-status",
+            "/sdk/flutter/conversation/managing-conversations/hide-a-conversation",
+            "/sdk/flutter/conversation/managing-conversations/delete-or-clear-conversation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "group",
+      "title": "Group",
+      "children": [
+        "/sdk/flutter/group/overview-group",
+        "/sdk/flutter/group/creating-and-updating-groups/create-or-update-a-group",
+        "/sdk/flutter/group/retrieving-groups/retrieve-and-search-groups",
+        "/sdk/flutter/group/joining-and-leaving-groups/join-leave-or-dismiss-a-group",
+        "/sdk/flutter/group/managing-group-applications/manage-group-applications",
+        "/sdk/flutter/group/retrieving-group-members/retrieve-group-members",
+        {
+          "id": "group/managing-group-members",
+          "title": "Managing group members",
+          "children": [
+            "/sdk/flutter/group/managing-group-members/invite-or-remove-group-members",
+            "/sdk/flutter/group/managing-group-members/update-group-member-info",
+            "/sdk/flutter/group/managing-group-members/transfer-group-owner"
+          ]
+        },
+        "/sdk/flutter/group/moderating-groups/mute-a-group-or-member"
+      ]
+    },
+    {
+      "id": "message",
+      "title": "Message",
+      "children": [
+        "/sdk/flutter/message/overview-message",
+        {
+          "id": "message/sending-messages",
+          "title": "Sending messages",
+          "children": [
+            "/sdk/flutter/message/sending-messages/send-a-message",
+            "/sdk/flutter/message/sending-messages/create-media-and-rich-messages",
+            "/sdk/flutter/message/sending-messages/upload-files-and-track-progress"
+          ]
+        },
+        "/sdk/flutter/message/receiving-messages/receive-messages",
+        {
+          "id": "message/retrieving-messages",
+          "title": "Retrieving messages",
+          "children": [
+            "/sdk/flutter/message/retrieving-messages/retrieve-message-history",
+            "/sdk/flutter/message/retrieving-messages/locate-messages-by-id"
+          ]
+        },
+        "/sdk/flutter/message/searching-messages/search-messages",
+        {
+          "id": "message/composing-messages",
+          "title": "Composing messages",
+          "children": [
+            "/sdk/flutter/message/composing-messages/custom-message-and-extra-data",
+            "/sdk/flutter/message/composing-messages/mention-users-in-a-message",
+            "/sdk/flutter/message/composing-messages/manage-typing-status"
+          ]
+        },
+        {
+          "id": "message/managing-messages",
+          "title": "Managing messages",
+          "children": [
+            "/sdk/flutter/message/managing-messages/forward-or-merge-a-message",
+            "/sdk/flutter/message/managing-messages/delete-a-message",
+            "/sdk/flutter/message/managing-messages/revoke-a-message",
+            "/sdk/flutter/message/managing-messages/insert-a-local-message",
+            "/sdk/flutter/message/managing-messages/clear-message-history"
+          ]
+        },
+        "/sdk/flutter/message/managing-read-status/manage-message-read-receipts"
+      ]
+    },
+    {
+      "path": "/sdk/flutter/events/overview-events",
+      "navigationTitle": "Events"
+    },
+    "/sdk/flutter/logger"
+  ]
+}

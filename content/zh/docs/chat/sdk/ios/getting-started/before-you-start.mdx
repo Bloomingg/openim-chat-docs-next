@@ -1,0 +1,42 @@
+---
+title: '开始之前'
+description: '准备 OpenIMServer、用户登录信息和 iOS 工程环境，再开始认证或发送消息。'
+sourcePath: '/sdk/ios/getting-started/before-you-start'
+---
+
+在 iOS 应用中接入 OpenIM SDK 前，需要先准备可访问的 OpenIMServer、可信的用户认证流程和可安装 Objective-C SDK 的工程。
+
+## 准备 OpenIMServer
+
+如果还没有可用的 OpenIMServer，先按 [Docker 部署指南](https://docs.openim.io/guides/gettingstarted/dockercompose)完成部署，并确认真机和模拟器都能访问以下地址：
+
+| 字段 | 说明 |
+| --- | --- |
+| `apiAddr` | OpenIMServer 的 HTTP API 地址，用于登录、同步和资源请求。 |
+| `wsAddr` | OpenIMServer 的 WebSocket 地址，用于长连接和实时事件。 |
+
+正式环境应使用有效的 HTTPS/WSS 证书。不要只验证服务在开发机本地可访问；还要检查移动网络、企业代理和应用的 App Transport Security 配置。
+
+## 准备用户和 Token
+
+`userID` 标识 OpenIMSDK 用户，Token 用于认证当前用户。创建用户、签发 Token 和校验业务权限都应由可信后端完成，iOS 应用不能保存管理员 Token、secret 或其他服务端凭据。
+
+后端可参考[准备使用 Platform API](/platform-api/prepare-to-use-api)和[签发会话 Token](/platform-api/user/managing-session-tokens/issue-a-session-token)。业务账号与 OpenIMSDK `userID` 应保持稳定映射，Token 必须与该 `userID` 对应。
+
+## 准备 iOS 工程
+
+SDK 通过 CocoaPods 集成。公开 `OpenIMSDK.podspec` 声明最低部署版本为 iOS 11.0，因此应用 target 的 deployment target 不能低于 iOS 11.0。工程还需能够访问 OpenIMServer，并为相册、相机、麦克风或文件访问等实际使用的系统能力配置对应权限说明。
+
+```ruby
+pod 'OpenIMSDK'
+```
+
+安装依赖后使用 `.xcworkspace` 打开工程，并在 Objective-C 文件中导入：
+
+```objc
+@import OpenIMSDK;
+```
+
+## 继续接入
+
+准备完成后，先阅读[按运行环境接入](/sdk/ios/getting-started/environment-specific-implementation)初始化 SDK，再完成[认证与管理登录会话](/sdk/ios/getting-started/authenticate-and-manage-session)。

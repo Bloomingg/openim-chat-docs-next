@@ -1,0 +1,70 @@
+---
+title: '按运行环境接入'
+description: '在 iOS 真机、模拟器和应用生命周期中配置并初始化 OpenIM SDK。'
+sourcePath: '/sdk/ios/getting-started/environment-specific-implementation'
+---
+
+## 运行环境选择
+
+OpenIM iOS SDK 使用同一组 Objective-C API 支持 iPhone、iPad、真机和模拟器。不同环境的主要差异是网络地址、数据目录、系统权限和应用生命周期，而不是业务 API。
+
+| 环境 | 接入重点 |
+| --- | --- |
+| 模拟器 | 服务地址必须能从模拟器访问；不能把服务端容器内地址当作客户端地址。 |
+| 真机 | 验证 Wi-Fi 与移动网络、TLS 证书、后台恢复和系统权限。 |
+| Objective-C 工程 | 直接导入 `OpenIMSDK` 并调用公开 selector。 |
+| Swift 工程 | 通过 Objective-C module 使用同一 SDK；delegate 方法遵循自动桥接名称。 |
+
+## 配置并初始化 SDK
+
+应用生命周期内只初始化一次。`dataDir` 不传时使用 SDK 默认目录；正式环境应降低日志输出并避免记录 Token。
+
+```objc
+OIMInitConfig *config = [OIMInitConfig new];
+config.platform = iPhone;
+config.apiAddr = apiAddr;
+config.wsAddr = wsAddr;
+config.logLevel = 4;
+config.isLogStandardOutput = NO;
+
+BOOL accepted = [[OIMManager manager]
+    initSDKWithConfig:config
+    onConnecting:nil
+    onConnectFailure:nil
+    onConnectSuccess:nil
+    onKickedOffline:nil
+    onUserTokenExpired:nil
+    onUserTokenInvalid:nil];
+```
+
+此处以 `nil` 突出运行环境配置；正式应用应传入稳定 callback，并由应用级会话对象统一处理连接状态。`accepted` 只表示初始化请求是否被 SDK 接受；连接是否可用以 `onConnectSuccess` 为准。完整的连接与 Token callback 实现见[认证与管理登录会话](/sdk/ios/getting-started/authenticate-and-manage-session)。
+
+### 参数说明
+
+| 字段 | 类型 | 说明 |
+| --- | --- | --- |
+| `platform` | `OIMPlatform` | 当前客户端平台，iPhone 使用 `iPhone`；iPad 使用 `iPad`。 |
+| `apiAddr` | `NSString *` | OpenIMServer HTTP API 地址。 |
+| `wsAddr` | `NSString *` | OpenIMServer WebSocket 地址。 |
+| `dataDir` | `NSString *` | 可选的本地数据目录。 |
+| `logLevel` | `NSInteger` | SDK 日志级别。 |
+| `isLogStandardOutput` | `BOOL` | 是否输出 SDK 核心日志。 |
+
+## 生命周期边界
+
+- 不要在每个 View Controller 中重复初始化或登录；由应用级会话对象持有状态。
+- 页面出现和消失只负责添加、移除该页面拥有的业务 delegate，不应销毁 SDK。
+- 用户主动退出时调用 `logoutWithOnSuccess:onFailure:`；应用最终不再使用 SDK 时才调用 `unInitSDK`。
+- iOS 固定版没有 WASM 的 `networkStatusChanged()` 和 `setAppBackgroundStatus()` 公共 selector，不能在文档中套用浏览器上报方式。
+
+## 验证与排查
+
+- 在模拟器和至少一台真机验证 `apiAddr`、`wsAddr` 和 TLS 证书。
+- 确认初始化被接受，并在调用业务 API 前收到连接成功 callback。
+- 验证断网恢复、前后台切换、Token 过期和被踢下线场景。
+- 使用发布配置验证日志级别、数据目录和隐私权限。
+
+## 下一步
+
+- [认证与管理登录会话](/sdk/ios/getting-started/authenticate-and-manage-session)
+- [发送第一条消息](/sdk/ios/getting-started/send-first-message)

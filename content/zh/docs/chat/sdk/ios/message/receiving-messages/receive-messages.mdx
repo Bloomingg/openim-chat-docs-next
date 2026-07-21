@@ -1,0 +1,106 @@
+---
+title: '接收消息'
+description: '注册 iOS 消息监听器，并把新消息增量合并到会话状态。'
+sourcePath: '/sdk/ios/message/receiving-messages/receive-messages'
+---
+
+iOS SDK 通过 `OIMAdvancedMsgListener` 推送普通新消息、在线消息、撤回、删除和已读回执。应用应在消息状态层初始化时注册一次，并以强引用持有 listener；`OIMCallbacker` 对 listener 使用弱引用。
+
+## 消息类型
+
+普通事件每次返回一个 `OIMMessageInfo`。根据消息元素选择文本、@ 文本、自定义、图片、音频、视频、文件或降级渲染；不要假设所有消息都有 `textElem`。媒体消息只读取元素中的远端地址、大小、名称、时长与快照，不需要重新上传。
+
+消息可能属于当前未打开的会话。先根据 `sessionType`、`sendID`、`recvID` 与 `groupID` 确定目标会话，再按 `clientMsgID` 幂等合并。
+
+固定 SDK 中用于接收、路由与合并的常用 `OIMMessageInfo` 属性如下：
+
+| 属性 | 类型 | 说明 |
+| --- | --- | --- |
+| `clientMsgID` | `NSString * _Nullable` | 客户端消息 ID；非空时作为消息稳定合并标识。 |
+| `serverMsgID` | `NSString * _Nullable` | 服务端消息 ID，不替代本地合并所用的 `clientMsgID`。 |
+| `sessionType` | `OIMConversationType` | 会话类型枚举，用于决定单聊或群聊路由。 |
+| `sendID` | `NSString * _Nullable` | 发送者用户 ID。 |
+| `recvID` | `NSString * _Nullable` | 接收者用户 ID。 |
+| `groupID` | `NSString * _Nullable` | 群聊所属群组 ID。 |
+| `contentType` | `OIMMessageContentType` | 消息内容类型枚举，决定使用哪个内容元素渲染。 |
+| `sendTime` | `NSTimeInterval` | 消息发送时间，用于排序；不能作为消息唯一标识。 |
+| `status` | `OIMMessageStatus` | 消息发送状态枚举。 |
+| `isRead` | `BOOL` | SDK 当前记录的已读状态。 |
+
+`textElem`、`pictureElem`、`soundElem`、`videoElem`、`fileElem`、`atTextElem`、`customElem` 等内容属性都可以为 `nil`。渲染时应同时检查 `contentType` 与对应 element；缺少预期内容时使用降级占位，不要强制取值。
+
+## 注册新消息监听
+
+```objc
+@interface MessageStore () <OIMAdvancedMsgListener>
+@end
+
+@implementation MessageStore
+
+- (void)startListening {
+    [[OIMManager callbacker] addAdvancedMsgListener:self];
+}
+
+- (void)stopListening {
+    [[OIMManager callbacker] removeAdvancedMsgListener:self];
+}
+
+- (void)onRecvNewMessage:(OIMMessageInfo * _Nullable)message {
+    if (message.clientMsgID.length == 0) {
+        return;
+    }
+    [self mergeMessage:message];
+}
+
+- (void)onRecvOnlineOnlyMessage:(OIMMessageInfo * _Nullable)message {
+    if (message.clientMsgID.length == 0) {
+        return;
+    }
+    [self handleOnlineOnlyMessage:message];
+}
+
+@end
+```
+
+应在 `initSDK` 成功后、`login` 前完成全局消息监听注册，退出登录、切换账号或销毁状态层时用同一实例移除。固定版本的 closure callback 类型允许消息参数为空，示例同时校验 `clientMsgID`。该版本每次传入单个 `OIMMessageInfo`，不是消息数组，也没有独立的离线新消息 selector；不要同时注册其他平台的单数／复数事件名称。
+
+只在线消息不会进入普通历史存储，适合临时提示或业务通知。发送参数见[发送消息](/sdk/ios/message/sending-messages/send-a-message)。
+
+## 合并消息
+
+先根据消息路由字段确定会话，再按 `clientMsgID` 幂等合并。新消息事件可能和发送成功回调、历史查询结果重叠，不能直接追加数组。
+
+历史查询负责建立当前快照；`onRecvNewMessage:` 负责在线增量；重新登录后的离线变化由 SDK 同步。同步完成后，可重新查询当前会话历史校准列表。
+
+## 首次进入会话时读取历史
+
+事件只负责新到达的消息。首次进入会话、向上翻页或补齐同步后的列表时，使用 `getAdvancedHistoryMessageList:onSuccess:onFailure:` 读取历史。第一页把 `startClientMsgID` 设为 `nil`，后续使用边界消息的 `clientMsgID`；完整参数与空结果处理见[获取消息历史](/sdk/ios/message/retrieving-messages/retrieve-message-history)。
+
+查询 callback 直接建立消息快照，不会触发新消息 listener。分页与事件可能包含同一条消息，因此两条路径必须使用相同的会话路由与 `clientMsgID` 去重规则。
+
+## 标记会话已读
+
+用户实际打开会话并阅读完可见消息后，调用 `markConversationMessageAsRead:onSuccess:onFailure:` 清理未读数。它不等同于群消息成员级回执；会话和消息回执的边界见[管理消息已读回执](/sdk/ios/message/managing-read-status/manage-message-read-receipts)。
+
+## 其他消息事件
+
+- 撤回事件的完整实现见[撤回消息](/sdk/ios/message/managing-messages/revoke-a-message)。
+- 删除事件见[删除消息](/sdk/ios/message/managing-messages/delete-a-message)。
+- 单聊与群聊已读回执见[管理消息已读回执](/sdk/ios/message/managing-read-status/manage-message-read-receipts)。
+- 自定义业务监听见[自定义消息与扩展数据](/sdk/ios/message/composing-messages/custom-message-and-extra-data)。
+
+查询 API、本地插入和消息创建不会触发 `onRecvNewMessage:`。
+
+## 验证接收流程
+
+- 从另一个账号向目标单聊或群组发送消息，确认按目标会话和 `clientMsgID` 只合并一次。
+- 发送只在线消息，确认走 `onRecvOnlineOnlyMessage:`，且历史查询不会回放该消息。
+- 撤回或删除消息，确认对应归属页的处理器按 `clientMsgID` 更新原气泡。
+- 退出登录或切换账号后确认 listener 已移除，重新登录时不会重复处理。
+
+## 相关页面
+
+- [消息概览](/sdk/ios/message/overview-message)
+- [发送消息](/sdk/ios/message/sending-messages/send-a-message)
+- [获取消息历史](/sdk/ios/message/retrieving-messages/retrieve-message-history)
+- [管理会话已读状态](/sdk/ios/conversation/managing-conversations/manage-read-status)

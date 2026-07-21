@@ -2,21 +2,40 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
-const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const wasmContext = 'chat/sdk/wasm';
+import { clientSdkPlatformIds, getClientSdkPlatform } from './lib/client-sdk-platforms.mjs';
+import {
+  getClientSdkSidebarApplicationScope,
+} from './lib/client-sdk-sidebar.mjs';
 
-export function buildSearchIndexes({ routes, sourcePages, manualZhPages, auditPages }) {
+const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const clientSdkContexts = new Set(
+  clientSdkPlatformIds.map((platformId) => getClientSdkPlatform(platformId).contextKey),
+);
+
+export function buildSearchIndexes({
+  routes,
+  sourcePages,
+  manualZhPages,
+  auditPages,
+  clientSdkActivePaths,
+  managedClientSdkContexts = clientSdkContexts,
+}) {
   const indexes = { en: [], zh: [] };
 
   for (const route of routes) {
     const sourcePage = sourcePages.get(route.path);
     if (!sourcePage) throw new Error(`${route.path}: missing source page`);
 
-    if (route.contextKey !== wasmContext) {
+    if (
+      !clientSdkContexts.has(route.contextKey) ||
+      !managedClientSdkContexts.has(route.contextKey)
+    ) {
       indexes.en.push(createSearchRecord(route, sourcePage));
       indexes.zh.push(createSearchRecord(route, sourcePage));
       continue;
     }
+
+    if (clientSdkActivePaths && !clientSdkActivePaths.has(route.path)) continue;
 
     const auditPage = auditPages.get(route.path);
     if (!auditPage) throw new Error(`${route.path}: missing audit record`);
@@ -35,13 +54,22 @@ export function buildSearchIndexes({ routes, sourcePages, manualZhPages, auditPa
   return indexes;
 }
 
-export async function buildSearchIndexFiles({
-  routesPath = resolve(root, 'src/generated/routes.json'),
-  auditPath = resolve(root, 'data/structure/wasm-content-audit.json'),
-  enOutputPath = resolve(root, 'src/generated/search-index.json'),
-  zhOutputPath = resolve(root, 'src/generated/search-index-zh.json'),
-} = {}) {
-  const [routes, audit] = await Promise.all([readJson(routesPath), readJson(auditPath)]);
+export async function buildSearchIndexFiles(options = {}) {
+  const routesPath = options.routesPath ?? resolve(root, 'src/generated/routes.json');
+  const enOutputPath = options.enOutputPath ?? resolve(root, 'src/generated/search-index.json');
+  const zhOutputPath = options.zhOutputPath ?? resolve(root, 'src/generated/search-index-zh.json');
+  const platformConfigs = clientSdkPlatformIds.map(getClientSdkPlatform);
+  const auditPaths = options.auditPath
+    ? [options.auditPath]
+    : platformConfigs.map((platform) => resolve(root, platform.auditPath));
+  const sidebarPaths = options.auditPath
+    ? []
+    : platformConfigs.map((platform) => resolve(root, platform.sidebarPath));
+  const [routes, audits, sidebars] = await Promise.all([
+    readJson(routesPath),
+    Promise.all(auditPaths.map(readJson)),
+    Promise.all(sidebarPaths.map(readJson)),
+  ]);
   const sourcePages = new Map(
     await Promise.all(
       routes.map(async (route) => {
@@ -50,13 +78,10 @@ export async function buildSearchIndexFiles({
       }),
     ),
   );
-  const wasmRoutes = routes.filter((route) => route.contextKey === wasmContext);
+  const clientSdkRoutes = routes.filter((route) => clientSdkContexts.has(route.contextKey));
   const manualEntries = await Promise.all(
-    wasmRoutes.map(async (route) => {
-      const path = resolve(
-        root,
-        route.contentFile.replace(/^content\/docs\//, 'content/zh/docs/'),
-      );
+    clientSdkRoutes.map(async (route) => {
+      const path = resolve(root, route.contentFile.replace(/^content\/docs\//, 'content/zh/docs/'));
       try {
         return [route.path, parseMdx(await readFile(path, 'utf8'))];
       } catch (error) {
@@ -66,8 +91,27 @@ export async function buildSearchIndexFiles({
     }),
   );
   const manualZhPages = new Map(manualEntries.filter(Boolean));
-  const auditPages = new Map(audit.pages.map((page) => [page.currentPath, page]));
-  const indexes = buildSearchIndexes({ routes, sourcePages, manualZhPages, auditPages });
+  const auditPages = new Map(
+    audits.flatMap((audit) => audit.pages).map((page) => [page.currentPath, page]),
+  );
+  const searchScope =
+    sidebars.length > 0
+      ? getClientSdkSidebarApplicationScope({
+          routes,
+          sidebars: sidebars.map((config, index) => ({
+            platform: platformConfigs[index],
+            config,
+          })),
+        })
+      : { activePaths: undefined, managedContexts: clientSdkContexts };
+  const indexes = buildSearchIndexes({
+    routes,
+    sourcePages,
+    manualZhPages,
+    auditPages,
+    clientSdkActivePaths: searchScope.activePaths,
+    managedClientSdkContexts: searchScope.managedContexts,
+  });
 
   await Promise.all([
     writeFile(enOutputPath, `${JSON.stringify(indexes.en, null, 2)}\n`, 'utf8'),
@@ -131,7 +175,9 @@ const invokedPath = process.argv[1] ? pathToFileURL(resolve(process.argv[1])).hr
 if (invokedPath === import.meta.url) {
   buildSearchIndexFiles()
     .then(({ en, zh }) => {
-      console.log(`Wrote ${en.toLocaleString()} English and ${zh.toLocaleString()} Chinese search records.`);
+      console.log(
+        `Wrote ${en.toLocaleString()} English and ${zh.toLocaleString()} Chinese search records.`,
+      );
     })
     .catch((error) => {
       console.error(error instanceof Error ? error.message : error);

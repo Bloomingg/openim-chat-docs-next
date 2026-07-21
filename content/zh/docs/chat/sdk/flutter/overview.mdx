@@ -1,0 +1,51 @@
+---
+title: 'OpenIM Flutter SDK 概览'
+description: '在 Flutter 应用中使用 OpenIM Flutter SDK 接入用户、会话、群组、消息和事件能力。'
+sourcePath: '/sdk/flutter/overview'
+---
+
+OpenIM Flutter SDK 用于在 Android 和 iOS Flutter 应用中接入 OpenIMSDK。Dart 包由 `flutter_openim_sdk` 提供，业务代码通过 `OpenIM.iMManager` 访问初始化、用户、好友、会话、群组和消息能力。
+
+本文档中的 API、model、enum 和 listener 均以 OpenIM Flutter SDK 的公开 Dart 声明为依据。正文只介绍已经核对的业务 API 和事件：已废弃或直接抛出 `UnimplementedError` 的方法不作为推荐用法；好友和会话列表只介绍分页接口。
+
+## 接入流程
+
+1. 从pub.dev获取依赖。
+2. 从可信后端取得当前用户的 `userID`、Token 和 OpenIMServer 地址。
+3. 初始化 SDK，并在 `OnConnectListener` 中处理连接、Token 和账号下线状态。
+4. 登录成功且连接可用后，调用用户、好友、会话、群组和消息 API。
+5. 将 listener 携带的增量数据按稳定标识合并到应用状态，切换账号时清理旧账号状态。
+
+```dart
+import 'package:flutter_openim_sdk/flutter_openim_sdk.dart';
+
+final openIM = OpenIM.iMManager;
+```
+
+## 文档结构
+
+| 领域 | 内容 |
+| --- | --- |
+| [快速开始](/sdk/flutter/getting-started/environment-specific-implementation) | 平台接入、认证、连接生命周期和第一条消息。 |
+| [用户](/sdk/flutter/user/overview-user) | 用户资料、好友、黑名单和在线状态。 |
+| [会话](/sdk/flutter/conversation/overview-conversation) | 会话查询、设置、草稿、未读数、隐藏和删除。 |
+| [群组](/sdk/flutter/group/overview-group) | 群资料、群成员、入群申请、权限和群组事件。 |
+| [消息](/sdk/flutter/message/overview-message) | 创建、发送、接收、查询、搜索、撤回和已读回执。 |
+| [事件](/sdk/flutter/events/overview-events) | 各 manager 的 listener 与初始化同步。 |
+
+本文档当前核对的 Flutter SDK 没有公开的通话信令 manager，因此 Flutter 文档不会把 WASM 通话页面中的 API 直接改名后套用。
+
+## 关键数据边界
+
+- 单聊发送时填写 `userID`，群聊发送时填写 `groupID`；不要同时指定两个目标。
+- `ConversationInfo` 保存会话展示信息、未读数、草稿和接收设置；`GroupInfo` 与 `GroupMembersInfo` 保存群组及成员关系。
+- Listener 是增量信号。页面首次进入时仍应主动查询快照，再按 `userID`、`conversationID`、`groupID` 或 `clientMsgID` 合并后续变化。
+- Token 属于敏感数据，不应写入普通日志或不受控存储。
+
+纯查询 Future 返回页面所需快照，不会因此触发共享事件。改变状态的方法、listener 回调和重新查询是三个阶段，应分别处理。
+
+## 参考
+
+- [认证与管理登录会话](/sdk/flutter/getting-started/authenticate-and-manage-session)
+- [发送第一条消息](/sdk/flutter/getting-started/send-first-message)
+- [日志](/sdk/flutter/logger)

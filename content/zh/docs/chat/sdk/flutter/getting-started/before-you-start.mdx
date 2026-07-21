@@ -1,0 +1,58 @@
+---
+title: '开始之前'
+description: '准备 OpenIMServer、用户登录信息和 Flutter 运行环境，再开始认证或发送消息。'
+sourcePath: '/sdk/flutter/getting-started/before-you-start'
+---
+
+在 Flutter 应用中接入 OpenIMClientSDK 前，需要先准备可访问的 OpenIMServer、可信的用户认证流程，以及 Android 或 iOS 工程环境。这些条件同时适用于[认证与管理登录会话](/sdk/flutter/getting-started/authenticate-and-manage-session)和[发送第一条消息](/sdk/flutter/getting-started/send-first-message)。
+
+## 准备 OpenIMServer
+
+如果还没有可用的 OpenIMServer，先按 [Docker 部署指南](https://docs.openim.io/guides/gettingstarted/dockercompose)完成部署，并确认移动设备可以访问以下地址：
+
+| 字段 | 说明 |
+| --- | --- |
+| `apiAddr` | OpenIMServer 的 HTTP API 地址，用于登录、同步和资源请求。 |
+| `wsAddr` | OpenIMServer 的 WebSocket 地址，用于长连接和实时事件。 |
+
+不要只在开发电脑上验证地址。还应从真机或模拟器检查 DNS、TLS 证书、防火墙、反向代理和 WebSocket 升级；生产应用应使用 HTTPS 与 WSS。
+
+## 准备用户和 Token
+
+`userID` 标识 OpenIMSDK 用户，Token 用于认证当前用户。创建或绑定用户、签发 Token 和校验业务权限都应由可信后端完成。Flutter 客户端不能保存管理员 Token、secret 或其他服务端凭据。
+
+后端接入 OpenIMServer REST API 前，可阅读[准备使用 Platform API](/platform-api/prepare-to-use-api)和[签发会话 Token](/platform-api/user/managing-session-tokens/issue-a-session-token)。业务后端应在验证当前业务账号后，只返回 SDK 登录所需的最小数据：
+
+```dart
+class OpenIMSDKSession {
+  const OpenIMSDKSession({
+    required this.userID,
+    required this.token,
+    required this.apiAddr,
+    required this.wsAddr,
+  });
+
+  final String userID;
+  final String token;
+  final String apiAddr;
+  final String wsAddr;
+}
+```
+
+`userID` 必须与 Token 对应。客户端不得接受任意用户 ID 后自行签发或拼装 Token。
+
+## 准备 Flutter 工程
+
+固定版本支持 Android 和 iOS。接入前确认：
+
+- Flutter 与 Dart 版本符合包的 `pubspec.yaml` 约束。
+- Android 和 iOS 工程具有网络权限，最低系统版本及构建配置符合 SDK 要求。
+- 已准备 SDK 数据目录；可使用 `path_provider` 取得应用文档目录，不要写入临时或共享目录。
+- 真机能够访问 `apiAddr`、`wsAddr` 以及消息媒体资源域名。
+- 应用前后台切换、网络恢复、Token 失效和多端登录场景已有产品处理策略。
+
+具体初始化方式见[按运行环境接入](/sdk/flutter/getting-started/environment-specific-implementation)。
+
+## 继续接入
+
+准备完成后，先完成[认证与管理登录会话](/sdk/flutter/getting-started/authenticate-and-manage-session)。确认 `OnConnectListener.onConnectSuccess` 已到达，再按照[发送第一条消息](/sdk/flutter/getting-started/send-first-message)验证消息链路。

@@ -5,12 +5,20 @@ import {
   normalizeManualBody,
   parseMdx,
   resolveLocalizedRouteTitle,
-} from './build-wasm-sdk-zh-content.mjs';
+  resolvePlatformRoutes,
+} from './build-client-sdk-zh-content.mjs';
+import { clientSdkPlatformIds, getClientSdkPlatform } from './lib/client-sdk-platforms.mjs';
 
 const root = process.cwd();
-const manualRoot = resolve(root, 'content/zh/docs/chat/sdk/wasm');
 
-export function validateLocalizedSdkData({ routes, manualPages, auditPages, localized }) {
+export function validateLocalizedSdkData({
+  routes,
+  manualPages,
+  auditPages,
+  localized,
+  platform = getClientSdkPlatform('wasm'),
+}) {
+  const platformConfig = typeof platform === 'string' ? getClientSdkPlatform(platform) : platform;
   const errors = [];
   const routePaths = routes.map((route) => route.path);
   const manualPaths = [...manualPages.keys()].sort();
@@ -36,7 +44,10 @@ export function validateLocalizedSdkData({ routes, manualPages, auditPages, loca
       `manualPageCount: expected ${manualPaths.length}, found ${String(localized?.manualPageCount)}`,
     );
   }
-  if (localized?.sourceRoot !== 'content/zh/docs/chat/sdk/wasm') {
+  if (localized?.sourceContext !== platformConfig.contextKey) {
+    errors.push(`sourceContext must identify the ${platformConfig.id} SDK context`);
+  }
+  if (localized?.sourceRoot !== platformConfig.manualRoot) {
     errors.push(`sourceRoot must identify the manual Chinese MDX directory`);
   }
 
@@ -95,38 +106,52 @@ export function validateLocalizedSdkData({ routes, manualPages, auditPages, loca
 }
 
 async function main() {
-  const [routesData, auditData, localized, manualPages] = await Promise.all([
-    readJson('src/generated/routes.json'),
-    readJson('data/structure/wasm-content-audit.json'),
-    readJson('src/generated/wasm-sdk-zh-content.json'),
-    readManualPages(),
-  ]);
-  const routes = routesData
-    .filter((route) => route.contextKey === 'chat/sdk/wasm')
-    .sort((a, b) => a.navOrder - b.navOrder || a.sourceIndex - b.sourceIndex);
-  const auditPages = new Map(auditData.pages.map((page) => [page.currentPath, page]));
-  const errors = validateLocalizedSdkData({ routes, manualPages, auditPages, localized });
+  const requested = process.argv.slice(2).filter((value) => !value.startsWith('-'));
+  const platformIds = requested.length > 0 ? requested : clientSdkPlatformIds;
+  const routesData = await readJson('src/generated/routes.json');
+  let failed = false;
 
-  if (errors.length > 0) {
-    console.error(`Chinese WASM SDK content check failed: ${errors.length}`);
-    for (const error of errors.slice(0, 50)) console.error(`  - ${error}`);
-    if (errors.length > 50) console.error(`  ... ${errors.length - 50} additional errors omitted`);
-    process.exitCode = 1;
-    return;
+  for (const platformId of platformIds) {
+    const platform = getClientSdkPlatform(platformId);
+    const [sidebar, auditData, localized, manualPages] = await Promise.all([
+      readJson(platform.sidebarPath),
+      readJson(platform.auditPath),
+      readJson(platform.localizedOutputPath),
+      readManualPages(platform),
+    ]);
+    const routes = resolvePlatformRoutes({ platform, routesData, sidebar });
+    const auditPages = new Map(auditData.pages.map((page) => [page.currentPath, page]));
+    const errors = validateLocalizedSdkData({
+      routes,
+      manualPages,
+      auditPages,
+      localized,
+      platform,
+    });
+
+    if (errors.length > 0) {
+      failed = true;
+      console.error(`Chinese ${platformId} SDK content check failed: ${errors.length}`);
+      for (const error of errors.slice(0, 50)) console.error(`  - ${error}`);
+      if (errors.length > 50)
+        console.error(`  ... ${errors.length - 50} additional errors omitted`);
+      continue;
+    }
+    console.log(
+      `Chinese ${platformId} SDK content check passed (${routes.length} active routes, ${manualPages.size} manual pages, ${localized.pendingPaths.length} pending paths).`,
+    );
   }
 
-  console.log(
-    `Chinese WASM SDK content check passed (${routes.length} active routes, ${manualPages.size} manual pages, ${localized.pendingPaths.length} pending paths).`,
-  );
+  if (failed) process.exitCode = 1;
 }
 
 async function readJson(relativePath) {
   return JSON.parse(await readFile(resolve(root, relativePath), 'utf8'));
 }
 
-async function readManualPages() {
+async function readManualPages(platform) {
   const pages = new Map();
-  for (const filePath of await listMdxFiles(manualRoot)) {
+  for (const filePath of await listMdxFiles(resolve(root, platform.manualRoot))) {
     const relativePath = relative(resolve(root, 'content/zh'), filePath).replaceAll('\\', '/');
     const routeRelativePath = relativePath.startsWith('docs/chat/')
       ? relativePath.slice('docs/chat/'.length)
@@ -139,7 +164,13 @@ async function readManualPages() {
 
 async function listMdxFiles(directory) {
   const files = [];
-  const entries = await readdir(directory, { withFileTypes: true });
+  let entries;
+  try {
+    entries = await readdir(directory, { withFileTypes: true });
+  } catch (error) {
+    if (error?.code === 'ENOENT') return files;
+    throw error;
+  }
   for (const entry of entries) {
     const entryPath = join(directory, entry.name);
     if (entry.isDirectory()) files.push(...(await listMdxFiles(entryPath)));

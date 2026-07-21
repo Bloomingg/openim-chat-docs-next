@@ -1,0 +1,53 @@
+---
+title: '用户概览'
+description: '了解 OpenIMClientSDK 中的用户资料、好友关系、黑名单和在线状态。'
+sourcePath: '/sdk/flutter/user/overview-user'
+---
+
+OpenIMClientSDK 使用 `userID` 标识用户。实现资料卡、好友添加、联系人或黑名单功能时，首先要区分应用用户的公开资料、当前用户维护的好友关系，以及黑名单状态。
+
+群成员列表、群内昵称、群角色和成员管理属于群组能力，相关用法见 [获取群成员](/sdk/flutter/group/retrieving-group-members/retrieve-group-members)。
+
+## 用户类型
+
+OpenIMSDK 会根据使用场景返回不同的用户对象：
+
+| 类型 | 适用场景 | 主要接口 |
+| --- | --- | --- |
+| `UserInfo` | 当前登录用户的个人资料、设置页、当前账号头像、昵称和全局接收设置 | `getSelfUserInfo()`、`setSelfInfo()` |
+| `PublicUserInfo` | 应用用户查询、添加好友候选人、陌生人资料卡 | `getUsersInfo()` |
+| `FriendInfo` | 当前登录用户的好友列表、好友备注和关系扩展字段；SDK model 不含 `isPinned` | `getFriendListPage()`、`getFriendsInfo()` |
+| `BlacklistInfo` | 当前登录用户拉黑的用户 | `getBlacklist()`、`addBlacklist()`、`removeBlacklist()` |
+| `UserStatusInfo` | 用户在线状态和在线平台 | `subscribeUsersStatus()`、`getSubscribeUsersStatus()` |
+
+同一个 `userID` 可能同时出现在公开资料、好友资料、黑名单和群成员资料中。展示联系人信息时优先使用 `FriendInfo`；只需要账号公开资料时使用 `PublicUserInfo`；展示群成员时优先使用 `GroupMembersInfo`。会话列表和聊天页标题属于会话数据，应使用 `ConversationInfo.showName`。
+
+## 功能入口
+
+下表列出了用户相关的常见需求和对应页面：
+
+| 需求 | 推荐页面 |
+| --- | --- |
+| 按 `userID` 查询公开资料，用于查找好友候选人或展示资料卡 | [按用户 ID 查询公开资料](/sdk/flutter/user/retrieving-users/retrieve-users) |
+| 分页读取当前用户好友列表、好友备注和关系状态 | [获取好友列表](/sdk/flutter/user/retrieving-users/retrieve-a-list-of-friends) |
+| 按指定好友 ID 读取好友关系信息 | [获取指定好友信息](/sdk/flutter/user/retrieving-users/retrieve-friend-information) |
+| 发送、查询、同意或拒绝好友申请 | [管理好友申请](/sdk/flutter/user/managing-friends/manage-friend-requests) |
+| 修改好友备注、扩展字段或删除好友 | [更新或删除好友](/sdk/flutter/user/managing-friends/update-or-delete-friends) |
+| 查看和维护当前用户黑名单 | [拉黑或取消拉黑用户](/sdk/flutter/user/moderating-a-user/block-or-unblock-users) |
+| 读取或更新当前用户资料、扩展字段和消息接收选项 | [获取和更新当前用户资料](/sdk/flutter/user/retrieving-and-updating-user-information/retrieve-and-update-self-profile) |
+| 订阅和读取在线状态 | [获取用户在线状态](/sdk/flutter/user/retrieving-and-updating-user-information/retrieve-the-online-status-of-a-user) |
+| 读取群成员列表、成员搜索、指定成员资料 | [获取群成员](/sdk/flutter/group/retrieving-group-members/retrieve-group-members) |
+
+## 状态更新
+
+用户相关事件由对应能力页负责监听和合并：
+
+- 当前用户资料变化：见[获取和更新当前用户资料](/sdk/flutter/user/retrieving-and-updating-user-information/retrieve-and-update-self-profile)。
+- 好友申请变化：见[管理好友申请](/sdk/flutter/user/managing-friends/manage-friend-requests)。
+- 好友关系和好友资料变化：见[更新或删除好友](/sdk/flutter/user/managing-friends/update-or-delete-friends)。
+- 黑名单变化：见[拉黑或取消拉黑用户](/sdk/flutter/user/moderating-a-user/block-or-unblock-users)。
+- 在线状态变化：见[获取用户在线状态](/sdk/flutter/user/retrieving-and-updating-user-information/retrieve-the-online-status-of-a-user)。
+
+Flutter SDK 中，`UserManager` 和 `FriendshipManager` 各保存一个 listener。应用应在统一状态层组合所需 callback 并设置一次，不能让多个 Widget 分别设置 listener 而互相覆盖。
+
+概览页只说明事件归属，不重复注册处理器。

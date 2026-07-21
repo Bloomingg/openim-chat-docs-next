@@ -5,6 +5,10 @@ import {
   localizedContentFile,
 } from './lib/chat-content-paths.mjs';
 import { validateSearchIndexPaths } from './lib/search-index-contract.mjs';
+import { clientSdkPlatformIds, getClientSdkPlatform } from './lib/client-sdk-platforms.mjs';
+import {
+  getClientSdkSidebarApplicationScope,
+} from './lib/client-sdk-sidebar.mjs';
 
 const root = process.cwd();
 const routes = JSON.parse(await readFile(resolve(root, 'src/generated/routes.json'), 'utf8'));
@@ -17,8 +21,15 @@ const searchIndex = JSON.parse(
 const searchIndexZh = JSON.parse(
   await readFile(resolve(root, 'src/generated/search-index-zh.json'), 'utf8'),
 );
-const wasmAudit = JSON.parse(
-  await readFile(resolve(root, 'data/structure/wasm-content-audit.json'), 'utf8'),
+const clientSdkStructures = await Promise.all(
+  clientSdkPlatformIds.map(async (platformId) => {
+    const platform = getClientSdkPlatform(platformId);
+    const [audit, sidebar] = await Promise.all([
+      readJson(platform.auditPath),
+      readJson(platform.sidebarPath),
+    ]);
+    return { audit, platform, sidebar };
+  }),
 );
 const scope = JSON.parse(await readFile(resolve(root, 'data/structure/scope.json'), 'utf8'));
 const expectedSdkPlatforms = [
@@ -472,10 +483,24 @@ for (const route of routes) {
   }
 }
 
+const clientSdkSearchScope = getClientSdkSidebarApplicationScope({
+  routes,
+  sidebars: clientSdkStructures.map(({ platform, sidebar }) => ({
+    platform,
+    config: sidebar,
+  })),
+});
+
 errors.push(
   ...validateSearchIndexPaths({
     routes,
-    auditPages: new Map(wasmAudit.pages.map((page) => [page.currentPath, page])),
+    auditPages: new Map(
+      clientSdkStructures
+        .flatMap(({ audit }) => audit.pages)
+        .map((page) => [page.currentPath, page]),
+    ),
+    clientSdkActivePaths: clientSdkSearchScope.activePaths,
+    managedClientSdkContexts: clientSdkSearchScope.managedContexts,
     indexes: { en: searchIndex, zh: searchIndexZh },
   }),
 );
@@ -680,4 +705,8 @@ function* flattenNavigation(nodes) {
     if (node.href) yield node.href;
     yield* flattenNavigation(node.children ?? []);
   }
+}
+
+async function readJson(relativePath) {
+  return JSON.parse(await readFile(resolve(root, relativePath), 'utf8'));
 }

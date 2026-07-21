@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 
 import { buildSearchIndexes } from '../build-search-index.mjs';
+import { getClientSdkSidebarApplicationScope } from '../lib/client-sdk-sidebar.mjs';
 
 function route(path, contextKey = 'chat/sdk/android') {
   return {
@@ -29,14 +30,8 @@ function auditPage(path, zh, en) {
 
 test('omits unpublished WASM pages and indexes published manual Chinese content', () => {
   const nonWasm = route('/sdk/android/overview');
-  const pending = route(
-    '/sdk/wasm/pending',
-    'chat/sdk/wasm',
-  );
-  const published = route(
-    '/sdk/wasm/published',
-    'chat/sdk/wasm',
-  );
+  const pending = route('/sdk/wasm/pending', 'chat/sdk/wasm');
+  const published = route('/sdk/wasm/published', 'chat/sdk/wasm');
 
   const result = buildSearchIndexes({
     routes: [nonWasm, pending, published],
@@ -55,8 +50,14 @@ test('omits unpublished WASM pages and indexes published manual Chinese content'
     ]),
   });
 
-  assert.deepEqual(result.en.map((record) => record.path), [nonWasm.path, published.path]);
-  assert.deepEqual(result.zh.map((record) => record.path), [nonWasm.path, published.path]);
+  assert.deepEqual(
+    result.en.map((record) => record.path),
+    [nonWasm.path, published.path],
+  );
+  assert.deepEqual(
+    result.zh.map((record) => record.path),
+    [nonWasm.path, published.path],
+  );
   assert.equal(result.zh.at(-1).title, '中文标题');
   assert.equal(result.zh.at(-1).description, '中文描述');
   assert.match(result.zh.at(-1).content, /已发布中文正文/);
@@ -79,10 +80,7 @@ test('fails when a route source page is missing', () => {
 });
 
 test('fails when published Chinese WASM content has no manual MDX', () => {
-  const published = route(
-    '/sdk/wasm/published-without-manual',
-    'chat/sdk/wasm',
-  );
+  const published = route('/sdk/wasm/published-without-manual', 'chat/sdk/wasm');
 
   assert.throws(
     () =>
@@ -90,9 +88,7 @@ test('fails when published Chinese WASM content has no manual MDX', () => {
         routes: [published],
         sourcePages: new Map([[published.path, { body: 'English source' }]]),
         manualZhPages: new Map(),
-        auditPages: new Map([
-          [published.path, auditPage(published.path, 'published', 'deferred')],
-        ]),
+        auditPages: new Map([[published.path, auditPage(published.path, 'published', 'deferred')]]),
       }),
     /published zh search page requires manual MDX/,
   );
@@ -111,4 +107,53 @@ test('fails closed when an active WASM route has no audit record', () => {
       }),
     /missing audit record/,
   );
+});
+
+test('applies publication audits to iOS and Flutter active routes', () => {
+  const ios = route('/sdk/ios/overview', 'chat/sdk/ios');
+  const flutter = route('/sdk/flutter/overview', 'chat/sdk/flutter');
+  const scope = getClientSdkSidebarApplicationScope({
+    routes: [ios, flutter],
+    sidebars: [
+      { platform: 'ios', config: { nodes: [ios.path] } },
+      { platform: 'flutter', config: { nodes: [flutter.path] } },
+    ],
+  });
+  const result = buildSearchIndexes({
+    routes: [ios, flutter],
+    sourcePages: new Map([
+      [ios.path, { body: 'iOS source' }],
+      [flutter.path, { body: 'Flutter source' }],
+    ]),
+    manualZhPages: new Map([[ios.path, { body: 'iOS 中文' }]]),
+    auditPages: new Map([
+      [ios.path, auditPage(ios.path, 'published', 'deferred')],
+      [flutter.path, auditPage(flutter.path, 'structure-only', 'deferred')],
+    ]),
+    clientSdkActivePaths: scope.activePaths,
+    managedClientSdkContexts: scope.managedContexts,
+  });
+  assert.deepEqual(result.en, []);
+  assert.deepEqual(
+    result.zh.map((record) => record.path),
+    [ios.path],
+  );
+});
+
+test('fails closed when a native route tree is incomplete', () => {
+  const legacy = route('/sdk/ios/open-channel/overview', 'chat/sdk/ios');
+  const scope = getClientSdkSidebarApplicationScope({
+    routes: [legacy],
+    sidebars: [{ platform: 'ios', config: { nodes: ['/sdk/ios/overview'] } }],
+  });
+  const result = buildSearchIndexes({
+    routes: [legacy],
+    sourcePages: new Map([[legacy.path, { body: 'Legacy' }]]),
+    manualZhPages: new Map(),
+    auditPages: new Map(),
+    clientSdkActivePaths: scope.activePaths,
+    managedClientSdkContexts: scope.managedContexts,
+  });
+  assert.deepEqual(result.en, []);
+  assert.deepEqual(result.zh, []);
 });

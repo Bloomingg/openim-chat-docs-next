@@ -1,0 +1,80 @@
+---
+title: '日志'
+description: '配置 OpenIM iOS SDK 日志，并使用 operationID 定位调用链路。'
+sourcePath: '/sdk/ios/logger'
+---
+
+OpenIM iOS SDK 的日志用于定位初始化、连接和业务 API 调用问题。开发环境可以输出较详细的信息；生产环境应减少日志量，并避免记录 token、消息正文、文件 URL 和用户隐私字段。
+
+## 初始化日志配置
+
+日志选项属于 `OIMInitConfig`，必须在 `initSDKWithConfig:...` 前设置：
+
+```objc
+OIMInitConfig *config = [OIMInitConfig new];
+config.platform = iPhone;
+config.apiAddr = apiAddress;
+config.wsAddr = websocketAddress;
+config.dataDir = dataDirectory;
+config.logLevel = 4;
+config.isLogStandardOutput = YES;
+config.logFilePath = logDirectory;
+config.systemType = @"ios";
+```
+
+### 参数说明
+
+| 字段 | 类型 | 说明 |
+| --- | --- | --- |
+| `logLevel` | `NSInteger` | SDK 日志级别；默认值为 `6`，实际级别约定以当前 SDK 版本为准。 |
+| `isLogStandardOutput` | `BOOL` | 是否输出 SDK 标准日志。 |
+| `logFilePath` | `NSString *` | 可选的日志文件目录。 |
+| `systemType` | `NSString *` | 日志中的系统类型标识。 |
+
+生产环境不要长期启用最详细日志。日志目录应位于应用可写范围，并纳入容量、保留期和隐私策略。
+
+## 写入应用诊断日志
+
+需要把应用业务上下文写入 SDK 日志时，可调用：
+
+```objc
+[[OIMManager manager] logs:[NSString stringWithUTF8String:__FILE__].lastPathComponent
+                      line:__LINE__
+                      msgs:@"send_message_failed"
+                       err:errorMessage
+              keyAndValues:@[@"conversationID", conversationID,
+                             @"clientMsgID", clientMsgID]
+                  logLevel:2];
+```
+
+`keyAndValues` 应只包含排查所需的非敏感标识。不要写入访问 token、完整消息内容或原始文件地址。
+
+## 使用 operationID 定位调用
+
+Objective-C 公共业务 selector 不要求应用传入 `operationID`。SDK 会为调用链生成标识；需要在应用诊断中取得新的链路 ID 时，可调用：
+
+```objc
+NSString *operationID = [[OIMManager manager] operationId];
+```
+
+`operationID` 只用于日志关联，不是用户身份、权限凭据、业务幂等键、`conversationID` 或 `clientMsgID`。每条独立调用链使用新的值；多步骤业务流程另用应用自己的 trace ID 串联。
+
+## 上传日志
+
+用户明确同意提交诊断信息后，可以上传 SDK 日志：
+
+```objc
+[[OIMManager manager] uploadLogsWithProgress:^(NSInteger saveBytes, NSInteger currentBytes, NSInteger totalBytes) {
+    [self updateLogUploadCurrentBytes:currentBytes totalBytes:totalBytes];
+}
+                                             line:2000
+                                               ex:@"support-ticket-42"
+                                        onSuccess:^(NSString * _Nullable data) {
+    [self showLogUploadCompleted];
+}
+                                        onFailure:^(NSInteger code, NSString *message) {
+    [self showLogUploadError:code message:message];
+}];
+```
+
+上传进度 callback 依次提供已保存、当前处理和总字节数。上传前应说明收集范围，并遵守产品的隐私、用户同意和资料保留规范。

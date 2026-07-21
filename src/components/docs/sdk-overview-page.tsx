@@ -24,6 +24,19 @@ type ResourceLink = {
   title: string;
 };
 
+export type SdkOverviewPlatform = 'flutter' | 'ios' | 'wasm';
+
+type OverviewCopy = {
+  eyebrow: string;
+  features: FeatureCard[];
+  intro: string;
+  links: ResourceLink[];
+  mostPopular: string;
+  popular: OverviewCard[];
+  recommended: string;
+  resources: string;
+};
+
 const copy = {
   en: {
     eyebrow: 'Version 4',
@@ -185,32 +198,156 @@ const copy = {
       },
     ],
   },
-} satisfies Record<
-  Locale,
-  {
-    eyebrow: string;
-    features: FeatureCard[];
-    intro: string;
-    links: ResourceLink[];
-    mostPopular: string;
-    popular: OverviewCard[];
-    recommended: string;
-    resources: string;
-  }
->;
+} satisfies Record<Locale, OverviewCopy>;
+
+const mobileCopy = {
+  flutter: {
+    eyebrow: 'Version 4',
+    intro:
+      'OpenIM Flutter SDK 为 Android 和 iOS Flutter 应用提供用户、会话、群组、消息、实时事件和本地存储能力。先完成原生工程配置与登录，再通过各 manager 的 API 和 listener 把业务数据接入应用状态。',
+    mostPopular: '热门主题',
+    recommended: '推荐功能',
+    resources: '资源',
+    popular: createMobilePopularCards('flutter'),
+    features: [
+      {
+        title: '用户认证',
+        description: '使用后端签发的 Token 登录，并处理连接、过期和被踢下线事件。',
+        href: '/sdk/flutter/getting-started/authenticate-and-manage-session',
+      },
+      {
+        title: '群组',
+        description: '管理群资料、群成员、入群申请、权限和群组事件。',
+        href: '/sdk/flutter/group/overview-group',
+      },
+      {
+        title: '事件',
+        description: '注册各 manager 的 listener，并按稳定标识合并增量数据。',
+        href: '/sdk/flutter/events/overview-events',
+      },
+    ],
+    links: [
+      {
+        title: '发送第一条消息',
+        description: '完成安装、初始化、登录、选择目标并发送消息。',
+        href: '/sdk/flutter/getting-started/send-first-message',
+      },
+      {
+        title: '运行环境配置',
+        description: '配置 Flutter 依赖以及 Android、iOS 原生工程要求。',
+        href: '/sdk/flutter/getting-started/environment-specific-implementation',
+      },
+      {
+        title: '日志与诊断',
+        description: '配置 SDK 日志，并保留错误码和错误信息用于诊断。',
+        href: '/sdk/flutter/logger',
+      },
+    ],
+  },
+  ios: {
+    eyebrow: 'Version 4',
+    intro:
+      'OpenIM iOS SDK 通过 Objective-C API 为 iPhone 和 iPad 应用提供用户、会话、群组、消息、实时事件和本地存储能力。先完成工程配置与登录，再通过 manager API 和 delegate 把业务数据接入应用状态。',
+    mostPopular: '热门主题',
+    recommended: '推荐功能',
+    resources: '资源',
+    popular: createMobilePopularCards('ios'),
+    features: [
+      {
+        title: '用户认证',
+        description: '使用后端签发的 Token 登录，并处理连接、过期和被踢下线事件。',
+        href: '/sdk/ios/getting-started/authenticate-and-manage-session',
+      },
+      {
+        title: '群组',
+        description: '管理群资料、群成员、入群申请、权限和群组事件。',
+        href: '/sdk/ios/group/overview-group',
+      },
+      {
+        title: '事件',
+        description: '注册并移除业务 delegate，按稳定标识合并增量数据。',
+        href: '/sdk/ios/events/overview-events',
+      },
+    ],
+    links: [
+      {
+        title: '发送第一条消息',
+        description: '完成安装、初始化、登录、选择目标并发送消息。',
+        href: '/sdk/ios/getting-started/send-first-message',
+      },
+      {
+        title: '运行环境配置',
+        description: '安装 OpenIMSDK，并完成 iOS 工程与系统权限配置。',
+        href: '/sdk/ios/getting-started/environment-specific-implementation',
+      },
+      {
+        title: '日志与诊断',
+        description: '配置 SDK 日志，并保留错误码和错误信息用于诊断。',
+        href: '/sdk/ios/logger',
+      },
+    ],
+  },
+} satisfies Record<Exclude<SdkOverviewPlatform, 'wasm'>, OverviewCopy>;
+
+function createMobilePopularCards(
+  platform: Exclude<SdkOverviewPlatform, 'wasm'>,
+): OverviewCard[] {
+  const prefix = `/sdk/${platform}`;
+
+  return [
+    {
+      title: '管理会话',
+      description: '设置会话状态、草稿、未读数、隐藏和删除等客户端会话能力。',
+      href: `${prefix}/conversation/overview-conversation`,
+      visual: 'migration',
+    },
+    {
+      title: '未读消息数',
+      description: '读取会话未读数，并同步聊天列表、角标和全局未读状态。',
+      href: `${prefix}/conversation/managing-conversations/manage-read-status`,
+      visual: 'unread',
+    },
+    {
+      title: '已读回执',
+      description: '查询群消息已读成员，并通过回执事件更新消息气泡状态。',
+      href: `${prefix}/message/managing-read-status/manage-message-read-receipts`,
+      visual: 'receipt',
+    },
+    {
+      title: '发送消息',
+      description: '创建文本、文件或自定义消息，并发送给单聊用户或群组。',
+      href: `${prefix}/message/sending-messages/send-a-message`,
+      visual: 'message',
+    },
+    {
+      title: '接收消息',
+      description: '订阅新消息事件，把增量消息稳定合并到应用状态。',
+      href: `${prefix}/message/receiving-messages/receive-messages`,
+      visual: 'events',
+    },
+    {
+      title: '历史消息',
+      description: '使用会话标识和消息游标读取本地及同步后的历史消息。',
+      href: `${prefix}/message/retrieving-messages/retrieve-message-history`,
+      visual: 'history',
+    },
+  ];
+}
 
 export function SdkOverviewPage({
   breadcrumbs,
   locale = 'en',
+  platform = 'wasm',
   route,
   showVersion,
 }: {
   breadcrumbs: BreadcrumbItem[];
   locale?: Locale;
+  platform?: SdkOverviewPlatform;
   route: RouteRecord;
   showVersion: boolean;
 }) {
-  const text = copy[locale];
+  const text = platform === 'wasm' ? copy[locale] : mobileCopy[platform];
 
   return (
     <div className="sdk-overview-page">

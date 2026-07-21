@@ -1,0 +1,2603 @@
+{
+  "schemaVersion": 1,
+  "sources": {
+    "openimDocs": {
+      "repository": "https://github.com/openimsdk/docs",
+      "commit": "efd0f251b288167e1ca617504b10dd73986429f0"
+    },
+    "iosSdk": {
+      "repository": "https://github.com/openimsdk/open-im-sdk-ios",
+      "tag": "3.8.3-hotfix.12",
+      "commit": "17fb969fd3a360f00fe65f476435b81857e274f8"
+    }
+  },
+  "pages": [
+    {
+      "currentPath": "/sdk/ios/overview",
+      "targetPath": "/sdk/ios/overview",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "not-applicable",
+            "evidence": [],
+            "reason": "本页为概览或概念说明，不包含可执行代码示例。"
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核，并按固定 iOS SDK 的 Objective-C 公开接口调整平台说明。",
+        "2026-07-21：移除公开正文中的固定版本号；API 基线仍由本记录的不可变 SDK commit 提供证据。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/getting-started/before-you-start",
+      "targetPath": "/sdk/ios/getting-started/before-you-start",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核，并核对固定 iOS SDK 的安装方式、模块名称与最低系统要求。",
+        "2026-07-21：CocoaPods 示例改为不锁公开版本号；最低系统要求仍按 audit 固定 commit 的 podspec 核对。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/getting-started/environment-specific-implementation",
+      "targetPath": "/sdk/ios/getting-started/environment-specific-implementation",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "initSDKWithConfig:onConnecting:onConnectFailure:onConnectSuccess:onKickedOffline:onUserTokenExpired:onUserTokenInvalid:",
+        "unInitSDK"
+      ],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；初始化 selector 与 OIMPlatform 枚举均按固定 Objective-C header 核对，连接事件统一归认证与管理登录会话页。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/getting-started/authenticate-and-manage-session",
+      "targetPath": "/sdk/ios/getting-started/authenticate-and-manage-session",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "login:token:onSuccess:onFailure:",
+        "getLoginStatus",
+        "getLoginUserID",
+        "logoutWithOnSuccess:onFailure:",
+        "unInitSDK"
+      ],
+      "sdkEvents": [
+        "onConnecting",
+        "onConnectFailure",
+        "onConnectSuccess",
+        "onKickedOffline",
+        "onUserTokenExpired",
+        "onUserTokenInvalid"
+      ],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；登录状态、登录与退出 selector 以及完整连接事件处理均按固定 Objective-C header 核对。",
+        "2026-07-21：重新逐页人工对照 WASM 登录会话页，补齐凭据边界、初始化／登录／连接三阶段、Token 与强制下线处理、账号切换和 unInitSDK 生命周期；Objective-C selector 与 callback 仍以固定 iOS SDK 为准。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/getting-started/send-first-message",
+      "targetPath": "/sdk/ios/getting-started/send-first-message",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "createTextMessage:",
+        "sendMessage:recvID:groupID:isOnlineOnly:offlinePushInfo:onSuccess:onProgress:onFailure:"
+      ],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；文本消息创建与发送 selector 均按固定 Objective-C header 核对。",
+        "2026-07-21：CocoaPods 快速开始示例改为不锁公开版本号；selector 审核仍使用本记录的固定 SDK commit。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/user/overview-user",
+      "targetPath": "/sdk/ios/user/overview-user",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8",
+        "https://github.com/openimsdk/open-im-sdk-ios/blob/17fb969fd3a360f00fe65f476435b81857e274f8/OpenIMSDK/Model/OIMFullUserInfo.h"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "not-applicable",
+            "evidence": [],
+            "reason": "本页为概览或概念说明，不包含可执行代码示例。"
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核，并按固定 iOS SDK 能力整理用户、好友与黑名单领域入口。",
+        "2026-07-21：按固定 iOS SDK commit 的 OIMFullUserInfo.h 复核 OIMFriendInfo 属性，移除从其他平台推测的好友置顶返回能力。",
+        "2026-07-21：逐页对照 WASM 用户概览，统一九项功能入口的共同顺序、完整场景文案和五类状态事件归属；model、Objective-C selector 与 delegate 边界仍按固定 iOS SDK header 保留平台差异。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/user/retrieving-users/retrieve-users",
+      "targetPath": "/sdk/ios/user/retrieving-users/retrieve-users",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8",
+        "https://github.com/openimsdk/open-im-sdk-ios/blob/17fb969fd3a360f00fe65f476435b81857e274f8/OpenIMSDK/Model/OIMFullUserInfo.h"
+      ],
+      "sdkMethods": ["getUsersInfo:onSuccess:onFailure:"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；用户资料查询 selector 与 OIMPublicUserInfo 模型按固定 Objective-C header 核对。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/user/retrieving-and-updating-user-information/retrieve-and-update-self-profile",
+      "targetPath": "/sdk/ios/user/retrieving-and-updating-user-information/retrieve-and-update-self-profile",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "getSelfInfoWithOnSuccess:onFailure:",
+        "setSelfInfo:onSuccess:onFailure:",
+        "setGlobalRecvMessageOpt:onSuccess:onFailure:"
+      ],
+      "sdkEvents": ["onSelfInfoUpdated:"],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；自身资料、全域收讯设置 selector、OIMUserInfo 模型与 OIMUserListener 回调按固定 Objective-C header 核对。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/user/retrieving-and-updating-user-information/retrieve-the-online-status-of-a-user",
+      "targetPath": "/sdk/ios/user/retrieving-and-updating-user-information/retrieve-the-online-status-of-a-user",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "subscribeUsersStatus:onSuccess:onFailure:",
+        "getSubscribeUsersStatusWithOnSuccess:onFailure:",
+        "unsubscribeUsersStatus:onSuccess:onFailure:"
+      ],
+      "sdkEvents": ["onUserStatusChanged:"],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；在线状态订阅 selector、状态模型与 OIMUserListener 回调按固定 Objective-C header 核对。",
+        "2026-07-21：重新逐页人工对照 WASM 在线状态页，补齐可见范围订阅、快照／listener 增量／取消订阅边界、userID 合并和账号清理；未移植固定 iOS header 未公开的查询方法或未经证实的数量限制。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/user/retrieving-users/retrieve-a-list-of-friends",
+      "targetPath": "/sdk/ios/user/retrieving-users/retrieve-a-list-of-friends",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8",
+        "https://github.com/openimsdk/open-im-sdk-ios/blob/17fb969fd3a360f00fe65f476435b81857e274f8/OpenIMSDK/Model/OIMFullUserInfo.h",
+        "https://github.com/openimsdk/open-im-sdk-ios/blob/17fb969fd3a360f00fe65f476435b81857e274f8/OpenIMSDK/Model/OIMUpdateFriendsReq.h"
+      ],
+      "sdkMethods": [
+        "getFriendListPageWithOffset:count:filterBlack:onSuccess:onFailure:",
+        "searchFriends:onSuccess:onFailure:"
+      ],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；仅公开分页好友列表，并核对搜索 selector 与参数模型。",
+        "2026-07-21：按固定 iOS SDK commit 的 OIMFullUserInfo.h 与 OIMUpdateFriendsReq.h 复核边界：isPinned 只存在于更新请求，不存在于 OIMFriendInfo 返回模型。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/user/retrieving-users/retrieve-friend-information",
+      "targetPath": "/sdk/ios/user/retrieving-users/retrieve-friend-information",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "getSpecifiedFriendsInfo:filterBlack:onSuccess:onFailure:",
+        "checkFriend:onSuccess:onFailure:"
+      ],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；指定好友查询与好友关系检查 selector 按固定 Objective-C header 核对。",
+        "2026-07-21：逐页复核固定 SDK 的 OIMFriendInfo 与 OIMSimpleResultInfo header，补齐 nullable 属性、filterBlack、result 边界、适用场景及查询、delegate、重查阶段。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/user/managing-friends/manage-friend-requests",
+      "targetPath": "/sdk/ios/user/managing-friends/manage-friend-requests",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "addFriend:reqMessage:onSuccess:onFailure:",
+        "getFriendApplicationListAsRecipientWithReq:onSuccess:onFailure:",
+        "getFriendApplicationListAsApplicantWithReq:onSuccess:onFailure:",
+        "getFriendApplicationUnhandledCount:onSuccess:onFailure:",
+        "acceptFriendApplication:handleMsg:onSuccess:onFailure:",
+        "refuseFriendApplication:handleMsg:onSuccess:onFailure:"
+      ],
+      "sdkEvents": [
+        "onFriendApplicationAdded:",
+        "onFriendApplicationAccepted:",
+        "onFriendApplicationRejected:",
+        "onFriendApplicationDeleted:"
+      ],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；好友申请 selector、分页模型与 OIMFriendshipListener 回调按固定 Objective-C header 核对。固定版本没有公开删除好友申请记录的 selector。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/user/managing-friends/update-or-delete-friends",
+      "targetPath": "/sdk/ios/user/managing-friends/update-or-delete-friends",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": ["updateFriends:onSuccess:onFailure:", "deleteFriend:onSuccess:onFailure:"],
+      "sdkEvents": ["onFriendAdded:", "onFriendInfoChanged:", "onFriendDeleted:"],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；好友更新、删除 selector 与 OIMFriendshipListener 回调按固定 Objective-C header 核对。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/user/moderating-a-user/retrieve-a-list-of-blocked-users",
+      "targetPath": "/sdk/ios/user/moderating-a-user/retrieve-a-list-of-blocked-users",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": ["getBlackListWithOnSuccess:onFailure:"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；黑名单快照查询 selector 与 OIMBlackInfo 模型按固定 Objective-C header 核对。",
+        "2026-07-21：逐页复核 OIMFullUserInfo.h，确认 OIMBlackInfo 继承 OIMPublicUserInfo 且固定版本不含 ownerUserID、blockUserID，补齐真实属性、nullable 边界、场景与快照语义。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/user/moderating-a-user/block-or-unblock-users",
+      "targetPath": "/sdk/ios/user/moderating-a-user/block-or-unblock-users",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "addToBlackList:ex:onSuccess:onFailure:",
+        "removeFromBlackList:onSuccess:onFailure:"
+      ],
+      "sdkEvents": ["onBlackAdded:", "onBlackDeleted:"],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；加入、移出黑名单 selector 与 OIMFriendshipListener 回调按固定 Objective-C header 核对。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/conversation/overview-conversation",
+      "targetPath": "/sdk/ios/conversation/overview-conversation",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "not-applicable",
+            "evidence": [],
+            "reason": "本页为概览或概念说明，不包含可执行代码示例。"
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核，并按固定 iOS SDK 能力整理会话领域入口与事件归属。",
+        "2026-07-21：逐页对照 WASM 会话概览，恢复状态更新章节及 callback、delegate、重新查询三个阶段；OIMConversationInfo 与 Objective-C API 仍按固定 iOS SDK header。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/conversation/retrieving-conversations/retrieve-a-conversation",
+      "targetPath": "/sdk/ios/conversation/retrieving-conversations/retrieve-a-conversation",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "getOneConversationWithSessionType:sourceID:onSuccess:onFailure:",
+        "getConversationIDBySessionType:sourceID:",
+        "getMultipleConversation:onSuccess:onFailure:"
+      ],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；单个、批量会话查询与会话 ID selector 均按固定 Objective-C header 核对。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/conversation/retrieving-conversations/retrieve-conversation-list",
+      "targetPath": "/sdk/ios/conversation/retrieving-conversations/retrieve-conversation-list",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": ["getConversationListSplitWithOffset:count:onSuccess:onFailure:"],
+      "sdkEvents": ["onNewConversation:", "onConversationChanged:"],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；分页会话查询与会话增量事件均按固定 Objective-C header 核对。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/conversation/managing-conversations/set-conversation-settings",
+      "targetPath": "/sdk/ios/conversation/managing-conversations/set-conversation-settings",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "pinConversation:isPinned:onSuccess:onFailure:",
+        "setConversationRecvMessageOpt:status:onSuccess:onFailure:",
+        "setConversationPrivateChat:isPrivate:onSuccess:onFailure:",
+        "setConversationBurnDuration:duration:onSuccess:onFailure:",
+        "setConversationEx:ex:onSuccess:onFailure:",
+        "setConversation:req:onSuccess:onFailure:"
+      ],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；置顶、收讯、私聊、阅后即焚与扩展字段 selector 均按固定 Objective-C header 核对。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/conversation/managing-conversations/set-conversation-draft",
+      "targetPath": "/sdk/ios/conversation/managing-conversations/set-conversation-draft",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": ["setConversationDraft:draftText:onSuccess:onFailure:"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": ["2026-07-20：已逐页人工审核；会话草稿 selector 按固定 Objective-C header 核对。"]
+    },
+    {
+      "currentPath": "/sdk/ios/conversation/managing-conversations/manage-read-status",
+      "targetPath": "/sdk/ios/conversation/managing-conversations/manage-read-status",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "markConversationMessageAsRead:onSuccess:onFailure:",
+        "getTotalUnreadMsgCountWithOnSuccess:onFailure:",
+        "resetConversationGroupAtType:onSuccess:onFailure:"
+      ],
+      "sdkEvents": ["onTotalUnreadMessageCountChanged:"],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；已读、总未读数、群聊 @ 状态重置与总未读事件均按固定 Objective-C header 核对。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/conversation/managing-conversations/hide-a-conversation",
+      "targetPath": "/sdk/ios/conversation/managing-conversations/hide-a-conversation",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": ["hideConversation:onSuccess:onFailure:"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；隐藏单个会话 selector 按固定 Objective-C header 核对，隐藏全部会话归删除或清空会话页。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/conversation/managing-conversations/delete-or-clear-conversation",
+      "targetPath": "/sdk/ios/conversation/managing-conversations/delete-or-clear-conversation",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "deleteConversationAndDeleteAllMsg:onSuccess:onFailure:",
+        "clearConversationAndDeleteAllMsg:onSuccess:onFailure:",
+        "hideAllConversationsWithOnSuccess:onFailure:"
+      ],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；删除消息、清空消息与隐藏全部会话 selector 均按固定 Objective-C header 核对；隐藏全部会话成功回调按 OIMSuccessCallback 接收可空字符串。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/group/overview-group",
+      "targetPath": "/sdk/ios/group/overview-group",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "not-applicable",
+            "evidence": [],
+            "reason": "本页为概览或概念说明，不包含可执行代码示例。"
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核，并按固定 iOS SDK 能力整理群组领域入口与事件归属。",
+        "2026-07-21：逐页对照 WASM 群组概览，统一群资料、群成员与群组管控的入口顺序，恢复状态事件与能力边界；model、enum、selector 与 delegate 仍按固定 iOS SDK header。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/group/creating-and-updating-groups/create-or-update-a-group",
+      "targetPath": "/sdk/ios/group/creating-and-updating-groups/create-or-update-a-group",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "createGroup:onSuccess:onFailure:",
+        "setGroupInfo:onSuccess:onFailure:",
+        "setGroupInfoDictionary:onSuccess:onFailure:"
+      ],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；群组创建与群资料更新 selector 均按固定 Objective-C header 核对。",
+        "2026-07-20：复核 OIMSuccessCallback 签名，并补充部分更新字段、角色权限与事件后重新查询边界。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/group/retrieving-groups/retrieve-and-search-groups",
+      "targetPath": "/sdk/ios/group/retrieving-groups/retrieve-and-search-groups",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "getSpecifiedGroupsInfo:onSuccess:onFailure:",
+        "getJoinedGroupListPageWithOffset:count:onSuccess:onFailure:",
+        "getJoinedGroupListWithOnSuccess:onFailure:",
+        "isJoinedGroup:onSuccess:onFailure:",
+        "searchGroups:onSuccess:onFailure:"
+      ],
+      "sdkEvents": [
+        "onJoinedGroupAdded:",
+        "onJoinedGroupDeleted:",
+        "onGroupInfoChanged:",
+        "onGroupDismissed:"
+      ],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；群组查询、搜索与群资料事件均按固定 Objective-C header 核对。",
+        "2026-07-20：复核 OIMGroupListener 由 OIMManager class callbacker 添加和移除，并保留稳定实例生命周期。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/group/joining-and-leaving-groups/join-leave-or-dismiss-a-group",
+      "targetPath": "/sdk/ios/group/joining-and-leaving-groups/join-leave-or-dismiss-a-group",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "joinGroup:reqMsg:joinSource:ex:onSuccess:onFailure:",
+        "quitGroup:onSuccess:onFailure:",
+        "dismissGroup:onSuccess:onFailure:"
+      ],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；加入、退出与解散群组 selector 均按固定 Objective-C header 核对。",
+        "2026-07-20：复核 OIMSuccessCallback 签名，并补充加入来源、权限审核与状态校准说明。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/group/managing-group-applications/manage-group-applications",
+      "targetPath": "/sdk/ios/group/managing-group-applications/manage-group-applications",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "getGroupApplicationListAsRecipientWithReq:onSuccess:onFailure:",
+        "getGroupApplicationListAsApplicantWithRep:onSuccess:onFailure:",
+        "getGroupApplicationUnhandledCount:onSuccess:onFailure:",
+        "acceptGroupApplication:fromUserId:handleMsg:onSuccess:onFailure:",
+        "refuseGroupApplication:fromUserId:handleMsg:onSuccess:onFailure:"
+      ],
+      "sdkEvents": [
+        "onGroupApplicationAdded:",
+        "onGroupApplicationAccepted:",
+        "onGroupApplicationRejected:",
+        "onGroupApplicationDeleted:"
+      ],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；入群申请查询、处理、计数与事件均按固定 Objective-C header 核对。",
+        "2026-07-20：复核成功 callback 与 OIMManager class callbacker listener，并补充申请分页、状态筛选和审核权限。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/group/retrieving-group-members/retrieve-group-members",
+      "targetPath": "/sdk/ios/group/retrieving-group-members/retrieve-group-members",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "getGroupMemberList:filter:offset:count:onSuccess:onFailure:",
+        "getSpecifiedGroupMembersInfo:usersID:onSuccess:onFailure:",
+        "getUsersInGroup:userIDs:onSuccess:onFailure:",
+        "getGroupMemberOwnerAndAdmin:onSuccess:onFailure:",
+        "searchGroupMembers:onSuccess:onFailure:"
+      ],
+      "sdkEvents": ["onGroupMemberAdded:", "onGroupMemberDeleted:", "onGroupMemberInfoChanged:"],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；群成员查询、搜索与成员事件均按固定 Objective-C header 核对。",
+        "2026-07-20：复核 OIMManager class callbacker listener，并补充成员列表与搜索的独立参数、分页和事件校准规则。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/group/managing-group-members/invite-or-remove-group-members",
+      "targetPath": "/sdk/ios/group/managing-group-members/invite-or-remove-group-members",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "inviteUserToGroup:reason:usersID:onSuccess:onFailure:",
+        "kickGroupMember:reason:usersID:onSuccess:onFailure:"
+      ],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；邀请与移除群成员 selector 均按固定 Objective-C header 核对。",
+        "2026-07-20：复核 OIMSuccessCallback 签名，并分别补充邀请、移除参数与服务端权限审核。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/group/managing-group-members/update-group-member-info",
+      "targetPath": "/sdk/ios/group/managing-group-members/update-group-member-info",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "setGroupMemberNickname:userID:groupNickname:onSuccess:onFailure:",
+        "setGroupMemberRoleLevel:userID:roleLevel:onSuccess:onFailure:",
+        "setGroupMemberInfo:onSuccess:onFailure:"
+      ],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；群成员昵称、角色与资料更新 selector 均按固定 Objective-C header 核对。",
+        "2026-07-20：复核三个资料更新操作的 OIMSuccessCallback 签名。",
+        "2026-07-21：逐页复核 OIMSetGroupMemberInfo 与 OIMGroupMemberRole，补齐三个 selector 各自参数、nullable 边界、角色枚举、字典 key 及 callback、delegate、重查阶段。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/group/managing-group-members/transfer-group-owner",
+      "targetPath": "/sdk/ios/group/managing-group-members/transfer-group-owner",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "transferGroupOwner:newOwner:onSuccess:onFailure:",
+        "getGroupMemberOwnerAndAdmin:onSuccess:onFailure:"
+      ],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；群主转让与群主、管理员查询 selector 均按固定 Objective-C header 核对。",
+        "2026-07-20：复核群主转让的 OIMSuccessCallback 签名。",
+        "2026-07-21：逐页复核转让 selector 的不可空参数，补齐原群主、新群主角色变化、双记录 delegate 合并及退出、解散边界。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/group/moderating-groups/mute-a-group-or-member",
+      "targetPath": "/sdk/ios/group/moderating-groups/mute-a-group-or-member",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "changeGroupMute:isMute:onSuccess:onFailure:",
+        "changeGroupMemberMute:userID:mutedSeconds:onSuccess:onFailure:"
+      ],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；群组与群成员禁言 selector 均按固定 Objective-C header 核对。",
+        "2026-07-20：复核两个禁言操作的 OIMSuccessCallback 签名，并补充秒级参数与角色权限审核。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/message/overview-message",
+      "targetPath": "/sdk/ios/message/overview-message",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "not-applicable",
+            "evidence": [],
+            "reason": "本页为概览或概念说明，不包含可执行代码示例。"
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；按 WASM 基线回填消息标识、类型、主题导航与事件归属，并以固定 Objective-C selector 和平台缺口替换 API 差异。",
+        "2026-07-21：逐页对照 WASM 消息概览，补齐 OIMMessageInfo 常用属性、nullable element 边界及十项主题顺序；Objective-C selector、enum、callback、delegate 与能力缺口仍按固定 iOS SDK header。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/message/sending-messages/send-a-message",
+      "targetPath": "/sdk/ios/message/sending-messages/send-a-message",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "createTextMessage:",
+        "sendMessage:recvID:groupID:isOnlineOnly:offlinePushInfo:onSuccess:onProgress:onFailure:",
+        "sendMessageNotOss:recvID:groupID:isOnlineOnly:offlinePushInfo:onSuccess:onProgress:onFailure:"
+      ],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；发送结果与错误信息的 nullable callback 参数已按固定 iOS SDK header 防护，并保留 WASM 的创建、发送和事件分阶段说明。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/message/sending-messages/create-media-and-rich-messages",
+      "targetPath": "/sdk/ios/message/sending-messages/create-media-and-rich-messages",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "createImageMessageFromFullPath:",
+        "createSoundMessageFromFullPath:duration:",
+        "createVideoMessageFromFullPath:videoType:duration:snapshotPath:",
+        "createFileMessageFromFullPath:fileName:",
+        "createImageMessageByURL:sourcePicture:bigPicture:snapshotPicture:",
+        "createSoundMessageByURL:duration:size:",
+        "createVideoMessageByURL:videoType:duration:size:snapshot:",
+        "createFileMessageByURL:fileName:size:",
+        "createCardMessage:",
+        "createLocationMessage:latitude:longitude:",
+        "createQuoteMessage:message:",
+        "createFaceMessageWithIndex:data:",
+        "createAdvancedTextMessage:messageEntityList:",
+        "sendMessageNotOss:recvID:groupID:isOnlineOnly:offlinePushInfo:onSuccess:onProgress:onFailure:"
+      ],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；按 WASM 基线回填本地媒体、URL 型媒体、名片、位置、引用、发送阶段与相关页面，各操作参数按固定 iOS SDK header 分别说明，并明确 Markdown 与 URL 元数据的平台差异。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/message/sending-messages/upload-files-and-track-progress",
+      "targetPath": "/sdk/ios/message/sending-messages/upload-files-and-track-progress",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "sendMessage:recvID:groupID:isOnlineOnly:offlinePushInfo:onSuccess:onProgress:onFailure:",
+        "uploadFile:name:cause:onProgress:onCompletion:onSuccess:onFailure:"
+      ],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；Objective-C 上传进度与完成 callback 的字节数、URL 和 putType 参数、发送结果与错误字串的 nullable 声明均按固定 iOS SDK header 核对，并补齐独立上传参数表。",
+        "2026-07-20：發布前複審確認 URL 檔案消息 factory 的 receiver 為 OIMMessageInfo，並已修正範例。",
+        "2026-07-21：重新逐页人工对照 WASM 上传页，补齐进度／完成／发送阶段、clientMsgID 与任务 ID 关联、并发重试边界和验证场景；API 与 callback 仍以固定 Objective-C header 为准。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/message/receiving-messages/receive-messages",
+      "targetPath": "/sdk/ios/message/receiving-messages/receive-messages",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": ["addAdvancedMsgListener:", "removeAdvancedMsgListener:"],
+      "sdkEvents": ["onRecvNewMessage:", "onRecvOnlineOnlyMessage:"],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；按 WASM 基线回填消息类型、历史快照、已读边界、验证与相关页面，并按固定 iOS SDK 保留单条普通／只在线 listener 与无独立离线 selector 的差异。",
+        "2026-07-21：逐页复核 OIMMessageInfo.h，补齐消息路由、合并、enum 状态与 nullable 内容 element 的公开属性边界。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/message/retrieving-messages/retrieve-message-history",
+      "targetPath": "/sdk/ios/message/retrieving-messages/retrieve-message-history",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "getAdvancedHistoryMessageList:onSuccess:onFailure:",
+        "getAdvancedHistoryMessageListReverse:onSuccess:onFailure:"
+      ],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；高级历史结果与错误信息的 nullable callback 参数已按固定 iOS SDK header 防护。",
+        "2026-07-21：重新逐页人工对照 WASM 历史页，补齐 conversationID 中心模型、clientMsgID 游标、读取方向、空页与同步边界，以及快照／事件／重新查询三阶段。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/message/retrieving-messages/locate-messages-by-id",
+      "targetPath": "/sdk/ios/message/retrieving-messages/locate-messages-by-id",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": ["findMessageList:onSuccess:onFailure:"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；消息定位结果与错误信息的 nullable callback 参数已按固定 iOS SDK header 防护。",
+        "2026-07-21：重新逐页人工对照 WASM 消息定位页，补齐查询场景、参数与空结果边界、conversationID + clientMsgID 合并，并明确 iOS 无 fetchSurroundingMessages 对等 selector。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/message/searching-messages/search-messages",
+      "targetPath": "/sdk/ios/message/searching-messages/search-messages",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": ["searchLocalMessages:onSuccess:onFailure:"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；本地搜索结果与错误信息的 nullable callback 参数已按固定 iOS SDK header 防护。",
+        "2026-07-21：重新逐页人工对照 WASM 搜索页，补齐本地范围、关键词边界、iOS 不可用筛选字段、分页重置、结果合并、事件与重新查询分阶段说明。",
+        "2026-07-21：逐页复核 OIMSearchParam.h 与 OIMSearchResultInfo.h，补齐参数 nullability、未使用字段及 OIMSearchResultInfo、OIMSearchResultItemInfo 的完整结果属性。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/message/composing-messages/custom-message-and-extra-data",
+      "targetPath": "/sdk/ios/message/composing-messages/custom-message-and-extra-data",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "createCustomMessage:extension:description:",
+        "setMessageLocalEx:clientMsgID:localEx:onSuccess:onFailure:",
+        "addCustomBusinessListener:",
+        "removeCustomBusinessListener:"
+      ],
+      "sdkEvents": ["onRecvCustomBusinessMessage:"],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；自定义 JSON 序列化错误、UTF-8 转换及 nullable 业务通知载荷已按 Foundation 与固定 iOS SDK 协议防护。",
+        "2026-07-21：重新逐页人工对照 WASM 扩展数据页，补齐自定义消息、共享 ex 与本机 localEx 的作用范围、完整值覆盖语义、事件阶段和业务载荷安全边界。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/message/composing-messages/mention-users-in-a-message",
+      "targetPath": "/sdk/ios/message/composing-messages/mention-users-in-a-message",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "createTextAtMessage:atUsersID:atUsersInfo:message:",
+        "createTextAtAllMessage:displayText:message:",
+        "createAtAllFlag:",
+        "getAtAllTag"
+      ],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；按 WASM 基线回填指定成员、全体成员、引用消息、可点击渲染与会话提醒状态，并按固定 iOS SDK header 核对 OIMAtInfo、OIMGroupAtType 及消息创建 selector。",
+        "2026-07-21：重新逐页人工对照 WASM 提及消息页，确认用户 ID 边界、最多 10 人限制、全体成员权限、创建／发送／接收阶段及 clientMsgID 合并均已对齐；保留 iOS 专用 createTextAtAllMessage 与 createAtAllFlag 调用方式。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/message/composing-messages/manage-typing-status",
+      "targetPath": "/sdk/ios/message/composing-messages/manage-typing-status",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "changeInputStates:focus:onSuccess:onFailure:",
+        "getInputstates:userID:onSuccess:onFailure:"
+      ],
+      "sdkEvents": ["onConversationUserInputStatusChanged:"],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；按 WASM 基线回填开始、停止、事件增量、快照查询与相关页面，failure callback 的 nullable 信息已按固定 iOS SDK header 防护。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/message/managing-messages/forward-or-merge-a-message",
+      "targetPath": "/sdk/ios/message/managing-messages/forward-or-merge-a-message",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": ["createForwardMessage:", "createMergeMessage:title:summaryList:"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；转发发送 callback 的 nullable 参数已防护，并按固定 iOS SDK header 补齐合并消息参数表。",
+        "2026-07-21：重新逐页人工对照 WASM 转发与合并页，补齐原消息成功状态、本地文件重传边界、安全摘要、失败排查，以及创建／发送／远端事件分阶段说明；API 仍以固定 Objective-C header 为准。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/message/managing-messages/delete-a-message",
+      "targetPath": "/sdk/ios/message/managing-messages/delete-a-message",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "deleteMessageFromLocalStorage:clientMsgID:onSuccess:onFailure:",
+        "deleteMessage:clientMsgID:onSuccess:onFailure:"
+      ],
+      "sdkEvents": ["onMsgDeleted:"],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；按 WASM 基线回填本地删除、账号侧删除、事件、结果对比与相关页面，failure callback 的 nullable 信息已防护，并明确固定 iOS SDK 无 isSync 与按用户批量删除 selector。",
+        "2026-07-20：發布前複審移除不存在的修改消息能力與省略路由連結。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/message/managing-messages/revoke-a-message",
+      "targetPath": "/sdk/ios/message/managing-messages/revoke-a-message",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": ["revokeMessage:clientMsgID:onSuccess:onFailure:"],
+      "sdkEvents": ["onRecvMessageRevoked:"],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；按 WASM 基线回填撤回操作、返回阶段、事件合并与相关页面，failure 信息及 OIMRevokedCallback 的 nullable 参数已按固定 iOS SDK header 防护。",
+        "2026-07-20：發布前複審移除不存在的修改消息能力與省略路由連結。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/message/managing-messages/insert-a-local-message",
+      "targetPath": "/sdk/ios/message/managing-messages/insert-a-local-message",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "insertSingleMessageToLocalStorage:recvID:sendID:onSuccess:onFailure:",
+        "insertGroupMessageToLocalStorage:groupID:sendID:onSuccess:onFailure:"
+      ],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；单聊与群聊本地插入各自的参数表、nullable 成功结果与错误字串均按固定 iOS SDK header 核对。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/message/managing-messages/clear-message-history",
+      "targetPath": "/sdk/ios/message/managing-messages/clear-message-history",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "clearConversationAndDeleteAllMsg:onSuccess:onFailure:",
+        "deleteAllMsgFromLocalWithOnSuccess:onFailure:",
+        "deleteAllMsgFromLocalAndSvrWithOnSuccess:onFailure:"
+      ],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；按 WASM 基线回填单会话状态变化、账号级本地与服务端范围、重新同步边界及相关页面，failure callback 的 nullable 信息已按固定 iOS SDK header 防护。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/message/managing-read-status/manage-message-read-receipts",
+      "targetPath": "/sdk/ios/message/managing-read-status/manage-message-read-receipts",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": ["markConversationMessageAsRead:onSuccess:onFailure:"],
+      "sdkEvents": ["onRecvC2CReadReceipt:", "onRecvGroupReadReceipt:"],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；回执数组、用户或群组 ID、消息 ID 数组与失败信息的 nullable 声明已按固定 iOS SDK header 防护。",
+        "2026-07-21：逐页复核 OIMMessageInfo.h 的 OIMReceiptInfo，补齐全部公开属性、单聊与群聊合并标识，以及 callback、delegate、快照三个阶段。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/events/overview-events",
+      "targetPath": "/sdk/ios/events/overview-events",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": ["addConversationListener:", "removeConversationListener:"],
+      "sdkEvents": [
+        "onSyncServerStart:",
+        "onSyncServerProgress:",
+        "onSyncServerFinish:",
+        "onSyncServerFailed:"
+      ],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；正文、Objective-C selector、模型与事件均按固定 iOS SDK header 核对。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/logger",
+      "targetPath": "/sdk/ios/logger",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [
+        "initSDKWithConfig:onConnecting:onConnectFailure:onConnectSuccess:onKickedOffline:onUserTokenExpired:onUserTokenInvalid:",
+        "logs:line:msgs:err:keyAndValues:logLevel:",
+        "operationId",
+        "uploadLogsWithProgress:line:ex:onSuccess:onFailure:"
+      ],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-ios 固定 commit 17fb969fd3a360f00fe65f476435b81857e274f8 的 Objective-C 公開 header 靜態核對範例 selector、參數與 callback；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工审核；iPhone 平台枚举、日志写入 selector 与三参数上传进度 callback 均按固定 iOS SDK header 核对。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/conversation/managing-conversation-groups/manage-conversation-groups",
+      "targetPath": "/sdk/ios/conversation/managing-conversation-groups/manage-conversation-groups",
+      "sourceKind": "openim-specific",
+      "disposition": "omit",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "structure-only",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：固定 Objective-C SDK 宣告没有该页面的公开能力；不纳入导航且不得编造替代 API。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/message/composing-messages/transcribe-audio",
+      "targetPath": "/sdk/ios/message/composing-messages/transcribe-audio",
+      "sourceKind": "openim-specific",
+      "disposition": "omit",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "structure-only",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：固定 Objective-C SDK 宣告没有该页面的公开能力；不纳入导航且不得编造替代 API。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/message/managing-messages/modify-a-message",
+      "targetPath": "/sdk/ios/message/managing-messages/modify-a-message",
+      "sourceKind": "openim-specific",
+      "disposition": "omit",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "structure-only",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：固定 Objective-C SDK 宣告没有该页面的公开能力；不纳入导航且不得编造替代 API。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/message/managing-messages/pin-conversation-messages",
+      "targetPath": "/sdk/ios/message/managing-messages/pin-conversation-messages",
+      "sourceKind": "openim-specific",
+      "disposition": "omit",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "structure-only",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：固定 Objective-C SDK 宣告没有该页面的公开能力；不纳入导航且不得编造替代 API。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/calling/overview-calling",
+      "targetPath": "/sdk/ios/calling/overview-calling",
+      "sourceKind": "openim-specific",
+      "disposition": "omit",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "structure-only",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：固定 Objective-C SDK 宣告没有该页面的公开能力；不纳入导航且不得编造替代 API。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/calling/managing-calls/start-or-handle-a-call",
+      "targetPath": "/sdk/ios/calling/managing-calls/start-or-handle-a-call",
+      "sourceKind": "openim-specific",
+      "disposition": "omit",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "structure-only",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：固定 Objective-C SDK 宣告没有该页面的公开能力；不纳入导航且不得编造替代 API。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/calling/retrieving-call-information/retrieve-call-information",
+      "targetPath": "/sdk/ios/calling/retrieving-call-information/retrieve-call-information",
+      "sourceKind": "openim-specific",
+      "disposition": "omit",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "structure-only",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：固定 Objective-C SDK 宣告没有该页面的公开能力；不纳入导航且不得编造替代 API。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/ios/calling/sending-custom-signals/send-a-custom-signal",
+      "targetPath": "/sdk/ios/calling/sending-custom-signals/send-a-custom-signal",
+      "sourceKind": "openim-specific",
+      "disposition": "omit",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "structure-only",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：固定 Objective-C SDK 宣告没有该页面的公开能力；不纳入导航且不得编造替代 API。"
+      ]
+    }
+  ]
+}

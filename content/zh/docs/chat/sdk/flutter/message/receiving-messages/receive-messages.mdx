@@ -1,0 +1,119 @@
+---
+title: '接收消息'
+description: '处理 Flutter SDK 的普通、离线同步和仅在线消息事件。'
+sourcePath: '/sdk/flutter/message/receiving-messages/receive-messages'
+---
+
+普通实时消息、登录后的离线同步消息和仅在线消息分别通过 `onRecvNewMessage`、`onRecvOfflineNewMessage` 与 `onRecvOnlineOnlyMessage` 回调。Flutter 每次回调携带一条 `Message`，不是消息数组。
+
+消息页通常同时处理首次进入会话时的历史快照、实时到达的新消息、重新登录后的离线同步消息和只在线投递的临时消息。历史查询负责建立或校准快照，listener 负责合并增量；不要把 listener 到达当作某次查询或已读调用的完成回调。
+
+## 消息类型
+
+根据 `contentType` 或非空内容元素选择渲染器：`textElem`、`atTextElem`、`customElem` 分别处理文本、@ 和自定义内容；`pictureElem`、`soundElem`、`videoElem`、`fileElem` 读取消息中已有的 URL、大小、名称、时长或快照，不需要在接收端重新上传。未知类型应显示安全的“不支持消息”占位，不能把任意自定义数据直接当 HTML 渲染。
+
+如果产品需要一次发送多个文件，常见实现是连续发送多条文件消息，或发送一条自定义消息承载文件组数据。无论界面如何组合展示，状态层仍应以每条 `Message.clientMsgID` 作为稳定标识。
+
+Flutter 的 `Message` 没有 `conversationID`。全局 listener 应先解析消息路由，再由 SDK 校准会话 ID：
+
+固定 SDK 中用于接收、路由与合并的常用字段如下，除 `exMap` 外都声明为 nullable，因此 listener 不能假设载荷完整：
+
+| 字段 | 类型 | 说明 |
+| --- | --- | --- |
+| `clientMsgID` | `String?` | 客户端消息 ID；非空时作为消息稳定合并标识。 |
+| `serverMsgID` | `String?` | 服务端消息 ID，不替代本地合并所用的 `clientMsgID`。 |
+| `sessionType` | `int?` | `ConversationType` 会话类型，用于决定单聊或群聊路由。 |
+| `sendID` | `String?` | 发送者用户 ID。单聊中结合当前用户判断对端。 |
+| `recvID` | `String?` | 接收者用户 ID。单聊消息由当前用户发送时用于确定对端。 |
+| `groupID` | `String?` | 群聊所属群组 ID，用于换取群会话 ID。 |
+| `contentType` | `int?` | `MessageType` 内容类型，决定使用哪个内容元素渲染。 |
+| `sendTime` | `int?` | 消息发送时间，用于排序；不能作为消息唯一标识。 |
+| `status` | `int?` | `MessageStatus` 发送状态。 |
+| `isRead` | `bool?` | SDK 当前记录的已读状态。 |
+
+文本、图片、音频、视频、文件、@、自定义、引用、合并等内容分别位于对应的 nullable element 属性。`contentType` 与 element 应共同用于防御性渲染；缺少预期 element 时显示不支持占位，不要强制解包。
+
+```dart
+Future<String?> resolveMessageConversationID(
+  Message message,
+  String currentUserID,
+) async {
+  final sessionType = message.sessionType;
+  if (sessionType == null) return null;
+
+  final String? sourceID;
+  if (sessionType == ConversationType.single) {
+    sourceID = message.sendID == currentUserID ? message.recvID : message.sendID;
+  } else {
+    sourceID = message.groupID;
+  }
+
+  if (sourceID == null || sourceID.isEmpty) return null;
+  final value = await OpenIM.iMManager.conversationManager
+      .getConversationIDBySessionType(
+    sourceID: sourceID,
+    sessionType: sessionType,
+  );
+  final conversationID = value?.toString();
+  return conversationID == null || conversationID.isEmpty
+      ? null
+      : conversationID;
+}
+
+Future<void> mergeReceivedMessage(Message message) async {
+  final clientMsgID = message.clientMsgID;
+  if (clientMsgID == null || clientMsgID.isEmpty) return;
+
+  final conversationID =
+      await resolveMessageConversationID(message, currentUserID);
+  if (conversationID == null) return;
+  upsertMessage(conversationID, clientMsgID, message);
+}
+
+Future<void> handleNewMessage(Message message) =>
+    mergeReceivedMessage(message);
+
+Future<void> handleOfflineMessage(Message message) =>
+    mergeReceivedMessage(message);
+
+Future<void> handleOnlineOnlyMessage(Message message) async {
+  final conversationID =
+      await resolveMessageConversationID(message, currentUserID);
+  if (conversationID == null) return;
+  showEphemeralMessage(conversationID, message);
+}
+```
+
+这三个函数应纳入应用唯一的 `OnAdvancedMsgListener`，集中设置方式见[事件概览](/sdk/flutter/events/overview-events)。固定 SDK 没有 remove 或 unset API。
+
+应用应在 SDK 初始化和登录生命周期内只设置一次 listener，并由稳定的应用级分发器把事件路由到各会话状态。不要在每次进入聊天页时重新设置 listener，否则后设置的实例会替换先前回调，页面销毁也无法用 unset API 单独移除。
+
+普通与离线消息按解析后的 `conversationID:clientMsgID` 幂等合并，避免历史分页、登录同步和事件重复写入。只展示当前聊天页时，还要把解析结果与页面持有的 `conversationID` 比较；其他会话的消息应进入对应状态容器，而不是当前列表。
+
+`onRecvOnlineOnlyMessage` 对应发送时的 `isOnlineOnly: true`，不进入本地历史，应用不应把它当作可回放消息持久化。该回调仍需解析会话归属，避免把其他会话的临时提示显示在当前页面。
+
+## 历史快照与事件增量
+
+首次进入会话时，使用页面持有的 `conversationID` 调用历史 API 建立快照；向上翻页时继续使用边界消息的 `clientMsgID`。历史结果和 listener 可能包含同一消息，两条路径都按相同复合键去重。详细分页见[获取消息历史](/sdk/flutter/message/retrieving-messages/retrieve-message-history)。
+
+用户实际打开并阅读会话后，再调用 `markConversationMessageAsRead(conversationID: conversationID)` 清理会话未读数。它不等同于群消息成员级回执。
+
+Future 成功只表示已读请求完成，不代表会话列表事件已经到达或所有端状态已经更新。会话未读数与总未读角标应继续由会话事件合并，并在需要时重新查询校准。
+
+事件到达不代表当前历史页已经重新查询。同步完成后可重新读取可见会话校准；查询失败不应撤销已经正确合并的事件。消息删除和已读回执由各自归属页处理；收到撤回回调时应把对应消息更新为撤回态，完整处理方式见[撤回消息](/sdk/flutter/message/managing-messages/revoke-a-message)。
+
+## 验证接收流程
+
+- 用另一个已登录账号分别发送文本、媒体和自定义消息，确认路由到正确会话且每个 `clientMsgID` 只渲染一次。
+- 在重新登录后确认离线同步消息与历史快照不会重复。
+- 发送 `isOnlineOnly: true` 的消息，确认只走在线回调且历史查询不返回该消息。
+- 验证缺少必要路由字段或 `clientMsgID` 的异常载荷被忽略并记录诊断，而不是造成崩溃。
+- 撤回一条消息，确认对应 `clientMsgID` 更新为撤回态，而不是额外插入一条消息。
+- 打开并实际阅读会话后标记已读，确认会话未读数和总未读角标通过会话事件更新。
+
+## 相关页面
+
+- [消息概览](/sdk/flutter/message/overview-message)
+- [发送消息](/sdk/flutter/message/sending-messages/send-a-message)
+- [获取消息历史](/sdk/flutter/message/retrieving-messages/retrieve-message-history)
+- [管理会话已读状态](/sdk/flutter/conversation/managing-conversations/manage-read-status)

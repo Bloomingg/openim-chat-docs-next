@@ -1,0 +1,58 @@
+[
+  {
+    "source": "/sdk/flutter/channel/managing-channels/hide-or-archive-a-group-channel",
+    "destination": "/sdk/flutter/conversation/managing-conversations/hide-a-conversation"
+  },
+  {
+    "source": "/sdk/flutter/message/loading-messages/load-messages-by-timestamp-or-message-id",
+    "destination": "/sdk/flutter/message/retrieving-messages/locate-messages-by-id"
+  },
+  {
+    "source": "/sdk/flutter/message/loading-messages/load-previous-messages",
+    "destination": "/sdk/flutter/message/retrieving-messages/retrieve-message-history"
+  },
+  {
+    "source": "/sdk/flutter/message/receiving-messages-through-event-handler/receive-messages-in-a-channel",
+    "destination": "/sdk/flutter/message/receiving-messages/receive-messages"
+  },
+  {
+    "source": "/sdk/flutter/message/retrieving-a-message/retrieve-a-message",
+    "destination": "/sdk/flutter/message/retrieving-messages/locate-messages-by-id"
+  },
+  {
+    "source": "/sdk/flutter/message/retrieving-unread-count-in-a-group-channel/members-who-havent-read-a-message",
+    "destination": "/sdk/flutter/message/managing-read-status/manage-message-read-receipts"
+  },
+  {
+    "source": "/sdk/flutter/message/retrieving-unread-count-in-a-group-channel/unread-channels",
+    "destination": "/sdk/flutter/conversation/managing-conversations/manage-read-status"
+  },
+  {
+    "source": "/sdk/flutter/message/retrieving-unread-count-in-a-group-channel/unread-items",
+    "destination": "/sdk/flutter/conversation/managing-conversations/manage-read-status"
+  },
+  {
+    "source": "/sdk/flutter/message/retrieving-unread-count-in-a-group-channel/unread-messages-in-a-channel",
+    "destination": "/sdk/flutter/conversation/managing-conversations/manage-read-status"
+  },
+  {
+    "source": "/sdk/flutter/message/retrieving-unread-count-in-a-group-channel/unread-messages-in-all-channels",
+    "destination": "/sdk/flutter/conversation/managing-conversations/manage-read-status"
+  },
+  {
+    "source": "/sdk/flutter/user/retrieving-users/retrieve-a-list-of-members-and-operators-in-a-specific-order",
+    "destination": "/sdk/flutter/group/retrieving-group-members/retrieve-group-members"
+  },
+  {
+    "source": "/sdk/flutter/user/retrieving-users/retrieve-a-list-of-operators",
+    "destination": "/sdk/flutter/group/retrieving-group-members/retrieve-group-members"
+  },
+  {
+    "source": "/sdk/flutter/user/retrieving-users/retrieve-a-list-of-users-in-a-channel",
+    "destination": "/sdk/flutter/group/retrieving-group-members/retrieve-group-members"
+  },
+  {
+    "source": "/sdk/flutter/user/retrieving-users/retrieve-members-who-have-read-a-message",
+    "destination": "/sdk/flutter/message/managing-read-status/manage-message-read-receipts"
+  }
+]

@@ -1,0 +1,82 @@
+---
+title: '获取指定用户资料'
+description: '按 userID 批量查询应用用户公开资料（OIMPublicUserInfo）。'
+sourcePath: '/sdk/ios/user/retrieving-users/retrieve-users'
+---
+
+`getUsersInfo:onSuccess:onFailure:` 按 `userID` 查询应用用户的公开资料，适合好友候选人和陌生人资料卡。按昵称、手机号、组织或邮箱搜索用户，应由可信后端完成鉴权、限流、脱敏和审计，再把得到的 `userID` 传给 SDK。管理员 Token 不能进入 iOS 应用。
+
+## 查询公开资料
+
+调用前先去重并控制单次请求数量。好友备注来自好友关系，群内昵称和角色来自群成员资料。
+
+```objc
+NSArray<NSString *> *inputUserIDs = @[@"user_a", @"user_b", @"user_a"];
+NSArray<NSString *> *userIDs = [NSOrderedSet orderedSetWithArray:inputUserIDs].array;
+[[OIMManager manager] getUsersInfo:userIDs
+                         onSuccess:^(NSArray<OIMPublicUserInfo *> *users) {
+                             for (OIMPublicUserInfo *user in users) {
+                                 publicUsersByID[user.userID] = user;
+                             }
+                         }
+                         onFailure:^(NSInteger code, NSString *message) {
+                             NSLog(@"getUsersInfo failed: %ld %@", (long)code, message);
+                         }];
+```
+
+成功 callback 返回查询到的 `OIMPublicUserInfo` 数组：
+
+| 属性 | 类型 | 说明 |
+| --- | --- | --- |
+| `userID` | `NSString *` | OpenIMSDK 用户 ID。 |
+| `nickname` | `NSString *` | 账号级公开昵称。 |
+| `faceURL` | `NSString *` | 账号级公开头像地址。 |
+| `ex` | `NSString *` | 账号级扩展字段，格式由业务约定。 |
+
+这里的 `ex` 只读。iOS 客户端不能通过 User API 修改其他账号的公开资料；当前用户自己的扩展字段通过 `setSelfInfo:onSuccess:onFailure:` 更新。
+
+## 调用结果与资料刷新
+
+该查询只建立当前快照，不触发公开用户资料事件。打开资料卡、手动刷新、断线重连，或收到业务后端的资料变更通知时，重新按 `userID` 查询。页面展示多个用户时，先收集可见项 ID、去重并批量查询，再按 `userID` 合并。
+
+SDK 没有任意用户公开资料的通用变更 delegate；`onSelfInfoUpdated:` 只携带当前登录用户的 `OIMUserInfo`，不能把它作为其他用户的 `OIMPublicUserInfo` 写入公开资料缓存。
+
+## 搜索添加好友
+
+搜索并添加好友时，通常先由业务后端返回候选 ID，再查询公开资料：
+
+```objc
+[userDirectory searchUserIDs:keyword completion:^(NSArray<NSString *> *candidateIDs) {
+    if (candidateIDs.count == 0) {
+        [searchStore replaceResults:@[]];
+        return;
+    }
+
+    [[OIMManager manager] getUsersInfo:candidateIDs
+                             onSuccess:^(NSArray<OIMPublicUserInfo *> *users) {
+                                 [searchStore replaceResults:users];
+                             }
+                             onFailure:^(NSInteger code, NSString *message) {
+                                 NSLog(@"getUsersInfo failed: %ld %@", (long)code, message);
+                             }];
+}];
+```
+
+只支持用户 ID 精确搜索时，可以直接把输入值作为 `userID` 查询；模糊搜索或敏感字段搜索必须留在可信后端。
+
+## 按场景选择展示数据
+
+| 场景 | 优先使用 |
+| --- | --- |
+| 应用用户搜索、陌生人资料卡 | `OIMPublicUserInfo` |
+| 好友列表、联系人页、好友备注 | `OIMFriendInfo` |
+| 群成员列表、群内昵称、群角色 | `OIMGroupMemberInfo` |
+
+同一个 `userID` 在不同场景可能对应不同展示名称和关系数据。不要用公开昵称覆盖好友备注或群内昵称。
+
+## 下一步
+
+- [获取好友列表](/sdk/ios/user/retrieving-users/retrieve-a-list-of-friends)
+- [获取指定好友信息](/sdk/ios/user/retrieving-users/retrieve-friend-information)
+- [管理好友申请](/sdk/ios/user/managing-friends/manage-friend-requests)
+- [获取群成员](/sdk/ios/group/retrieving-group-members/retrieve-group-members)

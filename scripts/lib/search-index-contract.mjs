@@ -1,13 +1,25 @@
-const wasmContext = 'chat/sdk/wasm';
+import { clientSdkPlatformIds, getClientSdkPlatform } from './client-sdk-platforms.mjs';
 
-export function validateSearchIndexPaths({ routes, auditPages, indexes }) {
+const clientSdkContexts = new Set(
+  clientSdkPlatformIds.map((platformId) => getClientSdkPlatform(platformId).contextKey),
+);
+
+export function validateSearchIndexPaths({
+  routes,
+  auditPages,
+  indexes,
+  clientSdkActivePaths,
+  managedClientSdkContexts = clientSdkContexts,
+}) {
   const errors = [];
 
   for (const locale of ['en', 'zh']) {
     const expected = new Set(
       routes
         .filter((route) => {
-          if (route.contextKey !== wasmContext) return true;
+          if (!clientSdkContexts.has(route.contextKey)) return true;
+          if (!managedClientSdkContexts.has(route.contextKey)) return true;
+          if (clientSdkActivePaths && !clientSdkActivePaths.has(route.path)) return false;
           return auditPages.get(route.path)?.locales?.[locale]?.reviewStatus === 'published';
         })
         .map((route) => route.path),

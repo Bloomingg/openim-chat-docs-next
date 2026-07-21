@@ -1,0 +1,90 @@
+---
+title: '删除消息'
+description: '删除当前设备本地消息，或删除当前账号保存的消息。'
+sourcePath: '/sdk/ios/message/managing-messages/delete-a-message'
+---
+
+在 OpenIM iOS SDK 中，删除影响消息是否仍对当前账号可见，不会让其他会话成员看到“消息已撤回”。需要展示撤回态时，使用[撤回消息](/sdk/ios/message/managing-messages/revoke-a-message)。固定版本不提供修改已发送消息内容的公开 selector。
+
+固定版本提供单条本地删除和单条账号侧删除。它没有 WASM `deleteMessages({ isSync })`、按用户批量删除会话消息，或对应 `OnDeleteUserAllMsgsInConv` 的 Objective-C API。
+
+## 只删除当前设备的本地消息
+
+如果用户动作是“仅从这台设备删除”，调用 `deleteMessageFromLocalStorage:clientMsgID:onSuccess:onFailure:`。
+
+### 参数说明
+
+| 参数             | 类型         | 是否必填 | 说明                |
+| ---------------- | ------------ | -------- | ------------------- |
+| `conversationID` | `NSString *` | 必填     | 消息所属的会话 ID。 |
+| `clientMsgID`    | `NSString *` | 必填     | 要删除的消息 ID。   |
+
+```objc
+[[OIMManager manager] deleteMessageFromLocalStorage:conversationID
+                                        clientMsgID:clientMsgID
+                                          onSuccess:^(NSString * _Nullable data) {
+    [self removeMessage:clientMsgID conversationID:conversationID];
+}
+                                          onFailure:^(NSInteger code, NSString * _Nullable message) {
+    [self showDeleteError:code message:message ?: @"删除本地消息失败"];
+}];
+```
+
+该方法只修改当前设备的本地消息库，不删除服务端消息，也不会向当前账号的其他设备或会话中的其他用户同步删除动作。重新安装应用或重建本地数据库后，因为服务端仍保留这条消息，它可能再次同步。发送失败或尚未取得服务端序号的消息只能使用本地删除。
+
+删除的是当前会话最后一条消息时，会话摘要随后可能通过 `onConversationChanged:` 更新；完整处理见[获取会话列表](/sdk/ios/conversation/retrieving-conversations/retrieve-conversation-list)。
+
+## 删除本地和当前账号的服务端消息
+
+`deleteMessage:clientMsgID:onSuccess:onFailure:` 删除本地消息，并删除当前账号保存在服务端的对应消息。
+
+### 参数说明
+
+| 参数             | 类型         | 是否必填 | 说明                |
+| ---------------- | ------------ | -------- | ------------------- |
+| `conversationID` | `NSString *` | 必填     | 消息所属的会话 ID。 |
+| `clientMsgID`    | `NSString *` | 必填     | 要删除的消息 ID。   |
+
+```objc
+[[OIMManager manager] deleteMessage:conversationID
+                        clientMsgID:clientMsgID
+                          onSuccess:^(NSString * _Nullable data) {
+    [self removeMessage:clientMsgID conversationID:conversationID];
+}
+                          onFailure:^(NSInteger code, NSString * _Nullable message) {
+    [self showDeleteError:code message:message ?: @"删除消息失败"];
+}];
+```
+
+成功表示当前删除请求完成。之后即使重建本地数据库，这条消息也不应再次同步到当前账号；但该操作不会删除其他会话成员保存的消息，不会显示“消息已撤回”，也没有 `isSync` 参数可要求把删除动作同步到其他客户端。
+
+## 接收删除事件
+
+本页是 `onMsgDeleted:` 的正文归属页。listener 由应用强引用，通过 `addAdvancedMsgListener:` 注册，并用同一实例调用 `removeAdvancedMsgListener:` 清理；完整代码见[接收消息](/sdk/ios/message/receiving-messages/receive-messages)。
+
+```objc
+- (void)onMsgDeleted:(OIMMessageInfo *)message {
+    [self removeMessage:message.clientMsgID
+         conversationID:[self conversationIDForMessage:message]];
+}
+```
+
+事件携带单个 `OIMMessageInfo`。按消息所属会话和 `clientMsgID` 幂等移除，不要按数组位置处理。事件可能来自其他客户端或其他有权限的用户；没有证据表明每次本地删除都必然触发该事件，因此调用端应先在成功 callback 中更新当前列表，再把事件作为增量合并。
+
+## 删除结果
+
+| 用户动作                   | Objective-C API                                 | 结果                                                               |
+| -------------------------- | ----------------------------------------------- | ------------------------------------------------------------------ |
+| 仅删除当前设备上的本地消息 | `deleteMessageFromLocalStorage:clientMsgID:...` | 服务端仍保留消息，重建本地数据库后可能再次同步。                   |
+| 删除当前账号保存的消息     | `deleteMessage:clientMsgID:...`                 | 删除本地与当前账号服务端保存的单条消息，不影响其他成员保存的副本。 |
+| 请求同步删除到其他客户端   | 无对等 selector                                 | 固定 iOS SDK 不提供 WASM `isSync` 参数。                           |
+| 删除某用户的全部会话消息   | 无对等 selector                                 | 固定 iOS SDK 不提供 WASM 批量管控 API。                            |
+
+调用成功、事件到达和重新读取历史是不同阶段。失败时保留原列表，并记录错误码、`conversationID` 和 `clientMsgID` 以便排查。
+
+## 相关页面
+
+- [撤回消息](/sdk/ios/message/managing-messages/revoke-a-message)
+- [发送消息](/sdk/ios/message/sending-messages/send-a-message)
+- [按 ID 定位消息](/sdk/ios/message/retrieving-messages/locate-messages-by-id)
+- [接收消息](/sdk/ios/message/receiving-messages/receive-messages)

@@ -1,14 +1,26 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
-import { buildWasmSidebar, getWasmSidebarPaths } from './lib/wasm-sidebar.mjs';
+import { clientSdkPlatformIds, getClientSdkPlatform } from './lib/client-sdk-platforms.mjs';
+import {
+  buildClientSdkSidebar,
+  decideClientSdkSidebarApplication,
+  getClientSdkSidebarPaths,
+} from './lib/client-sdk-sidebar.mjs';
 
 const root = process.cwd();
 const routesPath = resolve(root, 'src/generated/routes.json');
 const navigationPath = resolve(root, 'src/generated/navigation.json');
-const wasmSidebarPath = resolve(root, 'data/structure/wasm-sidebar.json');
 const routes = JSON.parse(await readFile(routesPath, 'utf8'));
 const navigation = JSON.parse(await readFile(navigationPath, 'utf8'));
-const wasmSidebar = JSON.parse(await readFile(wasmSidebarPath, 'utf8'));
+const clientSdkSidebars = new Map(
+  await Promise.all(
+    clientSdkPlatformIds.map(async (platformId) => {
+      const platform = getClientSdkPlatform(platformId);
+      const sidebar = JSON.parse(await readFile(resolve(root, platform.sidebarPath), 'utf8'));
+      return [platformId, sidebar];
+    }),
+  ),
+);
 let changed = 0;
 
 for (const route of routes) {
@@ -31,12 +43,40 @@ for (const route of routes) {
   }
 }
 
-changed += applyWasmSidebarOrder(routes, wasmSidebar);
+const sidebarDecisions = new Map(
+  clientSdkPlatformIds.map((platformId) => {
+    const platform = getClientSdkPlatform(platformId);
+    return [
+      platformId,
+      decideClientSdkSidebarApplication({
+        platform,
+        config: clientSdkSidebars.get(platformId),
+        routes,
+      }),
+    ];
+  }),
+);
+
+for (const platformId of clientSdkPlatformIds) {
+  if (sidebarDecisions.get(platformId).mode === 'skip') continue;
+  changed += applyClientSdkSidebarOrder(
+    routes,
+    getClientSdkPlatform(platformId),
+    clientSdkSidebars.get(platformId),
+  );
+}
 
 const routeMap = new Map(routes.map((route) => [route.path, route]));
 for (const context of navigation.contexts) {
-  if (context.key === 'chat/sdk/wasm') {
-    const next = buildWasmSidebar(wasmSidebar, routes);
+  const platform = clientSdkPlatformIds
+    .map((platformId) => getClientSdkPlatform(platformId))
+    .find((item) => item.contextKey === context.key);
+  if (platform && sidebarDecisions.get(platform.id).mode === 'apply') {
+    const next = buildClientSdkSidebar({
+      platform,
+      config: clientSdkSidebars.get(platform.id),
+      routes,
+    });
     changed += replaceField(context, 'nodes', next.nodes);
     changed += setField(context, 'pageCount', next.pageCount);
     changed += setField(context, 'sidebarExpansion', next.sidebarExpansion);
@@ -46,6 +86,16 @@ for (const context of navigation.contexts) {
   const overview = routeMap.get(context.overviewPath);
   if (overview && context.title !== overview.contextTitle && overview.contextTitle) {
     context.title = overview.contextTitle;
+  }
+}
+
+for (const platformId of clientSdkPlatformIds) {
+  if (sidebarDecisions.get(platformId).mode === 'skip') {
+    const pageCount = getClientSdkSidebarPaths(clientSdkSidebars.get(platformId)).length;
+    const platformName = platformId === 'ios' ? 'iOS' : 'Flutter';
+    console.log(
+      `Skipped ${platformName} client SDK sidebar sync: native route tree has not migrated to all ${pageCount} reviewed paths.`,
+    );
   }
 }
 
@@ -110,15 +160,17 @@ function setField(target, key, value) {
   return 1;
 }
 
-function applyWasmSidebarOrder(routes, config) {
-  const order = getWasmSidebarPaths(config);
-  const wasmRoutes = routes.filter((route) => route.contextKey === 'chat/sdk/wasm');
-  const baseOrder = Math.min(...wasmRoutes.map((route) => route.navOrder).filter(Number.isFinite));
+function applyClientSdkSidebarOrder(routes, platform, config) {
+  const order = getClientSdkSidebarPaths(config);
+  const platformRoutes = routes.filter((route) => route.contextKey === platform.contextKey);
+  const baseOrder = Math.min(
+    ...platformRoutes.map((route) => route.navOrder).filter(Number.isFinite),
+  );
   let changed = 0;
 
   order.forEach((path, index) => {
     const route = routes.find((item) => item.path === path);
-    if (!route) throw new Error(`Cannot order missing WASM route: ${path}`);
+    if (!route) throw new Error(`Cannot order missing ${platform.id} route: ${path}`);
     changed += setField(route, 'navOrder', baseOrder + index);
   });
 

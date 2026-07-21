@@ -13,6 +13,10 @@ playwright-report
 
 *.tsbuildinfo
 
+# Generated from reviewed iOS and Flutter Chinese MDX by content:sync.
+src/generated/ios-sdk-zh-content.json
+src/generated/flutter-sdk-zh-content.json
+
 .idea
 .vercel
 .env*

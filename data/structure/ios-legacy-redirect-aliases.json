@@ -1,0 +1,66 @@
+[
+  {
+    "source": "/sdk/ios/channel/managing-channels/hide-or-archive-a-group-channel",
+    "destination": "/sdk/ios/conversation/managing-conversations/hide-a-conversation"
+  },
+  {
+    "source": "/sdk/ios/event-delegate/managing-channel-delegates/add-or-remove-a-channel-delegate",
+    "destination": "/sdk/ios/events/overview-events"
+  },
+  {
+    "source": "/sdk/ios/event-delegate/managing-connection-delegates/add-or-remove-a-connection-delegate",
+    "destination": "/sdk/ios/getting-started/authenticate-and-manage-session"
+  },
+  {
+    "source": "/sdk/ios/event-delegate/managing-user-event-delegates/add-or-remove-a-user-event-delegate",
+    "destination": "/sdk/ios/events/overview-events"
+  },
+  {
+    "source": "/sdk/ios/event-delegate/overview-event-delegate",
+    "destination": "/sdk/ios/events/overview-events"
+  },
+  {
+    "source": "/sdk/ios/message/receiving-messages-through-event-delegate/receive-messages-in-a-group-channel",
+    "destination": "/sdk/ios/message/receiving-messages/receive-messages"
+  },
+  {
+    "source": "/sdk/ios/message/receiving-messages-through-event-delegate/receive-messages-in-an-open-channel",
+    "destination": "/sdk/ios/message/receiving-messages/receive-messages"
+  },
+  {
+    "source": "/sdk/ios/message/retrieving-unread-count-in-a-group-channel/members-who-havent-read-a-message",
+    "destination": "/sdk/ios/message/managing-read-status/manage-message-read-receipts"
+  },
+  {
+    "source": "/sdk/ios/message/retrieving-unread-count-in-a-group-channel/unread-channels",
+    "destination": "/sdk/ios/conversation/managing-conversations/manage-read-status"
+  },
+  {
+    "source": "/sdk/ios/message/retrieving-unread-count-in-a-group-channel/unread-items",
+    "destination": "/sdk/ios/conversation/managing-conversations/manage-read-status"
+  },
+  {
+    "source": "/sdk/ios/message/retrieving-unread-count-in-a-group-channel/unread-messages-in-a-channel",
+    "destination": "/sdk/ios/conversation/managing-conversations/manage-read-status"
+  },
+  {
+    "source": "/sdk/ios/message/retrieving-unread-count-in-a-group-channel/unread-messages-in-all-channels",
+    "destination": "/sdk/ios/conversation/managing-conversations/manage-read-status"
+  },
+  {
+    "source": "/sdk/ios/user/retrieving-users/retrieve-a-list-of-members-and-operators-in-a-specific-order",
+    "destination": "/sdk/ios/group/retrieving-group-members/retrieve-group-members"
+  },
+  {
+    "source": "/sdk/ios/user/retrieving-users/retrieve-a-list-of-operators",
+    "destination": "/sdk/ios/group/retrieving-group-members/retrieve-group-members"
+  },
+  {
+    "source": "/sdk/ios/user/retrieving-users/retrieve-a-list-of-users-in-a-channel",
+    "destination": "/sdk/ios/group/retrieving-group-members/retrieve-group-members"
+  },
+  {
+    "source": "/sdk/ios/user/retrieving-users/retrieve-members-who-have-read-a-message",
+    "destination": "/sdk/ios/message/managing-read-status/manage-message-read-receipts"
+  }
+]

@@ -1,0 +1,81 @@
+---
+title: '发送第一条消息'
+description: '在 iOS 应用中验证单聊或群聊的首条文本消息发送链路。'
+sourcePath: '/sdk/ios/getting-started/send-first-message'
+---
+
+本页说明如何安装并初始化 OpenIM iOS SDK，登录后发送第一条文本消息。单聊使用目标用户 `recvID`；群聊使用目标群组 `groupID`。
+
+## 准备消息目标
+
+| 场景 | 目标标识 |
+| --- | --- |
+| 单聊 | 已存在的接收方用户 ID，写入 `recvID`。 |
+| 群聊 | 已存在的群组 ID，写入 `groupID`，`recvID` 传 `nil`。 |
+
+发送权限仍由 OpenIMServer 的关系、群状态和群成员权限校验。
+
+## 开始使用
+
+### 第 1 步：安装 SDK
+
+```ruby
+pod 'OpenIMSDK'
+```
+
+安装后打开 `.xcworkspace`，并导入 SDK：
+
+```objc
+@import OpenIMSDK;
+```
+
+### 第 2 步：初始化并登录
+
+使用 `OIMInitConfig` 初始化 SDK，收到连接成功 callback 后再进入消息流程。初始化和 Token 处理见[认证与管理登录会话](/sdk/ios/getting-started/authenticate-and-manage-session)。
+
+```objc
+[[OIMManager manager] login:userID
+                         token:token
+                     onSuccess:nil
+                     onFailure:^(NSInteger code, NSString *message) {
+                         NSLog(@"OpenIMSDK login failed: %ld %@", (long)code, message);
+                     }];
+```
+
+### 第 3 步：确定目标
+
+```objc
+NSString *recvID = @"user_b";
+NSString *groupID = nil;
+```
+
+群聊时改为 `recvID = nil`，并填写真实的 `groupID`。
+
+### 第 4 步：创建并发送文本消息
+
+```objc
+OIMMessageInfo *message = [OIMManager createTextMessage:@"你好，OpenIMSDK"];
+
+[[OIMManager manager] sendMessage:message
+                           recvID:recvID
+                          groupID:groupID
+                     isOnlineOnly:NO
+                  offlinePushInfo:nil
+                        onSuccess:^(OIMMessageInfo *sentMessage) {
+                            [messageStore upsertMessage:sentMessage
+                                           clientMsgID:sentMessage.clientMsgID];
+                        }
+                       onProgress:^(NSInteger progress) {
+                            // 文本消息通常无需展示进度。
+                        }
+                        onFailure:^(NSInteger code, NSString *message) {
+                            NSLog(@"OpenIMSDK send failed: %ld %@", (long)code, message);
+                        }];
+```
+
+`createTextMessage:` 只创建本地 `OIMMessageInfo`，不会触发共享消息事件。发送成功 callback 返回发送后的消息，当前端按 `clientMsgID` 合并；对端通过消息 delegate 接收。callback 成功和对端事件到达是两个阶段，应分别验证。
+
+## 下一步
+
+- [发送消息](/sdk/ios/message/sending-messages/send-a-message)
+- [接收消息](/sdk/ios/message/receiving-messages/receive-messages)

@@ -1,0 +1,2632 @@
+{
+  "schemaVersion": 1,
+  "sources": {
+    "openimDocs": {
+      "repository": "https://github.com/openimsdk/docs",
+      "commit": "efd0f251b288167e1ca617504b10dd73986429f0"
+    },
+    "flutterSdk": {
+      "repository": "https://github.com/openimsdk/open-im-sdk-flutter",
+      "tag": "3.8.3+hotfix.12",
+      "commit": "95889be7a26dce6fe896ef22096c9036cc25fc9b"
+    }
+  },
+  "pages": [
+    {
+      "currentPath": "/sdk/flutter/overview",
+      "targetPath": "/sdk/flutter/overview",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/pubspec.yaml"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：公开概览不展示依赖版本号；API、model、enum 与 listener 仍以本记录中的固定 SDK commit 审核。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/getting-started/before-you-start",
+      "targetPath": "/sdk/flutter/getting-started/before-you-start",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/pubspec.yaml"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": ["2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。"]
+    },
+    {
+      "currentPath": "/sdk/flutter/getting-started/environment-specific-implementation",
+      "targetPath": "/sdk/flutter/getting-started/environment-specific-implementation",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_manager.dart"
+      ],
+      "sdkMethods": ["initSDK", "unInitSDK"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：安装说明改用 flutter pub add 获取最新兼容版本；技术声明仍以本记录中的固定 SDK commit 审核。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/getting-started/authenticate-and-manage-session",
+      "targetPath": "/sdk/flutter/getting-started/authenticate-and-manage-session",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_manager.dart"
+      ],
+      "sdkMethods": [
+        "initSDK",
+        "login",
+        "getLoginStatus",
+        "getLoginUserID",
+        "getLoginUserInfo",
+        "getSelfUserInfo",
+        "logout",
+        "unInitSDK"
+      ],
+      "sdkEvents": [
+        "onConnecting",
+        "onConnectSuccess",
+        "onConnectFailed",
+        "onKickedOffline",
+        "onUserTokenExpired",
+        "onUserTokenInvalid"
+      ],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：按 WASM 共通语义补回可信凭据来源、初始化字段边界、登录与连接阶段、状态查询、账号切换及退出清理说明。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/getting-started/send-first-message",
+      "targetPath": "/sdk/flutter/getting-started/send-first-message",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_message_manager.dart"
+      ],
+      "sdkMethods": ["initSDK", "login", "createTextMessage", "sendMessage"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：安装说明改用 flutter pub add 获取最新兼容版本；技术声明仍以本记录中的固定 SDK commit 审核。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/user/overview-user",
+      "targetPath": "/sdk/flutter/user/overview-user",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_user_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/user_info.dart"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "not-applicable",
+            "evidence": [],
+            "reason": "本页为概览或概念说明，不包含可执行代码示例。"
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：按固定 Flutter SDK commit 的 user_info.dart 复核 FriendInfo，明确固定版本不含 isPinned 字段。",
+        "2026-07-21：逐页对照 WASM 用户概览，恢复九项功能入口的共同顺序、完整场景文案和五类状态事件归属；model、method 与单 listener 边界仍按固定 Flutter SDK 声明保留平台差异。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/user/retrieving-users/retrieve-users",
+      "targetPath": "/sdk/flutter/user/retrieving-users/retrieve-users",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_user_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/user_info.dart"
+      ],
+      "sdkMethods": ["getUsersInfo"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：补回公开资料的只读边界、按 userID 合并快照、重新查询时机及 PublicUserInfo、FriendInfo、GroupMembersInfo 的场景选择说明。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/user/retrieving-and-updating-user-information/retrieve-and-update-self-profile",
+      "targetPath": "/sdk/flutter/user/retrieving-and-updating-user-information/retrieve-and-update-self-profile",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_user_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/user_listener.dart"
+      ],
+      "sdkMethods": ["getSelfUserInfo", "setSelfInfo"],
+      "sdkEvents": ["onSelfInfoUpdated"],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：补回 UserInfo 可编辑字段边界、ex 完整覆盖与合并示例、写入和重查错误分层，以及 Future、callback、重新查询三个阶段。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/user/retrieving-and-updating-user-information/retrieve-the-online-status-of-a-user",
+      "targetPath": "/sdk/flutter/user/retrieving-and-updating-user-information/retrieve-the-online-status-of-a-user",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_user_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/user_listener.dart"
+      ],
+      "sdkMethods": [
+        "subscribeUsersStatus",
+        "getSubscribeUsersStatus",
+        "getUserStatus",
+        "unsubscribeUsersStatus"
+      ],
+      "sdkEvents": ["onUserStatusChanged"],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：按 WASM 共通语义补回可见用户订阅范围、platformIDs 空值边界、三种状态查询用途、快照与 callback 合并及账号清理说明。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/user/retrieving-users/retrieve-a-list-of-friends",
+      "targetPath": "/sdk/flutter/user/retrieving-users/retrieve-a-list-of-friends",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_friendship_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/user_info.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/update_req.dart"
+      ],
+      "sdkMethods": ["getFriendListPage", "searchFriends"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：按 WASM 共通语义补回好友搜索参数、展示名回退、候选用户场景及搜索结果与分页快照边界。",
+        "2026-07-21：按固定 Flutter SDK commit 的 user_info.dart 与 update_req.dart 复核边界：isPinned 只存在于 UpdateFriendsReq，不存在于 FriendInfo 返回模型。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/user/retrieving-users/retrieve-friend-information",
+      "targetPath": "/sdk/flutter/user/retrieving-users/retrieve-friend-information",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_friendship_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/user_info.dart"
+      ],
+      "sdkMethods": ["getFriendsInfo", "checkFriend"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：逐页复核固定 SDK 的 FriendInfo 与 FriendshipInfo，补齐 nullable 字段、filterBlack、result 边界及快照与 listener 的阶段区分。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/user/managing-friends/manage-friend-requests",
+      "targetPath": "/sdk/flutter/user/managing-friends/manage-friend-requests",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_friendship_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/friendship_listener.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/user_info.dart"
+      ],
+      "sdkMethods": [
+        "addFriend",
+        "getFriendApplicationListAsRecipient",
+        "getFriendApplicationListAsApplicant",
+        "getFriendApplicationUnhandledCount",
+        "acceptFriendApplication",
+        "refuseFriendApplication"
+      ],
+      "sdkEvents": [
+        "onFriendApplicationAdded",
+        "onFriendApplicationAccepted",
+        "onFriendApplicationRejected",
+        "onFriendApplicationDeleted"
+      ],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：公开能力边界移除具体版本号；方法与事件仍以本记录中的固定 SDK commit 审核。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/user/managing-friends/update-or-delete-friends",
+      "targetPath": "/sdk/flutter/user/managing-friends/update-or-delete-friends",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_friendship_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/friendship_listener.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/update_req.dart"
+      ],
+      "sdkMethods": ["updateFriends", "deleteFriend", "getFriendsInfo", "checkFriend"],
+      "sdkEvents": ["onFriendAdded", "onFriendInfoChanged", "onFriendDeleted"],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": ["2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。"]
+    },
+    {
+      "currentPath": "/sdk/flutter/user/moderating-a-user/retrieve-a-list-of-blocked-users",
+      "targetPath": "/sdk/flutter/user/moderating-a-user/retrieve-a-list-of-blocked-users",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_friendship_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/user_info.dart"
+      ],
+      "sdkMethods": ["getBlacklist"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": ["2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。"]
+    },
+    {
+      "currentPath": "/sdk/flutter/user/moderating-a-user/block-or-unblock-users",
+      "targetPath": "/sdk/flutter/user/moderating-a-user/block-or-unblock-users",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_friendship_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/friendship_listener.dart"
+      ],
+      "sdkMethods": ["addBlacklist", "removeBlacklist", "getBlacklist"],
+      "sdkEvents": ["onBlackAdded", "onBlackDeleted"],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": ["2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。"]
+    },
+    {
+      "currentPath": "/sdk/flutter/conversation/overview-conversation",
+      "targetPath": "/sdk/flutter/conversation/overview-conversation",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/conversation_info.dart"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "not-applicable",
+            "evidence": [],
+            "reason": "本页为概览或概念说明，不包含可执行代码示例。"
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：逐页对照 WASM 会话概览，恢复状态事件的逐项归属及 Future、listener、重新查询三个阶段；ConversationInfo 与会话类型仍按固定 Flutter SDK 声明。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/conversation/retrieving-conversations/retrieve-a-conversation",
+      "targetPath": "/sdk/flutter/conversation/retrieving-conversations/retrieve-a-conversation",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_conversation_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/conversation_info.dart"
+      ],
+      "sdkMethods": [
+        "getOneConversation",
+        "getConversationIDBySessionType",
+        "getMultipleConversation"
+      ],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": ["2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。"]
+    },
+    {
+      "currentPath": "/sdk/flutter/conversation/retrieving-conversations/retrieve-conversation-list",
+      "targetPath": "/sdk/flutter/conversation/retrieving-conversations/retrieve-conversation-list",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_conversation_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/conversation_listener.dart"
+      ],
+      "sdkMethods": ["getConversationListSplit"],
+      "sdkEvents": ["onNewConversation", "onConversationChanged"],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": ["2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。"]
+    },
+    {
+      "currentPath": "/sdk/flutter/conversation/managing-conversations/set-conversation-settings",
+      "targetPath": "/sdk/flutter/conversation/managing-conversations/set-conversation-settings",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_conversation_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/update_req.dart"
+      ],
+      "sdkMethods": ["setConversation"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": ["2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。"]
+    },
+    {
+      "currentPath": "/sdk/flutter/conversation/managing-conversations/set-conversation-draft",
+      "targetPath": "/sdk/flutter/conversation/managing-conversations/set-conversation-draft",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_conversation_manager.dart"
+      ],
+      "sdkMethods": ["setConversationDraft"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": ["2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。"]
+    },
+    {
+      "currentPath": "/sdk/flutter/conversation/managing-conversations/manage-read-status",
+      "targetPath": "/sdk/flutter/conversation/managing-conversations/manage-read-status",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_conversation_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/conversation_listener.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/update_req.dart"
+      ],
+      "sdkMethods": ["markConversationMessageAsRead", "getTotalUnreadMsgCount", "setConversation"],
+      "sdkEvents": ["onTotalUnreadMessageCountChanged"],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": ["2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。"]
+    },
+    {
+      "currentPath": "/sdk/flutter/conversation/managing-conversations/hide-a-conversation",
+      "targetPath": "/sdk/flutter/conversation/managing-conversations/hide-a-conversation",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_conversation_manager.dart"
+      ],
+      "sdkMethods": ["hideConversation"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": ["2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。"]
+    },
+    {
+      "currentPath": "/sdk/flutter/conversation/managing-conversations/delete-or-clear-conversation",
+      "targetPath": "/sdk/flutter/conversation/managing-conversations/delete-or-clear-conversation",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_conversation_manager.dart"
+      ],
+      "sdkMethods": ["deleteConversationAndDeleteAllMsg", "clearConversationAndDeleteAllMsg"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": ["2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。"]
+    },
+    {
+      "currentPath": "/sdk/flutter/group/overview-group",
+      "targetPath": "/sdk/flutter/group/overview-group",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/group_info.dart"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "not-applicable",
+            "evidence": [],
+            "reason": "本页为概览或概念说明，不包含可执行代码示例。"
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：逐页对照 WASM 群组概览，恢复 groupID 与 conversationID 边界、状态事件归属及写操作阶段说明；model、enum 与 listener 仍按固定 Flutter SDK 声明。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/group/creating-and-updating-groups/create-or-update-a-group",
+      "targetPath": "/sdk/flutter/group/creating-and-updating-groups/create-or-update-a-group",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_group_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/group_info.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/enum/allow_type.dart"
+      ],
+      "sdkMethods": ["createGroup", "setGroupInfo"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": ["2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。"]
+    },
+    {
+      "currentPath": "/sdk/flutter/group/retrieving-groups/retrieve-and-search-groups",
+      "targetPath": "/sdk/flutter/group/retrieving-groups/retrieve-and-search-groups",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_group_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/group_listener.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/group_info.dart"
+      ],
+      "sdkMethods": [
+        "getJoinedGroupList",
+        "getJoinedGroupListPage",
+        "getGroupsInfo",
+        "searchGroups",
+        "isJoinedGroup"
+      ],
+      "sdkEvents": [
+        "onJoinedGroupAdded",
+        "onJoinedGroupDeleted",
+        "onGroupInfoChanged",
+        "onGroupDismissed"
+      ],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": ["2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。"]
+    },
+    {
+      "currentPath": "/sdk/flutter/group/joining-and-leaving-groups/join-leave-or-dismiss-a-group",
+      "targetPath": "/sdk/flutter/group/joining-and-leaving-groups/join-leave-or-dismiss-a-group",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_group_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/enum/join_source.dart"
+      ],
+      "sdkMethods": ["joinGroup", "quitGroup", "dismissGroup"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": ["2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。"]
+    },
+    {
+      "currentPath": "/sdk/flutter/group/managing-group-applications/manage-group-applications",
+      "targetPath": "/sdk/flutter/group/managing-group-applications/manage-group-applications",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_group_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/group_listener.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/group_info.dart"
+      ],
+      "sdkMethods": [
+        "getGroupApplicationListAsRecipient",
+        "getGroupApplicationListAsApplicant",
+        "getGroupApplicationUnhandledCount",
+        "acceptGroupApplication",
+        "refuseGroupApplication"
+      ],
+      "sdkEvents": [
+        "onGroupApplicationAdded",
+        "onGroupApplicationAccepted",
+        "onGroupApplicationRejected",
+        "onGroupApplicationDeleted"
+      ],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": ["2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。"]
+    },
+    {
+      "currentPath": "/sdk/flutter/group/retrieving-group-members/retrieve-group-members",
+      "targetPath": "/sdk/flutter/group/retrieving-group-members/retrieve-group-members",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_group_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/group_listener.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/group_info.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/enum/group_member_filter.dart"
+      ],
+      "sdkMethods": [
+        "getGroupMemberList",
+        "getGroupMembersInfo",
+        "getUsersInGroup",
+        "searchGroupMembers",
+        "getGroupOwnerAndAdmin"
+      ],
+      "sdkEvents": ["onGroupMemberAdded", "onGroupMemberDeleted", "onGroupMemberInfoChanged"],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：按固定 Flutter SDK commit 的 group_member_filter.dart 复核枚举值；忠实记录 adminAndMember 与 superAndAdmin 都为 4，并改用 getGroupOwnerAndAdmin() 表达明确查询。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/group/managing-group-members/invite-or-remove-group-members",
+      "targetPath": "/sdk/flutter/group/managing-group-members/invite-or-remove-group-members",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_group_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/group_listener.dart"
+      ],
+      "sdkMethods": ["inviteUserToGroup", "kickGroupMember"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": ["2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。"]
+    },
+    {
+      "currentPath": "/sdk/flutter/group/managing-group-members/update-group-member-info",
+      "targetPath": "/sdk/flutter/group/managing-group-members/update-group-member-info",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_group_manager.dart"
+      ],
+      "sdkMethods": ["setGroupMemberInfo"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：逐页复核固定 SDK 的 SetGroupMemberInfo 与 GroupRoleLevel，按 WASM 信息密度补齐字段可空性、角色枚举、扩展字段覆盖语义及 Future、listener、重查三个阶段。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/group/managing-group-members/transfer-group-owner",
+      "targetPath": "/sdk/flutter/group/managing-group-members/transfer-group-owner",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_group_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/group_info.dart"
+      ],
+      "sdkMethods": ["transferGroupOwner"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：逐页复核 transferGroupOwner 的 groupID 与 userID 参数，补齐原群主、新群主角色变化、双记录事件合并及退出、解散边界。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/group/moderating-groups/mute-a-group-or-member",
+      "targetPath": "/sdk/flutter/group/moderating-groups/mute-a-group-or-member",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_group_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/group_listener.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/group_info.dart"
+      ],
+      "sdkMethods": ["changeGroupMute", "changeGroupMemberMute"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": ["2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。"]
+    },
+    {
+      "currentPath": "/sdk/flutter/message/overview-message",
+      "targetPath": "/sdk/flutter/message/overview-message",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/message.dart"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "not-applicable",
+            "evidence": [],
+            "reason": "本页为概览或概念说明，不包含可执行代码示例。"
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：逐页对照 WASM 消息概览，按发送、接收、获取、搜索、管理、已读、提及、未读、扩展和事件归属补齐主题顺序与场景；Message nullable 字段、API 与能力缺口仍按固定 Flutter SDK 声明。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/message/sending-messages/send-a-message",
+      "targetPath": "/sdk/flutter/message/sending-messages/send-a-message",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_message_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/message.dart"
+      ],
+      "sdkMethods": ["createTextMessage", "sendMessage", "sendMessageNotOss"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": ["2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。"]
+    },
+    {
+      "currentPath": "/sdk/flutter/message/sending-messages/create-media-and-rich-messages",
+      "targetPath": "/sdk/flutter/message/sending-messages/create-media-and-rich-messages",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_message_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/message.dart"
+      ],
+      "sdkMethods": [
+        "createImageMessage",
+        "createImageMessageFromFullPath",
+        "createSoundMessage",
+        "createSoundMessageFromFullPath",
+        "createVideoMessage",
+        "createVideoMessageFromFullPath",
+        "createFileMessage",
+        "createFileMessageFromFullPath",
+        "createLocationMessage",
+        "createCardMessage",
+        "createFaceMessage",
+        "createQuoteMessage",
+        "createAdvancedTextMessage",
+        "createAdvancedQuoteMessage",
+        "createImageMessageByURL",
+        "createSoundMessageByURL",
+        "createVideoMessageByURL",
+        "createFileMessageByURL",
+        "sendMessageNotOss"
+      ],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：按 WASM 共通语义补回资源来源选择、媒体元数据边界、引用对象要求及创建、发送、接收三阶段说明。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/message/sending-messages/upload-files-and-track-progress",
+      "targetPath": "/sdk/flutter/message/sending-messages/upload-files-and-track-progress",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_message_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/msg_send_progress_listener.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/upload_file_listener.dart"
+      ],
+      "sdkMethods": [
+        "setMsgSendProgressListener",
+        "setUploadFileListener",
+        "uploadFile",
+        "createFileMessage",
+        "sendMessage"
+      ],
+      "sdkEvents": ["onProgress", "onUploadProgress", "onComplete"],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：补回文件消息的创建发送流程、任务与进度关联、失败重试、阶段边界和上传验证清单。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/message/receiving-messages/receive-messages",
+      "targetPath": "/sdk/flutter/message/receiving-messages/receive-messages",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/advanced_msg_listener.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/message.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_conversation_manager.dart"
+      ],
+      "sdkMethods": ["getConversationIDBySessionType"],
+      "sdkEvents": ["onRecvNewMessage", "onRecvOfflineNewMessage", "onRecvOnlineOnlyMessage"],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-20：發布前複審確認 online-only 顯示流程實際使用解析後的 conversationID。",
+        "2026-07-21：按 WASM 共通语义补回快照与增量分工、singleton listener 生命周期、媒体消息标识、已读阶段及接收验证场景。",
+        "2026-07-21：逐页复核固定 SDK 的 Message model，补齐路由、合并、enum 状态与 nullable 内容 element 的字段边界。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/message/retrieving-messages/retrieve-message-history",
+      "targetPath": "/sdk/flutter/message/retrieving-messages/retrieve-message-history",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_message_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/message.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_conversation_manager.dart"
+      ],
+      "sdkMethods": [
+        "getAdvancedHistoryMessageList",
+        "getAdvancedHistoryMessageListReverse",
+        "getConversationIDBySessionType"
+      ],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：补回会话历史的分页状态、群组入口转换、读取方向、稳定游标、快照与 listener 增量边界。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/message/retrieving-messages/locate-messages-by-id",
+      "targetPath": "/sdk/flutter/message/retrieving-messages/locate-messages-by-id",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_message_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/message.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/search_info.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_conversation_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/conversation_info.dart"
+      ],
+      "sdkMethods": [
+        "findMessageList",
+        "getAdvancedHistoryMessageList",
+        "getAdvancedHistoryMessageListReverse",
+        "getOneConversation"
+      ],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：补回 clientMsgID 稳定标识、前后文合并、群聊最新消息预览及定位、历史、会话三类查询结果边界。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/message/searching-messages/search-messages",
+      "targetPath": "/sdk/flutter/message/searching-messages/search-messages",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_message_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/search_info.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_conversation_manager.dart"
+      ],
+      "sdkMethods": ["searchLocalMessages", "getConversationIDBySessionType"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：按 WASM 共通语义补回本地搜索范围、查询构造、进阶筛选限制、分页合并、结果变化与前后文定位边界。",
+        "2026-07-21：逐页复核固定 SDK 的 searchLocalMessages、SearchResult 与 SearchResultItems，补齐参数默认值、nullable 结果字段和两层结果 model 的完整说明。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/message/composing-messages/custom-message-and-extra-data",
+      "targetPath": "/sdk/flutter/message/composing-messages/custom-message-and-extra-data",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_message_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/message.dart"
+      ],
+      "sdkMethods": ["createCustomMessage", "sendMessage", "setMessageLocalEx"],
+      "sdkEvents": ["onRecvCustomBusinessMessage"],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-20：發布前複審補齐 onRecvCustomBusinessMessage 的載荷、去重與校準說明。",
+        "2026-07-21：按 WASM 共通语义补回数据落点、共享与本地字段边界、Future 与事件阶段、结果验证及相关场景说明。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/message/composing-messages/mention-users-in-a-message",
+      "targetPath": "/sdk/flutter/message/composing-messages/mention-users-in-a-message",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_message_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/message.dart"
+      ],
+      "sdkMethods": ["createTextAtMessage", "sendMessage"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：按 WASM 共通语义补回成员校验、稳定标记渲染、全体提醒边界、创建与接收阶段及会话提醒状态说明。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/message/composing-messages/manage-typing-status",
+      "targetPath": "/sdk/flutter/message/composing-messages/manage-typing-status",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_conversation_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/conversation_listener.dart"
+      ],
+      "sdkMethods": ["changeInputStates", "getInputStates"],
+      "sdkEvents": ["onInputStatusChanged"],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：按 WASM 共通语义补回输入状态用途、开始与停止时机、节流策略、群聊校准及相关场景说明。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/message/managing-messages/forward-or-merge-a-message",
+      "targetPath": "/sdk/flutter/message/managing-messages/forward-or-merge-a-message",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_message_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/message.dart"
+      ],
+      "sdkMethods": ["createForwardMessage", "createMergerMessage", "sendMessage"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：按 WASM 共通语义补回原消息状态、目标会话与新消息 ID 边界、摘要安全、三阶段结果及失败诊断说明。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/message/managing-messages/delete-a-message",
+      "targetPath": "/sdk/flutter/message/managing-messages/delete-a-message",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_message_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/advanced_msg_listener.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_conversation_manager.dart"
+      ],
+      "sdkMethods": [
+        "deleteMessageFromLocalStorage",
+        "deleteMessageFromLocalAndSvr",
+        "getConversationIDBySessionType"
+      ],
+      "sdkEvents": ["onMsgDeleted"],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：补回本地删除、账号侧删除与撤回的结果边界，会话预览影响、批次逐条失败和 Future、事件、重查分层。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/message/managing-messages/revoke-a-message",
+      "targetPath": "/sdk/flutter/message/managing-messages/revoke-a-message",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_message_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/advanced_msg_listener.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/message.dart"
+      ],
+      "sdkMethods": ["revokeMessage"],
+      "sdkEvents": ["onNewRecvMessageRevoked"],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-20：發布前複審確認撤回事件以 conversationID:clientMsgID 複合鍵合併。",
+        "2026-07-21：按 WASM 共通语义补回撤回与删除、修改的边界，撤回气泡处理、失败回滚要求及 Future、callback、重查三阶段说明。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/message/managing-messages/insert-a-local-message",
+      "targetPath": "/sdk/flutter/message/managing-messages/insert-a-local-message",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_message_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/message.dart"
+      ],
+      "sdkMethods": [
+        "createTextMessage",
+        "insertSingleMessageToLocalStorage",
+        "insertGroupMessageToLocalStorage"
+      ],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": ["2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。"]
+    },
+    {
+      "currentPath": "/sdk/flutter/message/managing-messages/clear-message-history",
+      "targetPath": "/sdk/flutter/message/managing-messages/clear-message-history",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_message_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_conversation_manager.dart"
+      ],
+      "sdkMethods": [
+        "clearConversationAndDeleteAllMsg",
+        "deleteAllMsgFromLocal",
+        "deleteAllMsgFromLocalAndSvr"
+      ],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：按 WASM 共通语义补回操作范围选择、conversationID 来源、会话保留边界、本地重同步与账号级清理结果说明。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/message/managing-read-status/manage-message-read-receipts",
+      "targetPath": "/sdk/flutter/message/managing-read-status/manage-message-read-receipts",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_conversation_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/advanced_msg_listener.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/message.dart"
+      ],
+      "sdkMethods": ["markConversationMessageAsRead", "getConversationIDBySessionType"],
+      "sdkEvents": ["onRecvC2CReadReceipt"],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-21：补回单聊已读上报时机、ReadReceiptInfo 结构边界、会话未读与消息回执差异，并保留 Flutter 无群成员级回执的能力边界。",
+        "2026-07-21：逐页复核固定 SDK 的 markConversationMessageAsRead 与 ReadReceiptInfo，补齐必填会话参数及全部 nullable 回执字段。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/events/overview-events",
+      "targetPath": "/sdk/flutter/events/overview-events",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/user_listener.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/friendship_listener.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/conversation_listener.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/group_listener.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/advanced_msg_listener.dart"
+      ],
+      "sdkMethods": [
+        "setUserListener",
+        "setFriendshipListener",
+        "setConversationListener",
+        "setGroupListener",
+        "setAdvancedMsgListener",
+        "setCustomBusinessListener"
+      ],
+      "sdkEvents": [
+        "onSyncServerStart",
+        "onSyncServerProgress",
+        "onSyncServerFinish",
+        "onSyncServerFailed"
+      ],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
+        "2026-07-20：發布前複審補齐 setCustomBusinessListener 的唯一集中設定與事件歸屬。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/logger",
+      "targetPath": "/sdk/flutter/logger",
+      "sourceKind": "openim-specific",
+      "disposition": "adapt",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_manager.dart",
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/upload_file_listener.dart"
+      ],
+      "sdkMethods": ["initSDK", "logs", "setUploadLogsListener", "uploadLogs"],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-20",
+          "exampleVerification": {
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+            ],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": ["2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。"]
+    },
+    {
+      "currentPath": "/sdk/flutter/conversation/managing-conversation-groups/manage-conversation-groups",
+      "targetPath": "/sdk/flutter/conversation/managing-conversation-groups/manage-conversation-groups",
+      "sourceKind": "openim-specific",
+      "disposition": "omit",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "structure-only",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：固定 Dart SDK 宣告没有该页面的公开能力；不纳入导航且不得编造替代 API。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/message/composing-messages/transcribe-audio",
+      "targetPath": "/sdk/flutter/message/composing-messages/transcribe-audio",
+      "sourceKind": "openim-specific",
+      "disposition": "omit",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "structure-only",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：固定 Dart SDK 宣告没有该页面的公开能力；不纳入导航且不得编造替代 API。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/message/managing-messages/modify-a-message",
+      "targetPath": "/sdk/flutter/message/managing-messages/modify-a-message",
+      "sourceKind": "openim-specific",
+      "disposition": "omit",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "structure-only",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：固定 Dart SDK 宣告没有该页面的公开能力；不纳入导航且不得编造替代 API。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/message/managing-messages/pin-conversation-messages",
+      "targetPath": "/sdk/flutter/message/managing-messages/pin-conversation-messages",
+      "sourceKind": "openim-specific",
+      "disposition": "omit",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "structure-only",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：固定 Dart SDK 宣告没有该页面的公开能力；不纳入导航且不得编造替代 API。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/calling/overview-calling",
+      "targetPath": "/sdk/flutter/calling/overview-calling",
+      "sourceKind": "openim-specific",
+      "disposition": "omit",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "structure-only",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：固定 Dart SDK 宣告没有该页面的公开能力；不纳入导航且不得编造替代 API。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/calling/managing-calls/start-or-handle-a-call",
+      "targetPath": "/sdk/flutter/calling/managing-calls/start-or-handle-a-call",
+      "sourceKind": "openim-specific",
+      "disposition": "omit",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "structure-only",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：固定 Dart SDK 宣告没有该页面的公开能力；不纳入导航且不得编造替代 API。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/calling/retrieving-call-information/retrieve-call-information",
+      "targetPath": "/sdk/flutter/calling/retrieving-call-information/retrieve-call-information",
+      "sourceKind": "openim-specific",
+      "disposition": "omit",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "structure-only",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：固定 Dart SDK 宣告没有该页面的公开能力；不纳入导航且不得编造替代 API。"
+      ]
+    },
+    {
+      "currentPath": "/sdk/flutter/calling/sending-custom-signals/send-a-custom-signal",
+      "targetPath": "/sdk/flutter/calling/sending-custom-signals/send-a-custom-signal",
+      "sourceKind": "openim-specific",
+      "disposition": "omit",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "structure-only",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：固定 Dart SDK 宣告没有该页面的公开能力；不纳入导航且不得编造替代 API。"
+      ]
+    }
+  ]
+}

@@ -2,12 +2,17 @@ import 'server-only';
 
 import { existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import localizedSdkData from '@/src/generated/wasm-sdk-zh-content.json';
+import flutterSdkData from '@/src/generated/flutter-sdk-zh-content.json';
+import iosSdkData from '@/src/generated/ios-sdk-zh-content.json';
+import wasmSdkData from '@/src/generated/wasm-sdk-zh-content.json';
 import localizedPlatformApiData from '@/src/generated/platform-api-zh-content.json';
 import { extractMarkdownHeadings } from '@/src/lib/heading-ids';
 import type { Locale } from '@/src/lib/i18n';
 import { getRouteRecord } from '@/src/lib/routes';
-import { createWasmPendingReviewContent } from '@/src/lib/wasm-publication';
+import {
+  createClientSdkPendingReviewContent,
+  selectClientSdkLocalizedPage,
+} from '@/src/lib/client-sdk-publication';
 import type { NavNode, RouteRecord, TocItem } from '@/src/types/docs';
 
 type LocalizedDocPage = {
@@ -23,7 +28,11 @@ type LocalizedSdkData = {
   pages: Record<string, LocalizedDocPage>;
 };
 
-const sdkZh = localizedSdkData as LocalizedSdkData;
+const sdkZhByContext: Record<string, LocalizedSdkData> = {
+  'chat/sdk/flutter': flutterSdkData as LocalizedSdkData,
+  'chat/sdk/ios': iosSdkData as LocalizedSdkData,
+  'chat/sdk/wasm': wasmSdkData as LocalizedSdkData,
+};
 const platformApiZh = localizedPlatformApiData as { navigationLabels: Record<string, string> };
 const localizedPageCache = new Map<string, LocalizedDocPage | undefined>();
 
@@ -41,22 +50,28 @@ export function getLocalizedDocPage(
 ): LocalizedDocPage | undefined {
   if (locale !== 'zh' || !path) return undefined;
   const normalized = normalizePath(path);
-  const localized = getManualLocalizedPage(normalized, locale) ?? sdkZh.pages[normalized];
-  if (localized) return localized;
-
   const route = getRouteRecord(normalized);
-  if (route?.contextKey !== 'chat/sdk/wasm') return undefined;
-  const pending = createWasmPendingReviewContent({
-    description: '该 OpenIM WASM SDK 页面的中文技术内容仍在逐页核对中。',
+  const platformData = route ? sdkZhByContext[route.contextKey] : undefined;
+  const manualPage = getManualLocalizedPage(normalized, locale);
+  if (!route || !platformData) return manualPage;
+  const pending = createClientSdkPendingReviewContent({
+    description: `该 OpenIM ${route.platform ?? 'client'} SDK 页面的中文技术内容仍在逐页核对中。`,
     path: normalized,
     title: localizeDocLabel(route.title, locale),
   });
-  return pending
+  const pendingPage = pending
     ? {
         ...pending,
         headings: extractMarkdownHeadings(pending.body),
       }
     : undefined;
+  return selectClientSdkLocalizedPage({
+    locale,
+    manualPage,
+    packagedPage: platformData.pages[normalized],
+    path: normalized,
+    pendingPage,
+  });
 }
 
 export function getLocalizedDocTitle(path: string | undefined, locale: Locale): string | undefined {
@@ -93,12 +108,15 @@ export function localizeDocLabel(label: string, locale: Locale): string {
   const exact = zhLabelOverrides[label];
   if (exact) return normalizeOpenImZhTerminology(exact);
 
-  // Prefer WASM/SDK title keys first so shared segments like retrieving-messages
+  // Prefer SDK title keys first so shared segments like retrieving-messages
   // do not inherit Platform API folder labels in SDK sidebars.
-  const fromSdkTitle = sdkZh.navigationLabels[label];
+  const sdkLabels = Object.values(sdkZhByContext).map((data) => data.navigationLabels);
+  const fromSdkTitle = sdkLabels.map((labels) => labels[label]).find(Boolean);
   if (fromSdkTitle) return normalizeOpenImZhTerminology(fromSdkTitle);
 
-  const fromSdkSegment = localizeHumanizedNavigationLabel(label, sdkZh.navigationLabels);
+  const fromSdkSegment = sdkLabels
+    .map((labels) => localizeHumanizedNavigationLabel(label, labels))
+    .find(Boolean);
   if (fromSdkSegment) return normalizeOpenImZhTerminology(fromSdkSegment);
 
   const fromPlatformSegment = localizeHumanizedNavigationLabel(
@@ -111,10 +129,14 @@ export function localizeDocLabel(label: string, locale: Locale): string {
 function navigationLabelsForNode(node: NavNode): Record<string, string> {
   const href = findFirstNavHref(node);
   if (href?.startsWith('/platform-api')) return platformApiZh.navigationLabels;
-  if (href?.startsWith('/sdk/')) return sdkZh.navigationLabels;
+  const route = href ? getRouteRecord(href) : undefined;
+  const sdkData = route ? sdkZhByContext[route.contextKey] : undefined;
+  if (sdkData) return sdkData.navigationLabels;
   return {
     ...platformApiZh.navigationLabels,
-    ...sdkZh.navigationLabels,
+    ...Object.fromEntries(
+      Object.values(sdkZhByContext).flatMap((data) => Object.entries(data.navigationLabels)),
+    ),
   };
 }
 
@@ -176,7 +198,7 @@ function getManualLocalizedPage(path: string, locale: Locale): LocalizedDocPage 
   const source = readFileSync(filePath, 'utf8');
   const { body, frontmatter } = parseMdx(source);
   const normalizedBody = body.replace(/\r\n?/g, '\n').trim();
-  const fallback = sdkZh.pages[path];
+  const fallback = route ? sdkZhByContext[route.contextKey]?.pages[path] : undefined;
   const page = {
     body: normalizedBody,
     description: frontmatter.description ?? fallback?.description ?? '',

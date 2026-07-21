@@ -1,0 +1,44 @@
+---
+title: 'OpenIM iOS SDK 概览'
+description: '在 iOS 应用中使用 OpenIM SDK 接入用户、会话、群组、消息和事件能力。'
+sourcePath: '/sdk/ios/overview'
+---
+
+OpenIM iOS SDK 通过 Objective-C 接口向 iPhone 和 iPad 应用提供 OpenIMSDK 能力。应用通过 `[OIMManager manager]` 取得共享管理器，并在应用生命周期内复用该实例。
+
+本文档以 OpenIM iOS SDK 的公开 Objective-C 声明为 API 基线。正文只介绍当前公开的业务 API 和 delegate；已废弃方法不单独成文，好友和会话列表只介绍分页接口。审核使用的固定 SDK commit 保留在内容审核记录中，不把版本号写入公开指南。
+
+## 接入流程
+
+1. 安装 `OpenIMSDK`，准备可访问的 OpenIMServer 地址。
+2. 从可信后端取得当前用户的 `userID` 和 Token。
+3. 配置 `OIMInitConfig` 并调用 `initSDKWithConfig:...`。
+4. 在登录前注册业务 delegate，再调用 `login:token:...`。
+5. 使用用户、好友、会话、群组和消息 API 构建业务界面。
+6. 退出或切换账号时移除 delegate，并清理当前账号的应用状态。
+
+## 文档结构
+
+| 领域 | 内容 |
+| --- | --- |
+| [快速开始](/sdk/ios/getting-started/environment-specific-implementation) | 安装、初始化、认证、连接生命周期和第一条消息。 |
+| [用户](/sdk/ios/user/overview-user) | 用户资料、好友、黑名单和在线状态。 |
+| [会话](/sdk/ios/conversation/overview-conversation) | 会话查询、设置、草稿、未读数、隐藏和清理。 |
+| [群组](/sdk/ios/group/overview-group) | 群资料、群成员、入群申请、权限和群组事件。 |
+| [消息](/sdk/ios/message/overview-message) | 创建、发送、接收、查询、搜索、撤回和已读回执。 |
+| [事件](/sdk/ios/events/overview-events) | delegate 注册、移除和初始化同步。 |
+
+当前 iOS Objective-C SDK 未公开 WASM 文档中的会话分组、消息修改、消息置顶、语音转文字和音视频信令接口，相关页面不会用相近名称臆造能力。
+
+## 关键数据边界
+
+- 单聊发送时填写 `recvID`，群聊发送时填写 `groupID`。
+- `OIMConversationInfo` 保存会话展示信息和未读数；`OIMGroupInfo` 与 `OIMGroupMemberInfo` 保存群组及成员关系。
+- 查询 callback 建立快照，delegate 合并后续增量；状态变更 callback 成功不等于所有端的 delegate 已经到达。
+- Token 属于敏感数据，不应写入普通日志或持久化到不受控存储。
+
+## 参考
+
+- [认证与管理登录会话](/sdk/ios/getting-started/authenticate-and-manage-session)
+- [发送第一条消息](/sdk/ios/getting-started/send-first-message)
+- [日志](/sdk/ios/logger)

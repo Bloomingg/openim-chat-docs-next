@@ -6,7 +6,10 @@ import { Feedback } from '@/src/components/docs/feedback';
 import { MarkdownContent } from '@/src/components/docs/markdown-content';
 import { Pagination } from '@/src/components/docs/pagination';
 import { PlatformApiOverviewPage } from '@/src/components/docs/platform-api-overview-page';
-import { SdkOverviewPage } from '@/src/components/docs/sdk-overview-page';
+import {
+  SdkOverviewPage,
+  type SdkOverviewPlatform,
+} from '@/src/components/docs/sdk-overview-page';
 import { TocGithubLink } from '@/src/components/docs/toc-github-link';
 import { getMDXComponents } from '@/src/components/mdx-components';
 import type { ContextOption } from '@/src/components/docs/context-picker';
@@ -32,11 +35,12 @@ import {
 import { getOpenIMServerVersionLink } from '@/src/lib/openim-server-version';
 import { getSourceDocPage } from '@/src/lib/source-docs';
 import {
-  getPublishedWasmLocales,
-  isWasmLocalePublished,
-  isWasmRoute,
-} from '@/src/lib/wasm-publication';
+  getPublishedClientSdkLocales,
+  isClientSdkLocalePublished,
+  isClientSdkRoute,
+} from '@/src/lib/client-sdk-publication';
 import { getPageCommercialInfo, getPageCommercialNames } from '@/src/lib/wasm-commercial';
+import { isWasmRoute } from '@/src/lib/wasm-publication';
 import type { BreadcrumbItem, TocItem } from '@/src/types/docs';
 
 export type DocumentationPageParams = {
@@ -72,10 +76,10 @@ export async function generateDocumentationMetadata(
     page?.data.description ??
     route.description;
   const url = toLocalizedPath(route.path, locale);
-  const wasmRoute = isWasmRoute(route.path);
-  const languages = wasmRoute
+  const clientSdkRoute = isClientSdkRoute(route.path);
+  const languages = clientSdkRoute
     ? Object.fromEntries(
-        getPublishedWasmLocales(route.path).map((publishedLocale) => [
+        getPublishedClientSdkLocales(route.path).map((publishedLocale) => [
           publishedLocale,
           toLocalizedPath(route.path, publishedLocale),
         ]),
@@ -92,7 +96,7 @@ export async function generateDocumentationMetadata(
       canonical: url,
       languages,
     },
-    ...(wasmRoute && !isWasmLocalePublished(route.path, locale)
+    ...(clientSdkRoute && !isClientSdkLocalePublished(route.path, locale)
       ? { robots: { follow: false, index: false } }
       : {}),
     openGraph: {
@@ -203,7 +207,10 @@ export async function renderDocumentationPage(
       ? getPageCommercialNames(effectiveRoute.path)
       : undefined;
 
-  if (effectiveRoute.path === '/sdk/wasm/overview' && locale === 'zh') {
+  const sdkOverviewPlatform =
+    locale === 'zh' ? getSdkOverviewPlatform(effectiveRoute.path) : undefined;
+
+  if (sdkOverviewPlatform) {
     return (
       <DocsShell
         context={context}
@@ -217,6 +224,7 @@ export async function renderDocumentationPage(
         <SdkOverviewPage
           breadcrumbs={breadcrumbs}
           locale={locale}
+          platform={sdkOverviewPlatform}
           route={effectiveRoute}
           showVersion={showVersion}
         />
@@ -273,6 +281,16 @@ export async function renderDocumentationPage(
       <Pagination locale={locale} next={neighbors.next} previous={neighbors.previous} />
     </DocsShell>
   );
+}
+
+function getSdkOverviewPlatform(path: string): SdkOverviewPlatform | undefined {
+  const overviewPaths: Record<string, SdkOverviewPlatform> = {
+    '/sdk/flutter/overview': 'flutter',
+    '/sdk/ios/overview': 'ios',
+    '/sdk/wasm/overview': 'wasm',
+  };
+
+  return overviewPaths[path];
 }
 
 function localizeBreadcrumbs(items: BreadcrumbItem[], locale: Locale): BreadcrumbItem[] {

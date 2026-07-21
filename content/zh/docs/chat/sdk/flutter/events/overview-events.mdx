@@ -1,0 +1,127 @@
+---
+title: '事件概览'
+description: '集中设置 OpenIM Flutter SDK listener，并按业务领域分发事件。'
+sourcePath: '/sdk/flutter/events/overview-events'
+---
+
+OpenIM Flutter SDK 通过 listener 推送连接、同步、用户、好友、会话、群组和消息变化。各 manager 只保存一个对应 listener；后一次设置会替换 Dart 层此前保存的实例。因此应在应用状态层初始化时组合所有回调，并且每种 listener 只设置一次，不要在 Widget 的 `build()` 或各功能页面中重复设置。
+
+## 集中设置 listener
+
+下面展示应用级组合入口。`handle*` 函数的完整合并逻辑分别放在表格链接的事件归属页面。
+
+```dart
+Future<void> registerOpenIMListeners() async {
+  await OpenIM.iMManager.userManager.setUserListener(
+    OnUserListener(
+      onSelfInfoUpdated: handleSelfInfoUpdated,
+      onUserStatusChanged: handleUserStatusChanged,
+    ),
+  );
+
+  await OpenIM.iMManager.friendshipManager.setFriendshipListener(
+    OnFriendshipListener(
+      onBlackAdded: handleBlackAdded,
+      onBlackDeleted: handleBlackDeleted,
+      onFriendAdded: handleFriendChanged,
+      onFriendDeleted: handleFriendDeleted,
+      onFriendInfoChanged: handleFriendChanged,
+      onFriendApplicationAdded: handleFriendApplicationChanged,
+      onFriendApplicationAccepted: handleFriendApplicationChanged,
+      onFriendApplicationRejected: handleFriendApplicationChanged,
+      onFriendApplicationDeleted: handleFriendApplicationDeleted,
+    ),
+  );
+
+  await OpenIM.iMManager.conversationManager.setConversationListener(
+    OnConversationListener(
+      onNewConversation: handleNewConversations,
+      onConversationChanged: handleConversationsChanged,
+      onTotalUnreadMessageCountChanged: handleTotalUnreadChanged,
+      onInputStatusChanged: handleInputStatusChanged,
+      onSyncServerStart: handleSyncStart,
+      onSyncServerProgress: handleSyncProgress,
+      onSyncServerFinish: handleSyncFinish,
+      onSyncServerFailed: handleSyncFailed,
+    ),
+  );
+
+  await OpenIM.iMManager.groupManager.setGroupListener(
+    OnGroupListener(
+      onJoinedGroupAdded: handleJoinedGroupAdded,
+      onJoinedGroupDeleted: handleJoinedGroupDeleted,
+      onGroupInfoChanged: handleGroupInfoChanged,
+      onGroupDismissed: handleGroupDismissed,
+      onGroupMemberAdded: handleGroupMemberAdded,
+      onGroupMemberDeleted: handleGroupMemberDeleted,
+      onGroupMemberInfoChanged: handleGroupMemberInfoChanged,
+      onGroupApplicationAdded: handleGroupApplicationChanged,
+      onGroupApplicationAccepted: handleGroupApplicationChanged,
+      onGroupApplicationRejected: handleGroupApplicationChanged,
+      onGroupApplicationDeleted: handleGroupApplicationDeleted,
+    ),
+  );
+
+  await OpenIM.iMManager.messageManager.setAdvancedMsgListener(
+    OnAdvancedMsgListener(
+      onRecvNewMessage: handleNewMessage,
+      onRecvOfflineNewMessage: handleOfflineMessage,
+      onRecvOnlineOnlyMessage: handleOnlineOnlyMessage,
+      onMsgDeleted: handleMessageDeleted,
+      onNewRecvMessageRevoked: handleMessageRevoked,
+      onRecvC2CReadReceipt: handleC2CReadReceipts,
+    ),
+  );
+
+  await OpenIM.iMManager.messageManager.setCustomBusinessListener(
+    OnCustomBusinessListener(
+      onRecvCustomBusinessMessage: handleCustomBusinessMessage,
+    ),
+  );
+}
+```
+
+固定版本没有对应的 remove 或 unset API。退出登录、切换账号或销毁状态层时，应停止向旧账号状态和已销毁 Widget 分发回调，并释放应用自己的引用；重新登录后用新账号的完整组合 listener 覆盖设置。
+
+## 事件归属
+
+| 事件范围           | 合并标识                     | 完整处理页面                                                                                  |
+| ------------------ | ---------------------------- | --------------------------------------------------------------------------------------------- |
+| 用户资料与在线状态 | `userID`                     | [用户概览](/sdk/flutter/user/overview-user)                                                   |
+| 好友和黑名单       | `userID`                     | [处理好友申请](/sdk/flutter/user/managing-friends/manage-friend-requests)                     |
+| 会话列表           | `conversationID`             | [获取会话列表](/sdk/flutter/conversation/retrieving-conversations/retrieve-conversation-list) |
+| 总未读数           | 当前登录用户                 | [管理会话已读状态](/sdk/flutter/conversation/managing-conversations/manage-read-status)       |
+| 输入状态           | `conversationID:userID`      | [管理输入状态](/sdk/flutter/message/composing-messages/manage-typing-status)                  |
+| 群组               | `groupID`                    | [获取和搜索群组](/sdk/flutter/group/retrieving-groups/retrieve-and-search-groups)             |
+| 群成员             | `groupID:userID`             | [获取群成员](/sdk/flutter/group/retrieving-group-members/retrieve-group-members)              |
+| 入群申请           | `groupID:userID`             | [处理入群申请](/sdk/flutter/group/managing-group-applications/manage-group-applications)      |
+| 新消息             | `conversationID:clientMsgID` | [接收消息](/sdk/flutter/message/receiving-messages/receive-messages)                          |
+| 消息删除           | `conversationID:clientMsgID` | [删除消息](/sdk/flutter/message/managing-messages/delete-a-message)                           |
+| 消息撤回           | `conversationID:clientMsgID` | [撤回消息](/sdk/flutter/message/managing-messages/revoke-a-message)                           |
+| 单聊已读回执       | `conversationID:clientMsgID` | [管理消息已读回执](/sdk/flutter/message/managing-read-status/manage-message-read-receipts)    |
+| 自定义业务通知     | 业务协议中的 ID 或幂等键     | [自定义消息与扩展数据](/sdk/flutter/message/composing-messages/custom-message-and-extra-data) |
+
+## 监听初始化同步
+
+同步生命周期也属于唯一的 `OnConversationListener`。它描述 SDK 数据同步，不是某个查询 API 的 Future 回调。
+
+```dart
+void handleSyncStart(bool? reinstalled) {
+  setSyncState(status: 'syncing', progress: 0, reinstalled: reinstalled == true);
+}
+
+void handleSyncProgress(int? progress) {
+  setSyncState(status: 'syncing', progress: progress ?? 0);
+}
+
+void handleSyncFinish(bool? reinstalled) {
+  setSyncState(status: 'ready', progress: 100, reinstalled: reinstalled == true);
+  reloadVisibleSnapshots();
+}
+
+void handleSyncFailed(bool? reinstalled) {
+  setSyncState(status: 'failed', reinstalled: reinstalled == true);
+}
+```
+
+`onSyncServerStart` 用于进入同步状态，`onSyncServerProgress` 更新进度，完成后重新查询当前界面所需快照，失败时记录错误并等待重试或连接恢复。事件增量、查询快照和 Future 完成始终按独立阶段处理。

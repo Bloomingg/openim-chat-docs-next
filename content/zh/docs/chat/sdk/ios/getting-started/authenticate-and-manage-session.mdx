@@ -1,0 +1,123 @@
+---
+title: '认证与管理登录会话'
+description: '初始化 OpenIM iOS SDK、登录、查询状态并安全退出当前账号。'
+sourcePath: '/sdk/ios/getting-started/authenticate-and-manage-session'
+---
+
+OpenIM iOS SDK 使用 `login:token:onSuccess:onFailure:` 建立当前用户的登录会话。开始认证前，请先完成[开始之前](/sdk/ios/getting-started/before-you-start)列出的服务、用户、Token 与 iOS 环境准备。
+
+完整流程如下：
+
+1. 使用 `OIMInitConfig` 初始化 SDK，同时设置连接、Token 与强制下线 callback。
+2. 从可信后端取得当前用户的 `userID` 与 Token。
+3. 调用登录方法，等待成功 callback，并继续等待 `onConnectSuccess`。
+4. 连接可用后，再查询用户、好友、会话、群组与消息数据。
+5. 主动退出或切换账号时调用登出方法，再清理当前账号的应用状态。
+
+## 获取当前用户的登录信息
+
+应用应从可信后端取得当前用户的 `userID` 与 OpenIMSDK Token。`userID` 只是 OpenIMSDK 用户标识，不是认证凭据，而且必须与 Token 对应。
+
+iOS 客户端只使用后端返回的登录信息，不负责建立 OpenIM 用户或签发 Token。不要把管理员 Token 打包进 App，也不要把完整 Token 写入普通日志。
+
+## 初始化并处理连接生命周期
+
+连接、Token 与账号下线 callback 必须在初始化时传入，因此不会出现先调用登录、再注册连接事件的空窗。完整的 `OIMInitConfig` 字段与环境设置请参阅[按运行环境接入](/sdk/ios/getting-started/environment-specific-implementation)。
+
+```objc
+OIMInitConfig *config = [OIMInitConfig new];
+config.platform = iPhone;
+config.apiAddr = apiAddr;
+config.wsAddr = wsAddr;
+
+BOOL accepted = [[OIMManager manager]
+    initSDKWithConfig:config
+    onConnecting:^{ [sessionState setConnecting]; }
+    onConnectFailure:^(NSInteger code, NSString *message) {
+        [sessionState setFailedWithCode:code message:message];
+    }
+    onConnectSuccess:^{ [sessionState setConnected]; }
+    onKickedOffline:^{ [sessionState clearForForcedLogout]; }
+    onUserTokenExpired:^{ [sessionState refreshCredentials]; }
+    onUserTokenInvalid:^(NSString *message) {
+        [sessionState requireSignInWithMessage:message];
+    }];
+```
+
+`initSDKWithConfig:...` 返回 `YES` 表示 SDK 接受初始化，不表示用户已登录，也不表示长连接已可用。同一个 App 进程应集中初始化一次，不要由多个页面各自建立初始化流程。
+
+这些 callback 没有业务实体合并标识，应按当前 SDK 实例与登录账号隔离状态。callback 由初始化流程持有，不是 WASM 的 `on()`／`off()` 模型；切换账号或重建 SDK 前，应先停止旧账号的异步任务，避免旧 callback 更新新账号页面。
+
+## 登录当前用户
+
+从可信后端取得与当前业务账号对应的 `userID` 和 Token，再调用登录接口：
+
+```objc
+[[OIMManager manager] login:userID
+                         token:token
+                     onSuccess:^(NSString *data) {
+                         // 登录请求完成；仍需等待 onConnectSuccess。
+                     }
+                     onFailure:^(NSInteger code, NSString *message) {
+                         NSLog(@"OpenIMSDK login failed: %ld %@", (long)code, message);
+                     }];
+```
+
+`userID` 必须是当前 OpenIMSDK 用户 ID，`token` 必须是可信后端签发给同一用户的 Token。成功 callback 的可空字符串不是用户快照；登录后需要账号资料时，另行调用自身资料查询 API。
+
+登录成功 callback 表示登录调用已完成；初始化时的 `onConnectSuccess` 表示长连接已可供业务 API 使用。两者是不同阶段，不能只因登录 callback 成功就立即执行依赖连接的消息、会话、群组或用户操作。
+
+不要并行调用登录方法。登录按钮应复用正在执行的请求，或在登录状态为 `OIMLoginStatusLogging` 时禁用重复提交。
+
+## 查询当前登录状态
+
+`getLoginStatus` 和 `getLoginUserID` 都是同步查询，不接收业务参数：
+
+```objc
+OIMLoginStatus status = [[OIMManager manager] getLoginStatus];
+if (status == OIMLoginStatusLogged) {
+    NSString *currentUserID = [[OIMManager manager] getLoginUserID];
+    [sessionState restoreForUserID:currentUserID];
+}
+```
+
+| 状态 | 说明 |
+| --- | --- |
+| `OIMLoginStatusLogout` | 当前 SDK 尚未登录。 |
+| `OIMLoginStatusLogging` | 登录流程正在进行，不要再次发起并行登录。 |
+| `OIMLoginStatusLogged` | SDK 已登录；网络是否可用仍需结合连接 callback 判断。 |
+
+`getLoginUserID` 返回 SDK 当前登录的用户 ID，适合检查应用账号与 SDK 账号是否一致，但不能取代业务端身份认证。这两个查询只建立当前登录快照，不会触发连接 callback。
+
+切换账号时，不要直接用新参数覆盖当前登录。应先等待旧账号退出完成，清理旧账号状态，再以新账号的 `userID` 与 Token 登录。
+
+## 处理 Token 与强制下线
+
+收到 `onUserTokenExpired` 或 `onUserTokenInvalid` 后，重新向可信后端请求凭据，再按产品策略重新登录或返回登录页。iOS 登录流程只向登录方法传入 OpenIMSDK Token，不在客户端区分“访问 Token”和“会话 Token”；Token 的签发、有效期、更新与撤销策略由业务后端和 OpenIMServer 决定。
+
+收到 `onKickedOffline` 时，SDK 已结束当前登录会话。应用只需清理自己保存的用户、会话、消息、未读数与页面状态，不要再并行调用退出方法。可按产品策略提示账号已在其他设备登录，或跳转到登录页。
+
+## 主动退出
+
+用户主动退出或切换账号时调用：
+
+```objc
+[[OIMManager manager] logoutWithOnSuccess:^(NSString *data) {
+    [sessionState clearCurrentSession];
+} onFailure:^(NSInteger code, NSString *message) {
+    NSLog(@"OpenIMSDK logout failed: %ld %@", (long)code, message);
+}];
+```
+
+成功 callback 表示当前 SDK 登录会话已退出。主动退出时，callback 成功、连接 callback 与业务页面清理是不同阶段；应先等待退出成功，再清理当前账号的会话列表、消息页面、未读数及业务状态。
+
+切换账号时，等待旧账号退出成功并移除旧账号的业务 delegate，再登录新账号。不要让两个账号的登录与退出流程并行执行。
+
+`unInitSDK` 用于 App 最终不再使用 SDK 时释放运行环境，不是普通页面关闭或账号退出的替代方法。只有在退出流程与所有 SDK 工作都已结束后，才应解除初始化。
+
+## 下一步
+
+- [开始之前](/sdk/ios/getting-started/before-you-start)
+- [发送第一条消息](/sdk/ios/getting-started/send-first-message)
+- [事件概览](/sdk/ios/events/overview-events)
+- [日志](/sdk/ios/logger)

@@ -1,5 +1,10 @@
 import { createMDX } from 'fumadocs-mdx/next';
+import flutterLegacyRedirectAliases from './data/structure/flutter-legacy-redirect-aliases.json' with { type: 'json' };
+import flutterSidebar from './data/structure/flutter-sidebar.json' with { type: 'json' };
+import iosLegacyRedirectAliases from './data/structure/ios-legacy-redirect-aliases.json' with { type: 'json' };
+import iosSidebar from './data/structure/ios-sidebar.json' with { type: 'json' };
 import wasmLegacyRedirectEntries from './data/structure/wasm-legacy-redirects.json' with { type: 'json' };
+import { buildClientSdkLegacyRedirects } from './scripts/lib/client-sdk-legacy-redirects.mjs';
 import { buildWasmLegacyRedirects } from './scripts/lib/wasm-legacy-redirects.mjs';
 
 /** @type {import('next').NextConfig} */
@@ -18,7 +23,21 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
   },
   async redirects() {
-    return buildWasmLegacyRedirects(wasmLegacyRedirectEntries);
+    return [
+      ...buildWasmLegacyRedirects(wasmLegacyRedirectEntries),
+      ...buildClientSdkLegacyRedirects({
+        platformId: 'ios',
+        sidebar: iosSidebar,
+        wasmEntries: wasmLegacyRedirectEntries,
+        aliases: iosLegacyRedirectAliases,
+      }),
+      ...buildClientSdkLegacyRedirects({
+        platformId: 'flutter',
+        sidebar: flutterSidebar,
+        wasmEntries: wasmLegacyRedirectEntries,
+        aliases: flutterLegacyRedirectAliases,
+      }),
+    ];
   },
   async headers() {
     return [

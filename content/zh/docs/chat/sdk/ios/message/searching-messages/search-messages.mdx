@@ -1,0 +1,97 @@
+---
+title: '搜索消息'
+description: '在 iOS SDK 已同步的本地消息中搜索关键词。'
+sourcePath: '/sdk/ios/message/searching-messages/search-messages'
+---
+
+`searchLocalMessages:onSuccess:onFailure:` 搜索当前用户在 iOS SDK 本地数据库中可见的消息。群消息搜索的目标是群聊对应的 `conversationID`，不是发送消息时使用的 `groupID`。
+
+搜索范围取决于 SDK 已同步到本地的消息。跨用户审计、服务端全量检索、复杂权限过滤或跨会话全局排序，应由后端搜索服务处理，再把命中的 `conversationID` 和 `clientMsgID` 交给客户端定位。
+
+## 创建搜索条件
+
+搜索框通常代表一次用户输入。先移除关键词前后空白并拒绝空字符串，再创建 `OIMSearchParam`；用户修改关键词、消息类型或时间范围时，应把页码重置为 `1` 并清除旧结果。
+
+```objc
+NSString *keyword = [searchText stringByTrimmingCharactersInSet:
+    NSCharacterSet.whitespaceAndNewlineCharacterSet];
+if (keyword.length == 0) {
+    [self renderSearchItems:@[] totalCount:0];
+    return;
+}
+
+OIMSearchParam *param = [OIMSearchParam new];
+param.conversationID = conversationID;
+param.keywordList = @[keyword];
+param.messageTypeList = @[@(OIMMessageContentTypeText)];
+param.searchTimePosition = 0;
+param.searchTimePeriod = 0;
+param.pageIndex = 1;
+param.count = 20;
+
+[[OIMManager manager] searchLocalMessages:param
+    onSuccess:^(OIMSearchResultInfo * _Nullable result) {
+        if (result == nil) {
+            [self showSearchError:0 message:@"搜索回调未返回结果"];
+            return;
+        }
+        [self renderSearchItems:result.searchResultItems
+                     totalCount:result.totalCount];
+    }
+    onFailure:^(NSInteger code, NSString * _Nullable message) {
+        [self showSearchError:code message:message ?: @"搜索消息失败"];
+    }];
+```
+
+### 参数说明
+
+| 字段 | 类型 | 是否可空 | 说明 |
+| --- | --- | --- | --- |
+| `conversationID` | `NSString *` | 否 | 目标会话；空字符串表示跨本地会话搜索。群聊仍传会话 ID，不传 `groupID`。 |
+| `keywordList` | `NSArray<NSString *> *` | 否 | 关键词数组；固定版本目前只支持一个关键词。 |
+| `keywordListMatchType` | `NSInteger` | 值类型 | 多关键词匹配字段，固定版本标示为当前未使用。 |
+| `senderUserIDList` | `NSArray * _Nullable` | 是 | 发送者筛选字段，固定版本标示为当前未使用。 |
+| `messageTypeList` | `NSArray * _Nullable` | 是 | 可选的消息类型数值数组，例如文本消息。 |
+| `searchTimePosition` | `NSInteger` | 值类型 | UTC 秒级时间起点；`0` 表示从当前时间开始。 |
+| `searchTimePeriod` | `NSInteger` | 值类型 | 从起点计算的秒级时间范围；`0` 表示不限。 |
+| `pageIndex` | `NSInteger` | 值类型 | 会话内分页从 `1` 开始；跨会话搜索时无效。 |
+| `count` | `NSInteger` | 值类型 | 会话内每页数量；跨会话搜索时无效。 |
+
+`keywordListMatchType` 和 `senderUserIDList` 在固定 Objective-C header 中标示为当前未使用，不应依赖它们实现多关键词或发送者筛选。若产品需要这些条件，应先以实际 SDK 版本验证，或改由后端搜索服务提供。
+
+## 处理分页结果
+
+成功 callback 参数按固定声明可以为 `nil`，应先处理空结果。非空的 `OIMSearchResultInfo` 包含：
+
+| 属性 | 类型 | 说明 |
+| --- | --- | --- |
+| `totalCount` | `NSInteger` | 本次条件匹配的消息总数。 |
+| `searchResultItems` | `NSArray<OIMSearchResultItemInfo *> *` | `searchLocalMessages:` 按会话组织的结果。 |
+| `findResultItems` | `NSArray<OIMSearchResultItemInfo *> *` | `findMessageList:` 专用结果，不是本操作的主要结果字段。 |
+
+每个 `OIMSearchResultItemInfo` 对应一个会话：
+
+| 属性 | 类型 | 说明 |
+| --- | --- | --- |
+| `conversationID` | `NSString *` | 命中消息所属会话 ID。 |
+| `conversationType` | `OIMConversationType` | 会话类型枚举。 |
+| `showName` | `NSString *` | 会话展示名称。 |
+| `faceURL` | `NSString *` | 会话头像地址。 |
+| `messageCount` | `NSInteger` | 该会话内的命中数量。 |
+| `messageList` | `NSArray<OIMMessageInfo *> *` | 该会话内本页命中的消息。 |
+
+分页时持续传入相同的 `conversationID`、`keywordList`、消息类型和时间条件，只递增 `pageIndex`。搜索页内以结果项的 `conversationID` 加上消息的 `clientMsgID` 去重，不要按结果位置保存选中状态。
+
+## 处理搜索结果变化
+
+搜索查询成功后可以直接使用 callback 结果建立快照；查询本身不触发消息事件。命中的消息可能在页面打开后被撤回、删除，或因后续同步而变化，应复用[接收消息](/sdk/ios/message/receiving-messages/receive-messages)、[删除消息](/sdk/ios/message/managing-messages/delete-a-message)和[撤回消息](/sdk/ios/message/managing-messages/revoke-a-message)页面的统一事件处理器，本页不重复注册事件。
+
+跳转到搜索结果时，使用该结果的 `conversationID` 和 `clientMsgID` 定位目标消息。若需要显示上下文，先使用 `findMessageList:onSuccess:onFailure:` 取得消息，再按 iOS 支持的正向与反向历史查询加载周边内容；详见[按 ID 定位消息](/sdk/ios/message/retrieving-messages/locate-messages-by-id)。
+
+搜索 callback、消息事件增量和重新执行查询是三条独立路径。需要当前结果时，使用相同条件重新搜索，并按相同的会话与消息标识合并。
+
+## 相关页面
+
+- [按 ID 定位消息](/sdk/ios/message/retrieving-messages/locate-messages-by-id)
+- [获取消息历史](/sdk/ios/message/retrieving-messages/retrieve-message-history)
+- [接收消息](/sdk/ios/message/receiving-messages/receive-messages)

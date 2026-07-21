@@ -602,7 +602,9 @@ test('removed Sendbird capabilities do not have misleading redirects', () => {
 test('the rendered WASM overview links only to active capability pages', () => {
   const source = readFileSync('src/components/docs/sdk-overview-page.tsx', 'utf8');
   const active = new Set(activePages);
-  const links = [...source.matchAll(/href: '([^']+)'/g)].map((match) => match[1]);
+  const links = [...source.matchAll(/href: '(\/sdk\/wasm\/[^']+)'/g)].map(
+    (match) => match[1],
+  );
 
   for (const path of links) assert.ok(active.has(path), path);
   for (const term of [
@@ -618,12 +620,12 @@ test('the rendered WASM overview links only to active capability pages', () => {
   assert.match(source, /OpenIM WASM SDK 为浏览器应用/);
 });
 
-test('the custom WASM overview renders only for reviewed Chinese content', () => {
+test('the custom SDK overviews render only for reviewed Chinese content', () => {
   const source = readFileSync('src/components/docs/documentation-page.tsx', 'utf8');
-  assert.match(
-    source,
-    /effectiveRoute\.path === '\/sdk\/wasm\/overview' && locale === 'zh'/,
-  );
+  assert.match(source, /locale === 'zh' \? getSdkOverviewPlatform\(effectiveRoute\.path\)/);
+  assert.match(source, /'\/sdk\/flutter\/overview': 'flutter'/);
+  assert.match(source, /'\/sdk\/ios\/overview': 'ios'/);
+  assert.match(source, /'\/sdk\/wasm\/overview': 'wasm'/);
 });
 
 test('event listeners appear only on their ownership page', () => {

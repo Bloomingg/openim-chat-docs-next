@@ -1,0 +1,100 @@
+---
+title: '发送第一条消息'
+description: '验证 Flutter 应用中单聊或群聊的首条文本消息发送链路。'
+sourcePath: '/sdk/flutter/getting-started/send-first-message'
+---
+
+本页说明如何在 Flutter 应用中安装并初始化 OpenIMClientSDK，登录后发送第一条文本消息。开始前，请先完成[开始之前](/sdk/flutter/getting-started/before-you-start)列出的准备工作。
+
+单聊消息使用目标用户 `userID`；群聊消息使用目标群组 `groupID`。两个目标不能同时填写。
+
+## 第 1 步：安装 SDK
+
+```bash
+flutter pub add flutter_openim_sdk
+```
+
+该命令会从 pub.dev 选择当前项目可用的最新兼容版本，并更新 `pubspec.yaml` 与依赖锁定文件。团队项目应提交锁定文件，并在升级后重新验证初始化、登录和消息收发流程。
+
+## 第 2 步：初始化 SDK
+
+按照[按运行环境接入](/sdk/flutter/getting-started/environment-specific-implementation)取得应用数据目录并调用 `initSDK()`。初始化时传入 `OnConnectListener`，后续以 `onConnectSuccess` 确认连接可用。
+
+```dart
+import 'package:flutter_openim_sdk/flutter_openim_sdk.dart';
+
+final initialized = await OpenIM.iMManager.initSDK(
+  platformID: platformID,
+  apiAddr: session.apiAddr,
+  wsAddr: session.wsAddr,
+  dataDir: dataDir,
+  listener: connectListener,
+);
+```
+
+## 第 3 步：登录
+
+```dart
+await OpenIM.iMManager.login(
+  userID: session.userID,
+  token: session.token,
+);
+```
+
+`login()` Future 成功和 `OnConnectListener.onConnectSuccess` 到达是两个阶段。收到连接成功回调后，再发送消息。
+
+## 第 4 步：准备目标
+
+单聊需要一个已存在的接收方用户：
+
+```dart
+const targetUserID = 'user_b';
+```
+
+群聊需要一个当前用户有权发言的群组：
+
+```dart
+const targetGroupID = 'group_123';
+```
+
+## 第 5 步：创建并发送文本消息
+
+先调用 `createTextMessage()` 创建本地 `Message`，再将它传给 `sendMessage()`。创建消息不会发送，也不会触发接收事件。
+
+```dart
+final message = await OpenIM.iMManager.messageManager.createTextMessage(
+  text: '你好，OpenIMSDK',
+);
+
+final sentMessage = await OpenIM.iMManager.messageManager.sendMessage(
+  message: message,
+  userID: targetUserID,
+  offlinePushInfo: OfflinePushInfo(
+    title: '新消息',
+    desc: '你收到了一条消息',
+  ),
+);
+
+appendOutgoingMessage(sentMessage);
+```
+
+发送群聊时改传 `groupID`，不传 `userID`：
+
+```dart
+final sentMessage = await OpenIM.iMManager.messageManager.sendMessage(
+  message: message,
+  groupID: targetGroupID,
+  offlinePushInfo: OfflinePushInfo(
+    title: '群组新消息',
+    desc: '群组中有一条新消息',
+  ),
+);
+```
+
+`sendMessage()` Future 成功后，当前客户端使用返回的 `Message` 按 `clientMsgID` 合并到本地消息列表。另一已登录客户端通过消息 listener 收到新消息；完整 listener 代码见[接收消息](/sdk/flutter/message/receiving-messages/receive-messages)。Future 成功和对端回调到达应分别验证。
+
+## 下一步
+
+- [用户认证](/sdk/flutter/getting-started/authenticate-and-manage-session)
+- [发送消息](/sdk/flutter/message/sending-messages/send-a-message)
+- [接收消息](/sdk/flutter/message/receiving-messages/receive-messages)

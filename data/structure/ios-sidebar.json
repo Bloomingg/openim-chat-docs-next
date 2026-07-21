@@ -1,0 +1,153 @@
+{
+  "sidebarExpansion": "active-path",
+  "nodes": [
+    {
+      "path": "/sdk/ios/overview",
+      "navigationTitle": "Overview"
+    },
+    {
+      "id": "getting-started",
+      "title": "Getting started",
+      "children": [
+        "/sdk/ios/getting-started/before-you-start",
+        "/sdk/ios/getting-started/environment-specific-implementation",
+        "/sdk/ios/getting-started/authenticate-and-manage-session",
+        "/sdk/ios/getting-started/send-first-message"
+      ]
+    },
+    {
+      "id": "user",
+      "title": "User",
+      "children": [
+        "/sdk/ios/user/overview-user",
+        {
+          "id": "user/user-profile",
+          "title": "User profile",
+          "children": [
+            "/sdk/ios/user/retrieving-users/retrieve-users",
+            "/sdk/ios/user/retrieving-and-updating-user-information/retrieve-and-update-self-profile",
+            "/sdk/ios/user/retrieving-and-updating-user-information/retrieve-the-online-status-of-a-user"
+          ]
+        },
+        {
+          "id": "user/friends",
+          "title": "Friends",
+          "children": [
+            "/sdk/ios/user/retrieving-users/retrieve-a-list-of-friends",
+            "/sdk/ios/user/retrieving-users/retrieve-friend-information",
+            "/sdk/ios/user/managing-friends/manage-friend-requests",
+            "/sdk/ios/user/managing-friends/update-or-delete-friends"
+          ]
+        },
+        {
+          "id": "user/blacklist",
+          "title": "Blacklist",
+          "children": [
+            "/sdk/ios/user/moderating-a-user/retrieve-a-list-of-blocked-users",
+            "/sdk/ios/user/moderating-a-user/block-or-unblock-users"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "conversation",
+      "title": "Conversation",
+      "children": [
+        "/sdk/ios/conversation/overview-conversation",
+        {
+          "id": "conversation/retrieving-conversations",
+          "title": "Retrieving conversations",
+          "children": [
+            "/sdk/ios/conversation/retrieving-conversations/retrieve-a-conversation",
+            "/sdk/ios/conversation/retrieving-conversations/retrieve-conversation-list"
+          ]
+        },
+        {
+          "id": "conversation/managing-conversations",
+          "title": "Managing conversations",
+          "children": [
+            "/sdk/ios/conversation/managing-conversations/set-conversation-settings",
+            "/sdk/ios/conversation/managing-conversations/set-conversation-draft",
+            "/sdk/ios/conversation/managing-conversations/manage-read-status",
+            "/sdk/ios/conversation/managing-conversations/hide-a-conversation",
+            "/sdk/ios/conversation/managing-conversations/delete-or-clear-conversation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "group",
+      "title": "Group",
+      "children": [
+        "/sdk/ios/group/overview-group",
+        "/sdk/ios/group/creating-and-updating-groups/create-or-update-a-group",
+        "/sdk/ios/group/retrieving-groups/retrieve-and-search-groups",
+        "/sdk/ios/group/joining-and-leaving-groups/join-leave-or-dismiss-a-group",
+        "/sdk/ios/group/managing-group-applications/manage-group-applications",
+        "/sdk/ios/group/retrieving-group-members/retrieve-group-members",
+        {
+          "id": "group/managing-group-members",
+          "title": "Managing group members",
+          "children": [
+            "/sdk/ios/group/managing-group-members/invite-or-remove-group-members",
+            "/sdk/ios/group/managing-group-members/update-group-member-info",
+            "/sdk/ios/group/managing-group-members/transfer-group-owner"
+          ]
+        },
+        "/sdk/ios/group/moderating-groups/mute-a-group-or-member"
+      ]
+    },
+    {
+      "id": "message",
+      "title": "Message",
+      "children": [
+        "/sdk/ios/message/overview-message",
+        {
+          "id": "message/sending-messages",
+          "title": "Sending messages",
+          "children": [
+            "/sdk/ios/message/sending-messages/send-a-message",
+            "/sdk/ios/message/sending-messages/create-media-and-rich-messages",
+            "/sdk/ios/message/sending-messages/upload-files-and-track-progress"
+          ]
+        },
+        "/sdk/ios/message/receiving-messages/receive-messages",
+        {
+          "id": "message/retrieving-messages",
+          "title": "Retrieving messages",
+          "children": [
+            "/sdk/ios/message/retrieving-messages/retrieve-message-history",
+            "/sdk/ios/message/retrieving-messages/locate-messages-by-id"
+          ]
+        },
+        "/sdk/ios/message/searching-messages/search-messages",
+        {
+          "id": "message/composing-messages",
+          "title": "Composing messages",
+          "children": [
+            "/sdk/ios/message/composing-messages/custom-message-and-extra-data",
+            "/sdk/ios/message/composing-messages/mention-users-in-a-message",
+            "/sdk/ios/message/composing-messages/manage-typing-status"
+          ]
+        },
+        {
+          "id": "message/managing-messages",
+          "title": "Managing messages",
+          "children": [
+            "/sdk/ios/message/managing-messages/forward-or-merge-a-message",
+            "/sdk/ios/message/managing-messages/delete-a-message",
+            "/sdk/ios/message/managing-messages/revoke-a-message",
+            "/sdk/ios/message/managing-messages/insert-a-local-message",
+            "/sdk/ios/message/managing-messages/clear-message-history"
+          ]
+        },
+        "/sdk/ios/message/managing-read-status/manage-message-read-receipts"
+      ]
+    },
+    {
+      "path": "/sdk/ios/events/overview-events",
+      "navigationTitle": "Events"
+    },
+    "/sdk/ios/logger"
+  ]
+}

@@ -1,5 +1,5 @@
 import auditData from '../../data/structure/wasm-content-audit.json' with { type: 'json' };
-import routeData from '../generated/routes.json' with { type: 'json' };
+import sidebarData from '../../data/structure/wasm-sidebar.json' with { type: 'json' };
 
 export type ReviewLocale = 'en' | 'zh';
 
@@ -12,9 +12,7 @@ type ReviewStatus =
   | 'example-verified'
   | 'published';
 
-type WasmLocaleState = {
-  reviewStatus: ReviewStatus;
-};
+type WasmLocaleState = { reviewStatus: ReviewStatus };
 
 export type WasmAuditPage = {
   currentPath: string;
@@ -24,19 +22,15 @@ export type WasmAuditPage = {
 };
 
 export function createWasmPublicationLookup(pages: WasmAuditPage[], activePaths: string[]) {
-  const pageByPath = new Map(
-    pages.map((page) => [normalizePath(page.currentPath), page] as const),
-  );
+  const pageByPath = new Map(pages.map((page) => [normalizePath(page.currentPath), page] as const));
   const activePathSet = new Set(activePaths.map(normalizePath));
 
   function getPage(path: string): WasmAuditPage | undefined {
     return pageByPath.get(normalizePath(path));
   }
-
   function isRoute(path: string): boolean {
     return activePathSet.has(normalizePath(path));
   }
-
   function isPublished(path: string, locale: ReviewLocale): boolean {
     return getPage(path)?.locales[locale]?.reviewStatus === 'published';
   }
@@ -53,9 +47,7 @@ export function createWasmPublicationLookup(pages: WasmAuditPage[], activePaths:
 
 const publicationLookup = createWasmPublicationLookup(
   auditData.pages as WasmAuditPage[],
-  routeData
-    .filter((route) => route.contextKey === 'chat/sdk/wasm')
-    .map((route) => route.path),
+  flattenSidebarPaths(sidebarData.nodes),
 );
 
 export const wasmPendingReviewBody = [
@@ -77,28 +69,21 @@ export function createWasmPendingReviewContent({
 }): { body: string; description: string; sourcePath: string; title: string } | undefined {
   const normalizedPath = normalizePath(path);
   if (!isWasmRoute(normalizedPath)) return undefined;
-  return {
-    body: wasmPendingReviewBody,
-    description,
-    sourcePath: normalizedPath,
-    title,
-  };
+  return { body: wasmPendingReviewBody, description, sourcePath: normalizedPath, title };
 }
 
-export function getWasmAuditPage(path: string): WasmAuditPage | undefined {
-  return publicationLookup.getWasmAuditPage(path);
-}
+export const getWasmAuditPage = publicationLookup.getWasmAuditPage;
+export const isWasmRoute = publicationLookup.isWasmRoute;
+export const isWasmLocalePublished = publicationLookup.isWasmLocalePublished;
+export const getPublishedWasmLocales = publicationLookup.getPublishedWasmLocales;
 
-export function isWasmRoute(path: string): boolean {
-  return publicationLookup.isWasmRoute(path);
-}
-
-export function isWasmLocalePublished(path: string, locale: ReviewLocale): boolean {
-  return publicationLookup.isWasmLocalePublished(path, locale);
-}
-
-export function getPublishedWasmLocales(path: string): ReviewLocale[] {
-  return publicationLookup.getPublishedWasmLocales(path);
+function flattenSidebarPaths(nodes: unknown[]): string[] {
+  return nodes.flatMap((node) => {
+    if (typeof node === 'string') return [node];
+    const entry = node as { path?: string; children?: unknown[] };
+    if (entry.path) return [entry.path];
+    return flattenSidebarPaths(entry.children ?? []);
+  });
 }
 
 function normalizePath(path: string): string {

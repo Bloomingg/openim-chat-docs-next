@@ -1,0 +1,19 @@
+---
+title: '隐藏会话'
+description: '从当前账号会话列表隐藏入口，不删除关系或群组。'
+sourcePath: '/sdk/ios/conversation/managing-conversations/hide-a-conversation'
+---
+
+`hideConversation:onSuccess:onFailure:` 只隐藏当前登录用户的会话入口，不会删除单聊关系、退出群组或影响其他用户。
+
+```objc
+[[OIMManager manager] hideConversation:conversationID
+                              onSuccess:nil
+                              onFailure:nil];
+```
+
+该方法适合临时从聊天列表移除会话入口。收到新消息或完成重新同步后，隐藏的会话可能再次出现。
+
+成功 callback 表示隐藏请求完成。调用端可以立即从当前列表移除对应 `conversationID`，后续通过 `onConversationChanged:` 幂等合并变化，必要时重新分页查询校准。完整 delegate 见[获取会话列表](/sdk/ios/conversation/retrieving-conversations/retrieve-conversation-list)。
+
+需要隐藏当前账号的所有会话时，使用[删除或清空会话](/sdk/ios/conversation/managing-conversations/delete-or-clear-conversation)中的账号级操作；该操作应经过明确确认，不要放在单条会话菜单中。
