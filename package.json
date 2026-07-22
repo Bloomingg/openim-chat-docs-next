@@ -64,15 +64,15 @@
     "zod": "4.1.12"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "4.3.1",
-    "@types/mdx": "2.0.13",
-    "@types/node": "22.15.0",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/mdx": "2.0.14",
+    "@types/node": "26.1.1",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
-    "eslint": "9.39.1",
-    "eslint-config-next": "16.2.9",
-    "prettier": "3.6.2",
-    "tailwindcss": "4.3.1",
-    "typescript": "5.9.3"
+    "eslint": "10.7.0",
+    "eslint-config-next": "16.2.11",
+    "prettier": "3.9.6",
+    "tailwindcss": "4.3.3",
+    "typescript": "7.0.2"
   }
 }
