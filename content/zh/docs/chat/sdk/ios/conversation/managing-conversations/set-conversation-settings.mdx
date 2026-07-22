@@ -60,7 +60,25 @@ NSString *ex = @"{\"category\":\"work\"}";
 
 `ex` 是完整字符串值，SDK 不会替应用合并 JSON。更新前应解析并保留其他业务方拥有的字段。
 
-固定版本还公开 `setConversation:req:onSuccess:onFailure:`，其 `req` 类型为 `NSDictionary`；优先使用上述类型明确的 selector。固定版本没有公开设置 `isMarked`、`remark`、`isMsgDestruct` 或 `msgDestructTime` 的 Objective-C 属性或专用 selector。
+## 设置定时删除
+
+`isMsgDestruct` 控制定时删除是否启用，`msgDestructTime` 设置删除周期。两项分别调用，应用需要同时保存界面中的开关与周期状态；周期的具体计时与服务端策略应由产品配置和实际部署共同确认。
+
+```objc
+[[OIMManager manager] setConversationIsMsgDestruct:conversationID
+                                     isMsgDestruct:YES
+                                         onSuccess:nil
+                                         onFailure:nil];
+
+[[OIMManager manager] setConversationMsgDestructTime:conversationID
+                                     msgDestructTime:destructTime
+                                         onSuccess:nil
+                                         onFailure:nil];
+```
+
+后续会话快照可从 `OIMConversationInfo.isMsgDestruct` 和 `OIMConversationInfo.msgDestructTime` 读取当前值。不要把定时删除与阅后即焚混为一项：`isPrivateChat`、`burnDuration` 描述私聊阅后即焚，`isMsgDestruct`、`msgDestructTime` 描述会话消息的周期删除设置。
+
+固定版本还公开 `setConversation:req:onSuccess:onFailure:`，其 `req` 类型为 `NSDictionary`；优先使用上述类型明确的 selector。`isMarked` 和 `remark` 没有对应的高阶 Objective-C 专用 selector，不应从其他平台直接映射。
 
 ## 调用后的状态变化
 

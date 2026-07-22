@@ -53,7 +53,7 @@ GetGroupApplicationUnhandledCountReq *request =
     }];
 ```
 
-固定 iOS 版本没有 WASM 的群申请角标读取、清除和删除申请记录 selector，不要在 iOS 页面调用这些方法。
+固定 iOS SDK 通过上述 selector 读取未处理数量，但没有单独“清除角标”的高阶 selector。产品可在用户查看列表后更新本地角标基准，再以新的 `time` 重新查询；不要把本地清零描述为服务端已经修改申请状态。
 
 ## 同意或拒绝
 
@@ -78,6 +78,27 @@ GetGroupApplicationUnhandledCountReq *request =
 ```
 
 成功 callback 表示处理请求完成，不应直接伪造 `OIMGroupMemberInfo`。
+
+## 删除入群申请记录
+
+`deleteGroupRequests:onSuccess:onFailure:` 接收 `DeleteGroupRequest` 数组。每项使用 `groupID` 和申请方 `fromUserID` 定位记录；不要传审核人 ID，也不要用当前数组位置作为删除标识。
+
+```objc
+DeleteGroupRequest *deleteRequest =
+    [[DeleteGroupRequest alloc] initWithGroupID:application.groupID
+                                     fromUserID:application.userID];
+
+[[OIMManager manager] deleteGroupRequests:@[deleteRequest]
+                                onSuccess:^(NSString * _Nullable data) {
+    [self removeApplicationForGroupID:application.groupID
+                           fromUserID:application.userID];
+}
+                                onFailure:^(NSInteger code, NSString * _Nullable message) {
+    [self showErrorCode:code message:message ?: @"删除入群申请失败"];
+}];
+```
+
+成功表示删除请求完成，不等于成员关系发生变化。其他客户端通过 `onGroupApplicationDeleted:` 移除相同 `groupID:fromUserID` 的申请；若删除影响当前分页边界或未处理数量，应重新读取第一页和数量快照。
 
 ## 保持申请列表同步
 

@@ -1223,6 +1223,15 @@
                 }
               ],
               "minIndex": 19
+            },
+            {
+              "id": "conversation/managing-conversation-groups/manage-conversation-groups",
+              "segment": "manage-conversation-groups",
+              "title": "Manage conversation groups",
+              "href": "/sdk/ios/conversation/managing-conversation-groups/manage-conversation-groups",
+              "type": "page",
+              "children": [],
+              "minIndex": 24
             }
           ],
           "minIndex": 16
@@ -1241,7 +1250,7 @@
               "href": "/sdk/ios/group/overview-group",
               "type": "page",
               "children": [],
-              "minIndex": 24
+              "minIndex": 25
             },
             {
               "id": "group/creating-and-updating-groups/create-or-update-a-group",
@@ -1250,7 +1259,7 @@
               "href": "/sdk/ios/group/creating-and-updating-groups/create-or-update-a-group",
               "type": "page",
               "children": [],
-              "minIndex": 25
+              "minIndex": 26
             },
             {
               "id": "group/retrieving-groups/retrieve-and-search-groups",
@@ -1259,7 +1268,7 @@
               "href": "/sdk/ios/group/retrieving-groups/retrieve-and-search-groups",
               "type": "page",
               "children": [],
-              "minIndex": 26
+              "minIndex": 27
             },
             {
               "id": "group/joining-and-leaving-groups/join-leave-or-dismiss-a-group",
@@ -1268,7 +1277,7 @@
               "href": "/sdk/ios/group/joining-and-leaving-groups/join-leave-or-dismiss-a-group",
               "type": "page",
               "children": [],
-              "minIndex": 27
+              "minIndex": 28
             },
             {
               "id": "group/managing-group-applications/manage-group-applications",
@@ -1277,7 +1286,7 @@
               "href": "/sdk/ios/group/managing-group-applications/manage-group-applications",
               "type": "page",
               "children": [],
-              "minIndex": 28
+              "minIndex": 29
             },
             {
               "id": "group/retrieving-group-members/retrieve-group-members",
@@ -1286,7 +1295,7 @@
               "href": "/sdk/ios/group/retrieving-group-members/retrieve-group-members",
               "type": "page",
               "children": [],
-              "minIndex": 29
+              "minIndex": 30
             },
             {
               "id": "group/managing-group-members",
@@ -1302,7 +1311,7 @@
                   "href": "/sdk/ios/group/managing-group-members/invite-or-remove-group-members",
                   "type": "page",
                   "children": [],
-                  "minIndex": 30
+                  "minIndex": 31
                 },
                 {
                   "id": "group/managing-group-members/update-group-member-info",
@@ -1311,7 +1320,7 @@
                   "href": "/sdk/ios/group/managing-group-members/update-group-member-info",
                   "type": "page",
                   "children": [],
-                  "minIndex": 31
+                  "minIndex": 32
                 },
                 {
                   "id": "group/managing-group-members/transfer-group-owner",
@@ -1320,10 +1329,10 @@
                   "href": "/sdk/ios/group/managing-group-members/transfer-group-owner",
                   "type": "page",
                   "children": [],
-                  "minIndex": 32
+                  "minIndex": 33
                 }
               ],
-              "minIndex": 30
+              "minIndex": 31
             },
             {
               "id": "group/moderating-groups/mute-a-group-or-member",
@@ -1332,10 +1341,10 @@
               "href": "/sdk/ios/group/moderating-groups/mute-a-group-or-member",
               "type": "page",
               "children": [],
-              "minIndex": 33
+              "minIndex": 34
             }
           ],
-          "minIndex": 24
+          "minIndex": 25
         },
         {
           "id": "message",
@@ -1351,7 +1360,7 @@
               "href": "/sdk/ios/message/overview-message",
               "type": "page",
               "children": [],
-              "minIndex": 34
+              "minIndex": 35
             },
             {
               "id": "message/sending-messages",
@@ -1367,7 +1376,7 @@
                   "href": "/sdk/ios/message/sending-messages/send-a-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 35
+                  "minIndex": 36
                 },
                 {
                   "id": "message/sending-messages/create-media-and-rich-messages",
@@ -1376,7 +1385,7 @@
                   "href": "/sdk/ios/message/sending-messages/create-media-and-rich-messages",
                   "type": "page",
                   "children": [],
-                  "minIndex": 36
+                  "minIndex": 37
                 },
                 {
                   "id": "message/sending-messages/upload-files-and-track-progress",
@@ -1385,10 +1394,10 @@
                   "href": "/sdk/ios/message/sending-messages/upload-files-and-track-progress",
                   "type": "page",
                   "children": [],
-                  "minIndex": 37
+                  "minIndex": 38
                 }
               ],
-              "minIndex": 35
+              "minIndex": 36
             },
             {
               "id": "message/receiving-messages/receive-messages",
@@ -1397,7 +1406,7 @@
               "href": "/sdk/ios/message/receiving-messages/receive-messages",
               "type": "page",
               "children": [],
-              "minIndex": 38
+              "minIndex": 39
             },
             {
               "id": "message/retrieving-messages",
@@ -1413,7 +1422,7 @@
                   "href": "/sdk/ios/message/retrieving-messages/retrieve-message-history",
                   "type": "page",
                   "children": [],
-                  "minIndex": 39
+                  "minIndex": 40
                 },
                 {
                   "id": "message/retrieving-messages/locate-messages-by-id",
@@ -1422,10 +1431,10 @@
                   "href": "/sdk/ios/message/retrieving-messages/locate-messages-by-id",
                   "type": "page",
                   "children": [],
-                  "minIndex": 40
+                  "minIndex": 41
                 }
               ],
-              "minIndex": 39
+              "minIndex": 40
             },
             {
               "id": "message/searching-messages/search-messages",
@@ -1434,7 +1443,7 @@
               "href": "/sdk/ios/message/searching-messages/search-messages",
               "type": "page",
               "children": [],
-              "minIndex": 41
+              "minIndex": 42
             },
             {
               "id": "message/composing-messages",
@@ -1450,7 +1459,7 @@
                   "href": "/sdk/ios/message/composing-messages/custom-message-and-extra-data",
                   "type": "page",
                   "children": [],
-                  "minIndex": 42
+                  "minIndex": 43
                 },
                 {
                   "id": "message/composing-messages/mention-users-in-a-message",
@@ -1459,7 +1468,7 @@
                   "href": "/sdk/ios/message/composing-messages/mention-users-in-a-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 43
+                  "minIndex": 44
                 },
                 {
                   "id": "message/composing-messages/manage-typing-status",
@@ -1468,10 +1477,19 @@
                   "href": "/sdk/ios/message/composing-messages/manage-typing-status",
                   "type": "page",
                   "children": [],
-                  "minIndex": 44
+                  "minIndex": 45
+                },
+                {
+                  "id": "message/composing-messages/transcribe-audio",
+                  "segment": "transcribe-audio",
+                  "title": "Transcribe audio",
+                  "href": "/sdk/ios/message/composing-messages/transcribe-audio",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 46
                 }
               ],
-              "minIndex": 42
+              "minIndex": 43
             },
             {
               "id": "message/managing-messages",
@@ -1487,7 +1505,7 @@
                   "href": "/sdk/ios/message/managing-messages/forward-or-merge-a-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 45
+                  "minIndex": 47
                 },
                 {
                   "id": "message/managing-messages/delete-a-message",
@@ -1496,7 +1514,7 @@
                   "href": "/sdk/ios/message/managing-messages/delete-a-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 46
+                  "minIndex": 48
                 },
                 {
                   "id": "message/managing-messages/revoke-a-message",
@@ -1505,7 +1523,25 @@
                   "href": "/sdk/ios/message/managing-messages/revoke-a-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 47
+                  "minIndex": 49
+                },
+                {
+                  "id": "message/managing-messages/modify-a-message",
+                  "segment": "modify-a-message",
+                  "title": "Modify a message",
+                  "href": "/sdk/ios/message/managing-messages/modify-a-message",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 50
+                },
+                {
+                  "id": "message/managing-messages/pin-conversation-messages",
+                  "segment": "pin-conversation-messages",
+                  "title": "Pin conversation messages",
+                  "href": "/sdk/ios/message/managing-messages/pin-conversation-messages",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 51
                 },
                 {
                   "id": "message/managing-messages/insert-a-local-message",
@@ -1514,7 +1550,7 @@
                   "href": "/sdk/ios/message/managing-messages/insert-a-local-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 48
+                  "minIndex": 52
                 },
                 {
                   "id": "message/managing-messages/clear-message-history",
@@ -1523,10 +1559,10 @@
                   "href": "/sdk/ios/message/managing-messages/clear-message-history",
                   "type": "page",
                   "children": [],
-                  "minIndex": 49
+                  "minIndex": 53
                 }
               ],
-              "minIndex": 45
+              "minIndex": 47
             },
             {
               "id": "message/managing-read-status/manage-message-read-receipts",
@@ -1535,10 +1571,56 @@
               "href": "/sdk/ios/message/managing-read-status/manage-message-read-receipts",
               "type": "page",
               "children": [],
-              "minIndex": 50
+              "minIndex": 54
             }
           ],
-          "minIndex": 34
+          "minIndex": 35
+        },
+        {
+          "id": "calling",
+          "segment": "calling",
+          "title": "Calling",
+          "href": null,
+          "type": "folder",
+          "children": [
+            {
+              "id": "calling/overview-calling",
+              "segment": "overview-calling",
+              "title": "Calling overview",
+              "href": "/sdk/ios/calling/overview-calling",
+              "type": "page",
+              "children": [],
+              "minIndex": 55
+            },
+            {
+              "id": "calling/managing-calls/start-or-handle-a-call",
+              "segment": "start-or-handle-a-call",
+              "title": "Start or handle a call",
+              "href": "/sdk/ios/calling/managing-calls/start-or-handle-a-call",
+              "type": "page",
+              "children": [],
+              "minIndex": 56
+            },
+            {
+              "id": "calling/retrieving-call-information/retrieve-call-information",
+              "segment": "retrieve-call-information",
+              "title": "Retrieve call information",
+              "href": "/sdk/ios/calling/retrieving-call-information/retrieve-call-information",
+              "type": "page",
+              "children": [],
+              "minIndex": 57
+            },
+            {
+              "id": "calling/sending-custom-signals/send-a-custom-signal",
+              "segment": "send-a-custom-signal",
+              "title": "Send a custom signal",
+              "href": "/sdk/ios/calling/sending-custom-signals/send-a-custom-signal",
+              "type": "page",
+              "children": [],
+              "minIndex": 58
+            }
+          ],
+          "minIndex": 55
         },
         {
           "id": "events/overview-events",
@@ -1547,7 +1629,7 @@
           "href": "/sdk/ios/events/overview-events",
           "type": "page",
           "children": [],
-          "minIndex": 51,
+          "minIndex": 59,
           "navigationTitle": "Events"
         },
         {
@@ -1557,10 +1639,10 @@
           "href": "/sdk/ios/logger",
           "type": "page",
           "children": [],
-          "minIndex": 52
+          "minIndex": 60
         }
       ],
-      "pageCount": 52,
+      "pageCount": 60,
       "sidebarExpansion": "active-path"
     },
     {
@@ -3559,6 +3641,15 @@
                 }
               ],
               "minIndex": 278
+            },
+            {
+              "id": "conversation/managing-conversation-groups/manage-conversation-groups",
+              "segment": "manage-conversation-groups",
+              "title": "Manage conversation groups",
+              "href": "/sdk/flutter/conversation/managing-conversation-groups/manage-conversation-groups",
+              "type": "page",
+              "children": [],
+              "minIndex": 283
             }
           ],
           "minIndex": 275
@@ -3577,7 +3668,7 @@
               "href": "/sdk/flutter/group/overview-group",
               "type": "page",
               "children": [],
-              "minIndex": 283
+              "minIndex": 284
             },
             {
               "id": "group/creating-and-updating-groups/create-or-update-a-group",
@@ -3586,7 +3677,7 @@
               "href": "/sdk/flutter/group/creating-and-updating-groups/create-or-update-a-group",
               "type": "page",
               "children": [],
-              "minIndex": 284
+              "minIndex": 285
             },
             {
               "id": "group/retrieving-groups/retrieve-and-search-groups",
@@ -3595,7 +3686,7 @@
               "href": "/sdk/flutter/group/retrieving-groups/retrieve-and-search-groups",
               "type": "page",
               "children": [],
-              "minIndex": 285
+              "minIndex": 286
             },
             {
               "id": "group/joining-and-leaving-groups/join-leave-or-dismiss-a-group",
@@ -3604,7 +3695,7 @@
               "href": "/sdk/flutter/group/joining-and-leaving-groups/join-leave-or-dismiss-a-group",
               "type": "page",
               "children": [],
-              "minIndex": 286
+              "minIndex": 287
             },
             {
               "id": "group/managing-group-applications/manage-group-applications",
@@ -3613,7 +3704,7 @@
               "href": "/sdk/flutter/group/managing-group-applications/manage-group-applications",
               "type": "page",
               "children": [],
-              "minIndex": 287
+              "minIndex": 288
             },
             {
               "id": "group/retrieving-group-members/retrieve-group-members",
@@ -3622,7 +3713,7 @@
               "href": "/sdk/flutter/group/retrieving-group-members/retrieve-group-members",
               "type": "page",
               "children": [],
-              "minIndex": 288
+              "minIndex": 289
             },
             {
               "id": "group/managing-group-members",
@@ -3638,7 +3729,7 @@
                   "href": "/sdk/flutter/group/managing-group-members/invite-or-remove-group-members",
                   "type": "page",
                   "children": [],
-                  "minIndex": 289
+                  "minIndex": 290
                 },
                 {
                   "id": "group/managing-group-members/update-group-member-info",
@@ -3647,7 +3738,7 @@
                   "href": "/sdk/flutter/group/managing-group-members/update-group-member-info",
                   "type": "page",
                   "children": [],
-                  "minIndex": 290
+                  "minIndex": 291
                 },
                 {
                   "id": "group/managing-group-members/transfer-group-owner",
@@ -3656,10 +3747,10 @@
                   "href": "/sdk/flutter/group/managing-group-members/transfer-group-owner",
                   "type": "page",
                   "children": [],
-                  "minIndex": 291
+                  "minIndex": 292
                 }
               ],
-              "minIndex": 289
+              "minIndex": 290
             },
             {
               "id": "group/moderating-groups/mute-a-group-or-member",
@@ -3668,10 +3759,10 @@
               "href": "/sdk/flutter/group/moderating-groups/mute-a-group-or-member",
               "type": "page",
               "children": [],
-              "minIndex": 292
+              "minIndex": 293
             }
           ],
-          "minIndex": 283
+          "minIndex": 284
         },
         {
           "id": "message",
@@ -3687,7 +3778,7 @@
               "href": "/sdk/flutter/message/overview-message",
               "type": "page",
               "children": [],
-              "minIndex": 293
+              "minIndex": 294
             },
             {
               "id": "message/sending-messages",
@@ -3703,7 +3794,7 @@
                   "href": "/sdk/flutter/message/sending-messages/send-a-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 294
+                  "minIndex": 295
                 },
                 {
                   "id": "message/sending-messages/create-media-and-rich-messages",
@@ -3712,7 +3803,7 @@
                   "href": "/sdk/flutter/message/sending-messages/create-media-and-rich-messages",
                   "type": "page",
                   "children": [],
-                  "minIndex": 295
+                  "minIndex": 296
                 },
                 {
                   "id": "message/sending-messages/upload-files-and-track-progress",
@@ -3721,10 +3812,10 @@
                   "href": "/sdk/flutter/message/sending-messages/upload-files-and-track-progress",
                   "type": "page",
                   "children": [],
-                  "minIndex": 296
+                  "minIndex": 297
                 }
               ],
-              "minIndex": 294
+              "minIndex": 295
             },
             {
               "id": "message/receiving-messages/receive-messages",
@@ -3733,7 +3824,7 @@
               "href": "/sdk/flutter/message/receiving-messages/receive-messages",
               "type": "page",
               "children": [],
-              "minIndex": 297
+              "minIndex": 298
             },
             {
               "id": "message/retrieving-messages",
@@ -3749,7 +3840,7 @@
                   "href": "/sdk/flutter/message/retrieving-messages/retrieve-message-history",
                   "type": "page",
                   "children": [],
-                  "minIndex": 298
+                  "minIndex": 299
                 },
                 {
                   "id": "message/retrieving-messages/locate-messages-by-id",
@@ -3758,10 +3849,10 @@
                   "href": "/sdk/flutter/message/retrieving-messages/locate-messages-by-id",
                   "type": "page",
                   "children": [],
-                  "minIndex": 299
+                  "minIndex": 300
                 }
               ],
-              "minIndex": 298
+              "minIndex": 299
             },
             {
               "id": "message/searching-messages/search-messages",
@@ -3770,7 +3861,7 @@
               "href": "/sdk/flutter/message/searching-messages/search-messages",
               "type": "page",
               "children": [],
-              "minIndex": 300
+              "minIndex": 301
             },
             {
               "id": "message/composing-messages",
@@ -3786,7 +3877,7 @@
                   "href": "/sdk/flutter/message/composing-messages/custom-message-and-extra-data",
                   "type": "page",
                   "children": [],
-                  "minIndex": 301
+                  "minIndex": 302
                 },
                 {
                   "id": "message/composing-messages/mention-users-in-a-message",
@@ -3795,7 +3886,7 @@
                   "href": "/sdk/flutter/message/composing-messages/mention-users-in-a-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 302
+                  "minIndex": 303
                 },
                 {
                   "id": "message/composing-messages/manage-typing-status",
@@ -3804,10 +3895,19 @@
                   "href": "/sdk/flutter/message/composing-messages/manage-typing-status",
                   "type": "page",
                   "children": [],
-                  "minIndex": 303
+                  "minIndex": 304
+                },
+                {
+                  "id": "message/composing-messages/transcribe-audio",
+                  "segment": "transcribe-audio",
+                  "title": "Transcribe audio",
+                  "href": "/sdk/flutter/message/composing-messages/transcribe-audio",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 305
                 }
               ],
-              "minIndex": 301
+              "minIndex": 302
             },
             {
               "id": "message/managing-messages",
@@ -3823,7 +3923,7 @@
                   "href": "/sdk/flutter/message/managing-messages/forward-or-merge-a-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 304
+                  "minIndex": 306
                 },
                 {
                   "id": "message/managing-messages/delete-a-message",
@@ -3832,7 +3932,7 @@
                   "href": "/sdk/flutter/message/managing-messages/delete-a-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 305
+                  "minIndex": 307
                 },
                 {
                   "id": "message/managing-messages/revoke-a-message",
@@ -3841,7 +3941,25 @@
                   "href": "/sdk/flutter/message/managing-messages/revoke-a-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 306
+                  "minIndex": 308
+                },
+                {
+                  "id": "message/managing-messages/modify-a-message",
+                  "segment": "modify-a-message",
+                  "title": "Modify a message",
+                  "href": "/sdk/flutter/message/managing-messages/modify-a-message",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 309
+                },
+                {
+                  "id": "message/managing-messages/pin-conversation-messages",
+                  "segment": "pin-conversation-messages",
+                  "title": "Pin conversation messages",
+                  "href": "/sdk/flutter/message/managing-messages/pin-conversation-messages",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 310
                 },
                 {
                   "id": "message/managing-messages/insert-a-local-message",
@@ -3850,7 +3968,7 @@
                   "href": "/sdk/flutter/message/managing-messages/insert-a-local-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 307
+                  "minIndex": 311
                 },
                 {
                   "id": "message/managing-messages/clear-message-history",
@@ -3859,10 +3977,10 @@
                   "href": "/sdk/flutter/message/managing-messages/clear-message-history",
                   "type": "page",
                   "children": [],
-                  "minIndex": 308
+                  "minIndex": 312
                 }
               ],
-              "minIndex": 304
+              "minIndex": 306
             },
             {
               "id": "message/managing-read-status/manage-message-read-receipts",
@@ -3871,10 +3989,56 @@
               "href": "/sdk/flutter/message/managing-read-status/manage-message-read-receipts",
               "type": "page",
               "children": [],
-              "minIndex": 309
+              "minIndex": 313
             }
           ],
-          "minIndex": 293
+          "minIndex": 294
+        },
+        {
+          "id": "calling",
+          "segment": "calling",
+          "title": "Calling",
+          "href": null,
+          "type": "folder",
+          "children": [
+            {
+              "id": "calling/overview-calling",
+              "segment": "overview-calling",
+              "title": "Calling overview",
+              "href": "/sdk/flutter/calling/overview-calling",
+              "type": "page",
+              "children": [],
+              "minIndex": 314
+            },
+            {
+              "id": "calling/managing-calls/start-or-handle-a-call",
+              "segment": "start-or-handle-a-call",
+              "title": "Start or handle a call",
+              "href": "/sdk/flutter/calling/managing-calls/start-or-handle-a-call",
+              "type": "page",
+              "children": [],
+              "minIndex": 315
+            },
+            {
+              "id": "calling/retrieving-call-information/retrieve-call-information",
+              "segment": "retrieve-call-information",
+              "title": "Retrieve call information",
+              "href": "/sdk/flutter/calling/retrieving-call-information/retrieve-call-information",
+              "type": "page",
+              "children": [],
+              "minIndex": 316
+            },
+            {
+              "id": "calling/sending-custom-signals/send-a-custom-signal",
+              "segment": "send-a-custom-signal",
+              "title": "Send a custom signal",
+              "href": "/sdk/flutter/calling/sending-custom-signals/send-a-custom-signal",
+              "type": "page",
+              "children": [],
+              "minIndex": 317
+            }
+          ],
+          "minIndex": 314
         },
         {
           "id": "events/overview-events",
@@ -3883,7 +4047,7 @@
           "href": "/sdk/flutter/events/overview-events",
           "type": "page",
           "children": [],
-          "minIndex": 310,
+          "minIndex": 318,
           "navigationTitle": "Events"
         },
         {
@@ -3893,10 +4057,10 @@
           "href": "/sdk/flutter/logger",
           "type": "page",
           "children": [],
-          "minIndex": 311
+          "minIndex": 319
         }
       ],
-      "pageCount": 52,
+      "pageCount": 60,
       "sidebarExpansion": "active-path"
     },
     {
@@ -4650,7 +4814,8 @@
           "title": "OpenIM SDK for Electron",
           "href": "/sdk/electron/overview",
           "type": "page",
-          "children": []
+          "children": [],
+          "minIndex": 517
         },
         {
           "id": "getting-started",
@@ -4664,9 +4829,11 @@
               "title": "Authenticate and init",
               "href": "/sdk/electron/getting-started/authenticate-and-init",
               "type": "page",
-              "children": []
+              "children": [],
+              "minIndex": 1702
             }
-          ]
+          ],
+          "minIndex": 1702
         },
         {
           "id": "message",
@@ -4680,9 +4847,11 @@
               "title": "Create media from full path",
               "href": "/sdk/electron/message/create-media-from-full-path",
               "type": "page",
-              "children": []
+              "children": [],
+              "minIndex": 1703
             }
-          ]
+          ],
+          "minIndex": 1703
         },
         {
           "id": "logger",
@@ -4696,9 +4865,11 @@
               "title": "Upload logs",
               "href": "/sdk/electron/logger/upload-logs",
               "type": "page",
-              "children": []
+              "children": [],
+              "minIndex": 1704
             }
-          ]
+          ],
+          "minIndex": 1704
         }
       ],
       "pageCount": 4

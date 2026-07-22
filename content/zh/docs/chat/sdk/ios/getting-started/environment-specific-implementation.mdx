@@ -55,7 +55,8 @@ BOOL accepted = [[OIMManager manager]
 - 不要在每个 View Controller 中重复初始化或登录；由应用级会话对象持有状态。
 - 页面出现和消失只负责添加、移除该页面拥有的业务 delegate，不应销毁 SDK。
 - 用户主动退出时调用 `logoutWithOnSuccess:onFailure:`；应用最终不再使用 SDK 时才调用 `unInitSDK`。
-- iOS 固定版没有 WASM 的 `networkStatusChanged()` 和 `setAppBackgroundStatus()` 公共 selector，不能在文档中套用浏览器上报方式。
+- `OIMManager` 已监听 `UIApplicationDidEnterBackgroundNotification`、`UIApplicationWillEnterForegroundNotification` 和网络可达性变化，并在内部调用 `Open_im_sdkSetAppBackgroundStatus` 与 `Open_im_sdkNetworkStatusChanged`。
+- 业务层不需要重复监听同一组系统事件，也不应再次手动调用 Core 函数；重复上报可能让连接恢复与前后台状态难以排查。应用只需按自身产品逻辑管理页面任务、系统权限和连接状态展示。
 
 ## 验证与排查
 

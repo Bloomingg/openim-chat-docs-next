@@ -52,6 +52,12 @@ sourcePath: '/sdk/ios/conversation/overview-conversation'
 - [隐藏会话](/sdk/ios/conversation/managing-conversations/hide-a-conversation)
 - [删除或清空会话](/sdk/ios/conversation/managing-conversations/delete-or-clear-conversation)
 
+## 管理会话分组
+
+[管理会话分组](/sdk/ios/conversation/managing-conversation-groups/manage-conversation-groups)用于把多个会话整理到自定义分组，或用筛选条件建立动态分组。分组成员使用 `conversationID`，分组本身使用 `conversationGroupID`；它只改变当前账号的会话组织方式，不会创建聊天群组，也不会改变 `groupID`、群资料或群成员关系。
+
+iOS enterprise SDK 通过随 SDK 发布的 OpenIMCore JSON 接口提供该能力，并通过单一会话分组 listener 合并增量。查询结果建立分组快照，分组事件按 `conversationGroupID` 更新，成员事件按 `conversationGroupID + conversationID` 更新；完整 API、JSON 字段和监听方式见管理会话分组页。
+
 ## 状态更新
 
 查询方法用于建立页面快照，delegate 用于合并后续变化：

@@ -1314,7 +1314,7 @@
     "navOrder": 764.9
   },
   {
-    "id": 1703,
+    "id": 1923,
     "path": "/sdk/ios/overview",
     "relativePath": "sdk/ios/overview",
     "sourcePath": "/sdk/ios/overview",
@@ -1327,12 +1327,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "overview",
     "status": "draft",
-    "sourceIndex": 906.7,
+    "sourceIndex": 1821,
     "contentFile": "content/docs/chat/sdk/ios/overview.mdx",
     "navOrder": 1
   },
   {
-    "id": 1704,
+    "id": 1924,
     "path": "/sdk/ios/getting-started/before-you-start",
     "relativePath": "sdk/ios/getting-started/before-you-start",
     "sourcePath": "/sdk/ios/getting-started/before-you-start",
@@ -1345,12 +1345,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 907.7,
+    "sourceIndex": 1822,
     "contentFile": "content/docs/chat/sdk/ios/getting-started/before-you-start.mdx",
     "navOrder": 2
   },
   {
-    "id": 1705,
+    "id": 1925,
     "path": "/sdk/ios/getting-started/environment-specific-implementation",
     "relativePath": "sdk/ios/getting-started/environment-specific-implementation",
     "sourcePath": "/sdk/ios/getting-started/environment-specific-implementation",
@@ -1363,12 +1363,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 908.7,
+    "sourceIndex": 1823,
     "contentFile": "content/docs/chat/sdk/ios/getting-started/environment-specific-implementation.mdx",
     "navOrder": 3
   },
   {
-    "id": 1706,
+    "id": 1926,
     "path": "/sdk/ios/getting-started/authenticate-and-manage-session",
     "relativePath": "sdk/ios/getting-started/authenticate-and-manage-session",
     "sourcePath": "/sdk/ios/getting-started/authenticate-and-manage-session",
@@ -1381,12 +1381,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 909.7,
+    "sourceIndex": 1824,
     "contentFile": "content/docs/chat/sdk/ios/getting-started/authenticate-and-manage-session.mdx",
     "navOrder": 4
   },
   {
-    "id": 1707,
+    "id": 1927,
     "path": "/sdk/ios/getting-started/send-first-message",
     "relativePath": "sdk/ios/getting-started/send-first-message",
     "sourcePath": "/sdk/ios/getting-started/send-first-message",
@@ -1399,12 +1399,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 910.7,
+    "sourceIndex": 1825,
     "contentFile": "content/docs/chat/sdk/ios/getting-started/send-first-message.mdx",
     "navOrder": 5
   },
   {
-    "id": 1708,
+    "id": 1928,
     "path": "/sdk/ios/user/overview-user",
     "relativePath": "sdk/ios/user/overview-user",
     "sourcePath": "/sdk/ios/user/overview-user",
@@ -1417,12 +1417,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 911.7,
+    "sourceIndex": 1826,
     "contentFile": "content/docs/chat/sdk/ios/user/overview-user.mdx",
     "navOrder": 6
   },
   {
-    "id": 1709,
+    "id": 1929,
     "path": "/sdk/ios/user/retrieving-users/retrieve-users",
     "relativePath": "sdk/ios/user/retrieving-users/retrieve-users",
     "sourcePath": "/sdk/ios/user/retrieving-users/retrieve-users",
@@ -1435,12 +1435,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 912.7,
+    "sourceIndex": 1827,
     "contentFile": "content/docs/chat/sdk/ios/user/retrieving-users/retrieve-users.mdx",
     "navOrder": 7
   },
   {
-    "id": 1710,
+    "id": 1930,
     "path": "/sdk/ios/user/retrieving-and-updating-user-information/retrieve-and-update-self-profile",
     "relativePath": "sdk/ios/user/retrieving-and-updating-user-information/retrieve-and-update-self-profile",
     "sourcePath": "/sdk/ios/user/retrieving-and-updating-user-information/retrieve-and-update-self-profile",
@@ -1453,12 +1453,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 913.7,
+    "sourceIndex": 1828,
     "contentFile": "content/docs/chat/sdk/ios/user/retrieving-and-updating-user-information/retrieve-and-update-self-profile.mdx",
     "navOrder": 8
   },
   {
-    "id": 1711,
+    "id": 1931,
     "path": "/sdk/ios/user/retrieving-and-updating-user-information/retrieve-the-online-status-of-a-user",
     "relativePath": "sdk/ios/user/retrieving-and-updating-user-information/retrieve-the-online-status-of-a-user",
     "sourcePath": "/sdk/ios/user/retrieving-and-updating-user-information/retrieve-the-online-status-of-a-user",
@@ -1471,12 +1471,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 914.7,
+    "sourceIndex": 1829,
     "contentFile": "content/docs/chat/sdk/ios/user/retrieving-and-updating-user-information/retrieve-the-online-status-of-a-user.mdx",
     "navOrder": 9
   },
   {
-    "id": 1712,
+    "id": 1932,
     "path": "/sdk/ios/user/retrieving-users/retrieve-a-list-of-friends",
     "relativePath": "sdk/ios/user/retrieving-users/retrieve-a-list-of-friends",
     "sourcePath": "/sdk/ios/user/retrieving-users/retrieve-a-list-of-friends",
@@ -1489,12 +1489,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 915.7,
+    "sourceIndex": 1830,
     "contentFile": "content/docs/chat/sdk/ios/user/retrieving-users/retrieve-a-list-of-friends.mdx",
     "navOrder": 10
   },
   {
-    "id": 1713,
+    "id": 1933,
     "path": "/sdk/ios/user/retrieving-users/retrieve-friend-information",
     "relativePath": "sdk/ios/user/retrieving-users/retrieve-friend-information",
     "sourcePath": "/sdk/ios/user/retrieving-users/retrieve-friend-information",
@@ -1507,12 +1507,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 916.7,
+    "sourceIndex": 1831,
     "contentFile": "content/docs/chat/sdk/ios/user/retrieving-users/retrieve-friend-information.mdx",
     "navOrder": 11
   },
   {
-    "id": 1714,
+    "id": 1934,
     "path": "/sdk/ios/user/managing-friends/manage-friend-requests",
     "relativePath": "sdk/ios/user/managing-friends/manage-friend-requests",
     "sourcePath": "/sdk/ios/user/managing-friends/manage-friend-requests",
@@ -1525,12 +1525,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 917.7,
+    "sourceIndex": 1832,
     "contentFile": "content/docs/chat/sdk/ios/user/managing-friends/manage-friend-requests.mdx",
     "navOrder": 12
   },
   {
-    "id": 1715,
+    "id": 1935,
     "path": "/sdk/ios/user/managing-friends/update-or-delete-friends",
     "relativePath": "sdk/ios/user/managing-friends/update-or-delete-friends",
     "sourcePath": "/sdk/ios/user/managing-friends/update-or-delete-friends",
@@ -1543,12 +1543,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 918.7,
+    "sourceIndex": 1833,
     "contentFile": "content/docs/chat/sdk/ios/user/managing-friends/update-or-delete-friends.mdx",
     "navOrder": 13
   },
   {
-    "id": 1716,
+    "id": 1936,
     "path": "/sdk/ios/user/moderating-a-user/retrieve-a-list-of-blocked-users",
     "relativePath": "sdk/ios/user/moderating-a-user/retrieve-a-list-of-blocked-users",
     "sourcePath": "/sdk/ios/user/moderating-a-user/retrieve-a-list-of-blocked-users",
@@ -1561,12 +1561,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 919.7,
+    "sourceIndex": 1834,
     "contentFile": "content/docs/chat/sdk/ios/user/moderating-a-user/retrieve-a-list-of-blocked-users.mdx",
     "navOrder": 14
   },
   {
-    "id": 1717,
+    "id": 1937,
     "path": "/sdk/ios/user/moderating-a-user/block-or-unblock-users",
     "relativePath": "sdk/ios/user/moderating-a-user/block-or-unblock-users",
     "sourcePath": "/sdk/ios/user/moderating-a-user/block-or-unblock-users",
@@ -1579,12 +1579,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 920.7,
+    "sourceIndex": 1835,
     "contentFile": "content/docs/chat/sdk/ios/user/moderating-a-user/block-or-unblock-users.mdx",
     "navOrder": 15
   },
   {
-    "id": 1718,
+    "id": 1938,
     "path": "/sdk/ios/conversation/overview-conversation",
     "relativePath": "sdk/ios/conversation/overview-conversation",
     "sourcePath": "/sdk/ios/conversation/overview-conversation",
@@ -1597,12 +1597,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 921.7,
+    "sourceIndex": 1836,
     "contentFile": "content/docs/chat/sdk/ios/conversation/overview-conversation.mdx",
     "navOrder": 16
   },
   {
-    "id": 1719,
+    "id": 1939,
     "path": "/sdk/ios/conversation/retrieving-conversations/retrieve-a-conversation",
     "relativePath": "sdk/ios/conversation/retrieving-conversations/retrieve-a-conversation",
     "sourcePath": "/sdk/ios/conversation/retrieving-conversations/retrieve-a-conversation",
@@ -1615,12 +1615,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 922.7,
+    "sourceIndex": 1837,
     "contentFile": "content/docs/chat/sdk/ios/conversation/retrieving-conversations/retrieve-a-conversation.mdx",
     "navOrder": 17
   },
   {
-    "id": 1720,
+    "id": 1940,
     "path": "/sdk/ios/conversation/retrieving-conversations/retrieve-conversation-list",
     "relativePath": "sdk/ios/conversation/retrieving-conversations/retrieve-conversation-list",
     "sourcePath": "/sdk/ios/conversation/retrieving-conversations/retrieve-conversation-list",
@@ -1633,12 +1633,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 923.7,
+    "sourceIndex": 1838,
     "contentFile": "content/docs/chat/sdk/ios/conversation/retrieving-conversations/retrieve-conversation-list.mdx",
     "navOrder": 18
   },
   {
-    "id": 1721,
+    "id": 1941,
     "path": "/sdk/ios/conversation/managing-conversations/set-conversation-settings",
     "relativePath": "sdk/ios/conversation/managing-conversations/set-conversation-settings",
     "sourcePath": "/sdk/ios/conversation/managing-conversations/set-conversation-settings",
@@ -1651,12 +1651,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 924.7,
+    "sourceIndex": 1839,
     "contentFile": "content/docs/chat/sdk/ios/conversation/managing-conversations/set-conversation-settings.mdx",
     "navOrder": 19
   },
   {
-    "id": 1722,
+    "id": 1942,
     "path": "/sdk/ios/conversation/managing-conversations/set-conversation-draft",
     "relativePath": "sdk/ios/conversation/managing-conversations/set-conversation-draft",
     "sourcePath": "/sdk/ios/conversation/managing-conversations/set-conversation-draft",
@@ -1669,12 +1669,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 925.7,
+    "sourceIndex": 1840,
     "contentFile": "content/docs/chat/sdk/ios/conversation/managing-conversations/set-conversation-draft.mdx",
     "navOrder": 20
   },
   {
-    "id": 1723,
+    "id": 1943,
     "path": "/sdk/ios/conversation/managing-conversations/manage-read-status",
     "relativePath": "sdk/ios/conversation/managing-conversations/manage-read-status",
     "sourcePath": "/sdk/ios/conversation/managing-conversations/manage-read-status",
@@ -1687,12 +1687,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 926.7,
+    "sourceIndex": 1841,
     "contentFile": "content/docs/chat/sdk/ios/conversation/managing-conversations/manage-read-status.mdx",
     "navOrder": 21
   },
   {
-    "id": 1724,
+    "id": 1944,
     "path": "/sdk/ios/conversation/managing-conversations/hide-a-conversation",
     "relativePath": "sdk/ios/conversation/managing-conversations/hide-a-conversation",
     "sourcePath": "/sdk/ios/conversation/managing-conversations/hide-a-conversation",
@@ -1705,12 +1705,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 927.7,
+    "sourceIndex": 1842,
     "contentFile": "content/docs/chat/sdk/ios/conversation/managing-conversations/hide-a-conversation.mdx",
     "navOrder": 22
   },
   {
-    "id": 1725,
+    "id": 1945,
     "path": "/sdk/ios/conversation/managing-conversations/delete-or-clear-conversation",
     "relativePath": "sdk/ios/conversation/managing-conversations/delete-or-clear-conversation",
     "sourcePath": "/sdk/ios/conversation/managing-conversations/delete-or-clear-conversation",
@@ -1723,12 +1723,30 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 928.7,
+    "sourceIndex": 1843,
     "contentFile": "content/docs/chat/sdk/ios/conversation/managing-conversations/delete-or-clear-conversation.mdx",
     "navOrder": 23
   },
   {
-    "id": 1726,
+    "id": 1946,
+    "path": "/sdk/ios/conversation/managing-conversation-groups/manage-conversation-groups",
+    "relativePath": "sdk/ios/conversation/managing-conversation-groups/manage-conversation-groups",
+    "sourcePath": "/sdk/ios/conversation/managing-conversation-groups/manage-conversation-groups",
+    "title": "Manage conversation groups",
+    "description": "OpenIM iOS SDK guide for Manage conversation groups.",
+    "product": "sdk",
+    "version": "v4",
+    "platform": "ios",
+    "contextKey": "chat/sdk/ios",
+    "contextTitle": "SDKs · iOS · v4",
+    "template": "guide",
+    "status": "draft",
+    "sourceIndex": 1844,
+    "contentFile": "content/docs/chat/sdk/ios/conversation/managing-conversation-groups/manage-conversation-groups.mdx",
+    "navOrder": 24
+  },
+  {
+    "id": 1947,
     "path": "/sdk/ios/group/overview-group",
     "relativePath": "sdk/ios/group/overview-group",
     "sourcePath": "/sdk/ios/group/overview-group",
@@ -1741,12 +1759,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 929.7,
+    "sourceIndex": 1845,
     "contentFile": "content/docs/chat/sdk/ios/group/overview-group.mdx",
-    "navOrder": 24
+    "navOrder": 25
   },
   {
-    "id": 1727,
+    "id": 1948,
     "path": "/sdk/ios/group/creating-and-updating-groups/create-or-update-a-group",
     "relativePath": "sdk/ios/group/creating-and-updating-groups/create-or-update-a-group",
     "sourcePath": "/sdk/ios/group/creating-and-updating-groups/create-or-update-a-group",
@@ -1759,12 +1777,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 930.7,
+    "sourceIndex": 1846,
     "contentFile": "content/docs/chat/sdk/ios/group/creating-and-updating-groups/create-or-update-a-group.mdx",
-    "navOrder": 25
+    "navOrder": 26
   },
   {
-    "id": 1728,
+    "id": 1949,
     "path": "/sdk/ios/group/retrieving-groups/retrieve-and-search-groups",
     "relativePath": "sdk/ios/group/retrieving-groups/retrieve-and-search-groups",
     "sourcePath": "/sdk/ios/group/retrieving-groups/retrieve-and-search-groups",
@@ -1777,12 +1795,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 931.7,
+    "sourceIndex": 1847,
     "contentFile": "content/docs/chat/sdk/ios/group/retrieving-groups/retrieve-and-search-groups.mdx",
-    "navOrder": 26
+    "navOrder": 27
   },
   {
-    "id": 1729,
+    "id": 1950,
     "path": "/sdk/ios/group/joining-and-leaving-groups/join-leave-or-dismiss-a-group",
     "relativePath": "sdk/ios/group/joining-and-leaving-groups/join-leave-or-dismiss-a-group",
     "sourcePath": "/sdk/ios/group/joining-and-leaving-groups/join-leave-or-dismiss-a-group",
@@ -1795,12 +1813,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 932.7,
+    "sourceIndex": 1848,
     "contentFile": "content/docs/chat/sdk/ios/group/joining-and-leaving-groups/join-leave-or-dismiss-a-group.mdx",
-    "navOrder": 27
+    "navOrder": 28
   },
   {
-    "id": 1730,
+    "id": 1951,
     "path": "/sdk/ios/group/managing-group-applications/manage-group-applications",
     "relativePath": "sdk/ios/group/managing-group-applications/manage-group-applications",
     "sourcePath": "/sdk/ios/group/managing-group-applications/manage-group-applications",
@@ -1813,12 +1831,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 933.7,
+    "sourceIndex": 1849,
     "contentFile": "content/docs/chat/sdk/ios/group/managing-group-applications/manage-group-applications.mdx",
-    "navOrder": 28
+    "navOrder": 29
   },
   {
-    "id": 1731,
+    "id": 1952,
     "path": "/sdk/ios/group/retrieving-group-members/retrieve-group-members",
     "relativePath": "sdk/ios/group/retrieving-group-members/retrieve-group-members",
     "sourcePath": "/sdk/ios/group/retrieving-group-members/retrieve-group-members",
@@ -1831,12 +1849,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 934.7,
+    "sourceIndex": 1850,
     "contentFile": "content/docs/chat/sdk/ios/group/retrieving-group-members/retrieve-group-members.mdx",
-    "navOrder": 29
+    "navOrder": 30
   },
   {
-    "id": 1732,
+    "id": 1953,
     "path": "/sdk/ios/group/managing-group-members/invite-or-remove-group-members",
     "relativePath": "sdk/ios/group/managing-group-members/invite-or-remove-group-members",
     "sourcePath": "/sdk/ios/group/managing-group-members/invite-or-remove-group-members",
@@ -1849,12 +1867,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 935.7,
+    "sourceIndex": 1851,
     "contentFile": "content/docs/chat/sdk/ios/group/managing-group-members/invite-or-remove-group-members.mdx",
-    "navOrder": 30
+    "navOrder": 31
   },
   {
-    "id": 1733,
+    "id": 1954,
     "path": "/sdk/ios/group/managing-group-members/update-group-member-info",
     "relativePath": "sdk/ios/group/managing-group-members/update-group-member-info",
     "sourcePath": "/sdk/ios/group/managing-group-members/update-group-member-info",
@@ -1867,12 +1885,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 936.7,
+    "sourceIndex": 1852,
     "contentFile": "content/docs/chat/sdk/ios/group/managing-group-members/update-group-member-info.mdx",
-    "navOrder": 31
+    "navOrder": 32
   },
   {
-    "id": 1734,
+    "id": 1955,
     "path": "/sdk/ios/group/managing-group-members/transfer-group-owner",
     "relativePath": "sdk/ios/group/managing-group-members/transfer-group-owner",
     "sourcePath": "/sdk/ios/group/managing-group-members/transfer-group-owner",
@@ -1885,12 +1903,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 937.7,
+    "sourceIndex": 1853,
     "contentFile": "content/docs/chat/sdk/ios/group/managing-group-members/transfer-group-owner.mdx",
-    "navOrder": 32
+    "navOrder": 33
   },
   {
-    "id": 1735,
+    "id": 1956,
     "path": "/sdk/ios/group/moderating-groups/mute-a-group-or-member",
     "relativePath": "sdk/ios/group/moderating-groups/mute-a-group-or-member",
     "sourcePath": "/sdk/ios/group/moderating-groups/mute-a-group-or-member",
@@ -1903,12 +1921,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 938.7,
+    "sourceIndex": 1854,
     "contentFile": "content/docs/chat/sdk/ios/group/moderating-groups/mute-a-group-or-member.mdx",
-    "navOrder": 33
+    "navOrder": 34
   },
   {
-    "id": 1736,
+    "id": 1957,
     "path": "/sdk/ios/message/overview-message",
     "relativePath": "sdk/ios/message/overview-message",
     "sourcePath": "/sdk/ios/message/overview-message",
@@ -1921,12 +1939,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 939.7,
+    "sourceIndex": 1855,
     "contentFile": "content/docs/chat/sdk/ios/message/overview-message.mdx",
-    "navOrder": 34
+    "navOrder": 35
   },
   {
-    "id": 1737,
+    "id": 1958,
     "path": "/sdk/ios/message/sending-messages/send-a-message",
     "relativePath": "sdk/ios/message/sending-messages/send-a-message",
     "sourcePath": "/sdk/ios/message/sending-messages/send-a-message",
@@ -1939,12 +1957,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 940.7,
+    "sourceIndex": 1856,
     "contentFile": "content/docs/chat/sdk/ios/message/sending-messages/send-a-message.mdx",
-    "navOrder": 35
+    "navOrder": 36
   },
   {
-    "id": 1738,
+    "id": 1959,
     "path": "/sdk/ios/message/sending-messages/create-media-and-rich-messages",
     "relativePath": "sdk/ios/message/sending-messages/create-media-and-rich-messages",
     "sourcePath": "/sdk/ios/message/sending-messages/create-media-and-rich-messages",
@@ -1957,12 +1975,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 941.7,
+    "sourceIndex": 1857,
     "contentFile": "content/docs/chat/sdk/ios/message/sending-messages/create-media-and-rich-messages.mdx",
-    "navOrder": 36
+    "navOrder": 37
   },
   {
-    "id": 1739,
+    "id": 1960,
     "path": "/sdk/ios/message/sending-messages/upload-files-and-track-progress",
     "relativePath": "sdk/ios/message/sending-messages/upload-files-and-track-progress",
     "sourcePath": "/sdk/ios/message/sending-messages/upload-files-and-track-progress",
@@ -1975,12 +1993,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 942.7,
+    "sourceIndex": 1858,
     "contentFile": "content/docs/chat/sdk/ios/message/sending-messages/upload-files-and-track-progress.mdx",
-    "navOrder": 37
+    "navOrder": 38
   },
   {
-    "id": 1740,
+    "id": 1961,
     "path": "/sdk/ios/message/receiving-messages/receive-messages",
     "relativePath": "sdk/ios/message/receiving-messages/receive-messages",
     "sourcePath": "/sdk/ios/message/receiving-messages/receive-messages",
@@ -1993,12 +2011,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 943.7,
+    "sourceIndex": 1859,
     "contentFile": "content/docs/chat/sdk/ios/message/receiving-messages/receive-messages.mdx",
-    "navOrder": 38
+    "navOrder": 39
   },
   {
-    "id": 1741,
+    "id": 1962,
     "path": "/sdk/ios/message/retrieving-messages/retrieve-message-history",
     "relativePath": "sdk/ios/message/retrieving-messages/retrieve-message-history",
     "sourcePath": "/sdk/ios/message/retrieving-messages/retrieve-message-history",
@@ -2011,12 +2029,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 944.7,
+    "sourceIndex": 1860,
     "contentFile": "content/docs/chat/sdk/ios/message/retrieving-messages/retrieve-message-history.mdx",
-    "navOrder": 39
+    "navOrder": 40
   },
   {
-    "id": 1742,
+    "id": 1963,
     "path": "/sdk/ios/message/retrieving-messages/locate-messages-by-id",
     "relativePath": "sdk/ios/message/retrieving-messages/locate-messages-by-id",
     "sourcePath": "/sdk/ios/message/retrieving-messages/locate-messages-by-id",
@@ -2029,12 +2047,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 945.7,
+    "sourceIndex": 1861,
     "contentFile": "content/docs/chat/sdk/ios/message/retrieving-messages/locate-messages-by-id.mdx",
-    "navOrder": 40
+    "navOrder": 41
   },
   {
-    "id": 1743,
+    "id": 1964,
     "path": "/sdk/ios/message/searching-messages/search-messages",
     "relativePath": "sdk/ios/message/searching-messages/search-messages",
     "sourcePath": "/sdk/ios/message/searching-messages/search-messages",
@@ -2047,12 +2065,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 946.7,
+    "sourceIndex": 1862,
     "contentFile": "content/docs/chat/sdk/ios/message/searching-messages/search-messages.mdx",
-    "navOrder": 41
+    "navOrder": 42
   },
   {
-    "id": 1744,
+    "id": 1965,
     "path": "/sdk/ios/message/composing-messages/custom-message-and-extra-data",
     "relativePath": "sdk/ios/message/composing-messages/custom-message-and-extra-data",
     "sourcePath": "/sdk/ios/message/composing-messages/custom-message-and-extra-data",
@@ -2065,12 +2083,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 947.7,
+    "sourceIndex": 1863,
     "contentFile": "content/docs/chat/sdk/ios/message/composing-messages/custom-message-and-extra-data.mdx",
-    "navOrder": 42
+    "navOrder": 43
   },
   {
-    "id": 1745,
+    "id": 1966,
     "path": "/sdk/ios/message/composing-messages/mention-users-in-a-message",
     "relativePath": "sdk/ios/message/composing-messages/mention-users-in-a-message",
     "sourcePath": "/sdk/ios/message/composing-messages/mention-users-in-a-message",
@@ -2083,12 +2101,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 948.7,
+    "sourceIndex": 1864,
     "contentFile": "content/docs/chat/sdk/ios/message/composing-messages/mention-users-in-a-message.mdx",
-    "navOrder": 43
+    "navOrder": 44
   },
   {
-    "id": 1746,
+    "id": 1967,
     "path": "/sdk/ios/message/composing-messages/manage-typing-status",
     "relativePath": "sdk/ios/message/composing-messages/manage-typing-status",
     "sourcePath": "/sdk/ios/message/composing-messages/manage-typing-status",
@@ -2101,12 +2119,30 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 949.7,
+    "sourceIndex": 1865,
     "contentFile": "content/docs/chat/sdk/ios/message/composing-messages/manage-typing-status.mdx",
-    "navOrder": 44
+    "navOrder": 45
   },
   {
-    "id": 1747,
+    "id": 1968,
+    "path": "/sdk/ios/message/composing-messages/transcribe-audio",
+    "relativePath": "sdk/ios/message/composing-messages/transcribe-audio",
+    "sourcePath": "/sdk/ios/message/composing-messages/transcribe-audio",
+    "title": "Transcribe audio",
+    "description": "OpenIM iOS SDK guide for Transcribe audio.",
+    "product": "sdk",
+    "version": "v4",
+    "platform": "ios",
+    "contextKey": "chat/sdk/ios",
+    "contextTitle": "SDKs · iOS · v4",
+    "template": "guide",
+    "status": "draft",
+    "sourceIndex": 1866,
+    "contentFile": "content/docs/chat/sdk/ios/message/composing-messages/transcribe-audio.mdx",
+    "navOrder": 46
+  },
+  {
+    "id": 1969,
     "path": "/sdk/ios/message/managing-messages/forward-or-merge-a-message",
     "relativePath": "sdk/ios/message/managing-messages/forward-or-merge-a-message",
     "sourcePath": "/sdk/ios/message/managing-messages/forward-or-merge-a-message",
@@ -2119,12 +2155,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 950.7,
+    "sourceIndex": 1867,
     "contentFile": "content/docs/chat/sdk/ios/message/managing-messages/forward-or-merge-a-message.mdx",
-    "navOrder": 45
+    "navOrder": 47
   },
   {
-    "id": 1748,
+    "id": 1970,
     "path": "/sdk/ios/message/managing-messages/delete-a-message",
     "relativePath": "sdk/ios/message/managing-messages/delete-a-message",
     "sourcePath": "/sdk/ios/message/managing-messages/delete-a-message",
@@ -2137,12 +2173,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 951.7,
+    "sourceIndex": 1868,
     "contentFile": "content/docs/chat/sdk/ios/message/managing-messages/delete-a-message.mdx",
-    "navOrder": 46
+    "navOrder": 48
   },
   {
-    "id": 1749,
+    "id": 1971,
     "path": "/sdk/ios/message/managing-messages/revoke-a-message",
     "relativePath": "sdk/ios/message/managing-messages/revoke-a-message",
     "sourcePath": "/sdk/ios/message/managing-messages/revoke-a-message",
@@ -2155,12 +2191,48 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 952.7,
+    "sourceIndex": 1869,
     "contentFile": "content/docs/chat/sdk/ios/message/managing-messages/revoke-a-message.mdx",
-    "navOrder": 47
+    "navOrder": 49
   },
   {
-    "id": 1750,
+    "id": 1972,
+    "path": "/sdk/ios/message/managing-messages/modify-a-message",
+    "relativePath": "sdk/ios/message/managing-messages/modify-a-message",
+    "sourcePath": "/sdk/ios/message/managing-messages/modify-a-message",
+    "title": "Modify a message",
+    "description": "OpenIM iOS SDK guide for Modify a message.",
+    "product": "sdk",
+    "version": "v4",
+    "platform": "ios",
+    "contextKey": "chat/sdk/ios",
+    "contextTitle": "SDKs · iOS · v4",
+    "template": "guide",
+    "status": "draft",
+    "sourceIndex": 1870,
+    "contentFile": "content/docs/chat/sdk/ios/message/managing-messages/modify-a-message.mdx",
+    "navOrder": 50
+  },
+  {
+    "id": 1973,
+    "path": "/sdk/ios/message/managing-messages/pin-conversation-messages",
+    "relativePath": "sdk/ios/message/managing-messages/pin-conversation-messages",
+    "sourcePath": "/sdk/ios/message/managing-messages/pin-conversation-messages",
+    "title": "Pin conversation messages",
+    "description": "OpenIM iOS SDK guide for Pin conversation messages.",
+    "product": "sdk",
+    "version": "v4",
+    "platform": "ios",
+    "contextKey": "chat/sdk/ios",
+    "contextTitle": "SDKs · iOS · v4",
+    "template": "guide",
+    "status": "draft",
+    "sourceIndex": 1871,
+    "contentFile": "content/docs/chat/sdk/ios/message/managing-messages/pin-conversation-messages.mdx",
+    "navOrder": 51
+  },
+  {
+    "id": 1974,
     "path": "/sdk/ios/message/managing-messages/insert-a-local-message",
     "relativePath": "sdk/ios/message/managing-messages/insert-a-local-message",
     "sourcePath": "/sdk/ios/message/managing-messages/insert-a-local-message",
@@ -2173,12 +2245,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 953.7,
+    "sourceIndex": 1872,
     "contentFile": "content/docs/chat/sdk/ios/message/managing-messages/insert-a-local-message.mdx",
-    "navOrder": 48
+    "navOrder": 52
   },
   {
-    "id": 1751,
+    "id": 1975,
     "path": "/sdk/ios/message/managing-messages/clear-message-history",
     "relativePath": "sdk/ios/message/managing-messages/clear-message-history",
     "sourcePath": "/sdk/ios/message/managing-messages/clear-message-history",
@@ -2191,12 +2263,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 954.7,
+    "sourceIndex": 1873,
     "contentFile": "content/docs/chat/sdk/ios/message/managing-messages/clear-message-history.mdx",
-    "navOrder": 49
+    "navOrder": 53
   },
   {
-    "id": 1752,
+    "id": 1976,
     "path": "/sdk/ios/message/managing-read-status/manage-message-read-receipts",
     "relativePath": "sdk/ios/message/managing-read-status/manage-message-read-receipts",
     "sourcePath": "/sdk/ios/message/managing-read-status/manage-message-read-receipts",
@@ -2209,12 +2281,84 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 955.7,
+    "sourceIndex": 1874,
     "contentFile": "content/docs/chat/sdk/ios/message/managing-read-status/manage-message-read-receipts.mdx",
-    "navOrder": 50
+    "navOrder": 54
   },
   {
-    "id": 1753,
+    "id": 1977,
+    "path": "/sdk/ios/calling/overview-calling",
+    "relativePath": "sdk/ios/calling/overview-calling",
+    "sourcePath": "/sdk/ios/calling/overview-calling",
+    "title": "Calling overview",
+    "description": "OpenIM iOS SDK guide for Calling overview.",
+    "product": "sdk",
+    "version": "v4",
+    "platform": "ios",
+    "contextKey": "chat/sdk/ios",
+    "contextTitle": "SDKs · iOS · v4",
+    "template": "guide",
+    "status": "draft",
+    "sourceIndex": 1875,
+    "contentFile": "content/docs/chat/sdk/ios/calling/overview-calling.mdx",
+    "navOrder": 55
+  },
+  {
+    "id": 1978,
+    "path": "/sdk/ios/calling/managing-calls/start-or-handle-a-call",
+    "relativePath": "sdk/ios/calling/managing-calls/start-or-handle-a-call",
+    "sourcePath": "/sdk/ios/calling/managing-calls/start-or-handle-a-call",
+    "title": "Start or handle a call",
+    "description": "OpenIM iOS SDK guide for Start or handle a call.",
+    "product": "sdk",
+    "version": "v4",
+    "platform": "ios",
+    "contextKey": "chat/sdk/ios",
+    "contextTitle": "SDKs · iOS · v4",
+    "template": "guide",
+    "status": "draft",
+    "sourceIndex": 1876,
+    "contentFile": "content/docs/chat/sdk/ios/calling/managing-calls/start-or-handle-a-call.mdx",
+    "navOrder": 56
+  },
+  {
+    "id": 1979,
+    "path": "/sdk/ios/calling/retrieving-call-information/retrieve-call-information",
+    "relativePath": "sdk/ios/calling/retrieving-call-information/retrieve-call-information",
+    "sourcePath": "/sdk/ios/calling/retrieving-call-information/retrieve-call-information",
+    "title": "Retrieve call information",
+    "description": "OpenIM iOS SDK guide for Retrieve call information.",
+    "product": "sdk",
+    "version": "v4",
+    "platform": "ios",
+    "contextKey": "chat/sdk/ios",
+    "contextTitle": "SDKs · iOS · v4",
+    "template": "guide",
+    "status": "draft",
+    "sourceIndex": 1877,
+    "contentFile": "content/docs/chat/sdk/ios/calling/retrieving-call-information/retrieve-call-information.mdx",
+    "navOrder": 57
+  },
+  {
+    "id": 1980,
+    "path": "/sdk/ios/calling/sending-custom-signals/send-a-custom-signal",
+    "relativePath": "sdk/ios/calling/sending-custom-signals/send-a-custom-signal",
+    "sourcePath": "/sdk/ios/calling/sending-custom-signals/send-a-custom-signal",
+    "title": "Send a custom signal",
+    "description": "OpenIM iOS SDK guide for Send a custom signal.",
+    "product": "sdk",
+    "version": "v4",
+    "platform": "ios",
+    "contextKey": "chat/sdk/ios",
+    "contextTitle": "SDKs · iOS · v4",
+    "template": "guide",
+    "status": "draft",
+    "sourceIndex": 1878,
+    "contentFile": "content/docs/chat/sdk/ios/calling/sending-custom-signals/send-a-custom-signal.mdx",
+    "navOrder": 58
+  },
+  {
+    "id": 1981,
     "path": "/sdk/ios/events/overview-events",
     "relativePath": "sdk/ios/events/overview-events",
     "sourcePath": "/sdk/ios/events/overview-events",
@@ -2227,12 +2371,12 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 956.7,
+    "sourceIndex": 1879,
     "contentFile": "content/docs/chat/sdk/ios/events/overview-events.mdx",
-    "navOrder": 51
+    "navOrder": 59
   },
   {
-    "id": 1754,
+    "id": 1982,
     "path": "/sdk/ios/logger",
     "relativePath": "sdk/ios/logger",
     "sourcePath": "/sdk/ios/logger",
@@ -2245,9 +2389,9 @@
     "contextTitle": "SDKs · iOS · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 957.7,
+    "sourceIndex": 1880,
     "contentFile": "content/docs/chat/sdk/ios/logger.mdx",
-    "navOrder": 52
+    "navOrder": 60
   },
   {
     "id": 130,
@@ -4572,7 +4716,7 @@
     "navOrder": 259
   },
   {
-    "id": 1755,
+    "id": 1863,
     "path": "/sdk/flutter/overview",
     "relativePath": "sdk/flutter/overview",
     "sourcePath": "/sdk/flutter/overview",
@@ -4585,12 +4729,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "overview",
     "status": "draft",
-    "sourceIndex": 958.7,
+    "sourceIndex": 1761,
     "contentFile": "content/docs/chat/sdk/flutter/overview.mdx",
     "navOrder": 260
   },
   {
-    "id": 1756,
+    "id": 1864,
     "path": "/sdk/flutter/getting-started/before-you-start",
     "relativePath": "sdk/flutter/getting-started/before-you-start",
     "sourcePath": "/sdk/flutter/getting-started/before-you-start",
@@ -4603,12 +4747,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 959.7,
+    "sourceIndex": 1762,
     "contentFile": "content/docs/chat/sdk/flutter/getting-started/before-you-start.mdx",
     "navOrder": 261
   },
   {
-    "id": 1757,
+    "id": 1865,
     "path": "/sdk/flutter/getting-started/environment-specific-implementation",
     "relativePath": "sdk/flutter/getting-started/environment-specific-implementation",
     "sourcePath": "/sdk/flutter/getting-started/environment-specific-implementation",
@@ -4621,12 +4765,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 960.7,
+    "sourceIndex": 1763,
     "contentFile": "content/docs/chat/sdk/flutter/getting-started/environment-specific-implementation.mdx",
     "navOrder": 262
   },
   {
-    "id": 1758,
+    "id": 1866,
     "path": "/sdk/flutter/getting-started/authenticate-and-manage-session",
     "relativePath": "sdk/flutter/getting-started/authenticate-and-manage-session",
     "sourcePath": "/sdk/flutter/getting-started/authenticate-and-manage-session",
@@ -4639,12 +4783,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 961.7,
+    "sourceIndex": 1764,
     "contentFile": "content/docs/chat/sdk/flutter/getting-started/authenticate-and-manage-session.mdx",
     "navOrder": 263
   },
   {
-    "id": 1759,
+    "id": 1867,
     "path": "/sdk/flutter/getting-started/send-first-message",
     "relativePath": "sdk/flutter/getting-started/send-first-message",
     "sourcePath": "/sdk/flutter/getting-started/send-first-message",
@@ -4657,12 +4801,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 962.7,
+    "sourceIndex": 1765,
     "contentFile": "content/docs/chat/sdk/flutter/getting-started/send-first-message.mdx",
     "navOrder": 264
   },
   {
-    "id": 1760,
+    "id": 1868,
     "path": "/sdk/flutter/user/overview-user",
     "relativePath": "sdk/flutter/user/overview-user",
     "sourcePath": "/sdk/flutter/user/overview-user",
@@ -4675,12 +4819,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 963.7,
+    "sourceIndex": 1766,
     "contentFile": "content/docs/chat/sdk/flutter/user/overview-user.mdx",
     "navOrder": 265
   },
   {
-    "id": 1761,
+    "id": 1869,
     "path": "/sdk/flutter/user/retrieving-users/retrieve-users",
     "relativePath": "sdk/flutter/user/retrieving-users/retrieve-users",
     "sourcePath": "/sdk/flutter/user/retrieving-users/retrieve-users",
@@ -4693,12 +4837,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 964.7,
+    "sourceIndex": 1767,
     "contentFile": "content/docs/chat/sdk/flutter/user/retrieving-users/retrieve-users.mdx",
     "navOrder": 266
   },
   {
-    "id": 1762,
+    "id": 1870,
     "path": "/sdk/flutter/user/retrieving-and-updating-user-information/retrieve-and-update-self-profile",
     "relativePath": "sdk/flutter/user/retrieving-and-updating-user-information/retrieve-and-update-self-profile",
     "sourcePath": "/sdk/flutter/user/retrieving-and-updating-user-information/retrieve-and-update-self-profile",
@@ -4711,12 +4855,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 965.7,
+    "sourceIndex": 1768,
     "contentFile": "content/docs/chat/sdk/flutter/user/retrieving-and-updating-user-information/retrieve-and-update-self-profile.mdx",
     "navOrder": 267
   },
   {
-    "id": 1763,
+    "id": 1871,
     "path": "/sdk/flutter/user/retrieving-and-updating-user-information/retrieve-the-online-status-of-a-user",
     "relativePath": "sdk/flutter/user/retrieving-and-updating-user-information/retrieve-the-online-status-of-a-user",
     "sourcePath": "/sdk/flutter/user/retrieving-and-updating-user-information/retrieve-the-online-status-of-a-user",
@@ -4729,12 +4873,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 966.7,
+    "sourceIndex": 1769,
     "contentFile": "content/docs/chat/sdk/flutter/user/retrieving-and-updating-user-information/retrieve-the-online-status-of-a-user.mdx",
     "navOrder": 268
   },
   {
-    "id": 1764,
+    "id": 1872,
     "path": "/sdk/flutter/user/retrieving-users/retrieve-a-list-of-friends",
     "relativePath": "sdk/flutter/user/retrieving-users/retrieve-a-list-of-friends",
     "sourcePath": "/sdk/flutter/user/retrieving-users/retrieve-a-list-of-friends",
@@ -4747,12 +4891,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 967.7,
+    "sourceIndex": 1770,
     "contentFile": "content/docs/chat/sdk/flutter/user/retrieving-users/retrieve-a-list-of-friends.mdx",
     "navOrder": 269
   },
   {
-    "id": 1765,
+    "id": 1873,
     "path": "/sdk/flutter/user/retrieving-users/retrieve-friend-information",
     "relativePath": "sdk/flutter/user/retrieving-users/retrieve-friend-information",
     "sourcePath": "/sdk/flutter/user/retrieving-users/retrieve-friend-information",
@@ -4765,12 +4909,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 968.7,
+    "sourceIndex": 1771,
     "contentFile": "content/docs/chat/sdk/flutter/user/retrieving-users/retrieve-friend-information.mdx",
     "navOrder": 270
   },
   {
-    "id": 1766,
+    "id": 1874,
     "path": "/sdk/flutter/user/managing-friends/manage-friend-requests",
     "relativePath": "sdk/flutter/user/managing-friends/manage-friend-requests",
     "sourcePath": "/sdk/flutter/user/managing-friends/manage-friend-requests",
@@ -4783,12 +4927,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 969.7,
+    "sourceIndex": 1772,
     "contentFile": "content/docs/chat/sdk/flutter/user/managing-friends/manage-friend-requests.mdx",
     "navOrder": 271
   },
   {
-    "id": 1767,
+    "id": 1875,
     "path": "/sdk/flutter/user/managing-friends/update-or-delete-friends",
     "relativePath": "sdk/flutter/user/managing-friends/update-or-delete-friends",
     "sourcePath": "/sdk/flutter/user/managing-friends/update-or-delete-friends",
@@ -4801,12 +4945,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 970.7,
+    "sourceIndex": 1773,
     "contentFile": "content/docs/chat/sdk/flutter/user/managing-friends/update-or-delete-friends.mdx",
     "navOrder": 272
   },
   {
-    "id": 1768,
+    "id": 1876,
     "path": "/sdk/flutter/user/moderating-a-user/retrieve-a-list-of-blocked-users",
     "relativePath": "sdk/flutter/user/moderating-a-user/retrieve-a-list-of-blocked-users",
     "sourcePath": "/sdk/flutter/user/moderating-a-user/retrieve-a-list-of-blocked-users",
@@ -4819,12 +4963,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 971.7,
+    "sourceIndex": 1774,
     "contentFile": "content/docs/chat/sdk/flutter/user/moderating-a-user/retrieve-a-list-of-blocked-users.mdx",
     "navOrder": 273
   },
   {
-    "id": 1769,
+    "id": 1877,
     "path": "/sdk/flutter/user/moderating-a-user/block-or-unblock-users",
     "relativePath": "sdk/flutter/user/moderating-a-user/block-or-unblock-users",
     "sourcePath": "/sdk/flutter/user/moderating-a-user/block-or-unblock-users",
@@ -4837,12 +4981,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 972.7,
+    "sourceIndex": 1775,
     "contentFile": "content/docs/chat/sdk/flutter/user/moderating-a-user/block-or-unblock-users.mdx",
     "navOrder": 274
   },
   {
-    "id": 1770,
+    "id": 1878,
     "path": "/sdk/flutter/conversation/overview-conversation",
     "relativePath": "sdk/flutter/conversation/overview-conversation",
     "sourcePath": "/sdk/flutter/conversation/overview-conversation",
@@ -4855,12 +4999,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 973.7,
+    "sourceIndex": 1776,
     "contentFile": "content/docs/chat/sdk/flutter/conversation/overview-conversation.mdx",
     "navOrder": 275
   },
   {
-    "id": 1771,
+    "id": 1879,
     "path": "/sdk/flutter/conversation/retrieving-conversations/retrieve-a-conversation",
     "relativePath": "sdk/flutter/conversation/retrieving-conversations/retrieve-a-conversation",
     "sourcePath": "/sdk/flutter/conversation/retrieving-conversations/retrieve-a-conversation",
@@ -4873,12 +5017,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 974.7,
+    "sourceIndex": 1777,
     "contentFile": "content/docs/chat/sdk/flutter/conversation/retrieving-conversations/retrieve-a-conversation.mdx",
     "navOrder": 276
   },
   {
-    "id": 1772,
+    "id": 1880,
     "path": "/sdk/flutter/conversation/retrieving-conversations/retrieve-conversation-list",
     "relativePath": "sdk/flutter/conversation/retrieving-conversations/retrieve-conversation-list",
     "sourcePath": "/sdk/flutter/conversation/retrieving-conversations/retrieve-conversation-list",
@@ -4891,12 +5035,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 975.7,
+    "sourceIndex": 1778,
     "contentFile": "content/docs/chat/sdk/flutter/conversation/retrieving-conversations/retrieve-conversation-list.mdx",
     "navOrder": 277
   },
   {
-    "id": 1773,
+    "id": 1881,
     "path": "/sdk/flutter/conversation/managing-conversations/set-conversation-settings",
     "relativePath": "sdk/flutter/conversation/managing-conversations/set-conversation-settings",
     "sourcePath": "/sdk/flutter/conversation/managing-conversations/set-conversation-settings",
@@ -4909,12 +5053,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 976.7,
+    "sourceIndex": 1779,
     "contentFile": "content/docs/chat/sdk/flutter/conversation/managing-conversations/set-conversation-settings.mdx",
     "navOrder": 278
   },
   {
-    "id": 1774,
+    "id": 1882,
     "path": "/sdk/flutter/conversation/managing-conversations/set-conversation-draft",
     "relativePath": "sdk/flutter/conversation/managing-conversations/set-conversation-draft",
     "sourcePath": "/sdk/flutter/conversation/managing-conversations/set-conversation-draft",
@@ -4927,12 +5071,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 977.7,
+    "sourceIndex": 1780,
     "contentFile": "content/docs/chat/sdk/flutter/conversation/managing-conversations/set-conversation-draft.mdx",
     "navOrder": 279
   },
   {
-    "id": 1775,
+    "id": 1883,
     "path": "/sdk/flutter/conversation/managing-conversations/manage-read-status",
     "relativePath": "sdk/flutter/conversation/managing-conversations/manage-read-status",
     "sourcePath": "/sdk/flutter/conversation/managing-conversations/manage-read-status",
@@ -4945,12 +5089,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 978.7,
+    "sourceIndex": 1781,
     "contentFile": "content/docs/chat/sdk/flutter/conversation/managing-conversations/manage-read-status.mdx",
     "navOrder": 280
   },
   {
-    "id": 1776,
+    "id": 1884,
     "path": "/sdk/flutter/conversation/managing-conversations/hide-a-conversation",
     "relativePath": "sdk/flutter/conversation/managing-conversations/hide-a-conversation",
     "sourcePath": "/sdk/flutter/conversation/managing-conversations/hide-a-conversation",
@@ -4963,12 +5107,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 979.7,
+    "sourceIndex": 1782,
     "contentFile": "content/docs/chat/sdk/flutter/conversation/managing-conversations/hide-a-conversation.mdx",
     "navOrder": 281
   },
   {
-    "id": 1777,
+    "id": 1885,
     "path": "/sdk/flutter/conversation/managing-conversations/delete-or-clear-conversation",
     "relativePath": "sdk/flutter/conversation/managing-conversations/delete-or-clear-conversation",
     "sourcePath": "/sdk/flutter/conversation/managing-conversations/delete-or-clear-conversation",
@@ -4981,12 +5125,30 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 980.7,
+    "sourceIndex": 1783,
     "contentFile": "content/docs/chat/sdk/flutter/conversation/managing-conversations/delete-or-clear-conversation.mdx",
     "navOrder": 282
   },
   {
-    "id": 1778,
+    "id": 1886,
+    "path": "/sdk/flutter/conversation/managing-conversation-groups/manage-conversation-groups",
+    "relativePath": "sdk/flutter/conversation/managing-conversation-groups/manage-conversation-groups",
+    "sourcePath": "/sdk/flutter/conversation/managing-conversation-groups/manage-conversation-groups",
+    "title": "Manage conversation groups",
+    "description": "OpenIM Flutter SDK guide for Manage conversation groups.",
+    "product": "sdk",
+    "version": "v4",
+    "platform": "flutter",
+    "contextKey": "chat/sdk/flutter",
+    "contextTitle": "SDKs · Flutter · v4",
+    "template": "guide",
+    "status": "draft",
+    "sourceIndex": 1784,
+    "contentFile": "content/docs/chat/sdk/flutter/conversation/managing-conversation-groups/manage-conversation-groups.mdx",
+    "navOrder": 283
+  },
+  {
+    "id": 1887,
     "path": "/sdk/flutter/group/overview-group",
     "relativePath": "sdk/flutter/group/overview-group",
     "sourcePath": "/sdk/flutter/group/overview-group",
@@ -4999,12 +5161,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 981.7,
+    "sourceIndex": 1785,
     "contentFile": "content/docs/chat/sdk/flutter/group/overview-group.mdx",
-    "navOrder": 283
+    "navOrder": 284
   },
   {
-    "id": 1779,
+    "id": 1888,
     "path": "/sdk/flutter/group/creating-and-updating-groups/create-or-update-a-group",
     "relativePath": "sdk/flutter/group/creating-and-updating-groups/create-or-update-a-group",
     "sourcePath": "/sdk/flutter/group/creating-and-updating-groups/create-or-update-a-group",
@@ -5017,12 +5179,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 982.7,
+    "sourceIndex": 1786,
     "contentFile": "content/docs/chat/sdk/flutter/group/creating-and-updating-groups/create-or-update-a-group.mdx",
-    "navOrder": 284
+    "navOrder": 285
   },
   {
-    "id": 1780,
+    "id": 1889,
     "path": "/sdk/flutter/group/retrieving-groups/retrieve-and-search-groups",
     "relativePath": "sdk/flutter/group/retrieving-groups/retrieve-and-search-groups",
     "sourcePath": "/sdk/flutter/group/retrieving-groups/retrieve-and-search-groups",
@@ -5035,12 +5197,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 983.7,
+    "sourceIndex": 1787,
     "contentFile": "content/docs/chat/sdk/flutter/group/retrieving-groups/retrieve-and-search-groups.mdx",
-    "navOrder": 285
+    "navOrder": 286
   },
   {
-    "id": 1781,
+    "id": 1890,
     "path": "/sdk/flutter/group/joining-and-leaving-groups/join-leave-or-dismiss-a-group",
     "relativePath": "sdk/flutter/group/joining-and-leaving-groups/join-leave-or-dismiss-a-group",
     "sourcePath": "/sdk/flutter/group/joining-and-leaving-groups/join-leave-or-dismiss-a-group",
@@ -5053,12 +5215,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 984.7,
+    "sourceIndex": 1788,
     "contentFile": "content/docs/chat/sdk/flutter/group/joining-and-leaving-groups/join-leave-or-dismiss-a-group.mdx",
-    "navOrder": 286
+    "navOrder": 287
   },
   {
-    "id": 1782,
+    "id": 1891,
     "path": "/sdk/flutter/group/managing-group-applications/manage-group-applications",
     "relativePath": "sdk/flutter/group/managing-group-applications/manage-group-applications",
     "sourcePath": "/sdk/flutter/group/managing-group-applications/manage-group-applications",
@@ -5071,12 +5233,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 985.7,
+    "sourceIndex": 1789,
     "contentFile": "content/docs/chat/sdk/flutter/group/managing-group-applications/manage-group-applications.mdx",
-    "navOrder": 287
+    "navOrder": 288
   },
   {
-    "id": 1783,
+    "id": 1892,
     "path": "/sdk/flutter/group/retrieving-group-members/retrieve-group-members",
     "relativePath": "sdk/flutter/group/retrieving-group-members/retrieve-group-members",
     "sourcePath": "/sdk/flutter/group/retrieving-group-members/retrieve-group-members",
@@ -5089,12 +5251,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 986.7,
+    "sourceIndex": 1790,
     "contentFile": "content/docs/chat/sdk/flutter/group/retrieving-group-members/retrieve-group-members.mdx",
-    "navOrder": 288
+    "navOrder": 289
   },
   {
-    "id": 1784,
+    "id": 1893,
     "path": "/sdk/flutter/group/managing-group-members/invite-or-remove-group-members",
     "relativePath": "sdk/flutter/group/managing-group-members/invite-or-remove-group-members",
     "sourcePath": "/sdk/flutter/group/managing-group-members/invite-or-remove-group-members",
@@ -5107,12 +5269,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 987.7,
+    "sourceIndex": 1791,
     "contentFile": "content/docs/chat/sdk/flutter/group/managing-group-members/invite-or-remove-group-members.mdx",
-    "navOrder": 289
+    "navOrder": 290
   },
   {
-    "id": 1785,
+    "id": 1894,
     "path": "/sdk/flutter/group/managing-group-members/update-group-member-info",
     "relativePath": "sdk/flutter/group/managing-group-members/update-group-member-info",
     "sourcePath": "/sdk/flutter/group/managing-group-members/update-group-member-info",
@@ -5125,12 +5287,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 988.7,
+    "sourceIndex": 1792,
     "contentFile": "content/docs/chat/sdk/flutter/group/managing-group-members/update-group-member-info.mdx",
-    "navOrder": 290
+    "navOrder": 291
   },
   {
-    "id": 1786,
+    "id": 1895,
     "path": "/sdk/flutter/group/managing-group-members/transfer-group-owner",
     "relativePath": "sdk/flutter/group/managing-group-members/transfer-group-owner",
     "sourcePath": "/sdk/flutter/group/managing-group-members/transfer-group-owner",
@@ -5143,12 +5305,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 989.7,
+    "sourceIndex": 1793,
     "contentFile": "content/docs/chat/sdk/flutter/group/managing-group-members/transfer-group-owner.mdx",
-    "navOrder": 291
+    "navOrder": 292
   },
   {
-    "id": 1787,
+    "id": 1896,
     "path": "/sdk/flutter/group/moderating-groups/mute-a-group-or-member",
     "relativePath": "sdk/flutter/group/moderating-groups/mute-a-group-or-member",
     "sourcePath": "/sdk/flutter/group/moderating-groups/mute-a-group-or-member",
@@ -5161,12 +5323,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 990.7,
+    "sourceIndex": 1794,
     "contentFile": "content/docs/chat/sdk/flutter/group/moderating-groups/mute-a-group-or-member.mdx",
-    "navOrder": 292
+    "navOrder": 293
   },
   {
-    "id": 1788,
+    "id": 1897,
     "path": "/sdk/flutter/message/overview-message",
     "relativePath": "sdk/flutter/message/overview-message",
     "sourcePath": "/sdk/flutter/message/overview-message",
@@ -5179,12 +5341,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 991.7,
+    "sourceIndex": 1795,
     "contentFile": "content/docs/chat/sdk/flutter/message/overview-message.mdx",
-    "navOrder": 293
+    "navOrder": 294
   },
   {
-    "id": 1789,
+    "id": 1898,
     "path": "/sdk/flutter/message/sending-messages/send-a-message",
     "relativePath": "sdk/flutter/message/sending-messages/send-a-message",
     "sourcePath": "/sdk/flutter/message/sending-messages/send-a-message",
@@ -5197,12 +5359,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 992.7,
+    "sourceIndex": 1796,
     "contentFile": "content/docs/chat/sdk/flutter/message/sending-messages/send-a-message.mdx",
-    "navOrder": 294
+    "navOrder": 295
   },
   {
-    "id": 1790,
+    "id": 1899,
     "path": "/sdk/flutter/message/sending-messages/create-media-and-rich-messages",
     "relativePath": "sdk/flutter/message/sending-messages/create-media-and-rich-messages",
     "sourcePath": "/sdk/flutter/message/sending-messages/create-media-and-rich-messages",
@@ -5215,12 +5377,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 993.7,
+    "sourceIndex": 1797,
     "contentFile": "content/docs/chat/sdk/flutter/message/sending-messages/create-media-and-rich-messages.mdx",
-    "navOrder": 295
+    "navOrder": 296
   },
   {
-    "id": 1791,
+    "id": 1900,
     "path": "/sdk/flutter/message/sending-messages/upload-files-and-track-progress",
     "relativePath": "sdk/flutter/message/sending-messages/upload-files-and-track-progress",
     "sourcePath": "/sdk/flutter/message/sending-messages/upload-files-and-track-progress",
@@ -5233,12 +5395,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 994.7,
+    "sourceIndex": 1798,
     "contentFile": "content/docs/chat/sdk/flutter/message/sending-messages/upload-files-and-track-progress.mdx",
-    "navOrder": 296
+    "navOrder": 297
   },
   {
-    "id": 1792,
+    "id": 1901,
     "path": "/sdk/flutter/message/receiving-messages/receive-messages",
     "relativePath": "sdk/flutter/message/receiving-messages/receive-messages",
     "sourcePath": "/sdk/flutter/message/receiving-messages/receive-messages",
@@ -5251,12 +5413,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 995.7,
+    "sourceIndex": 1799,
     "contentFile": "content/docs/chat/sdk/flutter/message/receiving-messages/receive-messages.mdx",
-    "navOrder": 297
+    "navOrder": 298
   },
   {
-    "id": 1793,
+    "id": 1902,
     "path": "/sdk/flutter/message/retrieving-messages/retrieve-message-history",
     "relativePath": "sdk/flutter/message/retrieving-messages/retrieve-message-history",
     "sourcePath": "/sdk/flutter/message/retrieving-messages/retrieve-message-history",
@@ -5269,12 +5431,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 996.7,
+    "sourceIndex": 1800,
     "contentFile": "content/docs/chat/sdk/flutter/message/retrieving-messages/retrieve-message-history.mdx",
-    "navOrder": 298
+    "navOrder": 299
   },
   {
-    "id": 1794,
+    "id": 1903,
     "path": "/sdk/flutter/message/retrieving-messages/locate-messages-by-id",
     "relativePath": "sdk/flutter/message/retrieving-messages/locate-messages-by-id",
     "sourcePath": "/sdk/flutter/message/retrieving-messages/locate-messages-by-id",
@@ -5287,12 +5449,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 997.7,
+    "sourceIndex": 1801,
     "contentFile": "content/docs/chat/sdk/flutter/message/retrieving-messages/locate-messages-by-id.mdx",
-    "navOrder": 299
+    "navOrder": 300
   },
   {
-    "id": 1795,
+    "id": 1904,
     "path": "/sdk/flutter/message/searching-messages/search-messages",
     "relativePath": "sdk/flutter/message/searching-messages/search-messages",
     "sourcePath": "/sdk/flutter/message/searching-messages/search-messages",
@@ -5305,12 +5467,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 998.7,
+    "sourceIndex": 1802,
     "contentFile": "content/docs/chat/sdk/flutter/message/searching-messages/search-messages.mdx",
-    "navOrder": 300
+    "navOrder": 301
   },
   {
-    "id": 1796,
+    "id": 1905,
     "path": "/sdk/flutter/message/composing-messages/custom-message-and-extra-data",
     "relativePath": "sdk/flutter/message/composing-messages/custom-message-and-extra-data",
     "sourcePath": "/sdk/flutter/message/composing-messages/custom-message-and-extra-data",
@@ -5323,12 +5485,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 999.7,
+    "sourceIndex": 1803,
     "contentFile": "content/docs/chat/sdk/flutter/message/composing-messages/custom-message-and-extra-data.mdx",
-    "navOrder": 301
+    "navOrder": 302
   },
   {
-    "id": 1797,
+    "id": 1906,
     "path": "/sdk/flutter/message/composing-messages/mention-users-in-a-message",
     "relativePath": "sdk/flutter/message/composing-messages/mention-users-in-a-message",
     "sourcePath": "/sdk/flutter/message/composing-messages/mention-users-in-a-message",
@@ -5341,12 +5503,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 1000.7,
+    "sourceIndex": 1804,
     "contentFile": "content/docs/chat/sdk/flutter/message/composing-messages/mention-users-in-a-message.mdx",
-    "navOrder": 302
+    "navOrder": 303
   },
   {
-    "id": 1798,
+    "id": 1907,
     "path": "/sdk/flutter/message/composing-messages/manage-typing-status",
     "relativePath": "sdk/flutter/message/composing-messages/manage-typing-status",
     "sourcePath": "/sdk/flutter/message/composing-messages/manage-typing-status",
@@ -5359,12 +5521,30 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 1001.7,
+    "sourceIndex": 1805,
     "contentFile": "content/docs/chat/sdk/flutter/message/composing-messages/manage-typing-status.mdx",
-    "navOrder": 303
+    "navOrder": 304
   },
   {
-    "id": 1799,
+    "id": 1908,
+    "path": "/sdk/flutter/message/composing-messages/transcribe-audio",
+    "relativePath": "sdk/flutter/message/composing-messages/transcribe-audio",
+    "sourcePath": "/sdk/flutter/message/composing-messages/transcribe-audio",
+    "title": "Transcribe audio",
+    "description": "OpenIM Flutter SDK guide for Transcribe audio.",
+    "product": "sdk",
+    "version": "v4",
+    "platform": "flutter",
+    "contextKey": "chat/sdk/flutter",
+    "contextTitle": "SDKs · Flutter · v4",
+    "template": "guide",
+    "status": "draft",
+    "sourceIndex": 1806,
+    "contentFile": "content/docs/chat/sdk/flutter/message/composing-messages/transcribe-audio.mdx",
+    "navOrder": 305
+  },
+  {
+    "id": 1909,
     "path": "/sdk/flutter/message/managing-messages/forward-or-merge-a-message",
     "relativePath": "sdk/flutter/message/managing-messages/forward-or-merge-a-message",
     "sourcePath": "/sdk/flutter/message/managing-messages/forward-or-merge-a-message",
@@ -5377,12 +5557,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 1002.7,
+    "sourceIndex": 1807,
     "contentFile": "content/docs/chat/sdk/flutter/message/managing-messages/forward-or-merge-a-message.mdx",
-    "navOrder": 304
+    "navOrder": 306
   },
   {
-    "id": 1800,
+    "id": 1910,
     "path": "/sdk/flutter/message/managing-messages/delete-a-message",
     "relativePath": "sdk/flutter/message/managing-messages/delete-a-message",
     "sourcePath": "/sdk/flutter/message/managing-messages/delete-a-message",
@@ -5395,12 +5575,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 1003.7,
+    "sourceIndex": 1808,
     "contentFile": "content/docs/chat/sdk/flutter/message/managing-messages/delete-a-message.mdx",
-    "navOrder": 305
+    "navOrder": 307
   },
   {
-    "id": 1801,
+    "id": 1911,
     "path": "/sdk/flutter/message/managing-messages/revoke-a-message",
     "relativePath": "sdk/flutter/message/managing-messages/revoke-a-message",
     "sourcePath": "/sdk/flutter/message/managing-messages/revoke-a-message",
@@ -5413,12 +5593,48 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 1004.7,
+    "sourceIndex": 1809,
     "contentFile": "content/docs/chat/sdk/flutter/message/managing-messages/revoke-a-message.mdx",
-    "navOrder": 306
+    "navOrder": 308
   },
   {
-    "id": 1802,
+    "id": 1912,
+    "path": "/sdk/flutter/message/managing-messages/modify-a-message",
+    "relativePath": "sdk/flutter/message/managing-messages/modify-a-message",
+    "sourcePath": "/sdk/flutter/message/managing-messages/modify-a-message",
+    "title": "Modify a message",
+    "description": "OpenIM Flutter SDK guide for Modify a message.",
+    "product": "sdk",
+    "version": "v4",
+    "platform": "flutter",
+    "contextKey": "chat/sdk/flutter",
+    "contextTitle": "SDKs · Flutter · v4",
+    "template": "guide",
+    "status": "draft",
+    "sourceIndex": 1810,
+    "contentFile": "content/docs/chat/sdk/flutter/message/managing-messages/modify-a-message.mdx",
+    "navOrder": 309
+  },
+  {
+    "id": 1913,
+    "path": "/sdk/flutter/message/managing-messages/pin-conversation-messages",
+    "relativePath": "sdk/flutter/message/managing-messages/pin-conversation-messages",
+    "sourcePath": "/sdk/flutter/message/managing-messages/pin-conversation-messages",
+    "title": "Pin conversation messages",
+    "description": "OpenIM Flutter SDK guide for Pin conversation messages.",
+    "product": "sdk",
+    "version": "v4",
+    "platform": "flutter",
+    "contextKey": "chat/sdk/flutter",
+    "contextTitle": "SDKs · Flutter · v4",
+    "template": "guide",
+    "status": "draft",
+    "sourceIndex": 1811,
+    "contentFile": "content/docs/chat/sdk/flutter/message/managing-messages/pin-conversation-messages.mdx",
+    "navOrder": 310
+  },
+  {
+    "id": 1914,
     "path": "/sdk/flutter/message/managing-messages/insert-a-local-message",
     "relativePath": "sdk/flutter/message/managing-messages/insert-a-local-message",
     "sourcePath": "/sdk/flutter/message/managing-messages/insert-a-local-message",
@@ -5431,12 +5647,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 1005.7,
+    "sourceIndex": 1812,
     "contentFile": "content/docs/chat/sdk/flutter/message/managing-messages/insert-a-local-message.mdx",
-    "navOrder": 307
+    "navOrder": 311
   },
   {
-    "id": 1803,
+    "id": 1915,
     "path": "/sdk/flutter/message/managing-messages/clear-message-history",
     "relativePath": "sdk/flutter/message/managing-messages/clear-message-history",
     "sourcePath": "/sdk/flutter/message/managing-messages/clear-message-history",
@@ -5449,12 +5665,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 1006.7,
+    "sourceIndex": 1813,
     "contentFile": "content/docs/chat/sdk/flutter/message/managing-messages/clear-message-history.mdx",
-    "navOrder": 308
+    "navOrder": 312
   },
   {
-    "id": 1804,
+    "id": 1916,
     "path": "/sdk/flutter/message/managing-read-status/manage-message-read-receipts",
     "relativePath": "sdk/flutter/message/managing-read-status/manage-message-read-receipts",
     "sourcePath": "/sdk/flutter/message/managing-read-status/manage-message-read-receipts",
@@ -5467,12 +5683,84 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 1007.7,
+    "sourceIndex": 1814,
     "contentFile": "content/docs/chat/sdk/flutter/message/managing-read-status/manage-message-read-receipts.mdx",
-    "navOrder": 309
+    "navOrder": 313
   },
   {
-    "id": 1805,
+    "id": 1917,
+    "path": "/sdk/flutter/calling/overview-calling",
+    "relativePath": "sdk/flutter/calling/overview-calling",
+    "sourcePath": "/sdk/flutter/calling/overview-calling",
+    "title": "Calling overview",
+    "description": "OpenIM Flutter SDK guide for Calling overview.",
+    "product": "sdk",
+    "version": "v4",
+    "platform": "flutter",
+    "contextKey": "chat/sdk/flutter",
+    "contextTitle": "SDKs · Flutter · v4",
+    "template": "guide",
+    "status": "draft",
+    "sourceIndex": 1815,
+    "contentFile": "content/docs/chat/sdk/flutter/calling/overview-calling.mdx",
+    "navOrder": 314
+  },
+  {
+    "id": 1918,
+    "path": "/sdk/flutter/calling/managing-calls/start-or-handle-a-call",
+    "relativePath": "sdk/flutter/calling/managing-calls/start-or-handle-a-call",
+    "sourcePath": "/sdk/flutter/calling/managing-calls/start-or-handle-a-call",
+    "title": "Start or handle a call",
+    "description": "OpenIM Flutter SDK guide for Start or handle a call.",
+    "product": "sdk",
+    "version": "v4",
+    "platform": "flutter",
+    "contextKey": "chat/sdk/flutter",
+    "contextTitle": "SDKs · Flutter · v4",
+    "template": "guide",
+    "status": "draft",
+    "sourceIndex": 1816,
+    "contentFile": "content/docs/chat/sdk/flutter/calling/managing-calls/start-or-handle-a-call.mdx",
+    "navOrder": 315
+  },
+  {
+    "id": 1919,
+    "path": "/sdk/flutter/calling/retrieving-call-information/retrieve-call-information",
+    "relativePath": "sdk/flutter/calling/retrieving-call-information/retrieve-call-information",
+    "sourcePath": "/sdk/flutter/calling/retrieving-call-information/retrieve-call-information",
+    "title": "Retrieve call information",
+    "description": "OpenIM Flutter SDK guide for Retrieve call information.",
+    "product": "sdk",
+    "version": "v4",
+    "platform": "flutter",
+    "contextKey": "chat/sdk/flutter",
+    "contextTitle": "SDKs · Flutter · v4",
+    "template": "guide",
+    "status": "draft",
+    "sourceIndex": 1817,
+    "contentFile": "content/docs/chat/sdk/flutter/calling/retrieving-call-information/retrieve-call-information.mdx",
+    "navOrder": 316
+  },
+  {
+    "id": 1920,
+    "path": "/sdk/flutter/calling/sending-custom-signals/send-a-custom-signal",
+    "relativePath": "sdk/flutter/calling/sending-custom-signals/send-a-custom-signal",
+    "sourcePath": "/sdk/flutter/calling/sending-custom-signals/send-a-custom-signal",
+    "title": "Send a custom signal",
+    "description": "OpenIM Flutter SDK guide for Send a custom signal.",
+    "product": "sdk",
+    "version": "v4",
+    "platform": "flutter",
+    "contextKey": "chat/sdk/flutter",
+    "contextTitle": "SDKs · Flutter · v4",
+    "template": "guide",
+    "status": "draft",
+    "sourceIndex": 1818,
+    "contentFile": "content/docs/chat/sdk/flutter/calling/sending-custom-signals/send-a-custom-signal.mdx",
+    "navOrder": 317
+  },
+  {
+    "id": 1921,
     "path": "/sdk/flutter/events/overview-events",
     "relativePath": "sdk/flutter/events/overview-events",
     "sourcePath": "/sdk/flutter/events/overview-events",
@@ -5485,12 +5773,12 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 1008.7,
+    "sourceIndex": 1819,
     "contentFile": "content/docs/chat/sdk/flutter/events/overview-events.mdx",
-    "navOrder": 310
+    "navOrder": 318
   },
   {
-    "id": 1806,
+    "id": 1922,
     "path": "/sdk/flutter/logger",
     "relativePath": "sdk/flutter/logger",
     "sourcePath": "/sdk/flutter/logger",
@@ -5503,9 +5791,9 @@
     "contextTitle": "SDKs · Flutter · v4",
     "template": "guide",
     "status": "draft",
-    "sourceIndex": 1009.7,
+    "sourceIndex": 1820,
     "contentFile": "content/docs/chat/sdk/flutter/logger.mdx",
-    "navOrder": 311
+    "navOrder": 319
   },
   {
     "id": 384,

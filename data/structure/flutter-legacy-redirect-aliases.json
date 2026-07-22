@@ -12,6 +12,18 @@
     "destination": "/sdk/flutter/message/retrieving-messages/retrieve-message-history"
   },
   {
+    "source": "/sdk/flutter/message/managing-a-message/update-a-message",
+    "destination": "/sdk/flutter/message/managing-messages/modify-a-message"
+  },
+  {
+    "source": "/sdk/flutter/message/managing-pinned-messages-in-group-channels/pin-a-message",
+    "destination": "/sdk/flutter/message/managing-messages/pin-conversation-messages"
+  },
+  {
+    "source": "/sdk/flutter/message/managing-pinned-messages-in-group-channels/unpin-a-message",
+    "destination": "/sdk/flutter/message/managing-messages/pin-conversation-messages"
+  },
+  {
     "source": "/sdk/flutter/message/receiving-messages-through-event-handler/receive-messages-in-a-channel",
     "destination": "/sdk/flutter/message/receiving-messages/receive-messages"
   },

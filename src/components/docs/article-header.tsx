@@ -5,7 +5,7 @@ import { getPlatformLabel, getProductLabel } from '@/src/config/docs';
 import { hasGuideMarkdownPage } from '@/src/lib/guide-markdown';
 import type { Locale } from '@/src/lib/i18n';
 import { t } from '@/src/lib/i18n';
-import type { PageCommercialInfo } from '@/src/lib/wasm-commercial';
+import type { PageCommercialInfo } from '@/src/lib/client-sdk-commercial';
 import type { BreadcrumbItem, RouteRecord } from '@/src/types/docs';
 
 export function ArticleHeader({

@@ -1,0 +1,80 @@
+---
+title: '发送自定义信令'
+description: '使用 OpenIM iOS SDK 在通话房间中发送和接收自定义信令。'
+sourcePath: '/sdk/ios/calling/sending-custom-signals/send-a-custom-signal'
+---
+
+`signalingSendCustomSignal:customInfo:onSuccess:onFailure:` 用于向指定通话房间发送轻量级业务协商数据，例如举手、切换布局提示或业务侧的状态同步。它不是聊天消息接口，也不能替代媒体引擎的数据通道。
+
+## 发送信令
+
+`customInfo` 是字符串。需要传递结构化数据时，先定义稳定的数据格式并序列化为 JSON。
+
+```objc
+NSDictionary *signal = @{
+    @"version": @1,
+    @"eventID": NSUUID.UUID.UUIDString.lowercaseString,
+    @"type": @"hand-raised",
+    @"userID": currentUserID,
+    @"sentAt": @((NSInteger64)(NSDate.date.timeIntervalSince1970 * 1000)),
+};
+
+NSData *data = [NSJSONSerialization dataWithJSONObject:signal options:0 error:nil];
+NSString *customInfo = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+
+[[OIMManager manager] signalingSendCustomSignal:roomID
+                                      customInfo:customInfo
+                                       onSuccess:^{
+    [self markSignalSubmitted:signal[@"eventID"]];
+}
+                                       onFailure:^(NSInteger code, NSString * _Nullable message) {
+    [self showCallError:code message:message ?: @"发送自定义信令失败"];
+}];
+```
+
+### 参数说明
+
+| 参数 | 说明 |
+| --- | --- |
+| `roomID` | 当前通话房间 ID，必须与发送方正在处理的通话一致。 |
+| `customInfo` | 业务自定义字符串。使用 JSON 时应包含协议版本和业务幂等 ID。 |
+
+成功 callback 表示 OpenIMServer 已接受本次发送，不等于其他参与者已经处理该数据。自定义信令应保持精简；大文件、聊天记录、长期状态和敏感凭据不应放入 `customInfo`。
+
+## 接收信令
+
+实现 `OIMSignalingListener` 的 `onReceiveCustomSignal:` 接收自定义信令。iOS enterprise SDK 的公开 delegate 只提供原始 `NSString *`，没有声明包含 `roomID` 和 `customInfo` 的对象；应用必须按照服务端和各端共同约定的格式解析字符串，再校验房间及业务协议。
+
+```objc
+@interface CallSignalStore () <OIMSignalingListener>
+@end
+
+@implementation CallSignalStore
+
+- (void)startListening {
+    [[OIMManager callbacker] addSignalingListener:self];
+}
+
+- (void)stopListening {
+    [[OIMManager callbacker] removeSignalingListener:self];
+}
+
+- (void)onReceiveCustomSignal:(NSString *)rawSignal {
+    NSDictionary *signal = [self parseAndValidateCallSignal:rawSignal];
+    if (signal == nil) return;
+    if (![signal[@"roomID"] isEqualToString:self.activeRoomID]) return;
+    if ([self hasAppliedSignal:signal[@"eventID"]]) return;
+
+    [self applySignal:signal];
+}
+
+@end
+```
+
+本页是 `onReceiveCustomSignal:` 的完整监听归属页。必须使用同一个 listener 实例调用 `addSignalingListener:` 和 `removeSignalingListener:`；退出登录、切换账号、离开通话功能或销毁状态层时移除。
+
+由于接收 callback 没有独立的 SDK `roomID` 字段，若业务需要按房间过滤，发送端应把 `roomID` 放入自有协议，并在接收端验证它与当前房间一致。再以协议中的 `eventID` 或其他稳定幂等键去重，不要依赖事件到达顺序。
+
+## 信令与持久状态
+
+自定义信令只提供实时通知，不是可查询的持久业务状态。页面重新进入、设备离线或 listener 尚未注册时，都可能无法仅凭它恢复完整状态。需要长期保存或审计的数据应通过业务后端或普通消息能力承载；通话房间和参与者快照则使用[获取通话信息](/sdk/ios/calling/retrieving-call-information/retrieve-call-information)中的查询 API 校准。

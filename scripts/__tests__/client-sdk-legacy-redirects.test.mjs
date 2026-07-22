@@ -21,7 +21,13 @@ test('maps reviewed WASM redirects only when the native destination is active', 
         destination === '/sdk/ios/group/creating-and-updating-groups/create-or-update-a-group',
     ),
   );
-  assert.ok(!entries.some(({ destination }) => destination.startsWith('/sdk/ios/calling/')));
+  assert.ok(
+    entries.some(
+      ({ source, destination }) =>
+        source === '/sdk/ios/calling/synchronizing-calls/synchronize-call-events' &&
+        destination === '/sdk/ios/calling/managing-calls/start-or-handle-a-call',
+    ),
+  );
   assert.ok(
     entries.some(
       ({ source, destination }) =>

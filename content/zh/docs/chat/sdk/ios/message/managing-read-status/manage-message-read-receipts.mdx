@@ -22,7 +22,7 @@ sourcePath: '/sdk/ios/message/managing-read-status/manage-message-read-receipts'
 
 ## 接收回执
 
-本页是两个回执 selector 的完整处理归属页。它们属于 `OIMAdvancedMsgListener`：
+本页是单聊与群聊回执 selector 的完整处理归属页。它们属于 `OIMAdvancedMsgListener`，但载荷结构不同：
 
 ```objc
 - (void)onRecvC2CReadReceipt:(NSArray<OIMReceiptInfo *> * _Nullable)receiptList {
@@ -40,23 +40,22 @@ sourcePath: '/sdk/ios/message/managing-read-status/manage-message-read-receipts'
     }
 }
 
-- (void)onRecvGroupReadReceipt:(NSArray<OIMReceiptInfo *> * _Nullable)receiptList {
-    if (receiptList.count == 0) {
+- (void)onRecvGroupReadReceipt:(OIMGroupMessageReceipt *)receipt {
+    if (receipt.conversationID.length == 0) {
         return;
     }
 
-    for (OIMReceiptInfo *receipt in receiptList) {
-        if (receipt.groupID.length == 0 || receipt.msgIDList.count == 0) {
+    for (OIMGroupMessageReadInfo *readInfo in receipt.groupMessageReadInfo ?: @[]) {
+        if (readInfo.clientMsgID.length == 0) {
             continue;
         }
-        for (NSString *clientMsgID in receipt.msgIDList ?: @[]) {
-            [self mergeGroupReceipt:receipt clientMsgID:clientMsgID];
-        }
+        [self mergeGroupReadInfo:readInfo
+                 conversationID:receipt.conversationID];
     }
 }
 ```
 
-回调的 `receiptList` 以及 `OIMReceiptInfo.userID`、`groupID`、`msgIDList` 在固定声明中都可能为空。先跳过无法确定路由或消息 ID 的载荷，再按会话路由确定目标会话，并按 `clientMsgID` 更新消息；不要把群回执当作完整成员列表快照。
+单聊回调的 `receiptList` 以及 `OIMReceiptInfo.userID`、`msgIDList` 在声明中可能为空。先跳过无法确定路由或消息 ID 的载荷，再按单聊对端和 `clientMsgID` 更新消息。
 
 `OIMReceiptInfo` 的公开属性如下：
 
@@ -70,10 +69,55 @@ sourcePath: '/sdk/ios/message/managing-read-status/manage-message-read-receipts'
 | `contentType` | `OIMMessageContentType` | 消息内容类型枚举。 |
 | `sessionType` | `OIMConversationType` | 会话类型枚举，用于区分单聊与群聊。 |
 
-单聊回执按 `userID + clientMsgID` 定位；群聊回执按 `groupID + clientMsgID` 定位。两个 callback 都是增量通知，不代表某条消息当前读状态的完整成员快照。
+群聊回调不是 `OIMReceiptInfo` 数组，而是一个 `OIMGroupMessageReceipt`：
+
+| 属性 | 类型 | 说明 |
+| --- | --- | --- |
+| `conversationID` | `NSString *` | 群会话 ID，用于路由本次增量。 |
+| `groupMessageReadInfo` | `NSArray<OIMGroupMessageReadInfo *> *` | 本次变化涉及的消息回执列表。 |
+
+每个 `OIMGroupMessageReadInfo` 包含 `clientMsgID`、`readMembers`、`hasReadCount` 和 `unreadCount`。用 `conversationID + clientMsgID` 合并消息的群回执状态；`readMembers` 是当前载荷携带的已读成员，人数展示优先使用 `hasReadCount` 和 `unreadCount`，不要用数组长度代替服务端计数。
+
+## 查询群消息已读成员
+
+`getGroupMessageReaderList:clientMsgID:filter:offset:count:onSuccess:onFailure:` 分页查询指定群消息的已读或未读成员。`filter` 为 `0` 时查询已读成员，为 `1` 时查询未读成员；`offset` 从 `0` 开始，`count` 是本次读取数量。
+
+```objc
+[[OIMManager manager] getGroupMessageReaderList:conversationID
+                                    clientMsgID:clientMsgID
+                                         filter:0
+                                         offset:0
+                                          count:20
+                                      onSuccess:^(NSArray<OIMGroupMemberInfo *> * _Nullable members) {
+    [self replaceReaders:members ?: @[] clientMsgID:clientMsgID];
+}
+                                      onFailure:^(NSInteger code, NSString * _Nullable message) {
+    [self showReadError:code message:message ?: @"查询已读成员失败"];
+}];
+```
+
+返回数组是本次分页的 `OIMGroupMemberInfo` 快照。继续加载时增加 `offset`；成员事件和回执增量可能在分页期间到达，最终人数仍以最新回执计数或重新查询结果校准。
+
+## 发送群消息已读回执
+
+需要明确上报一组群消息已读状态时，传入同一 `conversationID` 下的 `clientMsgID` 数组：
+
+```objc
+[[OIMManager manager] sendGroupMessageReadReceipt:conversationID
+                                     clientMsgIDs:visibleClientMsgIDs
+                                       onSuccess:^(NSString * _Nullable data) {
+    [self markLocalGroupMessagesRead:visibleClientMsgIDs
+                       conversationID:conversationID];
+}
+                                       onFailure:^(NSInteger code, NSString * _Nullable message) {
+    [self showReadError:code message:message ?: @"发送群消息已读回执失败"];
+}];
+```
+
+同一批 ID 必须属于目标会话。成功 callback 只表示上报请求完成；其他客户端的群回执事件与重新查询是后续独立阶段。
 
 listener 在消息状态层初始化时通过 `addAdvancedMsgListener:` 注册，并用同一实例移除，完整生命周期见[接收消息](/sdk/ios/message/receiving-messages/receive-messages)。
 
-固定 Objective-C header 没有 WASM `getGroupMessageReaderList()` 与 `sendGroupMessageReadReceipt()` 的公开对等 selector，因此本版本不能从 iOS SDK 查询单条群消息的完整已读／未读成员分页，也不应编造对应调用。会话未读数的完整处理见[管理会话已读状态](/sdk/ios/conversation/managing-conversations/manage-read-status)。
+会话未读数的完整处理见[管理会话已读状态](/sdk/ios/conversation/managing-conversations/manage-read-status)。
 
 成功 callback、回执 delegate 与重新进入会话后的本地消息快照是三个阶段。不要把 callback 成功等同于其他客户端已收到回执，也不要用回执数组长度推断完整阅读人数。

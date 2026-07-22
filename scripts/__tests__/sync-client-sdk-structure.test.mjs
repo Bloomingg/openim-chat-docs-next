@@ -13,16 +13,22 @@ import {
 const wasmSidebar = readJson('data/structure/wasm-sidebar.json');
 const wasmLabels = readJson('data/structure/wasm-navigation-labels.json');
 
-test('mirrors supported WASM paths and omits capabilities absent from native SDKs', () => {
+test('mirrors every supported WASM path for native SDKs', () => {
   const wasmPaths = getClientSdkSidebarPaths(wasmSidebar);
   for (const platform of ['ios', 'flutter']) {
     const mirrored = mirrorClientSdkSidebar(wasmSidebar, platform);
     const omitted = getOmittedClientSdkPaths(wasmSidebar, platform);
     assert.equal(mirrored.sidebarExpansion, wasmSidebar.sidebarExpansion);
     assert.equal(getClientSdkSidebarPaths(mirrored).length + omitted.length, wasmPaths.length);
-    assert.equal(omitted.length, 8);
-    assert.ok(omitted.includes(`/sdk/${platform}/calling/overview-calling`));
-    assert.ok(!mirrored.nodes.some((node) => node.id === 'calling'));
+    assert.equal(omitted.length, 0);
+    assert.ok(!omitted.includes(`/sdk/${platform}/calling/overview-calling`));
+    assert.ok(mirrored.nodes.some((node) => node.id === 'calling'));
+    assert.equal(
+      omitted.includes(
+        `/sdk/${platform}/conversation/managing-conversation-groups/manage-conversation-groups`,
+      ),
+      false,
+    );
   }
 });
 
@@ -43,7 +49,7 @@ test('seeds new audit paths and preserves reviewed records at unchanged paths', 
   assert.equal(audit.pages[1].locales.zh.reviewStatus, 'structure-only');
   assert.equal(audit.pages[1].locales.en.reviewStatus, 'deferred');
   assert.equal(audit.sources.iosSdk.commit, '17fb969fd3a360f00fe65f476435b81857e274f8');
-  assert.equal(audit.pages.filter((page) => page.disposition === 'omit').length, 8);
+  assert.equal(audit.pages.filter((page) => page.disposition === 'omit').length, 0);
 });
 
 test('retains routes removed from the sidebar as historical omitted records', () => {

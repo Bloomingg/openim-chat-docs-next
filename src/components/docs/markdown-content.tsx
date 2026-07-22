@@ -4,7 +4,7 @@ import { CodeBlock, CodeTabs, type CodeTab } from '@/src/components/docs/code-bl
 import { createHeadingIdGenerator } from '@/src/lib/heading-ids';
 import type { Locale } from '@/src/lib/i18n';
 import { t, toLocalizedPath } from '@/src/lib/i18n';
-import { matchCommercialSymbol } from '@/src/lib/wasm-commercial';
+import { matchCommercialSymbol } from '@/src/lib/client-sdk-commercial';
 
 type MarkdownBlock =
   | { type: 'blockquote'; lines: string[] }
@@ -81,9 +81,7 @@ function MarkdownBlockView({
   }
 
   if (block.type === 'code') {
-    return (
-      <CodeBlock code={block.code} language={block.language} locale={inlineOptions.locale} />
-    );
+    return <CodeBlock code={block.code} language={block.language} locale={inlineOptions.locale} />;
   }
 
   if (block.type === 'codeTabs') {

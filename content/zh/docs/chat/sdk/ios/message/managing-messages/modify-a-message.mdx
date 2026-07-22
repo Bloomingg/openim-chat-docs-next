@@ -1,0 +1,75 @@
+---
+title: '修改消息'
+description: '使用 OpenIM iOS SDK 修改已发送消息的内容。'
+sourcePath: '/sdk/ios/message/managing-messages/modify-a-message'
+---
+
+`modifyMessageWithConversationID:message:onSuccess:onFailure:` 用于在会话中修改一条已存在消息的内容。它和[删除消息](/sdk/ios/message/managing-messages/delete-a-message)、[撤回消息](/sdk/ios/message/managing-messages/revoke-a-message)不同：删除影响消息是否仍对当前账号可见，撤回让会话成员看到撤回态；修改则替换消息内容并同步给其他客户端。
+
+## 修改消息内容
+
+该 selector 接收消息所在的 `conversationID` 和修改后的完整 `OIMMessageInfo`：
+
+### 参数说明
+
+| 参数 | 类型 | 是否必填 | 说明 |
+| --- | --- | --- | --- |
+| `conversationID` | `NSString *` | 必填 | 消息所属的会话 ID。 |
+| `message` | `OIMMessageInfo *` | 必填 | 修改后的完整消息对象；必须保留原 `clientMsgID`。 |
+
+```objc
+if (message.textElem == nil || editedText.length == 0) {
+    return;
+}
+
+NSString *previousText = message.textElem.content;
+message.textElem.content = editedText;
+
+[[OIMManager manager]
+    modifyMessageWithConversationID:conversationID
+    message:message
+    onSuccess:^(NSString * _Nullable data) {
+        [self replaceMessage:message
+              conversationID:conversationID
+                  clientMsgID:message.clientMsgID];
+    }
+    onFailure:^(NSInteger code, NSString * _Nullable errorMessage) {
+        message.textElem.content = previousText;
+        [self showModifyError:code message:errorMessage ?: @"修改消息失败"];
+    }];
+```
+
+该方法不是局部更新。应以当前完整消息为基础只修改目标内容，保留 `clientMsgID`、路由、发送者、时间和其余 element。允许修改的发送者、时间窗口和消息类型由 OpenIMServer 校验；失败时应恢复或重新查询，不能只在本地保留编辑结果。
+
+## 返回结果
+
+成功 callback 的 `NSString *` 没有声明为修改后的消息对象，不能按 WASM 的返回模型解析。成功表示当前修改请求已完成；调用端可以先按 `clientMsgID` 展示提交的完整消息，再以消息修改事件或重新查询校准。
+
+调用成功不代表所有客户端界面已经更新。其他客户端通过 `onMessageModified:` 收到修改后的 `OIMMessageInfo`。
+
+## 监听消息修改
+
+本页是 `onMessageModified:` 的完整事件归属页。它属于应用已经注册的 `OIMAdvancedMsgListener`：
+
+```objc
+- (void)onMessageModified:(OIMMessageInfo *)message {
+    if (message.clientMsgID.length == 0) {
+        return;
+    }
+
+    NSString *conversationID = [self conversationIDForMessage:message];
+    [self replaceMessage:message
+          conversationID:conversationID
+              clientMsgID:message.clientMsgID];
+}
+```
+
+事件载荷是单个修改后的 `OIMMessageInfo`。按 `clientMsgID` 替换原消息，并结合 `sessionType`、`sendID`、`recvID` 和 `groupID` 确定所属会话；不要按数组位置或显示文本匹配。listener 的强引用、注册和移除方式见[接收消息](/sdk/ios/message/receiving-messages/receive-messages)。
+
+## 相关页面
+
+- [删除消息](/sdk/ios/message/managing-messages/delete-a-message)
+- [撤回消息](/sdk/ios/message/managing-messages/revoke-a-message)
+- [发送消息](/sdk/ios/message/sending-messages/send-a-message)
+- [按 ID 定位消息](/sdk/ios/message/retrieving-messages/locate-messages-by-id)
+- [接收消息](/sdk/ios/message/receiving-messages/receive-messages)

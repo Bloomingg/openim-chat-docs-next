@@ -1,0 +1,81 @@
+---
+title: '修改消息'
+description: '使用 OpenIM Flutter SDK 修改已发送消息的内容。'
+sourcePath: '/sdk/flutter/message/managing-messages/modify-a-message'
+---
+
+`modifyMessage()` 用于在会话中修改一条已存在消息的内容。它和[删除消息](/sdk/flutter/message/managing-messages/delete-a-message)、[撤回消息](/sdk/flutter/message/managing-messages/revoke-a-message)不同：删除影响消息是否仍对当前账号可见，撤回让会话成员看到撤回态；修改则替换消息内容并同步给其他客户端。
+
+## 修改消息内容
+
+`modifyMessage()` 接收消息所在的 `conversationID` 和修改后的完整 `Message`：
+
+### 参数说明
+
+| 参数 | 类型 | 是否必填 | 说明 |
+| --- | --- | --- | --- |
+| `conversationID` | `String` | 必填 | 消息所属的会话 ID。Flutter 的 `Message` 本身没有该字段。 |
+| `message` | `Message` | 必填 | 修改后的完整消息对象；必须保留原 `clientMsgID`。 |
+
+```dart
+final clientMsgID = message.clientMsgID;
+final textElem = message.textElem;
+if (clientMsgID == null || clientMsgID.isEmpty || textElem == null) {
+  throw StateError('Message cannot be edited');
+}
+
+final previousText = textElem.content;
+textElem.content = editedText;
+
+try {
+  await OpenIM.iMManager.messageManager.modifyMessage(
+    conversationID: conversationID,
+    message: message,
+  );
+  replaceMessage(conversationID, clientMsgID, message);
+} catch (_) {
+  textElem.content = previousText;
+  rethrow;
+}
+```
+
+该方法不是局部更新。应以当前完整消息为基础，只修改目标 element，保留 `clientMsgID`、路由、发送者、时间和其他字段。允许修改的发送者、时间窗口和消息类型由 OpenIMServer 校验；失败时应恢复原内容或重新查询，不能只在本地保留编辑结果。
+
+## 返回结果
+
+Flutter SDK 将 `modifyMessage()` 声明为未具体化的 `Future`，不能按 WASM 的返回模型把完成值当作修改后的 `Message`。Future 成功表示当前修改请求已经完成；调用端可以先按 `conversationID:clientMsgID` 展示提交的完整消息，再以 `onMessageModified` 或重新查询校准。
+
+Future 成功不代表所有客户端界面已经更新。事件也可能来自其他设备或其他有权限的操作，不能假设每次 callback 都对应当前页面刚完成的调用。
+
+## 监听消息修改
+
+本页是 `onMessageModified` 的完整事件归属页。回调携带单个修改后的 `Message`；由于 Flutter 的消息对象没有 `conversationID`，应先解析路由，再按 `conversationID:clientMsgID` 替换原消息：
+
+```dart
+Future<void> handleMessageModified(Message message) async {
+  final clientMsgID = message.clientMsgID;
+  if (clientMsgID == null || clientMsgID.isEmpty) return;
+
+  final conversationID = await resolveMessageConversationID(
+    message,
+    currentUserID,
+  );
+  if (conversationID == null) return;
+
+  replaceMessage(conversationID, clientMsgID, message);
+}
+```
+
+`resolveMessageConversationID()` 根据 `sessionType`、`groupID`、`sendID`、`recvID` 和当前登录用户确定消息来源，再调用 `getConversationIDBySessionType()` 校准。完整 helper 见[接收消息](/sdk/flutter/message/receiving-messages/receive-messages)。不要按数组位置、显示文本或当前分页长度匹配消息。
+
+该 handler 应纳入应用唯一的 `OnAdvancedMsgListener`，集中设置入口见[事件概览](/sdk/flutter/events/overview-events)。固定 SDK 没有 remove 或 unset API；退出登录或切换账号时，应停止向旧账号状态分发事件，并用新账号的完整 listener 覆盖。
+
+Future 成功、`onMessageModified` 到达和重新查询历史是三个独立阶段。需要确认最终快照时重新读取消息；重新查询失败不应被误报为修改请求失败。
+
+## 相关页面
+
+- [删除消息](/sdk/flutter/message/managing-messages/delete-a-message)
+- [撤回消息](/sdk/flutter/message/managing-messages/revoke-a-message)
+- [发送消息](/sdk/flutter/message/sending-messages/send-a-message)
+- [按 ID 定位消息](/sdk/flutter/message/retrieving-messages/locate-messages-by-id)
+- [接收消息](/sdk/flutter/message/receiving-messages/receive-messages)

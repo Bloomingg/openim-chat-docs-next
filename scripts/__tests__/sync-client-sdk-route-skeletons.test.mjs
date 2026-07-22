@@ -42,7 +42,7 @@ test('replaces legacy platform route records with the reviewed active tree', () 
   const sidebar = readJson('data/structure/ios-sidebar.json');
   const next = replaceClientSdkRouteRecords({ platformId: 'ios', sidebar, routes: original });
   const ios = next.filter((route) => route.contextKey === 'chat/sdk/ios');
-  assert.equal(ios.length, 52);
+  assert.equal(ios.length, 60);
   assert.deepEqual(
     ios.map((route) => route.path),
     resolveClientSdkSkeletonRoutes({ platformId: 'ios', sidebar, routes: original }).map(
@@ -65,7 +65,7 @@ test('resolves every active native suffix against the current WASM routes', () =
   for (const platformId of ['ios', 'flutter']) {
     const sidebar = readJson(`data/structure/${platformId}-sidebar.json`);
     const resolved = resolveClientSdkSkeletonRoutes({ platformId, sidebar, routes });
-    assert.equal(resolved.length, 52);
+    assert.equal(resolved.length, 60);
     assert.equal(resolved[0].path, `/sdk/${platformId}/overview`);
     assert.equal(resolved[0].title, `OpenIM SDK for ${platformId === 'ios' ? 'iOS' : 'Flutter'}`);
   }

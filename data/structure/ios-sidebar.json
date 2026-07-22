@@ -72,7 +72,8 @@
             "/sdk/ios/conversation/managing-conversations/hide-a-conversation",
             "/sdk/ios/conversation/managing-conversations/delete-or-clear-conversation"
           ]
-        }
+        },
+        "/sdk/ios/conversation/managing-conversation-groups/manage-conversation-groups"
       ]
     },
     {
@@ -127,7 +128,8 @@
           "children": [
             "/sdk/ios/message/composing-messages/custom-message-and-extra-data",
             "/sdk/ios/message/composing-messages/mention-users-in-a-message",
-            "/sdk/ios/message/composing-messages/manage-typing-status"
+            "/sdk/ios/message/composing-messages/manage-typing-status",
+            "/sdk/ios/message/composing-messages/transcribe-audio"
           ]
         },
         {
@@ -137,11 +139,23 @@
             "/sdk/ios/message/managing-messages/forward-or-merge-a-message",
             "/sdk/ios/message/managing-messages/delete-a-message",
             "/sdk/ios/message/managing-messages/revoke-a-message",
+            "/sdk/ios/message/managing-messages/modify-a-message",
+            "/sdk/ios/message/managing-messages/pin-conversation-messages",
             "/sdk/ios/message/managing-messages/insert-a-local-message",
             "/sdk/ios/message/managing-messages/clear-message-history"
           ]
         },
         "/sdk/ios/message/managing-read-status/manage-message-read-receipts"
+      ]
+    },
+    {
+      "id": "calling",
+      "title": "Calling",
+      "children": [
+        "/sdk/ios/calling/overview-calling",
+        "/sdk/ios/calling/managing-calls/start-or-handle-a-call",
+        "/sdk/ios/calling/retrieving-call-information/retrieve-call-information",
+        "/sdk/ios/calling/sending-custom-signals/send-a-custom-signal"
       ]
     },
     {

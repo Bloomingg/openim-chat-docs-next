@@ -20,7 +20,8 @@
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
         "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
-        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/pubspec.yaml"
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/pubspec.yaml",
+        "https://github.com/openimsdk/open-im-flutter-enterprise/tree/9c2fc8c10cb1a5fce1784ee520f60299e241268e/flutter_openim_sdk"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -28,11 +29,11 @@
         "zh": {
           "reviewStatus": "published",
           "reviewer": "Codex",
-          "reviewedAt": "2026-07-20",
+          "reviewedAt": "2026-07-21",
           "exampleVerification": {
             "status": "verified",
             "evidence": [
-              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 與 open-im-flutter-enterprise 固定 commit 9c2fc8c10cb1a5fce1784ee520f60299e241268e 的公開 Dart 宣告靜態核對概覽中的 method、model 與 listener；此證據不宣稱已完成 runtime integration test。"
             ],
             "reason": null
           }
@@ -51,7 +52,9 @@
       "redirectTo": null,
       "notes": [
         "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
-        "2026-07-21：公开概览不展示依赖版本号；API、model、enum 与 listener 仍以本记录中的固定 SDK commit 审核。"
+        "2026-07-21：公开概览不展示依赖版本号；API、model、enum 与 listener 仍以本记录中的固定 SDK commit 审核。",
+        "2026-07-21：已逐页加入 enterprise SDK 提供的会话分组与音视频通话快捷入口；能力按 open-im-flutter-enterprise 固定 commit 9c2fc8c10cb1a5fce1784ee520f60299e241268e 核对。",
+        "2026-07-21：已逐页补入 enterprise SDK 真实提供的消息修改、会话消息置顶与音频转写能力入口。"
       ]
     },
     {
@@ -1448,7 +1451,9 @@
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
         "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
-        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/message.dart"
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/message.dart",
+        "https://github.com/openimsdk/open-im-flutter-enterprise/tree/9c2fc8c10cb1a5fce1784ee520f60299e241268e/flutter_openim_sdk/lib/src/manager/im_message_manager.dart",
+        "https://github.com/openimsdk/open-im-flutter-enterprise/tree/9c2fc8c10cb1a5fce1784ee520f60299e241268e/flutter_openim_sdk/lib/src/models"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -1456,7 +1461,7 @@
         "zh": {
           "reviewStatus": "published",
           "reviewer": "Codex",
-          "reviewedAt": "2026-07-20",
+          "reviewedAt": "2026-07-21",
           "exampleVerification": {
             "status": "not-applicable",
             "evidence": [],
@@ -1477,7 +1482,8 @@
       "redirectTo": null,
       "notes": [
         "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
-        "2026-07-21：逐页对照 WASM 消息概览，按发送、接收、获取、搜索、管理、已读、提及、未读、扩展和事件归属补齐主题顺序与场景；Message nullable 字段、API 与能力缺口仍按固定 Flutter SDK 声明。"
+        "2026-07-21：逐页对照 WASM 消息概览，按发送、接收、获取、搜索、管理、已读、提及、未读、扩展和事件归属补齐主题顺序与场景；Message nullable 字段、API 与能力缺口仍按固定 Flutter SDK 声明。",
+        "2026-07-21：按 enterprise Flutter SDK 补齐消息修改、置顶会话消息与音频转写的主题入口、结果边界和事件归属。"
       ]
     },
     {
@@ -2238,7 +2244,9 @@
         "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/friendship_listener.dart",
         "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/conversation_listener.dart",
         "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/group_listener.dart",
-        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/advanced_msg_listener.dart"
+        "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/listener/advanced_msg_listener.dart",
+        "https://github.com/openimsdk/open-im-flutter-enterprise/tree/9c2fc8c10cb1a5fce1784ee520f60299e241268e/flutter_openim_sdk/lib/src/listener",
+        "https://github.com/openimsdk/open-im-flutter-enterprise/tree/9c2fc8c10cb1a5fce1784ee520f60299e241268e/flutter_openim_sdk/lib/src/manager"
       ],
       "sdkMethods": [
         "setUserListener",
@@ -2246,7 +2254,9 @@
         "setConversationListener",
         "setGroupListener",
         "setAdvancedMsgListener",
-        "setCustomBusinessListener"
+        "setCustomBusinessListener",
+        "setConversationGroupListener",
+        "setSignalingListener"
       ],
       "sdkEvents": [
         "onSyncServerStart",
@@ -2258,11 +2268,11 @@
         "zh": {
           "reviewStatus": "published",
           "reviewer": "Codex",
-          "reviewedAt": "2026-07-20",
+          "reviewedAt": "2026-07-21",
           "exampleVerification": {
             "status": "verified",
             "evidence": [
-              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 的公開 Dart 宣告靜態核對範例 method、參數、model 與 listener；此證據不宣稱已完成 runtime integration test。"
+              "已依 open-im-sdk-flutter 固定 commit 95889be7a26dce6fe896ef22096c9036cc25fc9b 與 open-im-flutter-enterprise 固定 commit 9c2fc8c10cb1a5fce1784ee520f60299e241268e 的 Dart listener 靜態核對集中設定範例；此證據不宣稱已完成 runtime integration test。"
             ],
             "reason": null
           }
@@ -2281,7 +2291,9 @@
       "redirectTo": null,
       "notes": [
         "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
-        "2026-07-20：發布前複審補齐 setCustomBusinessListener 的唯一集中設定與事件歸屬。"
+        "2026-07-20：發布前複審補齐 setCustomBusinessListener 的唯一集中設定與事件歸屬。",
+        "2026-07-21：已逐页核对 enterprise SDK 的 conversation group 与 signaling listener，并补入应用级集中设置入口；完整事件处理仍归各能力页面。",
+        "2026-07-21：已将 onMessageModified 与 onChangedPinnedMsg 纳入唯一 OnAdvancedMsgListener；完整处理分别归修改消息与置顶会话消息页面。"
       ]
     },
     {
@@ -2328,21 +2340,40 @@
       "currentPath": "/sdk/flutter/conversation/managing-conversation-groups/manage-conversation-groups",
       "targetPath": "/sdk/flutter/conversation/managing-conversation-groups/manage-conversation-groups",
       "sourceKind": "openim-specific",
-      "disposition": "omit",
+      "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b"
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-flutter-enterprise/tree/9c2fc8c10cb1a5fce1784ee520f60299e241268e/flutter_openim_sdk/lib/src/manager/im_conversation_group_manager.dart"
       ],
-      "sdkMethods": [],
-      "sdkEvents": [],
+      "sdkMethods": [
+        "createConversationGroup",
+        "deleteConversationGroup",
+        "getConversationGroupByConversationID",
+        "getConversationGroupInfoWithConversations",
+        "getConversationGroups",
+        "updateConversationGroup",
+        "setConversationGroupOrder",
+        "addConversationsToGroups",
+        "removeConversationsFromGroups"
+      ],
+      "sdkEvents": [
+        "onConversationGroupAdded",
+        "onConversationGroupChanged",
+        "onConversationGroupDeleted",
+        "onConversationGroupMemberAdded",
+        "onConversationGroupMemberDeleted"
+      ],
       "locales": {
         "zh": {
-          "reviewStatus": "structure-only",
-          "reviewer": null,
-          "reviewedAt": null,
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-21",
           "exampleVerification": {
-            "status": "pending",
-            "evidence": [],
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-flutter-enterprise 固定 commit 9c2fc8c10cb1a5fce1784ee520f60299e241268e 的 Dart manager、request、model、enum 与 listener 静态核对全部示例；此证据不宣称已完成 runtime integration test。"
+            ],
             "reason": null
           }
         },
@@ -2359,28 +2390,33 @@
       },
       "redirectTo": null,
       "notes": [
-        "2026-07-20：固定 Dart SDK 宣告没有该页面的公开能力；不纳入导航且不得编造替代 API。"
+        "2026-07-21：已逐页人工对照 WASM 会话分组页面与 enterprise Dart SDK；保留 Flutter 的 ConversationGroupType 枚举、List<ConversationGroupInfo> 返回、isEnd 分页和未具体化 Future 等真实差异。"
       ]
     },
     {
       "currentPath": "/sdk/flutter/message/composing-messages/transcribe-audio",
       "targetPath": "/sdk/flutter/message/composing-messages/transcribe-audio",
       "sourceKind": "openim-specific",
-      "disposition": "omit",
+      "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b"
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-flutter-enterprise/tree/9c2fc8c10cb1a5fce1784ee520f60299e241268e/flutter_openim_sdk/lib/src/manager/im_message_manager.dart",
+        "https://github.com/openimsdk/open-im-flutter-enterprise/tree/9c2fc8c10cb1a5fce1784ee520f60299e241268e/flutter_openim_sdk/lib/src/models/message.dart",
+        "https://github.com/openimsdk/open-im-flutter-enterprise/tree/9c2fc8c10cb1a5fce1784ee520f60299e241268e/flutter_openim_sdk/lib/src/models/speech_to_text.dart"
       ],
-      "sdkMethods": [],
+      "sdkMethods": ["speechToTextCapabilities", "speechToText", "setMessageLocalContent"],
       "sdkEvents": [],
       "locales": {
         "zh": {
-          "reviewStatus": "structure-only",
-          "reviewer": null,
-          "reviewedAt": null,
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-21",
           "exampleVerification": {
-            "status": "pending",
-            "evidence": [],
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-flutter-enterprise 固定 commit 9c2fc8c10cb1a5fce1784ee520f60299e241268e 的 im_message_manager.dart、message.dart 与 speech_to_text.dart 静态核对全部 Dart 示例；此证据不宣称已完成 runtime integration test。"
+            ],
             "reason": null
           }
         },
@@ -2397,28 +2433,33 @@
       },
       "redirectTo": null,
       "notes": [
-        "2026-07-20：固定 Dart SDK 宣告没有该页面的公开能力；不纳入导航且不得编造替代 API。"
+        "2026-07-21：已逐页人工对照 WASM 页面与 enterprise Flutter SDK；保留 filename 本地路径、Future<void> 能力检查、nullable text、完整 Message 本地写入和 SoundText.translate 等真实差异。"
       ]
     },
     {
       "currentPath": "/sdk/flutter/message/managing-messages/modify-a-message",
       "targetPath": "/sdk/flutter/message/managing-messages/modify-a-message",
       "sourceKind": "openim-specific",
-      "disposition": "omit",
+      "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b"
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-flutter-enterprise/tree/9c2fc8c10cb1a5fce1784ee520f60299e241268e/flutter_openim_sdk/lib/src/manager/im_message_manager.dart",
+        "https://github.com/openimsdk/open-im-flutter-enterprise/tree/9c2fc8c10cb1a5fce1784ee520f60299e241268e/flutter_openim_sdk/lib/src/listener/advanced_msg_listener.dart",
+        "https://github.com/openimsdk/open-im-flutter-enterprise/tree/9c2fc8c10cb1a5fce1784ee520f60299e241268e/flutter_openim_sdk/lib/src/models/message.dart"
       ],
-      "sdkMethods": [],
-      "sdkEvents": [],
+      "sdkMethods": ["modifyMessage"],
+      "sdkEvents": ["onMessageModified"],
       "locales": {
         "zh": {
-          "reviewStatus": "structure-only",
-          "reviewer": null,
-          "reviewedAt": null,
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-21",
           "exampleVerification": {
-            "status": "pending",
-            "evidence": [],
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-flutter-enterprise 固定 commit 9c2fc8c10cb1a5fce1784ee520f60299e241268e 的 im_message_manager.dart、advanced_msg_listener.dart 与 message.dart 静态核对全部 Dart 示例；此证据不宣称已完成 runtime integration test。"
+            ],
             "reason": null
           }
         },
@@ -2435,28 +2476,33 @@
       },
       "redirectTo": null,
       "notes": [
-        "2026-07-20：固定 Dart SDK 宣告没有该页面的公开能力；不纳入导航且不得编造替代 API。"
+        "2026-07-21：已逐页人工对照 WASM 页面与 enterprise Flutter SDK；保留未具体化 Future、完整 Message 参数和 Message 无 conversationID 等真实差异。"
       ]
     },
     {
       "currentPath": "/sdk/flutter/message/managing-messages/pin-conversation-messages",
       "targetPath": "/sdk/flutter/message/managing-messages/pin-conversation-messages",
       "sourceKind": "openim-specific",
-      "disposition": "omit",
+      "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b"
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-flutter-enterprise/tree/9c2fc8c10cb1a5fce1784ee520f60299e241268e/flutter_openim_sdk/lib/src/manager/im_message_manager.dart",
+        "https://github.com/openimsdk/open-im-flutter-enterprise/tree/9c2fc8c10cb1a5fce1784ee520f60299e241268e/flutter_openim_sdk/lib/src/listener/advanced_msg_listener.dart",
+        "https://github.com/openimsdk/open-im-flutter-enterprise/tree/9c2fc8c10cb1a5fce1784ee520f60299e241268e/flutter_openim_sdk/lib/src/models/message.dart"
       ],
-      "sdkMethods": [],
-      "sdkEvents": [],
+      "sdkMethods": ["getConversationPinnedMsg", "setConversationPinnedMsg"],
+      "sdkEvents": ["onChangedPinnedMsg"],
       "locales": {
         "zh": {
-          "reviewStatus": "structure-only",
-          "reviewer": null,
-          "reviewedAt": null,
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-21",
           "exampleVerification": {
-            "status": "pending",
-            "evidence": [],
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-flutter-enterprise 固定 commit 9c2fc8c10cb1a5fce1784ee520f60299e241268e 的 im_message_manager.dart、advanced_msg_listener.dart 与 message.dart 静态核对全部 Dart 示例；此证据不宣称已完成 runtime integration test。"
+            ],
             "reason": null
           }
         },
@@ -2473,29 +2519,30 @@
       },
       "redirectTo": null,
       "notes": [
-        "2026-07-20：固定 Dart SDK 宣告没有该页面的公开能力；不纳入导航且不得编造替代 API。"
+        "2026-07-21：已逐页人工对照 WASM 页面与 enterprise Flutter SDK；保留查询只返回 List<Message>、置顶详情仅由 ChangedPinnedMsg 事件提供等真实差异。"
       ]
     },
     {
       "currentPath": "/sdk/flutter/calling/overview-calling",
       "targetPath": "/sdk/flutter/calling/overview-calling",
       "sourceKind": "openim-specific",
-      "disposition": "omit",
+      "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b"
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-flutter-enterprise/tree/9c2fc8c10cb1a5fce1784ee520f60299e241268e/flutter_openim_sdk/lib/src/manager/im_signaling_manager.dart"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
       "locales": {
         "zh": {
-          "reviewStatus": "structure-only",
-          "reviewer": null,
-          "reviewedAt": null,
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-21",
           "exampleVerification": {
-            "status": "pending",
+            "status": "not-applicable",
             "evidence": [],
-            "reason": null
+            "reason": "本页为通话能力与数据边界概览，不包含可执行代码示例。"
           }
         },
         "en": {
@@ -2511,28 +2558,50 @@
       },
       "redirectTo": null,
       "notes": [
-        "2026-07-20：固定 Dart SDK 宣告没有该页面的公开能力；不纳入导航且不得编造替代 API。"
+        "2026-07-21：已逐页人工对照 WASM 通话概览与 enterprise Dart SDK，确认 SignalingManager、InvitationInfo、SignalingCertificate、RoomCallingInfo 和事件边界。"
       ]
     },
     {
       "currentPath": "/sdk/flutter/calling/managing-calls/start-or-handle-a-call",
       "targetPath": "/sdk/flutter/calling/managing-calls/start-or-handle-a-call",
       "sourceKind": "openim-specific",
-      "disposition": "omit",
+      "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b"
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-flutter-enterprise/tree/9c2fc8c10cb1a5fce1784ee520f60299e241268e/flutter_openim_sdk/lib/src/manager/im_signaling_manager.dart"
       ],
-      "sdkMethods": [],
-      "sdkEvents": [],
+      "sdkMethods": [
+        "signalingInvite",
+        "signalingInviteInGroup",
+        "signalingAccept",
+        "signalingReject",
+        "signalingCancel",
+        "signalingHungUp"
+      ],
+      "sdkEvents": [
+        "onReceiveNewInvitation",
+        "onInviteeAccepted",
+        "onInviteeRejected",
+        "onInvitationCancelled",
+        "onInvitationTimeout",
+        "onInviteeAcceptedByOtherDevice",
+        "onInviteeRejectedByOtherDevice",
+        "onHangup",
+        "onRoomParticipantConnected",
+        "onRoomParticipantDisconnected",
+        "onStreamChange"
+      ],
       "locales": {
         "zh": {
-          "reviewStatus": "structure-only",
-          "reviewer": null,
-          "reviewedAt": null,
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-21",
           "exampleVerification": {
-            "status": "pending",
-            "evidence": [],
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-flutter-enterprise 固定 commit 9c2fc8c10cb1a5fce1784ee520f60299e241268e 的 Dart signaling manager、model 与 listener 静态核对发起、接受、拒绝、取消、挂断和 11 个事件示例。"
+            ],
             "reason": null
           }
         },
@@ -2549,28 +2618,35 @@
       },
       "redirectTo": null,
       "notes": [
-        "2026-07-20：固定 Dart SDK 宣告没有该页面的公开能力；不纳入导航且不得编造替代 API。"
+        "2026-07-21：已逐页人工按 WASM 操作顺序补齐通话流程，并保留 Flutter nullable 字段、单例 listener 和无 remove API 的真实边界。"
       ]
     },
     {
       "currentPath": "/sdk/flutter/calling/retrieving-call-information/retrieve-call-information",
       "targetPath": "/sdk/flutter/calling/retrieving-call-information/retrieve-call-information",
       "sourceKind": "openim-specific",
-      "disposition": "omit",
+      "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b"
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-flutter-enterprise/tree/9c2fc8c10cb1a5fce1784ee520f60299e241268e/flutter_openim_sdk/lib/src/manager/im_signaling_manager.dart"
       ],
-      "sdkMethods": [],
+      "sdkMethods": [
+        "getSignalingInvitationInfoStartApp",
+        "signalingGetRoomByGroupID",
+        "signalingGetTokenByRoomID"
+      ],
       "sdkEvents": [],
       "locales": {
         "zh": {
-          "reviewStatus": "structure-only",
-          "reviewer": null,
-          "reviewedAt": null,
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-21",
           "exampleVerification": {
-            "status": "pending",
-            "evidence": [],
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-flutter-enterprise 固定 commit 9c2fc8c10cb1a5fce1784ee520f60299e241268e 静态核对三个查询方法及 SignalingInfo、RoomCallingInfo、SignalingCertificate 的 nullable 返回边界。"
+            ],
             "reason": null
           }
         },
@@ -2587,28 +2663,31 @@
       },
       "redirectTo": null,
       "notes": [
-        "2026-07-20：固定 Dart SDK 宣告没有该页面的公开能力；不纳入导航且不得编造替代 API。"
+        "2026-07-21：已逐页人工区分启动邀请、按群房间与房间凭据快照，并说明查询、listener 增量和重新校准是不同阶段。"
       ]
     },
     {
       "currentPath": "/sdk/flutter/calling/sending-custom-signals/send-a-custom-signal",
       "targetPath": "/sdk/flutter/calling/sending-custom-signals/send-a-custom-signal",
       "sourceKind": "openim-specific",
-      "disposition": "omit",
+      "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b"
+        "https://github.com/openimsdk/open-im-sdk-flutter/tree/95889be7a26dce6fe896ef22096c9036cc25fc9b",
+        "https://github.com/openimsdk/open-im-flutter-enterprise/tree/9c2fc8c10cb1a5fce1784ee520f60299e241268e/flutter_openim_sdk/lib/src/manager/im_signaling_manager.dart"
       ],
-      "sdkMethods": [],
-      "sdkEvents": [],
+      "sdkMethods": ["signalingSendCustomSignal"],
+      "sdkEvents": ["onReceiveCustomSignal"],
       "locales": {
         "zh": {
-          "reviewStatus": "structure-only",
-          "reviewer": null,
-          "reviewedAt": null,
+          "reviewStatus": "published",
+          "reviewer": "Codex",
+          "reviewedAt": "2026-07-21",
           "exampleVerification": {
-            "status": "pending",
-            "evidence": [],
+            "status": "verified",
+            "evidence": [
+              "已依 open-im-flutter-enterprise 固定 commit 9c2fc8c10cb1a5fce1784ee520f60299e241268e 静态核对 signalingSendCustomSignal、CustomSignaling 与 onReceiveCustomSignal。"
+            ],
             "reason": null
           }
         },
@@ -2625,7 +2704,7 @@
       },
       "redirectTo": null,
       "notes": [
-        "2026-07-20：固定 Dart SDK 宣告没有该页面的公开能力；不纳入导航且不得编造替代 API。"
+        "2026-07-21：已逐页人工补齐发送结果、业务协议校验、roomID:eventID 幂等边界和 listener 单例限制。"
       ]
     }
   ]

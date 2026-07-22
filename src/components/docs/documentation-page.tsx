@@ -6,10 +6,7 @@ import { Feedback } from '@/src/components/docs/feedback';
 import { MarkdownContent } from '@/src/components/docs/markdown-content';
 import { Pagination } from '@/src/components/docs/pagination';
 import { PlatformApiOverviewPage } from '@/src/components/docs/platform-api-overview-page';
-import {
-  SdkOverviewPage,
-  type SdkOverviewPlatform,
-} from '@/src/components/docs/sdk-overview-page';
+import { SdkOverviewPage, type SdkOverviewPlatform } from '@/src/components/docs/sdk-overview-page';
 import { TocGithubLink } from '@/src/components/docs/toc-github-link';
 import { getMDXComponents } from '@/src/components/mdx-components';
 import type { ContextOption } from '@/src/components/docs/context-picker';
@@ -39,8 +36,7 @@ import {
   isClientSdkLocalePublished,
   isClientSdkRoute,
 } from '@/src/lib/client-sdk-publication';
-import { getPageCommercialInfo, getPageCommercialNames } from '@/src/lib/wasm-commercial';
-import { isWasmRoute } from '@/src/lib/wasm-publication';
+import { getPageCommercialInfo, getPageCommercialNames } from '@/src/lib/client-sdk-commercial';
 import type { BreadcrumbItem, TocItem } from '@/src/types/docs';
 
 export type DocumentationPageParams = {
@@ -199,7 +195,7 @@ export async function renderDocumentationPage(
   const tocFooter = platformApiServerVersion ? (
     <TocGithubLink version={platformApiServerVersion} />
   ) : undefined;
-  const commercial = isWasmRoute(effectiveRoute.path)
+  const commercial = isClientSdkRoute(effectiveRoute.path)
     ? getPageCommercialInfo(effectiveRoute.path)
     : undefined;
   const commercialNames =

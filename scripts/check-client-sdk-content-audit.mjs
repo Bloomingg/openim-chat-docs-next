@@ -128,7 +128,7 @@ function validateManualPage({ platform, page, path, source, errors }) {
     if ((page.sdkMethods?.length ?? 0) > 0 && !source.includes('```objc')) {
       errors.push(`${path}: method page requires an Objective-C example`);
     }
-    if (/onSuccess:\s*\^\s*\{/.test(source)) {
+    if (hasInvalidObjCSuccessBlock(source)) {
       errors.push(`${path}: Objective-C onSuccess block is missing its declared parameter`);
     }
     if (/\[OIMManager manager\]\.callbacker/.test(source)) {
@@ -156,6 +156,20 @@ function validateManualPage({ platform, page, path, source, errors }) {
       errors.push(`${path}: content invents a Flutter listener removal API`);
     }
   }
+}
+
+function hasInvalidObjCSuccessBlock(source) {
+  const zeroArgumentSelectors = [
+    'signalingReject',
+    'signalingCancel',
+    'signalingHungUp',
+    'signalingSendCustomSignal',
+  ];
+  const zeroArgumentCall = new RegExp(
+    `(?:${zeroArgumentSelectors.join('|')}):[\\s\\S]{0,1200}?onSuccess:\\s*\\^\\s*\\{`,
+    'g',
+  );
+  return /onSuccess:\s*\^\s*\{/.test(source.replace(zeroArgumentCall, ''));
 }
 
 function extractDartCodeBlocks(source) {

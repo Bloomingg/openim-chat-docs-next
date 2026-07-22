@@ -1,0 +1,42 @@
+---
+title: '音视频通话概览'
+description: '了解 OpenIM Flutter SDK 的音视频通话信令、房间信息和事件边界。'
+sourcePath: '/sdk/flutter/calling/overview-calling'
+---
+
+OpenIM Flutter SDK 的 `SignalingManager` 提供发起邀请、接受、拒绝、取消、挂断、查询房间和同步通话状态所需的信令 API。它负责协调谁进入哪个房间以及通话生命周期，不负责采集摄像头、播放远端媒体流或渲染通话界面。
+
+应用需要把 SDK 返回的 `roomID`、`token` 和 `liveURL` 交给所选的实时音视频媒体引擎，并自行处理设备权限、媒体轨道、弱网策略和界面状态。不要把 OpenIM 信令 API 描述成一套完整的 WebRTC 媒体 SDK。
+
+## 通话流程
+
+1. 调用 `signalingInvite()` 发起单聊通话，或调用 `signalingInviteInGroup()` 发起群聊通话。
+2. 被邀请方从 `onReceiveNewInvitation` 取得 `SignalingInfo`，选择接受或拒绝。
+3. 接受方调用 `signalingAccept()`，双方使用返回的房间凭据接入媒体引擎。
+4. 通话过程中根据成员、媒体流和自定义信令 listener 更新本地状态。
+5. 发起方可以取消尚未接通的邀请；任一参与者都可以挂断已经建立的通话。
+
+## 核心数据
+
+| 数据 | 说明 |
+| --- | --- |
+| `InvitationInfo` | 邀请人、被邀请人、群组、房间、媒体类型、超时时间和会话类型；字段均为 nullable，处理 listener 时需要先校验。 |
+| `SignalingInfo` | 操作者 `userID`、原始 `invitation` 和可选的 `offlinePushInfo`。 |
+| `SignalingCertificate` | OpenIMServer 返回的 `roomID`、`token`、`liveURL` 和忙线用户列表。 |
+| `RoomCallingInfo` | 按群组查询到的房间、邀请、参与者和入会凭据。 |
+
+`customData` 不是 Flutter `InvitationInfo` 的公开字段；需要业务协商数据时，使用房间自定义信令，并避免传入长期凭据、管理员密钥或其他敏感数据。
+
+## 状态更新与事件归属
+
+发起、接受、拒绝、取消和挂断等写操作需要分别处理 Future 与 listener。Future 成功表示当前信令请求已经完成；listener 反映邀请方、被邀请方、其他设备或房间参与者看到的增量状态，两者不是同一个完成信号。
+
+邀请生命周期、成员进出房间、挂断和媒体流变化的完整 listener 统一见[发起或处理通话](/sdk/flutter/calling/managing-calls/start-or-handle-a-call)；自定义信令见[发送自定义信令](/sdk/flutter/calling/sending-custom-signals/send-a-custom-signal)。房间和凭据查询只通过 Future 返回快照，具体见[获取通话信息](/sdk/flutter/calling/retrieving-call-information/retrieve-call-information)。
+
+概览页不设置 listener。通话状态以 `roomID` 为主键；参与者状态还需要结合用户 ID。需要显示当前房间快照时，再查询房间信息。
+
+## 相关页面
+
+- [发起或处理通话](/sdk/flutter/calling/managing-calls/start-or-handle-a-call)
+- [获取通话信息](/sdk/flutter/calling/retrieving-call-information/retrieve-call-information)
+- [发送自定义信令](/sdk/flutter/calling/sending-custom-signals/send-a-custom-signal)

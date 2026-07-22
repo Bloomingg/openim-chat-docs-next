@@ -1,6 +1,6 @@
 ---
 title: 'OpenIM iOS SDK 概览'
-description: '在 iOS 应用中使用 OpenIM SDK 接入用户、会话、群组、消息和事件能力。'
+description: '在 iOS 应用中使用 OpenIM SDK 接入用户、会话、群组、消息、通话和事件能力。'
 sourcePath: '/sdk/ios/overview'
 ---
 
@@ -14,7 +14,7 @@ OpenIM iOS SDK 通过 Objective-C 接口向 iPhone 和 iPad 应用提供 OpenIMS
 2. 从可信后端取得当前用户的 `userID` 和 Token。
 3. 配置 `OIMInitConfig` 并调用 `initSDKWithConfig:...`。
 4. 在登录前注册业务 delegate，再调用 `login:token:...`。
-5. 使用用户、好友、会话、群组和消息 API 构建业务界面。
+5. 使用用户、好友、会话、群组、消息和音视频通话信令 API 构建业务界面。
 6. 退出或切换账号时移除 delegate，并清理当前账号的应用状态。
 
 ## 文档结构
@@ -23,19 +23,20 @@ OpenIM iOS SDK 通过 Objective-C 接口向 iPhone 和 iPad 应用提供 OpenIMS
 | --- | --- |
 | [快速开始](/sdk/ios/getting-started/environment-specific-implementation) | 安装、初始化、认证、连接生命周期和第一条消息。 |
 | [用户](/sdk/ios/user/overview-user) | 用户资料、好友、黑名单和在线状态。 |
-| [会话](/sdk/ios/conversation/overview-conversation) | 会话查询、设置、草稿、未读数、隐藏和清理。 |
+| [会话](/sdk/ios/conversation/overview-conversation) | 会话查询、设置、草稿、未读数、隐藏、清理和会话分组。 |
 | [群组](/sdk/ios/group/overview-group) | 群资料、群成员、入群申请、权限和群组事件。 |
 | [消息](/sdk/ios/message/overview-message) | 创建、发送、接收、查询、搜索、撤回和已读回执。 |
+| [音视频通话](/sdk/ios/calling/overview-calling) | 通话信令、房间凭据、自定义信令和通话事件。 |
 | [事件](/sdk/ios/events/overview-events) | delegate 注册、移除和初始化同步。 |
 
-当前 iOS Objective-C SDK 未公开 WASM 文档中的会话分组、消息修改、消息置顶、语音转文字和音视频信令接口，相关页面不会用相近名称臆造能力。
+商业版能力均以 enterprise iOS SDK 的真实 Objective-C 或随 SDK 发布的 OpenIMCore 接口成文，包括[管理会话分组](/sdk/ios/conversation/managing-conversation-groups/manage-conversation-groups)、[修改消息](/sdk/ios/message/managing-messages/modify-a-message)、[置顶会话中的消息](/sdk/ios/message/managing-messages/pin-conversation-messages)、[将音频转为文字](/sdk/ios/message/composing-messages/transcribe-audio)和[音视频通话](/sdk/ios/calling/overview-calling)。其中会话分组和音频转写直接使用 OpenIMCore 的 JSON 接口，其余能力使用 `OIMManager` 高阶 Objective-C selector；页面会明确两种调用边界，不用相近名称臆造 model。
 
 ## 关键数据边界
 
 - 单聊发送时填写 `recvID`，群聊发送时填写 `groupID`。
 - `OIMConversationInfo` 保存会话展示信息和未读数；`OIMGroupInfo` 与 `OIMGroupMemberInfo` 保存群组及成员关系。
 - 查询 callback 建立快照，delegate 合并后续增量；状态变更 callback 成功不等于所有端的 delegate 已经到达。
-- Token 属于敏感数据，不应写入普通日志或持久化到不受控存储。
+- Token 和房间凭据都属于敏感数据，不应写入普通日志或持久化到不受控存储。
 
 ## 参考
 

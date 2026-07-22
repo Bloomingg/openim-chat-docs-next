@@ -51,7 +51,37 @@ query.clientMsgIDList = @[clientMsgID];
 
 ## 读取消息上下文
 
-固定 iOS Objective-C header 没有 WASM `fetchSurroundingMessages()` 的对等 selector。需要显示命中消息周边内容时，以命中消息的 `clientMsgID` 作为 `startClientMsgID`，搭配正向与反向高级历史查询读取上下文；不要把 `findMessageList:` 当成周边消息查询。分页与方向边界请参阅[获取消息历史](/sdk/ios/message/retrieving-messages/retrieve-message-history)。
+取得定位消息后，可以调用 `fetchSurroundingMessages:onSuccess:onFailure:` 一次读取它前后的消息，适用于从搜索结果或引用消息跳入上下文。
+
+### 参数说明
+
+| 字段 | 类型 | 说明 |
+| --- | --- | --- |
+| `startMessage` | `OIMMessageInfo *` | 已由搜索、定位或历史查询取得的锚点消息。 |
+| `viewType` | `OIMFetchSurroundingHistoryViewType` | `Quote`（0）表示引用场景，`Search`（1）表示搜索场景。 |
+| `before` | `NSInteger` | 锚点之前读取的消息数量。 |
+| `after` | `NSInteger` | 锚点之后读取的消息数量。 |
+
+```objc
+OIMFetchSurroundingMessagesReq *request = [OIMFetchSurroundingMessagesReq new];
+request.startMessage = locatedMessage;
+request.viewType = OIMFetchSurroundingHistoryViewTypeSearch;
+request.before = 20;
+request.after = 20;
+
+[[OIMManager manager] fetchSurroundingMessages:request
+                                     onSuccess:^(NSArray<OIMMessageInfo *> * _Nullable messages) {
+    [self replaceContext:messages ?: @[]
+           anchorMessage:locatedMessage];
+}
+                                     onFailure:^(NSInteger code, NSString * _Nullable message) {
+    [self showLookupError:code message:message ?: @"读取消息上下文失败"];
+}];
+```
+
+成功 callback 返回按 SDK 结果排列的 `OIMMessageInfo` 数组。结果可能少于 `before + after + 1`，例如锚点靠近历史边界、部分消息已删除或本地同步尚未完成；界面应按每条消息的 `clientMsgID` 去重，并确认锚点是否包含在结果中，不要依赖固定数组位置。
+
+需要继续向某一方向加载时，使用高级历史查询分页；分页与方向边界请参阅[获取消息历史](/sdk/ios/message/retrieving-messages/retrieve-message-history)。
 
 定位 callback 成功后可直接使用结果建立快照，查询本身不会触发消息事件。页面打开期间收到新消息、删除或撤回事件时，仍按 `conversationID` 与 `clientMsgID` 合并；同步完成后需要当前结果时，重新执行原查询。
 

@@ -106,13 +106,37 @@ test('rejects invalid Objective-C callback blocks and callbacker receivers', () 
     manualPages: new Map([
       [
         path,
-        '```objc\nOIMPlatform platform = OIMPlatformIOS;\n[[OIMManager manager].callbacker addGroupListener:self];\n[manager leaveGroup:groupID onSuccess:^{ } onFailure:nil];\n```',
+        '```objc\nOIMPlatform platform = OIMPlatformIOS;\n[[OIMManager manager].callbacker addGroupListener:self];\n[manager createGroup:groupInfo onSuccess:^{ } onFailure:nil];\n```',
       ],
     ]),
   });
   assert.ok(errors.some((error) => error.includes('missing its declared parameter')));
   assert.ok(errors.some((error) => error.includes('OIMManager class property')));
   assert.ok(errors.some((error) => error.includes('nonexistent OIMPlatformIOS')));
+});
+
+test('accepts parameterless Objective-C signaling success callbacks declared by the SDK', () => {
+  const platform = getClientSdkPlatform('ios');
+  const path = '/sdk/ios/calling/sending-custom-signals/send-a-custom-signal';
+  const page = auditPage(path, platform.sdkCommit);
+  page.openimSources = [`https://github.com/openimsdk/open-im-sdk-ios/tree/${platform.sdkCommit}`];
+  page.sdkMethods = ['signalingSendCustomSignal:customInfo:onSuccess:onFailure:'];
+  const errors = validateClientSdkAudit({
+    platform,
+    sidebar: { nodes: [path] },
+    audit: {
+      schemaVersion: 1,
+      sources: { iosSdk: { tag: platform.sdkTag, commit: platform.sdkCommit } },
+      pages: [page],
+    },
+    manualPages: new Map([
+      [
+        path,
+        '```objc\n[[OIMManager manager] signalingSendCustomSignal:roomID customInfo:customInfo onSuccess:^{ } onFailure:nil];\n```',
+      ],
+    ]),
+  });
+  assert.ok(!errors.some((error) => error.includes('missing its declared parameter')));
 });
 
 test('rejects conversationID on the Flutter Message model', () => {

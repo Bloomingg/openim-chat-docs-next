@@ -37,7 +37,7 @@ test('native sidebars preserve supported WASM route suffixes in order', () => {
   for (const platform of ['ios', 'flutter']) {
     const sidebar = readJson(`data/structure/${platform}-sidebar.json`);
     const paths = getClientSdkSidebarPaths(sidebar);
-    assert.equal(paths.length, 52, platform);
+    assert.equal(paths.length, 60, platform);
     assert.equal(new Set(paths).size, paths.length, platform);
     const wasmSuffixes = new Set(wasmPaths.map((path) => path.replace('/sdk/wasm/', '')));
     assert.ok(

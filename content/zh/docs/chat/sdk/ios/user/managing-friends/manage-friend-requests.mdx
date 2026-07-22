@@ -82,7 +82,26 @@ req.time = lastViewedAt;
                                      onFailure:nil];
 ```
 
-固定版本没有公开删除好友申请记录的 selector，因此不提供 WASM `deleteFriendRequests()` 的替代调用。
+## 删除好友申请记录
+
+`deleteFriendRequests:onSuccess:onFailure:` 可以一次删除一条或多条申请记录。每个 `DeleteFriendRequest` 必须同时提供申请方 `fromUserID` 与接收方 `toUserID`；这两个字段共同定位申请，不能只传当前页面看到的对端用户 ID。
+
+```objc
+DeleteFriendRequest *deleteRequest =
+    [[DeleteFriendRequest alloc] initWithFromUserID:application.fromUserID
+                                          toUserID:application.toUserID];
+
+[[OIMManager manager] deleteFriendRequests:@[deleteRequest]
+                                 onSuccess:^(NSString * _Nullable data) {
+    [requestStore removeApplicationFromUserID:application.fromUserID
+                                     toUserID:application.toUserID];
+}
+                                 onFailure:^(NSInteger code, NSString * _Nullable message) {
+    [self showDeleteError:code message:message ?: @"删除好友申请失败"];
+}];
+```
+
+成功 callback 表示删除请求完成；其他客户端或相关页面仍以 `onFriendApplicationDeleted:` 合并增量，必要时重置分页并重新查询。删除申请记录不会自动新增或删除好友关系。
 
 ## 调用后的状态变化
 
@@ -91,6 +110,7 @@ req.time = lastViewedAt;
 | `addFriend:reqMessage:...` | 服务端已接收申请。 | `onFriendApplicationAdded:` 分流到收到或发出的列表。 |
 | `acceptFriendApplication:handleMsg:...` | 同意请求已完成。 | `onFriendApplicationAccepted:` 更新申请；好友关系由 `onFriendAdded:` 同步。 |
 | `refuseFriendApplication:handleMsg:...` | 拒绝请求已完成。 | `onFriendApplicationRejected:` 更新状态并移出待处理列表。 |
+| `deleteFriendRequests:...` | 指定申请记录的删除请求已完成。 | `onFriendApplicationDeleted:` 按 `fromUserID:toUserID` 移除记录。 |
 
 callback 成功、申请 delegate、好友关系 delegate 和重新查询校准是不同阶段。
 

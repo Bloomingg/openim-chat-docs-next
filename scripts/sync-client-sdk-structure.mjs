@@ -27,18 +27,14 @@ const openimDocs = {
   commit: 'efd0f251b288167e1ca617504b10dd73986429f0',
 };
 
-const omittedSuffixes = new Set([
-  'conversation/managing-conversation-groups/manage-conversation-groups',
-  'message/composing-messages/transcribe-audio',
-  'message/managing-messages/modify-a-message',
-  'message/managing-messages/pin-conversation-messages',
-  'calling/overview-calling',
-  'calling/managing-calls/start-or-handle-a-call',
-  'calling/retrieving-call-information/retrieve-call-information',
-  'calling/sending-custom-signals/send-a-custom-signal',
-]);
+const omittedSuffixesByPlatform = {
+  flutter: new Set(),
+  ios: new Set(),
+};
 
 export function mirrorClientSdkSidebar(wasmSidebar, platformId) {
+  const omittedSuffixes = omittedSuffixesByPlatform[platformId];
+  if (!omittedSuffixes) throw new Error(`Unsupported native SDK platform: ${platformId}`);
   const replacePath = (path) => path.replace('/sdk/wasm/', `/sdk/${platformId}/`);
   const mirrorEntry = (entry) => {
     if (typeof entry === 'string') {
@@ -56,6 +52,8 @@ export function mirrorClientSdkSidebar(wasmSidebar, platformId) {
 }
 
 export function getOmittedClientSdkPaths(wasmSidebar, platformId) {
+  const omittedSuffixes = omittedSuffixesByPlatform[platformId];
+  if (!omittedSuffixes) throw new Error(`Unsupported native SDK platform: ${platformId}`);
   return getClientSdkSidebarPaths(wasmSidebar)
     .filter((path) => omittedSuffixes.has(path.replace('/sdk/wasm/', '')))
     .map((path) => path.replace('/sdk/wasm/', `/sdk/${platformId}/`));

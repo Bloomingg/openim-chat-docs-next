@@ -318,23 +318,23 @@
     {
       "platform": "flutter",
       "source": "/sdk/flutter/message/managing-a-message/update-a-message",
-      "disposition": "remove",
-      "destination": null,
-      "reason": "旧英文结构页不属于当前 OpenIM 原生 SDK 公开能力，或已由新的任务型结构取代且无安全的一对一去向。"
+      "disposition": "merge",
+      "destination": "/sdk/flutter/message/managing-messages/modify-a-message",
+      "reason": "旧英文结构页已合并到当前 OpenIM 原生 SDK 能力页，并保留永久重定向。"
     },
     {
       "platform": "flutter",
       "source": "/sdk/flutter/message/managing-pinned-messages-in-group-channels/pin-a-message",
-      "disposition": "remove",
-      "destination": null,
-      "reason": "旧英文结构页不属于当前 OpenIM 原生 SDK 公开能力，或已由新的任务型结构取代且无安全的一对一去向。"
+      "disposition": "merge",
+      "destination": "/sdk/flutter/message/managing-messages/pin-conversation-messages",
+      "reason": "旧英文结构页已合并到当前 OpenIM 原生 SDK 能力页，并保留永久重定向。"
     },
     {
       "platform": "flutter",
       "source": "/sdk/flutter/message/managing-pinned-messages-in-group-channels/unpin-a-message",
-      "disposition": "remove",
-      "destination": null,
-      "reason": "旧英文结构页不属于当前 OpenIM 原生 SDK 公开能力，或已由新的任务型结构取代且无安全的一对一去向。"
+      "disposition": "merge",
+      "destination": "/sdk/flutter/message/managing-messages/pin-conversation-messages",
+      "reason": "旧英文结构页已合并到当前 OpenIM 原生 SDK 能力页，并保留永久重定向。"
     },
     {
       "platform": "flutter",
@@ -1123,23 +1123,23 @@
     {
       "platform": "ios",
       "source": "/sdk/ios/message/managing-pinned-messages-in-group-channels/list-pinned-messages",
-      "disposition": "remove",
-      "destination": null,
-      "reason": "旧英文结构页不属于当前 OpenIM 原生 SDK 公开能力，或已由新的任务型结构取代且无安全的一对一去向。"
+      "disposition": "merge",
+      "destination": "/sdk/ios/message/managing-messages/pin-conversation-messages",
+      "reason": "旧英文结构页已合并到当前 OpenIM 原生 SDK 能力页，并保留永久重定向。"
     },
     {
       "platform": "ios",
       "source": "/sdk/ios/message/managing-pinned-messages-in-group-channels/pin-a-message",
-      "disposition": "remove",
-      "destination": null,
-      "reason": "旧英文结构页不属于当前 OpenIM 原生 SDK 公开能力，或已由新的任务型结构取代且无安全的一对一去向。"
+      "disposition": "merge",
+      "destination": "/sdk/ios/message/managing-messages/pin-conversation-messages",
+      "reason": "旧英文结构页已合并到当前 OpenIM 原生 SDK 能力页，并保留永久重定向。"
     },
     {
       "platform": "ios",
       "source": "/sdk/ios/message/managing-pinned-messages-in-group-channels/unpin-a-message",
-      "disposition": "remove",
-      "destination": null,
-      "reason": "旧英文结构页不属于当前 OpenIM 原生 SDK 公开能力，或已由新的任务型结构取代且无安全的一对一去向。"
+      "disposition": "merge",
+      "destination": "/sdk/ios/message/managing-messages/pin-conversation-messages",
+      "reason": "旧英文结构页已合并到当前 OpenIM 原生 SDK 能力页，并保留永久重定向。"
     },
     {
       "platform": "ios",

@@ -1,0 +1,54 @@
+---
+title: '发送自定义信令'
+description: '使用 OpenIM Flutter SDK 在通话房间中发送和接收自定义信令。'
+sourcePath: '/sdk/flutter/calling/sending-custom-signals/send-a-custom-signal'
+---
+
+`signalingSendCustomSignal()` 用于向指定通话房间发送轻量级业务协商数据，例如举手、切换布局提示或业务侧状态同步。它不是聊天消息接口，也不能替代媒体引擎的数据通道。
+
+## 发送信令
+
+`roomID` 与 `customInfo` 都是必填字符串。需要传递结构化数据时，先定义稳定格式并序列化为 JSON：
+
+```dart
+final signal = jsonEncode({
+  'version': 1,
+  'eventID': eventID,
+  'type': 'hand-raised',
+  'userID': currentUserID,
+  'sentAt': DateTime.now().millisecondsSinceEpoch,
+});
+
+await OpenIM.iMManager.signalingManager.signalingSendCustomSignal(
+  roomID: roomID,
+  customInfo: signal,
+);
+```
+
+Future 成功表示 OpenIMServer 已接受本次发送，不等于其他参与者已经处理。自定义信令应保持精简，并包含协议版本和业务幂等 ID。大文件、聊天记录、长期状态和敏感凭据不应放入 `customInfo`。
+
+## 接收信令
+
+`OnSignalingListener.onReceiveCustomSignal` 携带 `CustomSignaling`；其 `roomID` 和 `customInfo` 都是 nullable。先验证房间与业务协议，再更新界面：
+
+```dart
+void handleCustomSignal(CustomSignaling info) {
+  final signalRoomID = info.roomID;
+  final customInfo = info.customInfo;
+  if (signalRoomID != activeRoomID || customInfo == null) return;
+
+  final signal = parseAndValidateCallSignal(customInfo);
+  if (hasAppliedSignal(signalRoomID!, signal.eventID)) return;
+  applyCallSignal(signal);
+}
+
+Future<void> registerCustomSignalListener() {
+  return OpenIM.iMManager.signalingManager.setSignalingListener(
+    OnSignalingListener(onReceiveCustomSignal: handleCustomSignal),
+  );
+}
+```
+
+本页是 `onReceiveCustomSignal` 的完整处理归属页。`SignalingManager` 只保存一个 listener，后一次设置会替换 Dart 层先前实例；生产环境应把本回调与其他通话回调组合为一个应用级 `OnSignalingListener`，不要在每个 Widget 中分别设置。固定 SDK 没有 remove 或 unset API，切换账号时应停止向旧状态分发，并用新账号的完整 listener 覆盖。
+
+`parseAndValidateCallSignal()` 应检查 JSON 结构、协议版本、`eventID`、`type` 和业务字段。按 `roomID:eventID` 幂等处理；不要依赖事件顺序，也不要信任客户端信令授予主持人、付费或隐私权限。连接恢复后通过房间查询或可信后端校准长期状态。
