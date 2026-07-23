@@ -237,6 +237,28 @@ function postmanResponseBodies(value: unknown): string[] {
   ];
 }
 
+function postmanItemForPath(value: unknown, path: string): JsonObject | undefined {
+  if (Array.isArray(value)) {
+    for (const entry of value) {
+      const item = postmanItemForPath(entry, path);
+      if (item !== undefined) return item;
+    }
+    return undefined;
+  }
+  if (!isRecord(value)) return undefined;
+  if (isRecord(value.request) && isRecord(value.request.url)) {
+    const segments = value.request.url.path;
+    if (Array.isArray(segments) && segments.every((segment) => typeof segment === 'string')) {
+      if (`/${segments.join('/')}` === path) return value;
+    }
+  }
+  for (const entry of Object.values(value)) {
+    const item = postmanItemForPath(entry, path);
+    if (item !== undefined) return item;
+  }
+  return undefined;
+}
+
 async function exportOpenApiDocuments(
   directory: string,
   prefix: string,
@@ -751,6 +773,42 @@ test('converts response bodies with schema type placeholders', async () => {
   assert.ok(isRecord(conversation));
   assert.equal(conversation.conversationID, '<string>');
   assert.equal(conversation.IsPinned, '<boolean>');
+});
+
+test('omits data from Postman responses backed by empty protobuf messages', async () => {
+  const collection = await convertOpenApiToPostman(bundledOpenApi);
+  const paths = [
+    '/friend/add_friend',
+    '/friend/add_friend_response',
+    '/friend/delete_friend',
+    '/friend/import_friend',
+    '/friend/set_friend_remark',
+    '/friend/update_friends',
+    '/user/process_user_command_add',
+    '/user/process_user_command_delete',
+    '/user/process_user_command_update',
+    '/user/set_global_msg_recv_opt',
+    '/user/update_notification_account',
+    '/user/update_user_info',
+  ] as const;
+  for (const path of paths) {
+    const item = required(postmanItemForPath(collection, path), `Missing Postman request ${path}.`);
+    assert.ok(Array.isArray(item.response));
+    const firstResponse = required(item.response[0], `Missing Postman response ${path}.`);
+    assert.ok(isRecord(firstResponse));
+    if (typeof firstResponse.body !== 'string')
+      throw new Error(`Invalid Postman response ${path}.`);
+    const body: unknown = JSON.parse(firstResponse.body);
+    assert.deepEqual(
+      body,
+      {
+        errCode: '<integer>',
+        errMsg: '<string>',
+        errDlt: '<string>',
+      },
+      path,
+    );
+  }
 });
 
 test('reports an inaccessible Postman collection before conversion', async (context) => {

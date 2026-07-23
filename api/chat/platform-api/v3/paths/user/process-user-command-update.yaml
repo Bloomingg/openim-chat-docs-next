@@ -57,18 +57,7 @@ post:
       content:
         application/json:
           schema:
-            allOf:
-              - $ref: ../../components/common/api-envelope.yaml
-              - type: object
-                properties:
-                  data:
-                    description: No additional data is returned on success.
-                    type: object
-                    additionalProperties: false
-                    properties: {}
-                    x-source-schema-status: field-level
-                    x-source-schema-kind: protobuf
-                    x-source-protobuf-type: 'openim.user.processUserCommandUpdateResp'
+            $ref: ../../components/common/api-envelope.yaml
   security:
     - TokenAuth: []
   x-source-handler: 'https://github.com/openimsdk/open-im-server/blob/v3.8.3-patch.16/internal/api/user.go'
