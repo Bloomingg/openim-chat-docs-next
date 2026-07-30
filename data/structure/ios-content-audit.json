@@ -304,7 +304,7 @@
         "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8",
         "https://github.com/openimsdk/open-im-sdk-ios/blob/17fb969fd3a360f00fe65f476435b81857e274f8/OpenIMSDK/Model/OIMFullUserInfo.h"
       ],
-      "sdkMethods": ["获取指定用户资料"],
+      "sdkMethods": ["getUsersInfo:onSuccess:onFailure:"],
       "sdkEvents": [],
       "locales": {
         "zh": {
@@ -335,6 +335,7 @@
       "redirectTo": null,
       "notes": [
         "2026-07-20：已逐页人工审核；用户资料查询 selector 与 OIMPublicUserInfo 模型按固定 Objective-C header 核对。",
+        "2026-07-29：复核固定 iOS SDK selector，将误写的中文任务名称更正为 getUsersInfo:onSuccess:onFailure:。",
         "2026-07-23：按一 API 一页规范完成结构与正文审核。",
         "2026-07-23：按一 API 一页规范完成结构与正文审核。",
         "2026-07-23：按一 API 一页规范完成结构与正文审核。",

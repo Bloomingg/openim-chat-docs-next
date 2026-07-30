@@ -60,11 +60,17 @@ export function validateClientSdkAudit({ platform, sidebar, audit, manualPages }
       }
     }
     for (const event of page.sdkEvents ?? []) {
+      if (!isValidNativeSdkSymbol(event)) {
+        errors.push(`${path}: invalid SDK event symbol ${event}`);
+      }
       const owners = eventOwners.get(event) ?? [];
       owners.push(path);
       eventOwners.set(event, owners);
     }
     for (const method of page.sdkMethods ?? []) {
+      if (!isValidNativeSdkSymbol(method)) {
+        errors.push(`${path}: invalid SDK method symbol ${method}`);
+      }
       const owners = methodOwners.get(method) ?? [];
       owners.push(path);
       methodOwners.set(method, owners);
@@ -115,6 +121,13 @@ function validatePublishedState({ page, path, source, errors }) {
 
 function hasText(value) {
   return typeof value === 'string' && value.trim().length > 0;
+}
+
+function isValidNativeSdkSymbol(value) {
+  return (
+    typeof value === 'string' &&
+    /^[A-Za-z_][A-Za-z0-9_]*(?::[A-Za-z_][A-Za-z0-9_]*)*:?$/.test(value)
+  );
 }
 
 function validateManualPage({ platform, page, path, source, errors }) {

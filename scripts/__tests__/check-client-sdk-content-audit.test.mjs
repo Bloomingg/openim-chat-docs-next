@@ -155,6 +155,28 @@ test('rejects conversationID on the Flutter Message model', () => {
   assert.ok(errors.some((error) => error.includes('does not expose conversationID')));
 });
 
+test('rejects task labels in native SDK symbol inventories', () => {
+  const platform = getClientSdkPlatform('flutter');
+  const path = '/sdk/flutter/user/retrieving-users/retrieve-users';
+  const page = auditPage(path, platform.sdkCommit);
+  page.sdkMethods = ['获取指定用户资料'];
+  page.sdkEvents = ['用户资料更新'];
+
+  const errors = validateClientSdkAudit({
+    platform,
+    sidebar: { nodes: [path] },
+    audit: {
+      schemaVersion: 1,
+      sources: { flutterSdk: { tag: platform.sdkTag, commit: platform.sdkCommit } },
+      pages: [page],
+    },
+    manualPages: new Map([[path, '```dart\ngetUsersInfo();\n```']]),
+  });
+
+  assert.ok(errors.includes(`${path}: invalid SDK method symbol 获取指定用户资料`));
+  assert.ok(errors.includes(`${path}: invalid SDK event symbol 用户资料更新`));
+});
+
 function auditPage(path, commit) {
   return {
     currentPath: path,

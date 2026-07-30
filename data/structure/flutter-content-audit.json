@@ -308,7 +308,7 @@
         "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_user_manager.dart",
         "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/user_info.dart"
       ],
-      "sdkMethods": ["获取指定用户资料"],
+      "sdkMethods": ["getUsersInfo"],
       "sdkEvents": [],
       "locales": {
         "zh": {
@@ -341,6 +341,7 @@
       "notes": [
         "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
         "2026-07-21：补回公开资料的只读边界、按 userID 合并快照、重新查询时机及 PublicUserInfo、FriendInfo、GroupMembersInfo 的场景选择说明。",
+        "2026-07-29：复核固定 Flutter SDK method，将误写的中文任务名称更正为 getUsersInfo。",
         "2026-07-23：按一 API 一页规范完成结构与正文审核。",
         "2026-07-23：按一 API 一页规范完成结构与正文审核。",
         "2026-07-23：按一 API 一页规范完成结构与正文审核。",
@@ -1872,7 +1873,7 @@
         "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/manager/im_group_manager.dart",
         "https://github.com/openimsdk/open-im-sdk-flutter/blob/95889be7a26dce6fe896ef22096c9036cc25fc9b/lib/src/models/group_info.dart"
       ],
-      "sdkMethods": ["转让群主"],
+      "sdkMethods": ["transferGroupOwner"],
       "sdkEvents": [],
       "locales": {
         "zh": {
@@ -1905,6 +1906,7 @@
       "notes": [
         "2026-07-20：已逐页人工对照最新 WASM 中文模板与 Flutter 固定 SDK 声明完成正文。",
         "2026-07-21：逐页复核 transferGroupOwner 的 groupID 与 userID 参数，补齐原群主、新群主角色变化、双记录事件合并及退出、解散边界。",
+        "2026-07-29：复核固定 Flutter SDK method，将误写的中文任务名称更正为 transferGroupOwner。",
         "2026-07-23：按一 API 一页规范完成结构与正文审核。",
         "2026-07-23：按一 API 一页规范完成结构与正文审核。",
         "2026-07-23：按一 API 一页规范完成结构与正文审核。",
