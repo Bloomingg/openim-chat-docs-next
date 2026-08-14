@@ -99,7 +99,7 @@ test('resolves uni-app native extension routes without inventing WASM source pag
   const sidebar = readJson('data/structure/uniapp-sidebar.json');
   const resolved = resolveClientSdkSkeletonRoutes({ platformId: 'uniapp', sidebar, routes });
 
-  assert.equal(resolved.length, 167);
+  assert.equal(resolved.length, 166);
   assert.equal(resolved[0].title, 'OpenIM SDK for uni-app / uni-app x');
   assert.ok(
     resolved.some(

@@ -174,7 +174,7 @@ async function reportNetworkAvailable() {
 
 ## 处理 Token 生命周期
 
-OpenIMSDK Token 由可信后端签发。公共流程在 Token 过期或无效时重新向后端取 Token，并按产品策略重新认证；商业版还可以使用 `updateToken()` 热更新，见[更新 Token 与观察 SDK session](/sdk/uniapp/getting-started/update-token-and-observe-sdk-session)。
+OpenIMSDK Token 由可信后端签发。Token 过期或无效时重新向后端获取 Token，并按产品策略重新认证。
 
 ```uts
 import {

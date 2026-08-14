@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-08-13T04:59:19.646Z",
+  "generatedAt": "2026-08-14T07:19:28.934Z",
   "scope": "current-only",
-  "pageCount": 983,
+  "pageCount": 982,
   "contextCount": 10,
   "byProduct": {
     "platform-api": 194,
-    "sdk": 789
+    "sdk": 788
   },
   "byTemplate": {
     "api": 179,
-    "guide": 782,
+    "guide": 781,
     "overview": 22
   },
   "byStatus": {
     "draft": 1,
-    "published": 854,
+    "published": 853,
     "scaffold": 128
   },
   "contexts": [
@@ -41,7 +41,7 @@
     {
       "key": "chat/sdk/uniapp",
       "title": "SDKs · uni-app / uni-app x · v4",
-      "pageCount": 167
+      "pageCount": 166
     },
     {
       "key": "chat/sdk/wasm",

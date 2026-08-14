@@ -46,7 +46,7 @@ const clientSdkPlatforms = {
     localizedOutputPath: 'src/generated/uniapp-sdk-zh-content.json',
     sdkSourceKey: 'uniappSdk',
     sdkTag: '0.2.0-rc.3',
-    sdkCommit: 'e71e3f68827f9f7af354526fecbaded25dc14de9',
+    sdkCommit: 'a00fb77d7037766c5526b92f9ec0ae7a5939f012',
   },
 };
 

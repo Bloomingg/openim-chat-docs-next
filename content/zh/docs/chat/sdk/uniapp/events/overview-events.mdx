@@ -44,7 +44,6 @@ off(connectionSubscription)
 | 入群申请 | 群申请状态层初始化时注册 | [获取收到的入群申请](/sdk/uniapp/group/group-applications/get-group-application-list-as-recipient) |
 | 消息 | 消息状态层初始化时注册 | [接收消息](/sdk/uniapp/message/receiving-messages/receive-messages) |
 | 商业信令 | 通话功能初始化时注册 | [通话事件](/sdk/uniapp/calling/managing-calls/handle-call-events) |
-| SDK session | 依赖唯一 Core 的商业插件初始化时注册 | [更新 Token 与观察 SDK session](/sdk/uniapp/getting-started/update-token-and-observe-sdk-session) |
 
 不要在每次组件渲染、`onShow` 或列表刷新时重复注册。多次注册同一个逻辑会造成重复消息、未读数反复累加，或让旧账号的异步结果写入新账号界面。
 

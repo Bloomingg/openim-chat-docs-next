@@ -51,7 +51,6 @@ Handlers should return quickly. Queue expensive queries, file work, and network 
 | Group applications | Register when initializing the group-application state layer | [Get received group applications](/sdk/uniapp/group/group-applications/get-group-application-list-as-recipient) |
 | Messages | Register when initializing the message state layer | [Receive messages](/sdk/uniapp/message/receiving-messages/receive-messages) |
 | Commercial signaling | Register when initializing calling functionality | [Call events](/sdk/uniapp/calling/managing-calls/handle-call-events) |
-| SDK session | Register when a commercial plugin depending on the one Core is initialized | [Update the token and observe the SDK session](/sdk/uniapp/getting-started/update-token-and-observe-sdk-session) |
 
 Do not register the same logic again on every component render, `onShow`, or list refresh. Duplicate registrations can insert messages more than once, repeatedly increment unread counts, or write asynchronous state from an old account into the current UI.
 

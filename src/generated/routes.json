@@ -9541,24 +9541,6 @@
   },
   {
     "id": 1363,
-    "path": "/sdk/uniapp/getting-started/update-token-and-observe-sdk-session",
-    "relativePath": "sdk/uniapp/getting-started/update-token-and-observe-sdk-session",
-    "sourcePath": "/sdk/uniapp/getting-started/update-token-and-observe-sdk-session",
-    "title": "Update tokens and observe SDK sessions",
-    "description": "Commercially update a login token and use synthetic session snapshots to prevent cross-account work.",
-    "product": "sdk",
-    "version": "v4",
-    "platform": "uniapp",
-    "contextKey": "chat/sdk/uniapp",
-    "contextTitle": "SDKs · uni-app / uni-app x · v4",
-    "template": "guide",
-    "status": "published",
-    "sourceIndex": 2733,
-    "contentFile": "content/docs/chat/sdk/uniapp/getting-started/update-token-and-observe-sdk-session.mdx",
-    "navOrder": 390
-  },
-  {
-    "id": 1364,
     "path": "/sdk/uniapp/user/overview-user",
     "relativePath": "sdk/uniapp/user/overview-user",
     "sourcePath": "/sdk/uniapp/user/overview-user",
@@ -9571,12 +9553,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2734,
+    "sourceIndex": 2733,
     "contentFile": "content/docs/chat/sdk/uniapp/user/overview-user.mdx",
-    "navOrder": 391
+    "navOrder": 390
   },
   {
-    "id": 1365,
+    "id": 1364,
     "path": "/sdk/uniapp/user/profile/get-users-info",
     "relativePath": "sdk/uniapp/user/profile/get-users-info",
     "sourcePath": "/sdk/uniapp/user/profile/get-users-info",
@@ -9589,12 +9571,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2735,
+    "sourceIndex": 2734,
     "contentFile": "content/docs/chat/sdk/uniapp/user/profile/get-users-info.mdx",
-    "navOrder": 392
+    "navOrder": 391
   },
   {
-    "id": 1366,
+    "id": 1365,
     "path": "/sdk/uniapp/user/profile/get-self-user-info",
     "relativePath": "sdk/uniapp/user/profile/get-self-user-info",
     "sourcePath": "/sdk/uniapp/user/profile/get-self-user-info",
@@ -9607,12 +9589,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2736,
+    "sourceIndex": 2735,
     "contentFile": "content/docs/chat/sdk/uniapp/user/profile/get-self-user-info.mdx",
-    "navOrder": 393
+    "navOrder": 392
   },
   {
-    "id": 1367,
+    "id": 1366,
     "path": "/sdk/uniapp/user/profile/set-self-info",
     "relativePath": "sdk/uniapp/user/profile/set-self-info",
     "sourcePath": "/sdk/uniapp/user/profile/set-self-info",
@@ -9625,17 +9607,35 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2737,
+    "sourceIndex": 2736,
     "contentFile": "content/docs/chat/sdk/uniapp/user/profile/set-self-info.mdx",
-    "navOrder": 394
+    "navOrder": 393
   },
   {
-    "id": 1368,
+    "id": 1367,
     "path": "/sdk/uniapp/user/profile/set-global-message-reception",
     "relativePath": "sdk/uniapp/user/profile/set-global-message-reception",
     "sourcePath": "/sdk/uniapp/user/profile/set-global-message-reception",
     "title": "Set global message reception",
-    "description": "Set the commercial account-wide globalRecvMsgOpt profile field.",
+    "description": "Set the account-wide globalRecvMsgOpt profile field.",
+    "product": "sdk",
+    "version": "v4",
+    "platform": "uniapp",
+    "contextKey": "chat/sdk/uniapp",
+    "contextTitle": "SDKs · uni-app / uni-app x · v4",
+    "template": "guide",
+    "status": "published",
+    "sourceIndex": 2737,
+    "contentFile": "content/docs/chat/sdk/uniapp/user/profile/set-global-message-reception.mdx",
+    "navOrder": 394
+  },
+  {
+    "id": 1368,
+    "path": "/sdk/uniapp/user/profile/set-friend-add-permission",
+    "relativePath": "sdk/uniapp/user/profile/set-friend-add-permission",
+    "sourcePath": "/sdk/uniapp/user/profile/set-friend-add-permission",
+    "title": "Set friend request permissions",
+    "description": "Choose how requests to add the current account as a friend are handled.",
     "product": "sdk",
     "version": "v4",
     "platform": "uniapp",
@@ -9644,29 +9644,11 @@
     "template": "guide",
     "status": "published",
     "sourceIndex": 2738,
-    "contentFile": "content/docs/chat/sdk/uniapp/user/profile/set-global-message-reception.mdx",
+    "contentFile": "content/docs/chat/sdk/uniapp/user/profile/set-friend-add-permission.mdx",
     "navOrder": 395
   },
   {
     "id": 1369,
-    "path": "/sdk/uniapp/user/profile/set-friend-add-permission",
-    "relativePath": "sdk/uniapp/user/profile/set-friend-add-permission",
-    "sourcePath": "/sdk/uniapp/user/profile/set-friend-add-permission",
-    "title": "Set friend-add permission",
-    "description": "Understand the commercial friend-add policy and the current plugin write boundary.",
-    "product": "sdk",
-    "version": "v4",
-    "platform": "uniapp",
-    "contextKey": "chat/sdk/uniapp",
-    "contextTitle": "SDKs · uni-app / uni-app x · v4",
-    "template": "guide",
-    "status": "published",
-    "sourceIndex": 2739,
-    "contentFile": "content/docs/chat/sdk/uniapp/user/profile/set-friend-add-permission.mdx",
-    "navOrder": 396
-  },
-  {
-    "id": 1370,
     "path": "/sdk/uniapp/user/online-status/subscribe-users-status",
     "relativePath": "sdk/uniapp/user/online-status/subscribe-users-status",
     "sourcePath": "/sdk/uniapp/user/online-status/subscribe-users-status",
@@ -9679,12 +9661,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2740,
+    "sourceIndex": 2739,
     "contentFile": "content/docs/chat/sdk/uniapp/user/online-status/subscribe-users-status.mdx",
-    "navOrder": 397
+    "navOrder": 396
   },
   {
-    "id": 1371,
+    "id": 1370,
     "path": "/sdk/uniapp/user/online-status/get-subscribe-users-status",
     "relativePath": "sdk/uniapp/user/online-status/get-subscribe-users-status",
     "sourcePath": "/sdk/uniapp/user/online-status/get-subscribe-users-status",
@@ -9697,12 +9679,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2741,
+    "sourceIndex": 2740,
     "contentFile": "content/docs/chat/sdk/uniapp/user/online-status/get-subscribe-users-status.mdx",
-    "navOrder": 398
+    "navOrder": 397
   },
   {
-    "id": 1372,
+    "id": 1371,
     "path": "/sdk/uniapp/user/online-status/unsubscribe-users-status",
     "relativePath": "sdk/uniapp/user/online-status/unsubscribe-users-status",
     "sourcePath": "/sdk/uniapp/user/online-status/unsubscribe-users-status",
@@ -9715,12 +9697,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2742,
+    "sourceIndex": 2741,
     "contentFile": "content/docs/chat/sdk/uniapp/user/online-status/unsubscribe-users-status.mdx",
-    "navOrder": 399
+    "navOrder": 398
   },
   {
-    "id": 1373,
+    "id": 1372,
     "path": "/sdk/uniapp/user/friends/get-friend-list-page",
     "relativePath": "sdk/uniapp/user/friends/get-friend-list-page",
     "sourcePath": "/sdk/uniapp/user/friends/get-friend-list-page",
@@ -9733,12 +9715,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2743,
+    "sourceIndex": 2742,
     "contentFile": "content/docs/chat/sdk/uniapp/user/friends/get-friend-list-page.mdx",
-    "navOrder": 400
+    "navOrder": 399
   },
   {
-    "id": 1374,
+    "id": 1373,
     "path": "/sdk/uniapp/user/friends/search-friends",
     "relativePath": "sdk/uniapp/user/friends/search-friends",
     "sourcePath": "/sdk/uniapp/user/friends/search-friends",
@@ -9751,12 +9733,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2744,
+    "sourceIndex": 2743,
     "contentFile": "content/docs/chat/sdk/uniapp/user/friends/search-friends.mdx",
-    "navOrder": 401
+    "navOrder": 400
   },
   {
-    "id": 1375,
+    "id": 1374,
     "path": "/sdk/uniapp/user/friends/get-specified-friends-info",
     "relativePath": "sdk/uniapp/user/friends/get-specified-friends-info",
     "sourcePath": "/sdk/uniapp/user/friends/get-specified-friends-info",
@@ -9769,12 +9751,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2745,
+    "sourceIndex": 2744,
     "contentFile": "content/docs/chat/sdk/uniapp/user/friends/get-specified-friends-info.mdx",
-    "navOrder": 402
+    "navOrder": 401
   },
   {
-    "id": 1376,
+    "id": 1375,
     "path": "/sdk/uniapp/user/friends/check-friend",
     "relativePath": "sdk/uniapp/user/friends/check-friend",
     "sourcePath": "/sdk/uniapp/user/friends/check-friend",
@@ -9787,12 +9769,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2746,
+    "sourceIndex": 2745,
     "contentFile": "content/docs/chat/sdk/uniapp/user/friends/check-friend.mdx",
-    "navOrder": 403
+    "navOrder": 402
   },
   {
-    "id": 1377,
+    "id": 1376,
     "path": "/sdk/uniapp/user/friends/update-friends",
     "relativePath": "sdk/uniapp/user/friends/update-friends",
     "sourcePath": "/sdk/uniapp/user/friends/update-friends",
@@ -9805,12 +9787,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2747,
+    "sourceIndex": 2746,
     "contentFile": "content/docs/chat/sdk/uniapp/user/friends/update-friends.mdx",
-    "navOrder": 404
+    "navOrder": 403
   },
   {
-    "id": 1378,
+    "id": 1377,
     "path": "/sdk/uniapp/user/friends/delete-friend",
     "relativePath": "sdk/uniapp/user/friends/delete-friend",
     "sourcePath": "/sdk/uniapp/user/friends/delete-friend",
@@ -9823,12 +9805,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2748,
+    "sourceIndex": 2747,
     "contentFile": "content/docs/chat/sdk/uniapp/user/friends/delete-friend.mdx",
-    "navOrder": 405
+    "navOrder": 404
   },
   {
-    "id": 1379,
+    "id": 1378,
     "path": "/sdk/uniapp/user/friend-applications/add-friend",
     "relativePath": "sdk/uniapp/user/friend-applications/add-friend",
     "sourcePath": "/sdk/uniapp/user/friend-applications/add-friend",
@@ -9841,12 +9823,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2749,
+    "sourceIndex": 2748,
     "contentFile": "content/docs/chat/sdk/uniapp/user/friend-applications/add-friend.mdx",
-    "navOrder": 406
+    "navOrder": 405
   },
   {
-    "id": 1380,
+    "id": 1379,
     "path": "/sdk/uniapp/user/friend-applications/get-friend-application-list-as-recipient",
     "relativePath": "sdk/uniapp/user/friend-applications/get-friend-application-list-as-recipient",
     "sourcePath": "/sdk/uniapp/user/friend-applications/get-friend-application-list-as-recipient",
@@ -9859,12 +9841,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2750,
+    "sourceIndex": 2749,
     "contentFile": "content/docs/chat/sdk/uniapp/user/friend-applications/get-friend-application-list-as-recipient.mdx",
-    "navOrder": 407
+    "navOrder": 406
   },
   {
-    "id": 1381,
+    "id": 1380,
     "path": "/sdk/uniapp/user/friend-applications/get-friend-application-list-as-applicant",
     "relativePath": "sdk/uniapp/user/friend-applications/get-friend-application-list-as-applicant",
     "sourcePath": "/sdk/uniapp/user/friend-applications/get-friend-application-list-as-applicant",
@@ -9877,12 +9859,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2751,
+    "sourceIndex": 2750,
     "contentFile": "content/docs/chat/sdk/uniapp/user/friend-applications/get-friend-application-list-as-applicant.mdx",
-    "navOrder": 408
+    "navOrder": 407
   },
   {
-    "id": 1382,
+    "id": 1381,
     "path": "/sdk/uniapp/user/friend-applications/get-friend-application-unhandled-count",
     "relativePath": "sdk/uniapp/user/friend-applications/get-friend-application-unhandled-count",
     "sourcePath": "/sdk/uniapp/user/friend-applications/get-friend-application-unhandled-count",
@@ -9895,12 +9877,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2752,
+    "sourceIndex": 2751,
     "contentFile": "content/docs/chat/sdk/uniapp/user/friend-applications/get-friend-application-unhandled-count.mdx",
-    "navOrder": 409
+    "navOrder": 408
   },
   {
-    "id": 1383,
+    "id": 1382,
     "path": "/sdk/uniapp/user/friend-applications/accept-friend-application",
     "relativePath": "sdk/uniapp/user/friend-applications/accept-friend-application",
     "sourcePath": "/sdk/uniapp/user/friend-applications/accept-friend-application",
@@ -9913,12 +9895,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2753,
+    "sourceIndex": 2752,
     "contentFile": "content/docs/chat/sdk/uniapp/user/friend-applications/accept-friend-application.mdx",
-    "navOrder": 410
+    "navOrder": 409
   },
   {
-    "id": 1384,
+    "id": 1383,
     "path": "/sdk/uniapp/user/friend-applications/refuse-friend-application",
     "relativePath": "sdk/uniapp/user/friend-applications/refuse-friend-application",
     "sourcePath": "/sdk/uniapp/user/friend-applications/refuse-friend-application",
@@ -9931,12 +9913,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2754,
+    "sourceIndex": 2753,
     "contentFile": "content/docs/chat/sdk/uniapp/user/friend-applications/refuse-friend-application.mdx",
-    "navOrder": 411
+    "navOrder": 410
   },
   {
-    "id": 1385,
+    "id": 1384,
     "path": "/sdk/uniapp/user/friend-applications/delete-friend-requests",
     "relativePath": "sdk/uniapp/user/friend-applications/delete-friend-requests",
     "sourcePath": "/sdk/uniapp/user/friend-applications/delete-friend-requests",
@@ -9949,12 +9931,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2755,
+    "sourceIndex": 2754,
     "contentFile": "content/docs/chat/sdk/uniapp/user/friend-applications/delete-friend-requests.mdx",
-    "navOrder": 412
+    "navOrder": 411
   },
   {
-    "id": 1386,
+    "id": 1385,
     "path": "/sdk/uniapp/user/blacklist/get-black-list",
     "relativePath": "sdk/uniapp/user/blacklist/get-black-list",
     "sourcePath": "/sdk/uniapp/user/blacklist/get-black-list",
@@ -9967,12 +9949,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2756,
+    "sourceIndex": 2755,
     "contentFile": "content/docs/chat/sdk/uniapp/user/blacklist/get-black-list.mdx",
-    "navOrder": 413
+    "navOrder": 412
   },
   {
-    "id": 1387,
+    "id": 1386,
     "path": "/sdk/uniapp/user/blacklist/add-black",
     "relativePath": "sdk/uniapp/user/blacklist/add-black",
     "sourcePath": "/sdk/uniapp/user/blacklist/add-black",
@@ -9985,12 +9967,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2757,
+    "sourceIndex": 2756,
     "contentFile": "content/docs/chat/sdk/uniapp/user/blacklist/add-black.mdx",
-    "navOrder": 414
+    "navOrder": 413
   },
   {
-    "id": 1388,
+    "id": 1387,
     "path": "/sdk/uniapp/user/blacklist/remove-black",
     "relativePath": "sdk/uniapp/user/blacklist/remove-black",
     "sourcePath": "/sdk/uniapp/user/blacklist/remove-black",
@@ -10003,12 +9985,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2758,
+    "sourceIndex": 2757,
     "contentFile": "content/docs/chat/sdk/uniapp/user/blacklist/remove-black.mdx",
-    "navOrder": 415
+    "navOrder": 414
   },
   {
-    "id": 1389,
+    "id": 1388,
     "path": "/sdk/uniapp/conversation/overview-conversation",
     "relativePath": "sdk/uniapp/conversation/overview-conversation",
     "sourcePath": "/sdk/uniapp/conversation/overview-conversation",
@@ -10021,12 +10003,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2759,
+    "sourceIndex": 2758,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/overview-conversation.mdx",
-    "navOrder": 416
+    "navOrder": 415
   },
   {
-    "id": 1390,
+    "id": 1389,
     "path": "/sdk/uniapp/conversation/retrieving-conversations/get-conversation-by-target",
     "relativePath": "sdk/uniapp/conversation/retrieving-conversations/get-conversation-by-target",
     "sourcePath": "/sdk/uniapp/conversation/retrieving-conversations/get-conversation-by-target",
@@ -10039,12 +10021,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2760,
+    "sourceIndex": 2759,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/retrieving-conversations/get-conversation-by-target.mdx",
-    "navOrder": 417
+    "navOrder": 416
   },
   {
-    "id": 1391,
+    "id": 1390,
     "path": "/sdk/uniapp/conversation/retrieving-conversations/get-conversation-id",
     "relativePath": "sdk/uniapp/conversation/retrieving-conversations/get-conversation-id",
     "sourcePath": "/sdk/uniapp/conversation/retrieving-conversations/get-conversation-id",
@@ -10057,12 +10039,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2761,
+    "sourceIndex": 2760,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/retrieving-conversations/get-conversation-id.mdx",
-    "navOrder": 418
+    "navOrder": 417
   },
   {
-    "id": 1392,
+    "id": 1391,
     "path": "/sdk/uniapp/conversation/retrieving-conversations/get-conversations-by-id",
     "relativePath": "sdk/uniapp/conversation/retrieving-conversations/get-conversations-by-id",
     "sourcePath": "/sdk/uniapp/conversation/retrieving-conversations/get-conversations-by-id",
@@ -10075,12 +10057,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2762,
+    "sourceIndex": 2761,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/retrieving-conversations/get-conversations-by-id.mdx",
-    "navOrder": 419
+    "navOrder": 418
   },
   {
-    "id": 1393,
+    "id": 1392,
     "path": "/sdk/uniapp/conversation/retrieving-conversations/retrieve-conversation-list",
     "relativePath": "sdk/uniapp/conversation/retrieving-conversations/retrieve-conversation-list",
     "sourcePath": "/sdk/uniapp/conversation/retrieving-conversations/retrieve-conversation-list",
@@ -10093,12 +10075,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2763,
+    "sourceIndex": 2762,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/retrieving-conversations/retrieve-conversation-list.mdx",
-    "navOrder": 420
+    "navOrder": 419
   },
   {
-    "id": 1394,
+    "id": 1393,
     "path": "/sdk/uniapp/conversation/retrieving-conversations/search-conversations",
     "relativePath": "sdk/uniapp/conversation/retrieving-conversations/search-conversations",
     "sourcePath": "/sdk/uniapp/conversation/retrieving-conversations/search-conversations",
@@ -10111,12 +10093,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2764,
+    "sourceIndex": 2763,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/retrieving-conversations/search-conversations.mdx",
-    "navOrder": 421
+    "navOrder": 420
   },
   {
-    "id": 1395,
+    "id": 1394,
     "path": "/sdk/uniapp/conversation/managing-conversations/pin-conversation",
     "relativePath": "sdk/uniapp/conversation/managing-conversations/pin-conversation",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversations/pin-conversation",
@@ -10129,12 +10111,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2765,
+    "sourceIndex": 2764,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversations/pin-conversation.mdx",
-    "navOrder": 422
+    "navOrder": 421
   },
   {
-    "id": 1396,
+    "id": 1395,
     "path": "/sdk/uniapp/conversation/managing-conversations/mark-conversation",
     "relativePath": "sdk/uniapp/conversation/managing-conversations/mark-conversation",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversations/mark-conversation",
@@ -10147,12 +10129,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2766,
+    "sourceIndex": 2765,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversations/mark-conversation.mdx",
-    "navOrder": 423
+    "navOrder": 422
   },
   {
-    "id": 1397,
+    "id": 1396,
     "path": "/sdk/uniapp/conversation/managing-conversations/set-conversation-remark",
     "relativePath": "sdk/uniapp/conversation/managing-conversations/set-conversation-remark",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversations/set-conversation-remark",
@@ -10165,12 +10147,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2767,
+    "sourceIndex": 2766,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversations/set-conversation-remark.mdx",
-    "navOrder": 424
+    "navOrder": 423
   },
   {
-    "id": 1398,
+    "id": 1397,
     "path": "/sdk/uniapp/conversation/managing-conversations/set-conversation-extension",
     "relativePath": "sdk/uniapp/conversation/managing-conversations/set-conversation-extension",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversations/set-conversation-extension",
@@ -10183,12 +10165,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2768,
+    "sourceIndex": 2767,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversations/set-conversation-extension.mdx",
-    "navOrder": 425
+    "navOrder": 424
   },
   {
-    "id": 1399,
+    "id": 1398,
     "path": "/sdk/uniapp/conversation/managing-conversations/set-conversation-draft",
     "relativePath": "sdk/uniapp/conversation/managing-conversations/set-conversation-draft",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversations/set-conversation-draft",
@@ -10201,12 +10183,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2769,
+    "sourceIndex": 2768,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversations/set-conversation-draft.mdx",
-    "navOrder": 426
+    "navOrder": 425
   },
   {
-    "id": 1400,
+    "id": 1399,
     "path": "/sdk/uniapp/conversation/managing-conversations/set-message-receive-option",
     "relativePath": "sdk/uniapp/conversation/managing-conversations/set-message-receive-option",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversations/set-message-receive-option",
@@ -10219,12 +10201,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2770,
+    "sourceIndex": 2769,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversations/set-message-receive-option.mdx",
-    "navOrder": 427
+    "navOrder": 426
   },
   {
-    "id": 1401,
+    "id": 1400,
     "path": "/sdk/uniapp/conversation/managing-conversations/clear-group-mentions",
     "relativePath": "sdk/uniapp/conversation/managing-conversations/clear-group-mentions",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversations/clear-group-mentions",
@@ -10237,12 +10219,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2771,
+    "sourceIndex": 2770,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversations/clear-group-mentions.mdx",
-    "navOrder": 428
+    "navOrder": 427
   },
   {
-    "id": 1402,
+    "id": 1401,
     "path": "/sdk/uniapp/conversation/managing-conversations/mark-conversation-read",
     "relativePath": "sdk/uniapp/conversation/managing-conversations/mark-conversation-read",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversations/mark-conversation-read",
@@ -10255,12 +10237,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2772,
+    "sourceIndex": 2771,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversations/mark-conversation-read.mdx",
-    "navOrder": 429
+    "navOrder": 428
   },
   {
-    "id": 1403,
+    "id": 1402,
     "path": "/sdk/uniapp/conversation/managing-conversations/mark-all-conversations-read",
     "relativePath": "sdk/uniapp/conversation/managing-conversations/mark-all-conversations-read",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversations/mark-all-conversations-read",
@@ -10273,12 +10255,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2773,
+    "sourceIndex": 2772,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversations/mark-all-conversations-read.mdx",
-    "navOrder": 430
+    "navOrder": 429
   },
   {
-    "id": 1404,
+    "id": 1403,
     "path": "/sdk/uniapp/conversation/managing-conversations/get-total-unread-count",
     "relativePath": "sdk/uniapp/conversation/managing-conversations/get-total-unread-count",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversations/get-total-unread-count",
@@ -10291,12 +10273,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2774,
+    "sourceIndex": 2773,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversations/get-total-unread-count.mdx",
-    "navOrder": 431
+    "navOrder": 430
   },
   {
-    "id": 1405,
+    "id": 1404,
     "path": "/sdk/uniapp/conversation/managing-conversations/set-private-chat",
     "relativePath": "sdk/uniapp/conversation/managing-conversations/set-private-chat",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversations/set-private-chat",
@@ -10309,12 +10291,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2775,
+    "sourceIndex": 2774,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversations/set-private-chat.mdx",
-    "navOrder": 432
+    "navOrder": 431
   },
   {
-    "id": 1406,
+    "id": 1405,
     "path": "/sdk/uniapp/conversation/managing-conversations/set-burn-duration",
     "relativePath": "sdk/uniapp/conversation/managing-conversations/set-burn-duration",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversations/set-burn-duration",
@@ -10327,12 +10309,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2776,
+    "sourceIndex": 2775,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversations/set-burn-duration.mdx",
-    "navOrder": 433
+    "navOrder": 432
   },
   {
-    "id": 1407,
+    "id": 1406,
     "path": "/sdk/uniapp/conversation/managing-conversations/set-message-destruct",
     "relativePath": "sdk/uniapp/conversation/managing-conversations/set-message-destruct",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversations/set-message-destruct",
@@ -10345,12 +10327,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2777,
+    "sourceIndex": 2776,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversations/set-message-destruct.mdx",
-    "navOrder": 434
+    "navOrder": 433
   },
   {
-    "id": 1408,
+    "id": 1407,
     "path": "/sdk/uniapp/conversation/managing-conversations/hide-a-conversation",
     "relativePath": "sdk/uniapp/conversation/managing-conversations/hide-a-conversation",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversations/hide-a-conversation",
@@ -10363,12 +10345,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2778,
+    "sourceIndex": 2777,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversations/hide-a-conversation.mdx",
-    "navOrder": 435
+    "navOrder": 434
   },
   {
-    "id": 1409,
+    "id": 1408,
     "path": "/sdk/uniapp/conversation/managing-conversations/hide-all-conversations",
     "relativePath": "sdk/uniapp/conversation/managing-conversations/hide-all-conversations",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversations/hide-all-conversations",
@@ -10381,12 +10363,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2779,
+    "sourceIndex": 2778,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversations/hide-all-conversations.mdx",
-    "navOrder": 436
+    "navOrder": 435
   },
   {
-    "id": 1410,
+    "id": 1409,
     "path": "/sdk/uniapp/conversation/managing-conversations/delete-conversation",
     "relativePath": "sdk/uniapp/conversation/managing-conversations/delete-conversation",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversations/delete-conversation",
@@ -10399,12 +10381,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2780,
+    "sourceIndex": 2779,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversations/delete-conversation.mdx",
-    "navOrder": 437
+    "navOrder": 436
   },
   {
-    "id": 1411,
+    "id": 1410,
     "path": "/sdk/uniapp/conversation/managing-conversations/delete-conversation-with-messages",
     "relativePath": "sdk/uniapp/conversation/managing-conversations/delete-conversation-with-messages",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversations/delete-conversation-with-messages",
@@ -10417,12 +10399,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2781,
+    "sourceIndex": 2780,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversations/delete-conversation-with-messages.mdx",
-    "navOrder": 438
+    "navOrder": 437
   },
   {
-    "id": 1412,
+    "id": 1411,
     "path": "/sdk/uniapp/conversation/managing-conversations/clear-conversation-messages",
     "relativePath": "sdk/uniapp/conversation/managing-conversations/clear-conversation-messages",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversations/clear-conversation-messages",
@@ -10435,12 +10417,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2782,
+    "sourceIndex": 2781,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversations/clear-conversation-messages.mdx",
-    "navOrder": 439
+    "navOrder": 438
   },
   {
-    "id": 1413,
+    "id": 1412,
     "path": "/sdk/uniapp/conversation/managing-conversation-groups/overview-conversation-groups",
     "relativePath": "sdk/uniapp/conversation/managing-conversation-groups/overview-conversation-groups",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversation-groups/overview-conversation-groups",
@@ -10453,12 +10435,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2783,
+    "sourceIndex": 2782,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversation-groups/overview-conversation-groups.mdx",
-    "navOrder": 440
+    "navOrder": 439
   },
   {
-    "id": 1414,
+    "id": 1413,
     "path": "/sdk/uniapp/conversation/managing-conversation-groups/create-conversation-group",
     "relativePath": "sdk/uniapp/conversation/managing-conversation-groups/create-conversation-group",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversation-groups/create-conversation-group",
@@ -10471,12 +10453,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2784,
+    "sourceIndex": 2783,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversation-groups/create-conversation-group.mdx",
-    "navOrder": 441
+    "navOrder": 440
   },
   {
-    "id": 1415,
+    "id": 1414,
     "path": "/sdk/uniapp/conversation/managing-conversation-groups/get-conversation-groups",
     "relativePath": "sdk/uniapp/conversation/managing-conversation-groups/get-conversation-groups",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversation-groups/get-conversation-groups",
@@ -10489,12 +10471,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2785,
+    "sourceIndex": 2784,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversation-groups/get-conversation-groups.mdx",
-    "navOrder": 442
+    "navOrder": 441
   },
   {
-    "id": 1416,
+    "id": 1415,
     "path": "/sdk/uniapp/conversation/managing-conversation-groups/get-conversation-group-info-with-conversations",
     "relativePath": "sdk/uniapp/conversation/managing-conversation-groups/get-conversation-group-info-with-conversations",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversation-groups/get-conversation-group-info-with-conversations",
@@ -10507,12 +10489,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2786,
+    "sourceIndex": 2785,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversation-groups/get-conversation-group-info-with-conversations.mdx",
-    "navOrder": 443
+    "navOrder": 442
   },
   {
-    "id": 1417,
+    "id": 1416,
     "path": "/sdk/uniapp/conversation/managing-conversation-groups/get-conversation-group-by-conversation-id",
     "relativePath": "sdk/uniapp/conversation/managing-conversation-groups/get-conversation-group-by-conversation-id",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversation-groups/get-conversation-group-by-conversation-id",
@@ -10525,12 +10507,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2787,
+    "sourceIndex": 2786,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversation-groups/get-conversation-group-by-conversation-id.mdx",
-    "navOrder": 444
+    "navOrder": 443
   },
   {
-    "id": 1418,
+    "id": 1417,
     "path": "/sdk/uniapp/conversation/managing-conversation-groups/update-conversation-group",
     "relativePath": "sdk/uniapp/conversation/managing-conversation-groups/update-conversation-group",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversation-groups/update-conversation-group",
@@ -10543,12 +10525,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2788,
+    "sourceIndex": 2787,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversation-groups/update-conversation-group.mdx",
-    "navOrder": 445
+    "navOrder": 444
   },
   {
-    "id": 1419,
+    "id": 1418,
     "path": "/sdk/uniapp/conversation/managing-conversation-groups/set-conversation-group-order",
     "relativePath": "sdk/uniapp/conversation/managing-conversation-groups/set-conversation-group-order",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversation-groups/set-conversation-group-order",
@@ -10561,12 +10543,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2789,
+    "sourceIndex": 2788,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversation-groups/set-conversation-group-order.mdx",
-    "navOrder": 446
+    "navOrder": 445
   },
   {
-    "id": 1420,
+    "id": 1419,
     "path": "/sdk/uniapp/conversation/managing-conversation-groups/add-conversations-to-groups",
     "relativePath": "sdk/uniapp/conversation/managing-conversation-groups/add-conversations-to-groups",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversation-groups/add-conversations-to-groups",
@@ -10579,12 +10561,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2790,
+    "sourceIndex": 2789,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversation-groups/add-conversations-to-groups.mdx",
-    "navOrder": 447
+    "navOrder": 446
   },
   {
-    "id": 1421,
+    "id": 1420,
     "path": "/sdk/uniapp/conversation/managing-conversation-groups/remove-conversations-from-groups",
     "relativePath": "sdk/uniapp/conversation/managing-conversation-groups/remove-conversations-from-groups",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversation-groups/remove-conversations-from-groups",
@@ -10597,12 +10579,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2791,
+    "sourceIndex": 2790,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversation-groups/remove-conversations-from-groups.mdx",
-    "navOrder": 448
+    "navOrder": 447
   },
   {
-    "id": 1422,
+    "id": 1421,
     "path": "/sdk/uniapp/conversation/managing-conversation-groups/delete-conversation-group",
     "relativePath": "sdk/uniapp/conversation/managing-conversation-groups/delete-conversation-group",
     "sourcePath": "/sdk/uniapp/conversation/managing-conversation-groups/delete-conversation-group",
@@ -10615,12 +10597,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2792,
+    "sourceIndex": 2791,
     "contentFile": "content/docs/chat/sdk/uniapp/conversation/managing-conversation-groups/delete-conversation-group.mdx",
-    "navOrder": 449
+    "navOrder": 448
   },
   {
-    "id": 1423,
+    "id": 1422,
     "path": "/sdk/uniapp/group/overview-group",
     "relativePath": "sdk/uniapp/group/overview-group",
     "sourcePath": "/sdk/uniapp/group/overview-group",
@@ -10633,12 +10615,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2793,
+    "sourceIndex": 2792,
     "contentFile": "content/docs/chat/sdk/uniapp/group/overview-group.mdx",
-    "navOrder": 450
+    "navOrder": 449
   },
   {
-    "id": 1424,
+    "id": 1423,
     "path": "/sdk/uniapp/group/create-group",
     "relativePath": "sdk/uniapp/group/create-group",
     "sourcePath": "/sdk/uniapp/group/create-group",
@@ -10651,12 +10633,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2794,
+    "sourceIndex": 2793,
     "contentFile": "content/docs/chat/sdk/uniapp/group/create-group.mdx",
-    "navOrder": 451
+    "navOrder": 450
   },
   {
-    "id": 1425,
+    "id": 1424,
     "path": "/sdk/uniapp/group/update-group-profile",
     "relativePath": "sdk/uniapp/group/update-group-profile",
     "sourcePath": "/sdk/uniapp/group/update-group-profile",
@@ -10669,12 +10651,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2795,
+    "sourceIndex": 2794,
     "contentFile": "content/docs/chat/sdk/uniapp/group/update-group-profile.mdx",
-    "navOrder": 452
+    "navOrder": 451
   },
   {
-    "id": 1426,
+    "id": 1425,
     "path": "/sdk/uniapp/group/set-group-announcement",
     "relativePath": "sdk/uniapp/group/set-group-announcement",
     "sourcePath": "/sdk/uniapp/group/set-group-announcement",
@@ -10687,12 +10669,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2796,
+    "sourceIndex": 2795,
     "contentFile": "content/docs/chat/sdk/uniapp/group/set-group-announcement.mdx",
-    "navOrder": 453
+    "navOrder": 452
   },
   {
-    "id": 1427,
+    "id": 1426,
     "path": "/sdk/uniapp/group/set-group-extension",
     "relativePath": "sdk/uniapp/group/set-group-extension",
     "sourcePath": "/sdk/uniapp/group/set-group-extension",
@@ -10705,12 +10687,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2797,
+    "sourceIndex": 2796,
     "contentFile": "content/docs/chat/sdk/uniapp/group/set-group-extension.mdx",
-    "navOrder": 454
+    "navOrder": 453
   },
   {
-    "id": 1428,
+    "id": 1427,
     "path": "/sdk/uniapp/group/set-group-join-verification",
     "relativePath": "sdk/uniapp/group/set-group-join-verification",
     "sourcePath": "/sdk/uniapp/group/set-group-join-verification",
@@ -10723,12 +10705,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2798,
+    "sourceIndex": 2797,
     "contentFile": "content/docs/chat/sdk/uniapp/group/set-group-join-verification.mdx",
-    "navOrder": 455
+    "navOrder": 454
   },
   {
-    "id": 1429,
+    "id": 1428,
     "path": "/sdk/uniapp/group/set-group-member-profile-access",
     "relativePath": "sdk/uniapp/group/set-group-member-profile-access",
     "sourcePath": "/sdk/uniapp/group/set-group-member-profile-access",
@@ -10741,12 +10723,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2799,
+    "sourceIndex": 2798,
     "contentFile": "content/docs/chat/sdk/uniapp/group/set-group-member-profile-access.mdx",
-    "navOrder": 456
+    "navOrder": 455
   },
   {
-    "id": 1430,
+    "id": 1429,
     "path": "/sdk/uniapp/group/set-group-member-friend-permission",
     "relativePath": "sdk/uniapp/group/set-group-member-friend-permission",
     "sourcePath": "/sdk/uniapp/group/set-group-member-friend-permission",
@@ -10759,12 +10741,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2800,
+    "sourceIndex": 2799,
     "contentFile": "content/docs/chat/sdk/uniapp/group/set-group-member-friend-permission.mdx",
-    "navOrder": 457
+    "navOrder": 456
   },
   {
-    "id": 1431,
+    "id": 1430,
     "path": "/sdk/uniapp/group/change-group-mute",
     "relativePath": "sdk/uniapp/group/change-group-mute",
     "sourcePath": "/sdk/uniapp/group/change-group-mute",
@@ -10777,12 +10759,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2801,
+    "sourceIndex": 2800,
     "contentFile": "content/docs/chat/sdk/uniapp/group/change-group-mute.mdx",
-    "navOrder": 458
+    "navOrder": 457
   },
   {
-    "id": 1432,
+    "id": 1431,
     "path": "/sdk/uniapp/group/join-group",
     "relativePath": "sdk/uniapp/group/join-group",
     "sourcePath": "/sdk/uniapp/group/join-group",
@@ -10795,12 +10777,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2802,
+    "sourceIndex": 2801,
     "contentFile": "content/docs/chat/sdk/uniapp/group/join-group.mdx",
-    "navOrder": 459
+    "navOrder": 458
   },
   {
-    "id": 1433,
+    "id": 1432,
     "path": "/sdk/uniapp/group/quit-group",
     "relativePath": "sdk/uniapp/group/quit-group",
     "sourcePath": "/sdk/uniapp/group/quit-group",
@@ -10813,12 +10795,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2803,
+    "sourceIndex": 2802,
     "contentFile": "content/docs/chat/sdk/uniapp/group/quit-group.mdx",
-    "navOrder": 460
+    "navOrder": 459
   },
   {
-    "id": 1434,
+    "id": 1433,
     "path": "/sdk/uniapp/group/dismiss-group",
     "relativePath": "sdk/uniapp/group/dismiss-group",
     "sourcePath": "/sdk/uniapp/group/dismiss-group",
@@ -10831,12 +10813,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2804,
+    "sourceIndex": 2803,
     "contentFile": "content/docs/chat/sdk/uniapp/group/dismiss-group.mdx",
-    "navOrder": 461
+    "navOrder": 460
   },
   {
-    "id": 1435,
+    "id": 1434,
     "path": "/sdk/uniapp/group/retrieving-groups/get-specified-groups-info",
     "relativePath": "sdk/uniapp/group/retrieving-groups/get-specified-groups-info",
     "sourcePath": "/sdk/uniapp/group/retrieving-groups/get-specified-groups-info",
@@ -10849,12 +10831,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2805,
+    "sourceIndex": 2804,
     "contentFile": "content/docs/chat/sdk/uniapp/group/retrieving-groups/get-specified-groups-info.mdx",
-    "navOrder": 462
+    "navOrder": 461
   },
   {
-    "id": 1436,
+    "id": 1435,
     "path": "/sdk/uniapp/group/retrieving-groups/get-joined-group-list",
     "relativePath": "sdk/uniapp/group/retrieving-groups/get-joined-group-list",
     "sourcePath": "/sdk/uniapp/group/retrieving-groups/get-joined-group-list",
@@ -10867,12 +10849,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2806,
+    "sourceIndex": 2805,
     "contentFile": "content/docs/chat/sdk/uniapp/group/retrieving-groups/get-joined-group-list.mdx",
-    "navOrder": 463
+    "navOrder": 462
   },
   {
-    "id": 1437,
+    "id": 1436,
     "path": "/sdk/uniapp/group/retrieving-groups/get-joined-group-list-page",
     "relativePath": "sdk/uniapp/group/retrieving-groups/get-joined-group-list-page",
     "sourcePath": "/sdk/uniapp/group/retrieving-groups/get-joined-group-list-page",
@@ -10885,12 +10867,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2807,
+    "sourceIndex": 2806,
     "contentFile": "content/docs/chat/sdk/uniapp/group/retrieving-groups/get-joined-group-list-page.mdx",
-    "navOrder": 464
+    "navOrder": 463
   },
   {
-    "id": 1438,
+    "id": 1437,
     "path": "/sdk/uniapp/group/retrieving-groups/is-join-group",
     "relativePath": "sdk/uniapp/group/retrieving-groups/is-join-group",
     "sourcePath": "/sdk/uniapp/group/retrieving-groups/is-join-group",
@@ -10903,12 +10885,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2808,
+    "sourceIndex": 2807,
     "contentFile": "content/docs/chat/sdk/uniapp/group/retrieving-groups/is-join-group.mdx",
-    "navOrder": 465
+    "navOrder": 464
   },
   {
-    "id": 1439,
+    "id": 1438,
     "path": "/sdk/uniapp/group/retrieving-groups/search-groups",
     "relativePath": "sdk/uniapp/group/retrieving-groups/search-groups",
     "sourcePath": "/sdk/uniapp/group/retrieving-groups/search-groups",
@@ -10921,12 +10903,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2809,
+    "sourceIndex": 2808,
     "contentFile": "content/docs/chat/sdk/uniapp/group/retrieving-groups/search-groups.mdx",
-    "navOrder": 466
+    "navOrder": 465
   },
   {
-    "id": 1440,
+    "id": 1439,
     "path": "/sdk/uniapp/group/group-applications/get-group-application-list-as-recipient",
     "relativePath": "sdk/uniapp/group/group-applications/get-group-application-list-as-recipient",
     "sourcePath": "/sdk/uniapp/group/group-applications/get-group-application-list-as-recipient",
@@ -10939,12 +10921,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2810,
+    "sourceIndex": 2809,
     "contentFile": "content/docs/chat/sdk/uniapp/group/group-applications/get-group-application-list-as-recipient.mdx",
-    "navOrder": 467
+    "navOrder": 466
   },
   {
-    "id": 1441,
+    "id": 1440,
     "path": "/sdk/uniapp/group/group-applications/get-group-application-list-as-applicant",
     "relativePath": "sdk/uniapp/group/group-applications/get-group-application-list-as-applicant",
     "sourcePath": "/sdk/uniapp/group/group-applications/get-group-application-list-as-applicant",
@@ -10957,12 +10939,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2811,
+    "sourceIndex": 2810,
     "contentFile": "content/docs/chat/sdk/uniapp/group/group-applications/get-group-application-list-as-applicant.mdx",
-    "navOrder": 468
+    "navOrder": 467
   },
   {
-    "id": 1442,
+    "id": 1441,
     "path": "/sdk/uniapp/group/group-applications/get-group-application-unhandled-count",
     "relativePath": "sdk/uniapp/group/group-applications/get-group-application-unhandled-count",
     "sourcePath": "/sdk/uniapp/group/group-applications/get-group-application-unhandled-count",
@@ -10975,12 +10957,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2812,
+    "sourceIndex": 2811,
     "contentFile": "content/docs/chat/sdk/uniapp/group/group-applications/get-group-application-unhandled-count.mdx",
-    "navOrder": 469
+    "navOrder": 468
   },
   {
-    "id": 1443,
+    "id": 1442,
     "path": "/sdk/uniapp/group/group-applications/observe-group-application-badge-count",
     "relativePath": "sdk/uniapp/group/group-applications/observe-group-application-badge-count",
     "sourcePath": "/sdk/uniapp/group/group-applications/observe-group-application-badge-count",
@@ -10993,12 +10975,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2813,
+    "sourceIndex": 2812,
     "contentFile": "content/docs/chat/sdk/uniapp/group/group-applications/observe-group-application-badge-count.mdx",
-    "navOrder": 470
+    "navOrder": 469
   },
   {
-    "id": 1444,
+    "id": 1443,
     "path": "/sdk/uniapp/group/group-applications/accept-group-application",
     "relativePath": "sdk/uniapp/group/group-applications/accept-group-application",
     "sourcePath": "/sdk/uniapp/group/group-applications/accept-group-application",
@@ -11011,12 +10993,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2814,
+    "sourceIndex": 2813,
     "contentFile": "content/docs/chat/sdk/uniapp/group/group-applications/accept-group-application.mdx",
-    "navOrder": 471
+    "navOrder": 470
   },
   {
-    "id": 1445,
+    "id": 1444,
     "path": "/sdk/uniapp/group/group-applications/refuse-group-application",
     "relativePath": "sdk/uniapp/group/group-applications/refuse-group-application",
     "sourcePath": "/sdk/uniapp/group/group-applications/refuse-group-application",
@@ -11029,12 +11011,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2815,
+    "sourceIndex": 2814,
     "contentFile": "content/docs/chat/sdk/uniapp/group/group-applications/refuse-group-application.mdx",
-    "navOrder": 472
+    "navOrder": 471
   },
   {
-    "id": 1446,
+    "id": 1445,
     "path": "/sdk/uniapp/group/group-applications/delete-group-requests",
     "relativePath": "sdk/uniapp/group/group-applications/delete-group-requests",
     "sourcePath": "/sdk/uniapp/group/group-applications/delete-group-requests",
@@ -11047,12 +11029,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2816,
+    "sourceIndex": 2815,
     "contentFile": "content/docs/chat/sdk/uniapp/group/group-applications/delete-group-requests.mdx",
-    "navOrder": 473
+    "navOrder": 472
   },
   {
-    "id": 1447,
+    "id": 1446,
     "path": "/sdk/uniapp/group/retrieving-group-members/get-group-member-list",
     "relativePath": "sdk/uniapp/group/retrieving-group-members/get-group-member-list",
     "sourcePath": "/sdk/uniapp/group/retrieving-group-members/get-group-member-list",
@@ -11065,12 +11047,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2817,
+    "sourceIndex": 2816,
     "contentFile": "content/docs/chat/sdk/uniapp/group/retrieving-group-members/get-group-member-list.mdx",
-    "navOrder": 474
+    "navOrder": 473
   },
   {
-    "id": 1448,
+    "id": 1447,
     "path": "/sdk/uniapp/group/retrieving-group-members/get-specified-group-members-info",
     "relativePath": "sdk/uniapp/group/retrieving-group-members/get-specified-group-members-info",
     "sourcePath": "/sdk/uniapp/group/retrieving-group-members/get-specified-group-members-info",
@@ -11083,12 +11065,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2818,
+    "sourceIndex": 2817,
     "contentFile": "content/docs/chat/sdk/uniapp/group/retrieving-group-members/get-specified-group-members-info.mdx",
-    "navOrder": 475
+    "navOrder": 474
   },
   {
-    "id": 1449,
+    "id": 1448,
     "path": "/sdk/uniapp/group/retrieving-group-members/get-users-in-group",
     "relativePath": "sdk/uniapp/group/retrieving-group-members/get-users-in-group",
     "sourcePath": "/sdk/uniapp/group/retrieving-group-members/get-users-in-group",
@@ -11101,12 +11083,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2819,
+    "sourceIndex": 2818,
     "contentFile": "content/docs/chat/sdk/uniapp/group/retrieving-group-members/get-users-in-group.mdx",
-    "navOrder": 476
+    "navOrder": 475
   },
   {
-    "id": 1450,
+    "id": 1449,
     "path": "/sdk/uniapp/group/retrieving-group-members/search-group-members",
     "relativePath": "sdk/uniapp/group/retrieving-group-members/search-group-members",
     "sourcePath": "/sdk/uniapp/group/retrieving-group-members/search-group-members",
@@ -11119,12 +11101,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2820,
+    "sourceIndex": 2819,
     "contentFile": "content/docs/chat/sdk/uniapp/group/retrieving-group-members/search-group-members.mdx",
-    "navOrder": 477
+    "navOrder": 476
   },
   {
-    "id": 1451,
+    "id": 1450,
     "path": "/sdk/uniapp/group/managing-group-members/invite-user-to-group",
     "relativePath": "sdk/uniapp/group/managing-group-members/invite-user-to-group",
     "sourcePath": "/sdk/uniapp/group/managing-group-members/invite-user-to-group",
@@ -11137,12 +11119,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2821,
+    "sourceIndex": 2820,
     "contentFile": "content/docs/chat/sdk/uniapp/group/managing-group-members/invite-user-to-group.mdx",
-    "navOrder": 478
+    "navOrder": 477
   },
   {
-    "id": 1452,
+    "id": 1451,
     "path": "/sdk/uniapp/group/managing-group-members/kick-group-member",
     "relativePath": "sdk/uniapp/group/managing-group-members/kick-group-member",
     "sourcePath": "/sdk/uniapp/group/managing-group-members/kick-group-member",
@@ -11155,12 +11137,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2822,
+    "sourceIndex": 2821,
     "contentFile": "content/docs/chat/sdk/uniapp/group/managing-group-members/kick-group-member.mdx",
-    "navOrder": 479
+    "navOrder": 478
   },
   {
-    "id": 1453,
+    "id": 1452,
     "path": "/sdk/uniapp/group/managing-group-members/set-group-member-nickname",
     "relativePath": "sdk/uniapp/group/managing-group-members/set-group-member-nickname",
     "sourcePath": "/sdk/uniapp/group/managing-group-members/set-group-member-nickname",
@@ -11173,12 +11155,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2823,
+    "sourceIndex": 2822,
     "contentFile": "content/docs/chat/sdk/uniapp/group/managing-group-members/set-group-member-nickname.mdx",
-    "navOrder": 480
+    "navOrder": 479
   },
   {
-    "id": 1454,
+    "id": 1453,
     "path": "/sdk/uniapp/group/managing-group-members/set-group-member-role-level",
     "relativePath": "sdk/uniapp/group/managing-group-members/set-group-member-role-level",
     "sourcePath": "/sdk/uniapp/group/managing-group-members/set-group-member-role-level",
@@ -11191,12 +11173,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2824,
+    "sourceIndex": 2823,
     "contentFile": "content/docs/chat/sdk/uniapp/group/managing-group-members/set-group-member-role-level.mdx",
-    "navOrder": 481
+    "navOrder": 480
   },
   {
-    "id": 1455,
+    "id": 1454,
     "path": "/sdk/uniapp/group/managing-group-members/set-group-member-avatar",
     "relativePath": "sdk/uniapp/group/managing-group-members/set-group-member-avatar",
     "sourcePath": "/sdk/uniapp/group/managing-group-members/set-group-member-avatar",
@@ -11209,12 +11191,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2825,
+    "sourceIndex": 2824,
     "contentFile": "content/docs/chat/sdk/uniapp/group/managing-group-members/set-group-member-avatar.mdx",
-    "navOrder": 482
+    "navOrder": 481
   },
   {
-    "id": 1456,
+    "id": 1455,
     "path": "/sdk/uniapp/group/managing-group-members/set-group-member-extension",
     "relativePath": "sdk/uniapp/group/managing-group-members/set-group-member-extension",
     "sourcePath": "/sdk/uniapp/group/managing-group-members/set-group-member-extension",
@@ -11227,12 +11209,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2826,
+    "sourceIndex": 2825,
     "contentFile": "content/docs/chat/sdk/uniapp/group/managing-group-members/set-group-member-extension.mdx",
-    "navOrder": 483
+    "navOrder": 482
   },
   {
-    "id": 1457,
+    "id": 1456,
     "path": "/sdk/uniapp/group/managing-group-members/transfer-group-owner",
     "relativePath": "sdk/uniapp/group/managing-group-members/transfer-group-owner",
     "sourcePath": "/sdk/uniapp/group/managing-group-members/transfer-group-owner",
@@ -11245,12 +11227,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2827,
+    "sourceIndex": 2826,
     "contentFile": "content/docs/chat/sdk/uniapp/group/managing-group-members/transfer-group-owner.mdx",
-    "navOrder": 484
+    "navOrder": 483
   },
   {
-    "id": 1458,
+    "id": 1457,
     "path": "/sdk/uniapp/group/managing-group-members/change-group-member-mute",
     "relativePath": "sdk/uniapp/group/managing-group-members/change-group-member-mute",
     "sourcePath": "/sdk/uniapp/group/managing-group-members/change-group-member-mute",
@@ -11263,12 +11245,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2828,
+    "sourceIndex": 2827,
     "contentFile": "content/docs/chat/sdk/uniapp/group/managing-group-members/change-group-member-mute.mdx",
-    "navOrder": 485
+    "navOrder": 484
   },
   {
-    "id": 1459,
+    "id": 1458,
     "path": "/sdk/uniapp/group/check-full-sync-state",
     "relativePath": "sdk/uniapp/group/check-full-sync-state",
     "sourcePath": "/sdk/uniapp/group/check-full-sync-state",
@@ -11281,12 +11263,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2829,
+    "sourceIndex": 2828,
     "contentFile": "content/docs/chat/sdk/uniapp/group/check-full-sync-state.mdx",
-    "navOrder": 486
+    "navOrder": 485
   },
   {
-    "id": 1460,
+    "id": 1459,
     "path": "/sdk/uniapp/message/overview-message",
     "relativePath": "sdk/uniapp/message/overview-message",
     "sourcePath": "/sdk/uniapp/message/overview-message",
@@ -11299,12 +11281,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2830,
+    "sourceIndex": 2829,
     "contentFile": "content/docs/chat/sdk/uniapp/message/overview-message.mdx",
-    "navOrder": 487
+    "navOrder": 486
   },
   {
-    "id": 1461,
+    "id": 1460,
     "path": "/sdk/uniapp/message/creating-messages/create-text-message",
     "relativePath": "sdk/uniapp/message/creating-messages/create-text-message",
     "sourcePath": "/sdk/uniapp/message/creating-messages/create-text-message",
@@ -11317,12 +11299,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2831,
+    "sourceIndex": 2830,
     "contentFile": "content/docs/chat/sdk/uniapp/message/creating-messages/create-text-message.mdx",
-    "navOrder": 488
+    "navOrder": 487
   },
   {
-    "id": 1462,
+    "id": 1461,
     "path": "/sdk/uniapp/message/creating-messages/create-text-at-message",
     "relativePath": "sdk/uniapp/message/creating-messages/create-text-at-message",
     "sourcePath": "/sdk/uniapp/message/creating-messages/create-text-at-message",
@@ -11335,12 +11317,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2832,
+    "sourceIndex": 2831,
     "contentFile": "content/docs/chat/sdk/uniapp/message/creating-messages/create-text-at-message.mdx",
-    "navOrder": 489
+    "navOrder": 488
   },
   {
-    "id": 1463,
+    "id": 1462,
     "path": "/sdk/uniapp/message/creating-messages/create-custom-message",
     "relativePath": "sdk/uniapp/message/creating-messages/create-custom-message",
     "sourcePath": "/sdk/uniapp/message/creating-messages/create-custom-message",
@@ -11353,12 +11335,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2833,
+    "sourceIndex": 2832,
     "contentFile": "content/docs/chat/sdk/uniapp/message/creating-messages/create-custom-message.mdx",
-    "navOrder": 490
+    "navOrder": 489
   },
   {
-    "id": 1464,
+    "id": 1463,
     "path": "/sdk/uniapp/message/creating-messages/create-image-message-from-full-path",
     "relativePath": "sdk/uniapp/message/creating-messages/create-image-message-from-full-path",
     "sourcePath": "/sdk/uniapp/message/creating-messages/create-image-message-from-full-path",
@@ -11371,12 +11353,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2834,
+    "sourceIndex": 2833,
     "contentFile": "content/docs/chat/sdk/uniapp/message/creating-messages/create-image-message-from-full-path.mdx",
-    "navOrder": 491
+    "navOrder": 490
   },
   {
-    "id": 1465,
+    "id": 1464,
     "path": "/sdk/uniapp/message/creating-messages/create-image-message-by-url",
     "relativePath": "sdk/uniapp/message/creating-messages/create-image-message-by-url",
     "sourcePath": "/sdk/uniapp/message/creating-messages/create-image-message-by-url",
@@ -11389,12 +11371,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2835,
+    "sourceIndex": 2834,
     "contentFile": "content/docs/chat/sdk/uniapp/message/creating-messages/create-image-message-by-url.mdx",
-    "navOrder": 492
+    "navOrder": 491
   },
   {
-    "id": 1466,
+    "id": 1465,
     "path": "/sdk/uniapp/message/creating-messages/create-sound-message-from-full-path",
     "relativePath": "sdk/uniapp/message/creating-messages/create-sound-message-from-full-path",
     "sourcePath": "/sdk/uniapp/message/creating-messages/create-sound-message-from-full-path",
@@ -11407,12 +11389,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2836,
+    "sourceIndex": 2835,
     "contentFile": "content/docs/chat/sdk/uniapp/message/creating-messages/create-sound-message-from-full-path.mdx",
-    "navOrder": 493
+    "navOrder": 492
   },
   {
-    "id": 1467,
+    "id": 1466,
     "path": "/sdk/uniapp/message/creating-messages/create-sound-message-by-url",
     "relativePath": "sdk/uniapp/message/creating-messages/create-sound-message-by-url",
     "sourcePath": "/sdk/uniapp/message/creating-messages/create-sound-message-by-url",
@@ -11425,12 +11407,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2837,
+    "sourceIndex": 2836,
     "contentFile": "content/docs/chat/sdk/uniapp/message/creating-messages/create-sound-message-by-url.mdx",
-    "navOrder": 494
+    "navOrder": 493
   },
   {
-    "id": 1468,
+    "id": 1467,
     "path": "/sdk/uniapp/message/creating-messages/create-video-message-from-full-path",
     "relativePath": "sdk/uniapp/message/creating-messages/create-video-message-from-full-path",
     "sourcePath": "/sdk/uniapp/message/creating-messages/create-video-message-from-full-path",
@@ -11443,12 +11425,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2838,
+    "sourceIndex": 2837,
     "contentFile": "content/docs/chat/sdk/uniapp/message/creating-messages/create-video-message-from-full-path.mdx",
-    "navOrder": 495
+    "navOrder": 494
   },
   {
-    "id": 1469,
+    "id": 1468,
     "path": "/sdk/uniapp/message/creating-messages/create-video-message-by-url",
     "relativePath": "sdk/uniapp/message/creating-messages/create-video-message-by-url",
     "sourcePath": "/sdk/uniapp/message/creating-messages/create-video-message-by-url",
@@ -11461,12 +11443,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2839,
+    "sourceIndex": 2838,
     "contentFile": "content/docs/chat/sdk/uniapp/message/creating-messages/create-video-message-by-url.mdx",
-    "navOrder": 496
+    "navOrder": 495
   },
   {
-    "id": 1470,
+    "id": 1469,
     "path": "/sdk/uniapp/message/creating-messages/create-file-message-from-full-path",
     "relativePath": "sdk/uniapp/message/creating-messages/create-file-message-from-full-path",
     "sourcePath": "/sdk/uniapp/message/creating-messages/create-file-message-from-full-path",
@@ -11479,12 +11461,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2840,
+    "sourceIndex": 2839,
     "contentFile": "content/docs/chat/sdk/uniapp/message/creating-messages/create-file-message-from-full-path.mdx",
-    "navOrder": 497
+    "navOrder": 496
   },
   {
-    "id": 1471,
+    "id": 1470,
     "path": "/sdk/uniapp/message/creating-messages/create-file-message-by-url",
     "relativePath": "sdk/uniapp/message/creating-messages/create-file-message-by-url",
     "sourcePath": "/sdk/uniapp/message/creating-messages/create-file-message-by-url",
@@ -11497,12 +11479,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2841,
+    "sourceIndex": 2840,
     "contentFile": "content/docs/chat/sdk/uniapp/message/creating-messages/create-file-message-by-url.mdx",
-    "navOrder": 498
+    "navOrder": 497
   },
   {
-    "id": 1472,
+    "id": 1471,
     "path": "/sdk/uniapp/message/creating-messages/create-card-message",
     "relativePath": "sdk/uniapp/message/creating-messages/create-card-message",
     "sourcePath": "/sdk/uniapp/message/creating-messages/create-card-message",
@@ -11515,12 +11497,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2842,
+    "sourceIndex": 2841,
     "contentFile": "content/docs/chat/sdk/uniapp/message/creating-messages/create-card-message.mdx",
-    "navOrder": 499
+    "navOrder": 498
   },
   {
-    "id": 1473,
+    "id": 1472,
     "path": "/sdk/uniapp/message/creating-messages/create-location-message",
     "relativePath": "sdk/uniapp/message/creating-messages/create-location-message",
     "sourcePath": "/sdk/uniapp/message/creating-messages/create-location-message",
@@ -11533,12 +11515,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2843,
+    "sourceIndex": 2842,
     "contentFile": "content/docs/chat/sdk/uniapp/message/creating-messages/create-location-message.mdx",
-    "navOrder": 500
+    "navOrder": 499
   },
   {
-    "id": 1474,
+    "id": 1473,
     "path": "/sdk/uniapp/message/creating-messages/create-face-message",
     "relativePath": "sdk/uniapp/message/creating-messages/create-face-message",
     "sourcePath": "/sdk/uniapp/message/creating-messages/create-face-message",
@@ -11551,12 +11533,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2844,
+    "sourceIndex": 2843,
     "contentFile": "content/docs/chat/sdk/uniapp/message/creating-messages/create-face-message.mdx",
-    "navOrder": 501
+    "navOrder": 500
   },
   {
-    "id": 1475,
+    "id": 1474,
     "path": "/sdk/uniapp/message/creating-messages/create-quote-message",
     "relativePath": "sdk/uniapp/message/creating-messages/create-quote-message",
     "sourcePath": "/sdk/uniapp/message/creating-messages/create-quote-message",
@@ -11569,12 +11551,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2845,
+    "sourceIndex": 2844,
     "contentFile": "content/docs/chat/sdk/uniapp/message/creating-messages/create-quote-message.mdx",
-    "navOrder": 502
+    "navOrder": 501
   },
   {
-    "id": 1476,
+    "id": 1475,
     "path": "/sdk/uniapp/message/creating-messages/create-markdown-message",
     "relativePath": "sdk/uniapp/message/creating-messages/create-markdown-message",
     "sourcePath": "/sdk/uniapp/message/creating-messages/create-markdown-message",
@@ -11587,12 +11569,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2846,
+    "sourceIndex": 2845,
     "contentFile": "content/docs/chat/sdk/uniapp/message/creating-messages/create-markdown-message.mdx",
-    "navOrder": 503
+    "navOrder": 502
   },
   {
-    "id": 1477,
+    "id": 1476,
     "path": "/sdk/uniapp/message/creating-messages/create-forward-message",
     "relativePath": "sdk/uniapp/message/creating-messages/create-forward-message",
     "sourcePath": "/sdk/uniapp/message/creating-messages/create-forward-message",
@@ -11605,12 +11587,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2847,
+    "sourceIndex": 2846,
     "contentFile": "content/docs/chat/sdk/uniapp/message/creating-messages/create-forward-message.mdx",
-    "navOrder": 504
+    "navOrder": 503
   },
   {
-    "id": 1478,
+    "id": 1477,
     "path": "/sdk/uniapp/message/creating-messages/create-merger-message",
     "relativePath": "sdk/uniapp/message/creating-messages/create-merger-message",
     "sourcePath": "/sdk/uniapp/message/creating-messages/create-merger-message",
@@ -11623,12 +11605,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2848,
+    "sourceIndex": 2847,
     "contentFile": "content/docs/chat/sdk/uniapp/message/creating-messages/create-merger-message.mdx",
-    "navOrder": 505
+    "navOrder": 504
   },
   {
-    "id": 1479,
+    "id": 1478,
     "path": "/sdk/uniapp/message/sending-messages/send-message",
     "relativePath": "sdk/uniapp/message/sending-messages/send-message",
     "sourcePath": "/sdk/uniapp/message/sending-messages/send-message",
@@ -11641,12 +11623,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2849,
+    "sourceIndex": 2848,
     "contentFile": "content/docs/chat/sdk/uniapp/message/sending-messages/send-message.mdx",
-    "navOrder": 506
+    "navOrder": 505
   },
   {
-    "id": 1480,
+    "id": 1479,
     "path": "/sdk/uniapp/message/sending-messages/send-message-not-oss",
     "relativePath": "sdk/uniapp/message/sending-messages/send-message-not-oss",
     "sourcePath": "/sdk/uniapp/message/sending-messages/send-message-not-oss",
@@ -11659,12 +11641,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2850,
+    "sourceIndex": 2849,
     "contentFile": "content/docs/chat/sdk/uniapp/message/sending-messages/send-message-not-oss.mdx",
-    "navOrder": 507
+    "navOrder": 506
   },
   {
-    "id": 1481,
+    "id": 1480,
     "path": "/sdk/uniapp/message/receiving-messages/receive-messages",
     "relativePath": "sdk/uniapp/message/receiving-messages/receive-messages",
     "sourcePath": "/sdk/uniapp/message/receiving-messages/receive-messages",
@@ -11677,12 +11659,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2851,
+    "sourceIndex": 2850,
     "contentFile": "content/docs/chat/sdk/uniapp/message/receiving-messages/receive-messages.mdx",
-    "navOrder": 508
+    "navOrder": 507
   },
   {
-    "id": 1482,
+    "id": 1481,
     "path": "/sdk/uniapp/message/receiving-messages/receive-custom-business-messages",
     "relativePath": "sdk/uniapp/message/receiving-messages/receive-custom-business-messages",
     "sourcePath": "/sdk/uniapp/message/receiving-messages/receive-custom-business-messages",
@@ -11695,12 +11677,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2852,
+    "sourceIndex": 2851,
     "contentFile": "content/docs/chat/sdk/uniapp/message/receiving-messages/receive-custom-business-messages.mdx",
-    "navOrder": 509
+    "navOrder": 508
   },
   {
-    "id": 1483,
+    "id": 1482,
     "path": "/sdk/uniapp/message/retrieving-messages/load-older-messages",
     "relativePath": "sdk/uniapp/message/retrieving-messages/load-older-messages",
     "sourcePath": "/sdk/uniapp/message/retrieving-messages/load-older-messages",
@@ -11713,12 +11695,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2853,
+    "sourceIndex": 2852,
     "contentFile": "content/docs/chat/sdk/uniapp/message/retrieving-messages/load-older-messages.mdx",
-    "navOrder": 510
+    "navOrder": 509
   },
   {
-    "id": 1484,
+    "id": 1483,
     "path": "/sdk/uniapp/message/retrieving-messages/find-messages-by-id",
     "relativePath": "sdk/uniapp/message/retrieving-messages/find-messages-by-id",
     "sourcePath": "/sdk/uniapp/message/retrieving-messages/find-messages-by-id",
@@ -11731,12 +11713,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2854,
+    "sourceIndex": 2853,
     "contentFile": "content/docs/chat/sdk/uniapp/message/retrieving-messages/find-messages-by-id.mdx",
-    "navOrder": 511
+    "navOrder": 510
   },
   {
-    "id": 1485,
+    "id": 1484,
     "path": "/sdk/uniapp/message/retrieving-messages/load-message-context",
     "relativePath": "sdk/uniapp/message/retrieving-messages/load-message-context",
     "sourcePath": "/sdk/uniapp/message/retrieving-messages/load-message-context",
@@ -11749,12 +11731,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2855,
+    "sourceIndex": 2854,
     "contentFile": "content/docs/chat/sdk/uniapp/message/retrieving-messages/load-message-context.mdx",
-    "navOrder": 512
+    "navOrder": 511
   },
   {
-    "id": 1486,
+    "id": 1485,
     "path": "/sdk/uniapp/message/searching-messages/search-messages",
     "relativePath": "sdk/uniapp/message/searching-messages/search-messages",
     "sourcePath": "/sdk/uniapp/message/searching-messages/search-messages",
@@ -11767,12 +11749,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2856,
+    "sourceIndex": 2855,
     "contentFile": "content/docs/chat/sdk/uniapp/message/searching-messages/search-messages.mdx",
-    "navOrder": 513
+    "navOrder": 512
   },
   {
-    "id": 1487,
+    "id": 1486,
     "path": "/sdk/uniapp/message/composing-messages/update-typing-status",
     "relativePath": "sdk/uniapp/message/composing-messages/update-typing-status",
     "sourcePath": "/sdk/uniapp/message/composing-messages/update-typing-status",
@@ -11785,12 +11767,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2857,
+    "sourceIndex": 2856,
     "contentFile": "content/docs/chat/sdk/uniapp/message/composing-messages/update-typing-status.mdx",
-    "navOrder": 514
+    "navOrder": 513
   },
   {
-    "id": 1488,
+    "id": 1487,
     "path": "/sdk/uniapp/message/composing-messages/get-typing-status",
     "relativePath": "sdk/uniapp/message/composing-messages/get-typing-status",
     "sourcePath": "/sdk/uniapp/message/composing-messages/get-typing-status",
@@ -11803,12 +11785,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2858,
+    "sourceIndex": 2857,
     "contentFile": "content/docs/chat/sdk/uniapp/message/composing-messages/get-typing-status.mdx",
-    "navOrder": 515
+    "navOrder": 514
   },
   {
-    "id": 1489,
+    "id": 1488,
     "path": "/sdk/uniapp/message/composing-messages/check-speech-to-text",
     "relativePath": "sdk/uniapp/message/composing-messages/check-speech-to-text",
     "sourcePath": "/sdk/uniapp/message/composing-messages/check-speech-to-text",
@@ -11821,12 +11803,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2859,
+    "sourceIndex": 2858,
     "contentFile": "content/docs/chat/sdk/uniapp/message/composing-messages/check-speech-to-text.mdx",
-    "navOrder": 516
+    "navOrder": 515
   },
   {
-    "id": 1490,
+    "id": 1489,
     "path": "/sdk/uniapp/message/composing-messages/transcribe-audio",
     "relativePath": "sdk/uniapp/message/composing-messages/transcribe-audio",
     "sourcePath": "/sdk/uniapp/message/composing-messages/transcribe-audio",
@@ -11839,12 +11821,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2860,
+    "sourceIndex": 2859,
     "contentFile": "content/docs/chat/sdk/uniapp/message/composing-messages/transcribe-audio.mdx",
-    "navOrder": 517
+    "navOrder": 516
   },
   {
-    "id": 1491,
+    "id": 1490,
     "path": "/sdk/uniapp/message/composing-messages/save-local-transcript",
     "relativePath": "sdk/uniapp/message/composing-messages/save-local-transcript",
     "sourcePath": "/sdk/uniapp/message/composing-messages/save-local-transcript",
@@ -11857,12 +11839,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2861,
+    "sourceIndex": 2860,
     "contentFile": "content/docs/chat/sdk/uniapp/message/composing-messages/save-local-transcript.mdx",
-    "navOrder": 518
+    "navOrder": 517
   },
   {
-    "id": 1492,
+    "id": 1491,
     "path": "/sdk/uniapp/message/composing-messages/translate-text-and-messages",
     "relativePath": "sdk/uniapp/message/composing-messages/translate-text-and-messages",
     "sourcePath": "/sdk/uniapp/message/composing-messages/translate-text-and-messages",
@@ -11875,12 +11857,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2862,
+    "sourceIndex": 2861,
     "contentFile": "content/docs/chat/sdk/uniapp/message/composing-messages/translate-text-and-messages.mdx",
-    "navOrder": 519
+    "navOrder": 518
   },
   {
-    "id": 1493,
+    "id": 1492,
     "path": "/sdk/uniapp/message/managing-messages/delete-local-message",
     "relativePath": "sdk/uniapp/message/managing-messages/delete-local-message",
     "sourcePath": "/sdk/uniapp/message/managing-messages/delete-local-message",
@@ -11893,12 +11875,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2863,
+    "sourceIndex": 2862,
     "contentFile": "content/docs/chat/sdk/uniapp/message/managing-messages/delete-local-message.mdx",
-    "navOrder": 520
+    "navOrder": 519
   },
   {
-    "id": 1494,
+    "id": 1493,
     "path": "/sdk/uniapp/message/managing-messages/delete-saved-messages",
     "relativePath": "sdk/uniapp/message/managing-messages/delete-saved-messages",
     "sourcePath": "/sdk/uniapp/message/managing-messages/delete-saved-messages",
@@ -11911,12 +11893,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2864,
+    "sourceIndex": 2863,
     "contentFile": "content/docs/chat/sdk/uniapp/message/managing-messages/delete-saved-messages.mdx",
-    "navOrder": 521
+    "navOrder": 520
   },
   {
-    "id": 1495,
+    "id": 1494,
     "path": "/sdk/uniapp/message/managing-messages/delete-user-messages",
     "relativePath": "sdk/uniapp/message/managing-messages/delete-user-messages",
     "sourcePath": "/sdk/uniapp/message/managing-messages/delete-user-messages",
@@ -11929,12 +11911,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2865,
+    "sourceIndex": 2864,
     "contentFile": "content/docs/chat/sdk/uniapp/message/managing-messages/delete-user-messages.mdx",
-    "navOrder": 522
+    "navOrder": 521
   },
   {
-    "id": 1496,
+    "id": 1495,
     "path": "/sdk/uniapp/message/managing-messages/revoke-a-message",
     "relativePath": "sdk/uniapp/message/managing-messages/revoke-a-message",
     "sourcePath": "/sdk/uniapp/message/managing-messages/revoke-a-message",
@@ -11947,12 +11929,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2866,
+    "sourceIndex": 2865,
     "contentFile": "content/docs/chat/sdk/uniapp/message/managing-messages/revoke-a-message.mdx",
-    "navOrder": 523
+    "navOrder": 522
   },
   {
-    "id": 1497,
+    "id": 1496,
     "path": "/sdk/uniapp/message/managing-messages/modify-a-message",
     "relativePath": "sdk/uniapp/message/managing-messages/modify-a-message",
     "sourcePath": "/sdk/uniapp/message/managing-messages/modify-a-message",
@@ -11965,12 +11947,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2867,
+    "sourceIndex": 2866,
     "contentFile": "content/docs/chat/sdk/uniapp/message/managing-messages/modify-a-message.mdx",
-    "navOrder": 524
+    "navOrder": 523
   },
   {
-    "id": 1498,
+    "id": 1497,
     "path": "/sdk/uniapp/message/managing-messages/get-pinned-messages",
     "relativePath": "sdk/uniapp/message/managing-messages/get-pinned-messages",
     "sourcePath": "/sdk/uniapp/message/managing-messages/get-pinned-messages",
@@ -11983,12 +11965,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2868,
+    "sourceIndex": 2867,
     "contentFile": "content/docs/chat/sdk/uniapp/message/managing-messages/get-pinned-messages.mdx",
-    "navOrder": 525
+    "navOrder": 524
   },
   {
-    "id": 1499,
+    "id": 1498,
     "path": "/sdk/uniapp/message/managing-messages/set-message-pinned",
     "relativePath": "sdk/uniapp/message/managing-messages/set-message-pinned",
     "sourcePath": "/sdk/uniapp/message/managing-messages/set-message-pinned",
@@ -12001,12 +11983,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2869,
+    "sourceIndex": 2868,
     "contentFile": "content/docs/chat/sdk/uniapp/message/managing-messages/set-message-pinned.mdx",
-    "navOrder": 526
+    "navOrder": 525
   },
   {
-    "id": 1500,
+    "id": 1499,
     "path": "/sdk/uniapp/message/managing-messages/insert-local-single-message",
     "relativePath": "sdk/uniapp/message/managing-messages/insert-local-single-message",
     "sourcePath": "/sdk/uniapp/message/managing-messages/insert-local-single-message",
@@ -12019,12 +12001,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2870,
+    "sourceIndex": 2869,
     "contentFile": "content/docs/chat/sdk/uniapp/message/managing-messages/insert-local-single-message.mdx",
-    "navOrder": 527
+    "navOrder": 526
   },
   {
-    "id": 1501,
+    "id": 1500,
     "path": "/sdk/uniapp/message/managing-messages/insert-local-group-message",
     "relativePath": "sdk/uniapp/message/managing-messages/insert-local-group-message",
     "sourcePath": "/sdk/uniapp/message/managing-messages/insert-local-group-message",
@@ -12037,12 +12019,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2871,
+    "sourceIndex": 2870,
     "contentFile": "content/docs/chat/sdk/uniapp/message/managing-messages/insert-local-group-message.mdx",
-    "navOrder": 528
+    "navOrder": 527
   },
   {
-    "id": 1502,
+    "id": 1501,
     "path": "/sdk/uniapp/message/managing-messages/clear-all-local-messages",
     "relativePath": "sdk/uniapp/message/managing-messages/clear-all-local-messages",
     "sourcePath": "/sdk/uniapp/message/managing-messages/clear-all-local-messages",
@@ -12055,12 +12037,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2872,
+    "sourceIndex": 2871,
     "contentFile": "content/docs/chat/sdk/uniapp/message/managing-messages/clear-all-local-messages.mdx",
-    "navOrder": 529
+    "navOrder": 528
   },
   {
-    "id": 1503,
+    "id": 1502,
     "path": "/sdk/uniapp/message/managing-messages/clear-all-messages",
     "relativePath": "sdk/uniapp/message/managing-messages/clear-all-messages",
     "sourcePath": "/sdk/uniapp/message/managing-messages/clear-all-messages",
@@ -12073,12 +12055,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2873,
+    "sourceIndex": 2872,
     "contentFile": "content/docs/chat/sdk/uniapp/message/managing-messages/clear-all-messages.mdx",
-    "navOrder": 530
+    "navOrder": 529
   },
   {
-    "id": 1504,
+    "id": 1503,
     "path": "/sdk/uniapp/message/managing-messages/set-message-local-ex",
     "relativePath": "sdk/uniapp/message/managing-messages/set-message-local-ex",
     "sourcePath": "/sdk/uniapp/message/managing-messages/set-message-local-ex",
@@ -12091,12 +12073,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2874,
+    "sourceIndex": 2873,
     "contentFile": "content/docs/chat/sdk/uniapp/message/managing-messages/set-message-local-ex.mdx",
-    "navOrder": 531
+    "navOrder": 530
   },
   {
-    "id": 1505,
+    "id": 1504,
     "path": "/sdk/uniapp/message/managing-read-status/send-group-read-receipts",
     "relativePath": "sdk/uniapp/message/managing-read-status/send-group-read-receipts",
     "sourcePath": "/sdk/uniapp/message/managing-read-status/send-group-read-receipts",
@@ -12109,12 +12091,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2875,
+    "sourceIndex": 2874,
     "contentFile": "content/docs/chat/sdk/uniapp/message/managing-read-status/send-group-read-receipts.mdx",
-    "navOrder": 532
+    "navOrder": 531
   },
   {
-    "id": 1506,
+    "id": 1505,
     "path": "/sdk/uniapp/message/managing-read-status/get-group-message-readers",
     "relativePath": "sdk/uniapp/message/managing-read-status/get-group-message-readers",
     "sourcePath": "/sdk/uniapp/message/managing-read-status/get-group-message-readers",
@@ -12127,12 +12109,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2876,
+    "sourceIndex": 2875,
     "contentFile": "content/docs/chat/sdk/uniapp/message/managing-read-status/get-group-message-readers.mdx",
-    "navOrder": 533
+    "navOrder": 532
   },
   {
-    "id": 1507,
+    "id": 1506,
     "path": "/sdk/uniapp/file-uploads/upload-file",
     "relativePath": "sdk/uniapp/file-uploads/upload-file",
     "sourcePath": "/sdk/uniapp/file-uploads/upload-file",
@@ -12145,12 +12127,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2877,
+    "sourceIndex": 2876,
     "contentFile": "content/docs/chat/sdk/uniapp/file-uploads/upload-file.mdx",
-    "navOrder": 534
+    "navOrder": 533
   },
   {
-    "id": 1508,
+    "id": 1507,
     "path": "/sdk/uniapp/calling/overview-calling",
     "relativePath": "sdk/uniapp/calling/overview-calling",
     "sourcePath": "/sdk/uniapp/calling/overview-calling",
@@ -12163,12 +12145,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2878,
+    "sourceIndex": 2877,
     "contentFile": "content/docs/chat/sdk/uniapp/calling/overview-calling.mdx",
-    "navOrder": 535
+    "navOrder": 534
   },
   {
-    "id": 1509,
+    "id": 1508,
     "path": "/sdk/uniapp/calling/managing-calls/start-single-call",
     "relativePath": "sdk/uniapp/calling/managing-calls/start-single-call",
     "sourcePath": "/sdk/uniapp/calling/managing-calls/start-single-call",
@@ -12181,12 +12163,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2879,
+    "sourceIndex": 2878,
     "contentFile": "content/docs/chat/sdk/uniapp/calling/managing-calls/start-single-call.mdx",
-    "navOrder": 536
+    "navOrder": 535
   },
   {
-    "id": 1510,
+    "id": 1509,
     "path": "/sdk/uniapp/calling/managing-calls/start-group-call",
     "relativePath": "sdk/uniapp/calling/managing-calls/start-group-call",
     "sourcePath": "/sdk/uniapp/calling/managing-calls/start-group-call",
@@ -12199,12 +12181,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2880,
+    "sourceIndex": 2879,
     "contentFile": "content/docs/chat/sdk/uniapp/calling/managing-calls/start-group-call.mdx",
-    "navOrder": 537
+    "navOrder": 536
   },
   {
-    "id": 1511,
+    "id": 1510,
     "path": "/sdk/uniapp/calling/managing-calls/accept-call",
     "relativePath": "sdk/uniapp/calling/managing-calls/accept-call",
     "sourcePath": "/sdk/uniapp/calling/managing-calls/accept-call",
@@ -12217,12 +12199,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2881,
+    "sourceIndex": 2880,
     "contentFile": "content/docs/chat/sdk/uniapp/calling/managing-calls/accept-call.mdx",
-    "navOrder": 538
+    "navOrder": 537
   },
   {
-    "id": 1512,
+    "id": 1511,
     "path": "/sdk/uniapp/calling/managing-calls/reject-call",
     "relativePath": "sdk/uniapp/calling/managing-calls/reject-call",
     "sourcePath": "/sdk/uniapp/calling/managing-calls/reject-call",
@@ -12235,12 +12217,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2882,
+    "sourceIndex": 2881,
     "contentFile": "content/docs/chat/sdk/uniapp/calling/managing-calls/reject-call.mdx",
-    "navOrder": 539
+    "navOrder": 538
   },
   {
-    "id": 1513,
+    "id": 1512,
     "path": "/sdk/uniapp/calling/managing-calls/cancel-call",
     "relativePath": "sdk/uniapp/calling/managing-calls/cancel-call",
     "sourcePath": "/sdk/uniapp/calling/managing-calls/cancel-call",
@@ -12253,12 +12235,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2883,
+    "sourceIndex": 2882,
     "contentFile": "content/docs/chat/sdk/uniapp/calling/managing-calls/cancel-call.mdx",
-    "navOrder": 540
+    "navOrder": 539
   },
   {
-    "id": 1514,
+    "id": 1513,
     "path": "/sdk/uniapp/calling/managing-calls/hang-up-call",
     "relativePath": "sdk/uniapp/calling/managing-calls/hang-up-call",
     "sourcePath": "/sdk/uniapp/calling/managing-calls/hang-up-call",
@@ -12271,12 +12253,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2884,
+    "sourceIndex": 2883,
     "contentFile": "content/docs/chat/sdk/uniapp/calling/managing-calls/hang-up-call.mdx",
-    "navOrder": 541
+    "navOrder": 540
   },
   {
-    "id": 1515,
+    "id": 1514,
     "path": "/sdk/uniapp/calling/managing-calls/handle-call-events",
     "relativePath": "sdk/uniapp/calling/managing-calls/handle-call-events",
     "sourcePath": "/sdk/uniapp/calling/managing-calls/handle-call-events",
@@ -12289,12 +12271,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2885,
+    "sourceIndex": 2884,
     "contentFile": "content/docs/chat/sdk/uniapp/calling/managing-calls/handle-call-events.mdx",
-    "navOrder": 542
+    "navOrder": 541
   },
   {
-    "id": 1516,
+    "id": 1515,
     "path": "/sdk/uniapp/calling/retrieving-call-information/restore-pending-invitation",
     "relativePath": "sdk/uniapp/calling/retrieving-call-information/restore-pending-invitation",
     "sourcePath": "/sdk/uniapp/calling/retrieving-call-information/restore-pending-invitation",
@@ -12307,12 +12289,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2886,
+    "sourceIndex": 2885,
     "contentFile": "content/docs/chat/sdk/uniapp/calling/retrieving-call-information/restore-pending-invitation.mdx",
-    "navOrder": 543
+    "navOrder": 542
   },
   {
-    "id": 1517,
+    "id": 1516,
     "path": "/sdk/uniapp/calling/retrieving-call-information/get-room-by-group-id",
     "relativePath": "sdk/uniapp/calling/retrieving-call-information/get-room-by-group-id",
     "sourcePath": "/sdk/uniapp/calling/retrieving-call-information/get-room-by-group-id",
@@ -12325,12 +12307,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2887,
+    "sourceIndex": 2886,
     "contentFile": "content/docs/chat/sdk/uniapp/calling/retrieving-call-information/get-room-by-group-id.mdx",
-    "navOrder": 544
+    "navOrder": 543
   },
   {
-    "id": 1518,
+    "id": 1517,
     "path": "/sdk/uniapp/calling/retrieving-call-information/get-token-by-room-id",
     "relativePath": "sdk/uniapp/calling/retrieving-call-information/get-token-by-room-id",
     "sourcePath": "/sdk/uniapp/calling/retrieving-call-information/get-token-by-room-id",
@@ -12343,12 +12325,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2888,
+    "sourceIndex": 2887,
     "contentFile": "content/docs/chat/sdk/uniapp/calling/retrieving-call-information/get-token-by-room-id.mdx",
-    "navOrder": 545
+    "navOrder": 544
   },
   {
-    "id": 1519,
+    "id": 1518,
     "path": "/sdk/uniapp/calling/sending-custom-signals/send-a-custom-signal",
     "relativePath": "sdk/uniapp/calling/sending-custom-signals/send-a-custom-signal",
     "sourcePath": "/sdk/uniapp/calling/sending-custom-signals/send-a-custom-signal",
@@ -12361,12 +12343,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2889,
+    "sourceIndex": 2888,
     "contentFile": "content/docs/chat/sdk/uniapp/calling/sending-custom-signals/send-a-custom-signal.mdx",
-    "navOrder": 546
+    "navOrder": 545
   },
   {
-    "id": 1520,
+    "id": 1519,
     "path": "/sdk/uniapp/events/overview-events",
     "relativePath": "sdk/uniapp/events/overview-events",
     "sourcePath": "/sdk/uniapp/events/overview-events",
@@ -12379,12 +12361,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2890,
+    "sourceIndex": 2889,
     "contentFile": "content/docs/chat/sdk/uniapp/events/overview-events.mdx",
-    "navOrder": 547
+    "navOrder": 546
   },
   {
-    "id": 1521,
+    "id": 1520,
     "path": "/sdk/uniapp/events/handle-data-migration-events",
     "relativePath": "sdk/uniapp/events/handle-data-migration-events",
     "sourcePath": "/sdk/uniapp/events/handle-data-migration-events",
@@ -12397,12 +12379,12 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2891,
+    "sourceIndex": 2890,
     "contentFile": "content/docs/chat/sdk/uniapp/events/handle-data-migration-events.mdx",
-    "navOrder": 548
+    "navOrder": 547
   },
   {
-    "id": 1522,
+    "id": 1521,
     "path": "/sdk/uniapp/logger",
     "relativePath": "sdk/uniapp/logger",
     "sourcePath": "/sdk/uniapp/logger",
@@ -12415,9 +12397,9 @@
     "contextTitle": "SDKs · uni-app / uni-app x · v4",
     "template": "guide",
     "status": "published",
-    "sourceIndex": 2892,
+    "sourceIndex": 2891,
     "contentFile": "content/docs/chat/sdk/uniapp/logger.mdx",
-    "navOrder": 549
+    "navOrder": 548
   },
   {
     "id": 333,

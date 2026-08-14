@@ -29,7 +29,6 @@ const operationPages = {
   getConversationGroupByConversationID: 'conversation/managing-conversation-groups/get-conversation-group-by-conversation-id',
   getHistoryMessageList: 'message/retrieving-messages/load-older-messages',
   getOpenIMDataPath: 'getting-started/install-initialize-and-inspect-sdk',
-  getSDKSessionSnapshot: 'getting-started/update-token-and-observe-sdk-session',
   getSdkVersion: 'getting-started/install-initialize-and-inspect-sdk',
   getSpeechToTextCapabilities: 'message/composing-messages/check-speech-to-text',
   initSDK: 'getting-started/install-initialize-and-inspect-sdk',
@@ -42,7 +41,6 @@ const operationPages = {
   unInitSDK: 'getting-started/install-initialize-and-inspect-sdk',
   updateFcmToken: 'getting-started/handle-app-lifecycle-and-device-state',
   updateFriend: 'user/friends/update-friends',
-  updateToken: 'getting-started/update-token-and-observe-sdk-session',
   uploadLogs: 'logger',
 };
 
@@ -78,9 +76,16 @@ const eventPages = {
   onRecvMessageExtensionsDeleted: 'message/receiving-messages/receive-custom-business-messages',
   onRoomParticipantConnected: 'calling/managing-calls/handle-call-events',
   onRoomParticipantDisconnected: 'calling/managing-calls/handle-call-events',
-  onSDKSessionChanged: 'getting-started/update-token-and-observe-sdk-session',
   onStreamChange: 'calling/managing-calls/handle-call-events',
 };
+
+const integrationOnlyCallables = new Set([
+  'getSDKSessionSnapshot',
+  'onSDKSessionChanged',
+  'updateToken',
+]);
+
+const integrationOnlyEvents = new Set(['onSDKSessionChanged']);
 
 function sha256(value) {
   return createHash('sha256').update(value).digest('hex');
@@ -130,6 +135,17 @@ export function buildUniAppSdkOwnership({ manifest, wasmOwnership, manifestSha25
   const eventsByName = new Map(manifest.events.map((item) => [item.name, item]));
 
   const events = manifest.events.map((item) => {
+    if (integrationOnlyEvents.has(item.name)) {
+      return {
+        name: item.name,
+        page: null,
+        disposition: 'integration-only',
+        edition: item.edition,
+        platforms: item.platforms,
+        payloadProfile: item.payloadProfile,
+        synthetic: item.synthetic,
+      };
+    }
     const wasmName = `On${item.name.slice(2)}`;
     const wasmOwner = wasmEvents.get(wasmName);
     const suffix = eventPages[item.name];
@@ -146,6 +162,9 @@ export function buildUniAppSdkOwnership({ manifest, wasmOwnership, manifestSha25
   const eventOwnerByName = new Map(events.map((item) => [item.name, item.page]));
 
   const callables = manifest.callables.map((item) => {
+    if (integrationOnlyCallables.has(item.name)) {
+      return { ...item, page: null, disposition: 'integration-only' };
+    }
     if (item.role === 'event-control') {
       return { ...item, page: '/sdk/uniapp/events/overview-events', disposition: 'documented' };
     }

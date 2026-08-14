@@ -38,7 +38,7 @@ function isBlocked(userID : string) : boolean {
 }
 ```
 
-The commercial edition also exposes `getBlacks()` <span className="enterprise-field-badge">Commercial</span>, whose wrapper field is named `blacks`:
+Use `getBlackList()` in new code in both public and commercial editions. Commercial builds also retain `getBlacks()` as a compatibility entry, and its wrapper field is named `blacks`:
 
 ```uts
 import { getBlacks } from '@/uni_modules/unix-openim-sdk'
@@ -47,7 +47,7 @@ const commercialResult = await getBlacks()
 replaceBlockedUsers(commercialResult?.blacks ?? [])
 ```
 
-Do not mix the `blackUsers` and `blacks` result shapes. Choose the entry that matches the installed edition rather than querying two snapshots.
+Do not mix the `blackUsers` and `blacks` result shapes. Existing commercial integrations can keep `getBlacks()`, but they should not query both snapshots; new cross-edition code should prefer `getBlackList()` and `blackUsers`.
 
 ## Blacklist item fields
 

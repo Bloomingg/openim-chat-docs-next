@@ -13,7 +13,8 @@ sourcePath: '/sdk/uniapp/user/profile/set-self-info'
 | `nickname` | `string` 或 `null` | 否 | 新昵称。 |
 | `faceURL` | `string` 或 `null` | 否 | 新头像地址。 |
 | `ex` | `string` 或 `null` | 否 | 新扩展字符串，会完整覆盖旧值。 |
-| `globalRecvMsgOpt` <span className="enterprise-field-badge">商业版</span> | `OpenIMSetSelfInfoRecvMsgOpt` 或 `null` | 否 | 账号级消息接收方式；应在对应设置流程中单独更新。 |
+| `globalRecvMsgOpt` | `OpenIMSetSelfInfoRecvMsgOpt` 或 `null` | 否 | 账号级消息接收方式；应在对应设置流程中单独更新。 |
+| `addFriendPermission` <span className="enterprise-field-badge">商业版</span> | `0`、`1`、`2` 或 `null` | 否 | 其他用户尝试添加当前账号时使用的策略。 |
 
 至少传入一个实际要更新的字段。
 
@@ -29,7 +30,7 @@ await setSelfInfo({
 
 `ex` 是完整字符串，SDK 不会自动合并 JSON。多个业务模块共用时，应先读取当前值，在应用层合并各自命名空间后再完整写回。
 
-`setSelfInfo()` 也承载账号级 `globalRecvMsgOpt`，但不应与普通资料一起保存。消息接收策略见[设置全局消息接收方式](/sdk/uniapp/user/profile/set-global-message-reception)。当前 Private rc.3 接口没有修改“其他用户添加当前账号时的权限”的 setter，不要从 Wasm 页面推断或调用不存在的方法；合同边界见[设置加好友权限](/sdk/uniapp/user/profile/set-friend-add-permission)。
+`setSelfInfo()` 也承载账号级 `globalRecvMsgOpt`，但不应与普通资料一起保存。消息接收策略见[设置全局消息接收方式](/sdk/uniapp/user/profile/set-global-message-reception)。商业版的 `addFriendPermission` 同样通过该 API 更新，并应放在独立设置流程中，见[设置加好友权限](/sdk/uniapp/user/profile/set-friend-add-permission)。
 
 Promise 成功表示设置请求完成，不等同于资料事件已到达。最终资料通过 `onSelfInfoUpdated` 或重新调用 `getSelfUserInfo()` 校准。
 

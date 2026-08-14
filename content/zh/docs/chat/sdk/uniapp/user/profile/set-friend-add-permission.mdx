@@ -1,13 +1,25 @@
 ---
 title: '设置加好友权限'
-description: '说明商业版加好友权限字段与当前 unix-openim-sdk 的写入边界。'
+description: '设置其他用户添加当前账号时的申请处理方式。'
 sourcePath: '/sdk/uniapp/user/profile/set-friend-add-permission'
 ---
 
-加好友权限属于<span className="enterprise-field-badge">商业版</span>账号策略。锁定的 `unix-openim-sdk 0.2.0-rc.3` 会在用户模型中公开相关商业字段，但当前 `OpenIMSetSelfInfoParams` 没有独立的 `addFriendPermission` 写入参数。
+`addFriendPermission` 控制其他用户添加当前账号时，是否需要当前用户审批。它属于<span className="enterprise-field-badge">商业版</span>账号策略，不应与昵称、头像等普通资料一起保存。
 
-因此本版本不能通过本插件伪造一个 setter，也不要把该值塞进 `ex`。需要修改时，应由商业版业务后端或已确认支持该字段的管理接口完成；客户端随后重新查询当前资料并刷新 UI。
+```uts
+import { setSelfInfo } from '@/uni_modules/unix-openim-sdk'
 
-页面展示该开关前应进行能力判断。公共版、旧服务端或没有返回该字段时，把状态显示为“不可配置”，不要默认成“允许任何人添加”或“需要验证”。
+await setSelfInfo({
+  addFriendPermission: 0,
+})
+```
 
-好友申请的客户端流程见[发起好友申请](/sdk/uniapp/user/friend-applications/add-friend)与[处理收到的好友申请](/sdk/uniapp/user/friend-applications/get-friend-application-list-as-recipient)。
+| 数值 | 含义 |
+| --- | --- |
+| `0` | 允许发起好友申请，但需要当前用户审批。 |
+| `1` | 允许直接建立好友关系，不需要当前用户审批。 |
+| `2` | 不允许其他用户添加当前账号。 |
+
+该设置只影响之后发生的加好友操作，不会删除已有好友，也不会自动处理待审批的申请。
+
+Promise 成功表示更新请求完成，不等于 `onSelfInfoUpdated` 已经到达。事件监听和资料校准方式见[更新当前用户资料](/sdk/uniapp/user/profile/set-self-info)。

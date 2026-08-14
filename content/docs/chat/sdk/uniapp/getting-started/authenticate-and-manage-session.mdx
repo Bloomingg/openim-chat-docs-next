@@ -179,7 +179,7 @@ These operations only report runtime changes. They do not establish a new sessio
 
 ## Handle the token lifecycle
 
-OpenIMSDK tokens are issued by a trusted backend. The public flow fetches a fresh token and reauthenticates when a token expires or becomes invalid. The commercial edition can also hot-update the token with `updateToken()`; see [Update the token and observe the SDK session](/sdk/uniapp/getting-started/update-token-and-observe-sdk-session).
+OpenIMSDK tokens are issued by a trusted backend. Fetch a fresh token and reauthenticate according to product policy when a token expires or becomes invalid.
 
 ```uts
 import {

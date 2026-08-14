@@ -24,9 +24,9 @@ const sourceContracts = {
     sdkKey: 'uniappSdk',
     sdkManifest: 'data/structure/uniapp-sdk-doc-manifest.json',
     sdkTag: '0.2.0-rc.3',
-    sdkCommit: 'e71e3f68827f9f7af354526fecbaded25dc14de9',
-    interfaceSha256: 'acbe16c69ba4ddfa2e7bbdcf35a119c88801e93d960520db50de082c2e4234df',
-    responseSchemaSha256: 'a6a73ab3e368812cbe9b6355fed3edbe59b890aa6e8f73c69e3d06fd23a6c6e5',
+    sdkCommit: 'a00fb77d7037766c5526b92f9ec0ae7a5939f012',
+    interfaceSha256: '8816bd7fdd27f4eff90171f42ceec9d340f8122cfb3a61bee0bc7b456b306224',
+    responseSchemaSha256: '39ab81f893c01083fde975e4c57e31cea4d28e4086e45335d80f701ec9c2b2dc',
   },
 };
 
@@ -63,7 +63,6 @@ const uniappAdditionalEntries = new Map([
   ['getting-started', [
     { path: '/sdk/uniapp/getting-started/install-initialize-and-inspect-sdk', navigationTitle: 'Install, initialize, and inspect the SDK' },
     { path: '/sdk/uniapp/getting-started/handle-app-lifecycle-and-device-state', navigationTitle: 'Handle App lifecycle and device state' },
-    { path: '/sdk/uniapp/getting-started/update-token-and-observe-sdk-session', navigationTitle: 'Update tokens and observe SDK sessions' },
   ]],
   ['group', [
     { path: '/sdk/uniapp/group/check-full-sync-state', navigationTitle: 'Check group full-sync state' },
@@ -167,7 +166,11 @@ export function buildClientSdkAuditSeed({
     pages: activePaths
       .map((path) => {
         const existing = existingByPath.get(path);
-        if (existing) return existing;
+        if (existing) {
+          return platformId === 'uniapp'
+            ? { ...existing, openimSources: [docsSource, sdkSource] }
+            : existing;
+        }
         return {
           currentPath: path,
           targetPath: path,
@@ -211,7 +214,11 @@ export function buildClientSdkAuditSeed({
 }
 
 function toOmittedAuditPage({ page, path, platformId, docsSource, sdkSource, historical = false }) {
-  if (page?.disposition === 'omit') return page;
+  if (page?.disposition === 'omit') {
+    return platformId === 'uniapp'
+      ? { ...page, openimSources: [docsSource, sdkSource] }
+      : page;
+  }
   const note = historical
     ? '2026-07-20：该路径已离开当前导航；保留原审核证据作为历史记录。'
     : `2026-07-20：固定 ${platformId === 'ios' ? 'Objective-C' : 'Dart'} SDK 宣告没有该页面的公开能力；不纳入导航且不得编造替代 API。`;
@@ -262,7 +269,6 @@ export function buildClientSdkNavigationLabels(wasmLabels, platformId) {
             ? {
                 'Install, initialize, and inspect the SDK': '安装、初始化并检查 SDK',
                 'Handle App lifecycle and device state': '处理 App 生命周期与设备状态',
-                'Update tokens and observe SDK sessions': '更新 Token 并观察 SDK 会话',
                 'Check group full-sync state': '检查群组全量同步状态',
                 'Translate text and messages': '翻译文本与消息',
                 'Handle data migration events': '处理数据迁移事件',

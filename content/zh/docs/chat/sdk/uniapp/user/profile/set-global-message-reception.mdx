@@ -4,7 +4,7 @@ description: '设置当前账号在全部会话中的默认消息接收与通知
 sourcePath: '/sdk/uniapp/user/profile/set-global-message-reception'
 ---
 
-`globalRecvMsgOpt` <span className="enterprise-field-badge">商业版</span>字段是账号级默认策略，控制当前账号是否接收消息以及是否允许通知。它不属于昵称、头像等普通展示资料。
+`globalRecvMsgOpt` 是账号级默认策略，控制当前账号是否接收消息以及是否允许通知。它不属于昵称、头像等普通展示资料。
 
 当前插件通过 `setSelfInfo()` 更新该字段：
 
@@ -32,4 +32,4 @@ await setSelfInfo({
 
 单个会话的 `recvMsgOpt` 是更细粒度的会话设置，见[设置会话消息接收方式](/sdk/uniapp/conversation/managing-conversations/set-message-receive-option)。同时存在账号级和会话级设置时，客户端应展示服务端返回的最终会话状态，不要只根据本地开关推断。
 
-Promise 成功表示设置请求完成，不等于 `onSelfInfoUpdated` 已经到达。事件监听和 `getSelfUserInfo()` 校准方式见[更新当前用户资料](/sdk/uniapp/user/profile/set-self-info)。公共版中该字段可能不存在，业务 UI 应按能力配置显示入口，不能把缺失值解释为某个确定策略。
+Promise 成功表示设置请求完成，不等于 `onSelfInfoUpdated` 已经到达。事件监听和 `getSelfUserInfo()` 校准方式见[更新当前用户资料](/sdk/uniapp/user/profile/set-self-info)。

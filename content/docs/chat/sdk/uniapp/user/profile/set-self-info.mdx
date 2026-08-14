@@ -20,7 +20,8 @@ sourcePath: '/sdk/uniapp/user/profile/set-self-info'
 | `nickname` | `string` or `null` | No | New nickname. |
 | `faceURL` | `string` or `null` | No | New avatar URL. |
 | `ex` | `string` or `null` | No | New extension string. It completely replaces the previous value. |
-| `globalRecvMsgOpt` <span className="enterprise-field-badge">Enterprise</span> | `OpenIMSetSelfInfoRecvMsgOpt` or `null` | No | Account-level message reception option; update it through the corresponding settings flow. |
+| `globalRecvMsgOpt` | `OpenIMSetSelfInfoRecvMsgOpt` or `null` | No | Account-level message reception option; update it through the corresponding settings flow. |
+| `addFriendPermission` <span className="enterprise-field-badge">Commercial</span> | `0`, `1`, `2`, or `null` | No | Policy used when another user tries to add the current account. |
 
 Pass at least one field that actually needs to change.
 
@@ -36,7 +37,7 @@ await setSelfInfo({
 
 `ex` is a complete string; the SDK does not merge JSON automatically. If several application modules share it, read the current value first and merge each module's namespace before writing the complete replacement.
 
-`setSelfInfo()` also carries the account-level `globalRecvMsgOpt`, but do not save it together with ordinary profile data. See [Set global message reception](/sdk/uniapp/user/profile/set-global-message-reception). The current Private rc.3 interface has no setter for the policy governing how other users add this account. Do not infer or call a method that exists only in the Wasm page; see [Set friend request permissions](/sdk/uniapp/user/profile/set-friend-add-permission) for the exact contract boundary.
+`setSelfInfo()` also carries the account-level `globalRecvMsgOpt`, but do not save it together with ordinary profile data. See [Set global message reception](/sdk/uniapp/user/profile/set-global-message-reception). The commercial `addFriendPermission` field is updated through the same API; keep it in its own settings flow as described in [Set friend request permissions](/sdk/uniapp/user/profile/set-friend-add-permission).
 
 Promise success means that the update request completed, not that the profile event has arrived. Reconcile the final profile through `onSelfInfoUpdated` or another `getSelfUserInfo()` query.
 

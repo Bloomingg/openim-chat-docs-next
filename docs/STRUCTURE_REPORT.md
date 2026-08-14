@@ -1,9 +1,9 @@
 # 当前结构报告
 
-- 页面总数：**983**
+- 页面总数：**982**
 - 导航上下文：**10**
 - 内容范围：**current-only**
-- 生成时间：`2026-08-13T04:59:19.646Z`
+- 生成时间：`2026-08-14T07:19:28.934Z`
 
 ## 当前保留范围
 
@@ -18,15 +18,15 @@ SDK Reference 应从代码注释或类型定义生成。Platform API 的结构�
 
 | 分支           | 页面数 |  占比 |
 | -------------- | -----: | ----: |
-| `platform-api` |    194 | 19.7% |
-| `sdk`          |    789 | 80.3% |
+| `platform-api` |    194 | 19.8% |
+| `sdk`          |    788 | 80.2% |
 
 ## 按页面模板
 
 | 模板       | 页面数 |  占比 |
 | ---------- | -----: | ----: |
 | `api`      |    179 | 18.2% |
-| `guide`    |    782 | 79.6% |
+| `guide`    |    781 | 79.5% |
 | `overview` |     22 |  2.2% |
 
 ## 按发布状态
@@ -34,7 +34,7 @@ SDK Reference 应从代码注释或类型定义生成。Platform API 的结构�
 | 状态        | 页面数 |  占比 |
 | ----------- | -----: | ----: |
 | `draft`     |      1 |  0.1% |
-| `published` |    854 | 86.9% |
+| `published` |    853 | 86.9% |
 | `scaffold`  |    128 | 13.0% |
 
 ## 导航上下文
@@ -45,7 +45,7 @@ SDK Reference 应从代码注释或类型定义生成。Platform API 的结构�
 | `chat/sdk/ios`          | SDKs · iOS · v4                 |    164 |
 | `chat/sdk/android`      | SDKs · Android · v4             |    128 |
 | `chat/sdk/flutter`      | SDKs · Flutter · v4             |    158 |
-| `chat/sdk/uniapp`       | SDKs · uni-app / uni-app x · v4 |    167 |
+| `chat/sdk/uniapp`       | SDKs · uni-app / uni-app x · v4 |    166 |
 | `chat/sdk/wasm`         | SDKs · WASM · v4                |    165 |
 | `chat/sdk/electron`     | SDKs · Electron · v4            |      4 |
 | `chat/sdk/miniprogram`  | SDKs · Mini Program · v4        |      1 |

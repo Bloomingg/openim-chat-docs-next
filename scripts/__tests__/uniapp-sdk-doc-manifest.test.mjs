@@ -32,6 +32,10 @@ test('accepts the frozen public-safe Private uni-app SDK documentation contract'
   ]);
   assert.equal(result.unsupportedHarmonyEvents.length, 10);
   assert.equal(result.syntheticEvents.includes('onSDKSessionChanged'), true);
+  assert.deepEqual(
+    manifest.typeExtensions.find((item) => item.target === 'OpenIMSetSelfInfoParams')?.addedMembers,
+    ['addFriendPermission ?: 0 | 1 | 2 | null'],
+  );
   assert.deepEqual(result.retiredCallables, [
     { id: 200083, name: 'getArchivedConversationList' },
   ]);

@@ -1,6 +1,6 @@
 ---
 title: 'Set global message reception'
-description: 'Set the commercial account-wide globalRecvMsgOpt profile field.'
+description: 'Set the account-wide globalRecvMsgOpt profile field.'
 product: 'sdk'
 context: 'chat/sdk/uniapp'
 template: 'guide'
@@ -11,7 +11,7 @@ platform: 'uniapp'
 sourcePath: '/sdk/uniapp/user/profile/set-global-message-reception'
 ---
 
-`globalRecvMsgOpt` is an <span className="enterprise-field-badge">Enterprise</span> field that defines the account's default message-reception and notification policy. It is not an ordinary nickname, avatar, or display-profile field.
+`globalRecvMsgOpt` defines the account's default message-reception and notification policy. It is not an ordinary nickname, avatar, or display-profile field.
 
 ```uts
 import {
@@ -37,4 +37,4 @@ Pass only `globalRecvMsgOpt` so changing message policy does not overwrite nickn
 
 A conversation's `recvMsgOpt` is a more specific conversation-level option; see [Set message reception for a conversation](/sdk/uniapp/conversation/managing-conversations/set-message-receive-option). When account and conversation settings coexist, display the final conversation state returned by the server rather than inferring it only from a local switch.
 
-Promise success means that the update request completed, not that `onSelfInfoUpdated` has arrived. See [Update your profile](/sdk/uniapp/user/profile/set-self-info) for the event and `getSelfUserInfo()` reconciliation. Public editions may omit this field; show the control according to capability configuration and do not interpret absence as a particular policy.
+Promise success means that the update request completed, not that `onSelfInfoUpdated` has arrived. See [Update your profile](/sdk/uniapp/user/profile/set-self-info) for the event and `getSelfUserInfo()` reconciliation.

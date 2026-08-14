@@ -70,7 +70,6 @@ const uniappBaselineSuffixes = new Map([
 const uniappExtensionTitles = new Map([
   ['getting-started/install-initialize-and-inspect-sdk', 'Install, initialize, and inspect the SDK'],
   ['getting-started/handle-app-lifecycle-and-device-state', 'Handle App lifecycle and device state'],
-  ['getting-started/update-token-and-observe-sdk-session', 'Update tokens and observe SDK sessions'],
   ['group/check-full-sync-state', 'Check group full-sync state'],
   ['message/composing-messages/translate-text-and-messages', 'Translate text and messages'],
   ['events/handle-data-migration-events', 'Handle data migration events'],

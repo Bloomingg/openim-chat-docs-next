@@ -20,10 +20,6 @@
         {
           "path": "/sdk/uniapp/getting-started/handle-app-lifecycle-and-device-state",
           "navigationTitle": "Handle App lifecycle and device state"
-        },
-        {
-          "path": "/sdk/uniapp/getting-started/update-token-and-observe-sdk-session",
-          "navigationTitle": "Update tokens and observe SDK sessions"
         }
       ]
     },

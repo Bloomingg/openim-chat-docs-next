@@ -3656,14 +3656,6 @@
     "contentFile": "content/docs/chat/sdk/uniapp/getting-started/handle-app-lifecycle-and-device-state.mdx"
   },
   {
-    "sourcePath": "/sdk/uniapp/getting-started/update-token-and-observe-sdk-session",
-    "openimPath": "/sdk/uniapp/getting-started/update-token-and-observe-sdk-session",
-    "title": "Update tokens and observe SDK sessions",
-    "context": "chat/sdk/uniapp",
-    "template": "guide",
-    "contentFile": "content/docs/chat/sdk/uniapp/getting-started/update-token-and-observe-sdk-session.mdx"
-  },
-  {
     "sourcePath": "/sdk/uniapp/user/overview-user",
     "openimPath": "/sdk/uniapp/user/overview-user",
     "title": "User overview",

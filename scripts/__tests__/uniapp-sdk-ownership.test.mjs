@@ -55,11 +55,13 @@ test('keeps every callable and event on the same unique owner page in the conten
   const expectedEvents = new Map();
 
   for (const item of ownership.callables) {
+    if (item.page == null) continue;
     const names = expectedCallables.get(item.page) ?? [];
     names.push(item.name);
     expectedCallables.set(item.page, names);
   }
   for (const item of ownership.events) {
+    if (item.page == null) continue;
     const names = expectedEvents.get(item.page) ?? [];
     names.push(item.name);
     expectedEvents.set(item.page, names);

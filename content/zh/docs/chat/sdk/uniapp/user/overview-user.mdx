@@ -23,7 +23,7 @@ SDK 会根据使用场景返回不同的用户对象：
 
 同一个 `userID` 可能同时出现在公开资料、好友资料、黑名单和群成员资料中。联系人页优先使用 `OpenIMFriendUserItem`；陌生人资料卡使用 `OpenIMPublicUserItem`；群成员列表使用 `OpenIMGroupMemberItem`。会话列表和聊天页标题属于会话数据，应使用 `OpenIMConversationItem.showName`。
 
-`OpenIMUserInfo` 的公共字段包括 `userID`、`nickname`、`faceURL`、`ex` 和可选 `createTime`。`attachedInfo` 与 `globalRecvMsgOpt` 是<span className="enterprise-field-badge">商业版</span>字段，读取前应判空，不要假定公共服务端一定返回。
+`OpenIMUserInfo` 的字段包括 `userID`、`nickname`、`faceURL`、`ex`、可选 `createTime` 和可选 `globalRecvMsgOpt`。只有 `attachedInfo` 是<span className="enterprise-field-badge">商业版</span>字段；读取前应判空，并且只按已确认的商业协议解析。
 
 ## 功能入口
 
@@ -37,7 +37,7 @@ SDK 会根据使用场景返回不同的用户对象：
 | 查看和维护当前用户黑名单 | [获取黑名单](/sdk/uniapp/user/blacklist/get-black-list) |
 | 读取或更新当前用户昵称、头像和扩展资料 | [更新当前用户资料](/sdk/uniapp/user/profile/set-self-info) |
 | 设置账号级消息接收策略 | [设置全局消息接收方式](/sdk/uniapp/user/profile/set-global-message-reception) |
-| 查看加好友权限的当前合同边界 | [设置加好友权限](/sdk/uniapp/user/profile/set-friend-add-permission) |
+| 设置其他用户添加当前账号时的处理方式 | [设置加好友权限](/sdk/uniapp/user/profile/set-friend-add-permission) |
 | 订阅和读取在线状态 | [订阅用户在线状态](/sdk/uniapp/user/online-status/subscribe-users-status) |
 | 读取群成员、搜索成员或查询指定成员资料 | [分页查询群成员](/sdk/uniapp/group/retrieving-group-members/get-group-member-list) |
 

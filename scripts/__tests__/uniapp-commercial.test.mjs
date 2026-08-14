@@ -30,10 +30,6 @@ test('derives uni-app commercial pages from the Private documentation ownership 
     getPageCommercialInfo('/sdk/uniapp/message/sending-messages/send-message').kind,
     'none',
   );
-  assert.equal(
-    getPageCommercialInfo('/sdk/uniapp/getting-started/update-token-and-observe-sdk-session').kind,
-    'full',
-  );
   assert.ok(
     getPageCommercialNames('/sdk/uniapp/message/composing-messages/translate-text-and-messages').has(
       'translateText',

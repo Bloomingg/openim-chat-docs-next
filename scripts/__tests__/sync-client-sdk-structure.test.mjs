@@ -85,14 +85,13 @@ test('builds the uni-app task tree from WASM structure plus native contract diff
   const paths = getClientSdkSidebarPaths(sidebar);
   const omitted = getOmittedClientSdkPaths(wasmSidebar, 'uniapp');
 
-  assert.equal(paths.length, 167);
+  assert.equal(paths.length, 166);
   assert.equal(omitted.length, 4);
   assert.equal(new Set(paths).size, paths.length);
   assert.ok(paths.every((path) => path.startsWith('/sdk/uniapp/')));
   for (const path of [
     '/sdk/uniapp/getting-started/install-initialize-and-inspect-sdk',
     '/sdk/uniapp/getting-started/handle-app-lifecycle-and-device-state',
-    '/sdk/uniapp/getting-started/update-token-and-observe-sdk-session',
     '/sdk/uniapp/group/check-full-sync-state',
     '/sdk/uniapp/message/composing-messages/translate-text-and-messages',
     '/sdk/uniapp/events/handle-data-migration-events',

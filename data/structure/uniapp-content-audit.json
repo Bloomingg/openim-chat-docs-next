@@ -8,9 +8,9 @@
     "uniappSdk": {
       "manifest": "data/structure/uniapp-sdk-doc-manifest.json",
       "tag": "0.2.0-rc.3",
-      "commit": "e71e3f68827f9f7af354526fecbaded25dc14de9",
-      "interfaceSha256": "acbe16c69ba4ddfa2e7bbdcf35a119c88801e93d960520db50de082c2e4234df",
-      "responseSchemaSha256": "a6a73ab3e368812cbe9b6355fed3edbe59b890aa6e8f73c69e3d06fd23a6c6e5"
+      "commit": "a00fb77d7037766c5526b92f9ec0ae7a5939f012",
+      "interfaceSha256": "8816bd7fdd27f4eff90171f42ceec9d340f8122cfb3a61bee0bc7b456b306224",
+      "responseSchemaSha256": "39ab81f893c01083fde975e4c57e31cea4d28e4086e45335d80f701ec9c2b2dc"
     }
   },
   "pages": [
@@ -20,7 +20,8 @@
       "sourceKind": "openim-specific",
       "disposition": "adapt",
       "openimSources": [
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -62,7 +63,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -104,7 +105,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -146,7 +147,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getLoginStatus",
@@ -208,7 +209,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -250,7 +251,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getOpenIMDataPath",
@@ -297,7 +298,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "setAppBadge",
@@ -336,61 +337,13 @@
       ]
     },
     {
-      "currentPath": "/sdk/uniapp/getting-started/update-token-and-observe-sdk-session",
-      "targetPath": "/sdk/uniapp/getting-started/update-token-and-observe-sdk-session",
-      "sourceKind": "openim-specific",
-      "disposition": "adapt",
-      "openimSources": [
-        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
-      ],
-      "sdkMethods": [
-        "getSDKSessionSnapshot",
-        "onSDKSessionChanged",
-        "updateToken"
-      ],
-      "sdkEvents": [
-        "onSDKSessionChanged"
-      ],
-      "locales": {
-        "zh": {
-          "reviewStatus": "published",
-          "reviewer": "Codex contract audit",
-          "reviewedAt": "2026-08-13",
-          "exampleVerification": {
-            "status": "verified",
-            "evidence": [
-              "Frozen Private 0.2.0-rc.3 manifest ownership, import-symbol, and native example policy checks passed on 2026-08-13."
-            ],
-            "reason": null
-          }
-        },
-        "en": {
-          "reviewStatus": "published",
-          "reviewer": "Codex contract audit",
-          "reviewedAt": "2026-08-13",
-          "exampleVerification": {
-            "status": "verified",
-            "evidence": [
-              "Frozen Private 0.2.0-rc.3 manifest ownership, import-symbol, and native example policy checks passed on 2026-08-13."
-            ],
-            "reason": null
-          }
-        }
-      },
-      "redirectTo": null,
-      "notes": [
-        "2026-07-20：已依最新 WASM 文档路径建立结构记录；正文仍待逐页人工核对。"
-      ]
-    },
-    {
       "currentPath": "/sdk/uniapp/user/overview-user",
       "targetPath": "/sdk/uniapp/user/overview-user",
       "sourceKind": "openim-specific",
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -430,7 +383,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getUsersInfo"
@@ -474,7 +427,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getSelfUserInfo"
@@ -518,7 +471,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "onSelfInfoUpdated",
@@ -565,7 +518,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -607,7 +560,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -617,9 +570,11 @@
           "reviewer": "Codex contract audit",
           "reviewedAt": "2026-08-13",
           "exampleVerification": {
-            "status": "not-applicable",
-            "evidence": [],
-            "reason": "Concept or boundary page contains no executable code block."
+            "status": "verified",
+            "evidence": [
+              "Private 0.2.0-rc.3 setSelfInfo addFriendPermission contract and UTS example checks passed on 2026-08-14."
+            ],
+            "reason": null
           }
         },
         "en": {
@@ -627,9 +582,11 @@
           "reviewer": "Codex contract audit",
           "reviewedAt": "2026-08-13",
           "exampleVerification": {
-            "status": "not-applicable",
-            "evidence": [],
-            "reason": "Concept or boundary page contains no executable code block."
+            "status": "verified",
+            "evidence": [
+              "Private 0.2.0-rc.3 setSelfInfo addFriendPermission contract and UTS example checks passed on 2026-08-14."
+            ],
+            "reason": null
           }
         }
       },
@@ -645,7 +602,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getUserStatus",
@@ -693,7 +650,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getSubscribeUsersStatus"
@@ -737,7 +694,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "unsubscribeUsersStatus"
@@ -781,7 +738,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getFriendList",
@@ -833,7 +790,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "searchFriends"
@@ -877,7 +834,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getSpecifiedFriendsInfo"
@@ -921,7 +878,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "checkFriend"
@@ -965,7 +922,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "updateFriend",
@@ -1010,7 +967,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "deleteFriend"
@@ -1054,7 +1011,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "addFriend"
@@ -1098,7 +1055,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getFriendApplicationListAsRecipient",
@@ -1151,7 +1108,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getFriendApplicationListAsApplicant"
@@ -1195,7 +1152,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getFriendApplicationUnhandledCount"
@@ -1239,7 +1196,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "acceptFriendApplication"
@@ -1283,7 +1240,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "refuseFriendApplication"
@@ -1327,7 +1284,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "deleteFriendRequests"
@@ -1371,7 +1328,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getBlackList",
@@ -1421,7 +1378,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "addBlack"
@@ -1465,7 +1422,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "removeBlack"
@@ -1509,7 +1466,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -1547,7 +1504,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getOneConversation"
@@ -1591,7 +1548,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getConversationIDBySessionType"
@@ -1635,7 +1592,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getMultipleConversation"
@@ -1679,7 +1636,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getAllConversationList",
@@ -1729,7 +1686,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "searchConversation"
@@ -1773,7 +1730,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "setConversation"
@@ -1817,7 +1774,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -1855,7 +1812,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -1893,7 +1850,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -1935,7 +1892,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "setConversationDraft"
@@ -1979,7 +1936,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -2021,7 +1978,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -2063,7 +2020,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "markConversationMessageAsRead",
@@ -2111,7 +2068,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "markAllConversationMessageAsRead"
@@ -2155,7 +2112,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getTotalUnreadMsgCount",
@@ -2202,7 +2159,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -2244,7 +2201,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -2286,7 +2243,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -2324,7 +2281,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "hideConversation"
@@ -2368,7 +2325,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "hideAllConversations"
@@ -2412,7 +2369,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "deleteConversation"
@@ -2456,7 +2413,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "deleteConversationAndDeleteAllMsg"
@@ -2500,7 +2457,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "clearConversationAndDeleteAllMsg"
@@ -2544,7 +2501,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "onConversationGroupAdded",
@@ -2598,7 +2555,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "createConversationGroup"
@@ -2642,7 +2599,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getConversationGroups"
@@ -2686,7 +2643,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getConversationGroupInfoWithConversations"
@@ -2730,7 +2687,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getConversationGroupByConversationID"
@@ -2774,7 +2731,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "updateConversationGroup"
@@ -2818,7 +2775,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "setConversationGroupOrder"
@@ -2862,7 +2819,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "addConversationsToGroups"
@@ -2906,7 +2863,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "removeConversationsFromGroups"
@@ -2950,7 +2907,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "deleteConversationGroup"
@@ -2994,7 +2951,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "onGroupDismissed",
@@ -3046,7 +3003,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "createGroup"
@@ -3090,7 +3047,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "setGroupInfo"
@@ -3134,7 +3091,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -3176,7 +3133,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -3218,7 +3175,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -3260,7 +3217,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -3302,7 +3259,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -3344,7 +3301,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "changeGroupMute"
@@ -3388,7 +3345,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "joinGroup"
@@ -3432,7 +3389,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "quitGroup"
@@ -3476,7 +3433,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "dismissGroup"
@@ -3520,7 +3477,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getSpecifiedGroupsInfo"
@@ -3564,7 +3521,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getJoinedGroupList"
@@ -3608,7 +3565,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getJoinedGroupListPage"
@@ -3652,7 +3609,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "isJoinGroup"
@@ -3696,7 +3653,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "searchGroups"
@@ -3740,7 +3697,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getGroupApplicationListAsRecipient",
@@ -3793,7 +3750,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getGroupApplicationListAsApplicant"
@@ -3837,7 +3794,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getGroupApplicationUnhandledCount"
@@ -3881,7 +3838,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "onGroupApplicationBadgeCountChanged"
@@ -3927,7 +3884,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "acceptGroupApplication"
@@ -3971,7 +3928,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "refuseGroupApplication"
@@ -4015,7 +3972,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "deleteGroupRequests"
@@ -4059,7 +4016,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getGroupMemberList",
@@ -4110,7 +4067,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getSpecifiedGroupMembersInfo"
@@ -4154,7 +4111,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getUsersInGroup"
@@ -4198,7 +4155,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "searchGroupMembers"
@@ -4242,7 +4199,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "inviteUserToGroup"
@@ -4286,7 +4243,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "kickGroupMember"
@@ -4330,7 +4287,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "setGroupMemberInfo"
@@ -4374,7 +4331,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -4416,7 +4373,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -4458,7 +4415,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -4500,7 +4457,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "transferGroupOwner"
@@ -4544,7 +4501,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "changeGroupMemberMute"
@@ -4588,7 +4545,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "checkGroupMemberFullSync",
@@ -4633,7 +4590,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "onSendMessageProgress",
@@ -4683,7 +4640,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "createTextMessage"
@@ -4727,7 +4684,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "createTextAtMessage",
@@ -4772,7 +4729,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "createAdvancedTextMessage",
@@ -4817,7 +4774,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "createImageMessage",
@@ -4862,7 +4819,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "createImageMessageByURL"
@@ -4906,7 +4863,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "createSoundMessage",
@@ -4951,7 +4908,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "createSoundMessageByURL"
@@ -4995,7 +4952,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "createVideoMessage",
@@ -5040,7 +4997,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "createVideoMessageByURL"
@@ -5084,7 +5041,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "createFileMessage",
@@ -5129,7 +5086,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "createFileMessageByURL"
@@ -5173,7 +5130,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "createCardMessage"
@@ -5217,7 +5174,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "createLocationMessage"
@@ -5261,7 +5218,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "createFaceMessage"
@@ -5305,7 +5262,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "createAdvancedQuoteMessage",
@@ -5350,7 +5307,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "createMarkdownMessage"
@@ -5394,7 +5351,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "createForwardMessage"
@@ -5438,7 +5395,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "createMergerMessage"
@@ -5482,7 +5439,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "sendMessage"
@@ -5526,7 +5483,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "sendMessageNotOss"
@@ -5570,7 +5527,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "onRecvNewMessage",
@@ -5624,7 +5581,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "onMessageKvInfoChanged",
@@ -5678,7 +5635,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getAdvancedHistoryMessageList",
@@ -5723,7 +5680,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "findMessageList"
@@ -5767,7 +5724,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "fetchSurroundingMessages"
@@ -5811,7 +5768,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "searchLocalMessages"
@@ -5855,7 +5812,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "changeInputStates",
@@ -5903,7 +5860,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getInputStates"
@@ -5947,7 +5904,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getSpeechToTextCapabilities"
@@ -5991,7 +5948,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "speechToText"
@@ -6035,7 +5992,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "setMessageLocalContent"
@@ -6079,7 +6036,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "translateMessage",
@@ -6124,7 +6081,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "deleteMessage",
@@ -6169,7 +6126,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "deleteMessages",
@@ -6216,7 +6173,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "deleteUserAllMessagesInConv",
@@ -6263,7 +6220,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "onNewRecvMessageRevoked",
@@ -6310,7 +6267,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "modifyMessage",
@@ -6359,7 +6316,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getConversationPinnedMsg"
@@ -6403,7 +6360,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "onChangedPinnedMsg",
@@ -6450,7 +6407,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "insertSingleMessageToLocalStorage"
@@ -6494,7 +6451,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "insertGroupMessageToLocalStorage"
@@ -6538,7 +6495,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "deleteAllMsgFromLocal"
@@ -6582,7 +6539,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "deleteAllMsgFromLocalAndSvr"
@@ -6626,7 +6583,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "setMessageLocalEx"
@@ -6670,7 +6627,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "onRecvGroupReadReceipt",
@@ -6717,7 +6674,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "getGroupMessageReaderList"
@@ -6761,7 +6718,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "cancelUpload",
@@ -6806,7 +6763,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -6844,7 +6801,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "signalingInvite"
@@ -6888,7 +6845,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "signalingInviteInGroup"
@@ -6932,7 +6889,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "signalingAccept"
@@ -6976,7 +6933,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "signalingReject"
@@ -7020,7 +6977,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "signalingCancel"
@@ -7064,7 +7021,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "signalingHungUp"
@@ -7108,7 +7065,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "onHangUp",
@@ -7174,7 +7131,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "signalingGetInvitationInfoStartApp"
@@ -7218,7 +7175,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "signalingGetRoomByGroupID"
@@ -7262,7 +7219,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "signalingGetTokenByRoomID"
@@ -7306,7 +7263,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "onReceiveCustomSignal",
@@ -7355,7 +7312,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "off",
@@ -7409,7 +7366,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "onMigrationFailed",
@@ -7461,7 +7418,7 @@
       "disposition": "adapt",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [
         "uploadLogs"
@@ -7504,7 +7461,7 @@
       "sourceKind": "openim-specific",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -7542,7 +7499,7 @@
       "sourceKind": "openim-specific",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -7580,7 +7537,7 @@
       "sourceKind": "openim-specific",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -7618,7 +7575,7 @@
       "sourceKind": "openim-specific",
       "openimSources": [
         "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
-        "data/structure/uniapp-sdk-doc-manifest.json#e71e3f68827f9f7af354526fecbaded25dc14de9"
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
       ],
       "sdkMethods": [],
       "sdkEvents": [],
@@ -7649,6 +7606,45 @@
         "2026-07-20：固定 Dart SDK 宣告没有该页面的公开能力；不纳入导航且不得编造替代 API。"
       ],
       "disposition": "omit"
+    },
+    {
+      "currentPath": "/sdk/uniapp/getting-started/update-token-and-observe-sdk-session",
+      "targetPath": "/sdk/uniapp/getting-started/update-token-and-observe-sdk-session",
+      "sourceKind": "openim-specific",
+      "disposition": "omit",
+      "openimSources": [
+        "https://github.com/openimsdk/docs/tree/efd0f251b288167e1ca617504b10dd73986429f0/docs/sdks",
+        "data/structure/uniapp-sdk-doc-manifest.json#a00fb77d7037766c5526b92f9ec0ae7a5939f012"
+      ],
+      "sdkMethods": [],
+      "sdkEvents": [],
+      "locales": {
+        "zh": {
+          "reviewStatus": "structure-only",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        },
+        "en": {
+          "reviewStatus": "deferred",
+          "reviewer": null,
+          "reviewedAt": null,
+          "exampleVerification": {
+            "status": "pending",
+            "evidence": [],
+            "reason": null
+          }
+        }
+      },
+      "redirectTo": null,
+      "notes": [
+        "2026-07-20：已依最新 WASM 文档路径建立结构记录；正文仍待逐页人工核对。",
+        "2026-07-20：该路径已离开当前导航；保留原审核证据作为历史记录。"
+      ]
     }
   ]
 }

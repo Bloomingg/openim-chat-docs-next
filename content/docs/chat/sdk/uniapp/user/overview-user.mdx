@@ -30,7 +30,7 @@ The SDK returns different user objects for different scenarios:
 
 The same `userID` can appear in public, friend, blacklist, and group-member data. Prefer `OpenIMFriendUserItem` for contacts, `OpenIMPublicUserItem` for a stranger's profile card, and `OpenIMGroupMemberItem` in group-member lists. Conversation-list and chat-page titles come from conversation data and should use `OpenIMConversationItem.showName`.
 
-Public `OpenIMUserInfo` fields include `userID`, `nickname`, `faceURL`, `ex`, and optional `createTime`. `attachedInfo` and `globalRecvMsgOpt` are <span className="enterprise-field-badge">Commercial fields</span>; check for absence and do not assume that a public server returns them.
+`OpenIMUserInfo` fields include `userID`, `nickname`, `faceURL`, `ex`, optional `createTime`, and optional `globalRecvMsgOpt`. `attachedInfo` is a <span className="enterprise-field-badge">Commercial field</span>; check it for absence and parse it only according to a confirmed commercial contract.
 
 ## Feature pages
 
@@ -44,7 +44,7 @@ Public `OpenIMUserInfo` fields include `userID`, `nickname`, `faceURL`, `ex`, an
 | View and maintain the blacklist | [Get the blacklist](/sdk/uniapp/user/blacklist/get-black-list) |
 | Read or update the current user's nickname, avatar, and extension data | [Update your profile](/sdk/uniapp/user/profile/set-self-info) |
 | Set account-level message reception | [Set global message reception](/sdk/uniapp/user/profile/set-global-message-reception) |
-| Understand the current contract boundary for friend-add permission | [Set friend request permissions](/sdk/uniapp/user/profile/set-friend-add-permission) |
+| Set how other users can add the current account | [Set friend request permissions](/sdk/uniapp/user/profile/set-friend-add-permission) |
 | Subscribe to and read online status | [Subscribe to online status](/sdk/uniapp/user/online-status/subscribe-users-status) |
 | List, search, or retrieve selected group-member profiles | [List group members](/sdk/uniapp/group/retrieving-group-members/get-group-member-list) |
 

@@ -1,7 +1,7 @@
 const frozenBaseline = Object.freeze({
-  privateCommit: 'e71e3f68827f9f7af354526fecbaded25dc14de9',
-  interfaceSha256: 'acbe16c69ba4ddfa2e7bbdcf35a119c88801e93d960520db50de082c2e4234df',
-  responseSchemaSha256: 'a6a73ab3e368812cbe9b6355fed3edbe59b890aa6e8f73c69e3d06fd23a6c6e5',
+  privateCommit: 'a00fb77d7037766c5526b92f9ec0ae7a5939f012',
+  interfaceSha256: '8816bd7fdd27f4eff90171f42ceec9d340f8122cfb3a61bee0bc7b456b306224',
+  responseSchemaSha256: '39ab81f893c01083fde975e4c57e31cea4d28e4086e45335d80f701ec9c2b2dc',
 });
 
 const expectedCounts = Object.freeze({
@@ -71,7 +71,7 @@ export function validateUniAppSdkDocManifest(manifest) {
   assert(commercialOperations === 51, 'Commercial operation count drifted');
   assert(commercialEventSubscriptions === 33, 'Commercial event subscription count drifted');
   assert(commercialTypes === 77, 'Commercial type count drifted');
-  assert(manifest.typeExtensions.length === 3, 'Commercial type extension count drifted');
+  assert(manifest.typeExtensions.length === 6, 'Commercial type extension count drifted');
   assert(unsupportedHarmonyOperations.length === 4, 'Harmony unsupported operation count drifted');
   assert(unsupportedHarmonyEvents.length === 10, 'Harmony unsupported event count drifted');
   assert(

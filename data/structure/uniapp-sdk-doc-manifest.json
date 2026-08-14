@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "sdkVersion": "0.2.0-rc.3",
   "baseline": {
-    "privateCommit": "e71e3f68827f9f7af354526fecbaded25dc14de9",
-    "interfaceSha256": "acbe16c69ba4ddfa2e7bbdcf35a119c88801e93d960520db50de082c2e4234df",
-    "responseSchemaSha256": "a6a73ab3e368812cbe9b6355fed3edbe59b890aa6e8f73c69e3d06fd23a6c6e5"
+    "privateCommit": "a00fb77d7037766c5526b92f9ec0ae7a5939f012",
+    "interfaceSha256": "8816bd7fdd27f4eff90171f42ceec9d340f8122cfb3a61bee0bc7b456b306224",
+    "responseSchemaSha256": "39ab81f893c01083fde975e4c57e31cea4d28e4086e45335d80f701ec9c2b2dc"
   },
   "counts": {
     "constants": 109,
@@ -1081,7 +1081,7 @@
     {
       "id": 1028,
       "name": "OpenIMSetSelfInfoParams",
-      "declaration": "export type OpenIMSetSelfInfoParams = {\n  nickname ?: string | null\n  faceURL ?: string | null\n  ex ?: string | null\n  globalRecvMsgOpt ?: OpenIMSetSelfInfoRecvMsgOpt | null\n}",
+      "declaration": "export type OpenIMSetSelfInfoParams = {\n  nickname ?: string | null\n  faceURL ?: string | null\n  ex ?: string | null\n  globalRecvMsgOpt ?: OpenIMSetSelfInfoRecvMsgOpt | null\n  addFriendPermission ?: 0 | 1 | 2 | null\n}",
       "signatureHash": "4923c4d16dcc83f754cb8bf299fe9f91b21f9771d071c0564d3a276bec48e34c",
       "edition": "public"
     },
@@ -1208,7 +1208,7 @@
       "id": 1046,
       "name": "OpenIMSetGroupInfoParams",
       "declaration": "export type OpenIMSetGroupInfoParams = {\n  groupID : string\n  groupName ?: string | null\n  notification ?: string | null\n  introduction ?: string | null\n  faceURL ?: string | null\n  ex ?: string | null\n  needVerification ?: OpenIMGroupNeedVerification | null\n  lookMemberInfo ?: OpenIMGroupOption | null\n  applyMemberFriend ?: OpenIMGroupOption | null\n  displayIsRead ?: OpenIMGroupDisplayIsRead | null\n}",
-      "signatureHash": "b6da4a10753ad1184c55ab4f7f6f64d5fa20b4aa143879b730d1e163a21f4dfb",
+      "signatureHash": "9aafff7e76952491739ce9ba04d2d29b72540e2ef6091e77bc74bfba32a87434",
       "edition": "public"
     },
     {
@@ -1606,7 +1606,7 @@
     {
       "id": 1103,
       "name": "OpenIMGroupItem",
-      "declaration": "export type OpenIMGroupItem = {\n  groupID : string\n  groupName : string\n  notification : string\n  introduction : string\n  faceURL : string\n  ownerUserID : string\n  createTime : number\n  memberCount : number\n  status : number\n  creatorUserID : string\n  groupType : number\n  needVerification : number\n  lookMemberInfo : number\n  applyMemberFriend : number\n  notificationUpdateTime : number\n  notificationUserID : string\n  ex : string\n  attachedInfo : string\n}",
+      "declaration": "export type OpenIMGroupItem = {\n  groupID : string\n  groupName : string\n  notification : string\n  introduction : string\n  faceURL : string\n  ownerUserID : string\n  createTime : number\n  memberCount : number\n  status : number\n  creatorUserID : string\n  groupType : number\n  needVerification : number\n  lookMemberInfo : number\n  applyMemberFriend : number\n  notificationUpdateTime : number\n  notificationUserID : string\n  ex : string\n  attachedInfo : string\n  displayIsRead ?: OpenIMGroupDisplayIsRead | null\n}",
       "signatureHash": "7a3c765d2938ab26d72e645d65f89483e94c0404c7dcf3e3210aa7b0d579aca7",
       "edition": "public"
     },
@@ -2569,6 +2569,36 @@
         "fileSourcePath ?: string | null"
       ],
       "privateSignatureHash": "0d01041fce19a84a294000a6b29103df81bfe2c1a618e4d6cd63f8a845375bae",
+      "edition": "commercial"
+    },
+    {
+      "id": 150004,
+      "target": "OpenIMSetGroupInfoParams",
+      "kind": "optional-object-members",
+      "addedMembers": [
+        "displayIsRead ?: OpenIMGroupDisplayIsRead | null"
+      ],
+      "privateSignatureHash": "8a569ca0efc355f7cc131b41674875c362483d664ca5c7f48612a6970e43e71d",
+      "edition": "commercial"
+    },
+    {
+      "id": 150005,
+      "target": "OpenIMGroupItem",
+      "kind": "optional-object-members",
+      "addedMembers": [
+        "displayIsRead ?: OpenIMGroupDisplayIsRead | null"
+      ],
+      "privateSignatureHash": "57f788fc4f31b421d753430e32136ab47374e845d3dac0b6b70fa9f34f9ac255",
+      "edition": "commercial"
+    },
+    {
+      "id": 150006,
+      "target": "OpenIMSetSelfInfoParams",
+      "kind": "optional-object-members",
+      "addedMembers": [
+        "addFriendPermission ?: 0 | 1 | 2 | null"
+      ],
+      "privateSignatureHash": "e7cf72d0a5768eba1f244f053d6ff855464abde96486ffbb66a8f3a6068a6f4f",
       "edition": "commercial"
     },
     {
@@ -11434,6 +11464,29 @@
               }
             ]
           }
+        },
+        "addFriendPermission": {
+          "required": false,
+          "schema": {
+            "kind": "union",
+            "options": [
+              {
+                "kind": "literal",
+                "value": 0
+              },
+              {
+                "kind": "literal",
+                "value": 1
+              },
+              {
+                "kind": "literal",
+                "value": 2
+              },
+              {
+                "kind": "null"
+              }
+            ]
+          }
         }
       }
     },
@@ -15424,6 +15477,21 @@
           "required": true,
           "schema": {
             "kind": "string"
+          }
+        },
+        "displayIsRead": {
+          "required": false,
+          "schema": {
+            "kind": "union",
+            "options": [
+              {
+                "kind": "reference",
+                "name": "OpenIMGroupDisplayIsRead"
+              },
+              {
+                "kind": "null"
+              }
+            ]
           }
         }
       }

@@ -1,6 +1,6 @@
 ---
-title: 'Set friend-add permission'
-description: 'Understand the commercial friend-add policy and the current plugin write boundary.'
+title: 'Set friend request permissions'
+description: 'Choose how requests to add the current account as a friend are handled.'
 product: 'sdk'
 context: 'chat/sdk/uniapp'
 template: 'guide'
@@ -11,10 +11,22 @@ platform: 'uniapp'
 sourcePath: '/sdk/uniapp/user/profile/set-friend-add-permission'
 ---
 
-Friend-add permission is a <span className="enterprise-field-badge">Commercial</span> account policy. The locked `unix-openim-sdk 0.2.0-rc.3` exposes related commercial profile data, but `OpenIMSetSelfInfoParams` has no `addFriendPermission` write parameter.
+`addFriendPermission` controls whether the current user must approve requests from other users. This account-level policy is a <span className="enterprise-field-badge">Commercial</span> capability and should not be saved together with ordinary profile fields such as nickname and avatar.
 
-This release therefore cannot expose or simulate a client setter. Do not store the policy in `ex`. Change it through a supported commercial backend or an administration API confirmed to support the field, then requery the current profile and refresh the UI.
+```uts
+import { setSelfInfo } from '@/uni_modules/unix-openim-sdk'
 
-Perform a capability check before displaying this setting. If the field is absent on a public edition, older server, or response that does not expose it, show the setting as unavailable. Do not assume that absence means “anyone can add” or “verification required.”
+await setSelfInfo({
+  addFriendPermission: 0,
+})
+```
 
-See [Send a friend application](/sdk/uniapp/user/friend-applications/add-friend) and [Get received friend applications](/sdk/uniapp/user/friend-applications/get-friend-application-list-as-recipient) for the client-side friend-request flow.
+| Value | Meaning |
+| --- | --- |
+| `0` | Allow requests, but require the current user to approve them. |
+| `1` | Allow the relationship to be created without approval from the current user. |
+| `2` | Do not allow other users to add the current account. |
+
+This setting affects only subsequent attempts to add the account. It does not remove existing friendships or automatically process pending applications.
+
+A successful Promise means that the update request has completed, not that `onSelfInfoUpdated` has arrived. See [Update your profile](/sdk/uniapp/user/profile/set-self-info) for the event listener and reconciliation flow.

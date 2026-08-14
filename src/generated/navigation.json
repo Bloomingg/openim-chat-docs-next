@@ -7972,16 +7972,6 @@
               "children": [],
               "minIndex": 389,
               "navigationTitle": "Handle App lifecycle and device state"
-            },
-            {
-              "id": "getting-started/update-token-and-observe-sdk-session",
-              "segment": "update-token-and-observe-sdk-session",
-              "title": "Update tokens and observe SDK sessions",
-              "href": "/sdk/uniapp/getting-started/update-token-and-observe-sdk-session",
-              "type": "page",
-              "children": [],
-              "minIndex": 390,
-              "navigationTitle": "Update tokens and observe SDK sessions"
             }
           ],
           "minIndex": 384
@@ -8000,7 +7990,7 @@
               "href": "/sdk/uniapp/user/overview-user",
               "type": "page",
               "children": [],
-              "minIndex": 391
+              "minIndex": 390
             },
             {
               "id": "user/user-profile",
@@ -8016,7 +8006,7 @@
                   "href": "/sdk/uniapp/user/profile/get-users-info",
                   "type": "page",
                   "children": [],
-                  "minIndex": 392,
+                  "minIndex": 391,
                   "navigationTitle": "Get user profiles"
                 },
                 {
@@ -8026,7 +8016,7 @@
                   "href": "/sdk/uniapp/user/profile/get-self-user-info",
                   "type": "page",
                   "children": [],
-                  "minIndex": 393,
+                  "minIndex": 392,
                   "navigationTitle": "Get your profile"
                 },
                 {
@@ -8036,11 +8026,11 @@
                   "href": "/sdk/uniapp/user/profile/set-self-info",
                   "type": "page",
                   "children": [],
-                  "minIndex": 394,
+                  "minIndex": 393,
                   "navigationTitle": "Update your profile"
                 }
               ],
-              "minIndex": 392
+              "minIndex": 391
             },
             {
               "id": "user/profile/set-global-message-reception",
@@ -8049,17 +8039,17 @@
               "href": "/sdk/uniapp/user/profile/set-global-message-reception",
               "type": "page",
               "children": [],
-              "minIndex": 395,
+              "minIndex": 394,
               "navigationTitle": "Set global message reception"
             },
             {
               "id": "user/profile/set-friend-add-permission",
               "segment": "set-friend-add-permission",
-              "title": "Set friend-add permission",
+              "title": "Set friend request permissions",
               "href": "/sdk/uniapp/user/profile/set-friend-add-permission",
               "type": "page",
               "children": [],
-              "minIndex": 396,
+              "minIndex": 395,
               "navigationTitle": "Set friend request permissions"
             },
             {
@@ -8076,7 +8066,7 @@
                   "href": "/sdk/uniapp/user/online-status/subscribe-users-status",
                   "type": "page",
                   "children": [],
-                  "minIndex": 397,
+                  "minIndex": 396,
                   "navigationTitle": "Subscribe to online status"
                 },
                 {
@@ -8086,7 +8076,7 @@
                   "href": "/sdk/uniapp/user/online-status/get-subscribe-users-status",
                   "type": "page",
                   "children": [],
-                  "minIndex": 398,
+                  "minIndex": 397,
                   "navigationTitle": "Get subscribed user status"
                 },
                 {
@@ -8096,14 +8086,14 @@
                   "href": "/sdk/uniapp/user/online-status/unsubscribe-users-status",
                   "type": "page",
                   "children": [],
-                  "minIndex": 399,
+                  "minIndex": 398,
                   "navigationTitle": "Unsubscribe from online status"
                 }
               ],
-              "minIndex": 397
+              "minIndex": 396
             }
           ],
-          "minIndex": 391
+          "minIndex": 390
         },
         {
           "id": "relationships",
@@ -8126,7 +8116,7 @@
                   "href": "/sdk/uniapp/user/friends/get-friend-list-page",
                   "type": "page",
                   "children": [],
-                  "minIndex": 400,
+                  "minIndex": 399,
                   "navigationTitle": "Get the friend list"
                 },
                 {
@@ -8136,7 +8126,7 @@
                   "href": "/sdk/uniapp/user/friends/search-friends",
                   "type": "page",
                   "children": [],
-                  "minIndex": 401,
+                  "minIndex": 400,
                   "navigationTitle": "Search friends"
                 },
                 {
@@ -8146,7 +8136,7 @@
                   "href": "/sdk/uniapp/user/friends/get-specified-friends-info",
                   "type": "page",
                   "children": [],
-                  "minIndex": 402,
+                  "minIndex": 401,
                   "navigationTitle": "Get friend profiles"
                 },
                 {
@@ -8156,7 +8146,7 @@
                   "href": "/sdk/uniapp/user/friends/check-friend",
                   "type": "page",
                   "children": [],
-                  "minIndex": 403,
+                  "minIndex": 402,
                   "navigationTitle": "Check friendship status"
                 },
                 {
@@ -8166,7 +8156,7 @@
                   "href": "/sdk/uniapp/user/friends/update-friends",
                   "type": "page",
                   "children": [],
-                  "minIndex": 404,
+                  "minIndex": 403,
                   "navigationTitle": "Update friend information"
                 },
                 {
@@ -8176,7 +8166,7 @@
                   "href": "/sdk/uniapp/user/friends/delete-friend",
                   "type": "page",
                   "children": [],
-                  "minIndex": 405,
+                  "minIndex": 404,
                   "navigationTitle": "Delete a friend"
                 },
                 {
@@ -8193,7 +8183,7 @@
                       "href": "/sdk/uniapp/user/friend-applications/add-friend",
                       "type": "page",
                       "children": [],
-                      "minIndex": 406,
+                      "minIndex": 405,
                       "navigationTitle": "Send a friend application"
                     },
                     {
@@ -8203,7 +8193,7 @@
                       "href": "/sdk/uniapp/user/friend-applications/get-friend-application-list-as-recipient",
                       "type": "page",
                       "children": [],
-                      "minIndex": 407,
+                      "minIndex": 406,
                       "navigationTitle": "Get received friend applications"
                     },
                     {
@@ -8213,7 +8203,7 @@
                       "href": "/sdk/uniapp/user/friend-applications/get-friend-application-list-as-applicant",
                       "type": "page",
                       "children": [],
-                      "minIndex": 408,
+                      "minIndex": 407,
                       "navigationTitle": "Get sent friend applications"
                     },
                     {
@@ -8223,7 +8213,7 @@
                       "href": "/sdk/uniapp/user/friend-applications/get-friend-application-unhandled-count",
                       "type": "page",
                       "children": [],
-                      "minIndex": 409,
+                      "minIndex": 408,
                       "navigationTitle": "Get pending application count"
                     },
                     {
@@ -8233,7 +8223,7 @@
                       "href": "/sdk/uniapp/user/friend-applications/accept-friend-application",
                       "type": "page",
                       "children": [],
-                      "minIndex": 410,
+                      "minIndex": 409,
                       "navigationTitle": "Accept a friend application"
                     },
                     {
@@ -8243,7 +8233,7 @@
                       "href": "/sdk/uniapp/user/friend-applications/refuse-friend-application",
                       "type": "page",
                       "children": [],
-                      "minIndex": 411,
+                      "minIndex": 410,
                       "navigationTitle": "Reject a friend application"
                     },
                     {
@@ -8253,14 +8243,14 @@
                       "href": "/sdk/uniapp/user/friend-applications/delete-friend-requests",
                       "type": "page",
                       "children": [],
-                      "minIndex": 412,
+                      "minIndex": 411,
                       "navigationTitle": "Delete friend applications"
                     }
                   ],
-                  "minIndex": 406
+                  "minIndex": 405
                 }
               ],
-              "minIndex": 400
+              "minIndex": 399
             },
             {
               "id": "user/blacklist",
@@ -8276,7 +8266,7 @@
                   "href": "/sdk/uniapp/user/blacklist/get-black-list",
                   "type": "page",
                   "children": [],
-                  "minIndex": 413,
+                  "minIndex": 412,
                   "navigationTitle": "Get the blacklist"
                 },
                 {
@@ -8286,7 +8276,7 @@
                   "href": "/sdk/uniapp/user/blacklist/add-black",
                   "type": "page",
                   "children": [],
-                  "minIndex": 414,
+                  "minIndex": 413,
                   "navigationTitle": "Add a user to the blacklist"
                 },
                 {
@@ -8296,14 +8286,14 @@
                   "href": "/sdk/uniapp/user/blacklist/remove-black",
                   "type": "page",
                   "children": [],
-                  "minIndex": 415,
+                  "minIndex": 414,
                   "navigationTitle": "Remove a user from the blacklist"
                 }
               ],
-              "minIndex": 413
+              "minIndex": 412
             }
           ],
-          "minIndex": 400
+          "minIndex": 399
         },
         {
           "id": "conversation",
@@ -8319,7 +8309,7 @@
               "href": "/sdk/uniapp/conversation/overview-conversation",
               "type": "page",
               "children": [],
-              "minIndex": 416
+              "minIndex": 415
             },
             {
               "id": "conversation/retrieving-conversations",
@@ -8335,7 +8325,7 @@
                   "href": "/sdk/uniapp/conversation/retrieving-conversations/get-conversation-by-target",
                   "type": "page",
                   "children": [],
-                  "minIndex": 417,
+                  "minIndex": 416,
                   "navigationTitle": "Open a conversation"
                 },
                 {
@@ -8345,7 +8335,7 @@
                   "href": "/sdk/uniapp/conversation/retrieving-conversations/get-conversation-id",
                   "type": "page",
                   "children": [],
-                  "minIndex": 418,
+                  "minIndex": 417,
                   "navigationTitle": "Resolve a conversation ID"
                 },
                 {
@@ -8355,7 +8345,7 @@
                   "href": "/sdk/uniapp/conversation/retrieving-conversations/get-conversations-by-id",
                   "type": "page",
                   "children": [],
-                  "minIndex": 419,
+                  "minIndex": 418,
                   "navigationTitle": "Get conversations by ID"
                 },
                 {
@@ -8365,7 +8355,7 @@
                   "href": "/sdk/uniapp/conversation/retrieving-conversations/retrieve-conversation-list",
                   "type": "page",
                   "children": [],
-                  "minIndex": 420
+                  "minIndex": 419
                 },
                 {
                   "id": "conversation/retrieving-conversations/search-conversations",
@@ -8374,11 +8364,11 @@
                   "href": "/sdk/uniapp/conversation/retrieving-conversations/search-conversations",
                   "type": "page",
                   "children": [],
-                  "minIndex": 421,
+                  "minIndex": 420,
                   "navigationTitle": "Search conversations"
                 }
               ],
-              "minIndex": 417
+              "minIndex": 416
             },
             {
               "id": "conversation/conversation-list-and-drafts",
@@ -8394,7 +8384,7 @@
                   "href": "/sdk/uniapp/conversation/managing-conversations/pin-conversation",
                   "type": "page",
                   "children": [],
-                  "minIndex": 422,
+                  "minIndex": 421,
                   "navigationTitle": "Pin or unpin a conversation"
                 },
                 {
@@ -8404,7 +8394,7 @@
                   "href": "/sdk/uniapp/conversation/managing-conversations/mark-conversation",
                   "type": "page",
                   "children": [],
-                  "minIndex": 423,
+                  "minIndex": 422,
                   "navigationTitle": "Mark or unmark a conversation"
                 },
                 {
@@ -8414,7 +8404,7 @@
                   "href": "/sdk/uniapp/conversation/managing-conversations/set-conversation-remark",
                   "type": "page",
                   "children": [],
-                  "minIndex": 424,
+                  "minIndex": 423,
                   "navigationTitle": "Set a conversation remark"
                 },
                 {
@@ -8424,7 +8414,7 @@
                   "href": "/sdk/uniapp/conversation/managing-conversations/set-conversation-extension",
                   "type": "page",
                   "children": [],
-                  "minIndex": 425,
+                  "minIndex": 424,
                   "navigationTitle": "Set conversation extra data"
                 },
                 {
@@ -8434,10 +8424,10 @@
                   "href": "/sdk/uniapp/conversation/managing-conversations/set-conversation-draft",
                   "type": "page",
                   "children": [],
-                  "minIndex": 426
+                  "minIndex": 425
                 }
               ],
-              "minIndex": 422
+              "minIndex": 421
             },
             {
               "id": "conversation/message-reception-and-reminders",
@@ -8453,7 +8443,7 @@
                   "href": "/sdk/uniapp/conversation/managing-conversations/set-message-receive-option",
                   "type": "page",
                   "children": [],
-                  "minIndex": 427,
+                  "minIndex": 426,
                   "navigationTitle": "Set conversation message reception"
                 },
                 {
@@ -8463,7 +8453,7 @@
                   "href": "/sdk/uniapp/conversation/managing-conversations/clear-group-mentions",
                   "type": "page",
                   "children": [],
-                  "minIndex": 428,
+                  "minIndex": 427,
                   "navigationTitle": "Reset group mention status"
                 },
                 {
@@ -8473,7 +8463,7 @@
                   "href": "/sdk/uniapp/conversation/managing-conversations/mark-conversation-read",
                   "type": "page",
                   "children": [],
-                  "minIndex": 429,
+                  "minIndex": 428,
                   "navigationTitle": "Mark a conversation as read"
                 },
                 {
@@ -8483,7 +8473,7 @@
                   "href": "/sdk/uniapp/conversation/managing-conversations/mark-all-conversations-read",
                   "type": "page",
                   "children": [],
-                  "minIndex": 430,
+                  "minIndex": 429,
                   "navigationTitle": "Mark all conversations as read"
                 },
                 {
@@ -8493,11 +8483,11 @@
                   "href": "/sdk/uniapp/conversation/managing-conversations/get-total-unread-count",
                   "type": "page",
                   "children": [],
-                  "minIndex": 431,
+                  "minIndex": 430,
                   "navigationTitle": "Track the total unread count"
                 }
               ],
-              "minIndex": 427
+              "minIndex": 426
             },
             {
               "id": "conversation/message-retention-and-privacy",
@@ -8513,7 +8503,7 @@
                   "href": "/sdk/uniapp/conversation/managing-conversations/set-private-chat",
                   "type": "page",
                   "children": [],
-                  "minIndex": 432,
+                  "minIndex": 431,
                   "navigationTitle": "Enable or disable burn after reading"
                 },
                 {
@@ -8523,7 +8513,7 @@
                   "href": "/sdk/uniapp/conversation/managing-conversations/set-burn-duration",
                   "type": "page",
                   "children": [],
-                  "minIndex": 433,
+                  "minIndex": 432,
                   "navigationTitle": "Set the burn duration"
                 },
                 {
@@ -8533,11 +8523,11 @@
                   "href": "/sdk/uniapp/conversation/managing-conversations/set-message-destruct",
                   "type": "page",
                   "children": [],
-                  "minIndex": 434,
+                  "minIndex": 433,
                   "navigationTitle": "Schedule server message deletion"
                 }
               ],
-              "minIndex": 432
+              "minIndex": 431
             },
             {
               "id": "conversation/hiding-and-deleting-conversations",
@@ -8553,7 +8543,7 @@
                   "href": "/sdk/uniapp/conversation/managing-conversations/hide-a-conversation",
                   "type": "page",
                   "children": [],
-                  "minIndex": 435
+                  "minIndex": 434
                 },
                 {
                   "id": "conversation/managing-conversations/hide-all-conversations",
@@ -8562,7 +8552,7 @@
                   "href": "/sdk/uniapp/conversation/managing-conversations/hide-all-conversations",
                   "type": "page",
                   "children": [],
-                  "minIndex": 436,
+                  "minIndex": 435,
                   "navigationTitle": "Hide all conversations"
                 },
                 {
@@ -8572,7 +8562,7 @@
                   "href": "/sdk/uniapp/conversation/managing-conversations/delete-conversation",
                   "type": "page",
                   "children": [],
-                  "minIndex": 437,
+                  "minIndex": 436,
                   "navigationTitle": "Delete a conversation"
                 },
                 {
@@ -8582,7 +8572,7 @@
                   "href": "/sdk/uniapp/conversation/managing-conversations/delete-conversation-with-messages",
                   "type": "page",
                   "children": [],
-                  "minIndex": 438,
+                  "minIndex": 437,
                   "navigationTitle": "Delete a conversation and its messages"
                 },
                 {
@@ -8592,11 +8582,11 @@
                   "href": "/sdk/uniapp/conversation/managing-conversations/clear-conversation-messages",
                   "type": "page",
                   "children": [],
-                  "minIndex": 439,
+                  "minIndex": 438,
                   "navigationTitle": "Clear messages in a conversation"
                 }
               ],
-              "minIndex": 435
+              "minIndex": 434
             },
             {
               "id": "conversation/conversation-groups",
@@ -8612,7 +8602,7 @@
                   "href": "/sdk/uniapp/conversation/managing-conversation-groups/overview-conversation-groups",
                   "type": "page",
                   "children": [],
-                  "minIndex": 440,
+                  "minIndex": 439,
                   "navigationTitle": "Conversation group overview"
                 },
                 {
@@ -8622,7 +8612,7 @@
                   "href": "/sdk/uniapp/conversation/managing-conversation-groups/create-conversation-group",
                   "type": "page",
                   "children": [],
-                  "minIndex": 441,
+                  "minIndex": 440,
                   "navigationTitle": "Create a conversation group"
                 },
                 {
@@ -8632,7 +8622,7 @@
                   "href": "/sdk/uniapp/conversation/managing-conversation-groups/get-conversation-groups",
                   "type": "page",
                   "children": [],
-                  "minIndex": 442,
+                  "minIndex": 441,
                   "navigationTitle": "Get conversation groups"
                 },
                 {
@@ -8642,7 +8632,7 @@
                   "href": "/sdk/uniapp/conversation/managing-conversation-groups/get-conversation-group-info-with-conversations",
                   "type": "page",
                   "children": [],
-                  "minIndex": 443,
+                  "minIndex": 442,
                   "navigationTitle": "Get conversations in a group"
                 },
                 {
@@ -8652,7 +8642,7 @@
                   "href": "/sdk/uniapp/conversation/managing-conversation-groups/get-conversation-group-by-conversation-id",
                   "type": "page",
                   "children": [],
-                  "minIndex": 444,
+                  "minIndex": 443,
                   "navigationTitle": "Get groups for a conversation"
                 },
                 {
@@ -8662,7 +8652,7 @@
                   "href": "/sdk/uniapp/conversation/managing-conversation-groups/update-conversation-group",
                   "type": "page",
                   "children": [],
-                  "minIndex": 445,
+                  "minIndex": 444,
                   "navigationTitle": "Update a conversation group"
                 },
                 {
@@ -8672,7 +8662,7 @@
                   "href": "/sdk/uniapp/conversation/managing-conversation-groups/set-conversation-group-order",
                   "type": "page",
                   "children": [],
-                  "minIndex": 446,
+                  "minIndex": 445,
                   "navigationTitle": "Reorder conversation groups"
                 },
                 {
@@ -8682,7 +8672,7 @@
                   "href": "/sdk/uniapp/conversation/managing-conversation-groups/add-conversations-to-groups",
                   "type": "page",
                   "children": [],
-                  "minIndex": 447,
+                  "minIndex": 446,
                   "navigationTitle": "Add conversations to groups"
                 },
                 {
@@ -8692,7 +8682,7 @@
                   "href": "/sdk/uniapp/conversation/managing-conversation-groups/remove-conversations-from-groups",
                   "type": "page",
                   "children": [],
-                  "minIndex": 448,
+                  "minIndex": 447,
                   "navigationTitle": "Remove conversations from groups"
                 },
                 {
@@ -8702,14 +8692,14 @@
                   "href": "/sdk/uniapp/conversation/managing-conversation-groups/delete-conversation-group",
                   "type": "page",
                   "children": [],
-                  "minIndex": 449,
+                  "minIndex": 448,
                   "navigationTitle": "Delete a conversation group"
                 }
               ],
-              "minIndex": 440
+              "minIndex": 439
             }
           ],
-          "minIndex": 416
+          "minIndex": 415
         },
         {
           "id": "group",
@@ -8725,7 +8715,7 @@
               "href": "/sdk/uniapp/group/overview-group",
               "type": "page",
               "children": [],
-              "minIndex": 450,
+              "minIndex": 449,
               "navigationTitle": "Group overview"
             },
             {
@@ -8742,7 +8732,7 @@
                   "href": "/sdk/uniapp/group/create-group",
                   "type": "page",
                   "children": [],
-                  "minIndex": 451,
+                  "minIndex": 450,
                   "navigationTitle": "Create a group"
                 },
                 {
@@ -8752,7 +8742,7 @@
                   "href": "/sdk/uniapp/group/update-group-profile",
                   "type": "page",
                   "children": [],
-                  "minIndex": 452,
+                  "minIndex": 451,
                   "navigationTitle": "Update group profile"
                 },
                 {
@@ -8762,7 +8752,7 @@
                   "href": "/sdk/uniapp/group/set-group-announcement",
                   "type": "page",
                   "children": [],
-                  "minIndex": 453,
+                  "minIndex": 452,
                   "navigationTitle": "Publish a group announcement"
                 },
                 {
@@ -8772,11 +8762,11 @@
                   "href": "/sdk/uniapp/group/set-group-extension",
                   "type": "page",
                   "children": [],
-                  "minIndex": 454,
+                  "minIndex": 453,
                   "navigationTitle": "Set group extra data"
                 }
               ],
-              "minIndex": 451
+              "minIndex": 450
             },
             {
               "id": "group/permissions",
@@ -8792,7 +8782,7 @@
                   "href": "/sdk/uniapp/group/set-group-join-verification",
                   "type": "page",
                   "children": [],
-                  "minIndex": 455,
+                  "minIndex": 454,
                   "navigationTitle": "Set group join verification"
                 },
                 {
@@ -8802,7 +8792,7 @@
                   "href": "/sdk/uniapp/group/set-group-member-profile-access",
                   "type": "page",
                   "children": [],
-                  "minIndex": 456,
+                  "minIndex": 455,
                   "navigationTitle": "Set member profile access"
                 },
                 {
@@ -8812,7 +8802,7 @@
                   "href": "/sdk/uniapp/group/set-group-member-friend-permission",
                   "type": "page",
                   "children": [],
-                  "minIndex": 457,
+                  "minIndex": 456,
                   "navigationTitle": "Set member friend request permission"
                 },
                 {
@@ -8822,11 +8812,11 @@
                   "href": "/sdk/uniapp/group/change-group-mute",
                   "type": "page",
                   "children": [],
-                  "minIndex": 458,
+                  "minIndex": 457,
                   "navigationTitle": "Change group mute status"
                 }
               ],
-              "minIndex": 455
+              "minIndex": 454
             },
             {
               "id": "group/joining-and-leaving",
@@ -8842,7 +8832,7 @@
                   "href": "/sdk/uniapp/group/join-group",
                   "type": "page",
                   "children": [],
-                  "minIndex": 459,
+                  "minIndex": 458,
                   "navigationTitle": "Apply to join a group"
                 },
                 {
@@ -8852,7 +8842,7 @@
                   "href": "/sdk/uniapp/group/quit-group",
                   "type": "page",
                   "children": [],
-                  "minIndex": 460,
+                  "minIndex": 459,
                   "navigationTitle": "Leave a group"
                 },
                 {
@@ -8862,11 +8852,11 @@
                   "href": "/sdk/uniapp/group/dismiss-group",
                   "type": "page",
                   "children": [],
-                  "minIndex": 461,
+                  "minIndex": 460,
                   "navigationTitle": "Dismiss a group"
                 }
               ],
-              "minIndex": 459
+              "minIndex": 458
             },
             {
               "id": "group/retrieving-groups",
@@ -8882,7 +8872,7 @@
                   "href": "/sdk/uniapp/group/retrieving-groups/get-specified-groups-info",
                   "type": "page",
                   "children": [],
-                  "minIndex": 462,
+                  "minIndex": 461,
                   "navigationTitle": "Get group information"
                 },
                 {
@@ -8892,7 +8882,7 @@
                   "href": "/sdk/uniapp/group/retrieving-groups/get-joined-group-list",
                   "type": "page",
                   "children": [],
-                  "minIndex": 463,
+                  "minIndex": 462,
                   "navigationTitle": "Get joined groups"
                 },
                 {
@@ -8902,7 +8892,7 @@
                   "href": "/sdk/uniapp/group/retrieving-groups/get-joined-group-list-page",
                   "type": "page",
                   "children": [],
-                  "minIndex": 464,
+                  "minIndex": 463,
                   "navigationTitle": "Get joined groups by page"
                 },
                 {
@@ -8912,7 +8902,7 @@
                   "href": "/sdk/uniapp/group/retrieving-groups/is-join-group",
                   "type": "page",
                   "children": [],
-                  "minIndex": 465,
+                  "minIndex": 464,
                   "navigationTitle": "Check group membership"
                 },
                 {
@@ -8922,11 +8912,11 @@
                   "href": "/sdk/uniapp/group/retrieving-groups/search-groups",
                   "type": "page",
                   "children": [],
-                  "minIndex": 466,
+                  "minIndex": 465,
                   "navigationTitle": "Search groups"
                 }
               ],
-              "minIndex": 462
+              "minIndex": 461
             },
             {
               "id": "group/group-applications",
@@ -8942,7 +8932,7 @@
                   "href": "/sdk/uniapp/group/group-applications/get-group-application-list-as-recipient",
                   "type": "page",
                   "children": [],
-                  "minIndex": 467,
+                  "minIndex": 466,
                   "navigationTitle": "Get received group applications"
                 },
                 {
@@ -8952,7 +8942,7 @@
                   "href": "/sdk/uniapp/group/group-applications/get-group-application-list-as-applicant",
                   "type": "page",
                   "children": [],
-                  "minIndex": 468,
+                  "minIndex": 467,
                   "navigationTitle": "Get sent group applications"
                 },
                 {
@@ -8962,7 +8952,7 @@
                   "href": "/sdk/uniapp/group/group-applications/get-group-application-unhandled-count",
                   "type": "page",
                   "children": [],
-                  "minIndex": 469,
+                  "minIndex": 468,
                   "navigationTitle": "Get pending group application count"
                 },
                 {
@@ -8972,7 +8962,7 @@
                   "href": "/sdk/uniapp/group/group-applications/observe-group-application-badge-count",
                   "type": "page",
                   "children": [],
-                  "minIndex": 470,
+                  "minIndex": 469,
                   "navigationTitle": "Observe group application badge count"
                 },
                 {
@@ -8982,7 +8972,7 @@
                   "href": "/sdk/uniapp/group/group-applications/accept-group-application",
                   "type": "page",
                   "children": [],
-                  "minIndex": 471,
+                  "minIndex": 470,
                   "navigationTitle": "Accept a group application"
                 },
                 {
@@ -8992,7 +8982,7 @@
                   "href": "/sdk/uniapp/group/group-applications/refuse-group-application",
                   "type": "page",
                   "children": [],
-                  "minIndex": 472,
+                  "minIndex": 471,
                   "navigationTitle": "Reject a group application"
                 },
                 {
@@ -9002,11 +8992,11 @@
                   "href": "/sdk/uniapp/group/group-applications/delete-group-requests",
                   "type": "page",
                   "children": [],
-                  "minIndex": 473,
+                  "minIndex": 472,
                   "navigationTitle": "Delete group applications"
                 }
               ],
-              "minIndex": 467
+              "minIndex": 466
             },
             {
               "id": "group/retrieving-group-members",
@@ -9022,7 +9012,7 @@
                   "href": "/sdk/uniapp/group/retrieving-group-members/get-group-member-list",
                   "type": "page",
                   "children": [],
-                  "minIndex": 474,
+                  "minIndex": 473,
                   "navigationTitle": "Get group members"
                 },
                 {
@@ -9032,7 +9022,7 @@
                   "href": "/sdk/uniapp/group/retrieving-group-members/get-specified-group-members-info",
                   "type": "page",
                   "children": [],
-                  "minIndex": 475,
+                  "minIndex": 474,
                   "navigationTitle": "Get group member profiles"
                 },
                 {
@@ -9042,7 +9032,7 @@
                   "href": "/sdk/uniapp/group/retrieving-group-members/get-users-in-group",
                   "type": "page",
                   "children": [],
-                  "minIndex": 476,
+                  "minIndex": 475,
                   "navigationTitle": "Check users in a group"
                 },
                 {
@@ -9052,11 +9042,11 @@
                   "href": "/sdk/uniapp/group/retrieving-group-members/search-group-members",
                   "type": "page",
                   "children": [],
-                  "minIndex": 477,
+                  "minIndex": 476,
                   "navigationTitle": "Search group members"
                 }
               ],
-              "minIndex": 474
+              "minIndex": 473
             },
             {
               "id": "group/managing-group-members",
@@ -9072,7 +9062,7 @@
                   "href": "/sdk/uniapp/group/managing-group-members/invite-user-to-group",
                   "type": "page",
                   "children": [],
-                  "minIndex": 478,
+                  "minIndex": 477,
                   "navigationTitle": "Invite users to a group"
                 },
                 {
@@ -9082,7 +9072,7 @@
                   "href": "/sdk/uniapp/group/managing-group-members/kick-group-member",
                   "type": "page",
                   "children": [],
-                  "minIndex": 479,
+                  "minIndex": 478,
                   "navigationTitle": "Remove group members"
                 },
                 {
@@ -9092,7 +9082,7 @@
                   "href": "/sdk/uniapp/group/managing-group-members/set-group-member-nickname",
                   "type": "page",
                   "children": [],
-                  "minIndex": 480,
+                  "minIndex": 479,
                   "navigationTitle": "Update a group nickname"
                 },
                 {
@@ -9102,7 +9092,7 @@
                   "href": "/sdk/uniapp/group/managing-group-members/set-group-member-role-level",
                   "type": "page",
                   "children": [],
-                  "minIndex": 481,
+                  "minIndex": 480,
                   "navigationTitle": "Manage group administrators"
                 },
                 {
@@ -9112,7 +9102,7 @@
                   "href": "/sdk/uniapp/group/managing-group-members/set-group-member-avatar",
                   "type": "page",
                   "children": [],
-                  "minIndex": 482,
+                  "minIndex": 481,
                   "navigationTitle": "Update a group member avatar"
                 },
                 {
@@ -9122,7 +9112,7 @@
                   "href": "/sdk/uniapp/group/managing-group-members/set-group-member-extension",
                   "type": "page",
                   "children": [],
-                  "minIndex": 483,
+                  "minIndex": 482,
                   "navigationTitle": "Set group member extra data"
                 },
                 {
@@ -9132,7 +9122,7 @@
                   "href": "/sdk/uniapp/group/managing-group-members/transfer-group-owner",
                   "type": "page",
                   "children": [],
-                  "minIndex": 484,
+                  "minIndex": 483,
                   "navigationTitle": "Transfer group ownership"
                 },
                 {
@@ -9142,11 +9132,11 @@
                   "href": "/sdk/uniapp/group/managing-group-members/change-group-member-mute",
                   "type": "page",
                   "children": [],
-                  "minIndex": 485,
+                  "minIndex": 484,
                   "navigationTitle": "Mute or unmute a group member"
                 }
               ],
-              "minIndex": 478
+              "minIndex": 477
             },
             {
               "id": "group/check-full-sync-state",
@@ -9155,11 +9145,11 @@
               "href": "/sdk/uniapp/group/check-full-sync-state",
               "type": "page",
               "children": [],
-              "minIndex": 486,
+              "minIndex": 485,
               "navigationTitle": "Check group full-sync state"
             }
           ],
-          "minIndex": 450
+          "minIndex": 449
         },
         {
           "id": "message",
@@ -9175,7 +9165,7 @@
               "href": "/sdk/uniapp/message/overview-message",
               "type": "page",
               "children": [],
-              "minIndex": 487
+              "minIndex": 486
             },
             {
               "id": "message/creating-messages",
@@ -9191,7 +9181,7 @@
                   "href": "/sdk/uniapp/message/creating-messages/create-text-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 488,
+                  "minIndex": 487,
                   "navigationTitle": "Create a text message"
                 },
                 {
@@ -9201,7 +9191,7 @@
                   "href": "/sdk/uniapp/message/creating-messages/create-text-at-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 489,
+                  "minIndex": 488,
                   "navigationTitle": "Create a mention message"
                 },
                 {
@@ -9211,7 +9201,7 @@
                   "href": "/sdk/uniapp/message/creating-messages/create-custom-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 490,
+                  "minIndex": 489,
                   "navigationTitle": "Create a custom message"
                 },
                 {
@@ -9221,7 +9211,7 @@
                   "href": "/sdk/uniapp/message/creating-messages/create-image-message-from-full-path",
                   "type": "page",
                   "children": [],
-                  "minIndex": 491,
+                  "minIndex": 490,
                   "navigationTitle": "Create an image message from a file"
                 },
                 {
@@ -9231,7 +9221,7 @@
                   "href": "/sdk/uniapp/message/creating-messages/create-image-message-by-url",
                   "type": "page",
                   "children": [],
-                  "minIndex": 492,
+                  "minIndex": 491,
                   "navigationTitle": "Create an image message from a URL"
                 },
                 {
@@ -9241,7 +9231,7 @@
                   "href": "/sdk/uniapp/message/creating-messages/create-sound-message-from-full-path",
                   "type": "page",
                   "children": [],
-                  "minIndex": 493,
+                  "minIndex": 492,
                   "navigationTitle": "Create an audio message from a file"
                 },
                 {
@@ -9251,7 +9241,7 @@
                   "href": "/sdk/uniapp/message/creating-messages/create-sound-message-by-url",
                   "type": "page",
                   "children": [],
-                  "minIndex": 494,
+                  "minIndex": 493,
                   "navigationTitle": "Create an audio message from a URL"
                 },
                 {
@@ -9261,7 +9251,7 @@
                   "href": "/sdk/uniapp/message/creating-messages/create-video-message-from-full-path",
                   "type": "page",
                   "children": [],
-                  "minIndex": 495,
+                  "minIndex": 494,
                   "navigationTitle": "Create a video message from a file"
                 },
                 {
@@ -9271,7 +9261,7 @@
                   "href": "/sdk/uniapp/message/creating-messages/create-video-message-by-url",
                   "type": "page",
                   "children": [],
-                  "minIndex": 496,
+                  "minIndex": 495,
                   "navigationTitle": "Create a video message from a URL"
                 },
                 {
@@ -9281,7 +9271,7 @@
                   "href": "/sdk/uniapp/message/creating-messages/create-file-message-from-full-path",
                   "type": "page",
                   "children": [],
-                  "minIndex": 497,
+                  "minIndex": 496,
                   "navigationTitle": "Create a file message from a file"
                 },
                 {
@@ -9291,7 +9281,7 @@
                   "href": "/sdk/uniapp/message/creating-messages/create-file-message-by-url",
                   "type": "page",
                   "children": [],
-                  "minIndex": 498,
+                  "minIndex": 497,
                   "navigationTitle": "Create a file message from a URL"
                 },
                 {
@@ -9301,7 +9291,7 @@
                   "href": "/sdk/uniapp/message/creating-messages/create-card-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 499,
+                  "minIndex": 498,
                   "navigationTitle": "Create a contact card message"
                 },
                 {
@@ -9311,7 +9301,7 @@
                   "href": "/sdk/uniapp/message/creating-messages/create-location-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 500,
+                  "minIndex": 499,
                   "navigationTitle": "Create a location message"
                 },
                 {
@@ -9321,7 +9311,7 @@
                   "href": "/sdk/uniapp/message/creating-messages/create-face-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 501,
+                  "minIndex": 500,
                   "navigationTitle": "Create an emoji message"
                 },
                 {
@@ -9331,7 +9321,7 @@
                   "href": "/sdk/uniapp/message/creating-messages/create-quote-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 502,
+                  "minIndex": 501,
                   "navigationTitle": "Create a reply message"
                 },
                 {
@@ -9341,7 +9331,7 @@
                   "href": "/sdk/uniapp/message/creating-messages/create-markdown-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 503,
+                  "minIndex": 502,
                   "navigationTitle": "Create a Markdown message"
                 },
                 {
@@ -9351,7 +9341,7 @@
                   "href": "/sdk/uniapp/message/creating-messages/create-forward-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 504,
+                  "minIndex": 503,
                   "navigationTitle": "Create a forwarded message"
                 },
                 {
@@ -9361,11 +9351,11 @@
                   "href": "/sdk/uniapp/message/creating-messages/create-merger-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 505,
+                  "minIndex": 504,
                   "navigationTitle": "Create a merged message"
                 }
               ],
-              "minIndex": 488
+              "minIndex": 487
             },
             {
               "id": "message/sending-messages",
@@ -9381,7 +9371,7 @@
                   "href": "/sdk/uniapp/message/sending-messages/send-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 506,
+                  "minIndex": 505,
                   "navigationTitle": "Send a message"
                 },
                 {
@@ -9391,11 +9381,11 @@
                   "href": "/sdk/uniapp/message/sending-messages/send-message-not-oss",
                   "type": "page",
                   "children": [],
-                  "minIndex": 507,
+                  "minIndex": 506,
                   "navigationTitle": "Send a message without OSS"
                 }
               ],
-              "minIndex": 506
+              "minIndex": 505
             },
             {
               "id": "message/receiving-messages/receive-messages",
@@ -9404,7 +9394,7 @@
               "href": "/sdk/uniapp/message/receiving-messages/receive-messages",
               "type": "page",
               "children": [],
-              "minIndex": 508
+              "minIndex": 507
             },
             {
               "id": "message/receiving-messages/receive-custom-business-messages",
@@ -9413,7 +9403,7 @@
               "href": "/sdk/uniapp/message/receiving-messages/receive-custom-business-messages",
               "type": "page",
               "children": [],
-              "minIndex": 509,
+              "minIndex": 508,
               "navigationTitle": "Receive custom business messages"
             },
             {
@@ -9430,7 +9420,7 @@
                   "href": "/sdk/uniapp/message/retrieving-messages/load-older-messages",
                   "type": "page",
                   "children": [],
-                  "minIndex": 510,
+                  "minIndex": 509,
                   "navigationTitle": "Load older messages"
                 },
                 {
@@ -9440,7 +9430,7 @@
                   "href": "/sdk/uniapp/message/retrieving-messages/find-messages-by-id",
                   "type": "page",
                   "children": [],
-                  "minIndex": 511,
+                  "minIndex": 510,
                   "navigationTitle": "Find messages by ID"
                 },
                 {
@@ -9450,7 +9440,7 @@
                   "href": "/sdk/uniapp/message/retrieving-messages/load-message-context",
                   "type": "page",
                   "children": [],
-                  "minIndex": 512,
+                  "minIndex": 511,
                   "navigationTitle": "Load message context"
                 },
                 {
@@ -9460,10 +9450,10 @@
                   "href": "/sdk/uniapp/message/searching-messages/search-messages",
                   "type": "page",
                   "children": [],
-                  "minIndex": 513
+                  "minIndex": 512
                 }
               ],
-              "minIndex": 510
+              "minIndex": 509
             },
             {
               "id": "message/composing-messages",
@@ -9479,7 +9469,7 @@
                   "href": "/sdk/uniapp/message/composing-messages/update-typing-status",
                   "type": "page",
                   "children": [],
-                  "minIndex": 514,
+                  "minIndex": 513,
                   "navigationTitle": "Update typing status"
                 },
                 {
@@ -9489,7 +9479,7 @@
                   "href": "/sdk/uniapp/message/composing-messages/get-typing-status",
                   "type": "page",
                   "children": [],
-                  "minIndex": 515,
+                  "minIndex": 514,
                   "navigationTitle": "Get typing status"
                 },
                 {
@@ -9499,7 +9489,7 @@
                   "href": "/sdk/uniapp/message/composing-messages/check-speech-to-text",
                   "type": "page",
                   "children": [],
-                  "minIndex": 516,
+                  "minIndex": 515,
                   "navigationTitle": "Check speech recognition support"
                 },
                 {
@@ -9509,7 +9499,7 @@
                   "href": "/sdk/uniapp/message/composing-messages/transcribe-audio",
                   "type": "page",
                   "children": [],
-                  "minIndex": 517,
+                  "minIndex": 516,
                   "navigationTitle": "Transcribe an audio file"
                 },
                 {
@@ -9519,7 +9509,7 @@
                   "href": "/sdk/uniapp/message/composing-messages/save-local-transcript",
                   "type": "page",
                   "children": [],
-                  "minIndex": 518,
+                  "minIndex": 517,
                   "navigationTitle": "Save a local transcript"
                 },
                 {
@@ -9529,11 +9519,11 @@
                   "href": "/sdk/uniapp/message/composing-messages/translate-text-and-messages",
                   "type": "page",
                   "children": [],
-                  "minIndex": 519,
+                  "minIndex": 518,
                   "navigationTitle": "Translate text and messages"
                 }
               ],
-              "minIndex": 514
+              "minIndex": 513
             },
             {
               "id": "message/managing-messages",
@@ -9549,7 +9539,7 @@
                   "href": "/sdk/uniapp/message/managing-messages/delete-local-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 520,
+                  "minIndex": 519,
                   "navigationTitle": "Delete a local message"
                 },
                 {
@@ -9559,7 +9549,7 @@
                   "href": "/sdk/uniapp/message/managing-messages/delete-saved-messages",
                   "type": "page",
                   "children": [],
-                  "minIndex": 521,
+                  "minIndex": 520,
                   "navigationTitle": "Delete saved messages"
                 },
                 {
@@ -9569,7 +9559,7 @@
                   "href": "/sdk/uniapp/message/managing-messages/delete-user-messages",
                   "type": "page",
                   "children": [],
-                  "minIndex": 522,
+                  "minIndex": 521,
                   "navigationTitle": "Delete messages from a user"
                 },
                 {
@@ -9579,7 +9569,7 @@
                   "href": "/sdk/uniapp/message/managing-messages/revoke-a-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 523
+                  "minIndex": 522
                 },
                 {
                   "id": "message/managing-messages/modify-a-message",
@@ -9588,7 +9578,7 @@
                   "href": "/sdk/uniapp/message/managing-messages/modify-a-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 524
+                  "minIndex": 523
                 },
                 {
                   "id": "message/managing-messages/get-pinned-messages",
@@ -9597,7 +9587,7 @@
                   "href": "/sdk/uniapp/message/managing-messages/get-pinned-messages",
                   "type": "page",
                   "children": [],
-                  "minIndex": 525,
+                  "minIndex": 524,
                   "navigationTitle": "View pinned messages"
                 },
                 {
@@ -9607,7 +9597,7 @@
                   "href": "/sdk/uniapp/message/managing-messages/set-message-pinned",
                   "type": "page",
                   "children": [],
-                  "minIndex": 526,
+                  "minIndex": 525,
                   "navigationTitle": "Pin or unpin a message"
                 },
                 {
@@ -9617,7 +9607,7 @@
                   "href": "/sdk/uniapp/message/managing-messages/insert-local-single-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 527,
+                  "minIndex": 526,
                   "navigationTitle": "Insert a local direct message"
                 },
                 {
@@ -9627,7 +9617,7 @@
                   "href": "/sdk/uniapp/message/managing-messages/insert-local-group-message",
                   "type": "page",
                   "children": [],
-                  "minIndex": 528,
+                  "minIndex": 527,
                   "navigationTitle": "Insert a local group message"
                 },
                 {
@@ -9637,7 +9627,7 @@
                   "href": "/sdk/uniapp/message/managing-messages/clear-all-local-messages",
                   "type": "page",
                   "children": [],
-                  "minIndex": 529,
+                  "minIndex": 528,
                   "navigationTitle": "Clear all local messages"
                 },
                 {
@@ -9647,7 +9637,7 @@
                   "href": "/sdk/uniapp/message/managing-messages/clear-all-messages",
                   "type": "page",
                   "children": [],
-                  "minIndex": 530,
+                  "minIndex": 529,
                   "navigationTitle": "Clear all saved messages"
                 },
                 {
@@ -9657,11 +9647,11 @@
                   "href": "/sdk/uniapp/message/managing-messages/set-message-local-ex",
                   "type": "page",
                   "children": [],
-                  "minIndex": 531,
+                  "minIndex": 530,
                   "navigationTitle": "Set local message extensions"
                 }
               ],
-              "minIndex": 520
+              "minIndex": 519
             },
             {
               "id": "message/group-message-read-status",
@@ -9677,7 +9667,7 @@
                   "href": "/sdk/uniapp/message/managing-read-status/send-group-read-receipts",
                   "type": "page",
                   "children": [],
-                  "minIndex": 532,
+                  "minIndex": 531,
                   "navigationTitle": "Send group read receipts"
                 },
                 {
@@ -9687,14 +9677,14 @@
                   "href": "/sdk/uniapp/message/managing-read-status/get-group-message-readers",
                   "type": "page",
                   "children": [],
-                  "minIndex": 533,
+                  "minIndex": 532,
                   "navigationTitle": "View group message readers"
                 }
               ],
-              "minIndex": 532
+              "minIndex": 531
             }
           ],
-          "minIndex": 487
+          "minIndex": 486
         },
         {
           "id": "file-uploads/upload-file",
@@ -9703,7 +9693,7 @@
           "href": "/sdk/uniapp/file-uploads/upload-file",
           "type": "page",
           "children": [],
-          "minIndex": 534,
+          "minIndex": 533,
           "navigationTitle": "Upload a file"
         },
         {
@@ -9720,7 +9710,7 @@
               "href": "/sdk/uniapp/calling/overview-calling",
               "type": "page",
               "children": [],
-              "minIndex": 535
+              "minIndex": 534
             },
             {
               "id": "calling/managing-calls",
@@ -9736,7 +9726,7 @@
                   "href": "/sdk/uniapp/calling/managing-calls/start-single-call",
                   "type": "page",
                   "children": [],
-                  "minIndex": 536,
+                  "minIndex": 535,
                   "navigationTitle": "Start a one-to-one call"
                 },
                 {
@@ -9746,7 +9736,7 @@
                   "href": "/sdk/uniapp/calling/managing-calls/start-group-call",
                   "type": "page",
                   "children": [],
-                  "minIndex": 537,
+                  "minIndex": 536,
                   "navigationTitle": "Start a group call"
                 },
                 {
@@ -9756,7 +9746,7 @@
                   "href": "/sdk/uniapp/calling/managing-calls/accept-call",
                   "type": "page",
                   "children": [],
-                  "minIndex": 538,
+                  "minIndex": 537,
                   "navigationTitle": "Accept a call"
                 },
                 {
@@ -9766,7 +9756,7 @@
                   "href": "/sdk/uniapp/calling/managing-calls/reject-call",
                   "type": "page",
                   "children": [],
-                  "minIndex": 539,
+                  "minIndex": 538,
                   "navigationTitle": "Reject a call"
                 },
                 {
@@ -9776,7 +9766,7 @@
                   "href": "/sdk/uniapp/calling/managing-calls/cancel-call",
                   "type": "page",
                   "children": [],
-                  "minIndex": 540,
+                  "minIndex": 539,
                   "navigationTitle": "Cancel a call invitation"
                 },
                 {
@@ -9786,7 +9776,7 @@
                   "href": "/sdk/uniapp/calling/managing-calls/hang-up-call",
                   "type": "page",
                   "children": [],
-                  "minIndex": 541,
+                  "minIndex": 540,
                   "navigationTitle": "Hang up a call"
                 },
                 {
@@ -9796,11 +9786,11 @@
                   "href": "/sdk/uniapp/calling/managing-calls/handle-call-events",
                   "type": "page",
                   "children": [],
-                  "minIndex": 542,
+                  "minIndex": 541,
                   "navigationTitle": "Handle call events"
                 }
               ],
-              "minIndex": 536
+              "minIndex": 535
             },
             {
               "id": "calling/retrieving-call-information",
@@ -9816,7 +9806,7 @@
                   "href": "/sdk/uniapp/calling/retrieving-call-information/restore-pending-invitation",
                   "type": "page",
                   "children": [],
-                  "minIndex": 543,
+                  "minIndex": 542,
                   "navigationTitle": "Restore a pending invitation"
                 },
                 {
@@ -9826,7 +9816,7 @@
                   "href": "/sdk/uniapp/calling/retrieving-call-information/get-room-by-group-id",
                   "type": "page",
                   "children": [],
-                  "minIndex": 544,
+                  "minIndex": 543,
                   "navigationTitle": "Get a group call room"
                 },
                 {
@@ -9836,11 +9826,11 @@
                   "href": "/sdk/uniapp/calling/retrieving-call-information/get-token-by-room-id",
                   "type": "page",
                   "children": [],
-                  "minIndex": 545,
+                  "minIndex": 544,
                   "navigationTitle": "Get room credentials"
                 }
               ],
-              "minIndex": 543
+              "minIndex": 542
             },
             {
               "id": "calling/sending-custom-signals/send-a-custom-signal",
@@ -9849,10 +9839,10 @@
               "href": "/sdk/uniapp/calling/sending-custom-signals/send-a-custom-signal",
               "type": "page",
               "children": [],
-              "minIndex": 546
+              "minIndex": 545
             }
           ],
-          "minIndex": 535
+          "minIndex": 534
         },
         {
           "id": "events",
@@ -9868,7 +9858,7 @@
               "href": "/sdk/uniapp/events/overview-events",
               "type": "page",
               "children": [],
-              "minIndex": 547,
+              "minIndex": 546,
               "navigationTitle": "Event overview"
             },
             {
@@ -9878,11 +9868,11 @@
               "href": "/sdk/uniapp/events/handle-data-migration-events",
               "type": "page",
               "children": [],
-              "minIndex": 548,
+              "minIndex": 547,
               "navigationTitle": "Handle data migration events"
             }
           ],
-          "minIndex": 547
+          "minIndex": 546
         },
         {
           "id": "logger",
@@ -9891,10 +9881,10 @@
           "href": "/sdk/uniapp/logger",
           "type": "page",
           "children": [],
-          "minIndex": 549
+          "minIndex": 548
         }
       ],
-      "pageCount": 167,
+      "pageCount": 166,
       "sidebarExpansion": "active-path"
     },
     {

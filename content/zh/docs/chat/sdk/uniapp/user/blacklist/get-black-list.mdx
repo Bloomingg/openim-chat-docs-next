@@ -31,7 +31,7 @@ function isBlocked(userID : string) : boolean {
 }
 ```
 
-商业版还提供 `getBlacks()` <span className="enterprise-field-badge">商业版</span>，其包装字段名是 `blacks`：
+公共版和商业版的新代码都应优先使用 `getBlackList()`。商业版还保留 `getBlacks()` 兼容入口，其包装字段名是 `blacks`：
 
 ```uts
 import { getBlacks } from '@/uni_modules/unix-openim-sdk'
@@ -40,7 +40,7 @@ const commercialResult = await getBlacks()
 replaceBlockedUsers(commercialResult?.blacks ?? [])
 ```
 
-两个入口不要混用返回字段。一般业务选择一个与所安装版本一致的入口，不需要同时查询两份快照。
+两个入口不要混用返回字段。已有商业版集成可以继续使用 `getBlacks()`，但不要同时查询两份快照；新写的跨版本代码应统一使用 `getBlackList()` 和 `blackUsers`。
 
 ## 黑名单记录字段
 

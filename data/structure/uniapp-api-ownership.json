@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "manifestSha256": "37b21a68b6dd008e73d4ee4e23d0d1e0bd25f3a06f8f629ddba72fc91b647b54",
+  "manifestSha256": "a98fa2d7a99d5094992438487d5601685756479b1897555cbc3c9a0fd8efec04",
   "callables": [
     {
       "id": 2001,
@@ -4812,8 +4812,8 @@
       },
       "localOperation": false,
       "synthetic": true,
-      "page": "/sdk/uniapp/getting-started/update-token-and-observe-sdk-session",
-      "disposition": "documented"
+      "page": null,
+      "disposition": "integration-only"
     },
     {
       "id": 200034,
@@ -4918,8 +4918,8 @@
       },
       "localOperation": false,
       "synthetic": false,
-      "page": "/sdk/uniapp/getting-started/update-token-and-observe-sdk-session",
-      "disposition": "documented"
+      "page": null,
+      "disposition": "integration-only"
     },
     {
       "id": 200082,
@@ -6205,8 +6205,8 @@
       },
       "localOperation": true,
       "synthetic": false,
-      "page": "/sdk/uniapp/getting-started/update-token-and-observe-sdk-session",
-      "disposition": "documented"
+      "page": null,
+      "disposition": "integration-only"
     }
   ],
   "events": [
@@ -7252,8 +7252,8 @@
     },
     {
       "name": "onSDKSessionChanged",
-      "page": "/sdk/uniapp/getting-started/update-token-and-observe-sdk-session",
-      "disposition": "documented",
+      "page": null,
+      "disposition": "integration-only",
       "edition": "commercial",
       "platforms": {
         "android": "required",
