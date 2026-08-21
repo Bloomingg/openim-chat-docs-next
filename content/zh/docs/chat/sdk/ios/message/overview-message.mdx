@@ -50,6 +50,8 @@ OpenIM iOS SDK 的消息能力围绕 `OIMMessageInfo` 展开。普通消息以�
 | `sendTime`    | `NSTimeInterval`        | 消息发送时间，用于排序，不能作为消息唯一标识。      |
 | `status`      | `OIMMessageStatus`      | 消息发送状态 enum。                                 |
 | `isRead`      | `BOOL`                  | SDK 当前记录的已读状态。                            |
+| `content`     | `NSString * _Nullable`  | SDK 保留的序列化内容；渲染时优先读取与 `contentType` 对应的内容元素。 |
+| `attachedInfo` | `NSString * _Nullable` | SDK 保留的附加信息；只按已确认的业务约定解析。       |
 
 `textElem`、`pictureElem`、`soundElem`、`videoElem`、`fileElem`、`atTextElem`、`customElem` 等内容属性都可以为 `nil`。渲染时应同时检查 `contentType` 与对应 element；缺少预期内容时使用降级占位，不要强制取值。
 

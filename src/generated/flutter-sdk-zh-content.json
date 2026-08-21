@@ -1368,11 +1368,11 @@
       "title": "设置群内添加好友权限"
     },
     "/sdk/flutter/group/change-group-mute": {
-      "body": "```dart\nawait OpenIM.iMManager.groupManager.changeGroupMute(\n  groupID: groupID,\n  mute: true,\n);\n```\n\n固定 Flutter SDK 没有 WASM 的例外用户参数。Future 成功表示服务端完成设置；最终群资料通过 `onGroupInfoChanged` 或重新查询校准。",
-      "description": "开启或关闭 Flutter 群组整体禁言。",
+      "body": "```dart\nawait OpenIM.iMManager.groupManager.changeGroupMute(\n  groupID: groupID,\n  mute: true,\n);\n```\n\n`groupID` 指定目標群組，`mute: true` 開啟全員禁言，`false` 關閉。固定 Flutter SDK 沒有 WASM 商業版提供的例外使用者參數，不能在本次操作中指定禁言期間仍可發言的使用者。\n\n群主和管理員通常仍可傳送訊息，因此開啟群組全員禁言不代表群內每個帳號都無法發言；最終權限由 OpenIMServer 驗證。\n\nFuture 成功表示服務端完成本次設定；`onGroupInfoChanged` 隨後可能傳回更新後的 `GroupInfo`，應依 `groupID` 合併。完整 listener 見[群組概覽](/sdk/flutter/group/overview-group)；需要立即校準時重新查詢群組資料。",
+      "description": "開啟或關閉 Flutter 群組整體禁言。",
       "headings": [],
       "sourcePath": "/sdk/flutter/group/change-group-mute",
-      "title": "设置群组全员禁言"
+      "title": "設定群組全員禁言"
     },
     "/sdk/flutter/group/join-group": {
       "body": "```dart\nawait OpenIM.iMManager.groupManager.joinGroup(\n  groupID: groupID,\n  reason: '申请加入项目讨论组',\n  joinSource: 3,\n);\n```\n\n固定版 `joinSource` 使用 `2` 邀请、`3` 搜索、`4` 二维码。需要审核时，Future 成功只表示申请已提交；实际加入以 `onJoinedGroupAdded` 或重新查询为准。",

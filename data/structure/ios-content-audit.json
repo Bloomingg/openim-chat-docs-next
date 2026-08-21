@@ -304,7 +304,7 @@
         "https://github.com/openimsdk/open-im-sdk-ios/tree/17fb969fd3a360f00fe65f476435b81857e274f8",
         "https://github.com/openimsdk/open-im-sdk-ios/blob/17fb969fd3a360f00fe65f476435b81857e274f8/OpenIMSDK/Model/OIMFullUserInfo.h"
       ],
-      "sdkMethods": ["获取指定用户资料"],
+      "sdkMethods": ["getUsersInfo:onSuccess:onFailure:"],
       "sdkEvents": [],
       "locales": {
         "zh": {
@@ -335,6 +335,7 @@
       "redirectTo": null,
       "notes": [
         "2026-07-20：已逐页人工审核；用户资料查询 selector 与 OIMPublicUserInfo 模型按固定 Objective-C header 核对。",
+        "2026-07-29：复核固定 iOS SDK selector，将误写的中文任务名称更正为 getUsersInfo:onSuccess:onFailure:。",
         "2026-07-23：按一 API 一页规范完成结构与正文审核。",
         "2026-07-23：按一 API 一页规范完成结构与正文审核。",
         "2026-07-23：按一 API 一页规范完成结构与正文审核。",
@@ -1951,7 +1952,7 @@
         "zh": {
           "reviewStatus": "published",
           "reviewer": "Codex",
-          "reviewedAt": "2026-07-21",
+          "reviewedAt": "2026-08-20",
           "exampleVerification": {
             "status": "not-applicable",
             "evidence": [],
@@ -1975,7 +1976,8 @@
         "2026-07-21：逐页对照 WASM 消息概览，补齐 OIMMessageInfo 常用属性、nullable element 边界及十项主题顺序；Objective-C selector、enum、callback、delegate 与能力缺口仍按固定 iOS SDK header。",
         "2026-07-21：再次按 enterprise iOS SDK 补齐 Markdown、音频转写、消息修改与置顶入口；保留定向群消息缺少高阶 OIMMessageInfo factory selector 的真实平台边界。",
         "2026-07-24：逐页复核本轮消息导航调整，更新历史消息、删除消息与已读回执页面名称及交叉链接，移除已删除页面引用。",
-        "2026-07-27：逐页复核消息主题导航，将发送、媒体、转发合并、@ 消息与扩展数据的旧聚合页地址改为当前独立页面。"
+        "2026-07-27：逐页复核消息主题导航，将发送、媒体、转发合并、@ 消息与扩展数据的旧聚合页地址改为当前独立页面。",
+        "2026-08-20：依据固定 iOS SDK header 逐页核对 OIMMessageInfo；补充 content 与 attachedInfo 的可空性及仅按业务约定解析的边界。"
       ]
     },
     {
@@ -4514,14 +4516,15 @@
         "2026-07-23：按一 API 一页规范完成结构与正文审核。",
         "2026-07-23：按一 API 一页规范完成结构与正文审核。",
         "2026-07-23：按一 API 一页规范完成结构与正文审核。",
-        "2026-07-24：逐页复核页面任务与 API 归属，将正文页标题改为准确的中文任务名称，并与左侧导航语义对齐；API 方法名只保留在正文与示例中。"
+        "2026-07-24：逐页复核页面任务与 API 归属，将正文页标题改为准确的中文任务名称，并与左侧导航语义对齐；API 方法名只保留在正文与示例中。",
+        "2026-08-20：逐頁複核群組全員禁言操作；依固定 iOS selector 確認只接收 groupID 與 isMute，補充 iOS 不支援 WASM 商業版例外使用者欄位、角色發言邊界，以及 callback、delegate 與重新查詢三階段狀態校準。"
       ],
       "sdkMethods": ["changeGroupMute:isMute:onSuccess:onFailure:"],
       "locales": {
         "zh": {
           "reviewStatus": "published",
           "reviewer": "Codex",
-          "reviewedAt": "2026-07-24",
+          "reviewedAt": "2026-08-20",
           "exampleVerification": {
             "status": "verified",
             "evidence": [
@@ -10056,7 +10059,7 @@
         "zh": {
           "reviewStatus": "published",
           "reviewer": "Codex",
-          "reviewedAt": "2026-07-24",
+          "reviewedAt": "2026-08-20",
           "exampleVerification": {
             "status": "verified",
             "evidence": [
@@ -10080,7 +10083,8 @@
       "redirectTo": null,
       "notes": [
         "2026-07-24：已逐页人工审核；本页只归属 getSelfInfoWithOnSuccess:onFailure:。",
-        "2026-07-24：逐页复核页面任务与 API 归属，将正文页标题改为准确的中文任务名称，并与左侧导航语义对齐；API 方法名只保留在正文与示例中。"
+        "2026-07-24：逐页复核页面任务与 API 归属，将正文页标题改为准确的中文任务名称，并与左侧导航语义对齐；API 方法名只保留在正文与示例中。",
+        "2026-08-20：依据固定 iOS SDK header 复核 OIMUserInfo.attachedInfo，并在成功结果中说明其为 SDK 保留附加字符串，不作为公开资料或权限状态。"
       ]
     },
     {

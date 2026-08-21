@@ -85,30 +85,60 @@ const partialCommercialConceptSources: Record<string, string[]> = {
   ],
 };
 
-// These capabilities share general-purpose setters with open-source fields. Classify the
+// These WASM capabilities share general-purpose setters with open-source fields. Classify the
 // task page instead of marking the whole setter as commercial.
-const fullCommercialConceptPages = new Set([
+const wasmFullCommercialConceptPages = new Set([
   '/sdk/wasm/conversation/managing-conversations/set-private-chat',
   '/sdk/wasm/conversation/managing-conversations/set-burn-duration',
   '/sdk/wasm/conversation/managing-conversations/set-message-destruct',
   '/sdk/wasm/conversation/managing-conversations/set-conversation-remark',
   '/sdk/wasm/message/composing-messages/save-local-transcript',
-  '/sdk/flutter/conversation/managing-conversations/set-private-chat',
-  '/sdk/flutter/conversation/managing-conversations/set-burn-duration',
-  '/sdk/flutter/conversation/managing-conversations/set-message-destruct',
-  '/sdk/flutter/message/composing-messages/save-local-transcript',
-  '/sdk/ios/conversation/managing-conversations/set-private-chat',
-  '/sdk/ios/conversation/managing-conversations/set-burn-duration',
-  '/sdk/ios/conversation/managing-conversations/set-message-destruct',
-  '/sdk/ios/conversation/managing-conversations/set-message-destruct-time',
-  '/sdk/ios/message/composing-messages/save-local-transcript',
 ]);
+
+// A matching route is not enough to transfer a WASM commercial label. Each native concept
+// must name the actual method verified in that platform's pinned SDK audit.
+const nativeFullCommercialConceptMethods: Record<string, string[]> = {
+  '/sdk/flutter/conversation/managing-conversations/set-private-chat': ['setConversation'],
+  '/sdk/flutter/conversation/managing-conversations/set-burn-duration': ['setConversation'],
+  '/sdk/flutter/conversation/managing-conversations/set-message-destruct': ['setConversation'],
+  '/sdk/flutter/message/composing-messages/save-local-transcript': ['setMessageLocalContent'],
+  '/sdk/ios/conversation/managing-conversations/set-private-chat': [
+    'setConversationPrivateChat:isPrivate:onSuccess:onFailure:',
+  ],
+  '/sdk/ios/conversation/managing-conversations/set-burn-duration': [
+    'setConversationBurnDuration:duration:onSuccess:onFailure:',
+  ],
+  '/sdk/ios/conversation/managing-conversations/set-message-destruct': [
+    'setConversationIsMsgDestruct:isMsgDestruct:onSuccess:onFailure:',
+  ],
+  '/sdk/ios/conversation/managing-conversations/set-message-destruct-time': [
+    'setConversationMsgDestructTime:msgDestructTime:onSuccess:onFailure:',
+  ],
+  '/sdk/ios/message/composing-messages/save-local-transcript': [
+    'setMessageLocalEx:clientMsgID:localEx:onSuccess:onFailure:',
+  ],
+};
 
 function applyCommercialConceptOverride(
   pagePath: string,
   info: PageCommercialInfo,
+  pageMethods: string[] = [],
 ): PageCommercialInfo {
-  return fullCommercialConceptPages.has(pagePath) ? { ...info, kind: 'full' } : info;
+  if (wasmFullCommercialConceptPages.has(pagePath)) return { ...info, kind: 'full' };
+
+  const requiredMethods = nativeFullCommercialConceptMethods[pagePath];
+  if (!requiredMethods?.every((method) => pageMethods.includes(method))) return info;
+
+  const commercialMethods = [...new Set([...info.methods, ...requiredMethods])].sort(
+    (left, right) => left.localeCompare(right),
+  );
+  const commercialMethodSet = new Set(commercialMethods);
+  return {
+    ...info,
+    kind: 'full',
+    methods: commercialMethods,
+    openSourceMethods: info.openSourceMethods.filter((method) => !commercialMethodSet.has(method)),
+  };
 }
 
 function getWasmPageCommercialInfo(pagePath: string): PageCommercialInfo {
@@ -208,21 +238,29 @@ export function getPageCommercialInfo(pagePath: string): PageCommercialInfo {
   );
 
   if (commercialMethods.length === 0 && commercialEvents.length === 0) {
-    return applyCommercialConceptOverride(pagePath, {
-      kind: 'none',
-      methods: [],
-      openSourceMethods,
-      events: [],
-    });
+    return applyCommercialConceptOverride(
+      pagePath,
+      {
+        kind: 'none',
+        methods: [],
+        openSourceMethods,
+        events: [],
+      },
+      page.sdkMethods,
+    );
   }
 
   const wasmInfo = getWasmPageCommercialInfo(route.wasmPath);
-  return applyCommercialConceptOverride(pagePath, {
-    kind: wasmInfo.kind === 'full' ? 'full' : 'partial',
-    methods: commercialMethods.sort((left, right) => left.localeCompare(right)),
-    openSourceMethods: openSourceMethods.sort((left, right) => left.localeCompare(right)),
-    events: commercialEvents.sort((left, right) => left.localeCompare(right)),
-  });
+  return applyCommercialConceptOverride(
+    pagePath,
+    {
+      kind: wasmInfo.kind === 'full' ? 'full' : 'partial',
+      methods: commercialMethods.sort((left, right) => left.localeCompare(right)),
+      openSourceMethods: openSourceMethods.sort((left, right) => left.localeCompare(right)),
+      events: commercialEvents.sort((left, right) => left.localeCompare(right)),
+    },
+    page.sdkMethods,
+  );
 }
 
 export function getPageCommercialNames(pagePath: string): Set<string> {

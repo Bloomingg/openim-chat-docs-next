@@ -1,6 +1,13 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
+import { register } from 'tsx/esm/api';
+
+const unregisterTsx = register();
+const { getPageCommercialInfo: getRuntimePageCommercialInfo } = await import(
+  '../../src/lib/client-sdk-commercial.ts'
+);
+unregisterTsx();
 
 const ownership = JSON.parse(readFileSync('data/structure/wasm-api-ownership.json', 'utf8'));
 const flutterAudit = JSON.parse(readFileSync('data/structure/flutter-content-audit.json', 'utf8'));
@@ -430,6 +437,77 @@ test('does not infer commercial presentation for absent or open-source native ca
       .kind,
     'none',
   );
+});
+
+test('requires verified native methods for commercial concept labels', () => {
+  const nativeConceptMethods = new Map([
+    ['/sdk/flutter/conversation/managing-conversations/set-private-chat', 'setConversation'],
+    ['/sdk/flutter/conversation/managing-conversations/set-burn-duration', 'setConversation'],
+    ['/sdk/flutter/conversation/managing-conversations/set-message-destruct', 'setConversation'],
+    ['/sdk/flutter/message/composing-messages/save-local-transcript', 'setMessageLocalContent'],
+    [
+      '/sdk/ios/conversation/managing-conversations/set-private-chat',
+      'setConversationPrivateChat:isPrivate:onSuccess:onFailure:',
+    ],
+    [
+      '/sdk/ios/conversation/managing-conversations/set-burn-duration',
+      'setConversationBurnDuration:duration:onSuccess:onFailure:',
+    ],
+    [
+      '/sdk/ios/conversation/managing-conversations/set-message-destruct',
+      'setConversationIsMsgDestruct:isMsgDestruct:onSuccess:onFailure:',
+    ],
+    [
+      '/sdk/ios/conversation/managing-conversations/set-message-destruct-time',
+      'setConversationMsgDestructTime:msgDestructTime:onSuccess:onFailure:',
+    ],
+    [
+      '/sdk/ios/message/composing-messages/save-local-transcript',
+      'setMessageLocalEx:clientMsgID:localEx:onSuccess:onFailure:',
+    ],
+  ]);
+
+  for (const [pagePath, method] of nativeConceptMethods) {
+    const info = getRuntimePageCommercialInfo(pagePath);
+    assert.equal(info.kind, 'full', `${pagePath} must have a commercial label`);
+    assert.ok(info.methods.includes(method), `${pagePath} must be verified by ${method}`);
+    assert.ok(!info.openSourceMethods.includes(method), `${method} must not remain open-source`);
+  }
+});
+
+test('does not copy the WASM-only mute bypass field to native SDKs', () => {
+  for (const platform of ['ios', 'flutter']) {
+    const pagePath = `/sdk/${platform}/group/change-group-mute`;
+    const content = readFileSync(
+      `content/zh/docs/chat/sdk/${platform}/group/change-group-mute.mdx`,
+      'utf8',
+    );
+    assert.equal(getRuntimePageCommercialInfo(pagePath).kind, 'none');
+    assert.doesNotMatch(content, /muteBypassUserIDs|enterprise-field-badge/);
+  }
+});
+
+test('labels every native page backed by a verified commercial symbol', () => {
+  for (const [platform, audit] of [
+    ['ios', iosAudit],
+    ['flutter', flutterAudit],
+  ]) {
+    for (const page of audit.pages.filter((entry) => entry.disposition !== 'omit')) {
+      const hasCommercialMethod = page.sdkMethods.some((name) =>
+        commercialMethods.includes(normalizePlatformSymbol(platform, name, 'method')),
+      );
+      const hasCommercialEvent = page.sdkEvents.some((name) =>
+        commercialEvents.includes(normalizePlatformSymbol(platform, name, 'event')),
+      );
+      if (!hasCommercialMethod && !hasCommercialEvent) continue;
+
+      assert.notEqual(
+        getRuntimePageCommercialInfo(page.currentPath).kind,
+        'none',
+        `${page.currentPath} must have a commercial label`,
+      );
+    }
+  }
 });
 
 test('classifies mixed commercial pages', () => {
