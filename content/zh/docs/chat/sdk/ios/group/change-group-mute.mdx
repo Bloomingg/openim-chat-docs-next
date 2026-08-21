@@ -1,8 +1,12 @@
 ---
-title: '设置群组全员禁言'
-description: '开启或关闭 iOS 群组整体禁言。'
+title: '設定群組全員禁言'
+description: '開啟或關閉 iOS 群組整體禁言。'
 sourcePath: '/sdk/ios/group/change-group-mute'
 ---
+
+`changeGroupMute:isMute:onSuccess:onFailure:` 控制群組整體禁言。群主和管理員可以依 OpenIMServer 權限執行此操作。
+
+固定 iOS SDK 的 selector 只接收目標 `groupID` 和 `isMute`；`YES` 表示開啟，`NO` 表示關閉。iOS SDK 沒有 WASM 商業版提供的例外使用者欄位，不能在這個操作中指定禁言期間仍可發言的使用者。
 
 ```objc
 [[OIMManager manager] changeGroupMute:groupID
@@ -13,6 +17,6 @@ sourcePath: '/sdk/ios/group/change-group-mute'
     }];
 ```
 
-`isMute` 为 `YES` 时开启，为 `NO` 时关闭。固定 iOS SDK 没有 WASM 的例外用户参数。
+群主和管理員通常仍可傳送訊息，因此開啟群組全員禁言不代表群內每個帳號都無法發言。
 
-成功 callback 表示服务端完成设置；`onGroupInfoChanged:` 随后可能返回更新后的 `OIMGroupInfo`，完整 delegate 见[群组概览](/sdk/ios/group/overview-group)。
+成功 callback 表示服務端完成本次設定；`onGroupInfoChanged:` 隨後可能傳回更新後的 `OIMGroupInfo`，應依 `groupID` 合併。完整 delegate 見[群組概覽](/sdk/ios/group/overview-group)；需要立即校準時，重新查詢群資料。

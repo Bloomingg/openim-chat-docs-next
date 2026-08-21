@@ -4544,14 +4544,15 @@
         "2026-07-23：按一 API 一页规范完成结构与正文审核。",
         "2026-07-23：按一 API 一页规范完成结构与正文审核。",
         "2026-07-23：按一 API 一页规范完成结构与正文审核。",
-        "2026-07-24：逐页复核页面任务与 API 归属，将正文页标题改为准确的中文任务名称，并与左侧导航语义对齐；API 方法名只保留在正文与示例中。"
+        "2026-07-24：逐页复核页面任务与 API 归属，将正文页标题改为准确的中文任务名称，并与左侧导航语义对齐；API 方法名只保留在正文与示例中。",
+        "2026-08-20：逐页复核群组全员禁言操作；确认 Flutter 固定 API 只有 groupID 与 mute，补充不支持 WASM 商业版例外用户参数、群主和管理员发言边界，以及 Future、onGroupInfoChanged 与重新查询三阶段状态校准。"
       ],
       "sdkMethods": ["changeGroupMute"],
       "locales": {
         "zh": {
           "reviewStatus": "published",
           "reviewer": "Codex",
-          "reviewedAt": "2026-07-24",
+          "reviewedAt": "2026-08-20",
           "exampleVerification": {
             "status": "verified",
             "evidence": [

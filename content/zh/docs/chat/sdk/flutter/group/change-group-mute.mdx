@@ -1,6 +1,6 @@
 ---
-title: '设置群组全员禁言'
-description: '开启或关闭 Flutter 群组整体禁言。'
+title: '設定群組全員禁言'
+description: '開啟或關閉 Flutter 群組整體禁言。'
 sourcePath: '/sdk/flutter/group/change-group-mute'
 ---
 
@@ -11,4 +11,8 @@ await OpenIM.iMManager.groupManager.changeGroupMute(
 );
 ```
 
-固定 Flutter SDK 没有 WASM 的例外用户参数。Future 成功表示服务端完成设置；最终群资料通过 `onGroupInfoChanged` 或重新查询校准。
+`groupID` 指定目標群組，`mute: true` 開啟全員禁言，`false` 關閉。固定 Flutter SDK 沒有 WASM 商業版提供的例外使用者參數，不能在本次操作中指定禁言期間仍可發言的使用者。
+
+群主和管理員通常仍可傳送訊息，因此開啟群組全員禁言不代表群內每個帳號都無法發言；最終權限由 OpenIMServer 驗證。
+
+Future 成功表示服務端完成本次設定；`onGroupInfoChanged` 隨後可能傳回更新後的 `GroupInfo`，應依 `groupID` 合併。完整 listener 見[群組概覽](/sdk/flutter/group/overview-group)；需要立即校準時重新查詢群組資料。
