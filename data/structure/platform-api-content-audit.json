@@ -1144,6 +1144,13 @@
       "reviewer": "Codex"
     },
     {
+      "path": "/platform-api/webhooks/message/after-message-save-db",
+      "source": "content/zh/docs/chat/platform-api/v3/webhooks/message/after-message-save-db.mdx",
+      "english": "content/docs/chat/platform-api/webhooks/message/after-message-save-db.mdx",
+      "reviewStatus": "published",
+      "reviewer": "Codex"
+    },
+    {
       "path": "/platform-api/webhooks/message/after-revoke-message",
       "source": "content/zh/docs/chat/platform-api/v3/webhooks/message/after-revoke-message.mdx",
       "english": "content/docs/chat/platform-api/webhooks/message/after-revoke-message.mdx",

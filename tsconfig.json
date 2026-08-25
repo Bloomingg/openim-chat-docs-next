@@ -27,7 +27,7 @@
         "./*"
       ],
       "collections/*": [
-        "./.source-local/*"
+        "./.source/*"
       ]
     }
   },

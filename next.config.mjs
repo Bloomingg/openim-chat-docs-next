@@ -58,5 +58,5 @@ const nextConfig = {
   },
 };
 
-const withMDX = createMDX({ outDir: '.source-local' });
+const withMDX = createMDX();
 export default withMDX(nextConfig);

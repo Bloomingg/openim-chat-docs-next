@@ -7000,6 +7000,14 @@
     "contentFile": "content/docs/chat/platform-api/webhooks/message/after-group-message-read.mdx"
   },
   {
+    "sourcePath": "/platform-api/webhooks/message/after-message-save-db",
+    "openimPath": "/platform-api/webhooks/message/after-message-save-db",
+    "context": "chat/platform-api",
+    "template": "api",
+    "title": "After a message is saved to the database",
+    "contentFile": "content/docs/chat/platform-api/webhooks/message/after-message-save-db.mdx"
+  },
+  {
     "sourcePath": "/platform-api/webhooks/message/after-revoke-message",
     "openimPath": "/platform-api/webhooks/message/after-revoke-message",
     "context": "chat/platform-api",

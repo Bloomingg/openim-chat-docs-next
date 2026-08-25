@@ -1,0 +1,115 @@
+---
+title: "消息写入数据库后"
+description: "OpenIM Webhooks：在消息写入数据库后同步消息事件。"
+product: "platform-api"
+context: "chat/platform-api/v3"
+template: "api"
+status: "published"
+lastUpdated: "2026-08-25"
+version: "v3"
+sourcePath: "/docs/chat/platform-api/v3/webhooks/message/after-message-save-db"
+---
+
+在消息写入数据库后同步消息事件。该回调通过异步请求发送，适合用于业务数据同步、审计或异步处理。
+
+## 触发时机
+
+| 项目     | 说明                           |
+| -------- | ------------------------------ |
+| 类型     | 后置回调                       |
+| 配置项   | `afterMsgSaveDB`               |
+| 回调命令 | `callbackAfterMsgSaveDBCommand` |
+
+## HTTP 请求
+
+```http
+POST {WEBHOOK_ADDRESS}/callbackAfterMsgSaveDBCommand
+Content-Type: application/json
+operationID: {OPERATION_ID}
+```
+
+```json
+{
+  "sendID": "user_001",
+  "recvID": "user_002",
+  "groupID": "",
+  "callbackCommand": "callbackAfterMsgSaveDBCommand",
+  "serverMsgID": "server_msg_001",
+  "clientMsgID": "client_msg_001",
+  "operationID": "operation_001",
+  "senderPlatformID": 1,
+  "senderNickname": "user_001",
+  "sessionType": 1,
+  "msgFrom": 1,
+  "contentType": 1,
+  "status": 1,
+  "sendTime": 1719800000000,
+  "createTime": 1719800000000,
+  "content": "{\"text\":\"hello\"}",
+  "seq": 1,
+  "atUserList": [],
+  "faceURL": "https://example.com/avatar.png",
+  "ex": ""
+}
+```
+
+### 请求体参数
+
+| 参数名 | 是否必填 | 类型 | 说明 |
+| --- | --- | --- | --- |
+| sendID | 是 | string | 消息发送者用户 ID。 |
+| recvID | 条件必填 | string | 单聊或通知消息的接收者用户 ID。单聊消息写入该字段时，`groupID` 为空。 |
+| groupID | 条件必填 | string | 群聊消息所属群组 ID。群聊消息写入该字段时，`recvID` 为空。 |
+| callbackCommand | 是 | string | 回调命令，值为 `callbackAfterMsgSaveDBCommand`。 |
+| serverMsgID | 是 | string | OpenIM 服务端消息 ID。 |
+| clientMsgID | 是 | string | 客户端消息 ID。 |
+| operationID | 是 | string | OpenIM 操作的链路追踪 ID。 |
+| senderPlatformID | 是 | int | 发送端平台 ID，参见[用户模块的 `PlatformID`](/docs/chat/platform-api/v3/user/overview#platformid)。 |
+| senderNickname | 是 | string | 发送者昵称。 |
+| sessionType | 是 | int | 会话类型，参见[会话模块的 `ConversationType`](/docs/chat/platform-api/v3/conversation/overview#conversationtype)。 |
+| msgFrom | 是 | int | 消息来源。 |
+| contentType | 是 | int | 消息内容类型，参见[消息内容类型](/docs/chat/platform-api/v3/message/message-content-types)。 |
+| status | 是 | int | 消息状态。 |
+| sendTime | 是 | int64 | 消息发送时间，Unix 毫秒时间戳。 |
+| createTime | 是 | int64 | 消息创建时间，Unix 毫秒时间戳。 |
+| content | 是 | string | 消息内容；通常是与消息类型对应的 JSON 字符串。 |
+| seq | 是 | uint32 | 消息序列号。 |
+| atUserList | 是 | string[] | 被 @ 的用户 ID 列表。 |
+| faceURL | 是 | string | 发送者头像地址。 |
+| ex | 是 | string | 业务扩展字段。 |
+
+## 响应
+
+业务服务端应快速返回 HTTP 成功状态和 JSON 响应体。消息已经写入数据库，响应不能改变该消息的写入结果。
+
+```json
+{
+  "actionCode": 0,
+  "errCode": 0,
+  "errMsg": "",
+  "errDlt": "",
+  "nextCode": 0
+}
+```
+
+### 响应参数
+
+| 参数名 | 类型 | 说明 |
+| --- | --- | --- |
+| actionCode | int | 处理状态，参见[Webhooks 概述的 `CallbackAction`](/docs/chat/platform-api/v3/webhooks/overview#callbackaction)。 |
+| errCode | int | 业务错误码。后置回调不能用该字段撤销已完成的消息写入。 |
+| errMsg | string | 错误简要信息。 |
+| errDlt | string | 错误详细信息。 |
+| nextCode | int | 处理下一步，参见[Webhooks 概述的 `CallbackNextCode`](/docs/chat/platform-api/v3/webhooks/overview#callbacknextcode)。 |
+
+## 处理规则
+
+- 消息写入数据库后，OpenIM 异步调用该地址。
+- 消息数据和消息标识通过 JSON 请求体发送，接收方应使用请求体中的字段处理事件。
+- 接收方应快速返回成功状态，再异步执行耗时业务。
+- 接收方应使用 `serverMsgID`、`clientMsgID` 和会话标识实现幂等处理。
+
+## 相关页面
+
+- [Webhooks 概述](/docs/chat/platform-api/v3/webhooks/overview)
+- [消息模块概述](/docs/chat/platform-api/v3/message/overview)
