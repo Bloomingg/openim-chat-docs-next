@@ -64,6 +64,7 @@ export const webhookSpecs = [
   callback('message', 'beforeMsgModify', '消息写入前', 'before-message-modify', '在消息最终写入前调整允许修改的消息字段。', 'CallbackMsgModifyCommandReq', 'CallbackMsgModifyCommandResp'),
   callback('message', 'afterSingleMsgRead', '单聊消息已读后', 'after-single-message-read', '在单聊消息已读状态更新后同步已读事件。', 'CallbackSingleMsgReadReq', 'CallbackSingleMsgReadResp'),
   callback('message', 'afterGroupMsgRead', '群聊消息已读后', 'after-group-message-read', '在群聊消息已读状态更新后同步已读事件。', 'CallbackGroupMsgReadReq', 'CallbackGroupMsgReadResp'),
+  callback('message', 'afterMsgSaveDB', '消息写入数据库后', 'after-message-save-db', '在消息写入数据库后同步消息事件。', 'CallbackAfterMsgSaveDBReq', 'CallbackAfterMsgSaveDBResp'),
   callback('message', 'afterRevokeMsg', '消息撤回后', 'after-revoke-message', '在消息撤回完成后同步撤回事件。', 'CallbackAfterRevokeMsgReq', 'CallbackAfterRevokeMsgResp', { command: 'callbackBeforeAfterMsgCommand' }),
 
   callback('push', 'beforeOnlinePush', '单聊在线推送前', 'before-online-push', '在单聊在线推送前调整目标用户或推送策略。', 'CallbackBeforePushReq', 'CallbackBeforePushResp'),

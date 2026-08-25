@@ -2178,6 +2178,15 @@
                   "minIndex": 780.0406
                 },
                 {
+                  "id": "webhooks/message/after-message-save-db",
+                  "segment": "after-message-save-db",
+                  "title": "After a message is saved to the database",
+                  "href": "/platform-api/webhooks/message/after-message-save-db",
+                  "type": "page",
+                  "children": [],
+                  "minIndex": 780.04065
+                },
+                {
                   "id": "webhooks/message/after-revoke-message",
                   "segment": "after-revoke-message",
                   "title": "After revoking a message",
